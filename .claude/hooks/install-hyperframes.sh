@@ -7,9 +7,17 @@ if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
   exit 0
 fi
 
-# FFmpeg/FFprobe for rendering, audio extraction and compositing.
+# FFmpeg/FFprobe for rendering, audio extraction and compositing, and Blender
+# for headless node-based compositing (bpy) and camera tracking.
+apt_pkgs=()
 if ! command -v ffmpeg >/dev/null 2>&1 || ! command -v ffprobe >/dev/null 2>&1; then
-  (apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg) >/dev/null 2>&1 || true
+  apt_pkgs+=(ffmpeg)
+fi
+if ! command -v blender >/dev/null 2>&1; then
+  apt_pkgs+=(blender)
+fi
+if [ ${#apt_pkgs[@]} -gt 0 ]; then
+  (apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq "${apt_pkgs[@]}") >/dev/null 2>&1 || true
 fi
 
 if ! command -v hyperframes >/dev/null 2>&1; then
@@ -22,4 +30,4 @@ hyperframes skills update >/dev/null 2>&1 || true
 # Chrome Headless Shell for local rendering.
 hyperframes browser ensure >/dev/null 2>&1 || true
 
-echo "HyperFrames $(hyperframes --version) ready. $(ffmpeg -version 2>/dev/null | head -1 | cut -d' ' -f1-3 || echo 'ffmpeg missing')."
+echo "HyperFrames $(hyperframes --version) ready. $(ffmpeg -version 2>/dev/null | head -1 | cut -d' ' -f1-3 || echo 'ffmpeg missing'). $(blender --version 2>/dev/null | head -1 || echo 'Blender missing')."
