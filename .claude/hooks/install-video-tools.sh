@@ -34,7 +34,9 @@ install() {
     ln -sf "$VENV/bin/$bin" "/usr/local/bin/$bin"
   done
   # `video-python script.py` runs scripts that import moviepy / faster_whisper / rembg.
-  ln -sf "$VENV/bin/python" /usr/local/bin/video-python
+  # A wrapper, not a symlink: a symlinked venv python outside bin/ loses the venv.
+  printf '#!/bin/sh\nexec %s/bin/python "$@"\n' "$VENV" >/usr/local/bin/video-python
+  chmod +x /usr/local/bin/video-python
 
   if ! command -v blender >/dev/null 2>&1; then
     curl -sSL "https://download.blender.org/release/Blender${BLENDER_SERIES}/blender-${BLENDER_VERSION}-linux-x64.tar.xz" \
