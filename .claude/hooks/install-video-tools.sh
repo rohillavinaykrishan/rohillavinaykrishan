@@ -1,6 +1,7 @@
 #!/bin/bash
 # Installs video editing / compositing tools for Claude Code cloud sessions:
-#   MoviePy, auto-editor, PySceneDetect, faster-whisper, rembg -> /opt/video-tools (venv)
+#   MoviePy, auto-editor, PySceneDetect, faster-whisper, rembg,
+#   PocketSphinx                                                -> /opt/video-tools (venv)
 #   Blender LTS (headless compositing)                         -> /opt/blender
 # The install runs in the background so the session starts immediately.
 # Progress: /tmp/video-tools-install.log; /opt/video-tools/.ready appears when done.
@@ -28,7 +29,8 @@ install() {
     opencv-python-headless==5.0.0.93 \
     faster-whisper==1.2.1 \
     "av>=16,<17" \
-    "rembg[cpu,cli]==2.0.69"
+    "rembg[cpu,cli]==2.0.69" \
+    pocketsphinx==5.1.1
 
   for bin in auto-editor scenedetect rembg; do
     ln -sf "$VENV/bin/$bin" "/usr/local/bin/$bin"

@@ -10,6 +10,7 @@ start. Wait for `/opt/video-tools/.ready` before using them (log:
 | Remove silence / dead air | auto-editor | `auto-editor in.mp4 -o out.mp4 --no-open` |
 | Find shot changes | PySceneDetect | `scenedetect -i in.mp4 detect-adaptive list-scenes` |
 | Speech-to-text, word timings | faster-whisper | `video-python` + `from faster_whisper import WhisperModel` (CPU: `compute_type="int8"`) |
+| Fast offline speech recognition, keyword spotting, forced alignment (English) | PocketSphinx | `video-python` + `from pocketsphinx import Decoder` (16 kHz mono raw: `ffmpeg -i in.mp4 -ac 1 -ar 16000 -f s16le in.raw`) |
 | Background removal | rembg | `rembg i in.png out.png` (models download on first use) |
 | Node compositing, keying, tracking | Blender 4.5 LTS | `blender -b --python script.py` |
 
