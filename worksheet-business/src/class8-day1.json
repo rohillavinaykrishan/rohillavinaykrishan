@@ -1,0 +1,95 @@
+{
+  "className": "Class 8",
+  "day": "Day 1",
+  "sections": [
+    {
+      "title": "Maths",
+      "titleHi": "गणित",
+      "questions": [
+        {
+          "q": "Find the square root of 1,296.",
+          "a": "36 (because 36 × 36 = 1,296)",
+          "lines": 1
+        },
+        {
+          "q": "Expand:  (x + 3)²",
+          "a": "x² + 6x + 9",
+          "lines": 1
+        },
+        {
+          "q": "Solve:  5x − 7 = 3x + 9",
+          "a": "2x = 16, so x = 8",
+          "lines": 1
+        },
+        {
+          "q": "Find the simple interest on ₹5,000 at 8% per annum for 3 years.",
+          "a": "SI = (5000 × 8 × 3) ÷ 100 = ₹1,200",
+          "lines": 1
+        },
+        {
+          "q": "Write 0.000045 in standard form: ______",
+          "a": "4.5 × 10⁻⁵"
+        },
+        {
+          "q": "A car travels 180 km in 3 hours. At the same speed, how far will it travel in 5 hours?",
+          "a": "Speed = 60 km/h, so distance = 60 × 5 = 300 km",
+          "lines": 1
+        }
+      ]
+    },
+    {
+      "title": "English",
+      "titleHi": "अंग्रेज़ी",
+      "questions": [
+        {
+          "q": "Change into passive voice:  They are building a new bridge.",
+          "a": "A new bridge is being built (by them).",
+          "lines": 1
+        },
+        {
+          "q": "Change into indirect speech:  She said to me, \"Where do you live?\"",
+          "a": "She asked me where I lived.",
+          "lines": 1
+        },
+        {
+          "q": "Join using 'who':  I met a girl. She sings well.",
+          "a": "I met a girl who sings well.",
+          "lines": 1
+        },
+        {
+          "q": "Fill in the preposition:  He is good ______ mathematics.   She was angry ______ her brother.",
+          "a": "at, with"
+        }
+      ]
+    },
+    {
+      "title": "Hindi",
+      "titleHi": "हिंदी",
+      "questions": [
+        {
+          "q": "संधि-विच्छेद करो:  विद्यालय → ______   हिमालय → ______",
+          "a": "विद्या + आलय, हिम + आलय"
+        },
+        {
+          "q": "विलोम शब्द लिखो:  आयात → ______   कृतज्ञ → ______   सुगंध → ______",
+          "a": "निर्यात, कृतघ्न, दुर्गंध"
+        },
+        {
+          "q": "एक शब्द लिखो:  (क) जो ईश्वर में विश्वास रखता हो  (ख) जिसका कोई शत्रु न हो",
+          "a": "(क) आस्तिक (ख) अजातशत्रु",
+          "lines": 1
+        },
+        {
+          "q": "मुहावरे का अर्थ लिखकर वाक्य बनाओ:  हाथ-पैर मारना",
+          "a": "अर्थ: बहुत प्रयास करना। वाक्य: नौकरी पाने के लिए राहुल ने बहुत हाथ-पैर मारे।",
+          "lines": 1
+        }
+      ],
+      "hindi": true
+    }
+  ],
+  "fun": {
+    "q": "Brain teaser: The product of two consecutive numbers is 132. Find the numbers.",
+    "a": "11 and 12"
+  }
+}

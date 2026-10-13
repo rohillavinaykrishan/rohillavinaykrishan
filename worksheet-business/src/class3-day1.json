@@ -1,7 +1,4 @@
 {
-  "brand": "Roz Abhyas",
-  "brandHi": "रोज़ अभ्यास",
-  "contact": "WhatsApp: __________",
   "className": "Class 3",
   "day": "Day 1",
   "sections": [
@@ -9,22 +6,54 @@
       "title": "Maths",
       "titleHi": "गणित",
       "questions": [
-        { "q": "456 + 327 = ______", "a": "783" },
-        { "q": "802 − 365 = ______", "a": "437" },
-        { "q": "23 × 4 = ______", "a": "92" },
-        { "q": "84 ÷ 7 = ______", "a": "12" },
-        { "q": "5 hundreds + 3 tens + 7 ones = ______", "a": "537" },
-        { "q": "Riya has 48 pencils. She gives 19 to her friend. How many pencils are left with Riya?", "a": "48 − 19 = 29 pencils", "lines": 2 }
+        {
+          "q": "456 + 327 = ______",
+          "a": "783"
+        },
+        {
+          "q": "802 − 365 = ______",
+          "a": "437"
+        },
+        {
+          "q": "23 × 4 = ______",
+          "a": "92"
+        },
+        {
+          "q": "84 ÷ 7 = ______",
+          "a": "12"
+        },
+        {
+          "q": "5 hundreds + 3 tens + 7 ones = ______",
+          "a": "537"
+        },
+        {
+          "q": "Riya has 48 pencils. She gives 19 to her friend. How many pencils are left with Riya?",
+          "a": "48 − 19 = 29 pencils",
+          "lines": 2
+        }
       ]
     },
     {
       "title": "English",
       "titleHi": "अंग्रेज़ी",
       "questions": [
-        { "q": "Write a or an:  ___ apple   ___ dog   ___ umbrella   ___ hour", "a": "an apple, a dog, an umbrella, an hour" },
-        { "q": "Write the opposite:  big → ______   happy → ______   hot → ______", "a": "small, sad, cold" },
-        { "q": "Make plural:  box → ______   baby → ______   child → ______", "a": "boxes, babies, children" },
-        { "q": "Arrange the words to make a sentence:  is / sky / blue / the", "a": "The sky is blue.", "lines": 1 }
+        {
+          "q": "Write a or an:  ___ apple   ___ dog   ___ umbrella   ___ hour",
+          "a": "an apple, a dog, an umbrella, an hour"
+        },
+        {
+          "q": "Write the opposite:  big → ______   happy → ______   hot → ______",
+          "a": "small, sad, cold"
+        },
+        {
+          "q": "Make plural:  box → ______   baby → ______   child → ______",
+          "a": "boxes, babies, children"
+        },
+        {
+          "q": "Arrange the words to make a sentence:  is / sky / blue / the",
+          "a": "The sky is blue.",
+          "lines": 1
+        }
       ]
     },
     {
@@ -32,12 +61,27 @@
       "titleHi": "हिंदी",
       "hindi": true,
       "questions": [
-        { "q": "विलोम शब्द लिखो:  दिन → ______   सच → ______   ऊपर → ______", "a": "रात, झूठ, नीचे" },
-        { "q": "लिंग बदलो:  लड़का → ______   शेर → ______   राजा → ______", "a": "लड़की, शेरनी, रानी" },
-        { "q": "वचन बदलो:  किताब → ______   नदी → ______   कपड़ा → ______", "a": "किताबें, नदियाँ, कपड़े" },
-        { "q": "खाली स्थान भरो:  सूरज ______ दिशा में उगता है।", "a": "पूर्व" }
+        {
+          "q": "विलोम शब्द लिखो:  दिन → ______   सच → ______   ऊपर → ______",
+          "a": "रात, झूठ, नीचे"
+        },
+        {
+          "q": "लिंग बदलो:  लड़का → ______   शेर → ______   राजा → ______",
+          "a": "लड़की, शेरनी, रानी"
+        },
+        {
+          "q": "वचन बदलो:  किताब → ______   नदी → ______   कपड़ा → ______",
+          "a": "किताबें, नदियाँ, कपड़े"
+        },
+        {
+          "q": "खाली स्थान भरो:  सूरज ______ दिशा में उगता है।",
+          "a": "पूर्व"
+        }
       ]
     }
   ],
-  "fun": { "q": "Brain teaser: I am a number. If you add 5 to me, you get 12. Who am I?", "a": "7" }
+  "fun": {
+    "q": "Brain teaser: I am a number. If you add 5 to me, you get 12. Who am I?",
+    "a": "7"
+  }
 }

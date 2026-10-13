@@ -1,0 +1,86 @@
+{
+  "className": "Class 1",
+  "day": "Day 1",
+  "sections": [
+    {
+      "title": "Maths",
+      "titleHi": "गणित",
+      "questions": [
+        {
+          "q": "Write the number that comes after:  19 → ______   39 → ______",
+          "a": "20, 40"
+        },
+        {
+          "q": "7 + 5 = ______",
+          "a": "12"
+        },
+        {
+          "q": "15 − 6 = ______",
+          "a": "9"
+        },
+        {
+          "q": "Fill in the missing number:  10, 20, ______, 40",
+          "a": "30"
+        },
+        {
+          "q": "Circle the bigger number:  38  or  83",
+          "a": "83"
+        },
+        {
+          "q": "Riya had 6 balloons. She got 3 more. How many balloons does she have now?",
+          "a": "6 + 3 = 9 balloons",
+          "lines": 1
+        }
+      ]
+    },
+    {
+      "title": "English",
+      "titleHi": "अंग्रेज़ी",
+      "questions": [
+        {
+          "q": "Write the next letter:  a, b, ______     p, q, ______",
+          "a": "c, r"
+        },
+        {
+          "q": "Write a or an:  ___ egg   ___ cup   ___ ant",
+          "a": "an egg, a cup, an ant"
+        },
+        {
+          "q": "Write the opposite:  up → ______   big → ______",
+          "a": "down, small"
+        },
+        {
+          "q": "Write a word that rhymes with cat: ______",
+          "a": "hat / bat / mat / rat (any one)"
+        }
+      ]
+    },
+    {
+      "title": "Hindi",
+      "titleHi": "हिंदी",
+      "questions": [
+        {
+          "q": "खाली स्थान में सही अक्षर लिखो:  क, ख, ______, घ",
+          "a": "ग"
+        },
+        {
+          "q": "अ से शुरू होने वाला एक फल का नाम लिखो: ______",
+          "a": "अनार / अनानास / अमरूद"
+        },
+        {
+          "q": "क से शुरू होने वाले दो शब्द लिखो: ______  ______",
+          "a": "कमल, कलम, कबूतर (कोई दो)"
+        },
+        {
+          "q": "मात्रा जोड़कर लिखो:  क + ा = ______   म + ी = ______",
+          "a": "का, मी"
+        }
+      ],
+      "hindi": true
+    }
+  ],
+  "fun": {
+    "q": "Brain teaser: How many legs do 2 cats have altogether?",
+    "a": "8"
+  }
+}

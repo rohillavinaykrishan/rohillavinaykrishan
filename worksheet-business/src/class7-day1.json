@@ -1,0 +1,93 @@
+{
+  "className": "Class 7",
+  "day": "Day 1",
+  "sections": [
+    {
+      "title": "Maths",
+      "titleHi": "गणित",
+      "questions": [
+        {
+          "q": "(−12) × (−5) = ______",
+          "a": "60"
+        },
+        {
+          "q": "Solve:  3x + 5 = 20",
+          "a": "3x = 15, so x = 5",
+          "lines": 1
+        },
+        {
+          "q": "Find 15% of 240.",
+          "a": "15/100 × 240 = 36",
+          "lines": 1
+        },
+        {
+          "q": "Simplify:  2/3 × 9/4",
+          "a": "18/12 = 3/2 = 1½",
+          "lines": 1
+        },
+        {
+          "q": "Find the mean of 4, 8, 6, 10, 12.",
+          "a": "(4 + 8 + 6 + 10 + 12) ÷ 5 = 40 ÷ 5 = 8",
+          "lines": 1
+        },
+        {
+          "q": "Two angles of a triangle are 50° and 60°. Find the third angle.",
+          "a": "180° − (50° + 60°) = 70°",
+          "lines": 1
+        }
+      ]
+    },
+    {
+      "title": "English",
+      "titleHi": "अंग्रेज़ी",
+      "questions": [
+        {
+          "q": "Change into passive voice:  Riya wrote a poem.",
+          "a": "A poem was written by Riya.",
+          "lines": 1
+        },
+        {
+          "q": "Change into indirect speech:  He said, \"I am tired.\"",
+          "a": "He said that he was tired.",
+          "lines": 1
+        },
+        {
+          "q": "Fill in a or an:  ______ honest man   ______ European country",
+          "a": "an honest man, a European country"
+        },
+        {
+          "q": "Choose the correct verb:  The news ______ (is / are) good.",
+          "a": "is"
+        }
+      ]
+    },
+    {
+      "title": "Hindi",
+      "titleHi": "हिंदी",
+      "questions": [
+        {
+          "q": "विशेषण शब्द छाँटो:  काली गाय मीठा दूध देती है।",
+          "a": "काली, मीठा"
+        },
+        {
+          "q": "पर्यायवाची लिखो:  आकाश → ______   धरती → ______   आग → ______",
+          "a": "नभ/गगन, पृथ्वी/भूमि, अग्नि/अनल"
+        },
+        {
+          "q": "उपसर्ग अलग करो:  अभिमान → ______   प्रचार → ______   अनपढ़ → ______",
+          "a": "अभि, प्र, अन"
+        },
+        {
+          "q": "मुहावरों के अर्थ लिखो:  (क) दाँतों तले उँगली दबाना   (ख) ईद का चाँद होना",
+          "a": "(क) आश्चर्यचकित होना (ख) बहुत दिनों बाद दिखाई देना",
+          "lines": 2
+        }
+      ],
+      "hindi": true
+    }
+  ],
+  "fun": {
+    "q": "Brain teaser: A number is doubled and then 6 is added. The answer is 30. What is the number?",
+    "a": "12 (30 − 6 = 24, 24 ÷ 2 = 12)"
+  }
+}

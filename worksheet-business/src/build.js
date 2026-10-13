@@ -1,5 +1,6 @@
 // Turns a worksheet JSON file into a print-ready A4 PDF:
 // page 1 = worksheet for the child, page 2 = answer key for the parent.
+// Name, tagline and phone number come from brand.json.
 // Usage: node build.js class3-day1.json [more.json ...]
 const fs = require('fs');
 const path = require('path');
@@ -56,17 +57,17 @@ function render(d) {
 </style></head><body>
 <div class="page">
   <header>
-    <div class="brand">${esc(d.brand)}<small>${esc(d.brandHi)}</small></div>
+    <div class="brand">${esc(d.brand)}<small>${esc(d.tagline)}</small></div>
     <div class="meta"><b>${esc(d.className)} · ${esc(d.day)}</b><br>Maths · English · Hindi</div>
   </header>
   <div class="student"><div>Name:</div><div>Date:</div><div>Score: ____ / ${n + 1}</div></div>
   ${sections}
   <div class="fun"><b>★ ${esc(d.fun.q)}</b></div>
-  <footer><span>Time: about 20 minutes</span><span>${esc(d.contact)}</span></footer>
+  <footer><span>Time: about 20 minutes · ${esc(d.disclaimer)}</span><span>${esc(d.contact)}</span></footer>
 </div>
 <div class="page key">
   <header>
-    <div class="brand">${esc(d.brand)}<small>${esc(d.brandHi)}</small></div>
+    <div class="brand">${esc(d.brand)}<small>${esc(d.tagline)}</small></div>
     <div class="meta"><b>${esc(d.className)} · ${esc(d.day)}</b><br>Answer key — for parents</div>
   </header>
   <h1>Answer Key</h1>
@@ -82,10 +83,11 @@ function render(d) {
   if (!files.length) { console.error('Usage: node build.js <worksheet.json> ...'); process.exit(1); }
   const outDir = path.join(__dirname, '..', 'samples');
   fs.mkdirSync(outDir, { recursive: true });
+  const brand = JSON.parse(fs.readFileSync(path.join(__dirname, 'brand.json'), 'utf8'));
   const browser = await chromium.launch();
   const page = await browser.newPage();
   for (const f of files) {
-    const data = JSON.parse(fs.readFileSync(f, 'utf8'));
+    const data = { ...brand, ...JSON.parse(fs.readFileSync(f, 'utf8')) };
     await page.setContent(render(data), { waitUntil: 'networkidle' });
     await page.evaluate(() => document.fonts.ready);
     const out = path.join(outDir, path.basename(f, '.json') + '.pdf');

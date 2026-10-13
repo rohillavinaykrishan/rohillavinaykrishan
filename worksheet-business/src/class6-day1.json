@@ -1,7 +1,4 @@
 {
-  "brand": "Roz Abhyas",
-  "brandHi": "रोज़ अभ्यास",
-  "contact": "WhatsApp: __________",
   "className": "Class 6",
   "day": "Day 1",
   "sections": [
@@ -9,22 +6,57 @@
       "title": "Maths",
       "titleHi": "गणित",
       "questions": [
-        { "q": "Find the HCF and LCM of 12 and 18.", "a": "HCF = 6, LCM = 36", "lines": 1 },
-        { "q": "3/4 + 1/6 = ______", "a": "9/12 + 2/12 = 11/12" },
-        { "q": "(−8) + 15 − (−3) = ______", "a": "10" },
-        { "q": "A rectangle is 12 cm long and 7 cm wide. Find its perimeter and area.", "a": "Perimeter = 2 × (12 + 7) = 38 cm; Area = 12 × 7 = 84 sq cm", "lines": 2 },
-        { "q": "Write 0.75 as a fraction in its lowest form: ______", "a": "3/4" },
-        { "q": "3 pens cost ₹36. What is the cost of 7 pens?", "a": "1 pen = ₹12, so 7 pens = ₹84", "lines": 2 }
+        {
+          "q": "Find the HCF and LCM of 12 and 18.",
+          "a": "HCF = 6, LCM = 36",
+          "lines": 1
+        },
+        {
+          "q": "3/4 + 1/6 = ______",
+          "a": "9/12 + 2/12 = 11/12"
+        },
+        {
+          "q": "(−8) + 15 − (−3) = ______",
+          "a": "10"
+        },
+        {
+          "q": "A rectangle is 12 cm long and 7 cm wide. Find its perimeter and area.",
+          "a": "Perimeter = 2 × (12 + 7) = 38 cm; Area = 12 × 7 = 84 sq cm",
+          "lines": 2
+        },
+        {
+          "q": "Write 0.75 as a fraction in its lowest form: ______",
+          "a": "3/4"
+        },
+        {
+          "q": "3 pens cost ₹36. What is the cost of 7 pens?",
+          "a": "1 pen = ₹12, so 7 pens = ₹84",
+          "lines": 2
+        }
       ]
     },
     {
       "title": "English",
       "titleHi": "अंग्रेज़ी",
       "questions": [
-        { "q": "Change to past tense:  (a) She writes a letter.  (b) They are playing.", "a": "(a) She wrote a letter. (b) They were playing.", "lines": 2 },
-        { "q": "Write a synonym:  brave → ______   rapid → ______   begin → ______", "a": "courageous, fast/quick, start" },
-        { "q": "Correct the sentence:  He go to school every day.", "a": "He goes to school every day.", "lines": 1 },
-        { "q": "Fill in the preposition:  The cat is hiding ______ the bed.  We have lived here ______ 2019.", "a": "under, since" }
+        {
+          "q": "Change to past tense:  (a) She writes a letter.  (b) They are playing.",
+          "a": "(a) She wrote a letter. (b) They were playing.",
+          "lines": 2
+        },
+        {
+          "q": "Write a synonym:  brave → ______   rapid → ______   begin → ______",
+          "a": "courageous, fast/quick, start"
+        },
+        {
+          "q": "Correct the sentence:  He go to school every day.",
+          "a": "He goes to school every day.",
+          "lines": 1
+        },
+        {
+          "q": "Fill in the preposition:  The cat is hiding ______ the bed.  We have lived here ______ 2019.",
+          "a": "under, since"
+        }
       ]
     },
     {
@@ -32,12 +64,29 @@
       "titleHi": "हिंदी",
       "hindi": true,
       "questions": [
-        { "q": "संज्ञा शब्द छाँटो:  राम दिल्ली में रहता है।", "a": "राम, दिल्ली", "lines": 1 },
-        { "q": "पर्यायवाची लिखो:  पानी → ______   सूर्य → ______   पेड़ → ______", "a": "जल/नीर, रवि/दिनकर, वृक्ष/तरु" },
-        { "q": "विलोम शब्द लिखो:  आशा → ______   सफल → ______   उन्नति → ______", "a": "निराशा, असफल, अवनति" },
-        { "q": "मुहावरे का अर्थ लिखो:  (क) आँखों का तारा   (ख) नौ दो ग्यारह होना", "a": "(क) बहुत प्यारा (ख) भाग जाना", "lines": 2 }
+        {
+          "q": "संज्ञा शब्द छाँटो:  राम दिल्ली में रहता है।",
+          "a": "राम, दिल्ली",
+          "lines": 1
+        },
+        {
+          "q": "पर्यायवाची लिखो:  पानी → ______   सूर्य → ______   पेड़ → ______",
+          "a": "जल/नीर, रवि/दिनकर, वृक्ष/तरु"
+        },
+        {
+          "q": "विलोम शब्द लिखो:  आशा → ______   सफल → ______   उन्नति → ______",
+          "a": "निराशा, असफल, अवनति"
+        },
+        {
+          "q": "मुहावरे का अर्थ लिखो:  (क) आँखों का तारा   (ख) नौ दो ग्यारह होना",
+          "a": "(क) बहुत प्यारा (ख) भाग जाना",
+          "lines": 2
+        }
       ]
     }
   ],
-  "fun": { "q": "Brain teaser: What is the smallest number that is divisible by 2, 3, 4, 5 and 6?", "a": "60 (the LCM of 2, 3, 4, 5, 6)" }
+  "fun": {
+    "q": "Brain teaser: What is the smallest number that is divisible by 2, 3, 4, 5 and 6?",
+    "a": "60 (the LCM of 2, 3, 4, 5, 6)"
+  }
 }

@@ -1,0 +1,87 @@
+{
+  "className": "Class 2",
+  "day": "Day 1",
+  "sections": [
+    {
+      "title": "Maths",
+      "titleHi": "गणित",
+      "questions": [
+        {
+          "q": "46 + 23 = ______",
+          "a": "69"
+        },
+        {
+          "q": "75 − 32 = ______",
+          "a": "43"
+        },
+        {
+          "q": "4 × 3 = ______",
+          "a": "12"
+        },
+        {
+          "q": "Write in expanded form:  58 = ______ + ______",
+          "a": "50 + 8"
+        },
+        {
+          "q": "Write the number name of 64: ______",
+          "a": "sixty-four"
+        },
+        {
+          "q": "A box has 5 rows with 2 chocolates in each row. How many chocolates are there in all?",
+          "a": "5 × 2 = 10 chocolates",
+          "lines": 1
+        }
+      ]
+    },
+    {
+      "title": "English",
+      "titleHi": "अंग्रेज़ी",
+      "questions": [
+        {
+          "q": "Make plural:  cat → ______   bus → ______   box → ______",
+          "a": "cats, buses, boxes"
+        },
+        {
+          "q": "Fill in is or are:  The birds ______ singing.   Mother ______ cooking.",
+          "a": "are, is"
+        },
+        {
+          "q": "Write the opposite:  day → ______   old → ______",
+          "a": "night, new / young"
+        },
+        {
+          "q": "Arrange in alphabetical order:  dog, apple, cat",
+          "a": "apple, cat, dog",
+          "lines": 1
+        }
+      ]
+    },
+    {
+      "title": "Hindi",
+      "titleHi": "हिंदी",
+      "questions": [
+        {
+          "q": "विलोम शब्द लिखो:  बड़ा → ______   अंदर → ______",
+          "a": "छोटा, बाहर"
+        },
+        {
+          "q": "वचन बदलो:  केला → ______   लड़का → ______",
+          "a": "केले, लड़के"
+        },
+        {
+          "q": "खाली स्थान भरो:  गाय हमें ______ देती है।",
+          "a": "दूध"
+        },
+        {
+          "q": "रविवार के बाद कौन-सा दिन आता है? ______",
+          "a": "सोमवार"
+        }
+      ],
+      "hindi": true
+    }
+  ],
+  "fun": {
+    "q": "Brain teaser: I am a number between 10 and 20. I am even, and my digits add up to 5. Who am I?",
+    "a": "14"
+  }
+}

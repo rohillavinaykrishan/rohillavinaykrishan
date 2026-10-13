@@ -1,0 +1,88 @@
+{
+  "className": "Class 4",
+  "day": "Day 1",
+  "sections": [
+    {
+      "title": "Maths",
+      "titleHi": "गणित",
+      "questions": [
+        {
+          "q": "3,456 + 2,789 = ______",
+          "a": "6,245"
+        },
+        {
+          "q": "5,000 − 1,876 = ______",
+          "a": "3,124"
+        },
+        {
+          "q": "125 × 8 = ______",
+          "a": "1,000"
+        },
+        {
+          "q": "96 ÷ 8 = ______",
+          "a": "12"
+        },
+        {
+          "q": "Round off 4,672 to the nearest hundred: ______",
+          "a": "4,700"
+        },
+        {
+          "q": "A school bus carries 42 children. How many children can 6 such buses carry?",
+          "a": "42 × 6 = 252 children",
+          "lines": 2
+        }
+      ]
+    },
+    {
+      "title": "English",
+      "titleHi": "अंग्रेज़ी",
+      "questions": [
+        {
+          "q": "Underline the adjectives:  The tall boy has a red bag.",
+          "a": "tall, red"
+        },
+        {
+          "q": "Write the past tense:  run → ______   eat → ______   go → ______",
+          "a": "ran, ate, went"
+        },
+        {
+          "q": "Fill in the correct pronoun:  Riya is my friend. ______ lives near my house.",
+          "a": "She"
+        },
+        {
+          "q": "Join using 'but':  I like tea. I do not like coffee.",
+          "a": "I like tea but I do not like coffee.",
+          "lines": 1
+        }
+      ]
+    },
+    {
+      "title": "Hindi",
+      "titleHi": "हिंदी",
+      "questions": [
+        {
+          "q": "विलोम शब्द लिखो:  अमीर → ______   आगे → ______   मीठा → ______",
+          "a": "गरीब, पीछे, कड़वा"
+        },
+        {
+          "q": "पर्यायवाची लिखो:  घर → ______   फूल → ______",
+          "a": "गृह/मकान, पुष्प/सुमन"
+        },
+        {
+          "q": "लिंग बदलो:  घोड़ा → ______   अध्यापक → ______   बेटा → ______",
+          "a": "घोड़ी, अध्यापिका, बेटी"
+        },
+        {
+          "q": "'पुस्तक' शब्द से एक वाक्य बनाओ।",
+          "a": "उदाहरण: मैं रोज़ एक पुस्तक पढ़ता हूँ। (कोई भी सही वाक्य)",
+          "lines": 1
+        }
+      ],
+      "hindi": true
+    }
+  ],
+  "fun": {
+    "q": "Brain teaser: What comes next?  2, 4, 8, 16, ______",
+    "a": "32 (each number is doubled)"
+  }
+}

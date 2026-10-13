@@ -1,0 +1,91 @@
+{
+  "className": "Class 5",
+  "day": "Day 1",
+  "sections": [
+    {
+      "title": "Maths",
+      "titleHi": "गणित",
+      "questions": [
+        {
+          "q": "2,348 × 25 = ______",
+          "a": "58,700",
+          "lines": 1
+        },
+        {
+          "q": "7,236 ÷ 6 = ______",
+          "a": "1,206",
+          "lines": 1
+        },
+        {
+          "q": "2/5 + 1/5 = ______",
+          "a": "3/5"
+        },
+        {
+          "q": "Write 3.45 in words: ______",
+          "a": "three point four five"
+        },
+        {
+          "q": "Find the perimeter of a square of side 9 cm.",
+          "a": "4 × 9 = 36 cm",
+          "lines": 1
+        },
+        {
+          "q": "A shopkeeper bought 15 kg of rice at ₹48 per kg. How much did he pay?",
+          "a": "15 × 48 = ₹720",
+          "lines": 1
+        }
+      ]
+    },
+    {
+      "title": "English",
+      "titleHi": "अंग्रेज़ी",
+      "questions": [
+        {
+          "q": "Name the tense:  She is reading a book.",
+          "a": "Present continuous tense"
+        },
+        {
+          "q": "Choose the correct word:  Neither of the boys ______ (was / were) present.",
+          "a": "was"
+        },
+        {
+          "q": "Write a synonym:  big → ______   quick → ______   glad → ______",
+          "a": "large, fast, happy"
+        },
+        {
+          "q": "Change into negative:  He plays cricket.",
+          "a": "He does not play cricket.",
+          "lines": 1
+        }
+      ]
+    },
+    {
+      "title": "Hindi",
+      "titleHi": "हिंदी",
+      "questions": [
+        {
+          "q": "संज्ञा शब्द छाँटो:  सीता बाज़ार से आम लाई।",
+          "a": "सीता, बाज़ार, आम"
+        },
+        {
+          "q": "विलोम शब्द लिखो:  स्वर्ग → ______   उदय → ______   जीवन → ______",
+          "a": "नरक, अस्त, मृत्यु"
+        },
+        {
+          "q": "वचन बदलो:  कहानी → ______   चिड़िया → ______   माला → ______",
+          "a": "कहानियाँ, चिड़ियाँ, मालाएँ"
+        },
+        {
+          "q": "मुहावरे का अर्थ लिखो:  आग बबूला होना",
+          "a": "बहुत गुस्सा होना",
+          "lines": 1
+        }
+      ],
+      "hindi": true
+    }
+  ],
+  "fun": {
+    "q": "Brain teaser: If 5 pencils cost ₹25, how many pencils can you buy with ₹60?",
+    "a": "12 pencils (1 pencil = ₹5)"
+  }
+}
