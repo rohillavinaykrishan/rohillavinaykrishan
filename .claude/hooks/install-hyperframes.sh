@@ -12,8 +12,9 @@ if ! command -v ffmpeg >/dev/null 2>&1 || ! command -v ffprobe >/dev/null 2>&1; 
   (apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg) >/dev/null 2>&1 || true
 fi
 
-# Gradio client for the FLUX / MiniMax-H3 Spaces (tools/hf_media.py).
-python3 -c "import gradio_client" >/dev/null 2>&1 || pip install -q gradio_client >/dev/null 2>&1 || true
+# Gradio client for the FLUX / MiniMax-H3 Spaces (tools/hf_media.py) and
+# librosa for song analysis (tools/analyze_audio.py).
+python3 -c "import gradio_client, librosa" >/dev/null 2>&1 || pip install -q gradio_client librosa soundfile >/dev/null 2>&1 || true
 
 if ! command -v hyperframes >/dev/null 2>&1; then
   npm install -g hyperframes@latest >/dev/null 2>&1
