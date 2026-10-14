@@ -19,3 +19,5 @@ frames before reporting.
   sprites, geometry nodes, or 2D elements comped by the compositor.
 - Render FX as separate passes/layers with alpha (`.png` RGBA sequence or `.mov`) so
   the compositor can integrate them; note the blend mode to use (over / screen / add).
+- Save your .blend with relative paths and textures packed (`bpy.ops.file.make_paths_relative()`,
+  `bpy.ops.file.pack_all()`) so it opens on the user's computer; the user receives it in the project zip.

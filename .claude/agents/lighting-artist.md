@@ -20,3 +20,5 @@ frames before reporting.
   (RGBA when it goes over a plate). Render a 3-frame test first and time it; if the
   full render would exceed the budget in cg_plan.md, stop and report.
 - Use `run_in_background` for long renders and log to your version folder.
+- Save your .blend with relative paths and textures packed (`bpy.ops.file.make_paths_relative()`,
+  `bpy.ops.file.pack_all()`) so it opens on the user's computer; the user receives it in the project zip.

@@ -46,6 +46,7 @@ no credits. The SessionStart hook installs it; check with
 | Audio master | ffmpeg loudnorm | `tools/vfx/bin/master_audio.sh mix.wav master.wav youtube\|instagram` |
 | Thumbnails / boards / cards | Chromium | `tools/vfx/bin/html2png.sh design.html out.png 1280x720` |
 | Burned subtitles | ffmpeg + libass + Noto fonts | `-vf "subtitles=l.srt:force_style='FontName=Noto Sans Gurmukhi,Bold=1,Outline=2'"` |
+| Project files zip | zip + Blender | `tools/vfx/bin/package_project.sh projects/<name>` → everything except rendered video, .blend packed |
 | Split delivery into parts | ffmpeg | `tools/vfx/bin/grade.sh split in.mp4 out_dir 45` → frame-exact parts + `full_audio.wav` |
 
 Video outputs: `.mov` = ProRes 4444 with alpha (for compositing), `.webm` =

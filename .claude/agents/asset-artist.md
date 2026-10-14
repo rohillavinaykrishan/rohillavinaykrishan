@@ -17,3 +17,5 @@ frames before reporting.
 - Apply or design the look with `tools/vfx/blender/looks.py` helpers or your own node materials.
 - Rigs: armatures with clear bone names, or simple constraint/empty rigs.
 - Deliver `asset_<name>.blend` + a turntable or 3-angle render at proxy_res for review.
+- Save your .blend with relative paths and textures packed (`bpy.ops.file.make_paths_relative()`,
+  `bpy.ops.file.pack_all()`) so it opens on the user's computer; the user receives it in the project zip.
