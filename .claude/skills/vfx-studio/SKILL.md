@@ -29,7 +29,7 @@ no credits. The SessionStart hook installs it; check with
 | Roto (click a specific object) | SAM 2 | `vfx-python tools/vfx/bin/sam_roto.py in.mp4 out.mov --point x,y [--neg x,y] [--frame N]` |
 | Paint / prep / cleanup | LaMa inpainting | `vfx-python tools/vfx/bin/cleanup.py in.mp4 out.mp4 --mask mask.png` or `--box x1,y1,x2,y2` |
 | Compositing | ffmpeg filters, Blender compositor, HyperFrames | see *Compositing* |
-| Color grading | ffmpeg looks / .cube LUTs, OpenColorIO | `tools/vfx/bin/grade.sh look in.mp4 out.mp4 teal-orange` / `grade.sh lut in out my.cube` |
+| Color grading | ffmpeg looks / .cube LUTs, OpenColorIO | `tools/vfx/bin/grade.sh look in out <look>`: movie (cinematic, blockbuster, moody, bleach, noir), song (bollywood, romantic, golden-hour, night-neon, dreamy), basic (teal-orange, warm, cool, bw, vintage, punchy, filmic); `grade.sh lut in out my.cube` |
 | Slow motion / retime | ffmpeg motion interpolation | `tools/vfx/bin/grade.sh slowmo in.mp4 out.mp4 2` |
 | Upscale | Real-ESRGAN (spandrel) | `vfx-python tools/vfx/bin/upscale.py in.png out.png [--scale 2] [--kind anime] [--frames N]` |
 | Voice-over | Piper TTS (offline) | `vfx-python tools/vfx/bin/tts.py "text or file.txt" vo.wav [--voice hi_IN-pratham-medium]` |

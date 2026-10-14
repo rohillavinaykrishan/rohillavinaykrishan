@@ -23,8 +23,9 @@ All agents follow `.claude/skills/studio/conventions.md` - read it now.
 | FX Artist | `fx-artist` | smoke, fire, liquids, particles, destruction |
 | Lighting Artist | `lighting-artist` | lighting, Blender looks, rendering |
 | Roto / Paint | `roto-paint-artist` | mattes, cut-outs, cleanup |
+| Editor | `editor` | shot order, pacing, cuts on the beat, transitions, story; owns `edl.json` and the assembly |
 | Compositor | `compositor` | combines all layers into the final shot |
-| Colorist | `colorist` | grade, post looks, conform, **4K delivery** |
+| Colorist | `colorist` | color correction + movie/song-style grade, post looks, conform, **4K delivery** |
 | Audio Artist | `audio-artist` | lyrics/beat timing, subtitles, voice-over, audio prep |
 | Motion Graphics | `motion-graphics-artist` | titles, lyric text, graphics (HyperFrames) |
 
@@ -40,10 +41,12 @@ All agents follow `.claude/skills/studio/conventions.md` - read it now.
 3. **Production (parallel waves).** From the shot list, spawn one artist agent per
    (shot, department) task whose inputs exist, all in one message so they run
    in parallel. Typical waves:
+   - Editor plan: `editor` writes `edl.json` once the audio-artist's beats/lyrics exist
+     (for image/footage edits this drives everything downstream)
    - Wave A (no dependencies): audio-artist, concept-artist, roto-paint-artist, layout-artist, asset-artist
    - Wave B: animator, fx-artist, motion-graphics-artist
    - Wave C: lighting-artist (renders)
-   - Wave D: compositor → colorist
+   - Wave D: compositor → editor assembly (locked edit) → colorist (correction, grade, 4K)
    Give each agent: project path, shot, exact inputs, output folder, look, spec,
    and what "done" means. Respect the 2-heavy-jobs rule in conventions.md
    when deciding how many render-heavy agents to start at once.
