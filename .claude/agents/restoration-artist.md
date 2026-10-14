@@ -22,5 +22,7 @@ names as `source/`, so downstream artists can switch to them.
      KEEP THE MORE NATURAL ONE (face restoration can make faces look plastic or change identity -
      never accept that). Profile faces are skipped automatically.
 3. Never change what is in the photo (no removing people/objects - that's roto-paint's job).
-4. Contact sheet before/after (`montage`) in your folder; list images that are still too weak so
+4. Also make depth maps for every image (`vfx-python tools/vfx/bin/depth.py map <dir> <out_dir>`)
+   so the editor and compositor can add 3D parallax and depth effects.
+5. Contact sheet before/after (`montage`) in your folder; list images that are still too weak so
    the director/editor can use them small, briefly, or not at all.
