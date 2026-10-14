@@ -4,7 +4,7 @@
 #   grade.sh look   in.mp4 out.mp4 <teal-orange|warm|cool|bw|vintage|punchy|filmic>
 #   grade.sh lut    in.mp4 out.mp4 my_look.cube
 #   grade.sh slowmo in.mp4 out.mp4 2        # 2x slower, motion-interpolated frames
-#   grade.sh deliver in.mp4 out.mp4 [youtube|reels|master]
+#   grade.sh deliver in.mp4 out.mp4 [uhd|uhd-vertical|youtube|reels|master]   (default: uhd = 4K)
 set -euo pipefail
 
 cmd="${1:-}"; in="${2:-}"; out="${3:-}"; arg="${4:-}"
@@ -33,12 +33,17 @@ case "$cmd" in
       -vf "minterpolate=fps=($fps)*$factor:mi_mode=mci:mc_mode=aobmc:vsbmc=1,setpts=$factor*PTS,fps=$fps" \
       -c:v libx264 -crf 17 -pix_fmt yuv420p "$out" ;;
   deliver)
-    case "${arg:-youtube}" in
+    case "${arg:-uhd}" in
+      uhd|uhd-vertical)
+        [ "$arg" = "uhd-vertical" ] && size="2160:3840" || size="3840:2160"
+        ffmpeg -y -loglevel error -i "$in" \
+          -vf "scale=$size:force_original_aspect_ratio=increase:flags=lanczos,crop=$size,unsharp=5:5:0.35,format=yuv420p" \
+          -c:v libx264 -crf 16 -preset slow -profile:v high -level 5.1 -movflags +faststart -c:a aac -b:a 320k "$out" ;;
       youtube) ffmpeg -y -loglevel error -i "$in" -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 320k "$out" ;;
       reels)   ffmpeg -y -loglevel error -i "$in" -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920" \
                  -c:v libx264 -crf 19 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 256k "$out" ;;
       master)  ffmpeg -y -loglevel error -i "$in" -c:v prores_ks -profile:v 3 -c:a pcm_s24le "$out" ;;
-      *) echo "targets: youtube reels master"; exit 2 ;;
+      *) echo "targets: uhd uhd-vertical youtube reels master"; exit 2 ;;
     esac ;;
   *) sed -n '2,8p' "$0"; exit 2 ;;
 esac

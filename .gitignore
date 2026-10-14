@@ -1,0 +1,12 @@
+# Studio project media stays local; notes/scripts can be committed on request.
+projects/**/*.mp4
+projects/**/*.mov
+projects/**/*.webm
+projects/**/*.wav
+projects/**/*.mp3
+projects/**/*.png
+projects/**/*.jpg
+projects/**/*.exr
+projects/**/*.blend
+projects/**/*.blend1
+__pycache__/

@@ -36,7 +36,9 @@ no credits. The SessionStart hook installs it; check with
 | Subtitles / lyric timing | faster-whisper | `vfx-python tools/vfx/bin/transcribe.py song.mp3 out.srt\|.vtt\|.json [--language hi]` |
 | Audio clean-up / mix | sox, ffmpeg; mixing inside HyperFrames via `hyperframes-audio` | |
 | Motion graphics, titles, lyric videos | HyperFrames | use the `hyperframes` skill |
-| Final delivery | ffmpeg | `tools/vfx/bin/grade.sh deliver in.mp4 out.mp4 youtube\|reels\|master` |
+| Stylized post looks | ffmpeg | `tools/vfx/bin/post_look.sh <glow\|dream\|pixel\|scanlines\|rgbsplit\|vhs\|film\|comic\|mirror\|kaleido> in out` |
+| Blender style looks | Blender | `tools/vfx/blender/looks.py`: realistic, toon, ink, sketch, neon, hologram, clay, xray, gold, glass, retro |
+| Final delivery (4K default) | ffmpeg | `tools/vfx/bin/grade.sh deliver in.mp4 out.mp4 uhd\|uhd-vertical\|youtube\|reels\|master` |
 
 Video outputs: `.mov` = ProRes 4444 with alpha (for compositing), `.webm` =
 VP9 with alpha, `.mp4` = H.264.
@@ -52,10 +54,12 @@ VP9 with alpha, `.mp4` = H.264.
 | Real-ESRGAN 4× of a 274×171 still | ~15 s |
 | Blender Cycles 640×360, 32 samples + denoise | ~5 s/frame (simple scene) |
 | Blender Eevee 640×360 (software OpenGL) | ~12 s/frame - Cycles is usually faster here |
+| Blender Cycles demo scene, 32 samples | ~80 s at 1080p, ~330 s at native 4K |
+| 4K delivery (lanczos upscale + encode) | ~0.5 s/frame |
 | COLMAP solve, 30 frames 640×360 | ~40 s |
 | Piper TTS / Whisper `base` | a few seconds per sentence |
 
-Plan accordingly: test on 1-3 seconds (or `--frames N`) before running a whole
+For multi-department jobs use the `studio` skill (agent team). Plan accordingly: test on 1-3 seconds (or `--frames N`) before running a whole
 shot, and run long jobs with `run_in_background`. A 3-4 minute music video is
 realistic; heavy CG or AI work on a feature-length film is not.
 
