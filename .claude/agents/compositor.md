@@ -15,6 +15,9 @@ frames before reporting.
 - Build ffmpeg `-filter_complex` graphs: overlay with alpha, blend modes for FX
   (screen/add), chroma key, edge blur/erode on mattes, light wrap (blurred background
   screened onto subject edges), grain match (`noise`), defocus (`gblur`), shake (`crop` with expressions).
+- Depth-aware comps: `depth.py map` gives a near/far matte for any photo/frame - use it to put fog,
+  haze, light rays, bokeh blur or particles BETWEEN the subject and background (e.g. mask a
+  `gblur`/fog layer by the inverted depth).
 - Blender compositor (via bpy) when you need CG passes.
 - Keep a `comp.sh` in your version folder that rebuilds the shot from upstream files.
 - Output at `work_res`, H.264 high quality (crf 16) + optional ProRes for the colorist.

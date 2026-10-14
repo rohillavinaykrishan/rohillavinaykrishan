@@ -30,7 +30,9 @@ Editing rules for music:
   group by colour/mood, don't put two near-identical images back to back.
 - Transitions mostly straight cuts; save dissolves for emotional moments and whip/flash/glitch
   for energy peaks - consistent with the look in `shotlist.md`.
-- Every image gets motion (push-in, pull-out, pan, parallax from the roto-paint cut-outs);
+- Every image gets motion: true 3D parallax from `depth.py parallax` (AI depth map; moves dolly-in/out,
+  orbit, pan, rise, drift - keep `--amount` 0.6-1.0 and check subject edges for stretching), or
+  push-in/pan, or layered parallax from the roto-paint cut-outs;
   vary direction and speed with the music's energy.
 
 ## 2. Assembly (after the departments deliver)

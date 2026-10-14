@@ -56,7 +56,7 @@ install_ai() {
       simple-lama-inpainting \
       spandrel \
       sam2 \
-      huggingface_hub librosa \
+      huggingface_hub librosa transformers \
       && touch "$VENV/.ready" \
       || log "WARNING: AI tools install failed"
   fi
