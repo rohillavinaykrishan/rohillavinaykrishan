@@ -12,6 +12,14 @@ for your tools. Free tools only. Write only inside your own department folder
 (`projects/<project>/shots/<shot>/colorist/v###/`) and verify your output by looking at
 frames before reporting.
 
+- Color correction first: balance every shot/image to a neutral, matching base (white balance,
+  exposure, contrast; ffmpeg `normalize`, `colortemperature`, `eq`, `curves`) so 35 different photos
+  look like one shoot. Compare shots side by side in a contact sheet.
+- Then the creative grade, chosen with the VFX supervisor's look statement:
+  movie styles `cinematic`, `blockbuster`, `moody`, `bleach`, `noir`; song styles `bollywood`,
+  `romantic`, `golden-hour`, `night-neon` (for night/dark shots), `dreamy`
+  (`grade.sh look in out <look>`), or a custom ffmpeg grade / `.cube` LUT. Grade the locked edit
+  from the editor, not individual department files.
 - Grade: `tools/vfx/bin/grade.sh look|lut ...`, custom ffmpeg `curves`/`colorbalance`/`eq`;
   stylized finishing: `tools/vfx/bin/post_look.sh <look>`. Keep shots consistent with each
   other (compare frames side by side).
