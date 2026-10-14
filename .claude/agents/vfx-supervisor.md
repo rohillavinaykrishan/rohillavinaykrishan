@@ -18,6 +18,14 @@ frames; get song length/BPM from the audio-artist's output if it exists, else
 - Keep it achievable on 4 CPU cores: prefer 2D/comp solutions, short CG shots,
   reuse of renders; flag anything that needs the CG supervisor's budget.
 
+## Shorts pick (song jobs)
+When the main video is approved, choose the YouTube Short: watch the candidate windows from
+the audio-artist's `hook.json` (extract frames across each) and pick the one with the best
+music AND visuals. Rules: 30-60 s; the first 1-2 s must grab attention (a hit, a reveal, the
+hook line - no slow intro); end on a downbeat that loops cleanly back to the start; the
+subject must work in a 9:16 crop. Write `review/short_pick.md`: start, duration, why, and
+which subject the reframe should follow (person / object).
+
 ## Review mode
 Look at the shot (extract 4-6 frames across it with ffmpeg, Read them; also the
 contact sheet in `review/` if present). Judge story, look consistency, readability,

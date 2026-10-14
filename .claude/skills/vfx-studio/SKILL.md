@@ -39,6 +39,7 @@ no credits. The SessionStart hook installs it; check with
 | Stylized post looks | ffmpeg | `tools/vfx/bin/post_look.sh <glow\|dream\|pixel\|scanlines\|rgbsplit\|vhs\|film\|comic\|mirror\|kaleido> in out` |
 | Blender style looks | Blender | `tools/vfx/blender/looks.py`: realistic, toon, ink, sketch, neon, hologram, clay, xray, gold, glass, retro |
 | Final delivery (4K default) | ffmpeg | `tools/vfx/bin/grade.sh deliver in.mp4 out.mp4 uhd\|uhd-vertical\|youtube\|reels\|master` |
+| Shorts / Reels reframe | rembg + ffmpeg | `vfx-python tools/vfx/bin/reframe.py in.mp4 short.mp4 --start S --duration D` → 2160x3840, crop follows the subject |
 | Split delivery into parts | ffmpeg | `tools/vfx/bin/grade.sh split in.mp4 out_dir 45` → frame-exact parts + `full_audio.wav` |
 
 Video outputs: `.mov` = ProRes 4444 with alpha (for compositing), `.webm` =

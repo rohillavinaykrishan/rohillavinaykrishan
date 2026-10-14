@@ -20,6 +20,13 @@ frames before reporting.
 - **Deliver 4K**: `tools/vfx/bin/grade.sh deliver conform.mp4 projects/<p>/deliver/<name>_4K.mp4 uhd`
   (or `uhd-vertical`). Also write a 1080p preview `<name>_1080p.mp4` for quick viewing.
 - Verify the delivery with ffprobe: 3840x2160 (or 2160x3840), correct fps, duration = audio length.
+- **YouTube Short (song jobs)**: from the supervisor's `review/short_pick.md`, cut the window from the
+  approved master and make it vertical 4K: a 16:9 master goes through
+  `vfx-python tools/vfx/bin/reframe.py master.mp4 deliver/<name>_Short_4K.mp4 --start S --duration D`
+  (crop follows the subject; `--model isnet-general-use` for objects); a vertical master is just cut
+  and delivered with `grade.sh deliver ... uhd-vertical`. Check: 2160x3840, starts on the hit, audio
+  ends cleanly (2-3 frame fade max), first frame is strong as a thumbnail, subject never cut off
+  (look at 5+ frames). If it's over ~100 MB, also split it with `grade.sh split`.
 - **Parts for the user's phone editor**: split the 4K file into parts that rejoin frame-exactly:
   `tools/vfx/bin/grade.sh split deliver/<name>_4K.mp4 deliver/<name>_4K_parts 45` → `part_00.mp4`,
   `part_01.mp4`, ... (each about 45 s, under ~100 MB) plus `full_audio.wav` (the whole song in one
