@@ -29,7 +29,7 @@ no credits. The SessionStart hook installs it; check with
 | Roto (click a specific object) | SAM 2 | `vfx-python tools/vfx/bin/sam_roto.py in.mp4 out.mov --point x,y [--neg x,y] [--frame N]` |
 | Paint / prep / cleanup | LaMa inpainting | `vfx-python tools/vfx/bin/cleanup.py in.mp4 out.mp4 --mask mask.png` or `--box x1,y1,x2,y2` |
 | Compositing | ffmpeg filters, Blender compositor, HyperFrames | see *Compositing* |
-| Color grading | ffmpeg looks / .cube LUTs, OpenColorIO | `tools/vfx/bin/grade.sh look in out <look>`: movie (cinematic, blockbuster, moody, bleach, noir), song (bollywood, romantic, golden-hour, night-neon, dreamy), basic (teal-orange, warm, cool, bw, vintage, punchy, filmic); `grade.sh lut in out my.cube` |
+| Color grading | ffmpeg looks / .cube LUTs, OpenColorIO | `tools/vfx/bin/grade.sh look in out <look>`: movie (cinematic, blockbuster, moody, bleach, noir), song (bollywood, romantic, golden-hour, night-neon, dreamy), punjabi (punjabi-gold, punjabi-night, punjabi-desi, punjabi-romance, punjabi-dark), basic (teal-orange, warm, cool, bw, vintage, punchy, filmic); `grade.sh lut in out my.cube` |
 | Slow motion / retime | ffmpeg motion interpolation | `tools/vfx/bin/grade.sh slowmo in.mp4 out.mp4 2` |
 | Upscale | Real-ESRGAN (spandrel) | `vfx-python tools/vfx/bin/upscale.py in.png out.png [--scale 2] [--kind anime] [--frames N]` |
 | Voice-over | Piper TTS (offline) | `vfx-python tools/vfx/bin/tts.py "text or file.txt" vo.wav [--voice hi_IN-pratham-medium]` |
@@ -40,6 +40,12 @@ no credits. The SessionStart hook installs it; check with
 | Blender style looks | Blender | `tools/vfx/blender/looks.py`: realistic, toon, ink, sketch, neon, hologram, clay, xray, gold, glass, retro |
 | Final delivery (4K default) | ffmpeg | `tools/vfx/bin/grade.sh deliver in.mp4 out.mp4 uhd\|uhd-vertical\|youtube\|reels\|master` |
 | Shorts / Reels reframe | rembg + ffmpeg | `vfx-python tools/vfx/bin/reframe.py in.mp4 short.mp4 --start S --duration D` → 2160x3840, crop follows the subject |
+| Song mood → grade | librosa | `vfx-python tools/vfx/bin/song_mood.py song.wav mood.json` (tempo, key/mode, energy, sections, grade suggestion) |
+| Restoration | Real-ESRGAN + GFPGAN + OpenCV | `vfx-python tools/vfx/bin/restore.py in.jpg out.png [--target 3840] [--denoise 6] [--face-strength 0.5]` (folders too) |
+| Sound effects | numpy synth | `vfx-python tools/vfx/bin/sfx.py make all kit/`; `sfx.py place song.wav cues.json mix.wav` |
+| Audio master | ffmpeg loudnorm | `tools/vfx/bin/master_audio.sh mix.wav master.wav youtube\|instagram` |
+| Thumbnails / boards / cards | Chromium | `tools/vfx/bin/html2png.sh design.html out.png 1280x720` |
+| Burned subtitles | ffmpeg + libass + Noto fonts | `-vf "subtitles=l.srt:force_style='FontName=Noto Sans Gurmukhi,Bold=1,Outline=2'"` |
 | Split delivery into parts | ffmpeg | `tools/vfx/bin/grade.sh split in.mp4 out_dir 45` → frame-exact parts + `full_audio.wav` |
 
 Video outputs: `.mov` = ProRes 4444 with alpha (for compositing), `.webm` =

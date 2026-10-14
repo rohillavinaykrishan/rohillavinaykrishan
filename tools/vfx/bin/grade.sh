@@ -3,6 +3,7 @@
 #
 #   grade.sh look   in.mp4 out.mp4 <look>   (movie: cinematic, blockbuster, moody, bleach, noir;
 #                                            song: bollywood, romantic, golden-hour, night-neon, dreamy;
+#                                            punjabi: punjabi-gold, punjabi-night, punjabi-desi, punjabi-romance, punjabi-dark;
 #                                            basic: teal-orange, warm, cool, bw, vintage, punchy, filmic)
 #   grade.sh lut    in.mp4 out.mp4 my_look.cube
 #   grade.sh slowmo in.mp4 out.mp4 2        # 2x slower, motion-interpolated frames
@@ -11,7 +12,7 @@
 set -euo pipefail
 
 cmd="${1:-}"; in="${2:-}"; out="${3:-}"; arg="${4:-}"
-[ -n "$cmd" ] && [ -n "$in" ] && [ -n "$out" ] || { sed -n '2,11p' "$0"; exit 2; }
+[ -n "$cmd" ] && [ -n "$in" ] && [ -n "$out" ] || { sed -n '2,12p' "$0"; exit 2; }
 enc=(-c:v libx264 -crf 17 -preset slow -pix_fmt yuv420p -c:a copy)
 
 case "$cmd" in
@@ -34,7 +35,12 @@ case "$cmd" in
       golden-hour) vf="colortemperature=temperature=4200,colorbalance=rh=0.10:gh=0.04:bs=0.04,curves=master='0/0.03 0.5/0.53 1/0.97',eq=saturation=1.15" ;;
       night-neon)  vf="colorbalance=rs=0.06:bs=0.16:rh=0.10:bh=0.06:gm=-0.06,curves=master='0/0 0.25/0.12 0.75/0.85 1/1',eq=saturation=1.22:contrast=1.1" ;;
       dreamy)      vf="split[a][b];[b]gblur=sigma=25[g];[a][g]blend=all_mode=screen:all_opacity=0.3,curves=master='0/0.03 1/0.98',eq=saturation=0.95" ;;
-      *) echo "looks: cinematic blockbuster moody bleach noir bollywood romantic golden-hour night-neon dreamy teal-orange warm cool bw vintage punchy filmic"; exit 2 ;;
+      punjabi-gold)    vf="colorbalance=rs=-0.06:bs=0.08:rm=0.05:gm=0.02:bm=-0.04:rh=0.09:gh=0.04:bh=-0.08,curves=master='0/0.01 0.25/0.21 0.75/0.82 1/1',eq=saturation=1.28:contrast=1.07,format=gbrp,split[a][b];[b]gblur=sigma=14[g];[a][g]blend=all_mode=screen:all_opacity=0.18,unsharp=5:5:0.35" ;;
+      punjabi-night)   vf="colorbalance=rs=-0.10:gs=-0.02:bs=0.18:rm=-0.02:bm=0.06:rh=0.14:gh=0.05:bh=-0.10,curves=master='0/0 0.25/0.12 0.75/0.84 1/1',eq=saturation=1.18:contrast=1.12,format=gbrp,split[a][b];[b]gblur=sigma=18[g];[a][g]blend=all_mode=screen:all_opacity=0.22" ;;
+      punjabi-desi)    vf="colortemperature=temperature=5000,colorbalance=rs=0.03:gs=0.03:bs=-0.04:gm=0.03:bh=-0.05,huesaturation=hue=-4:saturation=0.05,curves=master='0/0.05 0.5/0.52 1/0.95',eq=saturation=1.08,noise=alls=4:allf=t" ;;
+      punjabi-romance) vf="colortemperature=temperature=4800,colorbalance=rh=0.07:bh=0.02:rm=0.03,curves=master='0/0.07 0.5/0.55 1/0.97',eq=saturation=0.95:contrast=0.96,format=gbrp,split[a][b];[b]gblur=sigma=20[g];[a][g]blend=all_mode=screen:all_opacity=0.25" ;;
+      punjabi-dark)    vf="colorbalance=rs=-0.08:bs=0.12:gm=-0.02:bm=0.05:rh=0.04:bh=-0.03,curves=master='0/0 0.3/0.18 0.7/0.78 1/0.97',eq=saturation=0.7:contrast=1.2,vignette=PI/4,unsharp=5:5:0.5" ;;
+      *) echo "looks: punjabi-gold punjabi-night punjabi-desi punjabi-romance punjabi-dark cinematic blockbuster moody bleach noir bollywood romantic golden-hour night-neon dreamy teal-orange warm cool bw vintage punchy filmic"; exit 2 ;;
     esac
     case "${in,,}" in
       *.png|*.jpg|*.jpeg|*.tif|*.tiff) ffmpeg -y -loglevel error -i "$in" -filter_complex "format=gbrp,$vf" -frames:v 1 "$out" ;;
@@ -71,6 +77,6 @@ case "$cmd" in
       ffmpeg -y -loglevel error -i "$in" -map 0:a -c:a pcm_s16le "$out/full_audio.wav"
     fi
     ls "$out" ;;
-  *) sed -n '2,11p' "$0"; exit 2 ;;
+  *) sed -n '2,12p' "$0"; exit 2 ;;
 esac
 echo "wrote $out"

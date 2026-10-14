@@ -14,7 +14,7 @@ LOG_PREFIX="[vfx-install]"
 log() { echo "$LOG_PREFIX $*"; }
 
 install_core() {
-  local pkgs=(ffmpeg sox imagemagick krita gimp inkscape colmap
+  local pkgs=(ffmpeg sox imagemagick krita gimp inkscape colmap fonts-noto-core
               opencolorio-tools xvfb libgl1 libgl1-mesa-dri libegl1 libegl-mesa0 libgles2 libxi6 libxkbcommon0 libsm6 libxrender1)
   local missing=()
   for p in "${pkgs[@]}"; do dpkg -s "$p" >/dev/null 2>&1 || missing+=("$p"); done
@@ -56,7 +56,7 @@ install_ai() {
       simple-lama-inpainting \
       spandrel \
       sam2 \
-      huggingface_hub \
+      huggingface_hub librosa \
       && touch "$VENV/.ready" \
       || log "WARNING: AI tools install failed"
   fi
