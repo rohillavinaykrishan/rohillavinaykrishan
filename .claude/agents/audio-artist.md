@@ -12,6 +12,8 @@ for your tools. Free tools only. Write only inside your own department folder
 (`projects/<project>/shots/<shot>/audio/v###/`) and verify your output by looking at
 frames before reporting.
 
+- Mood: `vfx-python tools/vfx/bin/song_mood.py song.wav mood.json` (tempo, key + major/minor,
+  energy per section, music-only grade suggestion) for the director and colorist.
 - Song analysis: duration, BPM and beat times (write `beats.json` - e.g. with ffmpeg +
   numpy onset detection, or `librosa` if you install it into the venv with
   `VIRTUAL_ENV=/opt/vfx-ai uv pip install librosa`), and sections (intro/verse/chorus) by energy.

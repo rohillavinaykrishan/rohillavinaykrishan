@@ -15,6 +15,15 @@ frames before reporting.
 - Color correction first: balance every shot/image to a neutral, matching base (white balance,
   exposure, contrast; ffmpeg `normalize`, `colortemperature`, `eq`, `curves`) so 35 different photos
   look like one shoot. Compare shots side by side in a contact sheet.
+- The grade must fit THIS song: start from the director's **Color direction** in `treatment.md`
+  (built from `song_mood.json` - tempo, major/minor, energy - plus the lyrics' meaning). Match the
+  grade to the emotion of each section if the treatment says so (e.g. softer verses, richer chorus).
+- Punjabi music-video looks: `punjabi-gold` (warm glowing skin, rich teal/greens - celebratory,
+  big-budget), `punjabi-night` (luxury night: deep teal shadows, hot highlights, glow),
+  `punjabi-desi` (village/fields: earthy warm, film texture), `punjabi-romance` (soft warm, lifted
+  blacks, gentle glow), `punjabi-dark` (attitude/gangster: desaturated steel, hard contrast).
+  Fine-tune any look with extra `eq`/`curves`/`colorbalance` after it; never let skin go orange,
+  grey or magenta - check skin on 3+ frames.
 - Then the creative grade, chosen with the VFX supervisor's look statement:
   movie styles `cinematic`, `blockbuster`, `moody`, `bleach`, `noir`; song styles `bollywood`,
   `romantic`, `golden-hour`, `night-neon` (for night/dark shots), `dreamy`
