@@ -80,6 +80,12 @@ All agents follow `.claude/skills/studio/conventions.md` - read it now.
 6c. **Release package (parallel).** `youtube-publisher` (thumbnails + text), `social-media-editor`
    (Reels, WhatsApp, teaser, square), `subtitle-translator` (lyric .srt files) - all from the
    approved master; `team-lead` QCs their files.
+6d. **Project files.** Copy each approved final 3D scene to `deliver/blender/<shot>_final.blend`, then
+   run `tools/vfx/bin/package_project.sh projects/<slug>`. It writes
+   `deliver/<slug>_project_files.zip` with every working file except rendered video: plan, treatment,
+   EDL, notes, reviews, scripts, packed .blend files, source/audio/SFX, subtitles, thumbnails,
+   storyboards. Send it with the deliverables. If it's over ~100 MB, upload it to the user's
+   Hugging Face (private) and send the link.
 7. **Report (you).** Send the user the 4K parts in order (`deliver/<name>_4K_parts/part_00.mp4`,
    `part_01.mp4`, ...) and `full_audio.wav`, plus the 1080p preview (SendUserFile), and tell them:
    join the parts in order in their editor, mute them, and put `full_audio.wav` underneath plus a contact sheet from `review/`, and a
