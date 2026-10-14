@@ -5,10 +5,11 @@
 #   grade.sh lut    in.mp4 out.mp4 my_look.cube
 #   grade.sh slowmo in.mp4 out.mp4 2        # 2x slower, motion-interpolated frames
 #   grade.sh deliver in.mp4 out.mp4 [uhd|uhd-vertical|youtube|reels|master]   (default: uhd = 4K)
+#   grade.sh split  in.mp4 out_dir [seconds]   # parts that rejoin frame-exactly + full_audio.wav
 set -euo pipefail
 
 cmd="${1:-}"; in="${2:-}"; out="${3:-}"; arg="${4:-}"
-[ -n "$cmd" ] && [ -n "$in" ] && [ -n "$out" ] || { sed -n '2,8p' "$0"; exit 2; }
+[ -n "$cmd" ] && [ -n "$in" ] && [ -n "$out" ] || { sed -n '2,9p' "$0"; exit 2; }
 enc=(-c:v libx264 -crf 17 -preset slow -pix_fmt yuv420p -c:a copy)
 
 case "$cmd" in
@@ -45,6 +46,16 @@ case "$cmd" in
       master)  ffmpeg -y -loglevel error -i "$in" -c:v prores_ks -profile:v 3 -c:a pcm_s24le "$out" ;;
       *) echo "targets: uhd uhd-vertical youtube reels master"; exit 2 ;;
     esac ;;
-  *) sed -n '2,8p' "$0"; exit 2 ;;
+  split)
+    secs="${arg:-60}"
+    mkdir -p "$out"
+    ffmpeg -y -loglevel error -i "$in" -map 0:v -map 0:a? \
+      -c:v libx264 -crf 16 -preset slow -pix_fmt yuv420p -force_key_frames "expr:gte(t,n_forced*$secs)" \
+      -c:a aac -b:a 320k -f segment -segment_time "$secs" -reset_timestamps 1 "$out/part_%02d.mp4"
+    if ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$in" | grep -q .; then
+      ffmpeg -y -loglevel error -i "$in" -map 0:a -c:a pcm_s16le "$out/full_audio.wav"
+    fi
+    ls "$out" ;;
+  *) sed -n '2,9p' "$0"; exit 2 ;;
 esac
 echo "wrote $out"
