@@ -80,7 +80,8 @@ All agents follow `.claude/skills/studio/conventions.md` - read it now.
 6c. **Release package (parallel).** `youtube-publisher` (thumbnails + text), `social-media-editor`
    (Reels, WhatsApp, teaser, square), `subtitle-translator` (lyric .srt files) - all from the
    approved master; `team-lead` QCs their files.
-6d. **Project files.** Copy each approved final 3D scene to `deliver/blender/<shot>_final.blend`, then
+6d. **Project files - ONLY when the user asks for them** (project files, zip, Blender/.blend files).
+   By default skip this step and deliver the 4K videos directly. When asked: copy each approved final 3D scene to `deliver/blender/<shot>_final.blend`, then
    run `tools/vfx/bin/package_project.sh projects/<slug>`. It writes
    `deliver/<slug>_project_files.zip` with every working file except rendered video: plan, treatment,
    EDL, notes, reviews, scripts, packed .blend files, source/audio/SFX, subtitles, thumbnails,
