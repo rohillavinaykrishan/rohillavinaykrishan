@@ -56,8 +56,9 @@ All agents follow `.claude/skills/studio/conventions.md` - read it now.
 6. **Delivery.** `colorist` conforms the approved shots (in shot-list order, with
    the audio) and delivers 4K to `deliver/`. `team-lead` runs a last QC on the
    deliverable.
-7. **Report (you).** Send the user the deliverable (SendUserFile; for files over
-   ~100 MB also send a 1080p preview) plus a contact sheet from `review/`, and a
+7. **Report (you).** Send the user the 4K parts in order (`deliver/<name>_4K_parts/part_00.mp4`,
+   `part_01.mp4`, ...) and `full_audio.wav`, plus the 1080p preview (SendUserFile), and tell them:
+   join the parts in order in their editor, mute them, and put `full_audio.wav` underneath plus a contact sheet from `review/`, and a
    short summary: what was made, by whom, how long, open notes. Don't commit media
    to git (`projects/` media is git-ignored); commit only scripts and notes the
    user would want to keep, and only if they ask.

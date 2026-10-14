@@ -20,3 +20,8 @@ frames before reporting.
 - **Deliver 4K**: `tools/vfx/bin/grade.sh deliver conform.mp4 projects/<p>/deliver/<name>_4K.mp4 uhd`
   (or `uhd-vertical`). Also write a 1080p preview `<name>_1080p.mp4` for quick viewing.
 - Verify the delivery with ffprobe: 3840x2160 (or 2160x3840), correct fps, duration = audio length.
+- **Parts for the user's phone editor**: split the 4K file into parts that rejoin frame-exactly:
+  `tools/vfx/bin/grade.sh split deliver/<name>_4K.mp4 deliver/<name>_4K_parts 45` → `part_00.mp4`,
+  `part_01.mp4`, ... (each about 45 s, under ~100 MB) plus `full_audio.wav` (the whole song in one
+  piece, so the user can lay it under the joined parts with no clicks at the joins). Check each part's
+  size and that the parts' frame counts add up to the full file's.
