@@ -60,7 +60,11 @@ install_ai() {
       && touch "$VENV/.ready" \
       || log "WARNING: AI tools install failed"
   fi
-  ln -sf "$VENV/bin/python" /usr/local/bin/vfx-python
+  # A wrapper, not a symlink: a symlinked venv python resolves to the base interpreter
+  # and loses the venv's packages.
+  rm -f /usr/local/bin/vfx-python
+  printf '#!/bin/sh\nexec %s/bin/python "$@"\n' "$VENV" > /usr/local/bin/vfx-python
+  chmod +x /usr/local/bin/vfx-python
 }
 
 case "$MODE" in
