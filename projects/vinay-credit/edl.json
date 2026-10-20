@@ -1,7 +1,7 @@
 {
  "project": "vinay-credit",
  "title": "THE SOLVE - treatment v3",
- "version": "edit v004",
+ "version": "edit v005",
  "fps": 25,
  "duration": 15.0,
  "frames": 375,
@@ -164,8 +164,8 @@
   "retime": "setpts=(PTS-STARTPTS)/speed, minterpolate=fps=25:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1 (all clips, also 1.0x, so 23.976->25 has no duplicate-frame judder)",
   "transitions_centred_on_beat": "each xfade of D frames runs from beat_frame - D/2 to beat_frame + D/2; the incoming shot is at 50% on the beat frame",
   "handles_rule": "every clip's source window (including transition handles) stays inside its own trailer shot (scdet-measured cuts); speeds were adjusted where the treatment's speed plus handles would have crossed a cut",
-  "raw_out": "shots/sh010/edit/v004/bg_plate_raw_1080.mp4",
-  "graded_out": "shots/sh010/edit/v004/bg_plate_1080.mp4 = same EDL rebuild + per-shot trims + lut3d warm.cube + color/v001/finish_filter.txt",
+  "raw_out": "shots/sh010/edit/v005/bg_plate_raw_1080.mp4",
+  "graded_out": "shots/sh010/edit/v005/bg_plate_1080.mp4 = same EDL rebuild + per-shot trims + lut3d warm.cube + color/v001/finish_filter.txt",
   "encode": "libx264 -crf 14 -preset slow -pix_fmt yuv420p -r 25, exactly 375 frames, no audio",
   "grade": {
    "applies_to": "graded plate only (bg_plate_1080.mp4); raw plate has no trims",
@@ -174,7 +174,8 @@
    "finish": "shots/sh010/color/v001/finish_filter.txt verbatim (curves, sat 1.06, gblur 3, vignette PI/4.5, luma-only grain noise=c0s=6:c0f=t)",
    "note": "LUT is plate-only; never on the HyperFrames type layer"
   },
-  "changes_v004": "supervisor note 3: whole-frame fadewhite leaks (B@25, E@120, G@168) replaced by fade dissolve + side light leak peaking 0.58 on the beat frame; everything else identical to v003 (edl snapshot: shots/sh010/edit/v003/edl_v003.json); team-lead QC: leaks ramp over 5 frames each side; J retimed to avoid its internal cut at 146.897 (0.40x + tail freeze 354-374)"
+  "changes_v004": "supervisor note 3: whole-frame fadewhite leaks (B@25, E@120, G@168) replaced by fade dissolve + side light leak peaking 0.58 on the beat frame; everything else identical to v003 (edl snapshot: shots/sh010/edit/v003/edl_v003.json); team-lead QC: leaks ramp over 5 frames each side; J retimed to avoid its internal cut at 146.897 (0.40x + tail freeze 354-374)",
+  "changes_v005": "plate white flash at 307 removed: clean hard cut into J (v004 EDL snapshot: shots/sh010/edit/v004/edl_v004.json)"
  },
  "cuts": [
   {
@@ -530,16 +531,10 @@
    "crop_cx": 640,
    "move": "slow motion 0.40x 307-353, then holds on frame 353 through 374 (HyperFrames adds the 1.00->1.03 card push-in)",
    "transition_in": {
-    "type": "cut + gold flash",
-    "frames": 4,
+    "type": "cut",
+    "frames": 0,
     "beat_frame": 307,
-    "flash_white_mix": [
-     0.85,
-     0.47,
-     0.26,
-     0.14
-    ],
-    "note": "hard cut exactly on 307 so the freeze stays clean through 306; white flash peaks on 307 and decays over 4 frames (pale gold after the LUT)"
+    "note": "clean hard cut on 307, no plate flash; the radial gold bloom is a HyperFrames layer on top (supervisor note 2)"
    },
    "clip_render_frames": [
     307,
