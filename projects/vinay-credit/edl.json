@@ -1,7 +1,7 @@
 {
  "project": "vinay-credit",
  "title": "THE SOLVE - treatment v3",
- "version": "edit v003",
+ "version": "edit v004",
  "fps": 25,
  "duration": 15.0,
  "frames": 375,
@@ -164,8 +164,8 @@
   "retime": "setpts=(PTS-STARTPTS)/speed, minterpolate=fps=25:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1 (all clips, also 1.0x, so 23.976->25 has no duplicate-frame judder)",
   "transitions_centred_on_beat": "each xfade of D frames runs from beat_frame - D/2 to beat_frame + D/2; the incoming shot is at 50% on the beat frame",
   "handles_rule": "every clip's source window (including transition handles) stays inside its own trailer shot (scdet-measured cuts); speeds were adjusted where the treatment's speed plus handles would have crossed a cut",
-  "raw_out": "shots/sh010/edit/v003/bg_plate_raw_1080.mp4",
-  "graded_out": "shots/sh010/edit/v003/bg_plate_1080.mp4 = same EDL rebuild + per-shot trims + lut3d warm.cube + color/v001/finish_filter.txt",
+  "raw_out": "shots/sh010/edit/v004/bg_plate_raw_1080.mp4",
+  "graded_out": "shots/sh010/edit/v004/bg_plate_1080.mp4 = same EDL rebuild + per-shot trims + lut3d warm.cube + color/v001/finish_filter.txt",
   "encode": "libx264 -crf 14 -preset slow -pix_fmt yuv420p -r 25, exactly 375 frames, no audio",
   "grade": {
    "applies_to": "graded plate only (bg_plate_1080.mp4); raw plate has no trims",
@@ -173,7 +173,8 @@
    "lut": "shots/sh010/color/v001/warm.cube (format=gbrp,lut3d=...:interp=tetrahedral) after the last xfade/concat",
    "finish": "shots/sh010/color/v001/finish_filter.txt verbatim (curves, sat 1.06, gblur 3, vignette PI/4.5, luma-only grain noise=c0s=6:c0f=t)",
    "note": "LUT is plate-only; never on the HyperFrames type layer"
-  }
+  },
+  "changes_v004": "supervisor note 3: whole-frame fadewhite leaks (B@25, E@120, G@168) replaced by fade dissolve + side light leak peaking 0.58 on the beat frame; everything else identical to v003 (edl snapshot: shots/sh010/edit/v003/edl_v003.json)"
  },
  "cuts": [
   {
@@ -228,11 +229,17 @@
    "crop_cx": "pan 380 -> 720 (linear over the clip)",
    "move": "pan right following Ken",
    "transition_in": {
-    "type": "fadewhite",
-    "name": "light leak",
+    "type": "leak",
+    "name": "dissolve + directional light leak (screen), peak exactly on beat_frame, capped",
     "frames": 6,
     "beat_frame": 25,
-    "xfade_offset_frame": 22
+    "xfade_offset_frame": 22,
+    "leak": {
+     "side": "left",
+     "peak": 0.58,
+     "envelope": "peak*max(0,1-|f-beat|/4)^1.3 -> frames beat-3..beat+3, max on beat",
+     "color": "#FFD6A0 (becomes pale gold through the LUT)"
+    }
    },
    "clip_render_frames": [
     22,
@@ -334,11 +341,17 @@
    "crop_cx": 720,
    "move": "none",
    "transition_in": {
-    "type": "fadewhite",
-    "name": "light leak",
+    "type": "leak",
+    "name": "dissolve + directional light leak (screen), peak exactly on beat_frame, capped",
     "frames": 6,
     "beat_frame": 120,
-    "xfade_offset_frame": 117
+    "xfade_offset_frame": 117,
+    "leak": {
+     "side": "right",
+     "peak": 0.58,
+     "envelope": "peak*max(0,1-|f-beat|/4)^1.3 -> frames beat-3..beat+3, max on beat",
+     "color": "#FFD6A0 (becomes pale gold through the LUT)"
+    }
    },
    "clip_render_frames": [
     117,
@@ -402,11 +415,17 @@
    "crop_cx": 600,
    "move": "push-in 1.00 -> 1.08 over the clip",
    "transition_in": {
-    "type": "fadewhite",
-    "name": "light leak",
+    "type": "leak",
+    "name": "dissolve + directional light leak (screen), peak exactly on beat_frame, capped",
     "frames": 6,
     "beat_frame": 168,
-    "xfade_offset_frame": 165
+    "xfade_offset_frame": 165,
+    "leak": {
+     "side": "top-right",
+     "peak": 0.58,
+     "envelope": "peak*max(0,1-|f-beat|/4)^1.3 -> frames beat-3..beat+3, max on beat",
+     "color": "#FFD6A0 (becomes pale gold through the LUT)"
+    }
    },
    "clip_render_frames": [
     165,
