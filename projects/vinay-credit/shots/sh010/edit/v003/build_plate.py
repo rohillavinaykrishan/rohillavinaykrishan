@@ -4,11 +4,12 @@ Prints nothing but runs ffmpeg. Plate = ungraded (raw); grading is a separate pa
 import json, subprocess, sys, os
 proj, out = sys.argv[1], sys.argv[2]
 proxy = "--proxy" in sys.argv
+grade = "--grade" in sys.argv
 edl = json.load(open(os.path.join(proj, "edl.json")))
 FPS = edl["fps"]; W, H = (540, 960) if proxy else (1080, 1920)
 SRC = os.path.join(proj, "source/trailer.mp4")
 cuts = edl["cuts"]
-args = ["ffmpeg", "-y", "-v", "error", "-stats"]
+args = ["ffmpeg", "-y", "-v", "error", "-nostats"]
 fg = []
 for i, c in enumerate(cuts):
     f0, f1 = c["clip_render_frames"]; n = f1 - f0; sp = c["speed"]
@@ -32,6 +33,8 @@ for i, c in enumerate(cuts):
         chain += [f"scale=w='2*trunc({W}*(1+{dz}*n/{n-1})/2)':h=-2:eval=frame:flags=lanczos",
                   f"crop={W}:{H}:(iw-{W})/2:(ih-{H})/2"]
     chain += ["unsharp=5:5:0.45:5:5:0.0", "setsar=1", "format=yuv420p"]
+    if grade and c.get("grade_trim"):
+        chain += [c["grade_trim"]]
     if "freeze" in c:
         hold = c["freeze"]["hold_frames"][1] - c["freeze"]["hold_frames"][0] - 1
         chain += [f"tpad=stop_mode=clone:stop={hold}"]
@@ -59,7 +62,13 @@ for i in range(1, len(cuts)):
         cur_len += n
     cur = f"x{i}"
 assert cur_len == edl["frames"], cur_len
-fg.append(f"[{cur}]settb=1/{FPS},setpts=N,fps={FPS},format=yuv420p[out]")
+post = ""
+if grade:
+    cdir = os.path.join(proj, "shots/sh010/color/v001")
+    finish = open(os.path.join(cdir, "finish_filter.txt")).read().strip()
+    if proxy: finish = finish.replace("gblur=sigma=3", "gblur=sigma=1.5")
+    post = f",format=gbrp,lut3d=file={os.path.join(cdir, 'warm.cube')}:interp=tetrahedral,{finish}"
+fg.append(f"[{cur}]settb=1/{FPS},setpts=N,fps={FPS},format=yuv420p{post}[out]")
 args += ["-filter_complex", ";".join(fg), "-map", "[out]", "-an", "-frames:v", str(edl["frames"]),
          "-c:v", "libx264", "-preset", "slow", "-crf", "14", "-pix_fmt", "yuv420p", "-r", str(FPS),
          "-movflags", "+faststart", out]

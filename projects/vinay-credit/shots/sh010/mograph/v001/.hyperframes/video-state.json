@@ -96,10 +96,40 @@
   },
   "checks": {
     "latest": {
-      "revision": null,
-      "id": "775adb06-40eb-4940-9271-5a8f53e0c1f6"
+      "revision": "9b88a639-abb9-4631-a2f2-455ace5e15cd",
+      "id": "4d826459-3f5c-4ac2-a083-d1092be40109"
     },
-    "revisions": {},
+    "revisions": {
+      "9b88a639-abb9-4631-a2f2-455ace5e15cd": [
+        {
+          "id": "4d826459-3f5c-4ac2-a083-d1092be40109",
+          "scope": "project",
+          "report": "/home/user/rohillavinaykrishan/projects/vinay-credit/shots/sh010/mograph/v001/.hyperframes/artifacts/checks/4d826459-3f5c-4ac2-a083-d1092be40109.json",
+          "metadata": {
+            "ok": false,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792516883356,
+          "contentHash": "d6b28ac27e13f5b9ada51f8df5eecccc9ab52e7aee59f4eb50532d8b025f5296",
+          "revision": "9b88a639-abb9-4631-a2f2-455ace5e15cd",
+          "inputFingerprint": "7e81f83d51916fb19afbe4c29a8e54fad8f44472c03b049aeec952a9f97b1158",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
     "unversioned": [
       {
         "id": "775adb06-40eb-4940-9271-5a8f53e0c1f6",
