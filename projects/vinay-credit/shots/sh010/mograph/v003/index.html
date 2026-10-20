@@ -73,12 +73,12 @@
       #trkLayer { position: absolute; inset: 0; }
       .trk { position: absolute; width: 0; height: 0; --c: #F5B53C; opacity: 0; }
       .trk .pat { position: absolute; left: -75px; top: -45px; width: 150px; height: 90px; border: 6px solid var(--c); }
-      .trk .srch { position: absolute; left: -150px; top: -98px; width: 300px; height: 196px; border: 4px dashed var(--c); opacity: 0.85; }
+      .trk .srch { position: absolute; left: -150px; top: -92px; width: 300px; height: 184px; border: 4px dashed var(--c); opacity: 0.85; }
       .trk .ph, .trk .pv { position: absolute; background: var(--c); }
       .trk .ph { left: -18px; top: -2.5px; width: 36px; height: 5px; }
       .trk .pv { left: -2.5px; top: -18px; width: 5px; height: 36px; }
-      .trk .lbl { position: absolute; left: -150px; top: -146px; padding: 0 10px; background: rgba(7,3,3,0.62); text-shadow: 0 0 6px rgba(7,3,3,0.9); font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 38px;
-        line-height: 46px; color: var(--c); white-space: nowrap; letter-spacing: 0.04em; }
+      .trk .lbl { position: absolute; left: -142px; top: -88px; text-shadow: 0 0 4px rgba(7,3,3,1), 0 0 12px rgba(7,3,3,0.9); font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 38px;
+        line-height: 40px; color: var(--c); white-space: nowrap; letter-spacing: 0.04em; }
       #searchPlus { position: absolute; width: 0; height: 0; opacity: 0; }
       #searchPlus .ph, #searchPlus .pv { position: absolute; background: #F5B53C; }
       #searchPlus .ph { left: -22px; top: -1.5px; width: 44px; height: 3px; }
@@ -330,7 +330,7 @@
         if (t < 8.0) return lerp(0.82, 0.8, sstep(ramp(t, 1.0, 1.6)));
         if (t < T_LOCK) return lerp(0.8, 0.74, sstep(ramp(t, 8.0, 8.8)));
         if (t < T_SLAM) return lerp(0.74, 0.68, sstep(ramp(t, T_LOCK, T_LOCK + 0.4)));
-        return lerp(0.45, 0.62, sstep(ramp(t, T_SLAM + 0.1, 12.8)));
+        return lerp(0.25, 0.62, sstep(ramp(t, T_SLAM + 0.12, 12.8)));
       }
 
       function render(t) {
