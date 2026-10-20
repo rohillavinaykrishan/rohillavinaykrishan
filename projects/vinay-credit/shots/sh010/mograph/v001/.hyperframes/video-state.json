@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "06bbaf67-3bb8-403d-9838-104d9ec755e0",
-  "currentRevision": "9b88a639-abb9-4631-a2f2-455ace5e15cd",
+  "currentRevision": "932f1d5a-6e27-48b1-9e30-d596e292cdfe",
   "pendingChanges": false,
   "files": {
     "AGENTS.md": {
@@ -41,8 +41,8 @@
       "content": "/root/.cache/hyperframes/history/06bbaf67-3bb8-403d-9838-104d9ec755e0/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
     },
     "index.html": {
-      "hash": "8da812974fe2485ae1ca1becd9b27325ebd9f18fcbd2e456ba3dc353d4f5ab3b",
-      "content": "/root/.cache/hyperframes/history/06bbaf67-3bb8-403d-9838-104d9ec755e0/blobs/8d/8da812974fe2485ae1ca1becd9b27325ebd9f18fcbd2e456ba3dc353d4f5ab3b"
+      "hash": "f31586b61ab4d87bbcd015a53a61ffd3e215ea1476d5613a0bd2641de5bf60f2",
+      "content": "/root/.cache/hyperframes/history/06bbaf67-3bb8-403d-9838-104d9ec755e0/blobs/f3/f31586b61ab4d87bbcd015a53a61ffd3e215ea1476d5613a0bd2641de5bf60f2"
     },
     "meta.json": {
       "hash": "7f07a1eb7d36a76bbc0234f16a6e9c8bf5fd96d7a97c13429f7ab2b45a9ddb28",
@@ -90,6 +90,21 @@
         "index.html": {
           "before": "/root/.cache/hyperframes/history/06bbaf67-3bb8-403d-9838-104d9ec755e0/blobs/a2/a23559d952132c8ece2eac5ae25441cbfafd39ef22a0e0f93117a12702a5a2cc",
           "after": "/root/.cache/hyperframes/history/06bbaf67-3bb8-403d-9838-104d9ec755e0/blobs/8d/8da812974fe2485ae1ca1becd9b27325ebd9f18fcbd2e456ba3dc353d4f5ab3b"
+        }
+      }
+    },
+    "932f1d5a-6e27-48b1-9e30-d596e292cdfe": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792516891347,
+      "endedAt": 1792516891349,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/06bbaf67-3bb8-403d-9838-104d9ec755e0/blobs/8d/8da812974fe2485ae1ca1becd9b27325ebd9f18fcbd2e456ba3dc353d4f5ab3b",
+          "after": "/root/.cache/hyperframes/history/06bbaf67-3bb8-403d-9838-104d9ec755e0/blobs/f3/f31586b61ab4d87bbcd015a53a61ffd3e215ea1476d5613a0bd2641de5bf60f2"
         }
       }
     }
