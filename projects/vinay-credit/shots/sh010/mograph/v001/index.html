@@ -119,7 +119,7 @@
       </svg>
 
       <div id="stage">
-        <img id="base" src="assets/red_base.png" alt="" />
+        <img id="base" src="assets/red_base_2160.png" alt="" />
         <div id="plateWrap">
           <video id="plate" src="assets/bg_plate_1080.mp4" muted playsinline data-start="0" data-duration="15" data-track-index="1"></video>
         </div>
@@ -166,6 +166,8 @@
     <script>
       // ---------------- data (verbatim from source/credits.txt, '' = blank cell / letter gap) ----------------
       const ROWS = [["SHEKHAR LAHASE","SURYAWANSHI GOPAL ASHOK"],["SHIVAM MISHRA","SWAPNIL SARANKAR"],["SHIVKUMAR SOLANKI","SYED ALEEM"],["SHIVKUMAR VISHWAKARMA","SYED MASTHAN"],["SHOBINS JOSE",""],["",""],["TAKUMA TSUBOI","THILIPKUMAR P"],["TANMAY DUTTA","THUMMETI RAVI VARMA"],["TANMAY JAYDEEP PAGAR","TONY BRADLEY"],["TAUFIK SHABBIR SHAIKH","TRIPURAMALLU KOTESWARARAO"],["TEJAL CHANDRAKANT KHOCHARE","TUSHAR MORE"],["TEJAS DAYANAND PATIL","TUSHAR SANJAY MANDWADE"],["",""],["UGGAR SAIN","URUKONDA CHAITANYA KIRAN"],["",""],["VAGHMASHI BIPIN CHANABHAI","VIKIRNIKA UNIYAL"],["VAIBHAV LAXMAN MAHAJAN","VIKRAM SIDDHARTH JADHAV"],["VAISHALI DNYANOBA GHOLAP","VIKRANT NAWALE"],["VALLABH CHAVAN","VINAY BANDATHE"],["VAMSI KRISHNA EADALA","VINAY KRISHAN ROHILLA"],["VARDHA ROHIT VARDA RAJ","VINAY KUMAR SINGH"],["VARUN CHOUDHARY","VIPIN KUMAR RAJORIYA"],["VARUNA NAIK","VIPUL BHONDE"],["VEERENDRA ANGADI","VIRENDRA KUMAR PATEL"],["VELASIRI PAVAN SAI","VIRENDRA VIJAY JADHAV"],["VICKEY KUMAR","VISHWAS V MARATHE"],["VICTORIA WHITE","VIVEK BHOYAR"],["VIJAY GANESH","VIVEK GAJANAN PAWAR"],["VIJAYPRATAP GUPTA","VIVEK MOHAN JAGTAP"],["VIJESH RAMMANI SHARMA","VIVEK R S"],["VIKAS KUMAR","VIVEK VIJAY GAIKWAD"],["VIKASH KUMAR","VUYYUR JAYANTH"],["",""],["YAMINI MALVIYA","YOGESH ASHOK PAGORE"],["YASH CHANDRAKANT GAIKWAD","YOGESH BHAVSAR"],["YATIN ASHOK SAINDANE","YOGESH PARAB"],["YAYATI DAWANE","YOGESH SARWA"],["YOGESH ANANT PATIL","YOGESH YASHWANT KUMBHAR"],["",""],["ZANG CHEN",""]];
+      // per-frame mean luma of the plate behind the roll (edit/v003 bg_plate_1080.mp4, measured with ffmpeg signalstats)
+      const PLATE_Y = [39,36,34,32,31,30,29,29,29,29,29,29,29,29,29,28,27,27,26,26,26,27,27,169,167,144,74,40,26,30,27,26,26,26,27,26,28,36,41,46,50,53,55,54,51,57,59,60,61,61,62,63,64,61,56,49,42,34,29,29,29,30,30,30,30,30,30,31,31,31,31,29,29,33,45,45,47,49,43,39,37,39,42,55,59,58,57,54,43,29,30,32,31,33,40,44,42,40,42,40,40,40,40,39,43,45,43,47,52,53,41,26,22,23,67,66,64,63,169,166,134,74,38,23,26,25,34,36,33,27,24,24,28,35,22,23,22,20,34,29,43,44,37,37,41,52,52,52,52,52,52,52,53,53,54,54,54,54,54,53,52,52,51,51,52,52,169,168,161,138,107,86,86,87,87,87,87,87,87,87,87,88,88,88,88,88,89,89,89,89,85,79,71,67,59,54,50,48,46,45,48,49,50,51,51,52,51,49,48,50,52,50,53,55,54,50,43,43,53,60,68,73,75,76,75,75,73,68,61,51,45,40,38,38,39,39,40,40,41,41,42,42,42,43,43,43,44,44,44,45,45,46,46,46,46,47,47,47,48,48,49,49,49,50,50,51,51,52,52,53,54,54,55,55,56,57,58,59,60,61,62,62,63,64,65,66,67,67,68,68,69,69,70,71,72,72,73,74,74,75,75,75,75,75,75,75,75,157,84,55,42,34,34,33,32,31,32,35,37,40,42,44,43,45,47,50,54,58,61,62,63,64,64,62,69,69,70,70,67,60,55,55,56,51,46,45,46,48,49,50,51,50,48,45,43,35,30,33,44,59,71,84,81,76,70,68,70,64,61,56,53,51,51,54,53];
       const HERO_ROW = 19;
       const PITCH = 112;
       const T_HIT = 1.0, T_LOCK = 10.2, T_FREEZE = 11.96, T_SLAM = 12.28, FPS = 25;
@@ -330,8 +332,12 @@
         S(E.stage, "transform", `translate(${sx.toFixed(2)}px, ${sy.toFixed(2)}px)`);
 
         // plate
-        S(E.plateWrap, "opacity", plateOpacity(te === T_FREEZE ? T_FREEZE : t).toFixed(3));
-        S(E.scrim, "opacity", (lerp(0, 0.9, ramp(te, 0.9, 1.4)) * (1 - 0.35 * slam)).toFixed(3));
+        // legibility: dip the plate under the roll when the light leaks go pale gold
+        const fr = Math.min(374, Math.max(0, Math.floor(t * FPS + 1e-6)));
+        const bright = t < T_SLAM ? clamp((PLATE_Y[fr] - 60) / 100) : 0;
+        const rollZone = ramp(t, 0.85, 1.0);
+        S(E.plateWrap, "opacity", (plateOpacity(t) * (1 - 0.5 * bright * rollZone)).toFixed(3));
+        S(E.scrim, "opacity", Math.min(1, lerp(0, 0.85, ramp(te, 0.9, 1.4)) * (1 - 0.35 * slam) + 0.4 * bright * rollZone).toFixed(3));
 
         // embers: gentle always, a little hotter on the title card
         drawEmbers(te, lerp(0.75, 1.0, ramp(t, T_SLAM, 13.0)) * lerp(0.7, 1, ramp(te, 0, 1.0)));
@@ -366,7 +372,7 @@
         S(E.rollOthers, "transform", `translateY(${Y0.toFixed(2)}px)`);
         S(E.rollOthers, "opacity", (rollOn * lerp(0.85, 0.22, lockK)).toFixed(3));
         // whip out on the slam
-        const wk = eOutCubic(slam); const wf = ramp(t, T_SLAM, T_SLAM + 3 / FPS);
+        const wk = eOutCubic(slam); const wf = ramp(t, T_SLAM, T_SLAM + 2 / FPS);
         S(E.rollWhip, "transform", `translateY(${(-600 * wk).toFixed(1)}px)`);
         S(E.rollMask, "opacity", (1 - wf).toFixed(3));
         S(E.rollWhip, "filter", wk > 0 ? `blur(${(8 * wk).toFixed(2)}px)` : "none");
@@ -379,7 +385,7 @@
         const solveScale = te < T_LOCK ? 1 : lerp(1, 1.28, eOutBack(ramp(te, T_LOCK, T_LOCK + 8 / FPS), 2.2));
         const glide = eInOutCubic(ramp(te, 10.6, 11.4));
         const wNow = M.heroW52 * solveScale;
-        const xLeft = lerp(1125 + M.heroW52 * 0.35 - wNow * 0.35, 1080 - wNow / 2, glide); // grow mostly rightward, clear of the left column
+        const xLeft = lerp(1125 + M.heroW52 * 0.15 - wNow * 0.15, 1080 - wNow / 2, glide); // grow mostly rightward, clear of the left column
         const fs = 52 * solveScale;
         const heroOn = rollOn * (te < T_LOCK ? maskA : 1);
         S(E.hero, "left", xLeft.toFixed(2) + "px");
@@ -450,7 +456,7 @@
         S(E.solved, "transform", `translate(${(bx).toFixed(2)}px, ${(by + bh + 18 - 600 * wk).toFixed(2)}px)`);
 
         // gold point-cloud burst off the name at the lock
-        drawSparks(te >= T_FREEZE ? -1 : te, 1125 - M.heroW52 * 0.28 * 0.35, M.heroW52 * 1.28, 1920);
+        drawSparks(te >= T_FREEZE ? -1 : te, 1125 - M.heroW52 * 0.28 * 0.15, M.heroW52 * 1.28, 1920);
 
         // ---------------- title card ----------------
         const ck2 = t - T_SLAM;
@@ -477,7 +483,7 @@
 
         // gold flash on the slam (3 frames)
         const fk = t - T_SLAM;
-        const fl = fk >= 0 && fk < 4 / FPS ? [0.62, 0.38, 0.16, 0.05][Math.floor(fk * FPS + 1e-6)] : 0;
+        const fl = fk >= 0 && fk < 4 / FPS ? [0.28, 0.14, 0.06, 0.02][Math.floor(fk * FPS + 1e-6)] : 0;
         S(E.flash, "opacity", fl.toFixed(3));
       }
 
