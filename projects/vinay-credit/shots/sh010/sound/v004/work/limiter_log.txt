@@ -1,8 +1,16 @@
-[mix_raw.wav] max GR -3.59 dB; 10ms blocks with >0.5 dB GR: 170/1500; >1 dB at t= [np.float64(4.89), np.float64(4.92), np.float64(6.2), np.float64(6.23), np.float64(7.01), np.float64(7.04), np.float64(7.07), np.float64(7.24), np.float64(7.27), np.float64(7.3), np.float64(7.38), np.float64(7.77), np.float64(7.8), np.float64(10.23), np.float64(10.26), np.float64(10.29), np.float64(10.32), np.float64(10.35), np.float64(10.38), np.float64(10.41), np.float64(10.44), np.float64(12.35), np.float64(12.38), np.float64(12.41), np.float64(12.44), np.float64(12.49), np.float64(12.52), np.float64(12.55), np.float64(12.58), np.float64(13.48), np.float64(14.06), np.float64(14.09), np.float64(14.12)]
-   GR 4.8-5.0: max -1.66 dB
-   GR 6.1-6.3: max -1.70 dB
-   GR 6.9-7.9: max -2.05 dB
-   GR 10.1-10.6: max -3.59 dB
-   GR 12.28-12.7: max -3.00 dB
-   GR 13.4-13.6: max -1.22 dB
-   GR 14.0-14.2: max -2.00 dB
+[mix_raw.wav] max GR -3.74 dB; 10ms blocks with >0.5 dB GR: 182/1500; >1 dB at t= [np.float64(4.89), np.float64(4.92), np.float64(4.95), np.float64(6.22), np.float64(6.25), np.float64(7.02), np.float64(7.05), np.float64(7.08), np.float64(7.11), np.float64(7.22), np.float64(7.25), np.float64(7.28), np.float64(7.36), np.float64(7.39), np.float64(7.77), np.float64(7.8), np.float64(10.22), np.float64(10.25), np.float64(10.28), np.float64(10.31), np.float64(10.34), np.float64(10.37), np.float64(10.4), np.float64(10.43), np.float64(10.46), np.float64(12.36), np.float64(12.39), np.float64(12.42), np.float64(12.47), np.float64(12.5), np.float64(12.53), np.float64(12.56), np.float64(12.59), np.float64(13.49), np.float64(13.54), np.float64(14.07), np.float64(14.1), np.float64(14.13)]
+   GR 4.8-5.0: max -1.81 dB
+   GR 6.1-6.3: max -1.85 dB
+   GR 6.9-7.9: max -2.20 dB
+   GR 10.1-10.6: max -3.74 dB
+   GR 12.28-12.7: max -3.15 dB
+   GR 13.4-13.6: max -1.37 dB
+   GR 14.0-14.2: max -2.15 dB
+[mix_noaccents_raw.wav] max GR -2.35 dB; 10ms blocks with >0.5 dB GR: 173/1500; >1 dB at t= [np.float64(4.89), np.float64(4.92), np.float64(4.95), np.float64(6.22), np.float64(6.25), np.float64(7.02), np.float64(7.05), np.float64(7.08), np.float64(7.11), np.float64(7.22), np.float64(7.25), np.float64(7.28), np.float64(7.36), np.float64(7.39), np.float64(7.77), np.float64(7.8), np.float64(10.24), np.float64(10.27), np.float64(10.3), np.float64(10.33), np.float64(10.41), np.float64(12.35), np.float64(12.38), np.float64(12.41), np.float64(12.52), np.float64(12.55), np.float64(12.58), np.float64(13.49), np.float64(13.54), np.float64(14.07), np.float64(14.1), np.float64(14.13)]
+   GR 4.8-5.0: max -1.81 dB
+   GR 6.1-6.3: max -1.85 dB
+   GR 6.9-7.9: max -2.20 dB
+   GR 10.1-10.6: max -2.32 dB
+   GR 12.28-12.7: max -2.35 dB
+   GR 13.4-13.6: max -1.37 dB
+   GR 14.0-14.2: max -2.15 dB

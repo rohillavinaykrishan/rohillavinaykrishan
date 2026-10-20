@@ -174,7 +174,7 @@
    "finish": "shots/sh010/color/v001/finish_filter.txt verbatim (curves, sat 1.06, gblur 3, vignette PI/4.5, luma-only grain noise=c0s=6:c0f=t)",
    "note": "LUT is plate-only; never on the HyperFrames type layer"
   },
-  "changes_v004": "supervisor note 3: whole-frame fadewhite leaks (B@25, E@120, G@168) replaced by fade dissolve + side light leak peaking 0.58 on the beat frame; everything else identical to v003 (edl snapshot: shots/sh010/edit/v003/edl_v003.json)"
+  "changes_v004": "supervisor note 3: whole-frame fadewhite leaks (B@25, E@120, G@168) replaced by fade dissolve + side light leak peaking 0.58 on the beat frame; everything else identical to v003 (edl snapshot: shots/sh010/edit/v003/edl_v003.json); team-lead QC: leaks ramp over 5 frames each side; J retimed to avoid its internal cut at 146.897 (0.40x + tail freeze 354-374)"
  },
  "cuts": [
   {
@@ -237,7 +237,7 @@
     "leak": {
      "side": "left",
      "peak": 0.58,
-     "envelope": "peak*max(0,1-|f-beat|/4)^1.3 -> frames beat-3..beat+3, max on beat",
+     "envelope": "peak*max(0,1-|f-beat|/6)^1.3 -> 5-frame ramp up (beat-5..beat) and down (beat..beat+5), max exactly on beat",
      "color": "#FFD6A0 (becomes pale gold through the LUT)"
     }
    },
@@ -349,7 +349,7 @@
     "leak": {
      "side": "right",
      "peak": 0.58,
-     "envelope": "peak*max(0,1-|f-beat|/4)^1.3 -> frames beat-3..beat+3, max on beat",
+     "envelope": "peak*max(0,1-|f-beat|/6)^1.3 -> 5-frame ramp up (beat-5..beat) and down (beat..beat+5), max exactly on beat",
      "color": "#FFD6A0 (becomes pale gold through the LUT)"
     }
    },
@@ -423,7 +423,7 @@
     "leak": {
      "side": "top-right",
      "peak": 0.58,
-     "envelope": "peak*max(0,1-|f-beat|/4)^1.3 -> frames beat-3..beat+3, max on beat",
+     "envelope": "peak*max(0,1-|f-beat|/6)^1.3 -> 5-frame ramp up (beat-5..beat) and down (beat..beat+5), max exactly on beat",
      "color": "#FFD6A0 (becomes pale gold through the LUT)"
     }
    },
@@ -522,13 +522,13 @@
    ],
    "src_shot": [
     146.104,
-    147.898
+    146.897
    ],
-   "src_in_at_first_frame": 146.2,
-   "src_in_at_cut_frame": 146.2,
-   "speed": 0.6,
+   "src_in_at_first_frame": 146.104,
+   "src_in_at_cut_frame": 146.104,
+   "speed": 0.4,
    "crop_cx": 640,
-   "move": "none (HyperFrames adds the 1.00->1.03 card push-in 13.0-15.0)",
+   "move": "slow motion 0.40x 307-353, then holds on frame 353 through 374 (HyperFrames adds the 1.00->1.03 card push-in)",
    "transition_in": {
     "type": "cut + gold flash",
     "frames": 4,
@@ -543,10 +543,20 @@
    },
    "clip_render_frames": [
     307,
-    375
+    354
    ],
    "what": "Fighter slamming onto the arena floor, sand in light",
-   "why": "the slam under the title card"
+   "why": "the slam under the title card",
+   "freeze": {
+    "frame": 353,
+    "hold_frames": [
+     353,
+     375
+    ],
+    "method": "tpad=stop_mode=clone:stop=21",
+    "note": "tail hold under the poster hold"
+   },
+   "deviation": "trailer has its own cut at 146.897 (scdet missed it; frame-diff spike). J must end before it: src 146.104-146.855 at 0.40x = 47 frames, tail frozen 21 frames. No internal cut through frame 374."
   }
  ],
  "plate_opacity": {

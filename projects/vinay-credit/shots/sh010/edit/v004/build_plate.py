@@ -35,13 +35,15 @@ for i, c in enumerate(cuts):
     chain += ["unsharp=5:5:0.45:5:5:0.0", "setsar=1", "format=yuv420p"]
     if grade and c.get("grade_trim"):
         chain += [c["grade_trim"]]
+    nn = n
     if "freeze" in c:
         hold = c["freeze"]["hold_frames"][1] - c["freeze"]["hold_frames"][0] - 1
         chain += [f"tpad=stop_mode=clone:stop={hold}"]
+        nn = n + hold
     if c["transition_in"]["type"].startswith("cut + gold flash"):
         mix = c["transition_in"]["flash_white_mix"]
         k = "+".join(f"eq(round(T*{FPS}),{j})*{m}" for j, m in enumerate(mix))
-        fg.append(",".join(chain) + f"[j{i}];color=c=white:s={W}x{H}:r={FPS},format=yuv420p,trim=end_frame={n}[w{i}];"
+        fg.append(",".join(chain) + f"[j{i}];color=c=white:s={W}x{H}:r={FPS},format=yuv420p,trim=end_frame={nn}[w{i}];"
                   f"[j{i}][w{i}]blend=all_expr='A+(B-A)*({k})':shortest=1,format=yuv420p[v{i}]")
     else:
         fg.append(",".join(chain) + f"[v{i}]")
@@ -86,8 +88,8 @@ for k, (b, lk) in enumerate(leaks):
     Image.fromarray((m[..., None]*col).round().astype(np.uint8)).save(png)
     args += ["-loop", "1", "-framerate", str(FPS), "-t", str(edl["duration"]), "-i", png]
     li = len(cuts) + k; pk = lk["peak"]
-    env = f"{pk}*pow(max(0,1-abs(T*{FPS}-{b})/4),1.3)"
-    fg.append(f"[{li}:v]format=gbrp,setpts=N/({FPS}*TB)[l{k}];[p{k}][l{k}]blend=all_expr='A+(255-A)*(B/255)*{env}':enable='between(n,{b-4},{b+4})'[p{k+1}]")
+    env = f"{pk}*pow(max(0,1-abs(T*{FPS}-{b})/6),1.3)"
+    fg.append(f"[{li}:v]format=gbrp,setpts=N/({FPS}*TB)[l{k}];[p{k}][l{k}]blend=all_expr='A+(255-A)*(B/255)*{env}':enable='between(n,{b-6},{b+6})'[p{k+1}]")
 fg.append(f"[p{len(leaks)}]format=yuv420p{post}[out]")
 args += ["-filter_complex", ";".join(fg), "-map", "[out]", "-an", "-frames:v", str(edl["frames"]),
          "-c:v", "libx264", "-preset", "slow", "-crf", "14", "-pix_fmt", "yuv420p", "-r", str(FPS),
