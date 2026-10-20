@@ -101,10 +101,10 @@
         text-indent: 0.22em; text-shadow: 0 4px 24px rgba(7,3,3,0.7); }
       #tShow { top: 2436px; height: 90px; line-height: 90px; font-weight: 500; font-size: 72px; letter-spacing: 0.35em; color: #F5B53C;
         text-indent: 0.35em; text-shadow: 0 4px 24px rgba(7,3,3,0.7); }
-      #lineupBox { position: absolute; left: 0; top: 2850px; width: 2160px; height: 990px; opacity: 0;
-        -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 30%);
-        mask-image: linear-gradient(180deg, transparent 0%, #000 30%); }
-      #lineup { width: 2160px; height: 990px; object-fit: cover; object-position: 50% 100%; display: block; }
+      #lineupBox { position: absolute; left: 0; top: 2690px; width: 2160px; height: 1150px; opacity: 0;
+        -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 26%);
+        mask-image: linear-gradient(180deg, transparent 0%, #000 26%); }
+      #lineup { width: 2160px; height: 1150px; object-fit: cover; object-position: 50% 100%; display: block; }
 
       #flash { position: absolute; inset: 0; opacity: 0; mix-blend-mode: screen;
         background: radial-gradient(ellipse 80% 55% at 50% 50%, #FFE7B0 0%, #F5B53C 45%, #F05A1A 100%); }
@@ -379,7 +379,7 @@
         const solveScale = te < T_LOCK ? 1 : lerp(1, 1.28, eOutBack(ramp(te, T_LOCK, T_LOCK + 8 / FPS), 2.2));
         const glide = eInOutCubic(ramp(te, 10.6, 11.4));
         const wNow = M.heroW52 * solveScale;
-        const xLeft = lerp(1125 + M.heroW52 / 2, 1080, glide) - wNow / 2;
+        const xLeft = lerp(1125 + M.heroW52 * 0.35 - wNow * 0.35, 1080 - wNow / 2, glide); // grow mostly rightward, clear of the left column
         const fs = 52 * solveScale;
         const heroOn = rollOn * (te < T_LOCK ? maskA : 1);
         S(E.hero, "left", xLeft.toFixed(2) + "px");
@@ -387,7 +387,7 @@
         S(E.hero, "fontWeight", String(Math.round(lerp(500, 700, ramp(te, T_LOCK, T_LOCK + 8 / FPS)))));
         S(E.heroBox, "transform", `translateY(${heroY.toFixed(2)}px)`);
         const gk = ramp(te, T_LOCK, T_LOCK + 3 / FPS);
-        S(E.hero, "opacity", (heroOn * lerp(0.85, 1, gk) * (1 - ramp(t, T_SLAM, T_SLAM + 3 / FPS))).toFixed(3));
+        S(E.hero, "opacity", (heroOn * lerp(0.85, 1, gk) * (1 - ramp(t, T_SLAM, T_SLAM + 2 / FPS))).toFixed(3));
         S(E.heroGold, "opacity", gk.toFixed(3));
         S(E.heroPlain, "opacity", (1 - gk).toFixed(3));
         const glowPulse = te >= T_LOCK ? 0.35 + 0.45 * Math.exp(-(te - T_LOCK) / 0.35) : 0;
@@ -450,7 +450,7 @@
         S(E.solved, "transform", `translate(${(bx).toFixed(2)}px, ${(by + bh + 18 - 600 * wk).toFixed(2)}px)`);
 
         // gold point-cloud burst off the name at the lock
-        drawSparks(te >= T_FREEZE ? -1 : te, 1125 + M.heroW52 / 2 - M.heroW52 * 0.64, M.heroW52 * 1.28, 1920);
+        drawSparks(te >= T_FREEZE ? -1 : te, 1125 - M.heroW52 * 0.28 * 0.35, M.heroW52 * 1.28, 1920);
 
         // ---------------- title card ----------------
         const ck2 = t - T_SLAM;
