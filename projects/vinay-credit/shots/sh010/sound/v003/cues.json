@@ -34,6 +34,21 @@
    "transient": 12.35,
    "trailer": 73.3,
    "frame": 307
+  },
+  "announcer": {
+   "text": "ROUND ONE!",
+   "whisper": "1.52-2.52",
+   "producer_window": "1.70-2.66",
+   "decision": "kept (producer), not notched, no accent or ducking over it"
+  },
+  "cross_check_audio_artist": {
+   "opening_hit": 1.0,
+   "lock_onset": "10.18-10.19",
+   "lock_peak": "10.24-10.26",
+   "silence": "11.96-12.26",
+   "drop_onset": "12.26-12.28",
+   "drop_peak": 12.36,
+   "trailer_whooshes": "0.60-1.00, 9.40-10.19 (in the bed itself)"
   }
  },
  "focus_pull": {
@@ -46,13 +61,14 @@
  },
  "sub": {
   "source": "boom.wav",
-  "chain": "lowpass 90 Hz (2-pole) x2, 0.8 s, 0.3 s fade-out",
+  "chain": "lowpass 90 Hz (2-pole) x2, 0.8 s (hit 1: 0.5 s), 0.3 s fade-out",
   "gain_db_under_bed": -14,
   "hits": [
    {
     "t": 1.0,
     "lead": 0.05,
-    "why": "bed hit onset 1.00 (sub peak lands 1.05, bed peak 1.03)"
+    "why": "bed hit onset 1.00 (sub peak lands 1.05, bed peak 1.03); shortened to 0.5 s (ends 1.45) so it clears the announcer call",
+    "len": 0.5
    },
    {
     "t": 10.18,
@@ -90,5 +106,9 @@
   "chime",
   "tracker ticks"
  ],
- "mix_trim_db": -3.0
+ "mix_trim_db": -3.0,
+ "announcer_keep_clear": [
+  1.45,
+  2.7
+ ]
 }

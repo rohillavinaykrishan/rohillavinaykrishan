@@ -49,12 +49,12 @@ acc = np.zeros((N, 2)); report = []
 # ---- deep sub layers: boom.wav, lowpass 90 Hz x2, <=0.8 s, 0.3 s fade, gain -14 dB under local bed RMS
 boom, _ = sf.read(f"{SFX}/{T['sub']['source']}", dtype="float64")
 sub = lr(boom, 90, "low", 2, 2)[: int(0.8 * SR)]
-fade = np.ones(len(sub)); nf = int(0.3 * SR); fade[-nf:] = np.linspace(1, 0, nf); sub *= fade[:, None]
 pk_off = np.argmax(np.abs(sub).sum(1)) / SR
 for c in T["sub"]["hits"]:
-    st = int(round((c["t"] - c["lead"]) * SR)); L = min(len(sub), N - st)
-    win = bed_fx[st:st + L]; gain = 10 ** (T["sub"]["gain_db_under_bed"] / 20) * rms(win) / rms(sub[:L])
-    acc[st:st + L] += sub[:L] * gain
+    st = int(round((c["t"] - c["lead"]) * SR)); L = min(int(c.get("len", 0.8) * SR), N - st)
+    sl = sub[:L].copy(); nf2 = min(int(0.3 * SR), L); sl[-nf2:] *= np.linspace(1, 0, nf2)[:, None]
+    win = bed_fx[st:st + L]; gain = 10 ** (T["sub"]["gain_db_under_bed"] / 20) * rms(win) / rms(sl)
+    acc[st:st + L] += sl * gain
     report.append(dict(layer="sub", start=st / SR, end=(st + L) / SR, peak_at=st / SR + pk_off, gain_lin=gain))
 # ---- trailer punch: 142.78-143.10, highpass 120, 40 ms in / 120 ms out, -8 dB under local bed RMS
 p, _ = sf.read(f"{W}/punch_src.wav", dtype="float64")
@@ -67,6 +67,8 @@ acc[st:st + L] += p * gain
 report.append(dict(layer="punch", start=st / SR, end=(st + L) / SR, transient_at=st / SR + tr, gain_lin=gain))
 
 # ---- silence guard: nothing but the bed inside the silence
+a_, b_ = T["announcer_keep_clear"]
+assert np.abs(acc[int(a_ * SR):int(b_ * SR)]).max() == 0, "accent overlaps the ROUND ONE call"
 s0, s1 = T["silence_keep_clean"]
 assert np.abs(acc[int(s0 * SR):int(s1 * SR)]).max() == 0, "accent leaks into the silence"
 mix = bed_fx + acc
