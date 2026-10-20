@@ -1,0 +1,3355 @@
+{
+  "ok": false,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 2,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "gsap_callback_dom_measurement",
+        "severity": "warning",
+        "message": "Timeline callback reaches DOM measurement (getBoundingClientRect/getTotalLength/getComputedStyle/...). The renderer seeks with suppressEvents=false, so callbacks re-fire on every seek, and a cold render worker runs them against whatever DOM state its own non-linear seek order produced. Measured geometry is seek-order-dependent, and values measured at build time (before the callback ran) are stale or zero.",
+        "selector": "onUpdate: () => render(drv.t)",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-credit/shots/sh010/mograph/v001/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Do all measurement and DOM setup synchronously at build time, before registering the timeline, or derive geometry from fixed composition coordinates instead of measuring."
+      },
+      {
+        "code": "composition_file_too_large",
+        "severity": "warning",
+        "message": "This HTML composition file has 388 lines. Smaller sub-compositions are easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-credit/shots/sh010/mograph/v001/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Split coherent scenes or layers into separate .html files under compositions/, then mount them from the parent with data-composition-src so each file stays small enough to inspect, revise, and validate independently."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": false,
+    "errorCount": 75,
+    "warningCount": 0,
+    "infoCount": 5,
+    "findings": [
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#header",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 399.25,
+          "top": 982,
+          "right": 1760.73,
+          "bottom": 1148,
+          "width": 1361.48,
+          "height": 166
+        },
+        "containerSelector": "#sparks",
+        "text": "Thanks to our talented teams!",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 399.25,
+          "y": 982,
+          "width": 1361.48,
+          "height": 166
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 10.833,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(1) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 544.05,
+          "top": 1464.92,
+          "right": 1035,
+          "bottom": 1527.92,
+          "width": 490.95,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "SHEKHAR LAHASE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 544.05,
+          "y": 1464.92,
+          "width": 490.95,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 5.833,
+        "occurrences": 3,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(1) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 1464.92,
+          "right": 1929.52,
+          "bottom": 1527.92,
+          "width": 804.52,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "SURYAWANSHI GOPAL ASHOK",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 1464.92,
+          "width": 804.52,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 5.833,
+        "occurrences": 3,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(2) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 592.42,
+          "top": 1576.92,
+          "right": 1035,
+          "bottom": 1639.92,
+          "width": 442.58,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "SHIVAM MISHRA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 592.42,
+          "y": 1576.92,
+          "width": 442.58,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 5.833,
+        "occurrences": 3,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(2) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 1576.92,
+          "right": 1685.89,
+          "bottom": 1639.92,
+          "width": 560.89,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "SWAPNIL SARANKAR",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 1576.92,
+          "width": 560.89,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 5.833,
+        "occurrences": 3,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(3) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 450.03,
+          "top": 1688.92,
+          "right": 1035,
+          "bottom": 1751.92,
+          "width": 584.97,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "SHIVKUMAR SOLANKI",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 450.03,
+          "y": 1688.92,
+          "width": 584.97,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 10.833,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(3) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 1688.92,
+          "right": 1469.59,
+          "bottom": 1751.92,
+          "width": 344.59,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "SYED ALEEM",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 1688.92,
+          "width": 344.59,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 10.833,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(4) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 272.97,
+          "top": 1800.92,
+          "right": 1035,
+          "bottom": 1863.92,
+          "width": 762.03,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "SHIVKUMAR VISHWAKARMA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 272.97,
+          "y": 1800.92,
+          "width": 762.03,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 10.833,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(4) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 1800.92,
+          "right": 1562.48,
+          "bottom": 1863.92,
+          "width": 437.48,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "SYED MASTHAN",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 1800.92,
+          "width": 437.48,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 10.833,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(5) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 634.27,
+          "top": 1912.92,
+          "right": 1035,
+          "bottom": 1975.92,
+          "width": 400.73,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "SHOBINS JOSE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 634.27,
+          "y": 1912.92,
+          "width": 400.73,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 10.833,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(7) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 581.83,
+          "top": 2136.92,
+          "right": 1035,
+          "bottom": 2199.92,
+          "width": 453.17,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "TAKUMA TSUBOI",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 581.83,
+          "y": 2136.92,
+          "width": 453.17,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(7) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 2136.92,
+          "right": 1548.55,
+          "bottom": 2199.92,
+          "width": 423.55,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "THILIPKUMAR P",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 2136.92,
+          "width": 423.55,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(8) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 603.84,
+          "top": 2248.92,
+          "right": 1035,
+          "bottom": 2311.92,
+          "width": 431.16,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "TANMAY DUTTA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 603.84,
+          "y": 2248.92,
+          "width": 431.16,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(8) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 2248.92,
+          "right": 1773.78,
+          "bottom": 2311.92,
+          "width": 648.78,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "THUMMETI RAVI VARMA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 2248.92,
+          "width": 648.78,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(9) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 349.72,
+          "top": 2360.92,
+          "right": 1035,
+          "bottom": 2423.92,
+          "width": 685.28,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "TANMAY JAYDEEP PAGAR",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 349.72,
+          "y": 2360.92,
+          "width": 685.28,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(9) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 2360.92,
+          "right": 1544.56,
+          "bottom": 2423.92,
+          "width": 419.56,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "TONY BRADLEY",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 2360.92,
+          "width": 419.56,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(10) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 366.98,
+          "top": 2472.92,
+          "right": 1035,
+          "bottom": 2535.92,
+          "width": 668.02,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "TAUFIK SHABBIR SHAIKH",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 366.98,
+          "y": 2472.92,
+          "width": 668.02,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(10) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 2472.92,
+          "right": 2019.66,
+          "bottom": 2535.92,
+          "width": 894.66,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "TRIPURAMALLU KOTESWARARAO",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 2472.92,
+          "width": 894.66,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(11) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 106.09,
+          "top": 2584.92,
+          "right": 1035,
+          "bottom": 2647.92,
+          "width": 928.91,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "TEJAL CHANDRAKANT KHOCHARE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 106.09,
+          "y": 2584.92,
+          "width": 928.91,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(11) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 2584.92,
+          "right": 1523.72,
+          "bottom": 2647.92,
+          "width": 398.72,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "TUSHAR MORE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 2584.92,
+          "width": 398.72,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(12) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 381.64,
+          "top": 2696.92,
+          "right": 1035,
+          "bottom": 2759.92,
+          "width": 653.36,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "TEJAS DAYANAND PATIL",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 381.64,
+          "y": 2696.92,
+          "width": 653.36,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(12) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 2696.92,
+          "right": 1925.39,
+          "bottom": 2759.92,
+          "width": 800.39,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "TUSHAR SANJAY MANDWADE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 2696.92,
+          "width": 800.39,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(14) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 696.36,
+          "top": 2920.92,
+          "right": 1035,
+          "bottom": 2983.92,
+          "width": 338.64,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "UGGAR SAIN",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 696.36,
+          "y": 2920.92,
+          "width": 338.64,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(14) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 2920.92,
+          "right": 1948.92,
+          "bottom": 2983.92,
+          "width": 823.92,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "URUKONDA CHAITANYA KIRAN",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 2920.92,
+          "width": 823.92,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(16) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 203.05,
+          "top": 3144.92,
+          "right": 1035,
+          "bottom": 3207.92,
+          "width": 831.95,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VAGHMASHI BIPIN CHANABHAI",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 203.05,
+          "y": 3144.92,
+          "width": 831.95,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(16) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3144.92,
+          "right": 1615.14,
+          "bottom": 3207.92,
+          "width": 490.14,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIKIRNIKA UNIYAL",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3144.92,
+          "width": 490.14,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(17) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 254.55,
+          "top": 3256.92,
+          "right": 1035,
+          "bottom": 3319.92,
+          "width": 780.45,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VAIBHAV LAXMAN MAHAJAN",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 254.55,
+          "y": 3256.92,
+          "width": 780.45,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(17) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3256.92,
+          "right": 1910.19,
+          "bottom": 3319.92,
+          "width": 785.19,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIKRAM SIDDHARTH JADHAV",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3256.92,
+          "width": 785.19,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(18) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 219.59,
+          "top": 3368.92,
+          "right": 1035,
+          "bottom": 3431.92,
+          "width": 815.41,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VAISHALI DNYANOBA GHOLAP",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 219.59,
+          "y": 3368.92,
+          "width": 815.41,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(18) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3368.92,
+          "right": 1610.89,
+          "bottom": 3431.92,
+          "width": 485.89,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIKRANT NAWALE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3368.92,
+          "width": 485.89,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(19) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 541.44,
+          "top": 3480.92,
+          "right": 1035,
+          "bottom": 3543.92,
+          "width": 493.56,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VALLABH CHAVAN",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 541.44,
+          "y": 3480.92,
+          "width": 493.56,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(19) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3480.92,
+          "right": 1602.59,
+          "bottom": 3543.92,
+          "width": 477.59,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VINAY BANDATHE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3480.92,
+          "width": 477.59,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(20) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 371.77,
+          "top": 3592.92,
+          "right": 1035,
+          "bottom": 3655.92,
+          "width": 663.23,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VAMSI KRISHNA EADALA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 371.77,
+          "y": 3592.92,
+          "width": 663.23,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(21) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 305.25,
+          "top": 3704.92,
+          "right": 1035,
+          "bottom": 3767.92,
+          "width": 729.75,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VARDHA ROHIT VARDA RAJ",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 305.25,
+          "y": 3704.92,
+          "width": 729.75,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(21) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3704.92,
+          "right": 1695.72,
+          "bottom": 3767.92,
+          "width": 570.72,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VINAY KUMAR SINGH",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3704.92,
+          "width": 570.72,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(22) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 479.33,
+          "top": 3816.92,
+          "right": 1035,
+          "bottom": 3879.92,
+          "width": 555.67,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VARUN CHOUDHARY",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.33,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 479.33,
+          "y": 3816.92,
+          "width": 555.67,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(22) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3816.92,
+          "right": 1771.44,
+          "bottom": 3879.92,
+          "width": 646.44,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIPIN KUMAR RAJORIYA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.33,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3816.92,
+          "width": 646.44,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 12.5,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          2.5,
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.167,
+        "selector": "#rollOthers > div:nth-of-type(23) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 659.47,
+          "top": 3044.17,
+          "right": 1035,
+          "bottom": 3107.17,
+          "width": 375.53,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VARUNA NAIK",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 659.47,
+          "y": 3044.17,
+          "width": 375.53,
+          "height": 63
+        },
+        "firstSeen": 4.167,
+        "lastSeen": 12.5,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.167,
+        "selector": "#rollOthers > div:nth-of-type(23) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3044.17,
+          "right": 1530.83,
+          "bottom": 3107.17,
+          "width": 405.83,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIPUL BHONDE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3044.17,
+          "width": 405.83,
+          "height": 63
+        },
+        "firstSeen": 4.167,
+        "lastSeen": 12.5,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.167,
+        "selector": "#rollOthers > div:nth-of-type(24) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 481.81,
+          "top": 3156.17,
+          "right": 1035,
+          "bottom": 3219.17,
+          "width": 553.19,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VEERENDRA ANGADI",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 481.81,
+          "y": 3156.17,
+          "width": 553.19,
+          "height": 63
+        },
+        "firstSeen": 4.167,
+        "lastSeen": 12.5,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.167,
+        "selector": "#rollOthers > div:nth-of-type(24) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3156.17,
+          "right": 1796.16,
+          "bottom": 3219.17,
+          "width": 671.16,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIRENDRA KUMAR PATEL",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3156.17,
+          "width": 671.16,
+          "height": 63
+        },
+        "firstSeen": 4.167,
+        "lastSeen": 12.5,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.167,
+        "selector": "#rollOthers > div:nth-of-type(25) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 493.14,
+          "top": 3268.17,
+          "right": 1035,
+          "bottom": 3331.17,
+          "width": 541.86,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VELASIRI PAVAN SAI",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 493.14,
+          "y": 3268.17,
+          "width": 541.86,
+          "height": 63
+        },
+        "firstSeen": 4.167,
+        "lastSeen": 12.5,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.167,
+        "selector": "#rollOthers > div:nth-of-type(25) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3268.17,
+          "right": 1810.09,
+          "bottom": 3331.17,
+          "width": 685.09,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIRENDRA VIJAY JADHAV",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3268.17,
+          "width": 685.09,
+          "height": 63
+        },
+        "firstSeen": 4.167,
+        "lastSeen": 12.5,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.167,
+        "selector": "#rollOthers > div:nth-of-type(26) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 617.67,
+          "top": 3380.17,
+          "right": 1035,
+          "bottom": 3443.17,
+          "width": 417.33,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VICKEY KUMAR",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 617.67,
+          "y": 3380.17,
+          "width": 417.33,
+          "height": 63
+        },
+        "firstSeen": 4.167,
+        "lastSeen": 12.5,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.167,
+        "selector": "#rollOthers > div:nth-of-type(26) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3380.17,
+          "right": 1713.03,
+          "bottom": 3443.17,
+          "width": 588.03,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VISHWAS V MARATHE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3380.17,
+          "width": 588.03,
+          "height": 63
+        },
+        "firstSeen": 4.167,
+        "lastSeen": 12.5,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.167,
+        "selector": "#rollOthers > div:nth-of-type(27) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 582.81,
+          "top": 3492.17,
+          "right": 1035,
+          "bottom": 3555.17,
+          "width": 452.19,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VICTORIA WHITE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 582.81,
+          "y": 3492.17,
+          "width": 452.19,
+          "height": 63
+        },
+        "firstSeen": 4.167,
+        "lastSeen": 12.5,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.167,
+        "selector": "#rollOthers > div:nth-of-type(27) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3492.17,
+          "right": 1526.27,
+          "bottom": 3555.17,
+          "width": 401.27,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIVEK BHOYAR",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3492.17,
+          "width": 401.27,
+          "height": 63
+        },
+        "firstSeen": 4.167,
+        "lastSeen": 12.5,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.167,
+        "selector": "#rollOthers > div:nth-of-type(28) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 635.91,
+          "top": 3604.17,
+          "right": 1035,
+          "bottom": 3667.17,
+          "width": 399.09,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIJAY GANESH",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 635.91,
+          "y": 3604.17,
+          "width": 399.09,
+          "height": 63
+        },
+        "firstSeen": 4.167,
+        "lastSeen": 12.5,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.167,
+        "selector": "#rollOthers > div:nth-of-type(28) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3604.17,
+          "right": 1775.63,
+          "bottom": 3667.17,
+          "width": 650.63,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIVEK GAJANAN PAWAR",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3604.17,
+          "width": 650.63,
+          "height": 63
+        },
+        "firstSeen": 4.167,
+        "lastSeen": 12.5,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.167,
+        "selector": "#rollOthers > div:nth-of-type(29) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 469.34,
+          "top": 3716.17,
+          "right": 1035,
+          "bottom": 3779.17,
+          "width": 565.66,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIJAYPRATAP GUPTA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 469.34,
+          "y": 3716.17,
+          "width": 565.66,
+          "height": 63
+        },
+        "firstSeen": 4.167,
+        "lastSeen": 12.5,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.167,
+        "selector": "#rollOthers > div:nth-of-type(29) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3716.17,
+          "right": 1738.91,
+          "bottom": 3779.17,
+          "width": 613.91,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIVEK MOHAN JAGTAP",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3716.17,
+          "width": 613.91,
+          "height": 63
+        },
+        "firstSeen": 4.167,
+        "lastSeen": 12.5,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          4.167,
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.167,
+        "selector": "#heroPlain",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 2708.17,
+          "right": 1799.25,
+          "bottom": 2771.17,
+          "width": 674.25,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VINAY KRISHAN ROHILLA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 2708.17,
+          "width": 674.25,
+          "height": 63
+        },
+        "firstSeen": 4.167,
+        "lastSeen": 9.167,
+        "occurrences": 4,
+        "heldMs": 0,
+        "times": [
+          4.167,
+          5.833,
+          7.5,
+          9.167
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 5.833,
+        "selector": "#rollOthers > div:nth-of-type(30) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 306.86,
+          "top": 3326.12,
+          "right": 1035,
+          "bottom": 3389.12,
+          "width": 728.14,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIJESH RAMMANI SHARMA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 306.86,
+          "y": 3326.12,
+          "width": 728.14,
+          "height": 63
+        },
+        "firstSeen": 5.833,
+        "lastSeen": 12.5,
+        "occurrences": 5,
+        "heldMs": 0,
+        "times": [
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 5.833,
+        "selector": "#rollOthers > div:nth-of-type(30) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3326.12,
+          "right": 1389.06,
+          "bottom": 3389.12,
+          "width": 264.06,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIVEK R S",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3326.12,
+          "width": 264.06,
+          "height": 63
+        },
+        "firstSeen": 5.833,
+        "lastSeen": 12.5,
+        "occurrences": 5,
+        "heldMs": 0,
+        "times": [
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 5.833,
+        "selector": "#rollOthers > div:nth-of-type(31) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 654.73,
+          "top": 3438.12,
+          "right": 1035,
+          "bottom": 3501.12,
+          "width": 380.27,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIKAS KUMAR",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 654.73,
+          "y": 3438.12,
+          "width": 380.27,
+          "height": 63
+        },
+        "firstSeen": 5.833,
+        "lastSeen": 12.5,
+        "occurrences": 5,
+        "heldMs": 0,
+        "times": [
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 5.833,
+        "selector": "#rollOthers > div:nth-of-type(31) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3438.12,
+          "right": 1734.14,
+          "bottom": 3501.12,
+          "width": 609.14,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIVEK VIJAY GAIKWAD",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3438.12,
+          "width": 609.14,
+          "height": 63
+        },
+        "firstSeen": 5.833,
+        "lastSeen": 12.5,
+        "occurrences": 5,
+        "heldMs": 0,
+        "times": [
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 5.833,
+        "selector": "#rollOthers > div:nth-of-type(32) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 614.45,
+          "top": 3550.12,
+          "right": 1035,
+          "bottom": 3613.12,
+          "width": 420.55,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VIKASH KUMAR",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 614.45,
+          "y": 3550.12,
+          "width": 420.55,
+          "height": 63
+        },
+        "firstSeen": 5.833,
+        "lastSeen": 12.5,
+        "occurrences": 5,
+        "heldMs": 0,
+        "times": [
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 5.833,
+        "selector": "#rollOthers > div:nth-of-type(32) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3550.12,
+          "right": 1623.66,
+          "bottom": 3613.12,
+          "width": 498.66,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "VUYYUR JAYANTH",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3550.12,
+          "width": 498.66,
+          "height": 63
+        },
+        "firstSeen": 5.833,
+        "lastSeen": 12.5,
+        "occurrences": 5,
+        "heldMs": 0,
+        "times": [
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 5.833,
+        "selector": "#rollOthers > div:nth-of-type(34) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 584.8,
+          "top": 3774.12,
+          "right": 1035,
+          "bottom": 3837.12,
+          "width": 450.2,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "YAMINI MALVIYA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 584.8,
+          "y": 3774.12,
+          "width": 450.2,
+          "height": 63
+        },
+        "firstSeen": 5.833,
+        "lastSeen": 12.5,
+        "occurrences": 5,
+        "heldMs": 0,
+        "times": [
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 5.833,
+        "selector": "#rollOthers > div:nth-of-type(34) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3774.12,
+          "right": 1791.72,
+          "bottom": 3837.12,
+          "width": 666.72,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "YOGESH ASHOK PAGORE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3774.12,
+          "width": 666.72,
+          "height": 63
+        },
+        "firstSeen": 5.833,
+        "lastSeen": 12.5,
+        "occurrences": 5,
+        "heldMs": 0,
+        "times": [
+          5.833,
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 7.5,
+        "selector": "#rollOthers > div:nth-of-type(35) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 173.92,
+          "top": 3641.51,
+          "right": 1035,
+          "bottom": 3704.51,
+          "width": 861.08,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "YASH CHANDRAKANT GAIKWAD",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 173.92,
+          "y": 3641.51,
+          "width": 861.08,
+          "height": 63
+        },
+        "firstSeen": 7.5,
+        "lastSeen": 12.5,
+        "occurrences": 4,
+        "heldMs": 0,
+        "times": [
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 7.5,
+        "selector": "#rollOthers > div:nth-of-type(35) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3641.51,
+          "right": 1624.17,
+          "bottom": 3704.51,
+          "width": 499.17,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "YOGESH BHAVSAR",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3641.51,
+          "width": 499.17,
+          "height": 63
+        },
+        "firstSeen": 7.5,
+        "lastSeen": 12.5,
+        "occurrences": 4,
+        "heldMs": 0,
+        "times": [
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 7.5,
+        "selector": "#rollOthers > div:nth-of-type(36) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 372.56,
+          "top": 3753.51,
+          "right": 1035,
+          "bottom": 3816.51,
+          "width": 662.44,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "YATIN ASHOK SAINDANE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 372.56,
+          "y": 3753.51,
+          "width": 662.44,
+          "height": 63
+        },
+        "firstSeen": 7.5,
+        "lastSeen": 12.5,
+        "occurrences": 4,
+        "heldMs": 0,
+        "times": [
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 7.5,
+        "selector": "#rollOthers > div:nth-of-type(36) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3753.51,
+          "right": 1545.23,
+          "bottom": 3816.51,
+          "width": 420.23,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "YOGESH PARAB",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3753.51,
+          "width": 420.23,
+          "height": 63
+        },
+        "firstSeen": 7.5,
+        "lastSeen": 12.5,
+        "occurrences": 4,
+        "heldMs": 0,
+        "times": [
+          7.5,
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 9.167,
+        "selector": "#rollOthers > div:nth-of-type(37) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 597.06,
+          "top": 3796.12,
+          "right": 1035,
+          "bottom": 3859.12,
+          "width": 437.94,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "YAYATI DAWANE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.67,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 597.06,
+          "y": 3796.12,
+          "width": 437.94,
+          "height": 63
+        },
+        "firstSeen": 9.167,
+        "lastSeen": 12.5,
+        "occurrences": 3,
+        "heldMs": 0,
+        "times": [
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 9.167,
+        "selector": "#rollOthers > div:nth-of-type(37) > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1125,
+          "top": 3796.12,
+          "right": 1563.98,
+          "bottom": 3859.12,
+          "width": 438.98,
+          "height": 63
+        },
+        "containerSelector": "#sparks",
+        "text": "YOGESH SARWA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.67,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3796.12,
+          "width": 438.98,
+          "height": 63
+        },
+        "firstSeen": 9.167,
+        "lastSeen": 12.5,
+        "occurrences": 3,
+        "heldMs": 0,
+        "times": [
+          9.167,
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 9.167,
+        "selector": "#rollOthers > div:nth-of-type(16) > span:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 203.05,
+          "top": 1444.12,
+          "right": 1035,
+          "bottom": 1507.12,
+          "width": 831.95,
+          "height": 63
+        },
+        "containerSelector": "#trkLayer > div:nth-of-type(4) > div:nth-of-type(5)",
+        "text": "VAGHMASHI BIPIN CHANABHAI",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 203.05,
+          "y": 1444.12,
+          "width": 831.95,
+          "height": 63
+        },
+        "firstSeen": 8,
+        "lastSeen": 9.25,
+        "occurrences": 12,
+        "heldMs": 1250,
+        "times": [
+          8,
+          8.125,
+          8.25,
+          8.375,
+          8.5,
+          8.625,
+          8.75,
+          8.875,
+          9,
+          9.125,
+          9.167,
+          9.25
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 9.167,
+        "selector": "#rollOthers > div:nth-of-type(17) > span:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 1125,
+          "top": 1556.12,
+          "right": 1910.19,
+          "bottom": 1619.12,
+          "width": 785.19,
+          "height": 63
+        },
+        "containerSelector": "#trkLayer > div:nth-of-type(7) > div:nth-of-type(5)",
+        "text": "VIKRAM SIDDHARTH JADHAV",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 1556.12,
+          "width": 785.19,
+          "height": 63
+        },
+        "firstSeen": 8.625,
+        "lastSeen": 10.25,
+        "occurrences": 15,
+        "heldMs": 1625,
+        "times": [
+          8.625,
+          8.75,
+          8.875,
+          9,
+          9.125,
+          9.167,
+          9.25,
+          9.375,
+          9.5,
+          9.625,
+          9.75,
+          9.875,
+          10,
+          10.125,
+          10.25
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 9.167,
+        "selector": "#rollOthers > div:nth-of-type(19) > span:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 1125,
+          "top": 1780.12,
+          "right": 1602.59,
+          "bottom": 1843.12,
+          "width": 477.59,
+          "height": 63
+        },
+        "containerSelector": "#trkLayer > div:nth-of-type(10) > div:nth-of-type(5)",
+        "text": "VINAY BANDATHE",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 1780.12,
+          "width": 477.59,
+          "height": 63
+        },
+        "firstSeen": 9.167,
+        "lastSeen": 12.375,
+        "occurrences": 10,
+        "heldMs": 958.0000000000002,
+        "times": [
+          9.167,
+          9.25,
+          9.375,
+          9.5,
+          9.625,
+          9.75,
+          9.875,
+          10,
+          10.125,
+          12.375
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 9.167,
+        "selector": "#rollOthers > div:nth-of-type(21) > span:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 305.25,
+          "top": 2004.12,
+          "right": 1035,
+          "bottom": 2067.12,
+          "width": 729.75,
+          "height": 63
+        },
+        "containerSelector": "#trkLayer > div:nth-of-type(9) > div:nth-of-type(5)",
+        "text": "VARDHA ROHIT VARDA RAJ",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 305.25,
+          "y": 2004.12,
+          "width": 729.75,
+          "height": 63
+        },
+        "firstSeen": 9,
+        "lastSeen": 10,
+        "occurrences": 10,
+        "heldMs": 1000,
+        "times": [
+          9,
+          9.125,
+          9.167,
+          9.25,
+          9.375,
+          9.5,
+          9.625,
+          9.75,
+          9.875,
+          10
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 9.167,
+        "selector": "#rollOthers > div:nth-of-type(22) > span:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 1125,
+          "top": 2116.12,
+          "right": 1771.44,
+          "bottom": 2179.12,
+          "width": 646.44,
+          "height": 63
+        },
+        "containerSelector": "#trkLayer > div:nth-of-type(5) > div:nth-of-type(5)",
+        "text": "VIPIN KUMAR RAJORIYA",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 2116.12,
+          "width": 646.44,
+          "height": 63
+        },
+        "firstSeen": 8.25,
+        "lastSeen": 9.75,
+        "occurrences": 14,
+        "heldMs": 1500,
+        "times": [
+          8.25,
+          8.375,
+          8.5,
+          8.625,
+          8.75,
+          8.875,
+          9,
+          9.125,
+          9.167,
+          9.25,
+          9.375,
+          9.5,
+          9.625,
+          9.75
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 9.167,
+        "selector": "#rollOthers > div:nth-of-type(25) > span:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 493.14,
+          "top": 2452.12,
+          "right": 1035,
+          "bottom": 2515.12,
+          "width": 541.86,
+          "height": 63
+        },
+        "containerSelector": "#trkLayer > div:nth-of-type(6) > div:nth-of-type(5)",
+        "text": "VELASIRI PAVAN SAI",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 493.14,
+          "y": 2452.12,
+          "width": 541.86,
+          "height": 63
+        },
+        "firstSeen": 8.5,
+        "lastSeen": 9.5,
+        "occurrences": 10,
+        "heldMs": 1000,
+        "times": [
+          8.5,
+          8.625,
+          8.75,
+          8.875,
+          9,
+          9.125,
+          9.167,
+          9.25,
+          9.375,
+          9.5
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 9.167,
+        "selector": "#rollOthers > div:nth-of-type(27) > span:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 1125,
+          "top": 2676.12,
+          "right": 1526.27,
+          "bottom": 2739.12,
+          "width": 401.27,
+          "height": 63
+        },
+        "containerSelector": "#trkLayer > div:nth-of-type(8) > div:nth-of-type(5)",
+        "text": "VIVEK BHOYAR",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 2676.12,
+          "width": 401.27,
+          "height": 63
+        },
+        "firstSeen": 8.875,
+        "lastSeen": 9.625,
+        "occurrences": 6,
+        "heldMs": 750,
+        "times": [
+          8.875,
+          9,
+          9.125,
+          9.167,
+          9.25,
+          9.625
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 10.833,
+        "selector": "#solvedLbl",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1061.22,
+          "top": 1975.28,
+          "right": 1338.42,
+          "bottom": 2015.28,
+          "width": 277.2,
+          "height": 40
+        },
+        "containerSelector": "#sparks",
+        "text": "TRK_07 SOLVED",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1061.22,
+          "y": 1975.28,
+          "width": 277.2,
+          "height": 40
+        },
+        "firstSeen": 10.833,
+        "lastSeen": 12.5,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          10.833,
+          12.5
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 11,
+        "selector": "#rollOthers > div:nth-of-type(20) > span:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 371.77,
+          "top": 1888,
+          "right": 1035,
+          "bottom": 1951,
+          "width": 663.23,
+          "height": 63
+        },
+        "containerSelector": "#heroGlow",
+        "text": "VAMSI KRISHNA EADALA",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 371.77,
+          "y": 1888,
+          "width": 663.23,
+          "height": 63
+        },
+        "firstSeen": 11,
+        "lastSeen": 12.25,
+        "occurrences": 11,
+        "heldMs": 1250,
+        "times": [
+          11,
+          11.125,
+          11.25,
+          11.375,
+          11.5,
+          11.625,
+          11.75,
+          11.875,
+          12,
+          12.125,
+          12.25
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(17) > span:nth-of-type(1)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 254.55,
+          "top": 3256.92,
+          "right": 1035,
+          "bottom": 3319.92,
+          "width": 780.45,
+          "height": 63
+        },
+        "containerSelector": "#rollMask",
+        "text": "VAIBHAV LAXMAN MAHAJAN",
+        "fixHint": "Text is 780px x 63px inside 2160px x 2120px and overflows by up to 20px; increase the container height to at least ~2140px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 0,
+          "top": 1180,
+          "right": 2160,
+          "bottom": 3300,
+          "width": 2160,
+          "height": 2120
+        },
+        "overflow": {
+          "bottom": 19.92
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 254.55,
+          "y": 3256.92,
+          "width": 780.45,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 2.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.5
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(17) > span:nth-of-type(2)",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 1125,
+          "top": 3256.92,
+          "right": 1910.19,
+          "bottom": 3319.92,
+          "width": 785.19,
+          "height": 63
+        },
+        "containerSelector": "#rollMask",
+        "text": "VIKRAM SIDDHARTH JADHAV",
+        "fixHint": "Text is 785px x 63px inside 2160px x 2120px and overflows by up to 20px; increase the container height to at least ~2140px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 0,
+          "top": 1180,
+          "right": 2160,
+          "bottom": 3300,
+          "width": 2160,
+          "height": 2120
+        },
+        "overflow": {
+          "bottom": 19.92
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3256.92,
+          "width": 785.19,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 2.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.5
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(22) > span:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 479.33,
+          "top": 3816.92,
+          "right": 1035,
+          "bottom": 3879.92,
+          "width": 555.67,
+          "height": 63
+        },
+        "containerSelector": "#root",
+        "text": "VARUN CHOUDHARY",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 2160,
+          "bottom": 3840,
+          "width": 2160,
+          "height": 3840
+        },
+        "overflow": {
+          "bottom": 39.92
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 479.33,
+          "y": 3816.92,
+          "width": 555.67,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 2.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.5
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(22) > span:nth-of-type(2)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 1125,
+          "top": 3816.92,
+          "right": 1771.44,
+          "bottom": 3879.92,
+          "width": 646.44,
+          "height": 63
+        },
+        "containerSelector": "#root",
+        "text": "VIPIN KUMAR RAJORIYA",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 2160,
+          "bottom": 3840,
+          "width": 2160,
+          "height": 3840
+        },
+        "overflow": {
+          "bottom": 39.92
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1125,
+          "y": 3816.92,
+          "width": 646.44,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 2.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.5
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 2.5,
+        "selector": "#rollOthers > div:nth-of-type(23) > span:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 659.47,
+          "top": 3928.92,
+          "right": 1035,
+          "bottom": 3991.92,
+          "width": 375.53,
+          "height": 63
+        },
+        "containerSelector": "#root",
+        "text": "VARUNA NAIK",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 2160,
+          "bottom": 3840,
+          "width": 2160,
+          "height": 3840
+        },
+        "overflow": {
+          "bottom": 151.92
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 659.47,
+          "y": 3928.92,
+          "width": 375.53,
+          "height": 63
+        },
+        "firstSeen": 2.5,
+        "lastSeen": 2.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.5
+        ]
+      }
+    ],
+    "duration": 15,
+    "samples": [
+      0.833,
+      2.5,
+      4.167,
+      5.833,
+      7.5,
+      9.167,
+      10.833,
+      12.5,
+      14.167
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 139,
+    "truncated": true
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": false,
+    "errorCount": 1,
+    "warningCount": 2,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.57:1; WCAG AA requires 3:1.",
+        "text": "SHEKHAR LAHASE",
+        "fg": "rgb(243,230,214)",
+        "bg": "rgb(230,111,34)",
+        "ratio": 2.57,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(73,69,65)",
+        "large": true,
+        "selector": "div > div:nth-of-type(1) > div:nth-of-type(5) > div > div > div:nth-of-type(1) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 544.046875,
+          "y": 556.1699829101562,
+          "width": 490.953125,
+          "height": 112
+        },
+        "time": 4.167,
+        "times": [
+          4.167
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.96:1; WCAG AA requires 3:1.",
+        "text": "TAKUMA TSUBOI",
+        "fg": "rgb(243,230,214)",
+        "bg": "rgb(238,145,34)",
+        "ratio": 1.96,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(91,86,80)",
+        "large": true,
+        "selector": "div > div:nth-of-type(1) > div:nth-of-type(5) > div > div > div:nth-of-type(7) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 581.828125,
+          "y": 481.510009765625,
+          "width": 453.171875,
+          "height": 112
+        },
+        "time": 7.5,
+        "times": [
+          7.5
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 2.08:1; WCAG AA requires 3:1.",
+        "text": "TANMAY DUTTA",
+        "fg": "rgb(243,230,214)",
+        "bg": "rgb(234,139,22)",
+        "ratio": 2.08,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(87,82,76)",
+        "large": true,
+        "selector": "div > div:nth-of-type(1) > div:nth-of-type(5) > div > div > div:nth-of-type(8) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 603.84375,
+          "y": 520,
+          "width": 431.15625,
+          "height": 112
+        },
+        "time": 10.833,
+        "times": [
+          7.5,
+          10.833
+        ]
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      0.833,
+      4.167,
+      7.5,
+      10.833,
+      14.167
+    ],
+    "checked": 182,
+    "passed": 178
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

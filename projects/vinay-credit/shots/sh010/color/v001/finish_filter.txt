@@ -1,0 +1,1 @@
+curves=all='0/0 0.12/0.13 0.45/0.51 0.8/0.84 1/0.94',eq=saturation=1.06,gblur=sigma=3,vignette=angle=PI/4.5,format=yuv444p,noise=c0s=6:c0f=t,format=yuv420p
