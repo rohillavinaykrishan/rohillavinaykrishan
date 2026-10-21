@@ -1247,5 +1247,16 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "989f5a56-e050-4033-8f64-fed58e9230fa",
+      "completedAt": 1792600192210,
+      "output": "/home/user/rohillavinaykrishan/projects/sukanya-credit/shots/sh010/mograph/v002/render/sukanya_mograph_4K.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
 }
