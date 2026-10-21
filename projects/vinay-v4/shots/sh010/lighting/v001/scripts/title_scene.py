@@ -10,21 +10,21 @@ MODE, OUT, RX, SAMP = argv[0], argv[1], int(argv[2]), int(argv[3])
 SAVE = argv[4] if len(argv) > 4 else None
 
 # ---------------- tweakables ----------------
-CAM_LOC = (-3.0, -5.6, 0.42)
+CAM_LOC = (-3.3, -6.2, 0.42)
 CAM_TGT = (-0.6, 0.0, 2.9)
 LENS = 26.0
-SHIFT_Y = -0.09
-SHIFT_X = 0.0
+SHIFT_Y = -0.158
+SHIFT_X = 0.008
 SUN_EL, SUN_AZ_OFF = 24.0, 13.0     # sun direction = camera bearing rotated by AZ_OFF deg (neg = to the left)
-SUN_E, SUN_COL = 5.2, (1.0, 0.86, 0.68)
-RIM_E, RIM_COL, RIM_EL, RIM_AZ = 2.2, (1.0, 0.62, 0.42), 12.0, 150.0
-FILL_COL, FILL_E = (0.62, 0.50, 0.42), 0.32
+SUN_E, SUN_COL = 6.4, (1.0, 0.86, 0.68)
+RIM_E, RIM_COL, RIM_EL, RIM_AZ = 3.5, (1.0, 0.62, 0.42), 12.0, 150.0
+FILL_COL, FILL_E = (0.62, 0.50, 0.42), 0.22
 # sky ramp on sin(elevation) of camera rays (linear RGB)
 SKY = [(0.000, (0.62, 0.36, 0.17)),
        (0.030, (0.34, 0.18, 0.085)),
        (0.12, (0.090, 0.058, 0.036)),
-       (0.30, (0.030, 0.022, 0.016)),
-       (0.62, (0.0065, 0.0052, 0.0042))]
+       (0.30, (0.050, 0.036, 0.025)),
+       (0.62, (0.016, 0.013, 0.010))]
 HAZE_START, HAZE_END = 12.0, 160.0
 EXPOSURE = 0.0
 LOOK = 'AgX - Medium High Contrast'
@@ -128,6 +128,8 @@ pts = []
 for o in [txt]:
     oe = o.evaluated_get(dg)
     for v in oe.data.vertices: pts.append(world_to_camera_view(sc, co, o.matrix_world @ v.co))
+pl_x = [world_to_camera_view(sc, co, plinth.matrix_world @ v.co).x * sc.render.resolution_x * 3840 / sc.render.resolution_y for v in plinth.data.vertices]
+print('PLINTH x %.0f-%.0f' % (min(pl_x), max(pl_x)))
 H = sc.render.resolution_y; W = sc.render.resolution_x
 xs = [p.x * W for p in pts]; ys = [(1 - p.y) * H for p in pts]
 far = co.location + mathutils.Vector((co.matrix_world.to_3x3() @ mathutils.Vector((0, 0, -1))).xy.to_3d()).normalized() * 3000

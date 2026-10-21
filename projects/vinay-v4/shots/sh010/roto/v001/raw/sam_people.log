@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/home/user/rohillavinaykrishan/projects/vinay-v4/shots/sh010/roto/v001/scripts/sam_multi.py", line 12, in <module>
+    pred = build_sam2_video_predictor("configs/sam2.1/sam2.1_hiera_t.yaml", str(ckpt), device="cpu")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/vfx-ai/lib/python3.12/site-packages/sam2/build_sam.py", line 137, in build_sam2_video_predictor
+    _load_checkpoint(model, ckpt_path)
+  File "/opt/vfx-ai/lib/python3.12/site-packages/sam2/build_sam.py", line 166, in _load_checkpoint
+    sd = torch.load(ckpt_path, map_location="cpu", weights_only=True)["model"]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/vfx-ai/lib/python3.12/site-packages/torch/serialization.py", line 1565, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/vfx-ai/lib/python3.12/site-packages/torch/serialization.py", line 795, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/vfx-ai/lib/python3.12/site-packages/torch/serialization.py", line 776, in __init__
+    super().__init__(open(name, mode))  # noqa: SIM115
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.cache/vfx-studio/sam2.1_hiera_tiny.pt'

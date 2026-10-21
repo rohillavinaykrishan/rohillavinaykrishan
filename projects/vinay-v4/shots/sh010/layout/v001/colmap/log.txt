@@ -320,3 +320,11 @@ I20261021 17:44:32.600919  9236 misc.cc:198]
 Exhaustive feature matching
 ==============================================================================
 I20261021 17:44:32.601744  9236 feature_matching.cc:231] Matching block [1/2, 1/2]
+I20261021 17:50:12.565801  9236 feature_matching.cc:46]  in 339.964s
+I20261021 17:50:12.609345  9236 feature_matching.cc:231] Matching block [1/2, 2/2]
+I20261021 17:50:12.803706  9236 feature_matching.cc:46]  in 0.194s
+I20261021 17:50:12.803835  9236 feature_matching.cc:231] Matching block [2/2, 1/2]
+I20261021 17:50:25.842816  9236 feature_matching.cc:46]  in 13.039s
+I20261021 17:50:25.845299  9236 feature_matching.cc:231] Matching block [2/2, 2/2]
+I20261021 17:50:26.070330  9236 feature_matching.cc:46]  in 0.225s
+I20261021 17:50:26.074193  9236 timer.cc:91] Elapsed time: 5.891 [minutes]

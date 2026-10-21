@@ -1,6 +1,6 @@
 # process.py : COLMAP model -> Z-up metric world, ground plane, cams/points/tracks/solve_stats JSON
 # run: vfx-python process.py [model_dir]
-import numpy as np, json, sys, os, glob
+import numpy as np, json, sys, os, glob, re
 L = '/home/user/rohillavinaykrishan/projects/vinay-v4/shots/sh010/layout/v001/'
 M = sys.argv[1] if len(sys.argv) > 1 else L + 'colmap/sparse/0/'
 REF = 26          # world origin under this plate frame's camera (= director cm3 image 0019 = lookdev frame)
@@ -20,7 +20,7 @@ for i in range(0, len(Ls), 2):
     a = Ls[i].split()
     if not a: continue
     p = np.array(Ls[i+1].split(), float).reshape(-1, 3) if Ls[i+1].strip() else np.zeros((0, 3))
-    imgs[int(a[9].split('.')[0].split('_')[-1])] = dict(q=np.array(a[1:5], float), t=np.array(a[5:8], float), name=a[9], obs=p)
+    imgs[int(re.findall(r'\d+', a[9])[-1])] = dict(q=np.array(a[1:5], float), t=np.array(a[5:8], float), name=a[9], obs=p)
 P3 = {}
 for l in open(M+'points3D.txt'):
     if l.startswith('#'): continue
