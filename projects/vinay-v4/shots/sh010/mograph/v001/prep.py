@@ -175,7 +175,7 @@ man['monument_wire'] = f'Unbounded 900 outlines, width 7.2 m, top z {TOPZ:.3f} m
 CP = U + 'comp/v001/'
 def ph_band(name, w, h, kind):
     """placeholder band video: graded plate (+ a bone box where the monument goes), labelled."""
-    o = PH + name + '.mp4'; k = stale(o, PL % 0, HERE + 'prep.py')
+    o = PH + name + '.mp4'; k = stale(o, PL % 0, HERE + 'prep.py', *( [LD + 'anchor.json'] if os.path.exists(LD + 'anchor.json') else []))
     if not k: return o
     tmp = PH + 'tmp_' + name; os.makedirs(tmp, exist_ok=True)
     for s in range(52):
@@ -205,6 +205,12 @@ for name, w, h, kind in (('final_band_2808x1176', 2808, 1176, 'final'), ('plate_
     else:
         p = ph_band(name, w, h, kind); sh(f'cp "{p}" "{o}"'); man[name] = 'PLACEHOLDER (comp not delivered)'
     assert nframes(o) == 52, name
+
+# breakdown stack: 52 frames + 2-frame hold of s51 for the fold (f273-274) = 54 frames
+for name, src in (('bd_plate', 'plate_band_2160x904'), ('bd_track', 'plate_band_2160x904'), ('bd_cg', 'cg_band_2160x904'), ('bd_final', 'final_band_2160x904')):
+    i = V + src + '.mp4'; o = V + name + '.mp4'; k = stale(o, i)
+    if k: sh(f'ffmpeg -v error -y -i "{i}" -vf "tpad=stop_mode=clone:stop=2" {ENC} "{o}"'); done(o, k)
+    assert nframes(o) == 54, name
 
 # ------------------------------------------------------------------ ambient bleed: 540x960, timeline-mapped, 375 frames
 o = V + 'bleed.mp4'; k = stale(o, PL % 0, PL % 51, HERE + 'prep.py')

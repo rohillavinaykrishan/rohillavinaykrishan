@@ -17,7 +17,7 @@ H = round(W * 536 / 1280)
 #      i.e. the sun sits in front of the camera, ~20 deg right of +Y, elevation ~35 deg)
 SUN_AZ, SUN_EL = 20.0, 35.0          # bearing of the sun POSITION, deg from +Y toward +X
 SUN_E, SUN_COL, SUN_ANGLE = 4.5, (1.0, 0.95, 0.86), 1.5
-WORLD_COL, WORLD_E = (0.80, 0.76, 0.70), 0.48
+WORLD_COL, WORLD_E = (0.80, 0.78, 0.74), 0.56
 exec(os.environ.get('TW', ''))
 
 bpy.ops.wm.open_mainfile(filepath=LAY + 'solve_cam.blend')
@@ -121,6 +121,6 @@ if FR != 'none':
     else:
         frames = [int(x) for x in FR.split(',')]
     for f in frames:
-        sc.frame_set(f); t0 = time.time()
-        bpy.ops.render.render(write_still=True)
+        sc.frame_start = sc.frame_end = f; sc.frame_set(f); t0 = time.time()
+        bpy.ops.render.render(animation=True)
         print('FRAME', f, 'RENDER_SECONDS', round(time.time() - t0, 1), sc.render.resolution_x, sc.render.resolution_y, SAMP, flush=True)
