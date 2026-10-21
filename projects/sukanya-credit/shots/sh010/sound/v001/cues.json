@@ -1,0 +1,57 @@
+{
+ "shot": "sh010",
+ "dept": "sound",
+ "version": "v001",
+ "fps": 25,
+ "frames": 375,
+ "duration_s": 15.0,
+ "sample_rate": 48000,
+ "samples": 720000,
+ "synthetic_sfx": [],
+ "sfx_note": "Client rule: NO synthetic SFX. The optional sub reinforcement in treatment section 10 (impact.wav, lowpassed) is a kit sound, so it was not used.",
+ "music_bed": {
+  "src": "source/trailer.mp4",
+  "in_s": 141.0,
+  "out_s": 156.0,
+  "cut": "aresample=48000, atrim=start_sample=6768000:end_sample=7488000 (sample-exact, uninterrupted)",
+  "fade_in": [0.0, 0.12],
+  "fade_out": [14.3, 15.0],
+  "fade_shape": "sin^2 (equal-power style)"
+ },
+ "stereo_width": {
+  "method": "mid/side: L=g*(M+w*S), R=g*(M-w*S); g = static power compensation (max +0.58 dB) so narrowing adds no level dip",
+  "keys": [
+   {"t": 0.0,    "frame": 0,   "w": 1.0},
+   {"t": 9.2,    "frame": 230, "w": 1.0,  "curve": "smoothstep down"},
+   {"t": 10.6,   "frame": 265, "w": 0.35, "curve": "hold"},
+   {"t": 10.834, "w": 0.35, "curve": "raised-cosine snap, 6 ms"},
+   {"t": 10.84,  "frame": 271, "w": 1.0, "note": "full width exactly on frame 271"},
+   {"t": 15.0,   "frame": 375, "w": 1.0}
+  ]
+ },
+ "measured_hits_bed": {
+  "method": "5 ms RMS envelope, 1 ms resolution; onset = half-rise point between pre-level and peak",
+  "first_hit":  {"cue_t": 0.49,  "onset_t": 0.488,  "peak_t": 0.497,  "frame": 12},
+  "hero_solve": {"cue_t": 10.84, "onset_t": 10.838, "peak_t": 10.847, "frame": 271, "note": "attack straddles the 270/271 boundary by 2 ms; peak inside frame 271"},
+  "title_hit":  {"cue_t": 13.01, "onset_t": 13.012, "peak_t": 13.016, "frame": 325, "note": "pre-build (trailer flare) 12.92-12.98 in frames 323-324"},
+  "drive_hits": [
+   {"cue_t": 2.80, "onset_t": 2.788, "frame": 69},
+   {"cue_t": 3.44, "onset_t": 3.355, "frame": 83, "note": "-85 ms vs cue"},
+   {"cue_t": 4.60, "onset_t": 4.650, "frame": 116, "note": "+50 ms vs cue"},
+   {"cue_t": 6.04, "onset_t": 6.043, "frame": 151, "note": "loudest drum, 147.04"},
+   {"cue_t": 7.80, "onset_t": 7.778, "frame": 194},
+   {"cue_t": 8.20, "onset_t": 8.126, "frame": 203, "note": "-74 ms vs cue"},
+   {"cue_t": 8.80, "onset_t": 8.711, "frame": 217, "note": "-89 ms vs cue"}
+  ]
+ },
+ "master": {
+  "chain": "volume=+0.28dB, 4x oversample (soxr 192k), alimiter limit=-1.5 dB attack=1ms release=60ms asc=1 latency=1 (compensated, lag 0 samples), soxr back to 48k, pcm_s24le",
+  "integrated_lufs": -13.99,
+  "true_peak_dbtp": -1.50,
+  "max_gain_reduction_db": 1.37
+ },
+ "outputs": {
+  "mix_master.wav": "bed + width move, mastered",
+  "mix_master_nowidth.wav": "same bed and master chain, no width move (no-effects alternate)"
+ }
+}
