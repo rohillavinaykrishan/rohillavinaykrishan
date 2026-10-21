@@ -144,7 +144,10 @@ def to_screen(a):
 
 
 def points():
-    src = os.path.join(SHOT, "roto/v001/points.json")
+    src = os.path.join(SHOT, "roto/v002/points.json")
+    if not os.path.isfile(src):
+        status["points_warn"] = "roto/v002/points.json missing - falling back to v001 (built from 151.902 = frame 273)"
+        src = os.path.join(SHOT, "roto/v001/points.json")
     if os.path.isfile(src):
         with open(src) as f:
             raw = json.load(f)

@@ -38,15 +38,15 @@ H, W = luma.shape
 # subject weight from depth (she is the near layer): background points cost the face density
 subj = np.clip((dep - 0.30) / 0.25, 0, 1)
 subj = subj * subj * (3 - 2 * subj)
-# hand-placed face prior (roto ellipse, 1080 coords): centre (680,690), radii (400,440), soft edge.
+# hand-placed face prior (roto ellipse, 1080 coords): centre (720,690), radii (400,440), soft edge.
 # 3,400 dots cannot cover the whole frame densely; the face gets most of them.
 yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
-rr = np.sqrt(((xx - 680) / 400) ** 2 + ((yy - 690) / 440) ** 2)
+rr = np.sqrt(((xx - 720) / 400) ** 2 + ((yy - 690) / 440) ** 2)
 face = np.clip((1.25 - rr) / 0.35, 0, 1)
 subj = subj * (0.18 + 0.82 * face)
 
 # Sobel on a lightly blurred luma (kills compression noise)
-lb = np.asarray(Image.fromarray((luma * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1.6))).astype(np.float32) / 255
+lb = np.asarray(Image.fromarray((luma * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(2.5))).astype(np.float32) / 255
 p = np.pad(lb, 1, mode="edge")
 gx = (p[:-2, 2:] + 2 * p[1:-1, 2:] + p[2:, 2:]) - (p[:-2, :-2] + 2 * p[1:-1, :-2] + p[2:, :-2])
 gy = (p[2:, :-2] + 2 * p[2:, 1:-1] + p[2:, 2:]) - (p[:-2, :-2] + 2 * p[:-2, 1:-1] + p[:-2, 2:])
@@ -60,7 +60,7 @@ w = np.sqrt(g_vis.ravel()[idx])  # flatter than linear: hair/collar edges must n
 e_sel = rng.choice(idx, size=min(N_EDGE, idx.size), replace=False, p=w / w.sum())
 # fill points: luma-weighted (dark pixels would be invisible anyway), not on edges
 rest = np.flatnonzero(~mask)
-wr = (luma.ravel()[rest] ** 1.5) * (0.08 + 0.92 * subj.ravel()[rest]) + 1e-5
+wr = (luma.ravel()[rest] ** 3.0) * (0.08 + 0.92 * subj.ravel()[rest]) + 1e-5
 r_sel = rng.choice(rest, size=N_RAND, replace=False, p=wr / wr.sum())
 sel = np.concatenate([e_sel, r_sel])
 
@@ -74,7 +74,7 @@ l = np.clip(0.25 + 0.75 * luma.ravel()[sel], 0, 1) ** 0.7  # display luma: floor
 pts = [[round(float(a), 1), round(float(b), 1), round(float(c), 1), round(float(e), 3)]
        for a, b, c, e in zip(x, y, z, l)]
 out = {"w": 2160, "h": 3840, "f": F, "cx": 1080, "cy": 1920, "z_near": Z_NEAR, "z_far": Z_FAR,
-       "n_edge": int(e_sel.size), "n_fill": int(r_sel.size), "src": "trailer 151.90 s, CX 770",
+       "n_edge": int(e_sel.size), "n_fill": int(r_sel.size), "src": "edit hero_f271_1080.png (trailer 151.818, frame 271, CX 769)",
        "points": pts}
 with open(os.path.join(HERE, "points.json"), "w") as fh:
     json.dump(out, fh, separators=(",", ":"))
