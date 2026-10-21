@@ -1,0 +1,4 @@
+I20261021 17:00:48.629683  3908 model.cc:431] Registered images: 3
+I20261021 17:00:48.629686  3908 model.cc:433] Points: 863
+I20261021 17:00:48.629693  3908 model.cc:436] Mean track length: 2.836616
+I20261021 17:00:48.629703  3908 model.cc:441] Mean reprojection error: 0.485212px

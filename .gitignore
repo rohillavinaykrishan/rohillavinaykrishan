@@ -10,3 +10,11 @@ projects/**/*.exr
 projects/**/*.blend
 projects/**/*.blend1
 __pycache__/
+projects/**/*.db
+projects/**/*.db-*
+projects/**/*.bin
+projects/**/*.npy
+projects/**/*.npz
+projects/**/*.m4a
+projects/**/*.ttf
+projects/**/*.woff2

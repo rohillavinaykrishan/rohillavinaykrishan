@@ -1,0 +1,99 @@
+{
+ "duration": 15.5,
+ "bpm": 172.3,
+ "beats": [
+  0.139,
+  0.488,
+  0.859,
+  1.207,
+  1.556,
+  1.904,
+  2.252,
+  2.577,
+  2.902,
+  3.251,
+  3.622,
+  3.971,
+  4.319,
+  4.644,
+  4.992,
+  5.341,
+  5.689,
+  6.037,
+  6.385,
+  6.734,
+  7.082,
+  7.407,
+  7.755,
+  8.104,
+  8.429,
+  8.777,
+  9.125,
+  9.474,
+  9.822,
+  10.17,
+  10.519,
+  10.844,
+  11.169,
+  11.54,
+  11.889,
+  12.237,
+  12.562,
+  12.91,
+  13.259,
+  13.607,
+  13.978,
+  14.396,
+  14.768,
+  15.116
+ ],
+ "key": "D minor",
+ "key_confidence": 0.37,
+ "energy_rms": 0.134,
+ "brightness_hz": 2482,
+ "sections": [
+  {
+   "start": 0.0,
+   "end": 0.3,
+   "energy": 0.26,
+   "label_hint": "low (intro/bridge/outro?)"
+  },
+  {
+   "start": 0.3,
+   "end": 5.15,
+   "energy": 1.0,
+   "label_hint": "high (chorus/drop?)"
+  },
+  {
+   "start": 5.15,
+   "end": 5.94,
+   "energy": 0.56,
+   "label_hint": "mid (verse?)"
+  },
+  {
+   "start": 5.94,
+   "end": 6.48,
+   "energy": 0.71,
+   "label_hint": "mid (verse?)"
+  },
+  {
+   "start": 6.48,
+   "end": 6.78,
+   "energy": 0.19,
+   "label_hint": "low (intro/bridge/outro?)"
+  },
+  {
+   "start": 6.78,
+   "end": 15.5,
+   "energy": 0.96,
+   "label_hint": "high (chorus/drop?)"
+  }
+ ],
+ "suggested_grades": [
+  "punjabi-night",
+  "punjabi-dark",
+  "night-neon"
+ ],
+ "why": "intense, swagger: deep teal shadows, hot highlights, crushed blacks",
+ "note": "Music-only suggestion. Read the lyrics' meaning before choosing the final look."
+}
