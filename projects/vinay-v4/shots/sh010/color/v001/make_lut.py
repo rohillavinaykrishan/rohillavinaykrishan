@@ -12,12 +12,12 @@ import numpy as np
 INK = np.array([0x12, 0x10, 0x0D]) / 255.0
 BONE = np.array([0xF2, 0xEB, 0xDF]) / 255.0
 
-GAMMA = 0.97        # midtone lift; compensates the Ink/Bone squeeze (keeps mean Y within +-5%)
+GAMMA = 0.98        # midtone lift; compensates the Ink/Bone squeeze (keeps mean Y within +-5%)
 SHOULDER = 0.72     # highlight roll-off starts here
 SAT = 0.88
-GREEN_SAT = 0.78    # extra desat for foliage
+GREEN_SAT = 0.70    # extra desat for foliage
 SAGE_HUE = 72.0     # deg, sage #7D875C is ~74 deg
-GREEN_SHIFT = 0.55  # fraction of the way toward SAGE_HUE
+GREEN_SHIFT = 0.65  # fraction of the way toward SAGE_HUE
 
 
 def rgb2hsv(c):
