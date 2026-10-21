@@ -22,3 +22,6 @@ mapped #1A1A1C -> #F4EFE6. No red/orange survives. Checked over black and white 
 ## Plate
 Input: edit/v001/bg_plate_raw_1080.mp4, graded from a snapshot copy after the editor's rebuild finished (the first attempt read a file that was
 still being rewritten -> truncated, and was replaced). Output written to work/ and then moved into place atomically.
+QC (final file): 1080x1920, 25 fps, 375 frames, 15.00 s. Per-frame mean |U-128| max 0.69, |V-128| max 0.29 (spec <= 2); mean B <= mean R on all
+375 frames; no black frames. Frame 0 is dim (YAVG 20) because the raw plate itself ramps up from Y 35 to 56 over frames 0-30 in the source shot.
+The file is ~127 MB because luma grain at CRF 14 is expensive. Took ~25 min including the wait for the editor.
