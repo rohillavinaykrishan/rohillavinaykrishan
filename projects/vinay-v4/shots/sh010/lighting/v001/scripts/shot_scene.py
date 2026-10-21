@@ -79,20 +79,20 @@ except Exception: pass
 
 # outputs: multilayer EXR (all passes, linear) + compositor PNGs (cg RGBA 16-bit sRGB, shadow 16-bit linear)
 os.makedirs(OUTDIR, exist_ok=True)
-sc.render.image_settings.file_format = 'OPEN_EXR_MULTILAYER'; sc.render.image_settings.color_depth = '16'
+sc.render.image_settings.media_type = 'MULTI_LAYER_IMAGE'; sc.render.image_settings.file_format = 'OPEN_EXR_MULTILAYER'; sc.render.image_settings.color_depth = '16'
 sc.render.image_settings.exr_codec = 'ZIP'
 sc.render.filepath = os.path.join(OUTDIR, 'exr', 'cg.####')
 ng = bpy.data.node_groups.new('cg_comp', 'CompositorNodeTree'); sc.compositing_node_group = ng
 rl = ng.nodes.new('CompositorNodeRLayers')
 fo = ng.nodes.new('CompositorNodeOutputFile'); fo.directory = OUTDIR + '/'; fo.file_name = ''
-fo.format.file_format = 'PNG'; fo.format.color_mode = 'RGBA'; fo.format.color_depth = '16'
+fo.format.media_type = 'IMAGE'; fo.format.file_format = 'PNG'; fo.format.color_mode = 'RGBA'; fo.format.color_depth = '16'
 fo.file_output_items.clear()
 it1 = fo.file_output_items.new('RGBA', 'cg/cg.')
 it2 = fo.file_output_items.new('RGBA', 'shadow/shadow.')
 it3 = fo.file_output_items.new('RGBA', 'mist/mist.')
 for it in (it2, it3):
     it.override_node_format = True
-    it.format.file_format = 'PNG'; it.format.color_mode = 'BW'; it.format.color_depth = '16'
+    it.format.media_type = 'IMAGE'; it.format.file_format = 'PNG'; it.format.color_mode = 'BW'; it.format.color_depth = '16'
     try:
         it.save_as_render = False
     except Exception: pass
