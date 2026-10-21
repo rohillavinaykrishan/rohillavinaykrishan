@@ -10,17 +10,18 @@ MODE, OUT, RX, SAMP = argv[0], argv[1], int(argv[2]), int(argv[3])
 SAVE = argv[4] if len(argv) > 4 else None
 
 # ---------------- tweakables ----------------
-CAM_LOC = (-3.6, -9.6, 0.55)
-CAM_TGT = (0.15, 0.0, 1.75)
-LENS = 30.0
-SHIFT_Y = 0.0
-SUN_EL, SUN_AZ_OFF = 24.0, -32.0     # sun direction = camera bearing rotated by AZ_OFF deg (neg = to the left)
+CAM_LOC = (-3.0, -5.6, 0.42)
+CAM_TGT = (-0.6, 0.0, 2.9)
+LENS = 26.0
+SHIFT_Y = -0.09
+SHIFT_X = 0.0
+SUN_EL, SUN_AZ_OFF = 24.0, 13.0     # sun direction = camera bearing rotated by AZ_OFF deg (neg = to the left)
 SUN_E, SUN_COL = 5.2, (1.0, 0.86, 0.68)
 RIM_E, RIM_COL, RIM_EL, RIM_AZ = 2.2, (1.0, 0.62, 0.42), 12.0, 150.0
 FILL_COL, FILL_E = (0.62, 0.50, 0.42), 0.32
 # sky ramp on sin(elevation) of camera rays (linear RGB)
-SKY = [(0.000, (0.80, 0.52, 0.28)),
-       (0.035, (0.42, 0.24, 0.12)),
+SKY = [(0.000, (0.62, 0.36, 0.17)),
+       (0.030, (0.34, 0.18, 0.085)),
        (0.12, (0.090, 0.058, 0.036)),
        (0.30, (0.030, 0.022, 0.016)),
        (0.62, (0.0065, 0.0052, 0.0042))]
@@ -28,6 +29,7 @@ HAZE_START, HAZE_END = 12.0, 160.0
 EXPOSURE = 0.0
 LOOK = 'AgX - Medium High Contrast'
 # --------------------------------------------
+exec(os.environ.get('TW', ''))
 
 for o in list(bpy.data.objects): bpy.data.objects.remove(o)
 sc = bpy.context.scene
@@ -58,12 +60,12 @@ n1 = N.new('ShaderNodeTexNoise'); n1.inputs['Scale'].default_value = 3.0; n1.inp
 n2 = N.new('ShaderNodeTexNoise'); n2.inputs['Scale'].default_value = 90.0; n2.inputs['Detail'].default_value = 8
 L.new(tc.outputs['Object'], n1.inputs['Vector']); L.new(tc.outputs['Object'], n2.inputs['Vector'])
 cm = N.new('ShaderNodeMix'); cm.data_type = 'RGBA'
-cm.inputs['A'].default_value = M.hexlin('#B89A74'); cm.inputs['B'].default_value = M.hexlin('#CDB08A')
+cm.inputs['A'].default_value = M.hexlin('#A88C68'); cm.inputs['B'].default_value = M.hexlin('#C2A47E')
 L.new(n1.outputs['Fac'], cm.inputs['Factor'])
 L.new(cm.outputs['Result'], bs.inputs['Base Color'])
 ad = N.new('ShaderNodeMath'); ad.operation = 'MULTIPLY_ADD'; ad.inputs[1].default_value = 0.35
 L.new(n1.outputs['Fac'], ad.inputs[0]); L.new(n2.outputs['Fac'], ad.inputs[2])
-bm = N.new('ShaderNodeBump'); bm.inputs['Strength'].default_value = 0.35; bm.inputs['Distance'].default_value = 0.02
+bm = N.new('ShaderNodeBump'); bm.inputs['Strength'].default_value = 0.22; bm.inputs['Distance'].default_value = 0.012
 L.new(ad.outputs[0], bm.inputs['Height']); L.new(bm.outputs['Normal'], bs.inputs['Normal'])
 cd_ = N.new('ShaderNodeCameraData')
 hz = N.new('ShaderNodeMapRange'); hz.inputs['From Min'].default_value = HAZE_START; hz.inputs['From Max'].default_value = HAZE_END
@@ -93,7 +95,7 @@ WL.new(wlp.outputs['Is Camera Ray'], wmx.inputs[0]); WL.new(bg.outputs[0], wmx.i
 WL.new(wmx.outputs[0], WN['World Output'].inputs['Surface'])
 
 # camera
-cdat = bpy.data.cameras.new('cam'); cdat.sensor_fit = 'HORIZONTAL'; cdat.sensor_width = 36; cdat.lens = LENS; cdat.shift_y = SHIFT_Y
+cdat = bpy.data.cameras.new('cam'); cdat.sensor_fit = 'HORIZONTAL'; cdat.sensor_width = 36; cdat.lens = LENS; cdat.shift_y = SHIFT_Y; cdat.shift_x = SHIFT_X
 cdat.clip_end = 5000
 co = bpy.data.objects.new('cam', cdat); sc.collection.objects.link(co); sc.camera = co
 co.location = CAM_LOC
@@ -120,6 +122,19 @@ if MODE == 'bg':
         o.visible_camera = False; o.visible_glossy = False
 
 print('CAM_BEARING', round(cam_bearing, 1), 'SUN_BEARING', round(cam_bearing - SUN_AZ_OFF, 1))
+from bpy_extras.object_utils import world_to_camera_view
+dg = bpy.context.evaluated_depsgraph_get()
+pts = []
+for o in [txt]:
+    oe = o.evaluated_get(dg)
+    for v in oe.data.vertices: pts.append(world_to_camera_view(sc, co, o.matrix_world @ v.co))
+H = sc.render.resolution_y; W = sc.render.resolution_x
+xs = [p.x * W for p in pts]; ys = [(1 - p.y) * H for p in pts]
+far = co.location + mathutils.Vector((co.matrix_world.to_3x3() @ mathutils.Vector((0, 0, -1))).xy.to_3d()).normalized() * 3000
+hz_ = (1 - world_to_camera_view(sc, co, far).y) * H
+k = 3840 / H
+print('PROBE(4K px) x %.0f-%.0f (w %.0f)  top %.0f  base %.0f  horizon %.0f' % (min(xs)*k, max(xs)*k, (max(xs)-min(xs))*k, min(ys)*k, max(ys)*k, hz_*k))
+if MODE == 'probe': sys.exit(0)
 sc.render.filepath = OUT
 t0 = time.time(); bpy.ops.render.render(write_still=True)
 print('RENDER_SECONDS', round(time.time() - t0, 1), MODE, sc.render.resolution_x, sc.render.resolution_y, SAMP)

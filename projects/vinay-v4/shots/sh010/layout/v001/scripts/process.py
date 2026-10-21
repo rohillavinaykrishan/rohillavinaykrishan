@@ -75,14 +75,15 @@ for fr in frames:
     Rb = Rn.T @ np.diag([1, -1, -1])
     mw = np.eye(4); mw[:3, :3] = Rb; mw[:3, 3] = Cw
     nobs = int((imgs[fr]['obs'][:, 2] >= 0).sum()) if len(imgs[fr]['obs']) else 0
-    cams.append(dict(frame=fr, image=imgs[fr]['name'], R=Rn.tolist(), t=tn.tolist(), C=Cw.tolist(),
+    cams.append(dict(frame=fr, plate_file='plate.%04d.png' % (fr+1), src_frame=2982+fr, image=imgs[fr]['name'], R=Rn.tolist(), t=tn.tolist(), C=Cw.tolist(),
                      blender_matrix_world=mw.tolist(), n_tracks=nobs))
 lens = f/W*36
 out_cams = dict(convention=("World Z-up metres, ground z=0, origin on the ground under camera s%d, +Y = s%d forward projected on ground. "
                             "R,t are world->camera (OpenCV: x right, y down, z forward): x_cam = R@X + t. "
                             "Pixel (plate 1280x536): x=xc/zc, y=yc/zc, r2=x*x+y*y, u=f*x*(1+k1*r2)+cx, v=f*y*(1+k1*r2)+cy. "
                             "C = camera centre. blender_matrix_world = camera object matrix_world (Blender -Z forward, +Y up). "
-                            "Blender: sensor_fit HORIZONTAL, sensor_width 36, lens_mm.") % (REF, REF),
+                            "Blender: sensor_fit HORIZONTAL, sensor_width 36, lens_mm. frame = s index 0-51 = Blender scene frame; plate_file = edit/v001/plate numbering (s+1). "
+                            "Pixel coords: (0,0) = top-left CORNER of the image, first pixel centre = (0.5,0.5) (COLMAP = canvas convention).") % (REF, REF),
                 width=W, height=H, model=model, f=f, cx=cx, cy=cy, k1=k1,
                 K=[[f, 0, cx], [0, f, cy], [0, 0, 1]], lens_mm=lens, hfov_deg=float(np.degrees(2*np.arctan(W/2/f))),
                 fps=24000/1001, src_frames=[2982, 3033], frames=cams)
@@ -95,8 +96,8 @@ json.dump(dict(convention='xyz in the cams.json world (metres, Z up). ground = w
 tr = []
 for fr in frames:
     o = imgs[fr]['obs']; o = o[o[:, 2] >= 0] if len(o) else o
-    tr.append(dict(frame=fr, n=len(o), pts=[[round(a, 2), round(b, 2), int(c)] for a, b, c in o]))
-json.dump(dict(convention='per plate frame: [u, v, point3D id] observations (plate px 1280x536, distorted = as seen in the plate) that belong to a triangulated 3D point.',
+    tr.append(dict(frame=fr, plate_file='plate.%04d.png' % (fr+1), n=len(o), pts=[[round(a, 2), round(b, 2), int(c)] for a, b, c in o]))
+json.dump(dict(convention='per plate frame: [u, v, point3D id] observations (plate px 1280x536, distorted = as seen in the plate) that belong to a triangulated 3D point. (0,0)=top-left corner of the image (canvas convention). frame = s index 0-51.',
                frames=tr), open(L+'tracks.json', 'w'))
 # ---- reprojection check (own computation)
 errs = []
