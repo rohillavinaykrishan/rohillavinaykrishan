@@ -337,20 +337,25 @@
 
       // ---------------- SOLVE viewport ----------------
       const VF_BAND = PF * KB;                 // 1685.6: a plate camera seen through the band
-      const T0 = [AX - 0.5, AY * 0.6, 0.4];    // orbit target: the sand between the camera path and the monument mark
+      const T0 = (function () {                 // orbit target: median of the solved ground points (within 40 m), pulled toward the camera path
+        const xs = [], ys = [];
+        for (let i = 0; i < NPT; i++) { const o = i * 7; if (PTS[o + 6] && Math.hypot(PTS[o], PTS[o + 1]) < 40) { xs.push(PTS[o]); ys.push(PTS[o + 1]); } }
+        xs.sort((a, b) => a - b); ys.sort((a, b) => a - b);
+        return [xs[xs.length >> 1] * 0.8, ys[ys.length >> 1] * 0.8, 0.3];
+      })();
       const P51 = poseOf(51), P0 = poseOf(0);
       const ORB = (function () {
         const d = nrm([P51.C[0] - T0[0], P51.C[1] - T0[1], 0]);
-        const r = Math.hypot(P51.C[0] - T0[0], P51.C[1] - T0[1]) + 2.0;
+        const r = Math.hypot(P51.C[0] - T0[0], P51.C[1] - T0[1]) + 6.5;
         const th0 = Math.atan2(d[1], d[0]);
         const d0 = Math.atan2(P0.C[1] - T0[1], P0.C[0] - T0[0]);
         let dd = d0 - th0; while (dd > Math.PI) dd -= 2 * Math.PI; while (dd < -Math.PI) dd += 2 * Math.PI;
         const sgn = dd >= 0 ? 1 : -1;
-        return { r, th0, sgn, h: 7.2 };
+        return { r, th0, sgn, h: 8.5 };
       })();
       function orbitPose(u) {   // u 0..1 over the orbit
         const th = ORB.th0 + ORB.sgn * (40 * Math.PI / 180) * u;
-        const r = ORB.r - 1.2 * u, h = ORB.h - 0.8 * u;
+        const r = ORB.r - 2.0 * u, h = ORB.h - 1.0 * u;
         const C = [T0[0] + r * Math.cos(th), T0[1] + r * Math.sin(th), h];
         return lookAt(C, [T0[0], T0[1] - 1.0, T0[2]]);
       }
@@ -464,16 +469,17 @@
           const bA = ramp(F, 0, 3) * 0.9 + 0.1;
           bracket(bx0, by0, bx1, by1, arm, lw, `rgba(255,46,136,${bA})`);
           // TRK 01 label
-          S(E.trkLab, "transform", `translate(${bx0.toFixed(1)}px,${(by0 - 66).toFixed(1)}px)`); S(E.trkLab, "opacity", (1 - ramp(F, 58, 63)).toFixed(3));
+          S(E.trkLab, "transform", `translate(${(bx1 + 26).toFixed(1)}px,${((by0 + by1) / 2 - 26).toFixed(1)}px)`); S(E.trkLab, "opacity", (1 - ramp(F, 58, 63)).toFixed(3));
           T(E.trkLab, "TRK 01");
           // HUD
+          S(E.hudTL, "top", "3010px"); S(E.hudTR, "top", "3010px");
           const nChars = Math.floor(clamp((F - 25) / 12, 0, 1) * HUDNAME.length);
           T(E.hudTL, "SOURCE · <b>CREW THANKS ROLL</b>\n" + (nChars > 0 ? `<span>${HUDNAME.slice(0, nChars)}</span>` : ""));
           T(E.hudTR, `MOVIE <b>${movieTC(F)}</b>\nDNEG CREW THANKS`);
           S(E.hudTL, "opacity", (ramp(F, 2, 8) * (1 - ramp(F, 62, 68))).toFixed(3));
           S(E.hudTR, "opacity", (ramp(F, 2, 8) * (1 - ramp(F, 62, 68))).toFixed(3));
         } else {
-          S(E.hudTL, "opacity", "0"); S(E.hudTR, "opacity", "0");
+          S(E.hudTL, "opacity", "0"); S(E.hudTR, "opacity", "0"); S(E.hudTL, "top", "300px");
           S(E.credWrap, "opacity", "0"); S(E.credDim, "opacity", "0"); S(E.credGlow, "opacity", "0"); S(E.credInk, "opacity", "0"); S(E.trkLab, "opacity", "0");
         }
 
@@ -522,7 +528,8 @@
           placePlane(E.planeB, V, 0, 2.0, opB);
           // ground grid in 3D (continuous with the band's grid at f121)
           const gA = F < 137 ? 0.85 * (1 - 0.45 * ramp(F, 121, 133)) : lerp(0.5, 0.75, ramp(F, 159, 165));
-          drawGrid(V, gA, 46, F < 137 ? 3 : 2, null, F < 137 ? null : lerp3(T0, V.C, eIOQ(ramp(F, 159, 165))));
+          const gclip = F >= 161 ? (function(){ const u = eIOQ(ramp(F, 161, 165)); const k = V.fx / PF; const bx = V.px - PCX * k, by = V.py - PCY * k; return [lerp(0, bx, u), lerp(0, by, u), lerp(W, PW * k, u), lerp(H, PH * k, u)]; })() : null;
+          drawGrid(V, gA, 46, F < 137 ? 3 : 2, gclip, F < 137 ? null : lerp3(T0, V.C, eIOQ(ramp(F, 159, 165))));
           // tracks of s51 stay on its plane while it tilts
           if (F < 137) {
             const tA = 0.9 * (1 - ramp(F, 129, 136)); const a = TR[51];
@@ -533,9 +540,13 @@
               ctx.stroke(); }
           }
           // SOLVE content
+          let vclip = null;
+          if (F >= 161) { const u = eIOQ(ramp(F, 161, 165)); const k = V.fx / PF; const bx = V.px - PCX * k, by = V.py - PCY * k;
+            vclip = [lerp(0, bx, u), lerp(0, by, u), lerp(W, PW * k, u), lerp(H, PH * k, u)];
+            ctx.save(); ctx.beginPath(); ctx.rect(vclip[0], vclip[1], vclip[2], vclip[3]); ctx.clip(); }
           if (F >= 137) {
             const inA = ramp(F, 137, 140);
-            drawCloud(V, inA, 0.045);
+            drawCloud(V, inA * (1 - 0.7 * ramp(F, 165, 168)), lerp(0.045, 0.03, ramp(F, 163, 166)));
             // camera path + frustums register one by one (f137-157), current one pink; they leave as we glide into s0
             const nReg = clamp(Math.ceil((F - 137 + 1) / 20 * 52), 1, 52);
             const fA = inA * (1 - ramp(F, 160, 164));
@@ -559,6 +570,7 @@
             // the monument's layout mark: pink wireframe on the grid (f165)
             if (F >= 165) drawWire(V, 1, 0, eOC(ramp(F, 165, 168)), null);
           }
+          if (vclip) ctx.restore();
           S(E.act2, "opacity", (ramp(F, 137, 139) * (1 - ramp(F, 165, 168))).toFixed(3));
           const nReg = F < 137 ? 0 : clamp(Math.ceil((F - 137 + 1) / 20 * 52), 1, 52);
           const camN = Math.round(nReg / 52 * ST.cameras_registered);

@@ -3,3 +3,5 @@
 
 Skipping the post-processing step due to the error above. You can still use SAM 2 and it's OK to ignore the error above, although some post-processing functionality may be limited (which doesn't affect the results in most cases; see https://github.com/facebookresearch/sam2/blob/main/INSTALL.md).
   pred_masks_gpu = fill_holes_in_mask_scores(
+propagate in video:   0%|          | 0/52 [00:00<?, ?it/s]fwd 0
+propagate in video:   2%|▏         | 1/52 [00:00<00:12,  4.04it/s]propagate in video:   4%|▍         | 2/52 [01:29<44:00, 52.81s/it]

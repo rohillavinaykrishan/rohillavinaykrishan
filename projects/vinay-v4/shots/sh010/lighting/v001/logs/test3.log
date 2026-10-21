@@ -3,3 +3,10 @@
 EGL Error (0x3009): EGL_BAD_MATCH: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
 EGL Error (0x3009): EGL_BAD_MATCH: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
 EGL Error (0x3009): EGL_BAD_MATCH: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+04:00.331  render           | Saved: '/home/user/rohillavinaykrishan/projects/vinay-v4/shots/sh010/lighting/v001/test3/mist/mist.0000.png'
+04:01.323  render           | Saved: '/home/user/rohillavinaykrishan/projects/vinay-v4/shots/sh010/lighting/v001/test3/shadow/shadow.0000.png'
+04:02.295  render           | Saved: '/home/user/rohillavinaykrishan/projects/vinay-v4/shots/sh010/lighting/v001/test3/cg/cg.0000.png'
+04:04.320  render           | Saved: '/home/user/rohillavinaykrishan/projects/vinay-v4/shots/sh010/lighting/v001/test3/exr/cg.0000.exr'
+MONUMENT_DIMS {'width': 7.239999771118164, 'height': 3.754525661468506, 'depth': 0.3000001311302185}
+RL outputs ['Image', 'Alpha', 'Mist', 'Shadow Catcher', 'CryptoObject00', 'CryptoObject01', 'CryptoObject02', 'Noisy Image', 'Noisy Shadow Catcher']
+FRAME 0 RENDER_SECONDS 243.6 3257 1364 16

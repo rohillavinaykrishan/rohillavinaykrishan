@@ -120,7 +120,27 @@ if FR != 'none':
         a_, b_ = map(int, FR.split('-')); frames = range(a_, b_ + 1)
     else:
         frames = [int(x) for x in FR.split(',')]
+    from bpy_extras.object_utils import world_to_camera_view
+    ldir = (-pos).normalized()   # direction the sunlight travels
+    def region(f):
+        xs, ys = [], []
+        for sub in (-0.3, 0.0, 0.3):
+            ff = f + sub; fi = math.floor(ff); sc.frame_set(fi, subframe=ff - fi)
+            for o in (txt, plinth):
+                for c in o.bound_box:
+                    P = o.matrix_world @ mathutils.Vector(c)
+                    pts = [P]
+                    if P.z > 1e-3 and ldir.z < 0: pts.append(P - ldir * (P.z / ldir.z))   # its shadow on z=0
+                    for Q in pts:
+                        v = world_to_camera_view(sc, cam, Q)
+                        if v.z > 0: xs.append(v.x); ys.append(v.y)
+        m = 0.03
+        return (max(0, min(xs) - m), min(1, max(xs) + m), max(0, min(ys) - m), min(1, max(ys) + m))
     for f in frames:
+        b = region(f) if os.environ.get('NOBORDER') is None else (0, 1, 0, 1)
+        sc.render.use_border = True; sc.render.use_crop_to_border = False
+        sc.render.border_min_x, sc.render.border_max_x, sc.render.border_min_y, sc.render.border_max_y = b
+        print('BORDER', f, [round(x, 3) for x in b], 'area %.1f%%' % (100 * (b[1] - b[0]) * (b[3] - b[2])), flush=True)
         sc.frame_start = sc.frame_end = f; sc.frame_set(f); t0 = time.time()
         bpy.ops.render.render(animation=True)
         print('FRAME', f, 'RENDER_SECONDS', round(time.time() - t0, 1), sc.render.resolution_x, sc.render.resolution_y, SAMP, flush=True)
