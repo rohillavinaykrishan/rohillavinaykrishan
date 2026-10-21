@@ -39,7 +39,8 @@ def to_vertical(img_active, cx, zoom=1.0):
     w = CW / zoom; h = 536 / zoom
     x0 = cx - w / 2; y0 = (536 - h) / 2
     sx = W / w; sy = H / h
-    M = np.array([[sx, 0, -x0 * sx], [0, sy, -y0 * sy]], np.float32)
+    # pixel-centre convention (matches ffmpeg/swscale scaling)
+    M = np.array([[sx, 0, -x0 * sx + 0.5 * sx - 0.5], [0, sy, -y0 * sy + 0.5 * sy - 0.5]], np.float32)
     return cv2.warpAffine(img_active, M, (W, H), flags=cv2.INTER_LANCZOS4, borderMode=cv2.BORDER_REFLECT)
 
 
@@ -54,7 +55,7 @@ for c in cuts:
             need.add(tidx(edl["music"]["in"] + f / FPS))
 p4 = next(c for c in cuts if c["id"] == "P4")
 need.add(tidx(p4["src_still"]))
-need.add(tidx(edl["hero_still"]["src"]))
+need.add(int(round(edl["hero_still"]["src"] * TFPS)))  # hero = nearest trailer frame (3642, pts 151.902)
 lo, hi = min(need), max(need)
 # decode from 0 without seeking: CFR 23.976, frame k == index k (nb_frames 4046 = 168.75 s * 23.976)
 cmd = ["ffmpeg", "-v", "error", "-i", TRAILER, "-an", "-vf", "crop=1280:536:0:92",
@@ -74,8 +75,11 @@ print(f"native frames decoded: {len(native)} ({lo}-{hi})")
 
 # ---- hero still ------------------------------------------------------------------------------
 hs = edl["hero_still"]
-hero = to_vertical(native[tidx(hs["src"])], hs["cx"])
+hero = to_vertical(native[int(round(hs["src"] * TFPS))], hs["cx"])
 cv2.imwrite(os.path.join(PROJ, hs["out"]), cv2.cvtColor(hero, cv2.COLOR_RGB2BGR))
+# what the plate actually shows on the solve frame 271 (trailer 151.818, the first Chun-Li frame)
+h271 = to_vertical(native[tidx(edl["music"]["in"] + 271 / FPS)], hs["cx"])
+cv2.imwrite(os.path.join(OUT, "hero_f271_1080.png"), cv2.cvtColor(h271, cv2.COLOR_RGB2BGR))
 p4still = to_vertical(native[tidx(p4["src_still"])], p4["cx"])
 cv2.imwrite(os.path.join(OUT, "p4_still_1080.png"), cv2.cvtColor(p4still, cv2.COLOR_RGB2BGR))
 
@@ -120,7 +124,7 @@ for c in cuts:
         n = fb - fa + 1
         d = os.path.join(WORK, c["id"]); os.makedirs(d, exist_ok=True)
         x0 = c["cx"] - CW // 2
-        vf = (f"crop=1280:536:0:92,crop={CW}:536:{x0}:0,setpts=(PTS-STARTPTS)/{sp},"
+        vf = (f"crop=1280:536:0:92,crop={CW}:536:{x0}:0:exact=1,setpts=(PTS-STARTPTS)/{sp},"
               f"minterpolate=fps={FPS}:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1")
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s0:.4f}", "-i", TRAILER, "-an", "-vf", vf,
                         "-frames:v", str(n), os.path.join(d, "f.%04d.png")], check=True)

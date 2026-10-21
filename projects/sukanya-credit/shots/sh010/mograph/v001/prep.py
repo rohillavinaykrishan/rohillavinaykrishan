@@ -37,10 +37,26 @@ def credits():
     status["credits"] = f"{len(rows)} rows, {n} names, row1={rows[0]}"
 
 
+def nframes(path):
+    import subprocess
+    r = subprocess.run(["ffprobe", "-v", "error", "-count_packets", "-select_streams", "v:0", "-show_entries",
+                        "stream=nb_read_packets", "-of", "csv=p=0", path], capture_output=True, text=True)
+    try:
+        return int(r.stdout.strip().split(",")[0])
+    except ValueError:
+        return -1
+
+
 def copy_or_ph(src_rel, name):
     src = os.path.join(SHOT, src_rel)
     dst = os.path.join(A, name)
-    if os.path.isfile(src) and os.path.getsize(src) > 0:
+    ok = os.path.isfile(src) and os.path.getsize(src) > 0
+    if ok and name.endswith(".mp4"):
+        n = nframes(src)
+        if n != 375:
+            status[name + "_warn"] = f"REAL file has {n} frames (need 375) - using placeholder"
+            ok = False
+    if ok:
         if not os.path.exists(dst) or os.path.getmtime(src) > os.path.getmtime(dst) or os.path.getsize(src) != os.path.getsize(dst):
             shutil.copy2(src, dst)
         status[name] = "REAL " + src

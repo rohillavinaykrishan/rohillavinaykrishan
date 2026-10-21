@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait-4k">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=2160, height=3840" />
+    <title>sh010 PARALLAX - mograph v001</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script src="assets/credits.js"></script>
+    <script src="assets/points.js"></script>
+    <style>
+      @font-face { font-family: "Bodoni Moda"; src: url("assets/fonts/BodoniModa-500.woff2") format("woff2"); font-weight: 500; font-display: block; }
+      @font-face { font-family: "Archivo"; src: url("assets/fonts/Archivo-var.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-display: block; }
+      @font-face { font-family: "IBM Plex Mono"; src: url("assets/fonts/IBMPlexMono-400.woff2") format("woff2"); font-weight: 400; font-display: block; }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 2160px; height: 3840px; overflow: hidden; background: #070707; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #070707; color: #D9D5CC;
+        font-family: "Archivo", sans-serif; }
+
+      #plateWrap { position: absolute; inset: 0; opacity: 0.7; }
+      #plate { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; object-fit: cover; display: block; }
+      /* depth fog: far names sink into black at the frame edges */
+      #fog { position: absolute; inset: 0; pointer-events: none;
+        background: radial-gradient(ellipse 78% 62% at 50% 50%, rgba(7,7,7,0) 0%, rgba(7,7,7,0.18) 55%, rgba(7,7,7,0.72) 100%); }
+      #titleScrim { position: absolute; inset: 0; opacity: 0; pointer-events: none;
+        background: radial-gradient(ellipse 70% 34% at 50% 50%, rgba(7,7,7,0.62) 0%, rgba(7,7,7,0.36) 60%, rgba(7,7,7,0) 100%); }
+      #listScrim { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; opacity: 0; pointer-events: none;
+        background: linear-gradient(90deg, rgba(7,7,7,0) 0%, rgba(7,7,7,0.55) 14%, rgba(7,7,7,0.6) 50%, rgba(7,7,7,0.55) 86%, rgba(7,7,7,0) 100%); }
+      canvas.fx { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; }
+
+      #field { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; }
+      .nm { position: absolute; left: 0; top: 0; white-space: nowrap; transform-origin: 0 0;
+        font-family: "Archivo", sans-serif; font-weight: 500; font-stretch: 100%; font-size: 56px; line-height: 56px; height: 56px;
+        letter-spacing: 0.06em; color: #D9D5CC; opacity: 0; }
+      .nm.her { color: #F4EFE6; }
+      #rule { position: absolute; left: 0; top: 0; width: 100px; height: 5px; background: #C6FF3D; transform-origin: 0 50%; opacity: 0; }
+
+      /* ---- title card ---- */
+      #card { position: absolute; inset: 0; transform-origin: 50% 50%; }
+      .tl { position: absolute; left: 0; width: 2160px; text-align: center; white-space: nowrap; opacity: 0; }
+      #t1, #t2 { font-family: "Bodoni Moda", "Playfair Display", serif; font-weight: 500; color: #F4EFE6; }
+      #t1 { font-size: 300px; line-height: 300px; height: 300px; letter-spacing: 0.05em; top: 1610px; }
+      #t2 { font-size: 190px; line-height: 190px; height: 190px; letter-spacing: 0.08em; top: 1915px; }
+      #role { font-family: "Archivo", sans-serif; font-stretch: 125%; font-weight: 600; font-size: 76px; line-height: 76px; height: 76px;
+        letter-spacing: 0.32em; color: rgba(244,239,230,0.92); top: 2252px; }
+      #studio { font-family: "Archivo", sans-serif; font-stretch: 125%; font-weight: 500; font-size: 58px; line-height: 58px; height: 58px;
+        letter-spacing: 0.42em; color: #A9A9A6; top: 2391px; }
+      .ls { display: inline-block; }
+      #sig { position: absolute; left: 0; top: 0; width: 36px; height: 36px; opacity: 0; }
+      #sig::before, #sig::after { content: ""; position: absolute; background: #C6FF3D; }
+      #sig::before { left: 0; top: 16px; width: 36px; height: 4px; }
+      #sig::after { left: 16px; top: 0; width: 4px; height: 36px; }
+
+      #logoBox { position: absolute; left: 490px; top: 745px; width: 1180px; height: 560px; opacity: 0;
+        -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 45%, transparent 55%, transparent 100%);
+        mask-image: linear-gradient(90deg, #000 0%, #000 45%, transparent 55%, transparent 100%);
+        -webkit-mask-size: 300% 100%; mask-size: 300% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+      #logo { width: 100%; height: 100%; object-fit: contain; display: block; }
+      #streak { position: absolute; left: -840px; top: 1005px; width: 3840px; height: 40px; opacity: 0; mix-blend-mode: screen; pointer-events: none;
+        background: linear-gradient(90deg, rgba(244,239,230,0) 0%, rgba(244,239,230,0.55) 50%, rgba(244,239,230,0) 100%);
+        filter: blur(6px); }
+      #streakCore { position: absolute; left: 0; top: 865px; width: 1400px; height: 320px; opacity: 0; mix-blend-mode: screen; pointer-events: none;
+        background: radial-gradient(ellipse 50% 18% at 50% 50%, rgba(255,252,244,0.95) 0%, rgba(244,239,230,0.45) 35%, rgba(244,239,230,0) 100%); }
+
+      /* ---- HUD ---- */
+      #hud { position: absolute; left: 160px; top: 3020px; width: 1840px; font-family: "IBM Plex Mono", "DejaVu Sans Mono", monospace;
+        font-weight: 400; font-size: 38px; line-height: 54px; color: #A9A9A6; letter-spacing: 0.04em; white-space: pre; opacity: 0; }
+      #hud .v { color: #C6FF3D; }
+      #hud .dim { color: #6E6E6B; }
+      #hudRule { position: absolute; left: 160px; top: 3000px; width: 60px; height: 2px; background: #A9A9A6; opacity: 0; }
+
+      #flash { position: absolute; inset: 0; background: #F4EFE6; opacity: 0; pointer-events: none; }
+      #grain { position: absolute; inset: 0; opacity: 0.05; mix-blend-mode: overlay; pointer-events: none; background-repeat: repeat; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-fps="25" data-width="2160" data-height="3840">
+      <div id="plateWrap">
+        <video id="plate" src="assets/bg_plate_1080.mp4" muted playsinline data-start="0" data-duration="15" data-track-index="1"></video>
+      </div>
+      <div id="fog"></div>
+      <div id="listScrim"></div>
+      <canvas id="cv" class="fx" data-layout-ignore width="2160" height="3840"></canvas>
+      <div id="field" data-layout-allow-occlusion data-layout-allow-overflow data-layout-allow-overlap></div>
+      <div id="titleScrim"></div>
+      <div id="rule" data-layout-allow-occlusion data-layout-allow-overlap></div>
+
+      <div id="card" data-layout-allow-occlusion data-layout-allow-overlap>
+        <div id="logoBox" data-layout-allow-occlusion><img id="logo" src="assets/sf_logo_silver.png" alt="Street Fighter" /></div>
+        <div id="t1" class="tl" data-layout-allow-occlusion><span class="ls">SUKANYA</span></div>
+        <div id="t2" class="tl" data-layout-allow-occlusion><span class="ls">DILIP DHARIYA</span></div>
+        <div id="role" class="tl" data-layout-allow-occlusion><span class="ls">SR. MATCHMOVE ARTIST</span></div>
+        <div id="studio" class="tl" data-layout-allow-occlusion><span class="ls">STREET FIGHTER &#183; DNEG</span></div>
+        <div id="sig"></div>
+      </div>
+      <div id="streak"></div>
+      <div id="streakCore"></div>
+
+      <div id="hudRule"></div>
+      <div id="hud" data-layout-allow-occlusion></div>
+      <div id="flash"></div>
+      <div id="grain"></div>
+    </div>
+
+    <script>
+      // ======================= PARALLAX - every visual is a pure function of t =======================
+      const FPS = 25, W = 2160, H = 3840, CX = 1080, CY = 1920, F = 2600;
+      const T_SOLVE = 271 / FPS;   // 10.84 - hero hit, trailer cut to Chun-Li
+      const T_TITLE = 325 / FPS;   // 13.00 - title stinger
+      const HITS = [2.8, 3.44, 4.6, 6.04, 7.8, 8.2, 8.8];
+      const HER = "SUKANYA DILIP DHARIYA";
+      const LIME = "#C6FF3D";
+
+      const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+      const lerp = (a, b, k) => a + (b - a) * k;
+      const ramp = (t, a, b) => clamp((t - a) / (b - a), 0, 1);
+      const eIOC = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+      const eOC = (x) => 1 - Math.pow(1 - x, 3);
+      const eIOS = (x) => -(Math.cos(Math.PI * x) - 1) / 2;
+      const eOQ = (x) => 1 - Math.pow(1 - x, 4);
+      const sstep = (x) => x * x * (3 - 2 * x);
+      function mulberry32(a) { return function () { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+
+      const $ = (id) => document.getElementById(id);
+      const E = { root: $("root"), plateWrap: $("plateWrap"), cv: $("cv"), field: $("field"), rule: $("rule"), card: $("card"),
+        t1: $("t1"), t2: $("t2"), role: $("role"), studio: $("studio"), sig: $("sig"), logoBox: $("logoBox"),
+        streak: $("streak"), streakCore: $("streakCore"), hud: $("hud"), hudRule: $("hudRule"), flash: $("flash"), grain: $("grain"),
+        titleScrim: $("titleScrim"), listScrim: $("listScrim") };
+      const ctx = E.cv.getContext("2d");
+      const cache = new Map();
+      function S(el, prop, val) { let m = cache.get(el); if (!m) { m = {}; cache.set(el, m); } if (m[prop] !== val) { m[prop] = val; el.style[prop] = val; } }
+
+      // ---------------- solve progress s(t): 0 before 9.2, near-aligned by 10.8, hard snap to 1 on frame 271 ----------------
+      function solveP(t) {
+        if (t >= T_SOLVE - 1e-4) return 1;
+        if (t <= 9.2) return 0;
+        const p = (t - 9.2) / (T_SOLVE - 9.2);
+        return 0.84 * eIOC(clamp(p / 0.97, 0, 1)) + 0.12 * Math.pow(p, 9);
+      }
+
+      // ---------------- camera ----------------
+      // keys: t, x, y, z, yaw, pitch, roll   (yaw + = turn right, pitch + = look up)
+      const KEYS = [
+        [1.5, 150, 700, 5600, -3, 2, 0.5],
+        [2.0, 100, 600, 4400, 0, 3, 0],
+        [6.04, -500, 150, 1500, 13, 4, -1.5],
+        [9.2, -1650, -60, 2600, 33, 5, -2],
+      ];
+      const SOLVED = [0, 0, 2600, 0, 0, 0];
+      function cr(p0, p1, p2, p3, u) { const u2 = u * u, u3 = u2 * u;
+        return 0.5 * (2 * p1 + (-p0 + p2) * u + (2 * p0 - 5 * p1 + 4 * p2 - p3) * u2 + (-p0 + 3 * p1 - 3 * p2 + p3) * u3); }
+      function pathAt(T) {
+        const n = KEYS.length;
+        let i = 0; while (i < n - 2 && T > KEYS[i + 1][0]) i++;
+        const u = clamp((T - KEYS[i][0]) / (KEYS[i + 1][0] - KEYS[i][0]), 0, 1);
+        const k0 = KEYS[Math.max(0, i - 1)], k1 = KEYS[i], k2 = KEYS[i + 1], k3 = KEYS[Math.min(n - 1, i + 2)];
+        const out = []; for (let c = 1; c < 7; c++) out.push(cr(k0[c], k1[c], k2[c], k3[c], u)); return out;
+      }
+      function hitBump(x) { if (x < 0) return 0; if (x < 0.12) return eOC(x / 0.12); return Math.exp(-(x - 0.12) / 0.28); }
+      function camAt(t) {
+        let c;
+        if (t < 9.2) {
+          // eased global time warp: accelerate out of the lens act, decelerate into the breath
+          const w = eIOS(ramp(t, 1.5, 9.2));
+          c = pathAt(1.5 + 7.7 * w);
+        } else {
+          const k9 = KEYS[3].slice(1);
+          const s = solveP(t);
+          c = k9.map((v, j) => lerp(v, SOLVED[j], s));
+        }
+        if (t >= T_SOLVE) {
+          const d = eIOC(ramp(t, 11.3, 13.0));
+          c[2] = lerp(2600, 3300, d);
+        }
+        const yaw = c[3] * Math.PI / 180, pit = c[4] * Math.PI / 180, rol = c[5] * Math.PI / 180;
+        const cp = Math.cos(pit);
+        const fwd = [Math.sin(yaw) * cp, -Math.sin(pit), -Math.cos(yaw) * cp];
+        const rgt0 = [Math.cos(yaw), 0, Math.sin(yaw)];
+        const dn0 = [rgt0[1] * fwd[2] - rgt0[2] * fwd[1], rgt0[2] * fwd[0] - rgt0[0] * fwd[2], rgt0[0] * fwd[1] - rgt0[1] * fwd[0]];
+        const cr_ = Math.cos(rol), sr = Math.sin(rol);
+        const rgt = [0, 1, 2].map((j) => cr_ * rgt0[j] + sr * dn0[j]);
+        const dn = [0, 1, 2].map((j) => -sr * rgt0[j] + cr_ * dn0[j]);
+        // drive-hit dolly impulses (felt, not shaken)
+        let imp = 0; if (t < 9.2) for (const h of HITS) imp += 60 * hitBump(t - h);
+        const pos = [c[0] + fwd[0] * imp, c[1] + fwd[1] * imp, c[2] + fwd[2] * imp];
+        return { pos, fwd, rgt, dn };
+      }
+      function proj(cam, x, y, z, out) {
+        const dx = x - cam.pos[0], dy = y - cam.pos[1], dz = z - cam.pos[2];
+        const zc = dx * cam.fwd[0] + dy * cam.fwd[1] + dz * cam.fwd[2];
+        const xc = dx * cam.rgt[0] + dy * cam.rgt[1] + dz * cam.rgt[2];
+        const yc = dx * cam.dn[0] + dy * cam.dn[1] + dz * cam.dn[2];
+        out[0] = CX + (F * xc) / zc; out[1] = CY + (F * yc) / zc; out[2] = zc; return out;
+      }
+
+      // ---------------- names ----------------
+      const NAMES = []; // {el, text, col, row, w, solved:[x,y,z] (top-left of box), off:[dx,dy,dz], her}
+      let L = 0.74, herIdx = -1, FS = 56, PITCH = 96, GUT = 45;
+      function buildNames() {
+        const rows = window.CREDITS || [];
+        let herRow = -1, herCol = 1;
+        rows.forEach((r, ri) => r.forEach((nm, ci) => { if (nm === HER) { herRow = ri; herCol = ci; } }));
+        const rng = mulberry32(20261021);
+        rows.forEach((r, ri) => r.forEach((nm, ci) => {
+          if (!nm) return;
+          const el = document.createElement("div");
+          el.className = "nm" + (nm === HER ? " her" : "");
+          el.textContent = nm;
+          E.field.appendChild(el);
+          const o = { el, text: nm, col: ci, row: ri, w: 0, h: 56, her: nm === HER,
+            off: [(rng() * 2 - 1) * 1150, (rng() * 2 - 1) * 1500, -5200 + rng() * 6600] };
+          if (o.her) { o.off = [0, 0, -4800]; herIdx = NAMES.length; }
+          NAMES.push(o);
+        }));
+        NAMES.forEach((o) => { o.w = o.el.offsetWidth; });
+        const her = NAMES[herIdx];
+        let lmax = 0, rmax = 0; NAMES.forEach((o) => { if (o.col === 0) lmax = Math.max(lmax, o.w); else rmax = Math.max(rmax, o.w); });
+        // layout scale: the real 2-column list must fit the frame when centred on her name (margin 110 px)
+        L = Math.min(1, (CX - 110) / (her.w / 2 + 2 * GUT + lmax), (CX - 110) / Math.max(1, rmax - her.w / 2));
+        const gut = GUT * L, pitch = PITCH * L;
+        const shiftX = -(gut + (her.w * L) / 2) * (her.col === 1 ? 1 : -1);
+        NAMES.forEach((o) => {
+          const wl = o.w * L, hl = o.h * L;
+          const xL = o.col === 0 ? -gut - wl : gut; // left column right-aligned, right column left-aligned
+          const x = xL + (her.col === 1 ? -(gut + (her.w * L) / 2) : 0) + (her.col === 0 ? gut + (her.w * L) / 2 : 0);
+          o.solved = [x, (o.row - herRow) * pitch - hl / 2, 0];
+          o.wl = wl; o.hl = hl;
+          o.anchorDx = o.col === 0 ? wl + 17 * L : -17 * L; // marker in the gutter, just outside the text (end of left col / start of right col)
+        });
+        void shiftX;
+      }
+
+      // ---------------- title fit ----------------
+      function fitTitle() {
+        const lines = [[E.t1, 300, 1760], [E.t2, 190, 1760], [E.role, 76, 1760], [E.studio, 58, 1760]];
+        const sp = (el) => el.querySelector(".ls").getBoundingClientRect().width;
+        const k = Math.min(1, 1760 / Math.max(sp(E.t1), sp(E.t2)));
+        E.t1.style.fontSize = Math.max(150, 300 * k).toFixed(1) + "px";
+        E.t2.style.fontSize = Math.max(150, 190 * k).toFixed(1) + "px";
+        for (const [el, fs, mx] of lines.slice(2)) { const kk = Math.min(1, mx / sp(el)); el.style.fontSize = (fs * kk).toFixed(1) + "px"; }
+        // signature "+" sits left of the role line
+        const rr = E.role.querySelector(".ls").getBoundingClientRect();
+        E.sig.style.left = (rr.left - 84).toFixed(0) + "px";
+        E.sig.style.top = (2252 + 38 - 18) + "px";
+        // the underline target under the title
+        const t2r = E.t2.querySelector(".ls").getBoundingClientRect();
+        window.__titleRuleY = Math.max(2110, t2r.bottom + 40);
+      }
+
+      // ---------------- point cloud: unproject at the solved pose so it reprojects onto its own pixels ----------------
+      let PTS = null;
+      function buildPoints() {
+        const raw = window.POINTS || [];
+        PTS = new Float32Array(raw.length * 4);
+        raw.forEach((p, i) => { const zc = p[2];
+          PTS[i * 4] = ((p[0] - CX) * zc) / F; PTS[i * 4 + 1] = ((p[1] - CY) * zc) / F; PTS[i * 4 + 2] = 2600 - zc; PTS[i * 4 + 3] = p[3]; });
+      }
+
+      // ---------------- grain tile (seeded) ----------------
+      function buildGrain() {
+        const c = document.createElement("canvas"); c.width = 256; c.height = 256; const g = c.getContext("2d");
+        const im = g.createImageData(256, 256); const r = mulberry32(99);
+        for (let i = 0; i < 256 * 256; i++) { const v = (r() * 255) | 0; im.data[i * 4] = v; im.data[i * 4 + 1] = v; im.data[i * 4 + 2] = v; im.data[i * 4 + 3] = 255; }
+        g.putImageData(im, 0, 0); E.grain.style.backgroundImage = `url(${c.toDataURL()})`; E.grain.style.backgroundSize = "512px 512px";
+      }
+
+      // ---------------- lens grid (Act I) ----------------
+      function drawGrid(t) {
+        let a = t < 0.48 ? 0.2 : lerp(0.38, 0.26, eOC(ramp(t, 0.48, 1.4)));
+        a *= 1 - sstep(ramp(t, 1.85, 2.1));
+        if (a <= 0.002) return;
+        const k1 = -0.22 * (1 - eIOC(ramp(t, 0.49, 1.85)));
+        const R = Math.hypot(CX, CY), cell = W / 22;
+        const dist = (x, y) => { const nx = (x - CX) / R, ny = (y - CY) / R, r2 = nx * nx + ny * ny, m = 1 + k1 * r2; return [CX + (x - CX) * m, CY + (y - CY) * m]; };
+        ctx.save(); ctx.strokeStyle = "#F4EFE6"; ctx.globalAlpha = a; ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        const ext = 6; // extra cells beyond the frame so barrel never shows an empty edge
+        for (let i = -ext; i <= 22 + ext; i++) { const x = i * cell; for (let j = -ext * 2; j <= 40 + ext * 2; j += 1) {
+          const y0 = j * (H / 40), p = dist(x, y0); if (j === -ext * 2) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]); } }
+        for (let j = -ext; j <= 40 + ext; j++) { const y = j * (H / 40); for (let i = -ext * 2; i <= 22 + ext * 2; i += 1) {
+          const x0 = i * cell, p = dist(x0, y); if (i === -ext * 2) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]); } }
+        ctx.stroke();
+        // optical centre cross
+        ctx.globalAlpha = a * 1.6; ctx.strokeStyle = LIME; ctx.lineWidth = 3;
+        ctx.beginPath(); ctx.moveTo(CX - 22, CY); ctx.lineTo(CX + 22, CY); ctx.moveTo(CX, CY - 22); ctx.lineTo(CX, CY + 22); ctx.stroke();
+        ctx.restore();
+      }
+
+      function plus(x, y, arm) { ctx.moveTo(x - arm, y); ctx.lineTo(x + arm, y); ctx.moveTo(x, y - arm); ctx.lineTo(x, y + arm); }
+
+      // ---------------- per-frame render ----------------
+      const p0 = [0, 0, 0], p1 = [0, 0, 0], p2 = [0, 0, 0], q = [0, 0, 0], q2 = [0, 0, 0];
+      function fogA(zc) { if (zc < 380) return 0; const near = sstep(ramp(zc, 380, 900)); const far = 1 - sstep(ramp(zc, 5200, 10000)); return near * far; }
+
+      function render(t) {
+        const f = Math.round(t * FPS);
+        t = f / FPS; // frame-quantised: identical output for identical frames
+        const cam = camAt(t);
+        const s = solveP(t);
+        const solved = f >= 271;
+        ctx.clearRect(0, 0, W, H);
+
+        // ---- plate opacity ----
+        let po;
+        if (t < 1.85) po = 0.7;
+        else if (t < 9.2) po = lerp(0.7, 0.45, sstep(ramp(t, 1.85, 2.4)));
+        else if (!solved) po = lerp(0.45, 0.35, sstep(ramp(t, 9.2, 9.7)));
+        else if (t < 12.2) po = t < 11.2 ? 0.75 : lerp(0.75, 0.55, sstep(ramp(t, 11.2, 11.6)));
+        else if (t < 13.0) po = lerp(0.55, 0.4, sstep(ramp(t, 12.2, 12.6)));
+        else po = lerp(0.4, 0.28, sstep(ramp(t, 13.0, 13.5)));
+        S(E.plateWrap, "opacity", po.toFixed(3));
+
+        // ---- Act I lens grid ----
+        if (t < 2.15) drawGrid(t);
+
+        // ---- point cloud (9.2 - 11.3) ----
+        const pcA = sstep(ramp(t, 9.2, 9.75)) * (solved ? 1 - sstep(ramp(t, T_SOLVE, T_SOLVE + 0.45)) : 1);
+        if (pcA > 0.003 && PTS) {
+          ctx.save(); ctx.fillStyle = "#E8E3D8";
+          const n = PTS.length / 4;
+          for (let i = 0; i < n; i++) {
+            proj(cam, PTS[i * 4], PTS[i * 4 + 1], PTS[i * 4 + 2], q);
+            if (q[2] < 200) continue;
+            const sz = clamp(5.5 * (3300 / q[2]), 4, 9);
+            ctx.globalAlpha = clamp(0.25 + PTS[i * 4 + 3] * 0.8, 0.3, 1) * pcA;
+            ctx.fillRect(q[0] - sz / 2, q[1] - sz / 2, sz, sz);
+          }
+          ctx.restore();
+        }
+
+        // ---- name field ----
+        const fieldIn = sstep(ramp(t, 1.85, 2.15));
+        const her = NAMES[herIdx];
+        // her name: comes forward in z after the solve (absolute screen scale L -> 1.8)
+        const fwdK = eIOC(ramp(t, 11.3, 12.2));
+        const herScale = lerp(L, 1.8, fwdK);
+        const herZcTarget = F / (herScale / L) ; // Zc giving that scale for a box sized in world units*L
+        const otherDim = solved ? lerp(1, 0.22, eOC(ramp(t, T_SOLVE, T_SOLVE + 6 / FPS))) * (1 - sstep(ramp(t, 11.3, 11.85))) : 1;
+        S(E.listScrim, "opacity", (solved ? 0.75 * (1 - sstep(ramp(t, 11.3, 11.9))) : 0.75 * sstep(ramp(t, 10.3, 10.8))).toFixed(3));
+        // focus distance: follows her name
+        let focusZ;
+        {
+          const hz = her.solved[2] + (1 - s) * her.off[2];
+          proj(cam, her.solved[0] + (1 - s) * her.off[0] + her.wl / 2, her.solved[1] + her.hl / 2 + (1 - s) * her.off[1], hz, q);
+          focusZ = q[2];
+        }
+        const residA = t < 2.0 ? 0 : (solved ? 0 : 1) * sstep(ramp(t, 2.0, 2.4));
+        ctx.save(); ctx.lineCap = "round";
+        const lines = [];
+        for (let i = 0; i < NAMES.length; i++) {
+          const o = NAMES[i];
+          let x = o.solved[0] + (1 - s) * o.off[0], y = o.solved[1] + (1 - s) * o.off[1], z = o.solved[2] + (1 - s) * o.off[2];
+          let wl = o.wl, hl = o.hl;
+          if (o.her && solved) {
+            // detach from the plane toward the camera, keep centred on the optical axis
+            const zc = herZcTarget; const zw = cam.pos[2] - zc;
+            const k = 1; x = -wl / 2 * k; y = -hl / 2 * k; z = zw;
+            // world box stays wl x hl; projected scale = F/zc * ... (camera frontal after the solve)
+          }
+          proj(cam, x, y, z, p0); proj(cam, x + wl, y, z, p1); proj(cam, x, y + hl, z, p2);
+          const zc = (p0[2] + p1[2]) / 2;
+          let a = (o.her && solved) ? 1 : fogA(Math.min(p0[2], p1[2]) < 380 ? Math.min(p0[2], p1[2]) : zc) * fieldIn;
+          if (!o.her) a *= otherDim;
+          if (o.her && solved) a *= 1 - sstep(ramp(t, 11.75, 12.1));
+          if (p0[2] < 60 || p1[2] < 60 || p2[2] < 60) a = 0;
+          if (a < 0.004) { S(o.el, "opacity", "0"); continue; }
+          const wd = o.w, hd = o.h;
+          const ma = (p1[0] - p0[0]) / wd, mb = (p1[1] - p0[1]) / wd, mc = (p2[0] - p0[0]) / hd, md = (p2[1] - p0[1]) / hd;
+          S(o.el, "transform", `matrix(${ma.toFixed(5)},${mb.toFixed(5)},${mc.toFixed(5)},${md.toFixed(5)},${p0[0].toFixed(2)},${p0[1].toFixed(2)})`);
+          S(o.el, "opacity", a.toFixed(3));
+          // depth of field (screen-space blur, quantised to 0.5 px)
+          let blur = solved ? 0 : Math.min(8, Math.abs(zc - focusZ) * 0.0022);
+          if (o.her && solved) blur = 14 * sstep(ramp(t, 11.6, 12.1));
+          const sc = Math.hypot(ma, mb);
+          blur = Math.round(blur * 2) / 2;
+          S(o.el, "filter", blur >= 0.5 ? `blur(${(blur / Math.max(0.05, sc)).toFixed(2)}px)` : "none");
+          // markers + residuals
+          if (!o.her || !solved) {
+            const ax = x + o.anchorDx, ay = y + hl / 2;
+            proj(cam, ax, ay, z, q);
+            proj(cam, o.solved[0] + o.anchorDx, o.solved[1] + hl / 2, o.solved[2], q2);
+            lines.push([q[0], q[1], q2[0], q2[1], a, o.her, clamp(F / q[2], 0.2, 3)]);
+          }
+        }
+        // residual vectors (shrink with s, exactly zero at the solve)
+        if (residA > 0) {
+          ctx.strokeStyle = LIME;
+          for (const L_ of lines) { const al = (L_[5] ? 0.9 : 0.3) * residA * L_[4]; if (al < 0.01) continue; ctx.lineWidth = L_[5] ? 3.5 : 2;
+            ctx.globalAlpha = al; ctx.beginPath(); ctx.moveTo(L_[0], L_[1]); ctx.lineTo(L_[2], L_[3]); ctx.stroke();
+            ctx.globalAlpha = al * 0.8; ctx.beginPath(); ctx.arc(L_[2], L_[3], 4.5, 0, Math.PI * 2); ctx.stroke(); }
+        }
+        // track markers "+"
+        const mkA = t < 2.0 ? 0 : sstep(ramp(t, 2.0, 2.3)) * (t > 11.3 ? 1 - sstep(ramp(t, 11.3, 11.9)) : 1);
+        if (mkA > 0) {
+          ctx.strokeStyle = LIME; ctx.lineWidth = 3;
+          for (const L_ of lines) { const al = (L_[5] ? 1 : 0.75) * mkA * L_[4]; if (al < 0.01) continue;
+            ctx.globalAlpha = al; ctx.lineWidth = L_[5] ? 4 : 3; ctx.beginPath(); plus(L_[0], L_[1], L_[5] ? clamp(13 * L_[6], 9, 24) : clamp(8 * L_[6], 5, 16)); ctx.stroke(); }
+        }
+        ctx.restore();
+
+        // her "+" 1-frame lime glow at the solve
+        if (f === 271 || f === 272) {
+          proj(cam, her.solved[0] + her.anchorDx, her.solved[1] + her.hl / 2, 0, q);
+          ctx.save(); const g = ctx.createRadialGradient(q[0], q[1], 0, q[0], q[1], 120);
+          g.addColorStop(0, "rgba(198,255,61,0.55)"); g.addColorStop(1, "rgba(198,255,61,0)");
+          ctx.globalAlpha = f === 271 ? 1 : 0.4; ctx.fillStyle = g; ctx.fillRect(q[0] - 120, q[1] - 120, 240, 240);
+          ctx.strokeStyle = LIME; ctx.lineWidth = 4; ctx.beginPath(); plus(q[0], q[1], 18); ctx.stroke(); ctx.restore();
+        }
+
+        // ---- lime underline: draws under her name on the solve, then travels to the title rule ----
+        if (solved) {
+          const hs = herScale; const hw = her.w * hs, hh = her.h * hs;
+          const fx = CX - hw / 2, fy = CY + hh / 2 + 14 * hs, fw = hw;
+          const ty = window.__titleRuleY || 2120, tw = 520;
+          const mk = eIOC(ramp(t, 11.75, 12.25));
+          const x0 = lerp(fx, CX - tw / 2, mk), y0 = lerp(fy, ty, mk), w0 = lerp(fw, tw, mk);
+          const draw = eOC(ramp(t, T_SOLVE, T_SOLVE + 5 / FPS));
+          S(E.rule, "opacity", "1");
+          S(E.rule, "transform", `translate(${x0.toFixed(2)}px,${y0.toFixed(2)}px) scale(${(draw * w0 / 100).toFixed(4)},1)`);
+        } else S(E.rule, "opacity", "0");
+
+        // ---- title (rack focus in from 11.6) ----
+        const tIn = sstep(ramp(t, 11.6, 11.95));
+        const tBlur = 14 * (1 - eOC(ramp(t, 11.6, 12.1)));
+        for (const el of [E.t1, E.t2]) { S(el, "opacity", tIn.toFixed(3)); S(el, "filter", tBlur >= 0.25 ? `blur(${tBlur.toFixed(2)}px)` : "none"); }
+        S(E.titleScrim, "opacity", sstep(ramp(t, 11.5, 12.2)).toFixed(3));
+        const rk = eOC(ramp(t, 12.1, 12.6));
+        S(E.role, "opacity", rk.toFixed(3)); S(E.role, "transform", `translateY(${(24 * (1 - rk)).toFixed(2)}px)`);
+        const sk = eOC(ramp(t, 13.2, 13.6));
+        S(E.studio, "opacity", sk.toFixed(3)); S(E.studio, "transform", `translateY(${(18 * (1 - sk)).toFixed(2)}px)`);
+        S(E.sig, "opacity", sstep(ramp(t, 13.5, 13.8)).toFixed(3));
+        const push = lerp(1, 1.025, sstep(ramp(t, 13.0, 15.0)));
+        S(E.card, "transform", `scale(${push.toFixed(5)})`);
+
+        // ---- silver logo: anamorphic streak reveal on 325 ----
+        const lk = ramp(t, T_TITLE, T_TITLE + 8 / FPS);
+        const edge = eIOS(lk); // 0..1 across the logo
+        if (t >= T_TITLE) {
+          S(E.logoBox, "opacity", "1");
+          // mask gradient is 300% wide; position 100% = hidden, 0% = fully shown
+          const mp = lerp(100, 0, edge);
+          S(E.logoBox, "maskPosition", `${mp.toFixed(2)}% 0`); S(E.logoBox, "webkitMaskPosition", `${mp.toFixed(2)}% 0`);
+          const sA = Math.sin(Math.PI * clamp(lk * 1.0, 0, 1)) * 0.9 + (lk >= 1 ? 0 : 0) ;
+          const tail = lk >= 1 ? Math.max(0, 1 - (t - T_TITLE - 8 / FPS) / 0.4) * 0.35 : 0;
+          S(E.streak, "opacity", Math.max(sA * 0.85, tail).toFixed(3));
+          const ex = 490 + 1180 * edge; // streak core follows the reveal edge
+          S(E.streakCore, "opacity", (Math.max(sA, tail * 0.6)).toFixed(3));
+          S(E.streakCore, "transform", `translateX(${(ex - 700).toFixed(1)}px)`);
+        } else { S(E.logoBox, "opacity", "0"); S(E.streak, "opacity", "0"); S(E.streakCore, "opacity", "0"); }
+
+        // ---- HUD ----
+        let hud = "", hA = 0;
+        if (t < 2.1) {
+          const k1 = -0.22 * (1 - eIOC(ramp(t, 0.49, 1.85)));
+          const k1s = (k1 <= -0.00005 ? "-" : " ") + Math.abs(k1).toFixed(4);
+          hud = `LENS  ·  K1 <span class="v">${k1s}</span>` + (t >= 1.85 ? `  <span class="v">UNDISTORTED</span>` : "");
+          hA = 1 - sstep(ramp(t, 2.0, 2.1)) * 0;
+        } else if (!solved) {
+          const err = 41.6 * (1 - s) + 0.18 * s;
+          hud = `SOLVE  ·  ${NAMES.length} TRACKS  ·  ERR <span class="v">${err.toFixed(2)} px</span>`;
+          hA = 1;
+        } else {
+          hud = `SOLVED  ·  ERR <span class="v">0.18 px</span>`;
+          hA = 1 - sstep(ramp(t, 11.9, 12.2));
+        }
+        if (E.hud.__h !== hud) { E.hud.__h = hud; E.hud.innerHTML = hud; }
+        S(E.hud, "opacity", hA.toFixed(3)); S(E.hudRule, "opacity", (hA * 0.7).toFixed(3));
+
+        // ---- flash: one frame of ivory on the snap ----
+        S(E.flash, "opacity", f === 271 ? "0.18" : "0");
+        // ---- grain (seeded offset per frame) ----
+        const gr = mulberry32(f * 7919 + 13); S(E.grain, "backgroundPosition", `${(gr() * 512) | 0}px ${(gr() * 512) | 0}px`);
+      }
+
+      // ---------------- timeline: one driver tween, every visual a pure function of t ----------------
+      function build() {
+        buildNames(); buildPoints(); buildGrain(); fitTitle();
+        const tl = gsap.timeline({ paused: true });
+        const drv = { t: 0 };
+        tl.to(drv, { t: 15, duration: 15, ease: "none", onUpdate: () => render(drv.t) }, 0);
+        render(0);
+        window.__timelines["main"] = tl;
+        if (window.__hfForceTimelineRebind) window.__hfForceTimelineRebind();
+      }
+      Promise.all([
+        document.fonts.load('500 56px "Archivo"'), document.fonts.load('600 76px "Archivo"'),
+        document.fonts.load('500 300px "Bodoni Moda"'), document.fonts.load('400 34px "IBM Plex Mono"'),
+      ]).then(() => document.fonts.ready).then(build);
+    </script>
+  </body>
+</html>
