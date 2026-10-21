@@ -1,0 +1,22 @@
+{
+ "language": "en",
+ "segments": [
+  {
+   "start": 1.14,
+   "end": 2.08,
+   "text": "You lose.",
+   "words": [
+    {
+     "start": 1.14,
+     "end": 1.64,
+     "word": "You"
+    },
+    {
+     "start": 1.64,
+     "end": 2.08,
+     "word": "lose."
+    }
+   ]
+  }
+ ]
+}

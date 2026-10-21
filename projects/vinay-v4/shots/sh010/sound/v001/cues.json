@@ -1,0 +1,36 @@
+{
+  "project": "vinay-v4", "shot": "sh010", "dept": "sound", "version": "v001",
+  "fps": 25, "frames": 375, "duration": 15.0, "sample_rate": 48000, "channels": 2, "samples": 720000,
+  "bed": {"src": "source/trailer.mp4", "in": 112.10, "out": 127.10,
+          "chain": "aresample=48000:resampler=soxr:precision=28, atrim=112.10:127.10, afade in 0-0.12 (3 fr), afade out 14.40-15.00, +0.40 dB static, 4x-oversampled lookahead peak limiter ceiling -1.5 dBTP (max GR 1.69 dB on 1.44% of samples, only on the loudest hits), PCM 24-bit",
+          "sfx": "none", "offset_vs_raw_bed_samples": 0},
+  "master": {"file": "mix_master.wav", "integrated_lufs": -14.0, "true_peak_dbtp": -1.50, "sample_peak_dbfs": -1.56,
+             "aac320_cutoff20000_tp_dbtp": -1.47, "aac192_fast_cutoff20000_tp_dbtp": -1.30},
+  "alt_master": {"file": "mix_master_altfade_13.40-14.00.wav", "why": "fade-out ends at 14.00 (src 126.10) so the dialogue 'I'm a street fighter' (src 126.16) is not heard",
+                 "integrated_lufs": -14.0, "true_peak_dbtp": -1.50, "aac320_tp_dbtp": -1.48, "aac192_fast_tp_dbtp": -1.42},
+  "method": "10 ms RMS grid + 5 ms band-split (LF<150, HF>2k) envelopes + librosa onset strength (5 ms hop) + waveform inspection; t = bed time, src = t + 112.10",
+  "hits_measured": {
+    "rise":          {"f": 6,   "cue_t": 0.24,  "meas_t": 0.24, "src": 112.34, "off_frames": 0.0,  "note": "ramp 0.12-0.29, not a transient"},
+    "drive_hit_1":   {"f": 69,  "cue_t": 2.76,  "meas_t": 2.75, "src": 114.85, "off_frames": -0.25},
+    "drive_hit_2":   {"f": 81,  "cue_t": 3.24,  "meas_t": 3.24, "src": 115.34, "off_frames": 0.0,  "note": "weak in onset-strength; neighbours at 3.15 and 3.31-3.33; waveform transient at 3.24"},
+    "drive_hit_3":   {"f": 113, "cue_t": 4.52,  "meas_t": 4.50, "src": 116.60, "off_frames": -0.5},
+    "drive_hit_4":   {"f": 121, "cue_t": 4.84,  "meas_t": 4.84, "src": 116.94, "off_frames": 0.0},
+    "dip":           {"f": 137, "cue_t": 5.48,  "meas_t": 5.48, "src": 117.58, "off_frames": 0.0,  "note": "level minimum (-37 dB 10 ms bin)"},
+    "pickup":        {"f": 141, "cue_t": 5.64,  "meas_t": 5.65, "src": 117.75, "off_frames": 0.25},
+    "silence":       {"f": [159, 165], "cue_t": [6.36, 6.60], "meas_t": [6.37, 6.60], "src": [118.47, 118.70], "off_frames": [0.25, 0.0],
+                      "level_db_10ms": "-30 to -35", "note": "it is the tail end of the announcer line 'You lose' (voice stops 118.46)"},
+    "HERO_reentry":  {"f": 173, "cue_t": 6.92,  "meas_t": 6.92, "src": 119.02, "off_frames": 0.0,
+                      "note": "pre-attack at 6.88 (f172, -1 fr); main body 6.92-6.95 (-12 dB). Not a single-bin +21 dB step: level climbs -31 dB (6.60) -> -21 dB (6.85) -> -12 dB (6.95)"},
+    "hit_208":       {"f": 208, "cue_t": 8.32,  "meas_t": 8.31, "src": 120.41, "off_frames": -0.25},
+    "hit_251":       {"f": 251, "cue_t": 10.04, "meas_t": 10.04, "src": 122.14, "off_frames": 0.0, "note": "texture change (buzzy pulse) starts exactly here"},
+    "TITLE_loudest": {"f": 275, "cue_t": 11.00, "meas_t": 11.00, "src": 123.10, "off_frames": 0.0, "note": "body peaks 11.02 (-9.5 dB 10 ms); limiter takes ~1.2 dB here for ~40 ms"},
+    "hit_291":       {"f": 291, "cue_t": 11.64, "meas_t": 11.66, "src": 123.76, "off_frames": 0.5, "note": "strongest spectral onset at 11.57 (-1.75 fr) precedes it; loudness peak 11.66-11.68"},
+    "hit_304":       {"f": 304, "cue_t": 12.16, "meas_t": 12.16, "src": 124.26, "off_frames": 0.0, "note": "smaller HF pre-event at 12.085 (-1.9 fr)"}
+  },
+  "cues_off_more_than_one_frame": [],
+  "speech_in_bed": [
+    {"text": "You lose", "src": [117.37, 118.46], "t": [5.27, 6.36], "frames": [132, 159], "confirmed_by": "Whisper small+medium on 4 different clip offsets, medium on whole raw bed, both models on mix_master clip; spectrogram formants; also present ('lose' 112.05-112.91 mis-timed) in assets_prev/trailer_dialogue_words.json"},
+    {"text": "I'm a street fighter", "src": [126.16, 127.68], "t": [14.06, 15.0], "frames": [352, 374], "confirmed_by": "Whisper small+medium on 5 clip offsets and on the mix_master tail ('I'm a str-' audible through the 14.40-15.00 fade); assets_prev/trailer_dialogue_words.json has 'I'm a strength' 126.27"},
+    {"text": "(Let's) go", "src": [121.74, 122.34], "status": "NOT confirmed: 1 of 8 windows with small, 0 with medium; spectrogram shows a pitched vibrato lead (music)"}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+ "language": "en",
+ "segments": [
+  {
+   "start": 1.36,
+   "end": 2.88,
+   "text": "I'm a street fighter",
+   "words": [
+    {
+     "start": 1.36,
+     "end": 2.04,
+     "word": "I'm"
+    },
+    {
+     "start": 2.04,
+     "end": 2.22,
+     "word": "a"
+    },
+    {
+     "start": 2.22,
+     "end": 2.52,
+     "word": "street"
+    },
+    {
+     "start": 2.52,
+     "end": 2.88,
+     "word": "fighter"
+    }
+   ]
+  }
+ ]
+}
