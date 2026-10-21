@@ -1,9 +1,8 @@
 Cameras: 1
-Images: 2
-Registered images: 2
-Points: 7
-Observations: 14
-Mean track length: 2.000000
-Mean observations per image: 7.000000
-Mean reprojection error: 1.018835px
-1 SIMPLE_RADIAL 1280 536 1596.1828239507358 640 268 -0.84808441807823187
+Images: 52
+Registered images: 52
+Points: 4817
+Observations: 34118
+Mean track length: 7.082832
+Mean observations per image: 656.115385
+Mean reprojection error: 0.659956px

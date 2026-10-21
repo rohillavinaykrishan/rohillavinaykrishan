@@ -15,19 +15,22 @@ CAM_TGT = (-0.6, 0.0, 2.9)
 LENS = 26.0
 SHIFT_Y = -0.158
 SHIFT_X = 0.008
-SUN_EL, SUN_AZ_OFF = 24.0, 13.0     # sun direction = camera bearing rotated by AZ_OFF deg (neg = to the left)
-SUN_E, SUN_COL = 6.4, (1.0, 0.86, 0.68)
-RIM_E, RIM_COL, RIM_EL, RIM_AZ = 3.5, (1.0, 0.62, 0.42), 12.0, 150.0
-FILL_COL, FILL_E = (0.62, 0.50, 0.42), 0.22
+SUN_EL, SUN_AZ_OFF = 24.0, 23.0
+SUN_E, SUN_COL = 4.6, (1.0, 0.90, 0.76)
+RIM_E, RIM_COL, RIM_EL, RIM_AZ = 3.5, (1.0, 0.62, 0.42), 14.0, -145.0
+FILL_COL, FILL_E = (0.52, 0.48, 0.45), 0.10
 # sky ramp on sin(elevation) of camera rays (linear RGB)
 SKY = [(0.000, (0.62, 0.36, 0.17)),
        (0.030, (0.34, 0.18, 0.085)),
        (0.12, (0.090, 0.058, 0.036)),
        (0.30, (0.050, 0.036, 0.025)),
        (0.62, (0.016, 0.013, 0.010))]
+RIPPLE_SCALE, RIPPLE_AMT = 0.9, 0.5
+SAND_A, SAND_B = M.hexlin('#8F7558'), M.hexlin('#B39673')
+BLOCKER = (-9.5, 2.5, 16.0)   # wall y, height, rot deg (foreground shade); None = off
 HAZE_START, HAZE_END = 12.0, 160.0
-EXPOSURE = 0.0
-LOOK = 'AgX - Medium High Contrast'
+EXPOSURE = 0.4
+LOOK = "AgX - High Contrast"
 # --------------------------------------------
 exec(os.environ.get('TW', ''))
 
@@ -60,11 +63,16 @@ n1 = N.new('ShaderNodeTexNoise'); n1.inputs['Scale'].default_value = 3.0; n1.inp
 n2 = N.new('ShaderNodeTexNoise'); n2.inputs['Scale'].default_value = 90.0; n2.inputs['Detail'].default_value = 8
 L.new(tc.outputs['Object'], n1.inputs['Vector']); L.new(tc.outputs['Object'], n2.inputs['Vector'])
 cm = N.new('ShaderNodeMix'); cm.data_type = 'RGBA'
-cm.inputs['A'].default_value = M.hexlin('#A88C68'); cm.inputs['B'].default_value = M.hexlin('#C2A47E')
+cm.inputs['A'].default_value = SAND_A; cm.inputs['B'].default_value = SAND_B
 L.new(n1.outputs['Fac'], cm.inputs['Factor'])
 L.new(cm.outputs['Result'], bs.inputs['Base Color'])
-ad = N.new('ShaderNodeMath'); ad.operation = 'MULTIPLY_ADD'; ad.inputs[1].default_value = 0.35
-L.new(n1.outputs['Fac'], ad.inputs[0]); L.new(n2.outputs['Fac'], ad.inputs[2])
+wv = N.new('ShaderNodeTexWave'); wv.inputs['Scale'].default_value = RIPPLE_SCALE; wv.inputs['Distortion'].default_value = 6.0
+wv.inputs['Detail'].default_value = 3; wv.inputs['Detail Scale'].default_value = 1.5
+L.new(tc.outputs['Object'], wv.inputs['Vector'])
+ad0 = N.new('ShaderNodeMath'); ad0.operation = 'MULTIPLY_ADD'; ad0.inputs[1].default_value = 0.35
+L.new(n1.outputs['Fac'], ad0.inputs[0]); L.new(n2.outputs['Fac'], ad0.inputs[2])
+ad = N.new('ShaderNodeMath'); ad.operation = 'MULTIPLY_ADD'; ad.inputs[1].default_value = RIPPLE_AMT
+L.new(wv.outputs['Fac'], ad.inputs[0]); L.new(ad0.outputs[0], ad.inputs[2])
 bm = N.new('ShaderNodeBump'); bm.inputs['Strength'].default_value = 0.22; bm.inputs['Distance'].default_value = 0.012
 L.new(ad.outputs[0], bm.inputs['Height']); L.new(bm.outputs['Normal'], bs.inputs['Normal'])
 cd_ = N.new('ShaderNodeCameraData')
@@ -113,6 +121,11 @@ def sun(name, energy, col, el, az_deg, angle):
 cam_bearing = math.degrees(math.atan2(-CAM_LOC[0], -CAM_LOC[1]))   # camera bearing in the same convention
 key = sun('key_sun', SUN_E, SUN_COL, SUN_EL, cam_bearing - SUN_AZ_OFF, 1.2)
 rim = sun('rim_sun', RIM_E, RIM_COL, RIM_EL, RIM_AZ, 4.0)
+if BLOCKER:
+    bpy.ops.mesh.primitive_plane_add(size=1, location=(0, BLOCKER[0], BLOCKER[1] / 2))
+    bk = bpy.context.active_object; bk.name = 'fg_shade_blocker'; bk.scale = (60, BLOCKER[1], 1)
+    bk.rotation_euler = (math.radians(90), 0, math.radians(BLOCKER[2]))
+    bk.visible_camera = False; bk.visible_diffuse = False; bk.visible_glossy = False
 if MODE == 'fg':
     # sun shadows go into the bg plate; fg only keeps the soft contact (fill occlusion) on the catcher
     for l in (key, rim):
@@ -137,6 +150,10 @@ hz_ = (1 - world_to_camera_view(sc, co, far).y) * H
 k = 3840 / H
 print('PROBE(4K px) x %.0f-%.0f (w %.0f)  top %.0f  base %.0f  horizon %.0f' % (min(xs)*k, max(xs)*k, (max(xs)-min(xs))*k, min(ys)*k, max(ys)*k, hz_*k))
 if MODE == 'probe': sys.exit(0)
+if os.environ.get('BORDER'):
+    b = [float(x) for x in os.environ['BORDER'].split(',')]
+    sc.render.use_border = True; sc.render.use_crop_to_border = True
+    sc.render.border_min_x, sc.render.border_max_x, sc.render.border_min_y, sc.render.border_max_y = b
 sc.render.filepath = OUT
 t0 = time.time(); bpy.ops.render.render(write_still=True)
 print('RENDER_SECONDS', round(time.time() - t0, 1), MODE, sc.render.resolution_x, sc.render.resolution_y, SAMP)

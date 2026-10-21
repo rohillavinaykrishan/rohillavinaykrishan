@@ -83,7 +83,7 @@ out_cams = dict(convention=("World Z-up metres, ground z=0, origin on the ground
                             "Pixel (plate 1280x536): x=xc/zc, y=yc/zc, r2=x*x+y*y, u=f*x*(1+k1*r2)+cx, v=f*y*(1+k1*r2)+cy. "
                             "C = camera centre. blender_matrix_world = camera object matrix_world (Blender -Z forward, +Y up). "
                             "Blender: sensor_fit HORIZONTAL, sensor_width 36, lens_mm. frame = s index 0-51 = Blender scene frame; plate_file = edit/v001/plate numbering (s+1). "
-                            "Pixel coords: (0,0) = top-left CORNER of the image, first pixel centre = (0.5,0.5) (COLMAP = canvas convention).") % (REF, REF),
+                            "Projection is only valid for r2 < 1.0 (frame corner r2 = 0.64): beyond r = 1/sqrt(-3*k1) = 1.30 the polynomial folds back, so clip 3D lines/points with r2 >= 1 (or behind the camera) before projecting. Pixel coords: (0,0) = top-left CORNER of the image, first pixel centre = (0.5,0.5) (COLMAP = canvas convention).") % (REF, REF),
                 width=W, height=H, model=model, f=f, cx=cx, cy=cy, k1=k1,
                 K=[[f, 0, cx], [0, f, cy], [0, 0, 1]], lens_mm=lens, hfov_deg=float(np.degrees(2*np.arctan(W/2/f))),
                 fps=24000/1001, src_frames=[2982, 3033], frames=cams)
@@ -111,7 +111,8 @@ fw = np.array([np.array(c['blender_matrix_world'])[:3, :3] @ [0, 0, -1] for c in
 pairmax = max(np.degrees(np.arccos(np.clip(a @ b, -1, 1))) for a in fw for b in fw)
 stats = dict(cameras_registered=len(frames), cameras_total=52, points=len(ids), ground_points=int(ground_inl.sum()),
              observations=int(len(alle)), mean_track_length=round(float(np.mean([P3[i]['n'] for i in ids])), 2),
-             mean_reproj_px=round(float(alle.mean()), 3), median_reproj_px=round(float(np.median(alle)), 3),
+             mean_reproj_px=round(float(np.mean([P3[i]['err'] for i in ids])), 3), mean_reproj_definition='COLMAP model_analyzer: mean over 3D points of their mean track reprojection error',
+             mean_reproj_per_observation_px=round(float(alle.mean()), 3), median_reproj_px=round(float(np.median(alle)), 3),
              p95_reproj_px=round(float(np.percentile(alle, 95)), 3),
              camera_model=model, width=W, height=H, f_px=round(f, 2), f_px_960=round(f*960/W, 2), lens_mm_36=round(lens, 2),
              hfov_deg=round(float(np.degrees(2*np.arctan(W/2/f))), 2), k1=round(k1, 4), cx=cx, cy=cy,
@@ -121,6 +122,9 @@ stats = dict(cameras_registered=len(frames), cameras_total=52, points=len(ids), 
              camera_path_m=round(float(np.linalg.norm(np.diff(Cw_all, axis=0), axis=1).sum()), 3),
              rotation_span_deg=round(float(pairmax), 2), rotation_s0_s51_deg=round(float(np.degrees(np.arccos(np.clip(fw[0]@fw[-1], -1, 1)))), 2),
              ground_plane_colmap=dict(normal=nr.tolist(), d=float(d)), world_origin_frame=REF,
+             per_frame=[dict(frame=c['frame'], tracks=c['n_tracks'], reproj_px=round(float(e.mean()), 3)) for c, e in zip(cams, errs)],
+             scale_check=dict(note='measured with CAM_H=1.0: woman in red on s15 (upright, one leg) 4.27 m, man centre s25 (crouched) 3.37 m (about 3.9 m standing) -> for 1.75-1.8 m people the true camera height is about 0.42-0.46 m (true metres = world units x 0.45). World kept at the treatment 9.1 convention (mean camera height 1.0 m); rerun process.py with CAM_H=0.45 for true metres.', true_cam_height_est_m=0.45),
+             init_pair=[10, 25], solve_note='relaxed mapper options (treatment 9.2) + lens prior f 999.16 px / k1 -0.1966 (director 960 px solve scaled) + forced init pair s10/s25; f and k1 refined freely by BA',
              tracks_per_frame_min_mean_max=[int(min(c['n_tracks'] for c in cams)), round(float(np.mean([c['n_tracks'] for c in cams])), 1), int(max(c['n_tracks'] for c in cams))],
              colmap_model_analyzer=[l for l in an.splitlines() if any(k in l for k in ('Registered', 'Points', 'reprojection', 'Observations'))])
 json.dump(stats, open(L+'solve_stats.json', 'w'), indent=1)

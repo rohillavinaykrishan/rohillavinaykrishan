@@ -15,10 +15,15 @@ SC = 1  # draw scale
 def project(c, X):
     R = np.array(c['R']); t = np.array(c['t']); Xc = X @ R.T + t
     x, y = Xc[:, 0]/Xc[:, 2], Xc[:, 1]/Xc[:, 2]; r2 = x*x+y*y
-    return np.c_[f*x*(1+k1*r2)+cx, f*y*(1+k1*r2)+cy]*SC, Xc[:, 2]
-def line3(im, c, a, b, col, th=1, n=40):
+    z = np.where(r2 < 1.0, Xc[:, 2], -1.0)   # outside r=1 the SIMPLE_RADIAL polynomial folds back: treat as invalid
+    return np.c_[f*x*(1+k1*r2)+cx, f*y*(1+k1*r2)+cy]*SC, z
+def line3(im, c, a, b, col, th=1, n=120):
     X = np.linspace(a, b, n); uv, z = project(c, X); ok = z > 0.2
-    if ok.sum() > 1: cv2.polylines(im, [np.round(uv[ok]*4).astype(np.int32)], False, col, th, cv2.LINE_AA, shift=2)
+    # draw only contiguous valid runs
+    idx = np.where(ok)[0]
+    if len(idx) < 2: return
+    for run in np.split(idx, np.where(np.diff(idx) > 1)[0]+1):
+        if len(run) > 1: cv2.polylines(im, [np.round(uv[run]*4).astype(np.int32)], False, col, th, cv2.LINE_AA, shift=2)
 tiles = []
 for fr in FR:
     c = cj['frames'][fr]; im = cv2.imread(L+'plate/plate.%04d.png' % (fr+1))

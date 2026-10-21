@@ -9,6 +9,7 @@ WIDTH = 7.2
 DEPTH = 0.30
 BEVEL = 0.02
 PLINTH = (7.8, 1.0, 0.24)
+SPACE_LINE = 0.64
 
 
 def srgb2lin(c):
@@ -70,7 +71,7 @@ def build(scene, name='MONUMENT'):
     root = bpy.data.objects.new(name, None); coll.objects.link(root)
     fnt = bpy.data.fonts.load(FONT, check_existing=True)
     td = bpy.data.curves.new('name_txt', 'FONT'); td.body = TEXT; td.font = fnt
-    td.align_x = 'CENTER'; td.align_y = 'BOTTOM'; td.space_line = 0.70; td.size = 1.0
+    td.align_x = 'CENTER'; td.align_y = 'BOTTOM'; td.space_line = SPACE_LINE; td.size = 1.0
     to = bpy.data.objects.new('name_txt', td); coll.objects.link(to)
     bpy.context.view_layer.update()
     bb = [mathutils.Vector(c) for c in to.bound_box]

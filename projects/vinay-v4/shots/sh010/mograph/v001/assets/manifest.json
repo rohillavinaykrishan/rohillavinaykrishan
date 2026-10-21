@@ -1,0 +1,14 @@
+{
+ "plate": "color/v001/plate_graded (real)",
+ "credits": "color/v001/credits_graded.mp4 (real, lifted here)",
+ "layout": "layout/v001 (real)",
+ "anchor": "layout/v001/anchor.json",
+ "monument_wire": "Unbounded 900 outlines, width 7.2 m, top z 3.989 m, line pitch 1.422 m",
+ "final_band_2808x1176": "PLACEHOLDER (comp not delivered)",
+ "plate_band_2160x904": "PLACEHOLDER (comp not delivered)",
+ "cg_band_2160x904": "PLACEHOLDER (comp not delivered)",
+ "final_band_2160x904": "PLACEHOLDER (comp not delivered)",
+ "title_bg": "PLACEHOLDER",
+ "title_fg": "PLACEHOLDER",
+ "logo": "color/v001/sf_logo_bone.png (real)"
+}
