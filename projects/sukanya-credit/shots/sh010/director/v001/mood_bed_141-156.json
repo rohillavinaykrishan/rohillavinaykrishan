@@ -1,0 +1,97 @@
+{
+ "duration": 15.0,
+ "bpm": 172.3,
+ "beats": [
+  0.139,
+  0.488,
+  0.836,
+  1.184,
+  1.533,
+  1.858,
+  2.206,
+  2.554,
+  2.902,
+  3.251,
+  3.599,
+  3.947,
+  4.296,
+  4.621,
+  4.969,
+  5.317,
+  5.666,
+  6.037,
+  6.385,
+  6.711,
+  7.059,
+  7.407,
+  7.755,
+  8.104,
+  8.452,
+  8.8,
+  9.149,
+  9.497,
+  9.845,
+  10.194,
+  10.542,
+  10.89,
+  11.238,
+  11.587,
+  11.935,
+  12.283,
+  12.632,
+  12.98,
+  13.328,
+  13.677,
+  14.025,
+  14.373
+ ],
+ "key": "D major",
+ "key_confidence": 0.5,
+ "energy_rms": 0.134,
+ "brightness_hz": 2460,
+ "sections": [
+  {
+   "start": 0.0,
+   "end": 1.81,
+   "energy": 0.49,
+   "label_hint": "low (intro/bridge/outro?)"
+  },
+  {
+   "start": 1.81,
+   "end": 7.36,
+   "energy": 0.81,
+   "label_hint": "high (chorus/drop?)"
+  },
+  {
+   "start": 7.36,
+   "end": 8.99,
+   "energy": 1.0,
+   "label_hint": "high (chorus/drop?)"
+  },
+  {
+   "start": 8.99,
+   "end": 10.01,
+   "energy": 0.47,
+   "label_hint": "low (intro/bridge/outro?)"
+  },
+  {
+   "start": 10.01,
+   "end": 10.68,
+   "energy": 0.56,
+   "label_hint": "mid (verse?)"
+  },
+  {
+   "start": 10.68,
+   "end": 15.0,
+   "energy": 0.86,
+   "label_hint": "high (chorus/drop?)"
+  }
+ ],
+ "suggested_grades": [
+  "punjabi-gold",
+  "blockbuster",
+  "bollywood"
+ ],
+ "why": "upbeat, celebratory: warm saturated skin, punchy contrast",
+ "note": "Music-only suggestion. Read the lyrics' meaning before choosing the final look."
+}

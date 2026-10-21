@@ -1,0 +1,110 @@
+{
+ "language": "en",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 1.02,
+   "text": "You dropped something.",
+   "words": [
+    {
+     "start": 0.0,
+     "end": 0.38,
+     "word": "You"
+    },
+    {
+     "start": 0.38,
+     "end": 0.58,
+     "word": "dropped"
+    },
+    {
+     "start": 0.58,
+     "end": 1.02,
+     "word": "something."
+    }
+   ]
+  },
+  {
+   "start": 1.3,
+   "end": 2.26,
+   "text": "Yeah, I'ma make it down.",
+   "words": [
+    {
+     "start": 1.3,
+     "end": 1.44,
+     "word": "Yeah,"
+    },
+    {
+     "start": 1.6,
+     "end": 1.74,
+     "word": "I'ma"
+    },
+    {
+     "start": 1.74,
+     "end": 1.96,
+     "word": "make"
+    },
+    {
+     "start": 1.96,
+     "end": 2.16,
+     "word": "it"
+    },
+    {
+     "start": 2.16,
+     "end": 2.26,
+     "word": "down."
+    }
+   ]
+  },
+  {
+   "start": 7.04,
+   "end": 7.54,
+   "text": "Lose.",
+   "words": [
+    {
+     "start": 7.04,
+     "end": 7.54,
+     "word": "Lose."
+    }
+   ]
+  },
+  {
+   "start": 15.34,
+   "end": 16.6,
+   "text": "I'ma drink powder.",
+   "words": [
+    {
+     "start": 15.34,
+     "end": 15.84,
+     "word": "I'ma"
+    },
+    {
+     "start": 15.84,
+     "end": 16.08,
+     "word": "drink"
+    },
+    {
+     "start": 16.08,
+     "end": 16.6,
+     "word": "powder."
+    }
+   ]
+  },
+  {
+   "start": 17.7,
+   "end": 17.96,
+   "text": "I-",
+   "words": [
+    {
+     "start": 17.7,
+     "end": 17.96,
+     "word": "I"
+    },
+    {
+     "start": 17.96,
+     "end": 17.96,
+     "word": "-"
+    }
+   ]
+  }
+ ]
+}

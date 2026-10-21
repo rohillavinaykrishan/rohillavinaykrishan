@@ -1,0 +1,79 @@
+{
+ "language": "en",
+ "segments": [
+  {
+   "start": 0.21,
+   "end": 1.69,
+   "text": "To live, is to fight.",
+   "words": [
+    {
+     "start": 0.21,
+     "end": 0.53,
+     "word": "To"
+    },
+    {
+     "start": 0.53,
+     "end": 0.81,
+     "word": "live,"
+    },
+    {
+     "start": 1.09,
+     "end": 1.21,
+     "word": "is"
+    },
+    {
+     "start": 1.21,
+     "end": 1.39,
+     "word": "to"
+    },
+    {
+     "start": 1.39,
+     "end": 1.69,
+     "word": "fight."
+    }
+   ]
+  },
+  {
+   "start": 8.2,
+   "end": 19.94,
+   "text": "You did that to your face, God.",
+   "words": [
+    {
+     "start": 8.2,
+     "end": 8.64,
+     "word": "You"
+    },
+    {
+     "start": 18.56,
+     "end": 18.78,
+     "word": "did"
+    },
+    {
+     "start": 18.78,
+     "end": 19.0,
+     "word": "that"
+    },
+    {
+     "start": 19.0,
+     "end": 19.18,
+     "word": "to"
+    },
+    {
+     "start": 19.18,
+     "end": 19.3,
+     "word": "your"
+    },
+    {
+     "start": 19.3,
+     "end": 19.64,
+     "word": "face,"
+    },
+    {
+     "start": 19.78,
+     "end": 19.94,
+     "word": "God."
+    }
+   ]
+  }
+ ]
+}
