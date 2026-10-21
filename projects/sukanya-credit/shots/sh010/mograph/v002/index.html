@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait-4k">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=2160, height=3840" />
+    <title>sh010 PARALLAX - mograph v002</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script src="assets/credits.js"></script>
+    <script src="assets/points.js"></script>
+    <style>
+      /* variable Bodoni Moda (opsz 6-96, wght 400-900), used at opsz 14 / wght 600 so the hairlines survive on a phone */
+      @font-face { font-family: "Bodoni Moda"; src: url("assets/fonts/BodoniModa-var.woff2") format("woff2"); font-weight: 400 900; font-display: block; }
+      @font-face { font-family: "Archivo"; src: url("assets/fonts/Archivo-var.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-display: block; }
+      @font-face { font-family: "IBM Plex Mono"; src: url("assets/fonts/IBMPlexMono-400.woff2") format("woff2"); font-weight: 400; font-display: block; }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 2160px; height: 3840px; overflow: hidden; background: #070707; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #070707; color: #D9D5CC;
+        font-family: "Archivo", sans-serif; }
+
+      #plateWrap { position: absolute; inset: 0; opacity: 1; }
+      #plate { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; object-fit: cover; display: block; }
+      #fog { position: absolute; inset: 0; pointer-events: none;
+        background: radial-gradient(ellipse 78% 62% at 50% 50%, rgba(7,7,7,0) 0%, rgba(7,7,7,0.18) 55%, rgba(7,7,7,0.72) 100%); }
+      #titleScrim { position: absolute; inset: 0; opacity: 0; pointer-events: none;
+        background: radial-gradient(ellipse 72% 30% at 50% 54%, rgba(7,7,7,0.62) 0%, rgba(7,7,7,0.36) 60%, rgba(7,7,7,0) 100%); }
+      #lowerLift { position: absolute; left: 0; top: 2500px; width: 2160px; height: 1340px; opacity: 0; pointer-events: none;
+        background: linear-gradient(180deg, rgba(7,7,7,0) 0%, rgba(7,7,7,0.0) 100%); }
+      #listScrim { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; opacity: 0; pointer-events: none;
+        background: linear-gradient(90deg, rgba(7,7,7,0) 0%, rgba(7,7,7,0.55) 14%, rgba(7,7,7,0.6) 50%, rgba(7,7,7,0.55) 86%, rgba(7,7,7,0) 100%); }
+      canvas.fx { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; }
+
+      #field { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; }
+      .nm { position: absolute; left: 0; top: 0; white-space: nowrap; transform-origin: 0 0; z-index: 1;
+        font-family: "Archivo", sans-serif; font-weight: 500; font-stretch: 100%; font-size: 56px; line-height: 56px; height: 56px;
+        letter-spacing: 0.06em; color: #D9D5CC; opacity: 0; }
+      .nm.her { color: #F4EFE6; z-index: 6; }
+      .nm.her .gl { position: absolute; left: 0; top: 0; color: transparent; -webkit-background-clip: text; background-clip: text;
+        background-size: 300% 100%; background-repeat: no-repeat; opacity: 0; }
+      #halo { position: absolute; left: 0; top: 0; width: 100px; height: 100px; z-index: 5; opacity: 0;
+        background: radial-gradient(closest-side, rgba(7,7,7,0.6) 0%, rgba(7,7,7,0.45) 45%, rgba(7,7,7,0) 100%); }
+      #rule { position: absolute; left: 0; top: 0; width: 100px; height: 5px; background: #C6FF3D; transform-origin: 0 50%; opacity: 0; }
+      #bloom { position: absolute; left: 0; top: 0; width: 100px; height: 44px; transform-origin: 0 50%; opacity: 0; filter: blur(16px);
+        background: rgba(198,255,61,0.35); }
+
+      /* ---- title card (group moved down 150 px vs v001) ---- */
+      #card { position: absolute; inset: 0; transform-origin: 50% 50%; }
+      #tblock { position: absolute; inset: 0; }
+      .tl { position: absolute; left: 0; width: 2160px; text-align: center; white-space: nowrap; opacity: 0; }
+      #t1, #t2 { font-family: "Bodoni Moda", "Playfair Display", serif; font-weight: 600; color: #F4EFE6;
+        font-optical-sizing: none; font-variation-settings: "opsz" 14; }
+      #t1 { font-size: 300px; line-height: 300px; height: 300px; letter-spacing: 0.05em; top: 1760px; }
+      #t2 { font-size: 190px; line-height: 190px; height: 190px; letter-spacing: 0.08em; top: 2065px; }
+      #trule { position: absolute; left: 820px; top: 0; width: 520px; height: 5px; background: #C6FF3D; transform-origin: 50% 50%; opacity: 0; }
+      #role { font-family: "Archivo", sans-serif; font-stretch: 125%; font-weight: 600; font-size: 76px; line-height: 76px; height: 76px;
+        letter-spacing: 0.32em; color: rgba(244,239,230,0.92); top: 2402px; }
+      #studio { font-family: "Archivo", sans-serif; font-stretch: 125%; font-weight: 500; font-size: 58px; line-height: 58px; height: 58px;
+        letter-spacing: 0.42em; color: #A9A9A6; top: 2541px; }
+      .ls { display: inline-block; }
+
+      #logoBox { position: absolute; left: 490px; top: 895px; width: 1180px; height: 560px; opacity: 0;
+        -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 45%, transparent 55%, transparent 100%);
+        mask-image: linear-gradient(90deg, #000 0%, #000 45%, transparent 55%, transparent 100%);
+        -webkit-mask-size: 300% 100%; mask-size: 300% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+      #logo { width: 100%; height: 100%; object-fit: contain; display: block; }
+      #streak { position: absolute; left: -840px; top: 1155px; width: 3840px; height: 40px; opacity: 0; mix-blend-mode: screen; pointer-events: none;
+        background: linear-gradient(90deg, rgba(244,239,230,0) 0%, rgba(244,239,230,0.55) 50%, rgba(244,239,230,0) 100%);
+        filter: blur(6px); }
+      #streakCore { position: absolute; left: 0; top: 1015px; width: 1400px; height: 320px; opacity: 0; mix-blend-mode: screen; pointer-events: none;
+        background: radial-gradient(ellipse 50% 18% at 50% 50%, rgba(255,252,244,0.95) 0%, rgba(244,239,230,0.45) 35%, rgba(244,239,230,0) 100%); }
+
+      /* ---- HUD ---- */
+      #hud { position: absolute; left: 160px; top: 3130px; width: 1840px; font-family: "IBM Plex Mono", "DejaVu Sans Mono", monospace;
+        font-weight: 400; font-size: 38px; line-height: 54px; color: #A9A9A6; letter-spacing: 0.04em; white-space: pre; opacity: 0; }
+      #hud .v { color: #C6FF3D; }
+      #hudRule { position: absolute; left: 160px; top: 3112px; width: 60px; height: 2px; background: #A9A9A6; opacity: 0; }
+
+      #flash { position: absolute; inset: 0; background: #F4EFE6; opacity: 0; pointer-events: none; }
+      #grain { position: absolute; inset: 0; opacity: 0.05; mix-blend-mode: overlay; pointer-events: none; background-repeat: repeat; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-fps="25" data-width="2160" data-height="3840">
+      <div id="plateWrap">
+        <video id="plate" src="assets/bg_plate_1080.mp4" muted playsinline data-start="0" data-duration="15" data-track-index="1"></video>
+      </div>
+      <div id="fog"></div>
+      <div id="listScrim"></div>
+      <canvas id="cv" class="fx" data-layout-ignore width="2160" height="3840"></canvas>
+      <div id="field" data-layout-allow-occlusion data-layout-allow-overflow data-layout-allow-overlap><div id="halo"></div></div>
+      <div id="titleScrim"></div>
+      <div id="bloom"></div>
+      <div id="rule" data-layout-allow-occlusion data-layout-allow-overlap></div>
+
+      <div id="card" data-layout-allow-occlusion data-layout-allow-overlap>
+        <div id="logoBox" data-layout-allow-occlusion><img id="logo" src="assets/sf_logo_silver.png" alt="Street Fighter" /></div>
+        <div id="tblock" data-layout-allow-occlusion data-layout-allow-overlap>
+          <div id="t1" class="tl" data-layout-allow-occlusion><span class="ls">SUKANYA</span></div>
+          <div id="t2" class="tl" data-layout-allow-occlusion><span class="ls">DILIP DHARIYA</span></div>
+        </div>
+        <div id="trule"></div>
+        <div id="role" class="tl" data-layout-allow-occlusion><span class="ls">SR. MATCHMOVE ARTIST</span></div>
+        <div id="studio" class="tl" data-layout-allow-occlusion><span class="ls">STREET FIGHTER &#183; DNEG</span></div>
+      </div>
+      <div id="streak"></div>
+      <div id="streakCore"></div>
+
+      <div id="hudRule"></div>
+      <div id="hud" data-layout-allow-occlusion></div>
+      <div id="flash"></div>
+      <div id="grain"></div>
+    </div>
+
+    <script>
+      // ======================= PARALLAX v002 - every visual is a pure function of the frame =======================
+      const FPS = 25, W = 2160, H = 3840, CX = 1080, CY = 1920, F = 2600;
+      const T_SOLVE = 271 / FPS;   // 10.84 - hero hit, trailer cut to Chun-Li
+      const T_TITLE = 325 / FPS;   // 13.00 - title stinger
+      const HITS = [2.8, 3.355, 4.65, 6.043, 7.8, 8.126, 8.711]; // sound v001 measured onsets
+      const HER = "SUKANYA DILIP DHARIYA";
+      const LIME = "#C6FF3D";
+      const HERO_W = 1800;         // her name's width at the lift (px)
+      const fr = (n) => n / FPS;
+
+      const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+      const lerp = (a, b, k) => a + (b - a) * k;
+      const ramp = (t, a, b) => clamp((t - a) / (b - a), 0, 1);
+      const eIOC = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+      const eOC = (x) => 1 - Math.pow(1 - x, 3);
+      const eIOS = (x) => -(Math.cos(Math.PI * x) - 1) / 2;
+      const eOExpo = (x) => (x >= 1 ? 1 : 1 - Math.pow(2, -10 * x));
+      const sstep = (x) => x * x * (3 - 2 * x);
+      function mulberry32(a) { return function () { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+
+      const $ = (id) => document.getElementById(id);
+      const E = { plate: $("plate"), plateWrap: $("plateWrap"), cv: $("cv"), field: $("field"), rule: $("rule"), bloom: $("bloom"), halo: $("halo"),
+        card: $("card"), tblock: $("tblock"), t1: $("t1"), t2: $("t2"), trule: $("trule"), role: $("role"), studio: $("studio"), logoBox: $("logoBox"),
+        streak: $("streak"), streakCore: $("streakCore"), hud: $("hud"), hudRule: $("hudRule"), flash: $("flash"), grain: $("grain"),
+        titleScrim: $("titleScrim"), listScrim: $("listScrim"), fog: $("fog") };
+      const P1_B0 = 4.5;
+      const ctx = E.cv.getContext("2d");
+      const cache = new Map();
+      function S(el, prop, val) { let m = cache.get(el); if (!m) { m = {}; cache.set(el, m); } if (m[prop] !== val) { m[prop] = val; el.style[prop] = val; } }
+
+      // ---------------- solve progress s(t): 0 before 9.2, near-aligned by 10.8, hard snap to 1 on frame 271 ----------------
+      function solveP(t) {
+        if (t >= T_SOLVE - 1e-4) return 1;
+        if (t <= 9.2) return 0;
+        const p = (t - 9.2) / (T_SOLVE - 9.2);
+        return 0.84 * eIOC(clamp(p / 0.97, 0, 1)) + 0.12 * Math.pow(p, 9);
+      }
+
+      // ---------------- camera ----------------
+      // keys: t, x, y, z, yaw, pitch, roll   (yaw + = turn right, pitch + = look up)
+      const KEYS = [
+        [1.5, 150, 700, 5600, -3, 2, 0.5],
+        [2.0, 100, 600, 4400, 0, 3, 0],
+        [6.04, -500, 150, 1500, 13, 4, -1.5],
+        [9.2, -1650, -60, 2600, 33, 5, -2],
+      ];
+      const SOLVED = [0, 0, 2600, 0, 0, 0];
+      function cr(p0, p1, p2, p3, u) { const u2 = u * u, u3 = u2 * u;
+        return 0.5 * (2 * p1 + (-p0 + p2) * u + (2 * p0 - 5 * p1 + 4 * p2 - p3) * u2 + (-p0 + 3 * p1 - 3 * p2 + p3) * u3); }
+      function pathAt(T) {
+        const n = KEYS.length;
+        let i = 0; while (i < n - 2 && T > KEYS[i + 1][0]) i++;
+        const u = clamp((T - KEYS[i][0]) / (KEYS[i + 1][0] - KEYS[i][0]), 0, 1);
+        const k0 = KEYS[Math.max(0, i - 1)], k1 = KEYS[i], k2 = KEYS[i + 1], k3 = KEYS[Math.min(n - 1, i + 2)];
+        const out = []; for (let c = 1; c < 7; c++) out.push(cr(k0[c], k1[c], k2[c], k3[c], u)); return out;
+      }
+      function hitBump(x) { if (x < 0) return 0; if (x < 0.12) return eOC(x / 0.12); return Math.exp(-(x - 0.12) / 0.28); }
+      function camAt(t) {
+        let c;
+        if (t < 9.2) {
+          const w = eIOS(ramp(t, 1.5, 9.2));
+          c = pathAt(1.5 + 7.7 * w);
+        } else {
+          const k9 = KEYS[3].slice(1);
+          const s = solveP(t);
+          c = k9.map((v, j) => lerp(v, SOLVED[j], s));
+        }
+        if (t >= T_SOLVE) c[2] = lerp(2600, 3300, eIOC(ramp(t, fr(276), fr(305)))); // the list falls back while she lifts
+        const yaw = c[3] * Math.PI / 180, pit = c[4] * Math.PI / 180, rol = c[5] * Math.PI / 180;
+        const cp = Math.cos(pit);
+        const fwd = [Math.sin(yaw) * cp, -Math.sin(pit), -Math.cos(yaw) * cp];
+        const rgt0 = [Math.cos(yaw), 0, Math.sin(yaw)];
+        const dn0 = [rgt0[1] * fwd[2] - rgt0[2] * fwd[1], rgt0[2] * fwd[0] - rgt0[0] * fwd[2], rgt0[0] * fwd[1] - rgt0[1] * fwd[0]];
+        const cr_ = Math.cos(rol), sr = Math.sin(rol);
+        const rgt = [0, 1, 2].map((j) => cr_ * rgt0[j] + sr * dn0[j]);
+        const dn = [0, 1, 2].map((j) => -sr * rgt0[j] + cr_ * dn0[j]);
+        let imp = 0; if (t < 9.2) for (const h of HITS) imp += 60 * hitBump(t - h);
+        const pos = [c[0] + fwd[0] * imp, c[1] + fwd[1] * imp, c[2] + fwd[2] * imp];
+        return { pos, fwd, rgt, dn };
+      }
+      function proj(cam, x, y, z, out) {
+        const dx = x - cam.pos[0], dy = y - cam.pos[1], dz = z - cam.pos[2];
+        const zc = dx * cam.fwd[0] + dy * cam.fwd[1] + dz * cam.fwd[2];
+        const xc = dx * cam.rgt[0] + dy * cam.rgt[1] + dz * cam.rgt[2];
+        const yc = dx * cam.dn[0] + dy * cam.dn[1] + dz * cam.dn[2];
+        out[0] = CX + (F * xc) / zc; out[1] = CY + (F * yc) / zc; out[2] = zc; return out;
+      }
+
+      // ---------------- names ----------------
+      const NAMES = [];
+      let L = 0.7, herIdx = -1, W600 = 1000, H_TX = null, H_GL = null;
+      const PITCH = 96, GUT = 45;
+      function buildNames() {
+        const rows = window.CREDITS || [];
+        let herRow = -1;
+        rows.forEach((r, ri) => r.forEach((nm) => { if (nm === HER) herRow = ri; }));
+        const rng = mulberry32(20261021);
+        rows.forEach((r, ri) => r.forEach((nm, ci) => {
+          if (!nm) return;
+          const el = document.createElement("div");
+          const her = nm === HER;
+          el.className = "nm" + (her ? " her" : "");
+          if (her) {
+            const tx = document.createElement("span"); tx.className = "tx"; tx.textContent = nm;
+            const gl = document.createElement("span"); gl.className = "gl"; gl.textContent = nm;
+            el.appendChild(tx); el.appendChild(gl); H_TX = tx; H_GL = gl;
+          } else el.textContent = nm;
+          E.field.appendChild(el);
+          const o = { el, text: nm, col: ci, row: ri, w: 0, h: 56, her,
+            off: [(rng() * 2 - 1) * 1150, (rng() * 2 - 1) * 1500, -5200 + rng() * 6600] };
+          if (her) { o.off = [0, 0, -4800]; herIdx = NAMES.length; }
+          NAMES.push(o);
+        }));
+        NAMES.forEach((o) => { o.w = o.el.offsetWidth; });
+        const her = NAMES[herIdx];
+        // her lifted style (Archivo 125 / 600) width, for the 1800 px target and the glint stripe
+        her.el.style.fontStretch = "125%"; her.el.style.fontWeight = "600"; W600 = her.el.offsetWidth;
+        her.el.style.fontStretch = "100%"; her.el.style.fontWeight = "500";
+        const px = (v) => (v / (HERO_W / W600)) / (3 * W600) * 100; // screen px at full lift -> % of the 300% background
+        const c = (al) => `rgba(198,255,61,${al})`;
+        H_GL.style.backgroundImage = `linear-gradient(115deg, ${c(0)} 0%, ${c(0)} ${(50 - px(70)).toFixed(3)}%, ${c(0.12)} ${(50 - px(26)).toFixed(3)}%, ${c(0.8)} ${(50 - px(10)).toFixed(3)}%, ${c(0.8)} ${(50 + px(10)).toFixed(3)}%, ${c(0.12)} ${(50 + px(26)).toFixed(3)}%, ${c(0)} ${(50 + px(70)).toFixed(3)}%, ${c(0)} 100%)`;
+        let lmax = 0, rmax = 0; NAMES.forEach((o) => { if (o.col === 0) lmax = Math.max(lmax, o.w); else rmax = Math.max(rmax, o.w); });
+        L = Math.min(1, (CX - 110) / (her.w / 2 + 2 * GUT + lmax), (CX - 110) / Math.max(1, rmax - her.w / 2));
+        const gut = GUT * L, pitch = PITCH * L;
+        const herShift = her.col === 1 ? -(gut + (her.w * L) / 2) : gut + (her.w * L) / 2;
+        NAMES.forEach((o) => {
+          const wl = o.w * L, hl = o.h * L;
+          const xL = (o.col === 0 ? -gut - wl : gut) + herShift;
+          o.solved = [xL, (o.row - herRow) * pitch - hl / 2, 0];
+          o.wl = wl; o.hl = hl;
+          o.p0 = [0, 0, 0]; o.p1 = [0, 0, 0]; o.p2 = [0, 0, 0];
+        });
+        // residual vectors only on ~30 names: hers + the 29 nearest the camera path (largest z offset)
+        const order = NAMES.map((o, i) => i).filter((i) => i !== herIdx).sort((a, b) => NAMES[b].off[2] - NAMES[a].off[2]);
+        order.slice(0, 29).forEach((i) => { NAMES[i].resid = true; });
+        her.resid = true;
+      }
+
+      // ---------------- title fit ----------------
+      let TITLE_DY0 = 0, TRULE_Y = 2300;
+      function fitTitle() {
+        const sp = (el) => el.querySelector(".ls").getBoundingClientRect().width;
+        const k = Math.min(1, 1760 / Math.max(sp(E.t1), sp(E.t2)));
+        E.t1.style.fontSize = Math.max(150, 300 * k).toFixed(1) + "px";
+        E.t2.style.fontSize = Math.max(150, 190 * k).toFixed(1) + "px";
+        for (const [el, fs] of [[E.role, 76], [E.studio, 58]]) { const kk = Math.min(1, 1760 / sp(el)); el.style.fontSize = (fs * kk).toFixed(1) + "px"; }
+        const r1 = E.t1.querySelector(".ls").getBoundingClientRect(), r2 = E.t2.querySelector(".ls").getBoundingClientRect();
+        // Bodoni block resolves centred where the big name sits (y 1920), then settles to the card position
+        TITLE_DY0 = CY - (r1.top + r2.bottom) / 2;
+        const fs2 = parseFloat(E.t2.style.fontSize);
+        const baseline2 = r2.top + (r2.height - fs2) / 2 + fs2 * 0.86; // cap baseline of DILIP DHARIYA (approx.)
+        TRULE_Y = Math.round(baseline2 + 70);
+        E.trule.style.top = TRULE_Y + "px";
+        window.__fit = { k, w1: sp(E.t1), w2: sp(E.t2), fs1: E.t1.style.fontSize, fs2: E.t2.style.fontSize, TRULE_Y, TITLE_DY0 };
+      }
+
+      // ---------------- point cloud ----------------
+      let PTS = null;
+      function buildPoints() {
+        const raw = window.POINTS || [];
+        PTS = new Float32Array(raw.length * 4);
+        raw.forEach((p, i) => { const zc = p[2];
+          PTS[i * 4] = ((p[0] - CX) * zc) / F; PTS[i * 4 + 1] = ((p[1] - CY) * zc) / F; PTS[i * 4 + 2] = 2600 - zc; PTS[i * 4 + 3] = p[3]; });
+      }
+
+      function buildGrain() {
+        const c = document.createElement("canvas"); c.width = 256; c.height = 256; const g = c.getContext("2d");
+        const im = g.createImageData(256, 256); const r = mulberry32(99);
+        for (let i = 0; i < 256 * 256; i++) { const v = (r() * 255) | 0; im.data[i * 4] = v; im.data[i * 4 + 1] = v; im.data[i * 4 + 2] = v; im.data[i * 4 + 3] = 255; }
+        g.putImageData(im, 0, 0); E.grain.style.backgroundImage = `url(${c.toDataURL()})`; E.grain.style.backgroundSize = "512px 512px";
+      }
+
+      // ---------------- lens grid (Act I): ~12% over the centre third, the curved edges stay visible ----------------
+      function drawGrid(t) {
+        let a = t < 0.48 ? 0.24 : lerp(0.4, 0.3, eOC(ramp(t, 0.48, 1.4)));
+        a *= 1 - sstep(ramp(t, 1.85, 2.1));
+        if (a <= 0.002) return;
+        const k1 = -0.22 * (1 - eIOC(ramp(t, 0.49, 1.85)));
+        const R = Math.hypot(CX, CY), cell = W / 22;
+        const dist = (x, y) => { const nx = (x - CX) / R, ny = (y - CY) / R, r2 = nx * nx + ny * ny, m = 1 + k1 * r2; return [CX + (x - CX) * m, CY + (y - CY) * m]; };
+        ctx.save(); ctx.strokeStyle = "#F4EFE6"; ctx.globalAlpha = a; ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        const ext = 6;
+        for (let i = -ext; i <= 22 + ext; i++) { const x = i * cell; for (let j = -ext * 2; j <= 40 + ext * 2; j += 1) {
+          const y0 = j * (H / 40), p = dist(x, y0); if (j === -ext * 2) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]); } }
+        for (let j = -ext; j <= 40 + ext; j++) { const y = j * (H / 40); for (let i = -ext * 2; i <= 22 + ext * 2; i += 1) {
+          const x0 = i * cell, p = dist(x0, y); if (i === -ext * 2) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]); } }
+        ctx.stroke();
+        // radial falloff: erase down to ~12% in the centre third
+        const cut = clamp(1 - 0.12 / a, 0, 1);
+        ctx.globalAlpha = 1; ctx.globalCompositeOperation = "destination-out";
+        const g = ctx.createRadialGradient(CX, CY, 0, CX, CY, 1500);
+        g.addColorStop(0, `rgba(0,0,0,${cut})`); g.addColorStop(0.45, `rgba(0,0,0,${cut})`); g.addColorStop(1, "rgba(0,0,0,0)");
+        ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+        ctx.globalCompositeOperation = "source-over";
+        ctx.globalAlpha = Math.min(1, a * 1.6); ctx.strokeStyle = LIME; ctx.lineWidth = 3;
+        ctx.beginPath(); ctx.moveTo(CX - 22, CY); ctx.lineTo(CX + 22, CY); ctx.moveTo(CX, CY - 22); ctx.lineTo(CX, CY + 22); ctx.stroke();
+        ctx.restore();
+      }
+
+      function plus(x, y, arm) { ctx.moveTo(x - arm, y); ctx.lineTo(x + arm, y); ctx.moveTo(x, y - arm); ctx.lineTo(x, y + arm); }
+      function fogA(zc) { if (zc < 380) return 0; const near = sstep(ramp(zc, 380, 900)); const far = 1 - sstep(ramp(zc, 5200, 10000)); return near * far; }
+      function boxOf(p0, p1, p2) { const x3 = p1[0] + p2[0] - p0[0], y3 = p1[1] + p2[1] - p0[1];
+        return [Math.min(p0[0], p1[0], p2[0], x3), Math.min(p0[1], p1[1], p2[1], y3), Math.max(p0[0], p1[0], p2[0], x3), Math.max(p0[1], p1[1], p2[1], y3)]; }
+
+      // ---------------- per-frame render ----------------
+      const q = [0, 0, 0], q2 = [0, 0, 0];
+      function render(tIn) {
+        const f = Math.round(tIn * FPS);
+        const t = f / FPS;
+        const cam = camAt(t);
+        const s = solveP(t);
+        const solved = f >= 271;
+        ctx.clearRect(0, 0, W, H);
+
+        // ---- plate: opacity + P1 lift (frame 0 is dim in the grade) ----
+        let po;
+        if (t < 1.85) po = 1;
+        else if (t < 9.2) po = lerp(1, 0.45, sstep(ramp(t, 1.85, 2.4)));
+        else if (!solved) po = lerp(0.45, 0.35, sstep(ramp(t, 9.2, 9.7)));
+        else if (f < 276) po = 0.75;
+        else if (f < 325) po = lerp(0.75, 0.4, eOC(ramp(f, 276, 292)));
+        else po = 0.42;
+        S(E.plateWrap, "opacity", po.toFixed(3));
+        const lift = 1 - sstep(ramp(f, 40, 50));   // P1 = frames 0-49
+        // P1 lift (CSS brightness, linear: the plate's crushed toe stays black, her face and the shaft come up)
+        const br = lerp(1, lerp(P1_B0, 1.25, sstep(ramp(f, 0, 34))), lift);
+        S(E.plateWrap, "filter", lift > 0.001 ? `brightness(${br.toFixed(3)})` : "none");
+        S(E.fog, "opacity", lerp(0.2, 1, sstep(ramp(f, 20, 55))).toFixed(3));
+
+        if (t < 2.15) drawGrid(t);
+
+        // ---- point cloud 9.2-11.3: edge-weighted, 4 px, held 3 frames after the solve so it visibly lands ----
+        const pcA = sstep(ramp(t, 9.2, 9.75)) * (f <= 273 ? 1 : 1 - sstep(ramp(f, 273, 283)));
+        if (pcA > 0.003 && PTS) {
+          ctx.save(); ctx.fillStyle = "#F1ECE2";
+          const n = PTS.length / 4;
+          for (let i = 0; i < n; i++) {
+            proj(cam, PTS[i * 4], PTS[i * 4 + 1], PTS[i * 4 + 2], q);
+            if (q[2] < 200) continue;
+            const sz = clamp(4 * (3300 / q[2]), 4, 7);
+            ctx.globalAlpha = clamp(0.35 + PTS[i * 4 + 3] * 0.9, 0.4, 1) * pcA;
+            ctx.fillRect(q[0] - sz / 2, q[1] - sz / 2, sz, sz);
+          }
+          ctx.restore();
+        }
+
+        // ---- name field ----
+        const fieldIn = sstep(ramp(t, 1.85, 2.15));
+        const her = NAMES[herIdx];
+        // others: 271-275 drop to 15% + 3.5 px blur, 276-292 fall back to 8%, gone by 305
+        let otherDim = 1, otherBlur = 0;
+        if (solved) {
+          const k = eOC(ramp(f, 271, 275));
+          otherDim = lerp(1, 0.15, k) * lerp(1, 0.08 / 0.15, eOC(ramp(f, 276, 292))) * (1 - sstep(ramp(f, 296, 305)));
+          otherBlur = 3.5 * k;
+        }
+        S(E.listScrim, "opacity", (solved ? 0.75 * (1 - sstep(ramp(f, 274, 284))) : 0.75 * sstep(ramp(t, 10.3, 10.8))).toFixed(3));
+        const g = 1 + 1.05 * Math.pow(1 - s, 1.5);  // unsolved names read larger (scale/depth ambiguity), shrink to list size on the solve
+
+        // pass 1: projected quads
+        for (const o of NAMES) {
+          const wl = o.wl * g, hl = o.hl * g;
+          const ax = o.col === 0 ? o.solved[0] + o.wl : o.solved[0];  // anchor edge stays put
+          const cy = o.solved[1] + o.hl / 2;
+          const x = (o.col === 0 ? ax - wl : ax) + (1 - s) * o.off[0], y = cy - hl / 2 + (1 - s) * o.off[1], z = o.solved[2] + (1 - s) * o.off[2];
+          o.cur = [x, y, z, wl, hl, ax + (1 - s) * o.off[0], cy + (1 - s) * o.off[1]];
+          proj(cam, x, y, z, o.p0); proj(cam, x + wl, y, z, o.p1); proj(cam, x, y + hl, z, o.p2);
+        }
+        const focusZ = (her.p0[2] + her.p1[2]) / 2;
+        const herBox = boxOf(her.p0, her.p1, her.p2);
+        const herVisible = !solved && fogA(focusZ) > 0.05;
+
+        const lines = [];
+        for (const o of NAMES) {
+          if (o.her && solved) continue; // placed in screen space below
+          const { p0, p1, p2 } = o;
+          const zc = (p0[2] + p1[2]) / 2;
+          let a = fogA(Math.min(p0[2], p1[2]) < 380 ? Math.min(p0[2], p1[2]) : zc) * fieldIn;
+          if (p0[2] < 60 || p1[2] < 60 || p2[2] < 60) a = 0;
+          const wd = o.w, hd = o.h;
+          const ma = (p1[0] - p0[0]) / wd, mb = (p1[1] - p0[1]) / wd, mc = (p2[0] - p0[0]) / hd, md = (p2[1] - p0[1]) / hd;
+          const rx = Math.hypot(ma, mb), ry = Math.hypot(mc, md);
+          if (!solved) {
+            // far names dissolve into fog instead of drawing as small dashes; grazing-angle streaks fade
+            const fontPx = 56 * ry;
+            a *= sstep(ramp(fontPx, 34, 54));
+            const stretch = Math.max(rx / ry, ry / rx);
+            a *= 1 - sstep(ramp(stretch, 1.5, 2.4));
+          }
+          if (!o.her) {
+            a *= otherDim;
+            // pre-solve: nothing may sit on top of her name
+            if (herVisible && t > 9.9) {
+              const b = boxOf(p0, p1, p2), pad = 24;
+              if (b[0] < herBox[2] + pad && b[2] > herBox[0] - pad && b[1] < herBox[3] + pad && b[3] > herBox[1] - pad) a = Math.min(a, 0.18);
+            }
+          } else if (t > 9.9) a = Math.max(a, fogA(zc) > 0.05 ? 1 : a);
+          if (a < 0.004) { S(o.el, "opacity", "0"); continue; }
+          S(o.el, "transform", `matrix(${ma.toFixed(5)},${mb.toFixed(5)},${mc.toFixed(5)},${md.toFixed(5)},${p0[0].toFixed(2)},${p0[1].toFixed(2)})`);
+          S(o.el, "opacity", a.toFixed(3));
+          let blur = solved ? otherBlur : Math.min(8, Math.abs(zc - focusZ) * 0.0022);
+          if (o.her) blur = t > 9.9 ? 0 : blur;
+          blur = Math.round(blur * 2) / 2;
+          S(o.el, "filter", blur >= 0.5 ? `blur(${(blur / Math.max(0.05, ry)).toFixed(2)}px)` : "none");
+          if (!solved || f < 276) {
+            const c = o.cur;
+            proj(cam, c[5], c[6], c[2], q);
+            proj(cam, o.solved[0] + (o.col === 0 ? o.wl : 0), o.solved[1] + o.hl / 2, o.solved[2], q2);
+            lines.push([q[0], q[1], q2[0], q2[1], a, o.her, clamp(F / q[2], 0.2, 3), o.resid, o.col]);
+          }
+        }
+
+        // residual vectors (~30 names, 0.30, capped 600 px, fading toward the solved end; zero on the solve)
+        const residA = t < 2.0 || solved ? 0 : sstep(ramp(t, 2.0, 2.4));
+        ctx.save(); ctx.lineCap = "round";
+        if (residA > 0) {
+          for (const l of lines) { if (!l[7]) continue;
+            const al = (l[5] ? 0.9 : 0.3) * residA * Math.min(1, l[4] * 1.4); if (al < 0.01) continue;
+            let dx = l[2] - l[0], dy = l[3] - l[1]; const len = Math.hypot(dx, dy); if (len < 1) continue;
+            const cap = Math.min(len, 600); const ex = l[0] + dx / len * cap, ey = l[1] + dy / len * cap;
+            const gr = ctx.createLinearGradient(l[0], l[1], ex, ey);
+            gr.addColorStop(0, `rgba(198,255,61,${al.toFixed(3)})`); gr.addColorStop(1, `rgba(198,255,61,${(len <= 600 ? al * 0.6 : 0).toFixed(3)})`);
+            ctx.strokeStyle = gr; ctx.lineWidth = l[5] ? 3.5 : 2.5;
+            ctx.beginPath(); ctx.moveTo(l[0], l[1]); ctx.lineTo(ex, ey); ctx.stroke();
+            if (len <= 600) { ctx.globalAlpha = al * 0.8; ctx.strokeStyle = LIME; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(ex, ey, 4.5, 0, Math.PI * 2); ctx.stroke(); ctx.globalAlpha = 1; }
+          }
+        }
+        // track markers "+" in the gutter, gone by 276
+        const mkA = t < 2.0 ? 0 : sstep(ramp(t, 2.0, 2.3)) * (solved ? 1 - eOC(ramp(f, 271, 276)) : 1);
+        if (mkA > 0) {
+          ctx.strokeStyle = LIME;
+          for (const l of lines) { const al = (l[5] ? 1 : 0.7) * mkA * l[4] / (solved ? Math.max(otherDim, 0.15) : 1); if (al < 0.01) continue;
+            const off = (l[8] === 0 ? 17 : -17) * L * l[6];
+            ctx.globalAlpha = Math.min(1, al); ctx.lineWidth = l[5] ? 4 : 3; ctx.beginPath(); plus(l[0] + off, l[1], l[5] ? clamp(13 * l[6], 9, 24) : clamp(8 * l[6], 5, 16)); ctx.stroke(); }
+        }
+        ctx.restore();
+
+        // ---- HER NAME after the solve: screen-space hero (isolate 271-275, lift 276-292, hold 292-300, focus pull 300-312) ----
+        if (solved) {
+          const kl = eOExpo(ramp(f, 276, 292));            // most of the growth in the first ~8 frames
+          const ks = eOC(ramp(f, 276, 283));                 // list type -> Archivo 125 / 600
+          const wdth = lerp(100, 125, ks), wght = lerp(500, 600, ks);
+          S(her.el, "fontStretch", wdth.toFixed(2) + "%"); S(her.el, "fontWeight", wght.toFixed(1));
+          const wNow = her.el.offsetWidth;                   // deterministic re-measure of the morphing width
+          const sc = lerp(L, HERO_W / W600, kl);
+          const wS = wNow * sc, hS = 56 * sc;
+          const x0 = CX - wS / 2, y0 = CY - hS / 2;
+          S(her.el, "transform", `matrix(${sc.toFixed(5)},0,0,${sc.toFixed(5)},${x0.toFixed(2)},${y0.toFixed(2)})`);
+          const out = 1 - sstep(ramp(f, 300, 305));          // Archivo is gone before the Bodoni passes 50%
+          S(her.el, "opacity", out.toFixed(3));
+          const hb = 14 * eOC(ramp(f, 300, 306));
+          S(her.el, "filter", hb >= 0.25 ? `blur(${(hb / sc).toFixed(2)}px)` : "none");
+          // glint: one thin diagonal lime sweep across the letters, frames 281-289
+          const gk = ramp(f, 281, 289);
+          S(H_GL, "opacity", gk > 0 && gk < 1 ? "1" : "0");
+          S(H_GL, "backgroundPosition", `${lerp(80, 20, eIOS(gk)).toFixed(2)}% 0`);
+          // dark halo behind her
+          const hw = Math.max(1400, wS * 1.3), hh = Math.max(300, hS * 3.4);
+          S(E.halo, "opacity", (1 - sstep(ramp(f, 300, 312))).toFixed(3));
+          S(E.halo, "transform", `translate(${(CX - hw / 2).toFixed(1)}px,${(CY - hh / 2).toFixed(1)}px) scale(${(hw / 100).toFixed(4)},${(hh / 100).toFixed(4)})`);
+          // underline: draws 271-275 under the list name, follows the lift briefly, fades 276-280 (the glint is then the only lime)
+          const draw = eOC(ramp(f, 271, 276));
+          const uy = CY + hS / 2 + 12 * sc, ua = 1 - sstep(ramp(f, 276, 280));
+          S(E.rule, "opacity", ua.toFixed(3));
+          S(E.rule, "transform", `translate(${x0.toFixed(2)}px,${uy.toFixed(2)}px) scale(${(draw * wS / 100).toFixed(4)},1)`);
+          const bl = f === 271 ? 1 : f === 272 ? 0.55 : 0;
+          S(E.bloom, "opacity", bl.toFixed(2));
+          S(E.bloom, "transform", `translate(${(x0 - 20).toFixed(1)}px,${(uy - 20).toFixed(1)}px) scale(${((wS + 40) / 100).toFixed(4)},1)`);
+        } else {
+          S(her.el, "fontStretch", "100%"); S(her.el, "fontWeight", "500"); S(H_GL, "opacity", "0");
+          S(E.halo, "opacity", "0"); S(E.rule, "opacity", "0"); S(E.bloom, "opacity", "0");
+        }
+
+        // ---- Bodoni title: focus pull 300-312, resolves centred on the big name, settles to the card 304-318 ----
+        const tA = sstep(ramp(f, 303, 311));
+        const tBlur = 14 * (1 - eOC(ramp(f, 300, 312)));
+        for (const el of [E.t1, E.t2]) { S(el, "opacity", tA.toFixed(3)); S(el, "filter", tBlur >= 0.25 ? `blur(${tBlur.toFixed(2)}px)` : "none"); }
+        const settle = eIOC(ramp(f, 304, 318));
+        S(E.tblock, "transform", `translateY(${(TITLE_DY0 * (1 - settle)).toFixed(2)}px)`);
+        S(E.titleScrim, "opacity", sstep(ramp(f, 296, 310)).toFixed(3));
+        // title rule: hidden until the block has settled, then draws from the centre (318-324)
+        const rk = eOC(ramp(f, 318, 324));
+        S(E.trule, "opacity", rk > 0 ? "1" : "0"); S(E.trule, "transform", `scaleX(${rk.toFixed(4)})`);
+        const ro = eOC(ramp(f, 316, 328));
+        S(E.role, "opacity", ro.toFixed(3)); S(E.role, "transform", `translateY(${(24 * (1 - ro)).toFixed(2)}px)`);
+        const sk = eOC(ramp(t, 13.2, 13.6));
+        S(E.studio, "opacity", sk.toFixed(3)); S(E.studio, "transform", `translateY(${(18 * (1 - sk)).toFixed(2)}px)`);
+        const push = lerp(1, 1.025, sstep(ramp(t, 13.0, 15.0)));
+        S(E.card, "transform", `scale(${push.toFixed(5)})`);
+
+        // ---- silver logo: anamorphic streak reveal on 325 ----
+        const lk = ramp(t, T_TITLE, T_TITLE + 8 / FPS);
+        const edge = eIOS(lk);
+        if (t >= T_TITLE) {
+          S(E.logoBox, "opacity", "1");
+          const mp = lerp(100, 0, edge);
+          S(E.logoBox, "maskPosition", `${mp.toFixed(2)}% 0`); S(E.logoBox, "webkitMaskPosition", `${mp.toFixed(2)}% 0`);
+          const sA = Math.sin(Math.PI * clamp(lk, 0, 1)) * 0.9;
+          const tail = lk >= 1 ? Math.max(0, 1 - (t - T_TITLE - 8 / FPS) / 0.4) * 0.35 : 0;
+          S(E.streak, "opacity", Math.max(sA * 0.85, tail).toFixed(3));
+          const ex = 490 + 1180 * edge;
+          S(E.streakCore, "opacity", Math.max(sA, tail * 0.6).toFixed(3));
+          S(E.streakCore, "transform", `translateX(${(ex - 700).toFixed(1)}px)`);
+        } else { S(E.logoBox, "opacity", "0"); S(E.streak, "opacity", "0"); S(E.streakCore, "opacity", "0"); }
+
+        // ---- HUD ----
+        let hud = "", hA = 0;
+        if (t < 2.1) {
+          const k1 = -0.22 * (1 - eIOC(ramp(t, 0.49, 1.85)));
+          const k1s = (k1 <= -0.00005 ? "-" : " ") + Math.abs(k1).toFixed(4);
+          hud = `LENS  ·  K1 <span class="v">${k1s}</span>` + (t >= 1.85 ? `  <span class="v">UNDISTORTED</span>` : "");
+          hA = 1;
+        } else if (!solved) {
+          const err = 41.6 * (1 - s) + 0.18 * s;
+          hud = `SOLVE  ·  ${NAMES.length} TRACKS  ·  ERR <span class="v">${err.toFixed(2)} px</span>`;
+          hA = 1;
+        } else {
+          hud = `SOLVED  ·  ERR <span class="v">0.18 px</span>`;
+          hA = 1 - sstep(ramp(f, 276, 280));
+        }
+        if (E.hud.__h !== hud) { E.hud.__h = hud; E.hud.innerHTML = hud; }
+        S(E.hud, "opacity", hA.toFixed(3)); S(E.hudRule, "opacity", (hA * 0.7).toFixed(3));
+
+        S(E.flash, "opacity", f === 271 ? "0.18" : "0");
+        const gr = mulberry32(f * 7919 + 13); S(E.grain, "backgroundPosition", `${(gr() * 512) | 0}px ${(gr() * 512) | 0}px`);
+      }
+
+      function build() {
+        buildNames(); buildPoints(); buildGrain(); fitTitle();
+        const tl = gsap.timeline({ paused: true });
+        const drv = { t: 0 };
+        tl.to(drv, { t: 15, duration: 15, ease: "none", onUpdate: () => render(drv.t) }, 0);
+        render(0);
+        window.__timelines["main"] = tl;
+        if (window.__hfForceTimelineRebind) window.__hfForceTimelineRebind();
+      }
+      Promise.all([
+        document.fonts.load('500 56px "Archivo"'), document.fonts.load('600 76px "Archivo"'),
+        document.fonts.load('600 300px "Bodoni Moda"'), document.fonts.load('400 34px "IBM Plex Mono"'),
+      ]).then(() => document.fonts.ready).then(build);
+    </script>
+  </body>
+</html>
