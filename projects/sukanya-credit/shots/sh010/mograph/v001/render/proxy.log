@@ -226,3 +226,28 @@
 @hf-progress {"code":"capture","done":67,"total":375,"pct":35}
   ████████░░░░░░░░░░░░░░░░░  35%  Streaming frame 68/375
 @hf-progress {"code":"capture","done":68,"total":375,"pct":35}
+  ████████░░░░░░░░░░░░░░░░░  35%  Streaming frame 69/375
+@hf-progress {"code":"capture","done":69,"total":375,"pct":35}
+  ████████░░░░░░░░░░░░░░░░░  35%  Streaming frame 70/375
+@hf-progress {"code":"capture","done":70,"total":375,"pct":35}
+  ████████░░░░░░░░░░░░░░░░░  35%  Streaming frame 71/375
+@hf-progress {"code":"capture","done":71,"total":375,"pct":35}
+  █████████░░░░░░░░░░░░░░░░  36%  Streaming frame 72/375
+@hf-progress {"code":"capture","done":72,"total":375,"pct":36}
+  █████████░░░░░░░░░░░░░░░░  36%  Streaming frame 73/375
+@hf-progress {"code":"capture","done":73,"total":375,"pct":36}
+  █████████░░░░░░░░░░░░░░░░  36%  Streaming frame 74/375
+@hf-progress {"code":"capture","done":74,"total":375,"pct":36}
+  █████████░░░░░░░░░░░░░░░░  36%  Streaming frame 75/375
+@hf-progress {"code":"capture","done":75,"total":375,"pct":36}
+  █████████░░░░░░░░░░░░░░░░  36%  Streaming frame 76/375
+@hf-progress {"code":"capture","done":76,"total":375,"pct":36}
+  █████████░░░░░░░░░░░░░░░░  36%  Streaming frame 77/375
+@hf-progress {"code":"capture","done":77,"total":375,"pct":36}
+[INFO] [Render:trace] {"renderJobId":"d7a82a76-7482-4f47-99e5-bafc8b63320c","phase":"capture_streaming","status":"checkpoint","elapsedMs":76304,"message":"stage still running","stagePhase":"capturing","workerCount":1,"forceScreenshot":false,"totalFrames":375,"framesCompleted":77,"captureMode":"beginframe","captureOperation":"beginFrame","heartbeatIndex":2,"stageElapsedMs":60010}
+  █████████░░░░░░░░░░░░░░░░  36%  Streaming frame 78/375
+@hf-progress {"code":"capture","done":78,"total":375,"pct":36}
+  █████████░░░░░░░░░░░░░░░░  37%  Streaming frame 79/375
+@hf-progress {"code":"capture","done":79,"total":375,"pct":37}
+  █████████░░░░░░░░░░░░░░░░  37%  Streaming frame 80/375
+@hf-progress {"code":"capture","done":80,"total":375,"pct":37}
