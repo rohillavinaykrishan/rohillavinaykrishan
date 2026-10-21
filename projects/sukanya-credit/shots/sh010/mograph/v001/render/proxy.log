@@ -704,3 +704,62 @@
 @hf-progress {"code":"capture","done":305,"total":375,"pct":70}
   █████████████████░░░░░░░░  70%  Streaming frame 306/375
 @hf-progress {"code":"capture","done":306,"total":375,"pct":70}
+  █████████████████░░░░░░░░  70%  Streaming frame 307/375
+@hf-progress {"code":"capture","done":307,"total":375,"pct":70}
+  █████████████████░░░░░░░░  70%  Streaming frame 308/375
+@hf-progress {"code":"capture","done":308,"total":375,"pct":70}
+  █████████████████░░░░░░░░  70%  Streaming frame 309/375
+@hf-progress {"code":"capture","done":309,"total":375,"pct":70}
+  █████████████████░░░░░░░░  70%  Streaming frame 310/375
+@hf-progress {"code":"capture","done":310,"total":375,"pct":70}
+  █████████████████░░░░░░░░  71%  Streaming frame 311/375
+@hf-progress {"code":"capture","done":311,"total":375,"pct":71}
+  █████████████████░░░░░░░░  71%  Streaming frame 312/375
+@hf-progress {"code":"capture","done":312,"total":375,"pct":71}
+  █████████████████░░░░░░░░  71%  Streaming frame 313/375
+@hf-progress {"code":"capture","done":313,"total":375,"pct":71}
+  █████████████████░░░░░░░░  71%  Streaming frame 314/375
+@hf-progress {"code":"capture","done":314,"total":375,"pct":71}
+  █████████████████░░░░░░░░  71%  Streaming frame 315/375
+@hf-progress {"code":"capture","done":315,"total":375,"pct":71}
+  █████████████████░░░░░░░░  71%  Streaming frame 316/375
+@hf-progress {"code":"capture","done":316,"total":375,"pct":71}
+  █████████████████░░░░░░░░  71%  Streaming frame 317/375
+@hf-progress {"code":"capture","done":317,"total":375,"pct":71}
+  ██████████████████░░░░░░░  72%  Streaming frame 318/375
+@hf-progress {"code":"capture","done":318,"total":375,"pct":72}
+  ██████████████████░░░░░░░  72%  Streaming frame 319/375
+@hf-progress {"code":"capture","done":319,"total":375,"pct":72}
+  ██████████████████░░░░░░░  72%  Streaming frame 320/375
+@hf-progress {"code":"capture","done":320,"total":375,"pct":72}
+  ██████████████████░░░░░░░  72%  Streaming frame 321/375
+@hf-progress {"code":"capture","done":321,"total":375,"pct":72}
+  ██████████████████░░░░░░░  72%  Streaming frame 322/375
+@hf-progress {"code":"capture","done":322,"total":375,"pct":72}
+  ██████████████████░░░░░░░  72%  Streaming frame 323/375
+@hf-progress {"code":"capture","done":323,"total":375,"pct":72}
+[INFO] [Render:trace] {"renderJobId":"d7a82a76-7482-4f47-99e5-bafc8b63320c","phase":"capture_streaming","status":"checkpoint","elapsedMs":256312,"message":"stage still running","stagePhase":"capturing","workerCount":1,"forceScreenshot":false,"totalFrames":375,"framesCompleted":323,"captureMode":"beginframe","captureOperation":"beginFrame","heartbeatIndex":4,"stageElapsedMs":240018}
+  ██████████████████░░░░░░░  73%  Streaming frame 324/375
+@hf-progress {"code":"capture","done":324,"total":375,"pct":73}
+  ██████████████████░░░░░░░  73%  Streaming frame 325/375
+@hf-progress {"code":"capture","done":325,"total":375,"pct":73}
+  ██████████████████░░░░░░░  73%  Streaming frame 326/375
+@hf-progress {"code":"capture","done":326,"total":375,"pct":73}
+  ██████████████████░░░░░░░  73%  Streaming frame 327/375
+@hf-progress {"code":"capture","done":327,"total":375,"pct":73}
+  ██████████████████░░░░░░░  73%  Streaming frame 328/375
+@hf-progress {"code":"capture","done":328,"total":375,"pct":73}
+  ██████████████████░░░░░░░  73%  Streaming frame 329/375
+@hf-progress {"code":"capture","done":329,"total":375,"pct":73}
+  ██████████████████░░░░░░░  73%  Streaming frame 330/375
+@hf-progress {"code":"capture","done":330,"total":375,"pct":73}
+  ██████████████████░░░░░░░  74%  Streaming frame 331/375
+@hf-progress {"code":"capture","done":331,"total":375,"pct":74}
+  ██████████████████░░░░░░░  74%  Streaming frame 332/375
+@hf-progress {"code":"capture","done":332,"total":375,"pct":74}
+  ██████████████████░░░░░░░  74%  Streaming frame 333/375
+@hf-progress {"code":"capture","done":333,"total":375,"pct":74}
+  ██████████████████░░░░░░░  74%  Streaming frame 334/375
+@hf-progress {"code":"capture","done":334,"total":375,"pct":74}
+  ██████████████████░░░░░░░  74%  Streaming frame 335/375
+@hf-progress {"code":"capture","done":335,"total":375,"pct":74}
