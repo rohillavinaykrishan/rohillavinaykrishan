@@ -19,3 +19,15 @@
 - Title: Bodoni Moda 500 (auto-fit, widest line <= 1760 px, min 150 px), Archivo 125% role/studio, lime rule, lime "+" signature.
   Silver logo revealed on frame 325 by an anamorphic streak mask sweep (8 frames). HUD IBM Plex Mono 38 px (spec 30, raised for phone).
 - Fonts in assets/fonts from Google Fonts. GSAP local in assets/vendor.
+
+## Final render (v001)
+- Inputs at render time: color/v001/bg_plate_1080.mp4 (375 fr, byte-identical copy), color/v001/sf_logo_silver.png (final),
+  roto/v002/points.json (built from the frame-271 image; verified to land on her face on plate frame 271), credits.txt re-read
+  (46 rows / 91 names; row 1 SAMITH SOUMYANATH | SIDDHANT SUNIL SONAWANE confirmed by edit/v001/credits_row1_check_58.0s.png).
+- Drive-hit impulses use sound/v001 measured onsets (2.8, 3.355, 4.65, 6.043, 7.8, 8.126, 8.711).
+- P1 plate opacity opens at 0.95 (frame 0 plate is dim) and settles to 0.70 by 1.4 s; title plate 0.34 (spec 0.28) so Chun-Li reads in the window.
+- HUD moved to y 3130 (spec 3020) so it never collides with the bottom list row at the solve; still above the bottom 600 px.
+- Command: `python3 prep.py && npx hyperframes@0.8.181 render -q delivery -f 25 -o render/sukanya_mograph_4K.mp4 .`
+  6 m 12 s, beginframe capture, software GPU (log: render/render.log). No fallbacks were needed.
+- Output: render/sukanya_mograph_4K.mp4, H.264 yuv420p 2160x3840, 25 fps, 375 frames, 15.000 s, no audio.
+- Known: the HUD reads "91 TRACKS" (counted from credits.txt; the treatment said 89, but the file holds 91 names).

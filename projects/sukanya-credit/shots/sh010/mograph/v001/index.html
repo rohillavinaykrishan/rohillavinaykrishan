@@ -63,11 +63,11 @@
         background: radial-gradient(ellipse 50% 18% at 50% 50%, rgba(255,252,244,0.95) 0%, rgba(244,239,230,0.45) 35%, rgba(244,239,230,0) 100%); }
 
       /* ---- HUD ---- */
-      #hud { position: absolute; left: 160px; top: 3020px; width: 1840px; font-family: "IBM Plex Mono", "DejaVu Sans Mono", monospace;
+      #hud { position: absolute; left: 160px; top: 3130px; width: 1840px; font-family: "IBM Plex Mono", "DejaVu Sans Mono", monospace;
         font-weight: 400; font-size: 38px; line-height: 54px; color: #A9A9A6; letter-spacing: 0.04em; white-space: pre; opacity: 0; }
       #hud .v { color: #C6FF3D; }
       #hud .dim { color: #6E6E6B; }
-      #hudRule { position: absolute; left: 160px; top: 3000px; width: 60px; height: 2px; background: #A9A9A6; opacity: 0; }
+      #hudRule { position: absolute; left: 160px; top: 3112px; width: 60px; height: 2px; background: #A9A9A6; opacity: 0; }
 
       #flash { position: absolute; inset: 0; background: #F4EFE6; opacity: 0; pointer-events: none; }
       #grain { position: absolute; inset: 0; opacity: 0.05; mix-blend-mode: overlay; pointer-events: none; background-repeat: repeat; }
@@ -107,7 +107,7 @@
       const FPS = 25, W = 2160, H = 3840, CX = 1080, CY = 1920, F = 2600;
       const T_SOLVE = 271 / FPS;   // 10.84 - hero hit, trailer cut to Chun-Li
       const T_TITLE = 325 / FPS;   // 13.00 - title stinger
-      const HITS = [2.8, 3.44, 4.6, 6.04, 7.8, 8.2, 8.8];
+      const HITS = [2.8, 3.355, 4.65, 6.043, 7.8, 8.126, 8.711]; // sound v001 measured onsets
       const HER = "SUKANYA DILIP DHARIYA";
       const LIME = "#C6FF3D";
 
@@ -303,12 +303,12 @@
 
         // ---- plate opacity ----
         let po;
-        if (t < 1.85) po = 0.7;
+        if (t < 1.85) po = lerp(0.95, 0.7, sstep(ramp(t, 0.4, 1.4))); // frame 0 plate is dim: open brighter
         else if (t < 9.2) po = lerp(0.7, 0.45, sstep(ramp(t, 1.85, 2.4)));
         else if (!solved) po = lerp(0.45, 0.35, sstep(ramp(t, 9.2, 9.7)));
         else if (t < 12.2) po = t < 11.2 ? 0.75 : lerp(0.75, 0.55, sstep(ramp(t, 11.2, 11.6)));
         else if (t < 13.0) po = lerp(0.55, 0.4, sstep(ramp(t, 12.2, 12.6)));
-        else po = lerp(0.4, 0.28, sstep(ramp(t, 13.0, 13.5)));
+        else po = lerp(0.4, 0.34, sstep(ramp(t, 13.0, 13.5)));
         S(E.plateWrap, "opacity", po.toFixed(3));
 
         // ---- Act I lens grid ----
