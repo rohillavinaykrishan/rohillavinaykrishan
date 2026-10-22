@@ -10,6 +10,8 @@ DEPTH = 0.30
 BEVEL = 0.02
 PLINTH = (7.8, 1.0, 0.24)
 SPACE_LINE = 0.64
+ROUGH = 0.55
+COAT = 0.0
 
 
 def srgb2lin(c):
@@ -26,7 +28,8 @@ def bone_material(name='bone', text_base=0.24, bump=0.05):
     m = bpy.data.materials.new(name); m.use_nodes = True
     nt = m.node_tree; N = nt.nodes; L = nt.links
     b = N['Principled BSDF']
-    b.inputs['Roughness'].default_value = 0.55
+    b.inputs['Roughness'].default_value = ROUGH
+    b.inputs['Coat Weight'].default_value = COAT; b.inputs['Coat Roughness'].default_value = 0.35
     geo = N.new('ShaderNodeNewGeometry')
     sep = N.new('ShaderNodeSeparateXYZ'); L.new(geo.outputs['Position'], sep.inputs[0])
     # dust mask: 1 at z_base, 0 at z_base+0.15 (two bases: plinth foot and letter foot)
@@ -57,7 +60,7 @@ def bone_material(name='bone', text_base=0.24, bump=0.05):
     col.inputs['A'].default_value = hexlin('#E9E1D3'); col.inputs['B'].default_value = hexlin('#CDB08A')
     L.new(sm.outputs[0], col.inputs['Factor'])
     L.new(col.outputs['Result'], b.inputs['Base Color'])
-    rg = N.new('ShaderNodeMapRange'); rg.inputs['To Min'].default_value = 0.55; rg.inputs['To Max'].default_value = 0.9
+    rg = N.new('ShaderNodeMapRange'); rg.inputs['To Min'].default_value = ROUGH; rg.inputs['To Max'].default_value = 0.9
     L.new(sm.outputs[0], rg.inputs['Value']); L.new(rg.outputs[0], b.inputs['Roughness'])
     # subtle plaster bump
     nz2 = N.new('ShaderNodeTexNoise'); nz2.inputs['Scale'].default_value = 40.0; nz2.inputs['Detail'].default_value = 10

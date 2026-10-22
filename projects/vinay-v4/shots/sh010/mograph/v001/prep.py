@@ -245,10 +245,11 @@ for nm in ('title_bg', 'title_fg'):
         if k: sh(f'cp "{src}" "{o}"'); done(o, k)
         man[nm] = 'lighting/v001/' + nm + '.png (real)'
     else:
-        prox = sorted(glob.glob(LT + 'title/p*.png'))
-        if nm == 'title_bg' and prox:
-            im = cv2.resize(cv2.imread(prox[-1]), (2160, 3840), interpolation=cv2.INTER_LANCZOS4)
-            cv2.putText(im, 'PLACEHOLDER title_bg (lighting proxy)', (180, 240), cv2.FONT_HERSHEY_SIMPLEX, 2.2, (40, 40, 200), 5)
+        # placeholder: the newest lighting proxy pair (pNN_bg / pNN_fg), upscaled and labelled
+        prox = sorted(glob.glob(LT + 'title/p*_' + nm.split('_')[1] + '.png'))
+        if prox:
+            im = cv2.imread(prox[-1], cv2.IMREAD_UNCHANGED); im = cv2.resize(im, (2160, 3840), interpolation=cv2.INTER_LANCZOS4)
+            if nm == 'title_bg': cv2.putText(im, 'PLACEHOLDER ' + os.path.basename(prox[-1]), (180, 240), cv2.FONT_HERSHEY_SIMPLEX, 2.2, (40, 40, 200), 5)
             cv2.imwrite(o, im)
         else:
             cv2.imwrite(o, np.zeros((3840, 2160, 4), np.uint8))

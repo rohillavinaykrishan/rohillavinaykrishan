@@ -17,7 +17,8 @@ H = round(W * 536 / 1280)
 #      i.e. the sun sits in front of the camera, ~20 deg right of +Y, elevation ~35 deg)
 SUN_AZ, SUN_EL = 20.0, 35.0          # bearing of the sun POSITION, deg from +Y toward +X
 SUN_E, SUN_COL, SUN_ANGLE = 4.5, (1.0, 0.95, 0.86), 1.5
-WORLD_COL, WORLD_E = (0.80, 0.78, 0.74), 0.56
+WORLD_COL, WORLD_E = (0.80, 0.78, 0.74), 0.30
+M.BEVEL = 0.035
 exec(os.environ.get('TW', ''))
 
 bpy.ops.wm.open_mainfile(filepath=LAY + 'solve_cam.blend')
@@ -140,6 +141,8 @@ if FR != 'none':
         b = region(f) if os.environ.get('NOBORDER') is None else (0, 1, 0, 1)
         sc.render.use_border = True; sc.render.use_crop_to_border = False
         sc.render.border_min_x, sc.render.border_max_x, sc.render.border_min_y, sc.render.border_max_y = b
+        with open(os.path.join(OUTDIR, 'borders.jsonl'), 'a') as bf:
+            bf.write(json.dumps(dict(frame=f, border=b, res=[sc.render.resolution_x, sc.render.resolution_y])) + '\n')
         print('BORDER', f, [round(x, 3) for x in b], 'area %.1f%%' % (100 * (b[1] - b[0]) * (b[3] - b[2])), flush=True)
         sc.frame_start = sc.frame_end = f; sc.frame_set(f); t0 = time.time()
         bpy.ops.render.render(animation=True)

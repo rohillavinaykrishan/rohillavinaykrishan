@@ -1,0 +1,1 @@
+lut3d=file='/home/user/rohillavinaykrishan/projects/vinay-v4/shots/sh010/color/v002/sunbleach_v002.cube':interp=tetrahedral,format=yuv444p,noise=c0s=5:c0f=t,format=rgb24

@@ -412,7 +412,7 @@
         for (let i = 0; i < NPT; i++) {
           const o = i * 7; const Xc = toCam(cam, [PTS[o], PTS[o + 1], PTS[o + 2]]); if (Xc[2] <= cam.near) continue;
           const q = projC(cam, Xc); if (!q) continue; if (q[0] < -20 || q[0] > W + 20 || q[1] < -20 || q[1] > H + 20) continue;
-          const sz = clamp(sizeK * cam.fx / Xc[2], 3.2, 10);
+          const sz = clamp(sizeK * cam.fx / Xc[2], 4.2, 11);
           ctx.fillStyle = `rgb(${PTS[o + 3]},${PTS[o + 4]},${PTS[o + 5]})`;
           ctx.fillRect(q[0] - sz / 2, q[1] - sz / 2, sz, sz);
         }
