@@ -9,36 +9,38 @@ argv = sys.argv[sys.argv.index('--') + 1:]
 MODE, OUT, RX, SAMP = argv[0], argv[1], int(argv[2]), int(argv[3])
 SAVE = argv[4] if len(argv) > 4 else None
 
-# ---------------- tweakables ----------------
-CAM_LOC = (-3.3, -6.2, 0.42)
-CAM_TGT = (-0.6, 0.0, 2.9)
-LENS = 26.0
-SHIFT_Y = -0.158
-SHIFT_X = 0.008
-SUN_EL, SUN_AZ_OFF = 24.0, 23.0
-SUN_E, SUN_COL = 4.6, (1.0, 0.90, 0.76)
-RIM_E, RIM_COL, RIM_EL, RIM_AZ = 3.5, (1.0, 0.62, 0.42), 14.0, -145.0
-FILL_COL, FILL_E = (0.52, 0.48, 0.45), 0.10
-# sky ramp on sin(elevation) of camera rays (linear RGB)
-SKY = [(0.000, (0.62, 0.36, 0.17)),
-       (0.030, (0.34, 0.18, 0.085)),
-       (0.12, (0.090, 0.058, 0.036)),
-       (0.30, (0.050, 0.036, 0.025)),
-       (0.62, (0.016, 0.013, 0.010))]
+# ---------------- tweakables (v002: director note 16) ----------------
+CAM_LOC = (-2.0, -6.4, 0.35)
+CAM_TGT = (-0.2, 0.0, 2.6)
+LENS = 25.0
+SHIFT_Y = -0.10
+SHIFT_X = 0.0
+SUN_EL, SUN_BEARING = 12.0, -165.0          # behind the monument, 15 deg right of centre
+SUN_E, SUN_COL = 9.0, (1.0, 0.80, 0.58)
+FILL_E, FILL_COL, FILL_LOC, FILL_SIZE = 1800.0, M.hexlin('#F2EBDF')[:3], (-7.0, -9.0, 3.2), 7.0
+KICK_E, KICK_COL, KICK_LOC, KICK_SIZE = 260.0, M.hexlin('#FF2E88')[:3], (-7.5, 3.5, 1.6), 0.9
+FILL_WORLD_COL, FILL_WORLD_E = (0.50, 0.44, 0.40), 0.06
+SKY = [(0.000, (1.60, 0.98, 0.52)),
+       (0.025, (0.70, 0.36, 0.15)),
+       (0.10, (0.16, 0.085, 0.045)),
+       (0.26, (0.050, 0.034, 0.024)),
+       (0.60, (0.012, 0.010, 0.008))]
+SUN_DISC_E, SUN_HALO_E = 60.0, 2.4
 RIPPLE_SCALE, RIPPLE_AMT = 0.9, 0.5
 SAND_A, SAND_B = M.hexlin('#8F7558'), M.hexlin('#B39673')
-BLOCKER = (-9.5, 2.5, 16.0)   # wall y, height, rot deg (foreground shade); None = off
-HAZE_START, HAZE_END = 12.0, 160.0
-EXPOSURE = 0.4
+BLOCKER = None
+HAZE_START, HAZE_END = 14.0, 140.0
+EXPOSURE = 0.0
 LOOK = "AgX - High Contrast"
-# --------------------------------------------
+GLOW_THR, GLOW_SIZE, GLOW_STR, STREAK_STR = 0.9, 0.8, 0.6, 0.04
+M.ROUGH, M.COAT, M.BEVEL = 0.42, 0.1, 0.035
 exec(os.environ.get('TW', ''))
 
 for o in list(bpy.data.objects): bpy.data.objects.remove(o)
 sc = bpy.context.scene
 sc.render.engine = 'CYCLES'; sc.cycles.device = 'CPU'; sc.cycles.samples = SAMP
 sc.cycles.use_adaptive_sampling = True; sc.cycles.adaptive_threshold = 0.02
-sc.cycles.use_denoising = True; sc.cycles.denoiser = 'OPENIMAGEDENOISE'
+sc.cycles.use_denoising = True; sc.cycles.denoiser = 'OPENIMAGEDENOISE'; sc.cycles.denoising_input_passes = 'RGB_ALBEDO_NORMAL'
 sc.cycles.max_bounces = 6; sc.cycles.diffuse_bounces = 3; sc.cycles.glossy_bounces = 2
 sc.cycles.transmission_bounces = 0; sc.cycles.volume_bounces = 0; sc.cycles.transparent_max_bounces = 4
 sc.render.resolution_x = RX; sc.render.resolution_y = RX * 16 // 9; sc.render.resolution_percentage = 100
@@ -79,7 +81,7 @@ cd_ = N.new('ShaderNodeCameraData')
 hz = N.new('ShaderNodeMapRange'); hz.inputs['From Min'].default_value = HAZE_START; hz.inputs['From Max'].default_value = HAZE_END
 L.new(cd_.outputs['View Distance'], hz.inputs['Value'])
 hp = N.new('ShaderNodeMath'); hp.operation = 'POWER'; hp.inputs[1].default_value = 0.7; L.new(hz.outputs[0], hp.inputs[0])
-em = N.new('ShaderNodeEmission'); em.inputs['Color'].default_value = SKY[0][1] + (1,); em.inputs['Strength'].default_value = 1.0
+em = N.new('ShaderNodeEmission'); em.inputs['Color'].default_value = tuple(c * 0.55 for c in SKY[0][1]) + (1,); em.inputs['Strength'].default_value = 1.0
 lp = N.new('ShaderNodeLightPath')
 gate = N.new('ShaderNodeMath'); gate.operation = 'MULTIPLY'
 L.new(hp.outputs[0], gate.inputs[0]); L.new(lp.outputs['Is Camera Ray'], gate.inputs[1])
@@ -91,13 +93,30 @@ if MODE == 'fg':
 
 # world: camera rays see the dusk ramp, everything else sees a constant warm fill
 w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True; wn = w.node_tree; WN = wn.nodes; WL = wn.links
-bg = WN['Background']; bg.inputs['Color'].default_value = FILL_COL + (1,); bg.inputs['Strength'].default_value = FILL_E
+bg = WN['Background']; bg.inputs['Color'].default_value = FILL_WORLD_COL + (1,); bg.inputs['Strength'].default_value = FILL_WORLD_E
 wtc = WN.new('ShaderNodeTexCoord'); wsx = WN.new('ShaderNodeSeparateXYZ'); WL.new(wtc.outputs['Generated'], wsx.inputs[0])
 cr = WN.new('ShaderNodeValToRGB'); ramp = cr.color_ramp; ramp.interpolation = 'B_SPLINE'
 while len(ramp.elements) < len(SKY): ramp.elements.new(0.5)
 for e, (p, c) in zip(ramp.elements, SKY): e.position = p; e.color = c + (1,)
 WL.new(wsx.outputs['Z'], cr.inputs[0])
-bg2 = WN.new('ShaderNodeBackground'); WL.new(cr.outputs['Color'], bg2.inputs['Color'])
+_a, _e = math.radians(SUN_BEARING), math.radians(SUN_EL)
+SUN_POS = mathutils.Vector((-math.sin(_a) * math.cos(_e), -math.cos(_a) * math.cos(_e), math.sin(_e)))
+sdot = WN.new('ShaderNodeVectorMath'); sdot.operation = 'DOT_PRODUCT'; sdot.inputs[1].default_value = SUN_POS
+WL.new(wtc.outputs['Generated'], sdot.inputs[0])
+disc = WN.new('ShaderNodeMapRange'); disc.inputs['From Min'].default_value = math.cos(math.radians(0.9)); disc.inputs['From Max'].default_value = math.cos(math.radians(0.6))
+disc.interpolation_type = 'SMOOTHSTEP'; disc.inputs['To Max'].default_value = SUN_DISC_E; WL.new(sdot.outputs['Value'], disc.inputs['Value'])
+hcl = WN.new('ShaderNodeMath'); hcl.operation = 'MAXIMUM'; hcl.inputs[1].default_value = 0.0; WL.new(sdot.outputs['Value'], hcl.inputs[0])
+h1 = WN.new('ShaderNodeMath'); h1.operation = 'POWER'; h1.inputs[1].default_value = 90.0; WL.new(hcl.outputs[0], h1.inputs[0])
+h2 = WN.new('ShaderNodeMath'); h2.operation = 'POWER'; h2.inputs[1].default_value = 10.0; WL.new(hcl.outputs[0], h2.inputs[0])
+hs = WN.new('ShaderNodeMath'); hs.operation = 'MULTIPLY_ADD'; hs.inputs[1].default_value = 0.35; WL.new(h2.outputs[0], hs.inputs[0]); WL.new(h1.outputs[0], hs.inputs[2])
+hm = WN.new('ShaderNodeMath'); hm.operation = 'MULTIPLY_ADD'; hm.inputs[1].default_value = SUN_HALO_E; WL.new(hs.outputs[0], hm.inputs[0]); WL.new(disc.outputs[0], hm.inputs[2])
+sunc = WN.new('ShaderNodeMix'); sunc.data_type = 'RGBA'; sunc.blend_type = 'ADD'; sunc.inputs['Factor'].default_value = 1.0
+hcol = WN.new('ShaderNodeMix'); hcol.data_type = 'RGBA'; hcol.blend_type = 'MULTIPLY'; hcol.inputs['Factor'].default_value = 1.0
+hcol.inputs['B'].default_value = (1.0, 0.78, 0.52, 1)
+cv = WN.new('ShaderNodeCombineXYZ'); WL.new(hm.outputs[0], cv.inputs[0]); WL.new(hm.outputs[0], cv.inputs[1]); WL.new(hm.outputs[0], cv.inputs[2])
+WL.new(cv.outputs[0], hcol.inputs['A'])
+WL.new(cr.outputs['Color'], sunc.inputs['A']); WL.new(hcol.outputs['Result'], sunc.inputs['B'])
+bg2 = WN.new('ShaderNodeBackground'); WL.new(sunc.outputs['Result'], bg2.inputs['Color'])
 wlp = WN.new('ShaderNodeLightPath'); wmx = WN.new('ShaderNodeMixShader')
 WL.new(wlp.outputs['Is Camera Ray'], wmx.inputs[0]); WL.new(bg.outputs[0], wmx.inputs[1]); WL.new(bg2.outputs[0], wmx.inputs[2])
 WL.new(wmx.outputs[0], WN['World Output'].inputs['Surface'])
@@ -118,9 +137,17 @@ def sun(name, energy, col, el, az_deg, angle):
     pos = mathutils.Vector((-math.sin(a) * math.cos(e), -math.cos(a) * math.cos(e), math.sin(e)))
     ob.rotation_euler = (-pos).to_track_quat('-Z', 'Y').to_euler()
     return ob
-cam_bearing = math.degrees(math.atan2(-CAM_LOC[0], -CAM_LOC[1]))   # camera bearing in the same convention
-key = sun('key_sun', SUN_E, SUN_COL, SUN_EL, cam_bearing - SUN_AZ_OFF, 1.2)
-rim = sun('rim_sun', RIM_E, RIM_COL, RIM_EL, RIM_AZ, 4.0)
+cam_bearing = math.degrees(math.atan2(-CAM_LOC[0], -CAM_LOC[1]))
+key = sun('key_sun', SUN_E, SUN_COL, SUN_EL, SUN_BEARING, 0.8)
+def area(name, energy, col, loc, size, tgt=(0, 0, 1.8)):
+    ld = bpy.data.lights.new(name, 'AREA'); ld.energy = energy; ld.color = col; ld.shape = 'DISK'; ld.size = size
+    ob = bpy.data.objects.new(name, ld); sc.collection.objects.link(ob); ob.location = loc
+    ob.rotation_euler = (mathutils.Vector(tgt) - mathutils.Vector(loc)).to_track_quat('-Z', 'Y').to_euler()
+    ob.visible_camera = False
+    return ob
+fill = area('front_fill', FILL_E, FILL_COL, FILL_LOC, FILL_SIZE)
+kick = area('pink_kicker', KICK_E, KICK_COL, KICK_LOC, KICK_SIZE)
+rim = kick
 if BLOCKER:
     bpy.ops.mesh.primitive_plane_add(size=1, location=(0, BLOCKER[0], BLOCKER[1] / 2))
     bk = bpy.context.active_object; bk.name = 'fg_shade_blocker'; bk.scale = (60, BLOCKER[1], 1)
@@ -128,7 +155,7 @@ if BLOCKER:
     bk.visible_camera = False; bk.visible_diffuse = False; bk.visible_glossy = False
 if MODE == 'fg':
     # sun shadows go into the bg plate; fg only keeps the soft contact (fill occlusion) on the catcher
-    for l in (key, rim):
+    for l in (key, fill, kick):
         l.light_linking.receiver_collection = mc
 if MODE == 'bg':
     for o in mon_objs:
@@ -150,6 +177,33 @@ hz_ = (1 - world_to_camera_view(sc, co, far).y) * H
 k = 3840 / H
 print('PROBE(4K px) x %.0f-%.0f (w %.0f)  top %.0f  base %.0f  horizon %.0f' % (min(xs)*k, max(xs)*k, (max(xs)-min(xs))*k, min(ys)*k, max(ys)*k, hz_*k))
 if MODE == 'probe': sys.exit(0)
+ng = bpy.data.node_groups.new('title_comp', 'CompositorNodeTree'); sc.compositing_node_group = ng
+NN = ng.nodes; NL = ng.links
+rl = NN.new('CompositorNodeRLayers')
+ng.interface.new_socket('Image', in_out='OUTPUT', socket_type='NodeSocketColor')
+go = NN.new('NodeGroupOutput')
+fog = NN.new('CompositorNodeGlare'); fog.inputs['Type'].default_value = 'Fog Glow'; fog.inputs['Quality'].default_value = 'High'
+fog.inputs['Threshold'].default_value = GLOW_THR; fog.inputs['Size'].default_value = GLOW_SIZE; fog.inputs['Strength'].default_value = GLOW_STR
+NL.new(rl.outputs['Image'], fog.inputs['Image'])
+st = NN.new('CompositorNodeGlare'); st.inputs['Type'].default_value = 'Streaks'; st.inputs['Threshold'].default_value = 4.0
+st.inputs['Strength'].default_value = STREAK_STR; st.inputs['Streaks'].default_value = 6; st.inputs['Fade'].default_value = 0.93
+NL.new(rl.outputs['Image'], st.inputs['Image'])
+add1 = NN.new('ShaderNodeMix'); add1.data_type = 'RGBA'; add1.blend_type = 'ADD'; add1.inputs['Factor'].default_value = 1.0
+NL.new(fog.outputs['Glare'], add1.inputs['A']); NL.new(st.outputs['Glare'], add1.inputs['B'])
+out = NN.new('ShaderNodeMix'); out.data_type = 'RGBA'; out.blend_type = 'ADD'; out.inputs['Factor'].default_value = 1.0
+NL.new(rl.outputs['Image'], out.inputs['A']); NL.new(add1.outputs['Result'], out.inputs['B'])
+if MODE == 'fg':
+    # premultiplied: rgb = img + glow ; alpha = max(alpha, luma(glow)) so the rim glow survives outside the letters
+    bw = NN.new('CompositorNodeRGBToBW'); NL.new(add1.outputs['Result'], bw.inputs[0])
+    mx_ = NN.new('ShaderNodeMath'); mx_.operation = 'MAXIMUM'; mx_.use_clamp = True
+    NL.new(rl.outputs['Alpha'], mx_.inputs[0]); NL.new(bw.outputs[0], mx_.inputs[1])
+    sep = NN.new('CompositorNodeSeparateColor'); NL.new(out.outputs['Result'], sep.inputs[0])
+    cmb = NN.new('CompositorNodeCombineColor')
+    for ch in ('Red', 'Green', 'Blue'): NL.new(sep.outputs[ch], cmb.inputs[ch])
+    NL.new(mx_.outputs[0], cmb.inputs['Alpha'])
+    NL.new(cmb.outputs[0], go.inputs[0])
+else:
+    NL.new(out.outputs['Result'], go.inputs[0])
 if os.environ.get('BORDER'):
     b = [float(x) for x in os.environ['BORDER'].split(',')]
     sc.render.use_border = True; sc.render.use_crop_to_border = True
