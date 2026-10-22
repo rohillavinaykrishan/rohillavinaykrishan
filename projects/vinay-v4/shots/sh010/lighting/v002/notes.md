@@ -32,3 +32,9 @@
   fg alpha = max(alpha, luma(glow)) (premultiplied) so the rim bloom survives over the bg.
 - title_fg.png (RGBA: monument + plinth + soft contact) and title_bg.png (sky, sun, ground, shafts, long shadows),
   2160x3840, 64 spp. Proxies: title/t01-t03*.png (t03 approved look; t03_sheet = comp / bg / fg-over-white / fg-over-black).
+
+## Render times (shared 4-core CPU, 2 heavy jobs in parallel)
+- Shot: 52 frames 3257x1364, 16 spp, 05:37:48-06:14:54 = 37 min (sum of per-frame 2206 s, 25-110 s/frame; s0-s4 fall
+  frames are the slowest, larger border). QC: 52/52 cg/shadow/mist/exr, no empty frames, correct size, shadow = 1 at edges.
+- Title: title_bg 15.5 min, title_fg 20.8 min (2160x3840, 64 spp, adaptive 0.02, OIDN albedo+normal).
+- Check images: proxy_shot/final_check_s4_25_51.png (final frames distorted + over the plate), title/title_comp_check_4k.png.
