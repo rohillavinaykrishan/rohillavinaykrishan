@@ -56,17 +56,17 @@ o = V + 'track_band.mp4'; k = stale(o, PL % 0, PL % 51)
 if k:
     sh(f'ffmpeg -v error -y -framerate 25 -start_number 0 -i "{PL}" -frames:v 52 -vf "scale=2160:904:flags=lanczos" {ENC} "{o}"'); done(o, k)
 
-# ------------------------------------------------------------------ credits (lifted for phone legibility, native 4K lanczos)
-CR = U + 'color/v001/credits_graded.mp4'
-o = V + 'credits.mp4'; k = stale(o, CR)
+# ------------------------------------------------------------------ credits underlay (the visible list is native DOM type)
+CR2 = U + 'color/v002/credits_graded.mp4'
+if os.path.exists(CR2) and nframes(CR2) == 69:
+    CR = CR2; lift = ''; man['credits'] = 'color/v002/credits_graded.mp4 (real) -> blurred glow underlay'
+else:
+    CR = U + 'color/v001/credits_graded.mp4'; man['credits'] = 'color/v001/credits_graded.mp4 (v002 not delivered; lifted here) -> blurred glow underlay'
+    lift = "curves=all='0/0 0.08/0.085 0.22/0.40 0.45/0.78 0.70/0.93 1/0.97',"
+o = V + 'credits.mp4'; k = stale(o, CR, HERE + 'prep.py')
 if k:
-    # colorist: the duotone is very dark (YAVG 36.7). Lift the thin name strokes (mid-greys) hard, keep the Ink floor,
-    # names roll off to Bone. Then 3x lanczos + a light unsharp so the 720 px type holds on a phone.
-    vf = ("curves=all='0/0 0.08/0.085 0.22/0.40 0.45/0.78 0.70/0.93 1/0.97',"
-          "scale=2160:3840:flags=lanczos,unsharp=5:5:0.6:5:5:0.0")
-    sh(f'ffmpeg -v error -y -i "{CR}" -vf "{vf}" {ENC} "{o}"'); done(o, k)
+    sh(f'ffmpeg -v error -y -i "{CR}" -vf "{lift}scale=2160:3840:flags=lanczos,gblur=sigma=3" {ENC} "{o}"'); done(o, k)
 assert nframes(o) == 69, 'credits must be 69 frames'
-man['credits'] = 'color/v001/credits_graded.mp4 (real, lifted here)'
 RT = json.load(open(U + 'edit/v001/row_track.json'))
 
 # ------------------------------------------------------------------ layout JSONs
@@ -222,7 +222,9 @@ if k:
         if key not in cache:
             im = plate(s); hh = 960; ww = int(round(im.shape[1] * hh / im.shape[0]))
             im = cv2.resize(im, (ww, hh), interpolation=cv2.INTER_AREA); x0 = (ww - 540) // 2; im = im[:, x0:x0 + 540]
-            im = cv2.GaussianBlur(im, (0, 0), 15)
+            im = cv2.GaussianBlur(im, (0, 0), 10)
+            hsv = cv2.cvtColor(im, cv2.COLOR_BGR2HSV).astype(np.float32); hsv[..., 1] = np.clip(hsv[..., 1] * 1.1, 0, 255)
+            im = cv2.cvtColor(hsv.astype(np.uint8), cv2.COLOR_HSV2BGR)
             if desat:
                 g = cv2.cvtColor(cv2.cvtColor(im, cv2.COLOR_BGR2GRAY), cv2.COLOR_GRAY2BGR); im = cv2.addWeighted(im, 1 - desat, g, desat, 0)
             cache[key] = im
@@ -258,6 +260,54 @@ LG = U + 'color/v001/sf_logo_bone.png'; o = A + 'sf_logo_bone.png'; k = stale(o,
 if k: sh(f'cp "{LG}" "{o}"'); done(o, k)
 man['logo'] = 'color/v001/sf_logo_bone.png (real)'
 
+# logo rim glow (screen copy, blur 18 px at display size ~0.55x -> 32 px at native)
+o = A + 'sf_logo_glow.png'; k = stale(o, LG)
+if k:
+    im = cv2.imread(LG, cv2.IMREAD_UNCHANGED).astype(np.float32); a_ = im[..., 3:4] / 255.0
+    g = cv2.GaussianBlur(im[..., :3] * a_, (0, 0), 32); cv2.imwrite(o, np.clip(g, 0, 255).astype(np.uint8)); done(o, k)
+# line-up (restored by the colorist) for the bottom of the credits act only
+LU = U + 'restore/v001/lineup_restored_2160.png'
+LU2 = sorted(glob.glob(U + 'color/v00*/lineup_restored_2160.png'))
+src_lu = LU if os.path.exists(LU) else (LU2[-1] if LU2 else None)
+o = A + 'lineup.png'
+if src_lu:
+    k = stale(o, src_lu)
+    if k:
+        im = cv2.imread(src_lu, cv2.IMREAD_UNCHANGED)
+        if im.shape[2] == 3: im = np.dstack([im, np.full(im.shape[:2], 255, np.uint8)])
+        if im.shape[1] != 2160: im = cv2.resize(im, (2160, int(round(im.shape[0] * 2160 / im.shape[1]))), interpolation=cv2.INTER_AREA)
+        cv2.imwrite(o, im); done(o, k)
+    man['lineup'] = src_lu.replace(U, '') + ' (real)'
+else:
+    k = stale(o, ROOT_LU := os.path.abspath(U + '../../assets_prev/lineup.png'), HERE + 'prep.py')
+    if k:
+        im = cv2.imread(ROOT_LU, cv2.IMREAD_UNCHANGED)
+        im = cv2.resize(im, (2160, 1320), interpolation=cv2.INTER_AREA)[420:1320].copy()     # src rows 560-1760, 0.75x
+        ramp_ = np.clip(np.arange(900) / 300.0, 0, 1) ** 1.6
+        im[..., 3] = (im[..., 3].astype(np.float32) * ramp_[:, None]).astype(np.uint8)
+        cv2.putText(im, 'PLACEHOLDER lineup (not restored)', (60, 880), cv2.FONT_HERSHEY_SIMPLEX, 1.4, (40, 40, 200), 3)
+        cv2.imwrite(o, im); done(o, k)
+    man['lineup'] = 'PLACEHOLDER assets_prev/lineup.png (restore not delivered)'
+o2 = A + 'lineup_glow.png'; k = stale(o2, o)
+if k:
+    im = cv2.imread(o, cv2.IMREAD_UNCHANGED).astype(np.float32); a_ = im[..., 3:4] / 255.0
+    cv2.imwrite(o2, np.clip(cv2.GaussianBlur(im[..., :3] * a_, (0, 0), 30), 0, 255).astype(np.uint8)); done(o2, k)
+LUH = cv2.imread(o, cv2.IMREAD_UNCHANGED).shape[0]
+
+# the verbatim list: 3 rows visible above credits.txt's first line at f0 (read from source/movie.mp4 67.40 s), then credits.txt
+PRE = [['SHASHIKANTH B TUPSUNDAR', 'SURAJ PANKAJ MISTRY'], ['SHATADRU BOSE', 'SURESH KOTHARI'], ['SHEELVANT SINGH', 'SURYA K']]
+rows = PRE[:]
+for ln in open(os.path.abspath(U + '../../source/credits.txt')).read().split('\n'):
+    if '|' in ln: l_, r_ = [q.strip() for q in ln.split('|', 1)]; rows.append([l_, r_])
+    elif ln.strip() == '': rows.append(['', ''])
+while rows and rows[-1] == ['', '']: rows.pop()
+HIS = [i for i, r in enumerate(rows) if r[1] == 'VINAY KRISHAN ROHILLA'][0]
+assert rows[HIS][0] == 'VAMSI KRISHNA EADALA'
+
+# FINAL window centre: monument centre x (plate px), Gaussian sigma 6 (clamped per frame in the page for the current scale)
+cxr = np.array([q['centre'][0] for q in anc]); g_ = np.exp(-0.5 * (np.arange(-12, 13) / 6.0) ** 2); g_ /= g_.sum()
+FCX = np.convolve(np.r_[np.full(12, cxr[0]), cxr, np.full(12, cxr[-1])], g_, 'valid').round(2).tolist()
+
 # grain tile (seeded)
 o = A + 'grain.png'
 if not os.path.exists(o):
@@ -285,6 +335,7 @@ D = dict(manifest=man, W=1280, H=536, f=f * 1280 / W, cx=cx * 1280 / W, cy=cy * 
                                       'median_reproj_px', 'camera_model', 'f_px', 'lens_mm_36', 'hfov_deg', 'k1', 'camera_travel_m',
                                       'rotation_span_deg') if kk in st},
          anchor=dict(loc=[AX, AY], rot=AR, top=TOPZ, frames=anc), mono=mono,
+         cred=dict(rows=rows, his=HIS), lineupH=LUH, fcx=FCX,
          row=[dict(y=q['y'], x0=q['name_x0'], x1=q['name_x1']) for q in sorted(RT['frames'], key=lambda q: q['f'])])
 open(A + 'data.js', 'w').write('window.D=' + json.dumps(D, separators=(',', ':')) + ';')
 json.dump(man, open(A + 'manifest.json', 'w'), indent=1)

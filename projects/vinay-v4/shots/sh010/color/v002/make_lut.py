@@ -12,12 +12,12 @@ import numpy as np
 INK = np.array([0x12, 0x10, 0x0D]) / 255.0
 BONE = np.array([0xF2, 0xEB, 0xDF]) / 255.0
 
-GAMMA = float(__import__("os").environ.get("SB_GAMMA", "0.98"))       # midtone lift; compensates the Ink/Bone squeeze (keeps mean Y within +-5%)
+GAMMA = float(__import__("os").environ.get("SB_GAMMA", "1.0"))  # v002: exposure comes from MID, so the toe lands exactly 0.10 -> 0.07
 SHOULDER = 0.72     # highlight roll-off starts here
 SAT = 1.00
 GREEN_SAT = 0.85    # extra desat for foliage
 SKIN_SAT = 1.08    # skin + red suit
-MID = float(__import__("os").environ.get("SB_MID", "0.50"))  # output of 0.5 in the contrast curve
+MID = float(__import__("os").environ.get("SB_MID", "0.585"))  # output of 0.5 in the contrast curve
 SAGE_HUE = 72.0     # deg, sage #7D875C is ~74 deg
 GREEN_SHIFT = 0.50  # fraction of the way toward SAGE_HUE
 

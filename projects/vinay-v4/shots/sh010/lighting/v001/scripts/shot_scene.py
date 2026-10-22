@@ -16,9 +16,10 @@ H = round(W * 536 / 1280)
 # ---- plate-matched light (measured on s25: the fighters' shadows run toward world az -160 deg,
 #      i.e. the sun sits in front of the camera, ~20 deg right of +Y, elevation ~35 deg)
 SUN_AZ, SUN_EL = 20.0, 35.0          # bearing of the sun POSITION, deg from +Y toward +X
-SUN_E, SUN_COL, SUN_ANGLE = 4.5, (1.0, 0.95, 0.86), 1.5
+SUN_E, SUN_COL, SUN_ANGLE = 6.5, (1.0, 0.95, 0.86), 1.5
 WORLD_COL, WORLD_E = (0.80, 0.78, 0.74), 0.30
 M.BEVEL = 0.035
+SUN_HALO = 0.9
 exec(os.environ.get('TW', ''))
 
 bpy.ops.wm.open_mainfile(filepath=LAY + 'solve_cam.blend')
@@ -55,6 +56,14 @@ pos = mathutils.Vector((math.sin(a) * math.cos(e), math.cos(a) * math.cos(e), ma
 so.rotation_euler = (-pos).to_track_quat('-Z', 'Y').to_euler()
 wo = sc.world; bgn = wo.node_tree.nodes['Background']
 bgn.inputs['Color'].default_value = WORLD_COL + (1,); bgn.inputs['Strength'].default_value = WORLD_E
+# hazy backlit sky: brighter around the sun (gives the edges/sides some wrap), 0.3 elsewhere
+WN = wo.node_tree.nodes; WL = wo.node_tree.links
+tcw = WN.new('ShaderNodeTexCoord'); dp = WN.new('ShaderNodeVectorMath'); dp.operation = 'DOT_PRODUCT'
+dp.inputs[1].default_value = pos; WL.new(tcw.outputs['Generated'], dp.inputs[0])
+cl = WN.new('ShaderNodeMath'); cl.operation = 'MAXIMUM'; cl.inputs[1].default_value = 0.0; WL.new(dp.outputs['Value'], cl.inputs[0])
+pw_ = WN.new('ShaderNodeMath'); pw_.operation = 'POWER'; pw_.inputs[1].default_value = 3.0; WL.new(cl.outputs[0], pw_.inputs[0])
+ma = WN.new('ShaderNodeMath'); ma.operation = 'MULTIPLY_ADD'; ma.inputs[1].default_value = SUN_HALO; ma.inputs[2].default_value = WORLD_E
+WL.new(pw_.outputs[0], ma.inputs[0]); WL.new(ma.outputs[0], bgn.inputs['Strength'])
 wo.mist_settings.start = 8.0; wo.mist_settings.depth = 60.0; wo.mist_settings.falloff = 'LINEAR'
 
 # camera: pinhole with overscan (same focal in px), see layout distort.py
