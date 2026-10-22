@@ -9,3 +9,10 @@ Output: lineup_restored_2160.png - 2160x900 RGBA = assets_prev/lineup.png src ro
 Source check: lineup.png == review/logo_x4.png rows 3360-5120 with the credit names and DNEG painted out. A 617-frame temporal median of movie.mp4
 (line-up static 1.6-79 s) was only marginally cleaner and keeps the DNEG mark, so lineup.png was used.
 Known: bodies keep the source macro-blocking (Bison coat, Chun-Li arm), so use it small/downscaled only, as planned.
+
+## r470 variant (coordinator: Bison is the centrepiece)
+lineup_restored_2160_r470.png - 2160x968 RGBA = src rows 470-1760 at 0.75x, place at y 2872-3840 (or bottom-align).
+Same restore, warm-match and 300 px top fade (work/finish.py ... 0.7 470), then work/bison_alpha.py: alpha = max(fade, soft matte of Bison)
+(dark-key on cap/coat/glove + face ellipse, holes filled, 2 px feather), so his figure is opaque while the sky around him still fades.
+Measured: Bison face alpha 1.00, Y 92 vs source 90; warm-match darkens 0 pixels (lift only). Debug matte: work/lineup_restored_2160_r470_bisonmatte_dbg.png.
+The darkness in review/restore_v001.png came from the alpha fade over his face (alpha ~0.15-0.5 at row 560/470), not from the grade.

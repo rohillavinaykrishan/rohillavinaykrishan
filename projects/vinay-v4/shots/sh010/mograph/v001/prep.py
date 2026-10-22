@@ -39,8 +39,9 @@ def nframes(p):
 ENC = '-c:v libx264 -preset medium -crf 13 -g 1 -pix_fmt yuv420p -r 25 -an -movflags +faststart'
 
 # ------------------------------------------------------------------ plate (graded, 0-based s0..s51)
-PL = U + 'color/v001/plate_graded/plate.%04d.png'
-assert len(glob.glob(U + 'color/v001/plate_graded/plate.*.png')) == 52
+PLD = 'color/v002/plate_graded/' if len(glob.glob(U + 'color/v002/plate_graded/plate.*.png')) == 52 else 'color/v001/plate_graded/'
+PL = U + PLD + 'plate.%04d.png'
+assert len(glob.glob(U + PLD + 'plate.*.png')) == 52
 def plate(s): return cv2.imread(PL % s)
 
 # stills for the TILT (s51) and the registration (s0) image planes: 2160x904 lanczos
@@ -49,7 +50,7 @@ for s in (0, 51):
     k = stale(o, PL % s)
     if k:
         cv2.imwrite(o, cv2.resize(plate(s), (2160, 904), interpolation=cv2.INTER_LANCZOS4)); done(o, k)
-man['plate'] = 'color/v001/plate_graded (real)'
+man['plate'] = PLD + ' (real)'
 
 # TRACK band video (lanczos 1.6875x of the graded plate), 52 frames
 o = V + 'track_band.mp4'; k = stale(o, PL % 0, PL % 51)
@@ -57,9 +58,9 @@ if k:
     sh(f'ffmpeg -v error -y -framerate 25 -start_number 0 -i "{PL}" -frames:v 52 -vf "scale=2160:904:flags=lanczos" {ENC} "{o}"'); done(o, k)
 
 # ------------------------------------------------------------------ credits underlay (the visible list is native DOM type)
-CR2 = U + 'color/v002/credits_graded.mp4'
+CR2 = U + 'color/v002/credits_graded_v002.mp4'
 if os.path.exists(CR2) and nframes(CR2) == 69:
-    CR = CR2; lift = ''; man['credits'] = 'color/v002/credits_graded.mp4 (real) -> blurred glow underlay'
+    CR = CR2; lift = ''; man['credits'] = 'color/v002/credits_graded_v002.mp4 (real) -> blurred glow underlay'
 else:
     CR = U + 'color/v001/credits_graded.mp4'; man['credits'] = 'color/v001/credits_graded.mp4 (v002 not delivered; lifted here) -> blurred glow underlay'
     lift = "curves=all='0/0 0.08/0.085 0.22/0.40 0.45/0.78 0.70/0.93 1/0.97',"

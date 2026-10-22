@@ -17,15 +17,15 @@ SHIFT_Y = -0.17
 SHIFT_X = -0.02
 SUN_EL, SUN_BEARING = 12.0, -165.0          # behind the monument, 15 deg right of centre
 SUN_E, SUN_COL = 9.0, (1.0, 0.80, 0.58)
-FILL_E, FILL_COL, FILL_LOC, FILL_SIZE = 1800.0, M.hexlin('#F2EBDF')[:3], (-7.0, -9.0, 3.2), 7.0
-KICK_E, KICK_COL, KICK_LOC, KICK_SIZE = 260.0, M.hexlin('#FF2E88')[:3], (-7.5, 3.5, 1.6), 0.9
+FILL_E, FILL_COL, FILL_LOC, FILL_SIZE = 650.0, M.hexlin('#F2EBDF')[:3], (-7.0, -9.0, 3.2), 7.0
+KICK_E, KICK_COL, KICK_LOC, KICK_SIZE = 900.0, M.hexlin('#FF2E88')[:3], (-7.5, 3.5, 1.6), 0.9
 FILL_WORLD_COL, FILL_WORLD_E = (0.50, 0.44, 0.40), 0.06
 SKY = [(0.000, (1.60, 0.98, 0.52)),
        (0.025, (0.70, 0.36, 0.15)),
        (0.10, (0.16, 0.085, 0.045)),
        (0.26, (0.050, 0.034, 0.024)),
        (0.60, (0.012, 0.010, 0.008))]
-SUN_DISC_E, SUN_HALO_E = 60.0, 2.4
+SUN_DISC_E, SUN_HALO_E = 60.0, 1.6
 RIPPLE_SCALE, RIPPLE_AMT = 0.9, 0.5
 SAND_A, SAND_B = M.hexlin('#8F7558'), M.hexlin('#B39673')
 BLOCKER = None
@@ -108,7 +108,7 @@ disc.interpolation_type = 'SMOOTHSTEP'; disc.inputs['To Max'].default_value = SU
 hcl = WN.new('ShaderNodeMath'); hcl.operation = 'MAXIMUM'; hcl.inputs[1].default_value = 0.0; WL.new(sdot.outputs['Value'], hcl.inputs[0])
 h1 = WN.new('ShaderNodeMath'); h1.operation = 'POWER'; h1.inputs[1].default_value = 90.0; WL.new(hcl.outputs[0], h1.inputs[0])
 h2 = WN.new('ShaderNodeMath'); h2.operation = 'POWER'; h2.inputs[1].default_value = 10.0; WL.new(hcl.outputs[0], h2.inputs[0])
-hs = WN.new('ShaderNodeMath'); hs.operation = 'MULTIPLY_ADD'; hs.inputs[1].default_value = 0.35; WL.new(h2.outputs[0], hs.inputs[0]); WL.new(h1.outputs[0], hs.inputs[2])
+hs = WN.new('ShaderNodeMath'); hs.operation = 'MULTIPLY_ADD'; hs.inputs[1].default_value = 0.07; WL.new(h2.outputs[0], hs.inputs[0]); WL.new(h1.outputs[0], hs.inputs[2])
 hm = WN.new('ShaderNodeMath'); hm.operation = 'MULTIPLY_ADD'; hm.inputs[1].default_value = SUN_HALO_E; WL.new(hs.outputs[0], hm.inputs[0]); WL.new(disc.outputs[0], hm.inputs[2])
 sunc = WN.new('ShaderNodeMix'); sunc.data_type = 'RGBA'; sunc.blend_type = 'ADD'; sunc.inputs['Factor'].default_value = 1.0
 hcol = WN.new('ShaderNodeMix'); hcol.data_type = 'RGBA'; hcol.blend_type = 'MULTIPLY'; hcol.inputs['Factor'].default_value = 1.0
@@ -148,6 +148,8 @@ def area(name, energy, col, loc, size, tgt=(0, 0, 1.8)):
 fill = area('front_fill', FILL_E, FILL_COL, FILL_LOC, FILL_SIZE)
 kick = area('pink_kicker', KICK_E, KICK_COL, KICK_LOC, KICK_SIZE)
 rim = kick
+for l in (fill, kick):
+    l.light_linking.receiver_collection = mc   # fill/kicker only touch the monument (dark foreground)
 if BLOCKER:
     bpy.ops.mesh.primitive_plane_add(size=1, location=(0, BLOCKER[0], BLOCKER[1] / 2))
     bk = bpy.context.active_object; bk.name = 'fg_shade_blocker'; bk.scale = (60, BLOCKER[1], 1)
