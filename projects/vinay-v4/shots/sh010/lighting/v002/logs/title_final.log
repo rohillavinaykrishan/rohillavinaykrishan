@@ -1,1 +1,11 @@
 start bg 05:46:40
+EGL Error (0x3009): EGL_BAD_MATCH: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+EGL Error (0x3009): EGL_BAD_MATCH: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+EGL Error (0x3009): EGL_BAD_MATCH: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+15:31.618  render           | Saved: '/home/user/rohillavinaykrishan/projects/vinay-v4/shots/sh010/lighting/v002/title_bg.png'
+MONUMENT_DIMS {'width': 7.270000457763672, 'height': 3.784527540206909, 'depth': 0.3000001609325409}
+RENDER_SECONDS 930.8 bg 2160 3840 64
+Info: Saved as "title_bg.blend"
+Info: Saved "title_bg.blend"
+end bg 06:02:13
+start fg 06:02:13

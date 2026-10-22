@@ -2,7 +2,7 @@
 usage: vfx-python sam_multi.py plate_dir prompts.json out_dir
 prompts.json: {"obj_name": {"frame": [[x,y,label], ...], ...}, ...}  label 1=pos 0=neg
 Writes out_dir/<obj>/m.%04d.png (binary 0/255, from SAM logits>0)."""
-import json, sys, tempfile, subprocess
+import json, sys, tempfile, subprocess, os
 from pathlib import Path
 import numpy as np, torch, cv2
 from sam2.build_sam import build_sam2_video_predictor
@@ -24,7 +24,7 @@ with tempfile.TemporaryDirectory() as tmp:
                 pred.add_new_points_or_box(st, frame_idx=int(fr), obj_id=oid,
                                            points=pts[:, :2], labels=pts[:, 2].astype(np.int32))
         masks = {}
-        for rev in (False, True):
+        for rev in ((False, True) if os.environ.get("BOTH") else (False,)):
             for idx, oids, logits in pred.propagate_in_video(st, reverse=rev):
                 for k, oid in enumerate(oids):
                     m = (logits[k, 0] > 0).numpy()

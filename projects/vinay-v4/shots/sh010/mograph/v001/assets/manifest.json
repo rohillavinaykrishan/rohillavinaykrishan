@@ -8,8 +8,8 @@
  "plate_band_2160x904": "PLACEHOLDER (comp not delivered)",
  "cg_band_2160x904": "PLACEHOLDER (comp not delivered)",
  "final_band_2160x904": "PLACEHOLDER (comp not delivered)",
- "title_bg": "lighting/v001/title_bg.png (real)",
- "title_fg": "lighting/v001/title_fg.png (real)",
+ "title_bg": "lighting/v001/title_bg.png (OLD design: waiting for the re-lit v002 still)",
+ "title_fg": "lighting/v001/title_fg.png (OLD design: waiting for the re-lit v002 still)",
  "logo": "color/v001/sf_logo_bone.png (real)",
- "lineup": "restore/v001/lineup_restored_2160.png (real)"
+ "lineup": "restore/v001/lineup_restored_2160_r470.png (real)"
 }

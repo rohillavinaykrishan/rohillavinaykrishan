@@ -26,7 +26,7 @@
         mask-image: linear-gradient(180deg, transparent 0px, transparent 918px, #000 960px, #000 100%); }
       #cred { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; display: block; }
       .cimg { position: absolute; left: 0; top: 0; display: block; }
-      .glowimg { mix-blend-mode: screen; }
+      .glowimg { }
       #cHead { position: absolute; left: 0; top: 0; white-space: nowrap; font-family: "Inter Tight", sans-serif; font-weight: 700; letter-spacing: 0.12em;
         color: #F2EBDF; text-align: center; text-shadow: 0 0 24px rgba(242,235,223,0.22); }
       #cHair { position: absolute; left: 0; top: 0; height: 2px; background: #FF2E88; box-shadow: 0 0 24px rgba(255,46,136,0.6), 0 0 6px rgba(255,46,136,0.9); }
@@ -40,7 +40,7 @@
       #hisB { color: #F2EBDF; text-shadow: 0 0 22px rgba(242,235,223,0.35); }
       #hisI { color: #12100D; }
       #lineup, #lineupGlow { position: absolute; left: 0; width: 2160px; display: block; }
-      #lineupGlow { mix-blend-mode: screen; opacity: 0.25; }
+      #lineupGlow { opacity: 0.25; }
       #credInk { position: absolute; left: 0; top: 0; width: 100px; height: 100px; background: #12100D; opacity: 0; }
 
       /* ---- plate world ---- */
@@ -81,9 +81,9 @@
       /* ---- title ---- */
       #title { position: absolute; inset: 0; opacity: 0; }
       #tBg, #tFg { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; display: block; object-fit: cover; }
-      #tBg { transform-origin: 1080px 2330px; }
-      #tFg { transform-origin: 1080px 2350px; }
-      #tGrad { position: absolute; left: 0; top: 2550px; width: 2160px; height: 1290px;
+      #tBg { transform-origin: 1080px 2150px; }
+      #tFg { transform-origin: 1080px 2170px; }
+      #tGrad { position: absolute; left: 0; top: 2300px; width: 2160px; height: 1540px;
         background: linear-gradient(180deg, rgba(18,16,13,0) 0%, rgba(18,16,13,0.5) 30%, rgba(18,16,13,0.75) 100%); }
       #tTop { position: absolute; left: 0; top: 0; width: 2160px; height: 1000px;
         background: linear-gradient(180deg, rgba(18,16,13,0.5) 0%, rgba(18,16,13,0) 100%); }
@@ -91,13 +91,13 @@
         -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 40%, transparent 60%, transparent 100%); mask-image: linear-gradient(90deg, #000 0%, #000 40%, transparent 60%, transparent 100%);
         -webkit-mask-size: 300% 100%; mask-size: 300% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
       #logoBox img { position: absolute; left: 0; top: 0; width: 1100px; height: 587px; display: block; }
-      #logoGlowT { mix-blend-mode: screen; opacity: 0.3; }
-      #tRule { position: absolute; left: 870px; top: 2697px; width: 420px; height: 6px; background: #FF2E88; transform-origin: 0 50%; opacity: 0;
+      #logoGlowT { opacity: 0.3; }
+      #tRule { position: absolute; left: 870px; top: 2470px; width: 420px; height: 6px; background: #FF2E88; transform-origin: 0 50%; opacity: 0;
         box-shadow: 0 0 24px rgba(255,46,136,0.6), 0 0 6px rgba(255,46,136,0.9); }
-      #tRole { position: absolute; left: 0; top: 2822px; width: 2160px; text-align: center; font-family: "Inter Tight", sans-serif; font-weight: 700;
+      #tRole { position: absolute; left: 0; top: 2590px; width: 2160px; text-align: center; font-family: "Inter Tight", sans-serif; font-weight: 700;
         font-size: 112px; line-height: 112px; letter-spacing: 0.2em; color: #F2EBDF; white-space: nowrap; opacity: 0; padding-left: 0.2em;
         text-shadow: 0 0 28px rgba(242,235,223,0.35); }
-      #tStudio { position: absolute; left: 0; top: 2996px; width: 2160px; text-align: center; font-family: "Inter Tight", sans-serif; font-weight: 600;
+      #tStudio { position: absolute; left: 0; top: 2764px; width: 2160px; text-align: center; font-family: "Inter Tight", sans-serif; font-weight: 600;
         font-size: 72px; line-height: 72px; letter-spacing: 0.4em; color: #CDB08A; white-space: nowrap; opacity: 0; padding-left: 0.4em;
         text-shadow: 0 0 22px rgba(18,16,13,0.6); }
 
@@ -449,23 +449,28 @@
         strokePoly(ctx, cam, P, true, 0);
         for (const X of P) strokePoly(ctx, cam, [C, X], false, 0);
       }
-      const PCOL = []; for (let i = 0; i < NPT; i++) { const o = i * 7; const b = (c) => Math.min(255, Math.round(c * 1.25));
-        PCOL.push(`rgb(${b(PTS[o + 3])},${b(PTS[o + 4])},${b(PTS[o + 5])})`); }
+      const PCOL = [], PLUM = []; for (let i = 0; i < NPT; i++) { const o = i * 7; const b = (c) => Math.min(255, Math.round(c * 1.25));
+        PCOL.push(`rgb(${b(PTS[o + 3])},${b(PTS[o + 4])},${b(PTS[o + 5])})`); PLUM.push(0.3 * PTS[o + 3] + 0.59 * PTS[o + 4] + 0.11 * PTS[o + 5]); }
+      const bloomCv = document.createElement("canvas"); bloomCv.width = 540; bloomCv.height = 960; const bctx = bloomCv.getContext("2d");
       function drawCloud(cam, alpha, sizeK) {
         if (alpha <= 0.001) return;
         const vis = [];
         for (let i = 0; i < NPT; i++) {
+          if (PLUM[i] < 45) continue;                                   // near-black points read as holes, not light
           const o = i * 7; const Xc = toCam(cam, [PTS[o], PTS[o + 1], PTS[o + 2]]); if (Xc[2] <= cam.near) continue;
           const q = projC(cam, Xc); if (!q) continue; if (q[0] < -30 || q[0] > W + 30 || q[1] < -30 || q[1] > H + 30) continue;
           vis.push(i, q[0], q[1], clamp(sizeK * cam.fx / Xc[2], 5, 12));
         }
+        // bloom: quarter-res pass, blurred and added (round and soft, ~14 px)
+        bctx.clearRect(0, 0, 540, 960);
+        for (let j = 0; j < vis.length; j += 4) { bctx.fillStyle = PCOL[vis[j]]; const z = vis[j + 3] * 0.55; bctx.fillRect(vis[j + 1] / 4 - z / 2, vis[j + 2] / 4 - z / 2, z, z); }
         ctx.save(); ctx.globalCompositeOperation = "lighter";
-        ctx.globalAlpha = 0.12 * alpha;                                  // bloom pass, 14 px
-        for (let j = 0; j < vis.length; j += 4) { ctx.fillStyle = PCOL[vis[j]]; const z = vis[j + 3] * 2.8; ctx.fillRect(vis[j + 1] - z / 2, vis[j + 2] - z / 2, z, z); }
+        ctx.globalAlpha = 0.55 * alpha; ctx.filter = "blur(10px)"; ctx.drawImage(bloomCv, 0, 0, W, H); ctx.filter = "none";
         ctx.globalAlpha = alpha;                                         // core pass, 5 px
         for (let j = 0; j < vis.length; j += 4) { ctx.fillStyle = PCOL[vis[j]]; const z = vis[j + 3]; ctx.fillRect(vis[j + 1] - z / 2, vis[j + 2] - z / 2, z, z); }
         ctx.restore();
       }
+
       // ---------------- FINAL window: x1.30 -> x1.55 (f169-220), centred on the monument, kept inside the plate ----------------
       function finK(F) { return KB * lerp(1.30, 1.55, eIOS(ramp(F, 169, 220))); }
       function finCX(s, k) { return clamp(D.fcx[s], 1080 / k, PW - 1080 / k); }
@@ -482,7 +487,7 @@
       const CR = D.cred.rows, HIS = D.cred.his;
       const GUT = 1084.5;                       // canvas x of the column gutter (src 361.5 x3) -> screen 1080
       const XL = 346 * 3, XR = 377 * 3;
-      const VFIX = 0.2625;                      // measured: Inter Tight's cap centre sits 0.26 em lower than the source glyphs at line-height 1 (f7 overlay diff)         // left column right edge, right column left edge (row_track.json)
+      const VFIX = -0.125;                     // measured (row-only and underlay-only overlay diffs at f7/f37/f55): +5 px puts the type on the roll glyphs
       const ROWS = [];
       (function buildRows() {
         for (let i = 0; i < CR.length; i++) {
@@ -591,7 +596,7 @@
           ctx.save(); ctx.shadowColor = "rgba(255,46,136,0.6)"; ctx.shadowBlur = 14;
           bracket(bx0, by0, bx1, by1, lerp(46, 120, fly), lerp(6, 7, fly), `rgba(255,46,136,${(0.1 + 0.9 * ramp(F, 0, 3)).toFixed(3)})`);
           ctx.restore();
-          S(E.trkLab, "transform", `translate(${(bx1 + 26).toFixed(1)}px,${((by0 + by1) / 2 - 25).toFixed(1)}px)`); S(E.trkLab, "opacity", (1 - ramp(F, 57, 61)).toFixed(3));
+          S(E.trkLab, "right", (W - bx1).toFixed(1) + "px"); S(E.trkLab, "left", "auto"); S(E.trkLab, "transform", `translateY(${(by0 - 62).toFixed(1)}px)`); S(E.trkLab, "opacity", (1 - ramp(F, 57, 61)).toFixed(3));
           T(E.trkLab, F >= 45 ? "TRK 01 <span style='color:#F2EBDF'>LOCK</span>" : "TRK 01");
           // line-up (restored), bottom-aligned, rim glow; leaves with the roll
           const lo = (1 - ramp(F, 60, 68)).toFixed(3), lt = (3840 - D.lineupH) + "px";

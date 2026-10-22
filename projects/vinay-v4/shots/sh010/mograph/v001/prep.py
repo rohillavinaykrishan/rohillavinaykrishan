@@ -66,7 +66,7 @@ else:
     lift = "curves=all='0/0 0.08/0.085 0.22/0.40 0.45/0.78 0.70/0.93 1/0.97',"
 o = V + 'credits.mp4'; k = stale(o, CR, HERE + 'prep.py')
 if k:
-    sh(f'ffmpeg -v error -y -i "{CR}" -vf "{lift}scale=2160:3840:flags=lanczos,gblur=sigma=3" {ENC} "{o}"'); done(o, k)
+    sh(f'ffmpeg -v error -y -i "{CR}" -vf "{lift}scale=2160:3840:flags=lanczos,gblur=sigma=5" {ENC} "{o}"'); done(o, k)
 assert nframes(o) == 69, 'credits must be 69 frames'
 RT = json.load(open(U + 'edit/v001/row_track.json'))
 
@@ -173,6 +173,10 @@ for i, (cs, w) in enumerate(L):
 man['monument_wire'] = f'Unbounded 900 outlines, width 7.2 m, top z {TOPZ:.3f} m, line pitch {pitch*sc:.3f} m'
 
 # ------------------------------------------------------------------ comp bands (real .mov -> intra mp4; else placeholder)
+def newest(dept, name):
+    # newest version folder of a department that holds this file
+    c = sorted(glob.glob(U + dept + '/v*/' + name))
+    return c[-1] if c else None
 CP = U + 'comp/v001/'
 def ph_band(name, w, h, kind):
     """placeholder band video: graded plate (+ a bone box where the monument goes), labelled."""
@@ -194,7 +198,7 @@ def ph_band(name, w, h, kind):
     return o
 for name, w, h, kind in (('final_band_2808x1176', 2808, 1176, 'final'), ('plate_band_2160x904', 2160, 904, 'plate'),
                          ('cg_band_2160x904', 2160, 904, 'cg'), ('final_band_2160x904', 2160, 904, 'final')):
-    src = CP + name + '.mov'; o = V + name + '.mp4'
+    src = newest('comp', name + '.mov') or (CP + name + '.mov'); o = V + name + '.mp4'
     real = os.path.exists(src) and nframes(src) == 52
     if real:
         k = stale(o, src)
@@ -202,7 +206,7 @@ for name, w, h, kind in (('final_band_2808x1176', 2808, 1176, 'final'), ('plate_
             bg = '0x6E665C' if kind == 'cg' else '0x12100D'   # flatten any alpha over the right ground
             sh(f'ffmpeg -v error -y -f lavfi -i "color=c={bg}:s={w}x{h}:r=25" -i "{src}" -filter_complex '
                f'"[1:v]scale={w}:{h}:flags=lanczos,format=rgba[f];[0:v][f]overlay=shortest=1" -frames:v 52 {ENC} "{o}"'); done(o, k)
-        man[name] = 'comp/v001/' + name + '.mov (real)'
+        man[name] = src.replace(U, '') + ' (real)'
     else:
         p = ph_band(name, w, h, kind); sh(f'cp "{p}" "{o}"'); man[name] = 'PLACEHOLDER (comp not delivered)'
     assert nframes(o) == 52, name
@@ -242,11 +246,11 @@ if k:
 # ------------------------------------------------------------------ title stills + logo
 LT = U + 'lighting/v001/'
 for nm in ('title_bg', 'title_fg'):
-    src = LT + nm + '.png'; o = A + nm + '.png'
+    src = newest('lighting', nm + '.png') or (LT + nm + '.png'); o = A + nm + '.png'
     if os.path.exists(src):
         k = stale(o, src)
         if k: sh(f'cp "{src}" "{o}"'); done(o, k)
-        man[nm] = 'lighting/v001/' + nm + '.png (real)'
+        man[nm] = src.replace(U, '') + (' (real)' if '/v001/' not in src else ' (OLD design: waiting for the re-lit v002 still)')
     else:
         # placeholder: the newest lighting proxy pair (pNN_bg / pNN_fg), upscaled and labelled
         prox = sorted(glob.glob(LT + 'title/p*_' + nm.split('_')[1] + '.png'))
@@ -261,11 +265,15 @@ LG = U + 'color/v001/sf_logo_bone.png'; o = A + 'sf_logo_bone.png'; k = stale(o,
 if k: sh(f'cp "{LG}" "{o}"'); done(o, k)
 man['logo'] = 'color/v001/sf_logo_bone.png (real)'
 
+def rgba_glow(g):
+    """additive glow -> straight-alpha RGBA (alpha = peak channel), so it composites correctly in any group"""
+    g = np.clip(g, 0, 255); al = g.max(2, keepdims=True); c = np.where(al > 0, g * 255.0 / np.maximum(al, 1), 0)
+    return np.dstack([np.clip(c, 0, 255), al]).astype(np.uint8)
 # logo rim glow (screen copy, blur 18 px at display size ~0.55x -> 32 px at native)
 o = A + 'sf_logo_glow.png'; k = stale(o, LG)
 if k:
     im = cv2.imread(LG, cv2.IMREAD_UNCHANGED).astype(np.float32); a_ = im[..., 3:4] / 255.0
-    g = cv2.GaussianBlur(im[..., :3] * a_, (0, 0), 32); cv2.imwrite(o, np.clip(g, 0, 255).astype(np.uint8)); done(o, k)
+    g = cv2.GaussianBlur(im[..., :3] * a_, (0, 0), 32); cv2.imwrite(o, rgba_glow(g)); done(o, k)
 # line-up (restored by the colorist) for the bottom of the credits act only
 LU = U + 'restore/v001/lineup_restored_2160_r470.png' if os.path.exists(U + 'restore/v001/lineup_restored_2160_r470.png') else U + 'restore/v001/lineup_restored_2160.png'
 LU2 = sorted(glob.glob(U + 'color/v00*/lineup_restored_2160.png'))
@@ -292,7 +300,7 @@ else:
 o2 = A + 'lineup_glow.png'; k = stale(o2, o)
 if k:
     im = cv2.imread(o, cv2.IMREAD_UNCHANGED).astype(np.float32); a_ = im[..., 3:4] / 255.0
-    cv2.imwrite(o2, np.clip(cv2.GaussianBlur(im[..., :3] * a_, (0, 0), 30), 0, 255).astype(np.uint8)); done(o2, k)
+    cv2.imwrite(o2, rgba_glow(cv2.GaussianBlur(im[..., :3] * a_, (0, 0), 30))); done(o2, k)
 LUH = cv2.imread(o, cv2.IMREAD_UNCHANGED).shape[0]
 
 # the verbatim list: 3 rows visible above credits.txt's first line at f0 (read from source/movie.mp4 67.40 s), then credits.txt

@@ -9,7 +9,7 @@ gf = cv2.ximgproc.guidedFilter
 def rd(p):
     m = cv2.imread(p, 0)
     return np.zeros((536, 1280), np.uint8) if m is None else m
-objs = sorted(d for d in os.listdir('raw/sam') if os.path.isdir('raw/sam/' + d))
+objs = sorted(d for d in os.listdir('raw/sam') if os.path.isdir('raw/sam/' + d)) if os.path.isdir('raw/sam') else []
 ref = []
 for i in range(N):
     base = rd('raw/human/m.%04d.png' % i)
