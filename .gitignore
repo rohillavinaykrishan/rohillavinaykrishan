@@ -10,3 +10,8 @@ projects/**/*.exr
 projects/**/*.blend
 projects/**/*.blend1
 __pycache__/
+
+# agent swarm runtime files (wallet state, keys never go here)
+tools/agent-swarm/*_state.json
+tools/agent-swarm/ledger.json
+__pycache__/

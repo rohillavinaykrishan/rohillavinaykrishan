@@ -77,6 +77,7 @@ def main():
     ap.add_argument("--product", default="BTC-USD")
     ap.add_argument("--days", type=int, default=1000)
     ap.add_argument("--seed", type=int, default=7)
+    ap.add_argument("--save-rule", help="write the best rule to this JSON file")
     a = ap.parse_args()
 
     close = fetch_closes(a.product, a.days)
@@ -123,6 +124,10 @@ def main():
         tot, sh = backtest(best, ma, rets, lo_d, hi_d)
         hold = close[hi_d - 1] / close[lo_d - 1] - 1
         print(f"{name:12s} rule {tot[0]:+8.1%} (Sharpe {sh[0]:5.2f})   buy-and-hold {hold:+8.1%}")
+    if a.save_rule:
+        with open(a.save_rule, "w") as f:
+            json.dump({"product": a.product, "fast": fast, "slow": slow, "band": float(band)}, f)
+        print(f"Rule saved to {a.save_rule}  (run it with live_trader.py)")
     print("\nPaper result only. Past prices do not promise future profit.")
 
 
