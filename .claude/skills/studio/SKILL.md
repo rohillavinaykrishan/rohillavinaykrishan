@@ -94,6 +94,17 @@ All agents follow `.claude/skills/studio/conventions.md` - read it now.
    to git (`projects/` media is git-ignored); commit only scripts and notes the
    user would want to keep, and only if they ask.
 
+## Time estimates (client rule)
+
+Always tell the client how long the project will take, as a clock time in UTC plus a duration, both at intake and
+whenever a step finishes or slips. Base it on these measured times on this 4-core machine:
+- treatment / pre-production ~30-50 min; storyboard ~15 min; editor plate ~15 min; colour grade ~20 min
+- roto: rembg ~1 min per 52 frames, SAM 2 ~3-4 s/frame; COLMAP solve ~10-15 min
+- Blender Cycles shot (52 frames) ~40 min; title stills ~35 min
+- HyperFrames 4K render ~7-12 min; build + review rounds ~40-60 min
+- encode + delivery ~10 min; QC ~15-25 min; each supervisor fix round ~45-60 min
+Say plainly that a usage-limit pause adds the time until the reset (it auto-resumes).
+
 ## Usage limits: always auto-resume (client rule)
 
 When any agent stops with "You've hit your session limit · resets <time> (UTC)", the client wants the
