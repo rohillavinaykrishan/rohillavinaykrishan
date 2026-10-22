@@ -94,6 +94,18 @@ All agents follow `.claude/skills/studio/conventions.md` - read it now.
    to git (`projects/` media is git-ignored); commit only scripts and notes the
    user would want to keep, and only if they ask.
 
+## Usage limits: always auto-resume (client rule)
+
+When any agent stops with "You've hit your session limit · resets <time> (UTC)", the client wants the
+work to continue on its own; never wait for them to type "resume". Right away:
+1. Note every paused agent (its id and what it was doing) in `projects/<slug>/review/paused_agents.md`.
+2. Schedule a wake-up for this session at the reset time + 3 min with `send_later` (claude-code-remote MCP;
+   `at` = that UTC time, message: "Usage limit reset: resume the paused studio agents listed in
+   projects/<slug>/review/paused_agents.md"). If `send_later` is unavailable, use `ScheduleWakeup` or `CronCreate`.
+3. When it fires: check what finished on disk, then SendMessage each paused agent to continue (do not start
+   fresh agents). If they fail again with a new reset time, repeat from step 1.
+Tell the client in one line that work will resume automatically at <time>.
+
 ## Small jobs
 
 A one-department request ("remove the background from this clip") doesn't need the

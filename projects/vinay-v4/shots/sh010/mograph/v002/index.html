@@ -21,6 +21,9 @@
       /* ---- ACT 0: credits (native type over a blurred roll underlay) ---- */
       #credAct { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; overflow: hidden;
         background: radial-gradient(ellipse 75% 55% at 50% 45%, #2A211A 0%, #1C1712 55%, #12100D 100%); }
+      /* screen-space bottom fade = the native rows' fade (y 2500-2690): no underlay row is ever visible without native type on it */
+      #credUnderClip { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px;
+        -webkit-mask-image: linear-gradient(180deg, #000 0px, #000 2480px, transparent 2660px); mask-image: linear-gradient(180deg, #000 0px, #000 2480px, transparent 2660px); }
       #credUnder { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; transform-origin: 0 0; opacity: 0.3;
         -webkit-mask-image: linear-gradient(180deg, transparent 0px, transparent 918px, #000 960px, #000 100%);
         mask-image: linear-gradient(180deg, transparent 0px, transparent 918px, #000 960px, #000 100%); }
@@ -32,7 +35,7 @@
       #cHair { position: absolute; left: 0; top: 0; height: 2px; background: #FF2E88; box-shadow: 0 0 24px rgba(255,46,136,0.6), 0 0 6px rgba(255,46,136,0.9); }
       #cCol { position: absolute; left: 0; top: 0; width: 2px; background: rgba(242,235,223,0.18); }
       .crow { position: absolute; left: 0; top: 0; white-space: nowrap; font-family: "Inter Tight", sans-serif; font-weight: 500; letter-spacing: 0.10em;
-        color: #F2EBDF; line-height: 1; }
+        color: #F2EBDF; line-height: 1; text-shadow: 0 0 16px rgba(242,235,223,0.30); }
       .crow.l { text-align: right; }
       #hisWrap { position: absolute; left: 0; top: 0; }
       #brush { position: absolute; left: 0; top: 0; overflow: visible; filter: drop-shadow(0 0 40px rgba(255,46,136,0.55)); }
@@ -113,7 +116,7 @@
     <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-fps="25" data-width="2160" data-height="3840">
       <!-- ACT 0: credits -->
       <div id="credAct">
-        <div id="credUnder"><video id="cred" src="assets/v/credits.mp4" muted playsinline data-start="0" data-duration="2.76" data-track-index="1"></video></div>
+        <div id="credUnderClip"><div id="credUnder"><video id="cred" src="assets/v/credits.mp4" muted playsinline data-start="0" data-duration="2.76" data-track-index="1"></video></div></div>
         <img id="cLogoGlow" class="cimg glowimg" src="assets/sf_logo_glow.png" alt="" style="opacity:0.3" />
         <img id="cLogo" class="cimg" src="assets/sf_logo_bone.png" alt="Street Fighter" />
         <div id="cHead">Thanks to our talented teams!</div>

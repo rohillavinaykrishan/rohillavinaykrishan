@@ -66,7 +66,7 @@ else:
     lift = "curves=all='0/0 0.08/0.085 0.22/0.40 0.45/0.78 0.70/0.93 1/0.97',"
 o = V + 'credits.mp4'; k = stale(o, CR, HERE + 'prep.py')
 if k:
-    sh(f'ffmpeg -v error -y -i "{CR}" -vf "{lift}scale=2160:3840:flags=lanczos,gblur=sigma=5" {ENC} "{o}"'); done(o, k)
+    sh(f'ffmpeg -v error -y -i "{CR}" -vf "{lift}scale=2160:3840:flags=lanczos,gblur=sigma=10" {ENC} "{o}"'); done(o, k)
 assert nframes(o) == 69, 'credits must be 69 frames'
 RT = json.load(open(U + 'edit/v001/row_track.json'))
 
