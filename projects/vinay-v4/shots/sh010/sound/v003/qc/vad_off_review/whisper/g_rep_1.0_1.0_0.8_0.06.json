@@ -1,0 +1,185 @@
+[
+ {
+  "model": "small",
+  "ch": "mid",
+  "win": [
+   8.0,
+   11.0
+  ],
+  "text": "You",
+  "words": [
+   [
+    8.0,
+    9.6,
+    "You",
+    0.07
+   ]
+  ]
+ },
+ {
+  "model": "small",
+  "ch": "mid",
+  "win": [
+   8.4,
+   10.1
+  ],
+  "text": "You",
+  "words": [
+   [
+    8.4,
+    9.7,
+    "You",
+    0.11
+   ]
+  ]
+ },
+ {
+  "model": "small",
+  "ch": "mid",
+  "win": [
+   8.8,
+   10.6
+  ],
+  "text": "You",
+  "words": [
+   [
+    8.8,
+    9.74,
+    "You",
+    0.07
+   ]
+  ]
+ },
+ {
+  "model": "small",
+  "ch": "mid",
+  "win": [
+   7.5,
+   11.5
+  ],
+  "text": "",
+  "words": []
+ },
+ {
+  "model": "medium",
+  "ch": "mid",
+  "win": [
+   8.0,
+   11.0
+  ],
+  "text": "Thanks for watching!",
+  "words": [
+   [
+    8.0,
+    8.0,
+    "Thanks",
+    0.0
+   ],
+   [
+    8.0,
+    8.0,
+    "for",
+    0.88
+   ],
+   [
+    8.0,
+    10.24,
+    "watching!",
+    0.93
+   ]
+  ]
+ },
+ {
+  "model": "medium",
+  "ch": "mid",
+  "win": [
+   8.4,
+   10.1
+  ],
+  "text": "Thanks for watching!",
+  "words": [
+   [
+    8.4,
+    9.38,
+    "Thanks",
+    0.01
+   ],
+   [
+    9.38,
+    10.06,
+    "for",
+    0.89
+   ],
+   [
+    10.06,
+    10.06,
+    "watching!",
+    0.94
+   ]
+  ]
+ },
+ {
+  "model": "medium",
+  "ch": "mid",
+  "win": [
+   8.8,
+   10.6
+  ],
+  "text": "Thanks for watching!",
+  "words": [
+   [
+    8.8,
+    9.28,
+    "Thanks",
+    0.0
+   ],
+   [
+    9.28,
+    10.18,
+    "for",
+    0.89
+   ],
+   [
+    10.18,
+    10.26,
+    "watching!",
+    0.93
+   ]
+  ]
+ },
+ {
+  "model": "medium",
+  "ch": "mid",
+  "win": [
+   7.5,
+   11.5
+  ],
+  "text": "Thank you for watching!",
+  "words": [
+   [
+    7.5,
+    7.52,
+    "Thank",
+    0.0
+   ],
+   [
+    7.52,
+    8.66,
+    "you",
+    0.92
+   ],
+   [
+    8.66,
+    10.22,
+    "for",
+    0.51
+   ],
+   [
+    10.22,
+    10.24,
+    "watching!",
+    0.91
+   ]
+  ]
+ }
+]

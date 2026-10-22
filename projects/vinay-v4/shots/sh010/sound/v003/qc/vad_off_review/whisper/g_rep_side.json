@@ -1,0 +1,60 @@
+[
+ {
+  "model": "medium",
+  "ch": "side",
+  "win": [
+   8.0,
+   11.0
+  ],
+  "text": "Thanks for watching!",
+  "words": [
+   [
+    8.0,
+    9.24,
+    "Thanks",
+    0.01
+   ],
+   [
+    9.24,
+    10.98,
+    "for",
+    0.87
+   ],
+   [
+    10.98,
+    10.98,
+    "watching!",
+    0.94
+   ]
+  ]
+ },
+ {
+  "model": "medium",
+  "ch": "side",
+  "win": [
+   8.8,
+   10.6
+  ],
+  "text": "Thanks for watching!",
+  "words": [
+   [
+    8.8,
+    9.36,
+    "Thanks",
+    0.0
+   ],
+   [
+    9.36,
+    9.38,
+    "for",
+    0.78
+   ],
+   [
+    9.38,
+    10.2,
+    "watching!",
+    0.95
+   ]
+  ]
+ }
+]
