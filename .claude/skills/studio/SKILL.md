@@ -35,6 +35,8 @@ All agents follow `.claude/skills/studio/conventions.md` - read it now.
 | Social Media Editor | `social-media-editor` | Reels, WhatsApp status, 15 s teaser, square version |
 | Subtitle Translator | `subtitle-translator` | lyric .srt files: original script, Roman, English/Hindi/... |
 | Motion Graphics | `motion-graphics-artist` | titles, lyric text, graphics (HyperFrames) |
+| Shot Librarian | `shot-librarian` | catalogues a source film once: shots, characters, crops, dialogue/music map (library/) |
+| Pipeline Engineer | `pipeline-engineer` | reusable templates + scripts (credit roll, title system, auto-QC, 4K delivery) |
 
 ## Flow
 
