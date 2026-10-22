@@ -102,7 +102,47 @@
   }
  },
  "whisper_gate": {
-  "result": "PENDING",
+  "result": "PASS - no words",
+  "runs": 16,
+  "models": [
+   "small",
+   "medium"
+  ],
+  "windows_t": [
+   [
+    0,
+    15
+   ],
+   [
+    3.9,
+    6.9
+   ],
+   [
+    3.4,
+    6.4
+   ],
+   [
+    4.4,
+    7.4
+   ],
+   [
+    4.9,
+    6.8
+   ],
+   [
+    5.1,
+    6.7
+   ],
+   [
+    3.0,
+    6.5
+   ],
+   [
+    5.0,
+    8.5
+   ]
+  ],
+  "note": "the tail is bit-identical to v002, which passed 28/28 runs including [12.5-15] and [13-15]",
   "log": "qc/whisper_gate.txt"
  },
  "hits_measured": {

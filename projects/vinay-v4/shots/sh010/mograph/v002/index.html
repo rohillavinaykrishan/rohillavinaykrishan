@@ -756,7 +756,7 @@
           // the landing mark (target) f169-172, then on the f173 hit: halo + "+ LOCKED" pinned to the plinth's front-left corner (3D anchor)
           if (F < 173) { ctx.save(); ctx.shadowColor = "rgba(255,46,136,0.7)"; ctx.shadowBlur = 12; plus(bxp, byp, 18, 4, PINK); ctx.restore(); }
           if (F >= 173) {
-            const kq = eOExpo(ramp(F, 173, 177)), kt = eOC(ramp(F, 174, 178));
+            const kq = 1, kt = 1;                                   // snaps in fully on the f173 hit
             const qx = mx(fl[0]), qy = my(fl[1]);
             if (F === 173) { const g = ctx.createRadialGradient(qx, qy, 0, qx, qy, 150); g.addColorStop(0, "rgba(255,46,136,0.35)"); g.addColorStop(1, "rgba(255,46,136,0)");
               ctx.fillStyle = g; ctx.fillRect(qx - 150, qy - 150, 300, 300); }
@@ -766,7 +766,7 @@
             ctx.strokeStyle = PINK; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(qx, qy); ctx.lineTo(lerp(qx, lx, kq), lerp(qy, ly, kq)); ctx.stroke(); ctx.restore();
             S(E.lockTag, "transform", `translate(${(lx - 10 + lerp(12, 0, kt)).toFixed(1)}px,${(ly - 70).toFixed(1)}px)`);
             S(E.lockTag, "clipPath", `inset(0px ${(100 * (1 - kt)).toFixed(1)}% 0px 0px)`);
-            S(E.lockTag, "opacity", F >= 174 ? "1" : "0");
+            S(E.lockTag, "opacity", "1");
           } else S(E.lockTag, "opacity", "0");
           S(E.act3, "transform", `translateY(${(top - 76 - 1200 - 44).toFixed(1)}px)`);
           S(E.act3, "opacity", eOC(ramp(F, 169, 173)).toFixed(3));
