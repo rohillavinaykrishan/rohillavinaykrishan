@@ -267,7 +267,7 @@ if k:
     im = cv2.imread(LG, cv2.IMREAD_UNCHANGED).astype(np.float32); a_ = im[..., 3:4] / 255.0
     g = cv2.GaussianBlur(im[..., :3] * a_, (0, 0), 32); cv2.imwrite(o, np.clip(g, 0, 255).astype(np.uint8)); done(o, k)
 # line-up (restored by the colorist) for the bottom of the credits act only
-LU = U + 'restore/v001/lineup_restored_2160.png'
+LU = U + 'restore/v001/lineup_restored_2160_r470.png' if os.path.exists(U + 'restore/v001/lineup_restored_2160_r470.png') else U + 'restore/v001/lineup_restored_2160.png'
 LU2 = sorted(glob.glob(U + 'color/v00*/lineup_restored_2160.png'))
 src_lu = LU if os.path.exists(LU) else (LU2[-1] if LU2 else None)
 o = A + 'lineup.png'

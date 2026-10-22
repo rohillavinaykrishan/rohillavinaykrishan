@@ -7,122 +7,164 @@
     <script src="assets/vendor/gsap.min.js"></script>
     <script src="assets/data.js"></script>
     <style>
-      @font-face { font-family: "Inter Tight"; src: url("assets/fonts/InterTight-600.ttf") format("truetype"); font-weight: 600; font-display: block; }
       @font-face { font-family: "Inter Tight"; src: url("assets/fonts/InterTight-500.ttf") format("truetype"); font-weight: 500; font-display: block; }
-      @font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/JetBrainsMono-400.ttf") format("truetype"); font-weight: 400; font-display: block; }
+      @font-face { font-family: "Inter Tight"; src: url("assets/fonts/InterTight-600.ttf") format("truetype"); font-weight: 600; font-display: block; }
+      @font-face { font-family: "Inter Tight"; src: url("assets/fonts/InterTight-700.ttf") format("truetype"); font-weight: 700; font-display: block; }
+      @font-face { font-family: "Inter Tight"; src: url("assets/fonts/InterTight-800.ttf") format("truetype"); font-weight: 800; font-display: block; }
+      @font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/JetBrainsMono-500.ttf") format("truetype"); font-weight: 500; font-display: block; }
       @font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/JetBrainsMono-600.ttf") format("truetype"); font-weight: 600; font-display: block; }
-      @font-face { font-family: "Unbounded"; src: url("assets/fonts/Unbounded-900.ttf") format("truetype"); font-weight: 900; font-display: block; }
 
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body { width: 2160px; height: 3840px; overflow: hidden; background: #12100D; }
       #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #12100D; color: #F2EBDF; font-family: "Inter Tight", sans-serif; }
-      .abs { position: absolute; left: 0; top: 0; }
-      .full { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; }
 
-      /* ---- credits ---- */
-      #credWrap { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; transform-origin: 0 0; }
+      /* ---- ACT 0: credits (native type over a blurred roll underlay) ---- */
+      #credAct { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; overflow: hidden;
+        background: radial-gradient(ellipse 75% 55% at 50% 45%, #2A211A 0%, #1C1712 55%, #12100D 100%); }
+      #credUnder { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; transform-origin: 0 0; opacity: 0.3;
+        -webkit-mask-image: linear-gradient(180deg, transparent 0px, transparent 918px, #000 960px, #000 100%);
+        mask-image: linear-gradient(180deg, transparent 0px, transparent 918px, #000 960px, #000 100%); }
       #cred { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; display: block; }
-      #credGlow { position: absolute; left: 0; top: 0; width: 1400px; height: 520px; opacity: 0; mix-blend-mode: screen; pointer-events: none;
-        background: radial-gradient(closest-side, rgba(58,46,36,0.95) 0%, rgba(58,46,36,0.45) 55%, rgba(58,46,36,0) 100%); }
-      #credDim { position: absolute; left: 0; top: 0; width: 100px; height: 40px; border-radius: 18px; pointer-events: none; }
+      .cimg { position: absolute; left: 0; top: 0; display: block; }
+      .glowimg { mix-blend-mode: screen; }
+      #cHead { position: absolute; left: 0; top: 0; white-space: nowrap; font-family: "Inter Tight", sans-serif; font-weight: 700; letter-spacing: 0.12em;
+        color: #F2EBDF; text-align: center; text-shadow: 0 0 24px rgba(242,235,223,0.22); }
+      #cHair { position: absolute; left: 0; top: 0; height: 2px; background: #FF2E88; box-shadow: 0 0 24px rgba(255,46,136,0.6), 0 0 6px rgba(255,46,136,0.9); }
+      #cCol { position: absolute; left: 0; top: 0; width: 2px; background: rgba(242,235,223,0.18); }
+      .crow { position: absolute; left: 0; top: 0; white-space: nowrap; font-family: "Inter Tight", sans-serif; font-weight: 500; letter-spacing: 0.10em;
+        color: #F2EBDF; line-height: 1; }
+      .crow.l { text-align: right; }
+      #hisWrap { position: absolute; left: 0; top: 0; }
+      #brush { position: absolute; left: 0; top: 0; overflow: visible; filter: drop-shadow(0 0 40px rgba(255,46,136,0.55)); }
+      .his { position: absolute; left: 0; top: 0; white-space: nowrap; font-family: "Inter Tight", sans-serif; font-weight: 800; letter-spacing: 0.10em; line-height: 1; }
+      #hisB { color: #F2EBDF; text-shadow: 0 0 22px rgba(242,235,223,0.35); }
+      #hisI { color: #12100D; }
+      #lineup, #lineupGlow { position: absolute; left: 0; width: 2160px; display: block; }
+      #lineupGlow { mix-blend-mode: screen; opacity: 0.25; }
       #credInk { position: absolute; left: 0; top: 0; width: 100px; height: 100px; background: #12100D; opacity: 0; }
 
       /* ---- plate world ---- */
       #bleedV { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; object-fit: cover; opacity: 0; display: block; }
       #vig { position: absolute; inset: 0; pointer-events: none; opacity: 0;
-        background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(18,16,13,0.15) 0%, rgba(18,16,13,0.55) 60%, rgba(18,16,13,0.92) 100%); }
+        background: radial-gradient(ellipse 72% 58% at 50% 50%, rgba(18,16,13,0) 0%, rgba(18,16,13,0.28) 55%, rgba(18,16,13,0.7) 100%); }
+      .spill { position: absolute; left: 0; top: 0; width: 100px; height: 100px; opacity: 0; box-shadow: 0 0 140px rgba(242,235,223,0.16); background: #12100D; }
+      .edge { position: absolute; left: 0; top: 0; width: 100px; height: 100px; opacity: 0; border: 2px solid rgba(242,235,223,0.25); pointer-events: none; }
       #trackV { position: absolute; left: 0; top: 1468px; width: 2160px; height: 904px; display: block; }
       .plane { position: absolute; left: 0; top: 0; width: 2160px; height: 904px; transform-origin: 0 0; opacity: 0; display: block; }
-      #finalBox { position: absolute; left: 0; top: 1332px; width: 2160px; height: 1176px; overflow: hidden; }
+      #finalBox { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; overflow: hidden; }
       #finalV { position: absolute; left: 0; top: 0; width: 2808px; height: 1176px; display: block; }
 
       /* ---- breakdown ---- */
-      .band { position: absolute; left: 0; width: 2160px; height: 904px; overflow: hidden; transform-origin: 50% 50%; background: #12100D; }
+      .band { position: absolute; left: 0; width: 2160px; height: 904px; overflow: hidden; transform-origin: 50% 50%; background: #12100D;
+        box-shadow: 0 0 140px rgba(242,235,223,0.16); }
+      .band .bedge { position: absolute; inset: 0; border: 2px solid rgba(242,235,223,0.25); }
       .band video { position: absolute; left: 0; top: 0; width: 2160px; height: 904px; display: block; }
       #bdTrackV { filter: saturate(0.55) brightness(0.62); }
-      #b4edge { position: absolute; inset: 0; border: 5px solid #F2EBDF; opacity: 0; }
-      .blab { position: absolute; font-family: "JetBrains Mono", monospace; font-weight: 600; font-size: 40px; line-height: 40px; letter-spacing: 0.08em;
-        color: #F2EBDF; white-space: nowrap; padding: 14px 20px 12px 18px; background: rgba(18,16,13,0.72); }
-      .blab .n { color: rgba(242,235,223,0.5); margin-right: 18px; }
+      #b4edge { position: absolute; inset: 0; border: 6px solid #F2EBDF; opacity: 0; }
+      .blab { position: absolute; left: 0; top: 0; font-family: "JetBrains Mono", monospace; font-weight: 600; font-size: 34px; line-height: 34px; letter-spacing: 0.1em;
+        color: #F2EBDF; white-space: nowrap; padding: 15px 26px 13px 24px; border-radius: 40px; background: rgba(18,16,13,0.6); }
+      .blab .n { color: #FF2E88; margin-right: 18px; }
 
       canvas.fx { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; }
 
       /* ---- type ---- */
-      .hud { position: absolute; font-family: "JetBrains Mono", monospace; font-weight: 400; font-size: 40px; line-height: 52px; letter-spacing: 0.06em;
-        color: rgba(242,235,223,0.78); white-space: pre; opacity: 0; }
+      .hud { position: absolute; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 36px; line-height: 50px; letter-spacing: 0.06em;
+        color: rgba(242,235,223,0.85); white-space: pre; opacity: 0; }
       .hud b { font-weight: 600; color: #F2EBDF; }
       .hud .p { color: #FF2E88; }
-      .act { position: absolute; left: 96px; font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 58px; line-height: 58px; letter-spacing: 0.3em;
-        color: rgba(242,235,223,0.86); white-space: pre; opacity: 0; }
-      .act .n { color: #FF2E88; }
+      .act { position: absolute; left: 110px; font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 76px; line-height: 76px; letter-spacing: 0.24em;
+        color: #F2EBDF; white-space: pre; opacity: 0; text-shadow: 0 0 26px rgba(18,16,13,0.6); }
+      .act .n { color: #FF2E88; text-shadow: 0 0 20px rgba(255,46,136,0.55); }
       #lockTag { position: absolute; left: 0; top: 0; font-family: "JetBrains Mono", monospace; font-weight: 600; font-size: 40px; line-height: 40px; letter-spacing: 0.1em;
-        color: #12100D; background: #FF2E88; padding: 14px 22px 12px 20px; white-space: nowrap; opacity: 0; transform-origin: 0 50%; }
+        color: #12100D; background: #FF2E88; padding: 15px 24px 13px 22px; white-space: nowrap; opacity: 0; box-shadow: 0 0 30px rgba(255,46,136,0.55); }
 
       /* ---- title ---- */
       #title { position: absolute; inset: 0; opacity: 0; }
-      #tBg, #tFg { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; display: block; }
+      #tBg, #tFg { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; display: block; object-fit: cover; }
       #tBg { transform-origin: 1080px 2330px; }
-      #tFg { transform-origin: 1080px 2480px; }
+      #tFg { transform-origin: 1080px 2350px; }
       #tGrad { position: absolute; left: 0; top: 2550px; width: 2160px; height: 1290px;
         background: linear-gradient(180deg, rgba(18,16,13,0) 0%, rgba(18,16,13,0.5) 30%, rgba(18,16,13,0.75) 100%); }
-      #tTop { position: absolute; left: 0; top: 0; width: 2160px; height: 1100px;
-        background: linear-gradient(180deg, rgba(18,16,13,0.55) 0%, rgba(18,16,13,0) 100%); }
-      #logo { position: absolute; left: 530px; top: 330px; width: 1100px; height: auto; opacity: 0; transform-origin: 50% 50%; }
-      #tRule { position: absolute; left: 870px; top: 2697px; width: 420px; height: 6px; background: #FF2E88; transform-origin: 0 50%; opacity: 0; }
-      #tRole { position: absolute; left: 0; top: 2830px; width: 2160px; text-align: center; font-family: "Inter Tight", sans-serif; font-weight: 600;
-        font-size: 96px; line-height: 96px; letter-spacing: 0.26em; color: #F2EBDF; white-space: nowrap; opacity: 0; padding-left: 0.26em; }
-      #tStudio { position: absolute; left: 0; top: 2990px; width: 2160px; text-align: center; font-family: "Inter Tight", sans-serif; font-weight: 500;
-        font-size: 64px; line-height: 64px; letter-spacing: 0.42em; color: #CDB08A; white-space: nowrap; opacity: 0; padding-left: 0.42em; }
+      #tTop { position: absolute; left: 0; top: 0; width: 2160px; height: 1000px;
+        background: linear-gradient(180deg, rgba(18,16,13,0.5) 0%, rgba(18,16,13,0) 100%); }
+      #logoBox { position: absolute; left: 530px; top: 330px; width: 1100px; height: 587px; opacity: 0; transform-origin: 50% 50%;
+        -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 40%, transparent 60%, transparent 100%); mask-image: linear-gradient(90deg, #000 0%, #000 40%, transparent 60%, transparent 100%);
+        -webkit-mask-size: 300% 100%; mask-size: 300% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+      #logoBox img { position: absolute; left: 0; top: 0; width: 1100px; height: 587px; display: block; }
+      #logoGlowT { mix-blend-mode: screen; opacity: 0.3; }
+      #tRule { position: absolute; left: 870px; top: 2697px; width: 420px; height: 6px; background: #FF2E88; transform-origin: 0 50%; opacity: 0;
+        box-shadow: 0 0 24px rgba(255,46,136,0.6), 0 0 6px rgba(255,46,136,0.9); }
+      #tRole { position: absolute; left: 0; top: 2822px; width: 2160px; text-align: center; font-family: "Inter Tight", sans-serif; font-weight: 700;
+        font-size: 112px; line-height: 112px; letter-spacing: 0.2em; color: #F2EBDF; white-space: nowrap; opacity: 0; padding-left: 0.2em;
+        text-shadow: 0 0 28px rgba(242,235,223,0.35); }
+      #tStudio { position: absolute; left: 0; top: 2996px; width: 2160px; text-align: center; font-family: "Inter Tight", sans-serif; font-weight: 600;
+        font-size: 72px; line-height: 72px; letter-spacing: 0.4em; color: #CDB08A; white-space: nowrap; opacity: 0; padding-left: 0.4em;
+        text-shadow: 0 0 22px rgba(18,16,13,0.6); }
 
       #flash { position: absolute; inset: 0; background: #F2EBDF; opacity: 0; pointer-events: none; }
-      #grain { position: absolute; left: -256px; top: -256px; width: 2672px; height: 4352px; opacity: 0.045; mix-blend-mode: overlay; pointer-events: none;
+      #grain { position: absolute; left: -256px; top: -256px; width: 2672px; height: 4352px; opacity: 0.04; mix-blend-mode: overlay; pointer-events: none;
         background-image: url("assets/grain.png"); background-repeat: repeat; }
     </style>
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-fps="25" data-width="2160" data-height="3840">
-      <!-- ACT 0: credits roll -->
-      <div id="credWrap">
-        <video id="cred" src="assets/v/credits.mp4" muted playsinline data-start="0" data-duration="2.76" data-track-index="1"></video>
+      <!-- ACT 0: credits -->
+      <div id="credAct">
+        <div id="credUnder"><video id="cred" src="assets/v/credits.mp4" muted playsinline data-start="0" data-duration="2.76" data-track-index="1"></video></div>
+        <img id="cLogoGlow" class="cimg glowimg" src="assets/sf_logo_glow.png" alt="" style="opacity:0.3" />
+        <img id="cLogo" class="cimg" src="assets/sf_logo_bone.png" alt="Street Fighter" />
+        <div id="cHead">Thanks to our talented teams!</div>
+        <div id="cHair"></div>
+        <div id="cCol"></div>
+        <div id="rows"></div>
+        <img id="lineupGlow" src="assets/lineup_glow.png" alt="" />
+        <img id="lineup" src="assets/lineup.png" alt="" />
+        <div id="credInk"></div>
       </div>
-      <div id="credGlow"></div>
-      <div id="credDim"></div>
-      <div id="credInk"></div>
 
       <!-- plate world -->
       <video id="bleedV" src="assets/v/bleed.mp4" muted playsinline data-start="0" data-duration="15" data-track-index="2"></video>
       <div id="vig"></div>
+      <div id="spill" class="spill"></div>
       <video id="trackV" src="assets/v/track_band.mp4" muted playsinline data-start="2.76" data-duration="2.08" data-track-index="3"></video>
       <img id="planeA" class="plane" src="assets/plate_s51.png" alt="" />
       <img id="planeB" class="plane" src="assets/plate_s00.png" alt="" />
       <div id="finalBox">
         <video id="finalV" src="assets/v/final_band_2808x1176.mp4" muted playsinline data-start="6.76" data-duration="2.08" data-track-index="4"></video>
       </div>
+      <div id="edge" class="edge"></div>
 
       <!-- breakdown stack -->
-      <div id="b1" class="band" style="top:64px"><video id="bdPlateV" src="assets/v/bd_plate.mp4" muted playsinline data-start="8.84" data-duration="2.16" data-track-index="5"></video></div>
-      <div id="b2" class="band" style="top:1000px"><video id="bdTrackV" src="assets/v/bd_track.mp4" muted playsinline data-start="8.84" data-duration="2.16" data-track-index="6"></video></div>
-      <div id="b3" class="band" style="top:1936px"><video id="bdCgV" src="assets/v/bd_cg.mp4" muted playsinline data-start="8.84" data-duration="2.16" data-track-index="7"></video></div>
-      <div id="b4" class="band" style="top:2872px"><video id="bdFinalV" src="assets/v/bd_final.mp4" muted playsinline data-start="8.84" data-duration="2.16" data-track-index="8"></video><div id="b4edge"></div></div>
+      <div id="b1" class="band" style="top:64px"><video id="bdPlateV" src="assets/v/bd_plate.mp4" muted playsinline data-start="8.84" data-duration="2.16" data-track-index="5"></video><div class="bedge"></div></div>
+      <div id="b2" class="band" style="top:1000px"><video id="bdTrackV" src="assets/v/bd_track.mp4" muted playsinline data-start="8.84" data-duration="2.16" data-track-index="6"></video><div class="bedge"></div></div>
+      <div id="b3" class="band" style="top:1936px"><video id="bdCgV" src="assets/v/bd_cg.mp4" muted playsinline data-start="8.84" data-duration="2.16" data-track-index="7"></video><div class="bedge"></div></div>
+      <div id="b4" class="band" style="top:2872px"><video id="bdFinalV" src="assets/v/bd_final.mp4" muted playsinline data-start="8.84" data-duration="2.16" data-track-index="8"></video><div class="bedge"></div><div id="b4edge"></div></div>
 
       <canvas id="fx" class="fx" width="2160" height="3840"></canvas>
+
+      <!-- his row sits above the canvas so the TRK bracket can frame it -->
+      <div id="hisWrap">
+        <svg id="brush" xmlns="http://www.w3.org/2000/svg"></svg>
+        <div id="hisB" class="his">VINAY KRISHAN ROHILLA</div>
+        <div id="hisI" class="his">VINAY KRISHAN ROHILLA</div>
+      </div>
 
       <div id="bl1" class="blab"><span class="n">A</span>PLATE</div>
       <div id="bl2" class="blab"><span class="n">B</span>TRACK + SOLVE</div>
       <div id="bl3" class="blab"><span class="n">C</span>CG</div>
       <div id="bl4" class="blab"><span class="n">D</span>FINAL</div>
-      <div id="bl0" class="blab">04&#160;&#160;BREAKDOWN</div>
+      <div id="bl0" class="blab"><span class="n">04</span>BREAKDOWN</div>
 
       <!-- HUD + act labels -->
-      <div id="hudTL" class="hud" style="left:96px; top:300px"></div>
-      <div id="hudTR" class="hud" style="right:96px; top:300px; text-align:right"></div>
-      <div id="hudUnder" class="hud" style="left:96px; top:2420px"></div>
-      <div id="hudUnderR" class="hud" style="right:96px; top:2420px; text-align:right"></div>
-      <div id="hudSolve" class="hud" style="left:96px; top:2900px"></div>
-      <div id="trkLab" class="hud" style="font-weight:600; color:#FF2E88"></div>
-      <div id="act1" class="act" style="top:1370px"><span class="n">01</span>  TRACK</div>
-      <div id="act2" class="act" style="top:300px"><span class="n">02</span>  SOLVE</div>
-      <div id="act3" class="act" style="top:1232px"><span class="n">03</span>  FINAL</div>
+      <div id="hudTL" class="hud" style="left:110px; top:300px"></div>
+      <div id="hudTR" class="hud" style="right:110px; top:300px; text-align:right"></div>
+      <div id="hudUnder" class="hud" style="left:110px; top:2420px"></div>
+      <div id="hudUnderR" class="hud" style="right:110px; top:2420px; text-align:right"></div>
+      <div id="hudSolve" class="hud" style="left:110px; top:2880px"></div>
+      <div id="trkLab" class="hud" style="font-weight:600; color:#FF2E88; left:0; top:0"></div>
+      <div id="act1" class="act" style="top:1350px"><span class="n">01</span>  TRACK</div>
+      <div id="act2" class="act" style="top:470px"><span class="n">02</span>  SOLVE</div>
+      <div id="act3" class="act" style="top:1200px"><span class="n">03</span>  FINAL</div>
       <div id="lockTag">+ LOCKED</div>
 
       <!-- TITLE -->
@@ -131,7 +173,7 @@
         <img id="tFg" src="assets/title_fg.png" alt="" />
         <div id="tTop"></div>
         <div id="tGrad"></div>
-        <img id="logo" src="assets/sf_logo_bone.png" alt="Street Fighter" />
+        <div id="logoBox"><img id="logoGlowT" src="assets/sf_logo_glow.png" alt="" /><img id="logo" src="assets/sf_logo_bone.png" alt="Street Fighter" /></div>
         <div id="tRule"></div>
         <div id="tRole">SR. MATCHMOVE ARTIST</div>
         <div id="tStudio">STREET FIGHTER&#160;&#160;&#183;&#160;&#160;DNEG</div>
@@ -283,6 +325,7 @@
         }
         ctx.stroke();
         ctx.lineWidth = 3; ctx.strokeStyle = `rgba(255,46,136,${alpha.toFixed(3)})`; ctx.beginPath();
+        ctx.shadowColor = `rgba(255,46,136,${(0.7 * alpha).toFixed(3)})`; ctx.shadowBlur = 10;
         const r = 8;
         for (let i = 0; i < a.length; i += 3) {
           if (hash(a[i + 2]) > density) continue; n++;
@@ -372,8 +415,8 @@
           const u = eIOQ(ramp(F, 159, 165));
           pose = poseLerp(orbitPose(1), P0, u); fx = lerp(1450, VF_BAND, u); kw = u;
           const v = eIC(ramp(F, 166, 169));
-          const cx0 = ANC[0].crop_cx;
-          fx = lerp(fx, PF * KF, v); px = lerp(1080, 1080 + (PCX - cx0) * KF, v);
+          const k0 = finK(169), cx0 = finCX(0, k0);
+          fx = lerp(fx, PF * k0, v); px = lerp(1080, 1080 + (PCX - cx0) * k0, v);
         }
         return { R: pose.R, C: pose.C, fx, px, py, k1: K1 * kw, near: 0.12 };
       }
@@ -406,109 +449,188 @@
         strokePoly(ctx, cam, P, true, 0);
         for (const X of P) strokePoly(ctx, cam, [C, X], false, 0);
       }
+      const PCOL = []; for (let i = 0; i < NPT; i++) { const o = i * 7; const b = (c) => Math.min(255, Math.round(c * 1.25));
+        PCOL.push(`rgb(${b(PTS[o + 3])},${b(PTS[o + 4])},${b(PTS[o + 5])})`); }
       function drawCloud(cam, alpha, sizeK) {
         if (alpha <= 0.001) return;
-        ctx.globalAlpha = alpha;
+        const vis = [];
         for (let i = 0; i < NPT; i++) {
           const o = i * 7; const Xc = toCam(cam, [PTS[o], PTS[o + 1], PTS[o + 2]]); if (Xc[2] <= cam.near) continue;
-          const q = projC(cam, Xc); if (!q) continue; if (q[0] < -20 || q[0] > W + 20 || q[1] < -20 || q[1] > H + 20) continue;
-          const sz = clamp(sizeK * cam.fx / Xc[2], 4.2, 11);
-          ctx.fillStyle = `rgb(${PTS[o + 3]},${PTS[o + 4]},${PTS[o + 5]})`;
-          ctx.fillRect(q[0] - sz / 2, q[1] - sz / 2, sz, sz);
+          const q = projC(cam, Xc); if (!q) continue; if (q[0] < -30 || q[0] > W + 30 || q[1] < -30 || q[1] > H + 30) continue;
+          vis.push(i, q[0], q[1], clamp(sizeK * cam.fx / Xc[2], 5, 12));
         }
-        ctx.globalAlpha = 1;
+        ctx.save(); ctx.globalCompositeOperation = "lighter";
+        ctx.globalAlpha = 0.12 * alpha;                                  // bloom pass, 14 px
+        for (let j = 0; j < vis.length; j += 4) { ctx.fillStyle = PCOL[vis[j]]; const z = vis[j + 3] * 2.8; ctx.fillRect(vis[j + 1] - z / 2, vis[j + 2] - z / 2, z, z); }
+        ctx.globalAlpha = alpha;                                         // core pass, 5 px
+        for (let j = 0; j < vis.length; j += 4) { ctx.fillStyle = PCOL[vis[j]]; const z = vis[j + 3]; ctx.fillRect(vis[j + 1] - z / 2, vis[j + 2] - z / 2, z, z); }
+        ctx.restore();
       }
+      // ---------------- FINAL window: x1.30 -> x1.55 (f169-220), centred on the monument, kept inside the plate ----------------
+      function finK(F) { return KB * lerp(1.30, 1.55, eIOS(ramp(F, 169, 220))); }
+      function finCX(s, k) { return clamp(D.fcx[s], 1080 / k, PW - 1080 / k); }
 
       // ---------------- DOM refs ----------------
       const E = {};
-      ["credWrap", "credGlow", "credDim", "credInk", "bleedV", "vig", "trackV", "planeA", "planeB", "finalBox", "finalV", "b1", "b2", "b3", "b4", "b4edge",
+      ["credAct", "credUnder", "cLogo", "cLogoGlow", "cHead", "cHair", "cCol", "rows", "lineup", "lineupGlow", "credInk", "hisWrap", "brush", "hisB", "hisI",
+       "bleedV", "vig", "spill", "edge", "trackV", "planeA", "planeB", "finalBox", "finalV", "b1", "b2", "b3", "b4", "b4edge",
        "bl0", "bl1", "bl2", "bl3", "bl4", "hudTL", "hudTR", "hudUnder", "hudUnderR", "hudSolve", "trkLab", "act1", "act2", "act3", "lockTag",
-       "title", "tBg", "tFg", "logo", "tRule", "tRole", "tStudio", "flash", "grain"].forEach((k) => (E[k] = $(k)));
-
-      const HUDNAME = "NAME · VINAY KRISHAN ROHILLA";
+       "title", "tBg", "tFg", "logoBox", "tRule", "tRole", "tStudio", "flash", "grain"].forEach((k) => (E[k] = $(k)));
       function movieTC(F) { const fr = 1685 + Math.min(F, 68); const s = Math.floor(fr / 25); return `00:${pad(Math.floor(s / 60), 2)}:${pad(s % 60, 2)}:${pad(fr % 25, 2)}`; }
+
+      // ---------------- credits: the verbatim list as native type ----------------
+      const CR = D.cred.rows, HIS = D.cred.his;
+      const GUT = 1084.5;                       // canvas x of the column gutter (src 361.5 x3) -> screen 1080
+      const XL = 346 * 3, XR = 377 * 3;
+      const VFIX = 0.2625;                      // measured: Inter Tight's cap centre sits 0.26 em lower than the source glyphs at line-height 1 (f7 overlay diff)         // left column right edge, right column left edge (row_track.json)
+      const ROWS = [];
+      (function buildRows() {
+        for (let i = 0; i < CR.length; i++) {
+          const r = { i, l: null, r: null };
+          if (CR[i][0]) { const d = document.createElement("div"); d.className = "crow l"; d.textContent = CR[i][0]; E.rows.appendChild(d); r.l = d; }
+          if (CR[i][1] && i !== HIS) { const d = document.createElement("div"); d.className = "crow"; d.textContent = CR[i][1]; E.rows.appendChild(d); r.r = d; }
+          ROWS.push(r);
+        }
+      })();
+      let HIS_W0 = 0;                           // his name's visible width at 49 px (measured once, after fonts load)
+      const PL_H0 = 84, PL_M = 200, PL_MV = 70; // brush plate height and SVG margins (px at push 1.0)
+      let PL_W0 = 0;
+      function buildBrush() {
+        E.hisB.style.fontSize = "49px";
+        HIS_W0 = E.hisB.offsetWidth - 0.1 * 49;
+        PL_W0 = 1.15 * HIS_W0;
+        const w = PL_W0, h = PL_H0, vw = w + 2 * PL_M, vh = h + 2 * PL_MV;
+        // rough-edged pink plate + dry-brush streaks past each end; fixed seed, no per-frame noise
+        E.brush.setAttribute("viewBox", `${-PL_M} ${-PL_MV} ${vw} ${vh}`);
+        E.brush.setAttribute("preserveAspectRatio", "none");
+        E.brush.innerHTML = `
+          <defs>
+            <filter id="rough" x="-20%" y="-60%" width="140%" height="220%" color-interpolation-filters="sRGB">
+              <feTurbulence type="fractalNoise" baseFrequency="0.02 0.35" numOctaves="3" seed="7" result="n"/>
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="26" xChannelSelector="R" yChannelSelector="G" result="d"/>
+              <feTurbulence type="fractalNoise" baseFrequency="0.004 0.42" numOctaves="2" seed="11" result="dry"/>
+              <feColorMatrix in="dry" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 2.05" result="dryA"/>
+              <feComposite in="d" in2="dryA" operator="in"/>
+            </filter>
+            <clipPath id="wipe"><rect id="wipeR" x="${-PL_M}" y="${-PL_MV}" width="0" height="${vh}"/></clipPath>
+          </defs>
+          <g clip-path="url(#wipe)"><g filter="url(#rough)" fill="#FF2E88">
+            <rect x="0" y="0" width="${w}" height="${h}" rx="6"/>
+            <rect x="-120" y="9" width="170" height="13" opacity="0.9"/>
+            <rect x="-86" y="60" width="130" height="9" opacity="0.8"/>
+            <rect x="-48" y="34" width="70" height="6" opacity="0.7"/>
+            <rect x="${w - 50}" y="16" width="170" height="12" opacity="0.9"/>
+            <rect x="${w - 30}" y="58" width="132" height="10" opacity="0.8"/>
+            <rect x="${w - 20}" y="40" width="80" height="6" opacity="0.7"/>
+          </g></g>`;
+      }
 
       // ================= RENDER =================
       function render(t) {
         const F = Math.min(374, Math.floor(t * FPS + 1e-4));
         ctx.clearRect(0, 0, W, H);
         const act = F <= 68 ? 0 : F <= 120 ? 1 : F <= 136 ? 2 : F <= 168 ? 3 : F <= 220 ? 4 : F <= 274 ? 5 : 6;
+        let spill = null, spillA = 0;
 
-        // ---------------------------------------------------------------- ACT 0: CREDITS
+        // ---------------------------------------------------------------- ACT 0: CREDITS (f0-68)
         if (act === 0) {
+          S(E.credAct, "opacity", "1");
           const r = D.row[F];
-          const P0x = (r.x0 + r.x1) / 2 * 3, P0y = r.y * 3;
-          const u = eIOS(ramp(F, 0, 56));
+          const P0y = r.y * 3;
           const s = lerp(1.0, 1.22, eIOS(ramp(F, 0, 68)));
-          const tx = lerp(P0x, 1080, u), ty = lerp(P0y, 1920, u);
-          S(E.credWrap, "transform", `translate(${(tx - s * P0x).toFixed(2)}px,${(ty - s * P0y).toFixed(2)}px) scale(${s.toFixed(5)})`);
-          S(E.credWrap, "opacity", "1");
-          // his name box on screen
-          const hx0 = tx + (r.x0 * 3 - P0x) * s, hx1 = tx + (r.x1 * 3 - P0x) * s;
-          const hy0 = ty - 5 * 3 * s, hy1 = ty + 5 * 3 * s;
-          // others 62% -> 42% (all rows stay legible); his name 100%
-          const dimA = lerp(0.38, 0.58, eIOS(ramp(F, 25, 60)));
-          const pdx = 34 * s, pdy = 22 * s;
-          S(E.credDim, "transform", `translate(${(hx0 - pdx).toFixed(1)}px,${(hy0 - pdy).toFixed(1)}px)`);
-          S(E.credDim, "width", (hx1 - hx0 + 2 * pdx).toFixed(1) + "px"); S(E.credDim, "height", (hy1 - hy0 + 2 * pdy).toFixed(1) + "px");
-          S(E.credDim, "boxShadow", `0 0 46px 4200px rgba(${INKc},${dimA.toFixed(3)})`); S(E.credDim, "opacity", "1");
-          S(E.credGlow, "transform", `translate(${((hx0 + hx1) / 2 - 700).toFixed(1)}px,${(ty - 260).toFixed(1)}px)`);
-          S(E.credGlow, "opacity", (0.55 * ramp(F, 2, 20)).toFixed(3));
-          // bracket: tightens f6-14, corners fly out to the band f60-68
+          const ty = lerp(P0y, 1920, eIOS(ramp(F, 0, 56)));
+          const X = (xc) => 1080 + s * (xc - GUT), Y = (yc) => ty + s * (yc - P0y);
+          S(E.credUnder, "transform", `translate(${(1080 - s * GUT).toFixed(2)}px,${(ty - s * P0y).toFixed(2)}px) scale(${s.toFixed(5)})`);
+          // logo (bone) + rim glow on the source logo's box (162-551 x 35-235 src)
+          const lw = 1203 * s, lx = X(468), ly = Y(87);
+          for (const el of [E.cLogo, E.cLogoGlow]) { S(el, "width", lw.toFixed(1) + "px"); S(el, "transform", `translate(${lx.toFixed(1)}px,${ly.toFixed(1)}px)`); }
+          // header, pink hairline, column rule
+          const hf = 64 * s;
+          S(E.cHead, "fontSize", hf.toFixed(2) + "px"); S(E.cHead, "lineHeight", hf.toFixed(2) + "px");
+          S(E.cHead, "width", "2160px"); S(E.cHead, "paddingLeft", "0.12em");
+          S(E.cHead, "transform", `translate(0px,${(Y(798) - hf / 2).toFixed(1)}px)`);
+          S(E.cHair, "width", (1400 * s).toFixed(1) + "px"); S(E.cHair, "transform", `translate(${(1080 - 700 * s).toFixed(1)}px,${Y(912).toFixed(1)}px)`);
+          const cTop = Y(960); S(E.cCol, "transform", `translate(1079px,${cTop.toFixed(1)}px)`); S(E.cCol, "height", Math.max(0, 2790 - cTop).toFixed(1) + "px");
+          // rows
+          const fs = 40 * s, dim = lerp(1, 0.60 / 0.88, eOC(ramp(F, 45, 51)));
+          const fsS = fs.toFixed(2) + "px";
+          for (const row of ROWS) {
+            const sy = r.y + (row.i - HIS) * 23, yc = sy * 3, y = Y(yc);
+            const a = 0.88 * dim * ramp(sy, 305, 317) * (1 - ramp(y, 2600, 2790));
+            for (const [el, isL] of [[row.l, true], [row.r, false]]) {
+              if (!el) continue;
+              S(el, "opacity", a.toFixed(3)); if (a <= 0) continue;
+              S(el, "fontSize", fsS);
+              const x = isL ? X(XL) + 0.1 * fs : X(XR);
+              S(el, "transform", `translate(${x.toFixed(1)}px,${(y - fs * (0.5 + VFIX)).toFixed(1)}px)` + (isL ? " translateX(-100%)" : ""));
+            }
+          }
+          // HIS ROW: Inter Tight 800 at 1.22x, Bone; the pink brush plate paints in at the lock (f45), the name turns Ink on it
+          const hy = Y(3 * r.y), hfs = 49 * s, hx = X(XR);
+          const wv = HIS_W0 * s, pcx = hx + wv / 2;
+          const Wp = PL_W0 * s, Hp = PL_H0 * s;
+          for (const el of [E.hisB, E.hisI]) { S(el, "fontSize", hfs.toFixed(2) + "px"); S(el, "transform", `translate(${hx.toFixed(1)}px,${(hy - hfs * (0.5 + VFIX)).toFixed(1)}px)`); }
+          const svL = pcx - (PL_W0 / 2 + PL_M) * s, svT = hy - (PL_H0 / 2 + PL_MV) * s, svW = (PL_W0 + 2 * PL_M) * s, svH = (PL_H0 + 2 * PL_MV) * s;
+          S(E.brush, "width", svW.toFixed(1) + "px"); S(E.brush, "height", svH.toFixed(1) + "px");
+          S(E.brush, "transform", `translate(${svL.toFixed(1)}px,${svT.toFixed(1)}px)`);
+          const p = eOC(ramp(F, 45, 51));
+          $("wipeR").setAttribute("width", (p * (PL_W0 + 2 * PL_M)).toFixed(2));
+          const wipeX = svL + p * svW;
+          const ew = (HIS_W0 + 0.1 * 49) * s;
+          S(E.hisI, "clipPath", `inset(0px ${clamp(hx + ew - wipeX, 0, ew).toFixed(1)}px 0px 0px)`);
+          S(E.hisI, "opacity", F >= 45 ? "1" : "0");
+          S(E.hisWrap, "opacity", (1 - ramp(F, 62, 67)).toFixed(3));
+          // TRK 01 bracket frames the plate; tightens f6-14; corners fly out to the band f60-68
           const tight = eOC(ramp(F, 6, 14));
-          const bp = lerp(78, 30, tight) * (s / 1.0);
-          let bx0 = hx0 - bp, bx1 = hx1 + bp, by0 = hy0 - bp * 0.72, by1 = hy1 + bp * 0.72;
-          const fly = eIOQ(ramp(F, 60, 68));
-          const inset = 24;
+          const bp = lerp(70, 26, tight) * s;
+          let bx0 = pcx - Wp / 2 - bp, bx1 = pcx + Wp / 2 + bp, by0 = hy - Hp / 2 - bp * 0.8, by1 = hy + Hp / 2 + bp * 0.8;
+          const fly = eIOQ(ramp(F, 60, 68)), inset = 24;
           bx0 = lerp(bx0, inset, fly); bx1 = lerp(bx1, W - inset, fly); by0 = lerp(by0, BAND_TOP + inset, fly); by1 = lerp(by1, BAND_TOP + 904 - inset, fly);
-          // the roll darkens to Ink inside the flying bracket
-          const inkA = eIC(ramp(F, 60, 68));
           S(E.credInk, "transform", `translate(${bx0.toFixed(1)}px,${by0.toFixed(1)}px)`); S(E.credInk, "width", (bx1 - bx0).toFixed(1) + "px");
-          S(E.credInk, "height", (by1 - by0).toFixed(1) + "px"); S(E.credInk, "opacity", inkA.toFixed(3));
-          const arm = lerp(44, 120, fly), lw = lerp(6, 7, fly);
-          const bA = ramp(F, 0, 3) * 0.9 + 0.1;
-          bracket(bx0, by0, bx1, by1, arm, lw, `rgba(255,46,136,${bA})`);
-          // TRK 01 label
-          S(E.trkLab, "transform", `translate(${(bx1 + 26).toFixed(1)}px,${((by0 + by1) / 2 - 26).toFixed(1)}px)`); S(E.trkLab, "opacity", (1 - ramp(F, 58, 63)).toFixed(3));
-          T(E.trkLab, "TRK 01");
-          // HUD
-          S(E.hudTL, "top", "3010px"); S(E.hudTR, "top", "3010px");
-          const nChars = Math.floor(clamp((F - 25) / 12, 0, 1) * HUDNAME.length);
-          T(E.hudTL, "SOURCE · <b>CREW THANKS ROLL</b>\n" + (nChars > 0 ? `<span>${HUDNAME.slice(0, nChars)}</span>` : ""));
-          T(E.hudTR, `MOVIE <b>${movieTC(F)}</b>\nDNEG CREW THANKS`);
-          S(E.hudTL, "opacity", (ramp(F, 2, 8) * (1 - ramp(F, 62, 68))).toFixed(3));
-          S(E.hudTR, "opacity", (ramp(F, 2, 8) * (1 - ramp(F, 62, 68))).toFixed(3));
+          S(E.credInk, "height", (by1 - by0).toFixed(1) + "px"); S(E.credInk, "opacity", eIC(ramp(F, 60, 68)).toFixed(3));
+          ctx.save(); ctx.shadowColor = "rgba(255,46,136,0.6)"; ctx.shadowBlur = 14;
+          bracket(bx0, by0, bx1, by1, lerp(46, 120, fly), lerp(6, 7, fly), `rgba(255,46,136,${(0.1 + 0.9 * ramp(F, 0, 3)).toFixed(3)})`);
+          ctx.restore();
+          S(E.trkLab, "transform", `translate(${(bx1 + 26).toFixed(1)}px,${((by0 + by1) / 2 - 25).toFixed(1)}px)`); S(E.trkLab, "opacity", (1 - ramp(F, 57, 61)).toFixed(3));
+          T(E.trkLab, F >= 45 ? "TRK 01 <span style='color:#F2EBDF'>LOCK</span>" : "TRK 01");
+          // line-up (restored), bottom-aligned, rim glow; leaves with the roll
+          const lo = (1 - ramp(F, 60, 68)).toFixed(3), lt = (3840 - D.lineupH) + "px";
+          S(E.lineup, "top", lt); S(E.lineupGlow, "top", lt); S(E.lineup, "opacity", lo); S(E.lineupGlow, "opacity", (0.25 * (1 - ramp(F, 60, 68))).toFixed(3));
+          // source slate (short: clears before the drifting logo reaches the margins)
+          T(E.hudTL, "SOURCE\n<b>CREW THANKS ROLL</b>"); T(E.hudTR, `MOVIE\n<b>${movieTC(F)}</b>`);
+          const ho = (ramp(F, 2, 6) * (1 - ramp(F, 18, 24))).toFixed(3); S(E.hudTL, "opacity", ho); S(E.hudTR, "opacity", ho);
         } else {
-          S(E.hudTL, "opacity", "0"); S(E.hudTR, "opacity", "0"); S(E.hudTL, "top", "300px");
-          S(E.credWrap, "opacity", "0"); S(E.credDim, "opacity", "0"); S(E.credGlow, "opacity", "0"); S(E.credInk, "opacity", "0"); S(E.trkLab, "opacity", "0");
+          S(E.credAct, "opacity", "0"); S(E.hisWrap, "opacity", "0"); S(E.trkLab, "opacity", "0");
+          S(E.hudTL, "opacity", "0"); S(E.hudTR, "opacity", "0");
         }
 
         // ---------------------------------------------------------------- ambient bleed (TRACK / TILT / FINAL)
         let bleed = 0;
-        if (F >= 69 && F <= 120) bleed = 0.22;
-        else if (F >= 121 && F <= 136) bleed = 0.22 * (1 - ramp(F, 124, 136));
-        else if (F >= 169 && F <= 220) bleed = 0.22;
+        if (F >= 69 && F <= 120) bleed = 0.40;
+        else if (F >= 121 && F <= 136) bleed = 0.40 * (1 - ramp(F, 124, 136));
+        else if (F >= 169 && F <= 220) bleed = 0.40;
         S(E.bleedV, "opacity", bleed.toFixed(3)); S(E.vig, "opacity", bleed > 0 ? "1" : "0");
 
         // ---------------------------------------------------------------- ACT 1: TRACK (f69-120, s = F-69)
         S(E.trackV, "opacity", act === 1 ? "1" : "0");
         if (act === 1) {
           const s = F - 69;
-          // bracket corners (now the band's) fade
+          spill = [0, BAND_TOP, W, 904]; spillA = 1;
           const cA = 1 - ramp(F, 70, 80);
           if (cA > 0) bracket(24, BAND_TOP + 24, W - 24, BAND_TOP + 904 - 24, 120, 7, `rgba(255,46,136,${cA.toFixed(3)})`);
           const cam = bandCam(s, 0, BAND_TOP, KB);
           const clip = [0, BAND_TOP, W, 904];
-          // ground grid lays down on f113
           if (F >= 113) drawGrid(cam, 0.85, lerp(0, 46, eOC(ramp(F, 113, 121))), 3, clip);
           const alpha = 0.9 * eOC(ramp(F, 69, 95));
-          const dens = F < 82 ? 0.3 : 1.0;
+          const dens = F < 82 ? 0.3 : 1.0;                         // density step on the f82 attack (editor cue fix)
           const n = drawTracks(s, 0, BAND_TOP, KB, alpha, dens, clip);
-          S(E.act1, "opacity", ramp(F, 69, 72).toFixed(3));
+          S(E.act1, "opacity", eOC(ramp(F, 69, 73)).toFixed(3)); S(E.act1, "transform", `translateY(${lerp(14, 0, eOC(ramp(F, 69, 75))).toFixed(1)}px)`);
           T(E.hudUnder, `TRACKS <b>${pad(n, 4)}</b>` + (F >= 113 ? `\nGROUND PLANE <b>1 m GRID</b>` : ""));
           T(E.hudUnderR, `SRC <b>${CAMS[s].src}</b>\ns${pad(s, 2)} / 52`);
-          S(E.hudUnder, "opacity", ramp(F, 70, 74).toFixed(3)); S(E.hudUnderR, "opacity", ramp(F, 70, 74).toFixed(3));
+          S(E.hudUnder, "top", "2420px"); S(E.hudUnderR, "top", "2420px");
+          S(E.hudUnder, "opacity", ramp(F, 71, 75).toFixed(3)); S(E.hudUnderR, "opacity", ramp(F, 72, 76).toFixed(3));
         } else if (act === 2) {
+          spill = [0, BAND_TOP, W, 904]; spillA = 1 - ramp(F, 121, 124);
           S(E.act1, "opacity", (1 - ramp(F, 121, 126)).toFixed(3));
           S(E.hudUnder, "opacity", (1 - ramp(F, 121, 126)).toFixed(3)); S(E.hudUnderR, "opacity", (1 - ramp(F, 121, 126)).toFixed(3));
         } else {
@@ -518,60 +640,43 @@
         // ---------------------------------------------------------------- ACT 2+3: TILT + SOLVE viewport (f121-168)
         if (act === 2 || act === 3) {
           const V = viewer(F);
-          // image plane of camera 52 (s51), desaturating 30% and tilting back
           const dA = lerp(3.0, 1.2, eIOC(ramp(F, 126, 140)));
           const opA = F < 137 ? 1 : 1 - ramp(F, 137, 146);
           S(E.planeA, "filter", `saturate(${(1 - 0.3 * ramp(F, 121, 125)).toFixed(3)})`);
           placePlane(E.planeA, V, 51, dA, opA * (F <= 152 ? 1 : 0));
-          // s0 image plane fades in during the registration
-          const opB = eIOC(ramp(F, 159, 165));
-          placePlane(E.planeB, V, 0, 2.0, opB);
-          // ground grid in 3D (continuous with the band's grid at f121)
+          placePlane(E.planeB, V, 0, 2.0, eIOC(ramp(F, 159, 165)));
           const gA = F < 137 ? 0.85 * (1 - 0.45 * ramp(F, 121, 133)) : lerp(0.5, 0.75, ramp(F, 159, 165));
-          const gclip = F >= 161 ? (function(){ const u = eIOQ(ramp(F, 161, 165)); const k = V.fx / PF; const bx = V.px - PCX * k, by = V.py - PCY * k; return [lerp(0, bx, u), lerp(0, by, u), lerp(W, PW * k, u), lerp(H, PH * k, u)]; })() : null;
+          const gclip = F >= 161 ? (function () { const u = eIOQ(ramp(F, 161, 165)); const k = V.fx / PF; const bx = V.px - PCX * k, by = V.py - PCY * k;
+            return [lerp(0, bx, u), lerp(0, by, u), lerp(W, PW * k, u), lerp(H, PH * k, u)]; })() : null;
           drawGrid(V, gA, 46, F < 137 ? 3 : 2, gclip, F < 137 ? null : lerp3(T0, V.C, eIOQ(ramp(F, 159, 165))));
-          // tracks of s51 stay on its plane while it tilts
           if (F < 137) {
             const tA = 0.9 * (1 - ramp(F, 129, 136)); const a = TR[51];
-            if (tA > 0) { ctx.strokeStyle = `rgba(255,46,136,${tA.toFixed(3)})`; ctx.lineWidth = 3; ctx.beginPath();
+            if (tA > 0) { ctx.save(); ctx.strokeStyle = `rgba(255,46,136,${tA.toFixed(3)})`; ctx.lineWidth = 3; ctx.shadowColor = "rgba(255,46,136,0.6)"; ctx.shadowBlur = 10; ctx.beginPath();
               const Rt = mT(CAMS[51].R);
               for (let i = 0; i < a.length; i += 3) { const X = add(CAMS[51].C, mv(Rt, [(a[i] - PCX) / PF * dA, (a[i + 1] - PCY) / PF * dA, dA]));
-                const q = proj(V, X); if (!q) continue; ctx.moveTo(q[0] - 7, q[1]); ctx.lineTo(q[0] + 7, q[1]); ctx.moveTo(q[0], q[1] - 7); ctx.lineTo(q[0], q[1] + 7); }
-              ctx.stroke(); }
+                const q = proj(V, X); if (!q) continue; ctx.moveTo(q[0] - 8, q[1]); ctx.lineTo(q[0] + 8, q[1]); ctx.moveTo(q[0], q[1] - 8); ctx.lineTo(q[0], q[1] + 8); }
+              ctx.stroke(); ctx.restore(); }
           }
-          // SOLVE content
-          let vclip = null;
-          if (F >= 161) { const u = eIOQ(ramp(F, 161, 165)); const k = V.fx / PF; const bx = V.px - PCX * k, by = V.py - PCY * k;
-            vclip = [lerp(0, bx, u), lerp(0, by, u), lerp(W, PW * k, u), lerp(H, PH * k, u)];
-            ctx.save(); ctx.beginPath(); ctx.rect(vclip[0], vclip[1], vclip[2], vclip[3]); ctx.clip(); }
+          if (gclip) { ctx.save(); ctx.beginPath(); ctx.rect(gclip[0], gclip[1], gclip[2], gclip[3]); ctx.clip(); }
           if (F >= 137) {
             const inA = ramp(F, 137, 140);
-            drawCloud(V, inA * (1 - 0.7 * ramp(F, 165, 168)), lerp(0.045, 0.03, ramp(F, 163, 166)));
-            // camera path + frustums register one by one (f137-157), current one pink; they leave as we glide into s0
+            drawCloud(V, inA * (1 - 0.7 * ramp(F, 165, 168)), lerp(0.05, 0.034, ramp(F, 163, 166)));
             const nReg = clamp(Math.ceil((F - 137 + 1) / 20 * 52), 1, 52);
             const fA = inA * (1 - ramp(F, 160, 164));
             if (fA > 0) {
-              ctx.strokeStyle = `rgba(${BONE},${(0.5 * fA).toFixed(3)})`; ctx.lineWidth = 2;
+              ctx.strokeStyle = `rgba(${BONE},${(0.55 * fA).toFixed(3)})`; ctx.lineWidth = 3;
               strokePoly(ctx, V, CAMS.slice(0, nReg).map((c) => c.C), false, 0);
-              for (let s = 0; s < nReg; s++) {
-                const cur = s === nReg - 1 && nReg < 52;
-                const fc = cur ? PINK : `rgba(${BONE},${(0.62 * fA).toFixed(3)})`;
-                if (!cur) drawFrustum(V, s, 0.4, fc, 2);
-              }
-              const cs = nReg < 52 ? nReg - 1 : -1;
-              if (cs >= 0) { ctx.globalAlpha = fA; drawFrustum(V, cs, 0.4, PINK, 4); ctx.globalAlpha = 1; }
-              if (nReg === 52 && F < 160) { ctx.globalAlpha = fA; drawFrustum(V, 0, 0.4, PINK, 4); ctx.globalAlpha = 1; }
+              for (let s = 0; s < nReg; s++) if (!(s === nReg - 1 && nReg < 52)) drawFrustum(V, s, 0.4, `rgba(${BONE},${(0.62 * fA).toFixed(3)})`, 3);
+              ctx.save(); ctx.globalAlpha = fA; ctx.shadowColor = "rgba(255,46,136,0.7)"; ctx.shadowBlur = 16;
+              if (nReg < 52) drawFrustum(V, nReg - 1, 0.4, PINK, 5); else if (F < 160) drawFrustum(V, 0, 0.4, PINK, 5);
+              ctx.restore();
             }
-            // registration: s0 tracks land on the points
-            if (F >= 163) {
-              const k = V.fx / PF; const ox = V.px - PCX * k, oy = V.py - PCY * k;
-              drawTracks(0, ox, oy, k, 0.9 * ramp(F, 163, 165), 1.0, null);
-            }
-            // the monument's layout mark: pink wireframe on the grid (f165)
+            if (F >= 163) { const k = V.fx / PF; drawTracks(0, V.px - PCX * k, V.py - PCY * k, k, 0.9 * ramp(F, 163, 165), 1.0, null); }
             if (F >= 165) drawWire(V, 1, 0, eOC(ramp(F, 165, 168)), null);
           }
-          if (vclip) ctx.restore();
-          S(E.act2, "opacity", (ramp(F, 137, 139) * (1 - ramp(F, 165, 168))).toFixed(3));
+          if (gclip) ctx.restore();
+          if (F >= 165) { const k = V.fx / PF; spill = [V.px - PCX * k, V.py - PCY * k, PW * k, PH * k]; spillA = ramp(F, 165, 168); }
+          S(E.act2, "opacity", (eOC(ramp(F, 137, 140)) * (1 - ramp(F, 165, 168))).toFixed(3));
           const nReg = F < 137 ? 0 : clamp(Math.ceil((F - 137 + 1) / 20 * 52), 1, 52);
           const camN = Math.round(nReg / 52 * ST.cameras_registered);
           T(E.hudSolve,
@@ -580,46 +685,55 @@
             `MEAN REPROJ <b>${Number(ST.mean_reproj_px).toFixed(3)} px</b>   f <b>${ST.f_px} px</b>\n` +
             `LENS <b>${ST.lens_mm_36} mm</b> (36 mm back)   k1 <b>${minus(ST.k1)}</b>` +
             (F >= 159 ? `\n<span class="p">REGISTER s00 → PLATE</span>` : ""));
-          S(E.hudSolve, "opacity", (ramp(F, 137, 140) * (1 - ramp(F, 166, 169))).toFixed(3));
+          S(E.hudSolve, "opacity", (ramp(F, 138, 142) * (1 - ramp(F, 166, 169))).toFixed(3));
         } else {
           S(E.planeA, "opacity", "0"); S(E.planeB, "opacity", "0"); S(E.act2, "opacity", "0"); S(E.hudSolve, "opacity", "0");
         }
 
-        // ---------------------------------------------------------------- ACT 4: FINAL (f169-220)
+        // ---------------------------------------------------------------- ACT 4: FINAL (f169-220): window x1.30 -> x1.55 on the monument
         let jolt = 0;
         if (F === 173) jolt = 8; else if (F === 174) jolt = -4.5; else if (F === 175) jolt = 2;
         if (act === 4) {
-          const s = F - 169; const A = ANC[s]; const cxp = A.crop_cx;
-          const left = 1080 - cxp * KF;
-          S(E.finalBox, "opacity", "1"); S(E.finalBox, "transform", `translateY(${jolt}px)`);
-          S(E.finalV, "transform", `translateX(${left.toFixed(2)}px)`);
-          const mx = (u) => left + u * KF, my = (v) => FIN_TOP + jolt + v * KF;
-          // the mark "+" at the plinth's front centre; 1-frame pink halo on the landing
+          const s = F - 169; const A = ANC[s];
+          const k = finK(F), cxp = finCX(s, k);
+          const left = 1080 - cxp * k, top = 1920 - PCY * k + jolt, bh = PH * k;
+          S(E.finalBox, "opacity", "1");
+          S(E.finalV, "width", (PW * k).toFixed(1) + "px"); S(E.finalV, "height", bh.toFixed(1) + "px");
+          S(E.finalV, "transform", `translate(${left.toFixed(2)}px,${top.toFixed(2)}px)`);
+          spill = [0, top, W, bh]; spillA = 1;
+          const mx = (u) => left + u * k, my = (v) => top + v * k;
           const fl = A.corners.front_left, fr = A.corners.front_right;
           const bxp = mx((fl[0] + fr[0]) / 2), byp = my((fl[1] + fr[1]) / 2);
-          if (F === 173) { const g = ctx.createRadialGradient(bxp, byp, 0, bxp, byp, 120); g.addColorStop(0, "rgba(255,46,136,0.35)"); g.addColorStop(1, "rgba(255,46,136,0)");
-            ctx.fillStyle = g; ctx.fillRect(bxp - 120, byp - 120, 240, 240); }
+          if (F === 173) { const g = ctx.createRadialGradient(bxp, byp, 0, bxp, byp, 140); g.addColorStop(0, "rgba(255,46,136,0.35)"); g.addColorStop(1, "rgba(255,46,136,0)");
+            ctx.fillStyle = g; ctx.fillRect(bxp - 140, byp - 140, 280, 280); }
           const pA = 1 - ramp(F, 182, 190);
-          if (pA > 0) plus(bxp, byp, F === 173 ? 24 : 16, F === 173 ? 6 : 4, `rgba(255,46,136,${pA.toFixed(3)})`);
-          // + LOCKED tag pinned to the plinth's front-left corner (f208)
+          if (pA > 0) { ctx.save(); ctx.shadowColor = "rgba(255,46,136,0.7)"; ctx.shadowBlur = 12; plus(bxp, byp, F === 173 ? 26 : 18, F === 173 ? 6 : 4, `rgba(255,46,136,${pA.toFixed(3)})`); ctx.restore(); }
+          // + LOCKED tag pinned to the plinth's front-left corner (f208): leader draws, then the tag wipes on (follow-through, no text scaling)
           if (F >= 208) {
-            const k = eOExpo(ramp(F, 208, 213));
+            const kq = eOExpo(ramp(F, 208, 213)), kt = eOC(ramp(F, 210, 215));
             const qx = mx(fl[0]), qy = my(fl[1]);
-            plus(qx, qy, 14, 4, PINK);
-            const lx = qx - 40, ly = qy - 120;
-            ctx.strokeStyle = PINK; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(qx, qy); ctx.lineTo(lerp(qx, lx, k), lerp(qy, ly, k)); ctx.stroke();
-            S(E.lockTag, "transform", `translate(${(lx - 8).toFixed(1)}px,${(ly - 66).toFixed(1)}px) scale(${lerp(1.18, 1, k).toFixed(3)})`);
-            S(E.lockTag, "opacity", ramp(F, 208, 210).toFixed(3));
+            ctx.save(); ctx.shadowColor = "rgba(255,46,136,0.7)"; ctx.shadowBlur = 12;
+            plus(qx, qy, 16, 4, PINK);
+            const lx = qx - 46, ly = qy - 130;
+            ctx.strokeStyle = PINK; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(qx, qy); ctx.lineTo(lerp(qx, lx, kq), lerp(qy, ly, kq)); ctx.stroke(); ctx.restore();
+            S(E.lockTag, "transform", `translate(${(lx - 10 + lerp(12, 0, kt)).toFixed(1)}px,${(ly - 70).toFixed(1)}px)`);
+            S(E.lockTag, "clipPath", `inset(0px ${(100 * (1 - kt)).toFixed(1)}% 0px 0px)`);
+            S(E.lockTag, "opacity", F >= 210 ? "1" : "0");
           } else S(E.lockTag, "opacity", "0");
-          S(E.act3, "opacity", ramp(F, 169, 172).toFixed(3));
-          S(E.hudUnder, "transform", "translateY(150px)"); S(E.hudUnderR, "transform", "translateY(150px)");
+          S(E.act3, "transform", `translateY(${(top - 76 - 1200 - 44).toFixed(1)}px)`);
+          S(E.act3, "opacity", eOC(ramp(F, 169, 173)).toFixed(3));
+          S(E.hudUnder, "top", (top - jolt + bh + 48).toFixed(1) + "px");
           T(E.hudUnder, "CG · CYCLES · SHADOW CATCHER · ROTO HOLDOUT");
-          T(E.hudUnderR, "");
-          S(E.hudUnder, "opacity", ramp(F, 175, 181).toFixed(3)); S(E.hudUnderR, "opacity", "0");
+          S(E.hudUnder, "opacity", ramp(F, 176, 182).toFixed(3)); S(E.hudUnderR, "opacity", "0");
         } else {
           S(E.finalBox, "opacity", "0"); S(E.lockTag, "opacity", "0"); S(E.act3, "opacity", "0");
-          S(E.hudUnder, "transform", "none"); S(E.hudUnderR, "transform", "none");
         }
+
+        // band light-spill + 2 px Bone edge (TRACK, TILT start, registration, FINAL)
+        if (spill && spillA > 0) {
+          for (const el of [E.spill, E.edge]) { S(el, "transform", `translate(${spill[0].toFixed(1)}px,${spill[1].toFixed(1)}px)`);
+            S(el, "width", spill[2].toFixed(1) + "px"); S(el, "height", spill[3].toFixed(1) + "px"); S(el, "opacity", spillA.toFixed(3)); }
+        } else { S(E.spill, "opacity", "0"); S(E.edge, "opacity", "0"); }
 
         // ---------------------------------------------------------------- ACT 5: BREAKDOWN (f221-274)
         const bands = [E.b1, E.b2, E.b3, E.b4], labs = [E.bl1, E.bl2, E.bl3, E.bl4];
@@ -631,15 +745,14 @@
             const cy0 = BD_TOP[i] + 452; const dy = (1920 - cy0) * eIC(fold);
             S(bands[i], "opacity", F >= st0 ? "1" : "0");
             S(bands[i], "transform", `translate(${x.toFixed(1)}px,${dy.toFixed(1)}px) scaleY(${(1 - 0.92 * fold).toFixed(3)})`);
-            // labels: top-left of each band; band A's sits bottom-left (keeps key text out of the top 250 px)
-            const lx = 40 + x, ly = i === 0 ? BD_TOP[0] + 904 - 40 - 66 : BD_TOP[i] + 40;
+            const lx = 36 + x, ly = i === 0 ? BD_TOP[0] + 904 - 36 - 62 : BD_TOP[i] + 36;
             S(labs[i], "transform", `translate(${lx.toFixed(1)}px,${(ly + dy).toFixed(1)}px)`);
-            S(labs[i], "opacity", (ramp(F, st0 + 4, st0 + 8) * (1 - fold * 1.2)).toFixed(3));
+            S(labs[i], "opacity", (eOC(ramp(F, st0 + 5, st0 + 9)) * (1 - fold * 1.2)).toFixed(3));
           }
-          S(E.bl0, "transform", `translate(${(W - 40 - 520 + W * (1 - eOExpo(ramp(F, 221, 230)))).toFixed(1)}px,${(BD_TOP[0] + 904 - 40 - 66).toFixed(1)}px)`);
-          S(E.bl0, "opacity", (ramp(F, 225, 229) * (1 - fold * 1.2)).toFixed(3));
+          const b0x = W * (1 - eOExpo(ramp(F, 221, 230)));
+          S(E.bl0, "transform", `translate(${(W - 36 - BL0W + b0x).toFixed(1)}px,${(BD_TOP[0] + 904 - 36 - 62).toFixed(1)}px)`);
+          S(E.bl0, "opacity", (eOC(ramp(F, 226, 230)) * (1 - fold * 1.2)).toFixed(3));
           S(E.b4edge, "opacity", F === 251 ? "1" : "0");
-          // band B overlay: tracks + grid + monument wireframe (falls with the CG, s0-s4)
           const x2 = W * (1 - eOExpo(ramp(F, 224, 233)));
           if (F >= 224 && fold === 0) {
             const cam = bandCam(s, x2, BD_TOP[1], KB); const clip = [x2, BD_TOP[1], W, 904];
@@ -659,24 +772,28 @@
           const sf = F <= 290 ? lerp(1.06, 1.0, eOC(ramp(F, 275, 290))) : lerp(1.0, 1.03, eIOS(ramp(F, 290, 374)));
           const sb = lerp(1.0, 1.012, ramp(F, 275, 374));
           S(E.tFg, "transform", `scale(${sf.toFixed(5)})`); S(E.tBg, "transform", `scale(${sb.toFixed(5)})`);
-          const lg = eOC(ramp(F, 283, 291));
-          S(E.logo, "opacity", lg.toFixed(3)); S(E.logo, "transform", `scale(${lerp(1.025, 1, lg).toFixed(4)})`);
+          // logo: one technique - a soft left-to-right mask wipe, settling 0.985 -> 1 (never above 1)
+          const lg = eOC(ramp(F, 283, 293));
+          S(E.logoBox, "opacity", F >= 283 ? "1" : "0");
+          S(E.logoBox, "maskPosition", `${(100 * (1 - lg)).toFixed(2)}% 0%`); S(E.logoBox, "webkitMaskPosition", `${(100 * (1 - lg)).toFixed(2)}% 0%`);
+          S(E.logoBox, "transform", `scale(${lerp(0.985, 1, eOC(ramp(F, 283, 297))).toFixed(4)})`);
           const rl = eOC(ramp(F, 291, 299));
           S(E.tRule, "opacity", F >= 291 ? "1" : "0"); S(E.tRule, "transform", `scaleX(${rl.toFixed(4)})`);
-          const ro = eOC(ramp(F, 291, 301));
+          const ro = eOC(ramp(F, 292, 302));
           S(E.tRole, "opacity", ro.toFixed(3)); S(E.tRole, "transform", `translateY(${lerp(24, 0, ro).toFixed(2)}px)`);
-          const so = eOC(ramp(F, 302, 312));
+          const so = eOC(ramp(F, 302, 312));                     // STREET FIGHTER · DNEG on the f302 attack (editor cue fix)
           S(E.tStudio, "opacity", so.toFixed(3)); S(E.tStudio, "transform", `translateY(${lerp(18, 0, so).toFixed(2)}px)`);
         } else S(E.title, "opacity", "0");
         S(E.flash, "opacity", F === 275 ? "0.5" : F === 276 ? "0.25" : "0");
 
-        // grain: seeded offset per frame
         const rnd = mulberry32(F * 7919 + 13);
         S(E.grain, "transform", `translate(${Math.floor(rnd() * 256)}px,${Math.floor(rnd() * 256)}px)`);
       }
 
       // ---------------- timeline ----------------
+      let BL0W = 0;
       function boot() {
+        buildBrush(); BL0W = E.bl0.offsetWidth;
         const drv = { t: 0 };
         const tl = gsap.timeline({ paused: true });
         tl.to(drv, { t: 15, duration: 15, ease: "none", onUpdate: () => render(drv.t) }, 0);
@@ -685,7 +802,9 @@
         if (window.__hfForceTimelineRebind) window.__hfForceTimelineRebind();
       }
       const imgs = Array.from(document.images).map((im) => (im.decode ? im.decode().catch(() => {}) : Promise.resolve()));
-      Promise.all([document.fonts.ready, ...imgs]).then(boot);
+      const faces = ['500 40px "Inter Tight"', '600 40px "Inter Tight"', '700 40px "Inter Tight"', '800 40px "Inter Tight"', '500 36px "JetBrains Mono"', '600 36px "JetBrains Mono"']
+        .map((f) => document.fonts.load(f));
+      Promise.all([...faces, ...imgs]).then(() => document.fonts.ready).then(boot);
     </script>
   </body>
 </html>
