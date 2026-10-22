@@ -2648,6 +2648,10 @@
       "hash": "98a5969c3acf05e58d06b466d4fe2eb14d02733ae6a83fe6049f4967987fc875",
       "content": "/root/.cache/hyperframes/history/ecccff22-2bd4-4f75-949a-b98b8fea96b0/blobs/98/98a5969c3acf05e58d06b466d4fe2eb14d02733ae6a83fe6049f4967987fc875"
     },
+    "snaps/r2/contact-sheet.jpg": {
+      "hash": "eea08844f4db5ef69b778ff1a7939ee3799dcd4a026ebc52c4730b5554f8dbfc",
+      "content": "/root/.cache/hyperframes/history/ecccff22-2bd4-4f75-949a-b98b8fea96b0/blobs/ee/eea08844f4db5ef69b778ff1a7939ee3799dcd4a026ebc52c4730b5554f8dbfc"
+    },
     "snaps/r2/frame-00-at-6.92s.png": {
       "hash": "7b0b918bd5325df2e30cfefc56452867ec43cf05aac1bac9d0000c7fd52645a0",
       "content": "/root/.cache/hyperframes/history/ecccff22-2bd4-4f75-949a-b98b8fea96b0/blobs/7b/7b0b918bd5325df2e30cfefc56452867ec43cf05aac1bac9d0000c7fd52645a0"
@@ -2659,10 +2663,6 @@
     "snaps/r2/frame-02-at-8.8s.png": {
       "hash": "aa5225d0d922a89143aed7828186a6ba02b18d48b23ccea2111883ebed74c425",
       "content": "/root/.cache/hyperframes/history/ecccff22-2bd4-4f75-949a-b98b8fea96b0/blobs/aa/aa5225d0d922a89143aed7828186a6ba02b18d48b23ccea2111883ebed74c425"
-    },
-    "snaps/r2/contact-sheet.jpg": {
-      "hash": "eea08844f4db5ef69b778ff1a7939ee3799dcd4a026ebc52c4730b5554f8dbfc",
-      "content": "/root/.cache/hyperframes/history/ecccff22-2bd4-4f75-949a-b98b8fea96b0/blobs/ee/eea08844f4db5ef69b778ff1a7939ee3799dcd4a026ebc52c4730b5554f8dbfc"
     }
   },
   "revisions": {
