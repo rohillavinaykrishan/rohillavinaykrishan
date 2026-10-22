@@ -10,11 +10,11 @@ MODE, OUT, RX, SAMP = argv[0], argv[1], int(argv[2]), int(argv[3])
 SAVE = argv[4] if len(argv) > 4 else None
 
 # ---------------- tweakables (v002: director note 16) ----------------
-CAM_LOC = (-2.0, -6.4, 0.35)
-CAM_TGT = (-0.2, 0.0, 2.6)
-LENS = 25.0
-SHIFT_Y = -0.10
-SHIFT_X = 0.0
+CAM_LOC = (-1.4, -5.4, 0.35)
+CAM_TGT = (-0.25, 0.0, 2.8)
+LENS = 22.0
+SHIFT_Y = -0.17
+SHIFT_X = -0.02
 SUN_EL, SUN_BEARING = 12.0, -165.0          # behind the monument, 15 deg right of centre
 SUN_E, SUN_COL = 9.0, (1.0, 0.80, 0.58)
 FILL_E, FILL_COL, FILL_LOC, FILL_SIZE = 1800.0, M.hexlin('#F2EBDF')[:3], (-7.0, -9.0, 3.2), 7.0
@@ -161,7 +161,7 @@ if MODE == 'bg':
     for o in mon_objs:
         o.visible_camera = False; o.visible_glossy = False
 
-print('CAM_BEARING', round(cam_bearing, 1), 'SUN_BEARING', round(cam_bearing - SUN_AZ_OFF, 1))
+print('CAM_BEARING', round(cam_bearing, 1))
 from bpy_extras.object_utils import world_to_camera_view
 dg = bpy.context.evaluated_depsgraph_get()
 pts = []
