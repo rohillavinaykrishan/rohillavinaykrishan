@@ -11,5 +11,5 @@
  "title_bg": "lighting/v002/title_bg.png (real)",
  "title_fg": "lighting/v002/title_fg.png (real)",
  "logo": "color/v001/sf_logo_bone.png (real)",
- "lineup": "restore/v001/lineup_restored_2160_r470.png (real)"
+ "lineup": "restore/v001/lineup_restored_2160_r470.png (real, sky keyed to Ink by scripts/sky_key.py)"
 }

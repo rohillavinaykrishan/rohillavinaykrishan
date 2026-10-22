@@ -1,7 +1,7 @@
 import sys,numpy as np,soundfile as sf
 from scipy.signal import butter,sosfiltfilt
 d='/tmp/claude-0/-home-user-rohillavinaykrishan/5fe3b9fd-8381-5a1b-b6a0-30ea036f781a/scratchpad/'
-files=[('original',d+'bed_soxr_raw.wav'),('A rep_1.0_1.0_0.5 (passes)',d+'nv/rep_1.0_1.0_0.5_0.06.wav'),('B r4 floor-20',d+'nv/r4_0.5_-20.wav'),('C pc 70/95',d+'nv/pc_70_95_0.wav')]
+files=[('original',d+'bed_soxr_raw.wav'),('A rep_1.0_1.0_0.5',d+'nv/rep_1.0_1.0_0.5_0.06.wav'),('G = A + glide (audition)',d+'nv/repG.wav'),('B r4 floor-20',d+'nv/r4_0.5_-20.wav'),('C pc 70/95',d+'nv/pc_70_95_0.wav')]
 bands=[('low <250',None,250),('mid 250-2.5k',250,2500),('high 2.5-9k',2500,9000)]
 for n,f in files:
     x,sr=sf.read(f); x=x[:720000]; m=(x[:,0]+x[:,1])/2; L=x[:,0]

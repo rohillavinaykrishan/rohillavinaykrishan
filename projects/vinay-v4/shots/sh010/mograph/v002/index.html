@@ -23,7 +23,7 @@
         background: radial-gradient(ellipse 75% 55% at 50% 45%, #2A211A 0%, #1C1712 55%, #12100D 100%); }
       /* screen-space bottom fade = the native rows' fade (y 2500-2690): no underlay row is ever visible without native type on it */
       #credUnderClip { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px;
- }
+        -webkit-mask-image: linear-gradient(180deg, #000 0px, #000 2480px, transparent 2660px); mask-image: linear-gradient(180deg, #000 0px, #000 2480px, transparent 2660px); }
       #credUnder { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; transform-origin: 0 0; opacity: 0.3;
         -webkit-mask-image: linear-gradient(180deg, transparent 0px, transparent 918px, #000 960px, #000 100%);
         mask-image: linear-gradient(180deg, transparent 0px, transparent 918px, #000 960px, #000 100%); }

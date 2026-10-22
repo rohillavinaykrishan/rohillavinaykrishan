@@ -290,13 +290,13 @@ LU2 = sorted(glob.glob(U + 'color/v00*/lineup_restored_2160.png'))
 src_lu = LU if os.path.exists(LU) else (LU2[-1] if LU2 else None)
 o = A + 'lineup.png'
 if src_lu:
-    k = stale(o, src_lu)
+    k = stale(o, src_lu, HERE + 'scripts/sky_key.py')
     if k:
         im = cv2.imread(src_lu, cv2.IMREAD_UNCHANGED)
         if im.shape[2] == 3: im = np.dstack([im, np.full(im.shape[:2], 255, np.uint8)])
         if im.shape[1] != 2160: im = cv2.resize(im, (2160, int(round(im.shape[0] * 2160 / im.shape[1]))), interpolation=cv2.INTER_AREA)
-        cv2.imwrite(o, im); done(o, k)
-    man['lineup'] = src_lu.replace(U, '') + ' (real)'
+        cv2.imwrite(o, im); sh(f'/opt/vfx-ai/bin/python "{HERE}scripts/sky_key.py" "{o}" "{o}"'); done(o, k)
+    man['lineup'] = src_lu.replace(U, '') + ' (real, sky keyed to Ink by scripts/sky_key.py)'
 else:
     k = stale(o, ROOT_LU := os.path.abspath(U + '../../assets_prev/lineup.png'), HERE + 'prep.py')
     if k:
