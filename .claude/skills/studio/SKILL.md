@@ -94,6 +94,10 @@ All agents follow `.claude/skills/studio/conventions.md` - read it now.
    to git (`projects/` media is git-ignored); commit only scripts and notes the
    user would want to keep, and only if they ask.
 
+## Deliverables (client rule)
+
+Deliver ONLY the 4K master (`deliver/<name>_4K.mp4`). No phone/share/1080p copies, previews or extra versions unless the client asks.
+
 ## Time estimates (client rule)
 
 Always tell the client how long the project will take, as a clock time in INDIA time (IST, UTC+5:30; never UTC) plus a duration, both at intake and

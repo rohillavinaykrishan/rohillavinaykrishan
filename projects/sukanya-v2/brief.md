@@ -1,7 +1,7 @@
 # Brief - SUKANYA DILIP DHARIYA credit v2 (ONE final output, ultra HD, the best yet)
 
 Client: SUKANYA DILIP DHARIYA, Sr. Matchmove Artist, DNEG, Street Fighter. Vertical 9:16, 2160x3840 25 fps,
-15-20 s (20 s is fine), + <16 MB share copy.
+15-20 s (20 s is fine).
 
 ## What she asked for (her words via Vinay)
 - She LIKES the style of Vinay's FIRST version (review/ref_vinay_v1_sheet.png): the real credit list ROLLING up, so it does not
