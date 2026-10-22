@@ -6551,5 +6551,16 @@
         "attribution": "inputs-changed"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "3a167961-5a9e-4c52-8935-e4e920cbf72d",
+      "completedAt": 1792678896064,
+      "output": "/home/user/rohillavinaykrishan/projects/vinay-v4/shots/sh010/mograph/v001/render/proxy_v001.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
 }
