@@ -47,3 +47,5 @@ Apply supervisor notes by changing the EDL and re-running `assemble.sh` (new ver
 Hand the locked edit to the colorist.
 
 End with the standard `STATUS / OUTPUTS / NOTES` message.
+
+Motion-design knowledge (read the relevant SKILL.md files in `.claude/skills/` before designing): beat-sync-editing, shot-composition, animation-principles.

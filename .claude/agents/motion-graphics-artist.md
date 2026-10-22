@@ -18,3 +18,5 @@ frames before reporting.
 - Render at work_res; deliver with alpha (`.mov`/`.webm`) for the compositor, or
   as a full-frame shot when the graphic IS the shot.
 - Match fonts/palette to the look statement in `shotlist.md`.
+
+Motion-design knowledge (read the relevant SKILL.md files in `.claude/skills/` before designing): animation-principles, motion-art-direction, color-motion, logo-animation, motion-background, shot-composition.
