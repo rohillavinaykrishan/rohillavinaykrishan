@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "ecccff22-2bd4-4f75-949a-b98b8fea96b0",
-  "currentRevision": "35e2a86f-3684-4d2a-b85a-197df7d41dee",
+  "currentRevision": "d0c14674-7ebd-4847-8705-e842357e9399",
   "pendingChanges": false,
   "files": {
     "assets/data.js": {
@@ -1881,8 +1881,8 @@
       "content": "/root/.cache/hyperframes/history/ecccff22-2bd4-4f75-949a-b98b8fea96b0/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
     },
     "index.html": {
-      "hash": "e516d6c07fb14f03ee5fcee944a88d8f1cff9b3c4a2c3c0101f5733ef714b2e5",
-      "content": "/root/.cache/hyperframes/history/ecccff22-2bd4-4f75-949a-b98b8fea96b0/blobs/e5/e516d6c07fb14f03ee5fcee944a88d8f1cff9b3c4a2c3c0101f5733ef714b2e5"
+      "hash": "3026829d04ee4413cd4669060485c0cb01bbd8e675483ee75301d5058209f195",
+      "content": "/root/.cache/hyperframes/history/ecccff22-2bd4-4f75-949a-b98b8fea96b0/blobs/30/3026829d04ee4413cd4669060485c0cb01bbd8e675483ee75301d5058209f195"
     },
     "package.json": {
       "hash": "40013dc2e5432c28d5545a259f26ce93a4f5c4e3da4e747533b4255e6216a438",
@@ -2663,6 +2663,10 @@
     "snaps/r2/frame-02-at-8.8s.png": {
       "hash": "aa5225d0d922a89143aed7828186a6ba02b18d48b23ccea2111883ebed74c425",
       "content": "/root/.cache/hyperframes/history/ecccff22-2bd4-4f75-949a-b98b8fea96b0/blobs/aa/aa5225d0d922a89143aed7828186a6ba02b18d48b23ccea2111883ebed74c425"
+    },
+    "snaps/index_pre_dbg.html": {
+      "hash": "e516d6c07fb14f03ee5fcee944a88d8f1cff9b3c4a2c3c0101f5733ef714b2e5",
+      "content": "/root/.cache/hyperframes/history/ecccff22-2bd4-4f75-949a-b98b8fea96b0/blobs/e5/e516d6c07fb14f03ee5fcee944a88d8f1cff9b3c4a2c3c0101f5733ef714b2e5"
     }
   },
   "revisions": {
@@ -2841,6 +2845,25 @@
         "snaps/r2/frame-02-at-8.8s.png": {
           "before": null,
           "after": "/root/.cache/hyperframes/history/ecccff22-2bd4-4f75-949a-b98b8fea96b0/blobs/aa/aa5225d0d922a89143aed7828186a6ba02b18d48b23ccea2111883ebed74c425"
+        }
+      }
+    },
+    "d0c14674-7ebd-4847-8705-e842357e9399": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792706848210,
+      "endedAt": 1792706848223,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/ecccff22-2bd4-4f75-949a-b98b8fea96b0/blobs/e5/e516d6c07fb14f03ee5fcee944a88d8f1cff9b3c4a2c3c0101f5733ef714b2e5",
+          "after": "/root/.cache/hyperframes/history/ecccff22-2bd4-4f75-949a-b98b8fea96b0/blobs/30/3026829d04ee4413cd4669060485c0cb01bbd8e675483ee75301d5058209f195"
+        },
+        "snaps/index_pre_dbg.html": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/ecccff22-2bd4-4f75-949a-b98b8fea96b0/blobs/e5/e516d6c07fb14f03ee5fcee944a88d8f1cff9b3c4a2c3c0101f5733ef714b2e5"
         }
       }
     }
