@@ -712,6 +712,10 @@
           if (F === 173) { const g = ctx.createRadialGradient(bxp, byp, 0, bxp, byp, 140); g.addColorStop(0, "rgba(255,46,136,0.35)"); g.addColorStop(1, "rgba(255,46,136,0)");
             ctx.fillStyle = g; ctx.fillRect(bxp - 140, byp - 140, 280, 280); }
           const pA = 1 - ramp(F, 182, 190);
+          // the landing reads even when the fighters cross the name: a pinned CONTACT call-out on the base mark (f173-188)
+          const cA = F >= 173 ? 1 - ramp(F, 184, 189) : 0;
+          if (cA > 0) { ctx.save(); ctx.globalAlpha = cA; ctx.font = '600 36px "JetBrains Mono"'; ctx.fillStyle = PINK; ctx.shadowColor = "rgba(18,16,13,0.85)"; ctx.shadowBlur = 10;
+            ctx.fillText(`CONTACT  s${pad(s, 2)}`, bxp + 34, byp + 12); ctx.restore(); }
           if (pA > 0) { ctx.save(); ctx.shadowColor = "rgba(255,46,136,0.7)"; ctx.shadowBlur = 12; plus(bxp, byp, F === 173 ? 26 : 18, F === 173 ? 6 : 4, `rgba(255,46,136,${pA.toFixed(3)})`); ctx.restore(); }
           // + LOCKED tag pinned to the plinth's front-left corner (f208): leader draws, then the tag wipes on (follow-through, no text scaling)
           if (F >= 208) {
@@ -728,7 +732,7 @@
           S(E.act3, "transform", `translateY(${(top - 76 - 1200 - 44).toFixed(1)}px)`);
           S(E.act3, "opacity", eOC(ramp(F, 169, 173)).toFixed(3));
           S(E.hudUnder, "top", (top - jolt + bh + 48).toFixed(1) + "px");
-          T(E.hudUnder, "CG · CYCLES · SHADOW CATCHER · ROTO HOLDOUT");
+          T(E.hudUnder, "CG · CYCLES · SHADOW CATCHER · ROTO HOLDOUT" + (F >= 173 ? `\n<span class="p">+</span> ANCHOR ON SOLVED GROUND · CAMERAS <b>${ST.cameras_registered}/${ST.cameras_total}</b>` : ""));
           S(E.hudUnder, "opacity", ramp(F, 176, 182).toFixed(3)); S(E.hudUnderR, "opacity", "0");
         } else {
           S(E.finalBox, "opacity", "0"); S(E.lockTag, "opacity", "0"); S(E.act3, "opacity", "0");

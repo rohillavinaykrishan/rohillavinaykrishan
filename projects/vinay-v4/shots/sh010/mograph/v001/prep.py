@@ -198,6 +198,16 @@ def ph_band(name, w, h, kind):
     return o
 for name, w, h, kind in (('final_band_2808x1176', 2808, 1176, 'final'), ('plate_band_2160x904', 2160, 904, 'plate'),
                          ('cg_band_2160x904', 2160, 904, 'cg'), ('final_band_2160x904', 2160, 904, 'final')):
+    SEQ = {'final_band_2808x1176': 'final_2808/final', 'final_band_2160x904': 'final_2160/final', 'plate_band_2160x904': 'plate_2160/plate', 'cg_band_2160x904': 'cg_2160/cg'}
+    seqd = sorted(glob.glob(U + 'comp/v*/' + SEQ[name].split('/')[0]))
+    if seqd and len(glob.glob(seqd[-1] + '/*.png')) == 52:
+        sq = seqd[-1] + '/' + SEQ[name].split('/')[1] + '.%04d.png'; o = V + name + '.mp4'
+        k = stale(o, sq % 0, sq % 51)
+        if k:   # lossless PNG sequence from the compositor (already flattened over its ground)
+            sh(f'ffmpeg -v error -y -framerate 25 -start_number 0 -i "{sq}" -frames:v 52 -vf "scale={w}:{h}:flags=lanczos" {ENC} "{o}"'); done(o, k)
+        man[name] = sq.replace(U, '') + ' (real, PNG sequence)'
+        assert nframes(o) == 52, name
+        continue
     src = newest('comp', name + '.mov') or (CP + name + '.mov'); o = V + name + '.mp4'
     real = os.path.exists(src) and nframes(src) == 52
     if real:
