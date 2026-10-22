@@ -3,7 +3,7 @@
 Bottom strip: halo check, the held-out CG layer over black and over white at 100% (s25, s38) + the plate-only crop.
 usage: sheet.py out.png [work_dir]"""
 import sys, os, json
-import numpy as np
+import numpy as np, cv2
 from PIL import Image, ImageDraw, ImageFont
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 out = sys.argv[1]; wk = sys.argv[2] if len(sys.argv) > 2 else f'{ROOT}/comp/v001/work'
@@ -30,7 +30,7 @@ strip = []
 for i in (25, 38):
     p = f'{wk}/cglayer/cg.{i:04d}.png'
     if not os.path.exists(p): continue
-    L = np.asarray(Image.open(p)).astype(np.float32) / 65535.0
+    L = cv2.imread(p, -1)[..., [2, 1, 0, 3]].astype(np.float32) / 65535.0
     b = anc[i]['bbox']; cx, cy = (b[0] + b[2]) / 2 * S, (b[1] + b[3]) / 2 * S
     x0 = int(np.clip(cx - 300, 0, 2808 - 600)); y0 = int(np.clip(cy - 294, 0, 1176 - 588))
     c = L[y0:y0 + 588, x0:x0 + 600]
