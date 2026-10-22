@@ -96,7 +96,7 @@ All agents follow `.claude/skills/studio/conventions.md` - read it now.
 
 ## Time estimates (client rule)
 
-Always tell the client how long the project will take, as a clock time in UTC plus a duration, both at intake and
+Always tell the client how long the project will take, as a clock time in INDIA time (IST, UTC+5:30; never UTC) plus a duration, both at intake and
 whenever a step finishes or slips. Base it on these measured times on this 4-core machine:
 - treatment / pre-production ~30-50 min; storyboard ~15 min; editor plate ~15 min; colour grade ~20 min
 - roto: rembg ~1 min per 52 frames, SAM 2 ~3-4 s/frame; COLMAP solve ~10-15 min
@@ -115,7 +115,7 @@ work to continue on its own; never wait for them to type "resume". Right away:
    projects/<slug>/review/paused_agents.md"). If `send_later` is unavailable, use `ScheduleWakeup` or `CronCreate`.
 3. When it fires: check what finished on disk, then SendMessage each paused agent to continue (do not start
    fresh agents). If they fail again with a new reset time, repeat from step 1.
-Tell the client in one line that work will resume automatically at <time>.
+Tell the client in one line that work will resume automatically at <time in IST>.
 
 ## Small jobs
 
