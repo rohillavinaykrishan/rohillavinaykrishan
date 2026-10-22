@@ -4617,7 +4617,7 @@
   "snapshots": {
     "latest": {
       "revision": null,
-      "id": "b7f2adb3-394d-4efd-b1b6-f32ca84ed4de-9"
+      "id": "d6a6badc-b528-4e2b-b46e-1284d688c0cf-2"
     },
     "revisions": {},
     "unversioned": [
@@ -5438,6 +5438,66 @@
         "contentHash": "9b746540977007b861fae5ae666e1f346fd00d94c92d807c26562768ad22289f",
         "revision": null,
         "inputFingerprint": "fce87ed121ebe44863d57f24d857fc6c729d1d61185d71f41d273ef867c31880",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "d6a6badc-b528-4e2b-b46e-1284d688c0cf-0",
+        "image": "/home/user/rohillavinaykrishan/projects/vinay-v4/shots/sh010/mograph/v001/snaps/r7/frame-00-at-0.3s.png",
+        "time": 0.3,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792648391111,
+        "contentHash": "832e32d045c646dc67aef0b130ccc16f70fa48837fd41d91d195ffd9bd28416e",
+        "revision": null,
+        "inputFingerprint": "f8cb4064483cdcaa0b8718d64d45909bef537174a18fa71b74166b2dd159c51b",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "d6a6badc-b528-4e2b-b46e-1284d688c0cf-1",
+        "image": "/home/user/rohillavinaykrishan/projects/vinay-v4/shots/sh010/mograph/v001/snaps/r7/frame-01-at-1.9s.png",
+        "time": 1.9,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792648391112,
+        "contentHash": "ae0e4e25866ab30a72b940f510b69f93f60fc6d8fa5e08f9b811d0955565e15c",
+        "revision": null,
+        "inputFingerprint": "f8cb4064483cdcaa0b8718d64d45909bef537174a18fa71b74166b2dd159c51b",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "d6a6badc-b528-4e2b-b46e-1284d688c0cf-2",
+        "image": "/home/user/rohillavinaykrishan/projects/vinay-v4/shots/sh010/mograph/v001/snaps/r7/frame-02-at-2.2s.png",
+        "time": 2.2,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792648391112,
+        "contentHash": "c6b88926758b4673bfa04608e90c1eb87a6e9980dc8869a8feb5d3035a4f746b",
+        "revision": null,
+        "inputFingerprint": "f8cb4064483cdcaa0b8718d64d45909bef537174a18fa71b74166b2dd159c51b",
         "inputScope": "local-project-files",
         "attribution": "inputs-changed"
       }
