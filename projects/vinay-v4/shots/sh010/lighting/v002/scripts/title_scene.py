@@ -17,14 +17,14 @@ SHIFT_Y = -0.17
 SHIFT_X = -0.02
 SUN_EL, SUN_BEARING = 12.0, -165.0          # behind the monument, 15 deg right of centre
 SUN_E, SUN_COL = 9.0, (1.0, 0.80, 0.58)
-FILL_E, FILL_COL, FILL_LOC, FILL_SIZE = 650.0, M.hexlin('#F2EBDF')[:3], (-7.0, -9.0, 3.2), 7.0
+FILL_E, FILL_COL, FILL_LOC, FILL_SIZE = 850.0, M.hexlin('#F2EBDF')[:3], (-7.0, -9.0, 3.2), 7.0
 KICK_E, KICK_COL, KICK_LOC, KICK_SIZE = 900.0, M.hexlin('#FF2E88')[:3], (-7.5, 3.5, 1.6), 0.9
-FILL_WORLD_COL, FILL_WORLD_E = (0.50, 0.44, 0.40), 0.06
+FILL_WORLD_COL, FILL_WORLD_E = (0.45, 0.42, 0.40), 0.10
 SKY = [(0.000, (1.60, 0.98, 0.52)),
        (0.025, (0.70, 0.36, 0.15)),
        (0.10, (0.16, 0.085, 0.045)),
        (0.26, (0.050, 0.034, 0.024)),
-       (0.60, (0.012, 0.010, 0.008))]
+       (0.60, (0.024, 0.020, 0.016))]
 SUN_DISC_E, SUN_HALO_E = 60.0, 1.6
 RIPPLE_SCALE, RIPPLE_AMT = 0.9, 0.5
 SAND_A, SAND_B = M.hexlin('#8F7558'), M.hexlin('#B39673')
