@@ -1,0 +1,30 @@
+{
+ "mg1": {
+  "src": null,
+  "kind": null,
+  "real": false,
+  "f_in": 0,
+  "f_out_excl": 357,
+  "mtime": null
+ },
+ "mg3": {
+  "src": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/compositions/mg3.html",
+  "kind": "template",
+  "real": true,
+  "f_in": 387,
+  "f_out_excl": 750,
+  "mtime": 1792790516.4808793
+ },
+ "mg2": {
+  "src": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg2/compositions/mg2.html",
+  "kind": "template",
+  "real": true,
+  "f_in": 336,
+  "f_out_excl": 387,
+  "mtime": 1792790528.5132554
+ },
+ "audio": {
+  "src": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/sound/v001/master.wav",
+  "real": true
+ }
+}

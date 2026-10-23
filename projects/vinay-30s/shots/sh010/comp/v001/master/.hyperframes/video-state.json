@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "historyId": "4563f489-8e4a-49ae-9bf5-baae440cdf68",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "compositions/mg1.html": {
+      "hash": "b269995e7a30f1ec36458cc0d54b48bc643128890833ecc9ee2ba9c4b44cd3dd",
+      "content": "/root/.cache/hyperframes/history/4563f489-8e4a-49ae-9bf5-baae440cdf68/blobs/b2/b269995e7a30f1ec36458cc0d54b48bc643128890833ecc9ee2ba9c4b44cd3dd"
+    },
+    "compositions/mg2.html": {
+      "hash": "ede9a3e01c3eed454466e436b6a9f2d9d3f56da42f8fd7f2305d6703ba357223",
+      "content": "/root/.cache/hyperframes/history/4563f489-8e4a-49ae-9bf5-baae440cdf68/blobs/ed/ede9a3e01c3eed454466e436b6a9f2d9d3f56da42f8fd7f2305d6703ba357223"
+    },
+    "compositions/mg3.html": {
+      "hash": "1b5007a4d454b0c6c0aaa1fc94cd0b990b864ff9dd781a14daac6ee833de6a79",
+      "content": "/root/.cache/hyperframes/history/4563f489-8e4a-49ae-9bf5-baae440cdf68/blobs/1b/1b5007a4d454b0c6c0aaa1fc94cd0b990b864ff9dd781a14daac6ee833de6a79"
+    },
+    "index.html": {
+      "hash": "4de29e2188496663d0b2f11b5c5d260eca60b91bc2c7462b04521263b3049284",
+      "content": "/root/.cache/hyperframes/history/4563f489-8e4a-49ae-9bf5-baae440cdf68/blobs/4d/4de29e2188496663d0b2f11b5c5d260eca60b91bc2c7462b04521263b3049284"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "fabc226a-6dc9-467b-ac1e-f5640d09b837-3"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "fabc226a-6dc9-467b-ac1e-f5640d09b837-0",
+        "image": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/comp/v001/master/.hyperframes/artifacts/snapshots/00d02e2d-109d-4f8b-80e7-194d1b1a042e/frame-00-at-14s.png",
+        "time": 14,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792790393796,
+        "contentHash": "6d84636506cb09240e54fe511e30107f5506773d2eebc606371f8de7086a6b55",
+        "revision": null,
+        "inputFingerprint": "18207fa110593b92a4131b6e75e42acf33ebf6e57c48f31b312d4f86682e843d",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "fabc226a-6dc9-467b-ac1e-f5640d09b837-1",
+        "image": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/comp/v001/master/.hyperframes/artifacts/snapshots/00d02e2d-109d-4f8b-80e7-194d1b1a042e/frame-01-at-14.6s.png",
+        "time": 14.6,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792790393796,
+        "contentHash": "32000b7ba5c215a6bffbd54c40047b4c3ecd8662614d935353b1d341d05fca19",
+        "revision": null,
+        "inputFingerprint": "18207fa110593b92a4131b6e75e42acf33ebf6e57c48f31b312d4f86682e843d",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "fabc226a-6dc9-467b-ac1e-f5640d09b837-2",
+        "image": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/comp/v001/master/.hyperframes/artifacts/snapshots/00d02e2d-109d-4f8b-80e7-194d1b1a042e/frame-02-at-14.96s.png",
+        "time": 14.96,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792790393796,
+        "contentHash": "c429814843bc685fd945e93c01250dc3653b71e6e86b238907cbf912c4ac4ac0",
+        "revision": null,
+        "inputFingerprint": "18207fa110593b92a4131b6e75e42acf33ebf6e57c48f31b312d4f86682e843d",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "fabc226a-6dc9-467b-ac1e-f5640d09b837-3",
+        "image": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/comp/v001/master/.hyperframes/artifacts/snapshots/00d02e2d-109d-4f8b-80e7-194d1b1a042e/frame-03-at-29.1s.png",
+        "time": 29.1,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792790393796,
+        "contentHash": "597449b1f103d99620c6f301d2b1de8053ad99767482b731b23bf09350641b75",
+        "revision": null,
+        "inputFingerprint": "18207fa110593b92a4131b6e75e42acf33ebf6e57c48f31b312d4f86682e843d",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  }
+}

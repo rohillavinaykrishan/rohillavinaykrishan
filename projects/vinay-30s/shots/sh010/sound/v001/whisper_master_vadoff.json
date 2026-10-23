@@ -1,0 +1,8 @@
+{
+ "file": "master.wav",
+ "vad_filter": false,
+ "model": "small",
+ "language": "en",
+ "language_prob": 0.8418919444084167,
+ "segments": []
+}

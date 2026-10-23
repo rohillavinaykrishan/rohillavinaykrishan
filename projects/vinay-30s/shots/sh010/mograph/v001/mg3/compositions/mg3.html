@@ -1,0 +1,794 @@
+<template>
+  <style>
+    @font-face { font-family:"Unbounded"; font-weight:900; src:url("assets/fonts/Unbounded-900.ttf"); }
+    @font-face { font-family:"Unbounded"; font-weight:500; src:url("assets/fonts/Unbounded-500.ttf"); }
+    @font-face { font-family:"SpaceMonoHF"; font-weight:700; src:url("assets/fonts/SpaceMono-700.ttf"); }
+    #root { position:absolute; inset:0; overflow:hidden; }
+    #mg3-stage { position:absolute; left:0; top:0; width:2160px; height:3840px; transform-origin:0 0; }
+    #mg3-push { position:absolute; left:0; top:0; width:2160px; height:3840px; transform-origin:1080px 2300px; }
+    #mg3-push > .clip { position:absolute; left:0; top:0; width:2160px; height:3840px; }
+    .fxc { position:absolute; left:0; top:0; width:2160px; height:3840px; pointer-events:none; }
+    #mg3-push > #mg3-win { left:0px; top:2280px; width:2160px; height:904px; background:#13111A; overflow:hidden; }
+    #mg3-win video { position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover; }
+    .winb { position:absolute; inset:0; border:4px solid #2B2632; z-index:99; }
+    .piece { position:absolute; overflow:hidden; transform-origin:0 0; background:#13111A; outline:2px solid #2B2632; outline-offset:-2px; }
+    .piece img { position:absolute; max-width:none; }
+    .tmask { position:absolute; inset:0; overflow:hidden; }
+    .tmask > .clip { position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover; }
+    .tborder { position:absolute; inset:0; border:3px solid; z-index:50; }
+    .ttag { position:absolute; left:3px; bottom:3px; z-index:51; font-family:"SpaceMonoHF"; font-weight:700; font-size:28px;
+             letter-spacing:0.2em; line-height:1; padding:10px 10px 8px 14px; background:rgba(7,6,10,0.82); white-space:nowrap; }
+    .role { position:absolute; left:0; width:2160px; text-align:center; font-family:"Unbounded"; font-weight:500; font-size:92px;
+             line-height:1; letter-spacing:0.18em; padding-left:0.18em; color:#FFF8EC; white-space:nowrap; }
+    .rule { position:absolute; left:820px; width:520px; height:6px; background:#FFC94D; transform-origin:50% 50%; }
+    .sfd { position:absolute; left:0; width:2160px; text-align:center; font-family:"Unbounded"; font-weight:500; font-size:64px;
+            line-height:1; letter-spacing:0.30em; padding-left:0.30em; color:#E6DED2; white-space:nowrap; }
+    #mg3-logoi { position:absolute; transform-origin:50% 50%; }
+    .flash { position:absolute; inset:0; background:#FFF8EC; opacity:0; }
+    </style>
+  <div id="root" data-composition-id="mg3" data-width="2160" data-height="3840" data-start="0" data-duration="30.0">
+    <div id="mg3-stage" data-layout-allow-overflow><div id="mg3-push" data-layout-allow-overflow data-layout-allow-overlap>
+    <canvas id="mg3-bk" class="fxc" style="z-index:1"></canvas>
+<div id="mg3-win" class="clip" data-start="15.48" data-duration="3.92" data-track-index="20" style="z-index:20"><video id="mg3-F1" src="assets/plates/F1.mp4" muted playsinline class="clip" data-start="15.48" data-duration="0.44" data-track-index="11" style="z-index:11"></video><video id="mg3-F2" src="assets/plates/F2.mp4" muted playsinline class="clip" data-start="15.92" data-duration="0.44" data-track-index="12" style="z-index:12"></video><video id="mg3-F3" src="assets/plates/F3.mp4" muted playsinline class="clip" data-start="16.36" data-duration="0.44" data-track-index="13" style="z-index:13"></video><video id="mg3-F4" src="assets/plates/F4.mp4" muted playsinline class="clip" data-start="16.8" data-duration="0.4" data-track-index="14" style="z-index:14"></video><video id="mg3-F5" src="assets/plates/F5.mp4" muted playsinline class="clip" data-start="17.2" data-duration="0.44" data-track-index="15" style="z-index:15"></video><video id="mg3-F6" src="assets/plates/F6.mp4" muted playsinline class="clip" data-start="17.64" data-duration="0.4" data-track-index="16" style="z-index:16"></video><video id="mg3-F7" src="assets/plates/F7.mp4" muted playsinline class="clip" data-start="18.04" data-duration="0.48" data-track-index="17" style="z-index:17"></video><video id="mg3-F8" src="assets/plates/F8.mp4" muted playsinline class="clip" data-start="18.52" data-duration="0.44" data-track-index="18" style="z-index:18"></video><video id="mg3-F9" src="assets/plates/F9.mp4" muted playsinline class="clip" data-start="18.96" data-duration="0.44" data-track-index="19" style="z-index:19"></video><div id="mg3-winb" class="winb"></div></div>
+<div id="mg3-pc1w" data-layout-allow-overflow class="clip" data-start="19.4" data-duration="10.6" data-track-index="21" style="z-index:21"><div id="mg3-pc1" class="piece" style="left:0.0px;top:2280.0px;width:540.0px;height:452.0px"><img id="mg3-pc1i" src="assets/stills/F9_last.png" style="left:0.0px;top:0.0px;width:2160px;height:904px"></div></div>
+<div id="mg3-pc2w" data-layout-allow-overflow class="clip" data-start="19.4" data-duration="10.6" data-track-index="22" style="z-index:22"><div id="mg3-pc2" class="piece" style="left:540.0px;top:2280.0px;width:540.0px;height:452.0px"><img id="mg3-pc2i" src="assets/stills/F9_last.png" style="left:-540.0px;top:0.0px;width:2160px;height:904px"></div></div>
+<div id="mg3-pc3w" data-layout-allow-overflow class="clip" data-start="19.4" data-duration="10.6" data-track-index="23" style="z-index:23"><div id="mg3-pc3" class="piece" style="left:1080.0px;top:2280.0px;width:540.0px;height:452.0px"><img id="mg3-pc3i" src="assets/stills/F9_last.png" style="left:-1080.0px;top:0.0px;width:2160px;height:904px"></div></div>
+<div id="mg3-pc4w" data-layout-allow-overflow class="clip" data-start="19.4" data-duration="10.6" data-track-index="24" style="z-index:24"><div id="mg3-pc4" class="piece" style="left:1620.0px;top:2280.0px;width:540.0px;height:452.0px"><img id="mg3-pc4i" src="assets/stills/F9_last.png" style="left:-1620.0px;top:0.0px;width:2160px;height:904px"></div></div>
+<div id="mg3-pc5w" data-layout-allow-overflow class="clip" data-start="19.4" data-duration="10.6" data-track-index="25" style="z-index:25"><div id="mg3-pc5" class="piece" style="left:0.0px;top:2732.0px;width:540.0px;height:452.0px"><img id="mg3-pc5i" src="assets/stills/F9_last.png" style="left:0.0px;top:-452.0px;width:2160px;height:904px"></div></div>
+<div id="mg3-pc6w" data-layout-allow-overflow class="clip" data-start="19.4" data-duration="10.6" data-track-index="26" style="z-index:26"><div id="mg3-pc6" class="piece" style="left:540.0px;top:2732.0px;width:540.0px;height:452.0px"><img id="mg3-pc6i" src="assets/stills/F9_last.png" style="left:-540.0px;top:-452.0px;width:2160px;height:904px"></div></div>
+<div id="mg3-pc7w" data-layout-allow-overflow class="clip" data-start="19.4" data-duration="10.6" data-track-index="27" style="z-index:27"><div id="mg3-pc7" class="piece" style="left:1080.0px;top:2732.0px;width:540.0px;height:452.0px"><img id="mg3-pc7i" src="assets/stills/F9_last.png" style="left:-1080.0px;top:-452.0px;width:2160px;height:904px"></div></div>
+<div id="mg3-pc8w" data-layout-allow-overflow class="clip" data-start="19.4" data-duration="10.6" data-track-index="28" style="z-index:28"><div id="mg3-pc8" class="piece" style="left:1620.0px;top:2732.0px;width:540.0px;height:452.0px"><img id="mg3-pc8i" src="assets/stills/F9_last.png" style="left:-1620.0px;top:-452.0px;width:2160px;height:904px"></div></div>
+<div id="mg3-t1" data-layout-allow-overflow class="clip tile" data-start="19.76" data-duration="10.24" data-track-index="32" style="left:80px;top:2300px;width:482px;height:430px;z-index:32"><div id="mg3-t1m" class="tmask"><video id="mg3-t1v" src="assets/plates/T1_duo.mp4" muted playsinline class="clip" data-start="19.76" data-duration="1.6" data-track-index="29" style="z-index:29"></video><img id="mg3-t1fd" src="assets/stills/T1_duo_last.png" class="clip" data-start="21.36" data-duration="8.64" data-track-index="30" style="z-index:30"><img id="mg3-t1ft" src="assets/stills/T1_true_last.png" class="clip" data-start="27.44" data-duration="2.56" data-track-index="31" style="z-index:31"></div><div id="mg3-t1b" class="tborder" style="border-color:#E3203A"></div><div id="mg3-t1tag" class="ttag" style="color:#E3203A">RYU</div></div>
+<div id="mg3-t2" data-layout-allow-overflow class="clip tile" data-start="20.48" data-duration="9.52" data-track-index="36" style="left:586px;top:2300px;width:482px;height:430px;z-index:36"><div id="mg3-t2m" class="tmask"><video id="mg3-t2v" src="assets/plates/T2_duo.mp4" muted playsinline class="clip" data-start="20.48" data-duration="1.6" data-track-index="33" style="z-index:33"></video><img id="mg3-t2fd" src="assets/stills/T2_duo_last.png" class="clip" data-start="22.08" data-duration="7.92" data-track-index="34" style="z-index:34"><img id="mg3-t2ft" src="assets/stills/T2_true_last.png" class="clip" data-start="27.44" data-duration="2.56" data-track-index="35" style="z-index:35"></div><div id="mg3-t2b" class="tborder" style="border-color:#FF5E1A"></div><div id="mg3-t2tag" class="ttag" style="color:#FF5E1A">KEN</div></div>
+<div id="mg3-t3" data-layout-allow-overflow class="clip tile" data-start="21.16" data-duration="8.84" data-track-index="40" style="left:1092px;top:2300px;width:482px;height:430px;z-index:40"><div id="mg3-t3m" class="tmask"><video id="mg3-t3v" src="assets/plates/T3_duo.mp4" muted playsinline class="clip" data-start="21.16" data-duration="1.6" data-track-index="37" style="z-index:37"></video><img id="mg3-t3fd" src="assets/stills/T3_duo_last.png" class="clip" data-start="22.76" data-duration="7.24" data-track-index="38" style="z-index:38"><img id="mg3-t3ft" src="assets/stills/T3_true_last.png" class="clip" data-start="27.44" data-duration="2.56" data-track-index="39" style="z-index:39"></div><div id="mg3-t3b" class="tborder" style="border-color:#FFA21C"></div><div id="mg3-t3tag" class="ttag" style="color:#FFA21C">DHALSIM</div></div>
+<div id="mg3-t4" data-layout-allow-overflow class="clip tile" data-start="21.88" data-duration="8.12" data-track-index="44" style="left:1598px;top:2300px;width:482px;height:430px;z-index:44"><div id="mg3-t4m" class="tmask"><video id="mg3-t4v" src="assets/plates/T4_duo.mp4" muted playsinline class="clip" data-start="21.88" data-duration="1.6" data-track-index="41" style="z-index:41"></video><img id="mg3-t4fd" src="assets/stills/T4_duo_last.png" class="clip" data-start="23.48" data-duration="6.52" data-track-index="42" style="z-index:42"><img id="mg3-t4ft" src="assets/stills/T4_true_last.png" class="clip" data-start="27.44" data-duration="2.56" data-track-index="43" style="z-index:43"></div><div id="mg3-t4b" class="tborder" style="border-color:#9BEA2E"></div><div id="mg3-t4tag" class="ttag" style="color:#9BEA2E">BLANKA</div></div>
+<div id="mg3-t5" data-layout-allow-overflow class="clip tile" data-start="22.56" data-duration="7.44" data-track-index="48" style="left:80px;top:2754px;width:482px;height:430px;z-index:48"><div id="mg3-t5m" class="tmask"><video id="mg3-t5v" src="assets/plates/T5_duo.mp4" muted playsinline class="clip" data-start="22.56" data-duration="1.6" data-track-index="45" style="z-index:45"></video><img id="mg3-t5fd" src="assets/stills/T5_duo_last.png" class="clip" data-start="24.16" data-duration="5.84" data-track-index="46" style="z-index:46"><img id="mg3-t5ft" src="assets/stills/T5_true_last.png" class="clip" data-start="27.44" data-duration="2.56" data-track-index="47" style="z-index:47"></div><div id="mg3-t5b" class="tborder" style="border-color:#17C9A6"></div><div id="mg3-t5tag" class="ttag" style="color:#17C9A6">GUILE</div></div>
+<div id="mg3-t6" data-layout-allow-overflow class="clip tile" data-start="23.28" data-duration="6.72" data-track-index="52" style="left:586px;top:2754px;width:482px;height:430px;z-index:52"><div id="mg3-t6m" class="tmask"><video id="mg3-t6v" src="assets/plates/T6_duo.mp4" muted playsinline class="clip" data-start="23.28" data-duration="1.6" data-track-index="49" style="z-index:49"></video><img id="mg3-t6fd" src="assets/stills/T6_duo_last.png" class="clip" data-start="24.88" data-duration="5.12" data-track-index="50" style="z-index:50"><img id="mg3-t6ft" src="assets/stills/T6_true_last.png" class="clip" data-start="27.44" data-duration="2.56" data-track-index="51" style="z-index:51"></div><div id="mg3-t6b" class="tborder" style="border-color:#2F6DFF"></div><div id="mg3-t6tag" class="ttag" style="color:#2F6DFF">CHUN-LI</div></div>
+<div id="mg3-t7" data-layout-allow-overflow class="clip tile" data-start="23.96" data-duration="6.04" data-track-index="56" style="left:1092px;top:2754px;width:482px;height:430px;z-index:56"><div id="mg3-t7m" class="tmask"><video id="mg3-t7v" src="assets/plates/T7_duo.mp4" muted playsinline class="clip" data-start="23.96" data-duration="1.6" data-track-index="53" style="z-index:53"></video><img id="mg3-t7fd" src="assets/stills/T7_duo_last.png" class="clip" data-start="25.56" data-duration="4.44" data-track-index="54" style="z-index:54"><img id="mg3-t7ft" src="assets/stills/T7_true_last.png" class="clip" data-start="27.44" data-duration="2.56" data-track-index="55" style="z-index:55"></div><div id="mg3-t7b" class="tborder" style="border-color:#8B3DFF"></div><div id="mg3-t7tag" class="ttag" style="color:#8B3DFF">M. BISON</div></div>
+<div id="mg3-t8" data-layout-allow-overflow class="clip tile" data-start="24.64" data-duration="5.36" data-track-index="60" style="left:1598px;top:2754px;width:482px;height:430px;z-index:60"><div id="mg3-t8m" class="tmask"><video id="mg3-t8v" src="assets/plates/T8_duo.mp4" muted playsinline class="clip" data-start="24.64" data-duration="1.6" data-track-index="57" style="z-index:57"></video><img id="mg3-t8fd" src="assets/stills/T8_duo_last.png" class="clip" data-start="26.24" data-duration="3.76" data-track-index="58" style="z-index:58"><img id="mg3-t8ft" src="assets/stills/T8_true_last.png" class="clip" data-start="27.44" data-duration="2.56" data-track-index="59" style="z-index:59"></div><div id="mg3-t8b" class="tborder" style="border-color:#FF2D8F"></div><div id="mg3-t8tag" class="ttag" style="color:#FF2D8F">E. HONDA</div></div>
+<div id="mg3-namew" data-layout-allow-overflow class="clip" data-start="15.48" data-duration="14.52" data-track-index="61" style="z-index:61"><canvas id="mg3-name" class="fxc"></canvas></div>
+<div id="mg3-role" class="clip" data-start="15.48" data-duration="14.52" data-track-index="62" style="z-index:62"><div id="mg3-rolei" class="role" style="top:1984px">SR. MATCHMOVE ARTIST</div></div>
+<div id="mg3-rule" class="clip" data-start="15.92" data-duration="14.08" data-track-index="63" style="z-index:63"><div id="mg3-rulei" class="rule" style="top:2099px"></div></div>
+<div id="mg3-sf" class="clip" data-start="19.4" data-duration="10.6" data-track-index="64" style="z-index:64"><div id="mg3-sfi" class="sfd" style="top:2128px">STREET FIGHTER&nbsp;&nbsp;·&nbsp;&nbsp;DNEG</div></div>
+<div id="mg3-logo" class="clip" data-start="27.44" data-duration="2.56" data-track-index="65" style="z-index:65"><img id="mg3-logoi" src="assets/sf_logo_alpha.png" style="left:517px;top:420px;width:1126px;height:600px"></div>
+<div id="mg3-flash" class="clip" data-start="27.44" data-duration="0.08" data-track-index="66" style="z-index:66"><div id="mg3-flashi" class="flash"></div></div>
+<canvas id="mg3-fr" class="fxc" style="z-index:900"></canvas>
+    </div></div>
+  </div>
+  <script>
+    /* ===== kit.js (mograph/v001/kit, inlined at build time) ===== */
+    /* SPECTRUM FX kit (sh010 / mograph / v001 / kit) -- GENERATED by make_kit.py from kit_src.js + cues.json.
+ * Do not edit kit.js by hand: edit this file and run `python3 make_kit.py`,
+ * which inlines cues.json (no fetch at render time) and writes kit.js.
+ *
+ * Rules: every function is a pure function of (frame, params, seed).
+ * No Math.random, no Date, no requestAnimationFrame. Units: master frames
+ * (25 fps) and 4K pixels (2160x3840); pass `s` (pixel scale) = canvasW/2160
+ * when drawing at proxy size (540 -> s = 0.25).
+ */
+(function (root, factory) {
+  if (typeof module === "object" && module.exports) module.exports = factory();
+  else root.FX = factory();
+})(typeof self !== "undefined" ? self : this, function () {
+  "use strict";
+  var CUES = /* inlined from director/v001/cues.json by make_kit.py */ {"project":"vinay-30s","title":"SPECTRUM","fps":25,"frames":750,"size":"2160x3840","beats_f":{"S1_117.5bpm_12.77f":[6,19,33,46,59,71,84,96,109,121,134,145,158,171,183,197,210,223,236],"S2_86.1bpm_17.4f":[237,245,263,280,298,316,336],"S3_136bpm_11.03f":[365,376,387,398,409,420,430,441,451,463,474],"S4_172.3bpm_8.7f":[486,494,503,512,521,529,538,547,555,564,573,582,590,599,608,616,625,634,643,651,660,669,677,686,695,703,712,721,730,738]},"events":{"cold_open":{"f":[0,18]},"S2_entry_hit":{"f":237,"src_s":122.84,"note":"splice S1->S2 lands on the explosion hit (+15 dB)"},"lyric_im_a_street_fighter":{"f":[320,356],"src_s":[126.16,127.58],"note":"sung line; the charge"},"SILENCE":{"f":[357,364],"src_s":[104.88,105.2],"note":"-43 dBFS: the only still moment"},"HIT":{"f":365,"src_s":105.21,"note":"biggest hit of the trailer (onset 14.594 s in the bed). NAME STRIKE + GLOVE CONTACT"},"role_line_in":{"f":387},"split_to_wall":{"f":485,"note":"S3->S4 splice, chant begins"},"TITLE_STINGER":{"f":686,"src_s":153.97,"note":"SF title-card hit: logo slam + roster unlock to true colour"},"tail_fade":{"f":[735,749]}},"layout_4k":{"safe":{"top":420,"bottom_critical_text":3140},"act1_window":[0,1048,2160,904],"act2_window":[0,897,2160,1206],"act3_window":[0,2280,2160,904],"name_block":[0,1150,2160,800],"role_lines_y":[2030,2160],"logo_box":[380,420,1400,600],"wall_rect":[80,2300,2000,884]},"shots":[{"id":"R1","layer":"roster","f_in":19,"f_out":46,"frames":27,"lib":"sf125","src_in":142.8,"src_out":143.7,"speed":0.833,"crop":"1280:536:0:92","characters":["Ryu"],"grade":"duo:Ryu","hue":"#E3203A","note":"raises fist, blue light","lib_quality":4},{"id":"R2","layer":"roster","f_in":46,"f_out":71,"frames":25,"lib":"sf117","src_in":133.25,"src_out":134.25,"speed":1.0,"crop":"1280:536:0:92","characters":["Ken"],"grade":"duo:Ken","hue":"#FF5E1A","note":"yells as he charges, light shafts","lib_quality":4},{"id":"R3","layer":"roster","f_in":71,"f_out":96,"frames":25,"lib":"sf032","src_in":38.3,"src_out":39.3,"speed":1.0,"crop":"1280:536:0:92","characters":["Dhalsim"],"grade":"duo:Dhalsim","hue":"#FFA21C","note":"fighting stance, arena (tilt)","lib_quality":4},{"id":"R4","layer":"roster","f_in":96,"f_out":121,"frames":25,"lib":"sf100","src_in":112.58,"src_out":113.48,"speed":0.9,"crop":"1280:536:0:92","characters":["Blanka"],"grade":"duo:Blanka","hue":"#9BEA2E","note":"roars, arms raised (pan)","lib_quality":5},{"id":"R5","layer":"roster","f_in":121,"f_out":145,"frames":24,"lib":"sf082","src_in":95.02,"src_out":95.932,"speed":0.95,"crop":"1280:536:0:92","characters":["Guile"],"grade":"duo:Guile","hue":"#17C9A6","note":"flat-top stare into camera","lib_quality":4},{"id":"R6","layer":"roster","f_in":145,"f_out":171,"frames":26,"lib":"sf135","src_in":151.9,"src_out":152.94,"speed":1.0,"crop":"1280:536:0:92","characters":["Chun-Li"],"grade":"duo:Chun-Li","hue":"#2F6DFF","note":"blue qipao, bloodied, glares","lib_quality":4},{"id":"R7","layer":"roster","f_in":171,"f_out":197,"frames":26,"lib":"sf107","src_in":119.6,"src_out":120.276,"speed":0.65,"crop":"1280:536:0:92","characters":["M. Bison"],"grade":"duo:M. Bison","hue":"#8B3DFF","note":"red uniform, peaked cap; 0.65x = frame-blend, not mci","lib_quality":3},{"id":"R8","layer":"roster","f_in":197,"f_out":223,"frames":26,"lib":"sf053","src_in":62.0,"src_out":62.988,"speed":0.95,"crop":"1280:536:0:92","characters":["E. Honda"],"grade":"duo:E. Honda","hue":"#FF2D8F","note":"sumo topknot glare (picture only)","lib_quality":3},{"id":"C1","layer":"clash","f_in":237,"f_out":263,"frames":26,"lib":"sf110","src_in":122.93,"src_out":123.658,"speed":0.7,"crop":"960:536:262:92","characters":["fighters (silhouettes)"],"grade":"true","hue":null,"note":"silhouettes vs explosion; lands on the S2 entry hit","lib_quality":4},{"id":"C2","layer":"clash","f_in":263,"f_out":280,"frames":17,"lib":"sf046","src_in":52.0,"src_out":52.68,"speed":1.0,"crop":"960:536:76:92","characters":["Balrog","Ken"],"grade":"true","hue":null,"note":"Balrog stands over a downed Ken","lib_quality":4},{"id":"C3","layer":"clash","f_in":280,"f_out":298,"frames":18,"lib":"sf116","src_in":131.9,"src_out":132.62,"speed":1.0,"crop":"960:536:90:92","characters":["Ken","Dhalsim"],"grade":"true","hue":null,"note":"Ken squares up to Dhalsim","lib_quality":5},{"id":"C4","layer":"clash","f_in":298,"f_out":316,"frames":18,"lib":"sf121","src_in":138.4,"src_out":139.12,"speed":1.0,"crop":"960:536:314:92","characters":["Ken","Ryu"],"grade":"true","hue":null,"note":"Ken and Ryu side by side, stances","lib_quality":3},{"id":"C5","layer":"clash","f_in":316,"f_out":336,"frames":20,"lib":"sf119","src_in":135.9,"src_out":136.7,"speed":1.0,"crop":"960:536:82:92","characters":["Ken"],"grade":"true","hue":null,"note":"jump kick, arena wide","lib_quality":4},{"id":"C6","layer":"clash","f_in":336,"f_out":357,"frames":21,"lib":"sf033","src_in":39.65,"src_out":40.154,"speed":0.6,"crop":"960:536:80:92","characters":["Dhalsim"],"grade":"true>drain","hue":null,"note":"lunge; ramp 1.0 -> 0.2 (avg 0.6) under 'I'm a street fighter', drains to mono by f356","lib_quality":3},{"id":"H0","layer":"strike","f_in":365,"f_out":387,"frames":22,"lib":"sf045","src_in":50.75,"src_out":51.014,"speed":0.3,"crop":"1280:536:0:92","characters":["Balrog","Ken"],"grade":"true","hue":null,"note":"GLOVE CONTACT FRAME = f365 (editor frame-steps 50.05-51.97 and sets src_in; proof PNG). 0.30x after contact","lib_quality":5},{"id":"F1","layer":"strike","f_in":387,"f_out":398,"frames":11,"lib":"sf130","src_in":146.15,"src_out":146.59,"speed":1.0,"crop":"1280:536:0:92","characters":["unknown (red spin kick)"],"grade":"true","hue":null,"note":"upside-down spin kick, crowd","lib_quality":5},{"id":"F2","layer":"strike","f_in":398,"f_out":409,"frames":11,"lib":"sf128","src_in":144.86,"src_out":145.3,"speed":1.0,"crop":"1280:536:0:92","characters":["Blanka"],"grade":"true","hue":null,"note":"swats a man in an orange jumpsuit","lib_quality":3},{"id":"F3","layer":"strike","f_in":409,"f_out":420,"frames":11,"lib":"sf109","src_in":121.4,"src_out":121.84,"speed":1.0,"crop":"1280:536:0:92","characters":["Cammy"],"grade":"true","hue":null,"note":"fires rotary weapon, muzzle flash","lib_quality":3},{"id":"F4","layer":"strike","f_in":420,"f_out":430,"frames":10,"lib":"sf095","src_in":108.16,"src_out":108.56,"speed":1.0,"crop":"1280:536:0:92","characters":["Chun-Li"],"grade":"true","hue":null,"note":"slash, blade across frame","lib_quality":3},{"id":"F5","layer":"strike","f_in":430,"f_out":441,"frames":11,"lib":"sf122","src_in":139.76,"src_out":140.2,"speed":1.0,"crop":"1280:536:0:92","characters":["Blanka"],"grade":"true","hue":null,"note":"leaps across the warehouse","lib_quality":4},{"id":"F6","layer":"strike","f_in":441,"f_out":451,"frames":10,"lib":"sf084","src_in":97.4,"src_out":97.8,"speed":1.0,"crop":"1280:536:0:92","characters":["Cammy"],"grade":"true","hue":null,"note":"strides down a neon street","lib_quality":3},{"id":"F7","layer":"strike","f_in":451,"f_out":463,"frames":12,"lib":"sf131","src_in":147.0,"src_out":147.48,"speed":1.0,"crop":"1280:536:0:92","characters":["unknown (handstand)"],"grade":"true","hue":null,"note":"handstand in light shafts","lib_quality":4},{"id":"F8","layer":"strike","f_in":463,"f_out":474,"frames":11,"lib":"sf120","src_in":137.3,"src_out":137.74,"speed":1.0,"crop":"1280:536:0:92","characters":["Ken","Ryu"],"grade":"true","hue":null,"note":"back to back, warehouse","lib_quality":4},{"id":"F9","layer":"strike","f_in":474,"f_out":485,"frames":11,"lib":"sf123","src_in":140.8,"src_out":141.24,"speed":1.0,"crop":"1280:536:0:92","characters":["unknown"],"grade":"true","hue":null,"note":"fighter on the arena floor after a hit","lib_quality":4}],"tiles":[{"id":"T1","character":"Ryu","hue":"#E3203A","hue_name":"HADOU CRIMSON","lib":"sf125","src_in":142.95,"src_out":143.59,"speed":0.4,"clip_frames":40,"arrive_f":494,"freeze_from_f":534,"crop":"600:536:122:92","rect_4k":[80,2300,482,430]},{"id":"T2","character":"Ken","hue":"#FF5E1A","hue_name":"SHORYU ORANGE","lib":"sf031","src_in":37.52,"src_out":38.16,"speed":0.4,"clip_frames":40,"arrive_f":512,"freeze_from_f":552,"crop":"600:536:310:92","rect_4k":[586,2300,482,430]},{"id":"T3","character":"Dhalsim","hue":"#FFA21C","hue_name":"YOGA AMBER","lib":"sf032","src_in":38.7,"src_out":39.34,"speed":0.4,"clip_frames":40,"arrive_f":529,"freeze_from_f":569,"crop":"600:536:280:92","rect_4k":[1092,2300,482,430]},{"id":"T4","character":"Blanka","hue":"#9BEA2E","hue_name":"VOLT LIME","lib":"sf100","src_in":112.7,"src_out":113.34,"speed":0.4,"clip_frames":40,"arrive_f":547,"freeze_from_f":587,"crop":"600:536:188:92","rect_4k":[1598,2300,482,430]},{"id":"T5","character":"Guile","hue":"#17C9A6","hue_name":"SONIC TEAL","lib":"sf082","src_in":95.2,"src_out":95.84,"speed":0.4,"clip_frames":40,"arrive_f":564,"freeze_from_f":604,"crop":"600:536:180:92","rect_4k":[80,2754,482,430]},{"id":"T6","character":"Chun-Li","hue":"#2F6DFF","hue_name":"KIKOKEN BLUE","lib":"sf135","src_in":152.4,"src_out":153.04,"speed":0.4,"clip_frames":40,"arrive_f":582,"freeze_from_f":622,"crop":"600:536:550:92","rect_4k":[586,2754,482,430]},{"id":"T7","character":"M. Bison","hue":"#8B3DFF","hue_name":"PSYCHO VIOLET","lib":"sf107","src_in":119.6,"src_out":120.24,"speed":0.4,"clip_frames":40,"arrive_f":599,"freeze_from_f":639,"crop":"600:536:222:92","rect_4k":[1092,2754,482,430]},{"id":"T8","character":"E. Honda","hue":"#FF2D8F","hue_name":"SUMO MAGENTA","lib":"sf053","src_in":62.3,"src_out":62.94,"speed":0.4,"clip_frames":40,"arrive_f":616,"freeze_from_f":656,"crop":"600:536:326:92","rect_4k":[1598,2754,482,430]}],"palette":{"Ink":"#07060A","Ink Raised":"#13111A","Smoke":"#2B2632","White Hot":"#FFF8EC","Bone":"#E6DED2","Champion Gold":"#FFC94D","Gold Deep":"#C7851E","fighters":{"Ryu":"#E3203A","Ken":"#FF5E1A","Dhalsim":"#FFA21C","Blanka":"#9BEA2E","Guile":"#17C9A6","Chun-Li":"#2F6DFF","M. Bison":"#8B3DFF","E. Honda":"#FF2D8F"}},"fonts":{"name":"Unbounded 900","role":"Unbounded 500","hud":"Space Mono 700","dir":"shots/sh010/director/v001/fonts/"}};
+
+  var FX = { version: "v001", W: 2160, H: 3840, fps: 25 };
+
+  /* ------------------------------------------------------------ eases */
+  function bezier(x1, y1, x2, y2) {
+    function a(p1, p2) { return 1 - 3 * p2 + 3 * p1; }
+    function b(p1, p2) { return 3 * p2 - 6 * p1; }
+    function c(p1) { return 3 * p1; }
+    function calc(t, p1, p2) { return ((a(p1, p2) * t + b(p1, p2)) * t + c(p1)) * t; }
+    function slope(t, p1, p2) { return 3 * a(p1, p2) * t * t + 2 * b(p1, p2) * t + c(p1); }
+    return function (x) {
+      if (x <= 0) return 0;
+      if (x >= 1) return 1;
+      var t = x, i;
+      for (i = 0; i < 8; i++) {
+        var s = slope(t, x1, x2);
+        if (Math.abs(s) < 1e-6) break;
+        t -= (calc(t, x1, x2) - x) / s;
+      }
+      var lo = 0, hi = 1;
+      if (t < 0 || t > 1 || Math.abs(calc(t, x1, x2) - x) > 1e-5) {
+        t = x;
+        for (i = 0; i < 40; i++) {
+          var v = calc(t, x1, x2);
+          if (Math.abs(v - x) < 1e-6) break;
+          if (v < x) lo = t; else hi = t;
+          t = (lo + hi) / 2;
+        }
+      }
+      return calc(t, y1, y2);
+    };
+  }
+  var clamp01 = function (x) { return x < 0 ? 0 : x > 1 ? 1 : x; };
+  var ease = {
+    /* the only two eases in the film (treatment s3) */
+    out: bezier(0.16, 1, 0.3, 1),   // entrances: ease-out-expo
+    in: bezier(0.7, 0, 0.84, 0),    // exits: ease-in-expo
+    linear: function (x) { return clamp01(x); }, // ambient drift only
+    /* overshoot variant of ease.out for the 2 allowed moments:
+       name strike amt=0.04, logo slam amt=0.03. Peaks at ~55% then settles. */
+    outOver: function (x, amt) {
+      amt = amt == null ? 0.04 : amt;
+      x = clamp01(x);
+      var base = ease.out(x);
+      var bump = Math.sin(Math.PI * clamp01((x - 0.25) / 0.75)) * amt * 1.18; // peak ~= 1 + amt
+      return base + bump;
+    },
+    bezier: bezier
+  };
+  FX.ease = ease;
+  FX.clamp01 = clamp01;
+  FX.lerp = function (a, b, t) { return a + (b - a) * t; };
+  /* progress of an animation that starts at frame f0 and lasts dur frames */
+  FX.prog = function (f, f0, dur, fn) { var p = clamp01((f - f0) / dur); return fn ? fn(p) : p; };
+
+  /* ------------------------------------------------------------ cues / beats */
+  var SECTION_ALIAS = {};
+  function indexCues(c) {
+    CUES = c;
+    SECTION_ALIAS = {};
+    if (!c || !c.beats_f) return;
+    Object.keys(c.beats_f).forEach(function (k) {
+      var short = k.split("_")[0]; // "S1"
+      SECTION_ALIAS[k] = k; SECTION_ALIAS[short] = k; SECTION_ALIAS[short.toLowerCase()] = k;
+      SECTION_ALIAS[short.replace("S", "")] = k; // "1"
+    });
+    FX.cues = c;
+    FX.palette = buildPalette(c.palette);
+    FX.hues = FX.palette.fighters;
+    FX.layout = c.layout_4k;
+    FX.events = c.events;
+  }
+  FX.setCues = indexCues; // node: FX.setCues(JSON.parse(fs.readFileSync(...)))
+  function secKey(section) {
+    var k = SECTION_ALIAS[String(section)];
+    if (!k) throw new Error("FX.beat: unknown section " + section + " (use S1..S4)");
+    return k;
+  }
+  /* beat(section, n): master frame of beat n (0-based) of a section.
+     n may be negative (-1 = last). Fractional n interpolates; n beyond the
+     grid extrapolates with the section's nominal beat length. */
+  FX.beat = function (section, n) {
+    var arr = CUES.beats_f[secKey(section)];
+    if (n < 0) n = arr.length + n;
+    var i = Math.floor(n), fr = n - i;
+    if (i >= 0 && i < arr.length - 1) return arr[i] + (arr[i + 1] - arr[i]) * fr;
+    var len = FX.beatLength(section);
+    if (i < 0) return arr[0] + n * len;
+    return arr[arr.length - 1] + (n - (arr.length - 1)) * len;
+  };
+  FX.beats = function (section) { return CUES.beats_f[secKey(section)].slice(); };
+  FX.beatLength = function (section) {
+    var k = secKey(section), m = /_([\d.]+)f$/.exec(k);
+    return m ? parseFloat(m[1]) : 12;
+  };
+  FX.allBeats = function () {
+    var out = [];
+    Object.keys(CUES.beats_f).forEach(function (k) {
+      CUES.beats_f[k].forEach(function (f, i) { out.push({ f: f, section: k.split("_")[0], n: i }); });
+    });
+    return out.sort(function (a, b) { return a.f - b.f; });
+  };
+  /* last beat at or before f (any section): {f, section, n, next, since, phase 0..1} */
+  FX.beatAt = function (f) {
+    var all = FX.allBeats(), cur = null, nxt = null;
+    for (var i = 0; i < all.length; i++) { if (all[i].f <= f) cur = all[i]; else { nxt = all[i]; break; } }
+    if (!cur) return null;
+    var span = nxt ? nxt.f - cur.f : FX.beatLength(cur.section);
+    return { f: cur.f, section: cur.section, n: cur.n, next: nxt ? nxt.f : null,
+             since: f - cur.f, phase: clamp01((f - cur.f) / span) };
+  };
+  FX.event = function (name) { return CUES.events[name]; };
+  FX.shot = function (id) {
+    for (var i = 0; i < CUES.shots.length; i++) if (CUES.shots[i].id === id) return CUES.shots[i];
+    for (i = 0; i < CUES.tiles.length; i++) if (CUES.tiles[i].id === id) return CUES.tiles[i];
+    return null;
+  };
+  FX.f2t = function (f) { return f / FX.fps; };
+  FX.t2f = function (t) { return t * FX.fps; };
+
+  /* ------------------------------------------------------------ colour */
+  function hexToRgb(h) {
+    h = h.replace("#", "");
+    return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)];
+  }
+  function rgba(hex, a) { var c = hexToRgb(hex); return "rgba(" + c[0] + "," + c[1] + "," + c[2] + "," + (a == null ? 1 : a) + ")"; }
+  function mixHex(h1, h2, t) {
+    var a = hexToRgb(h1), b = hexToRgb(h2);
+    return "#" + [0, 1, 2].map(function (i) {
+      var v = Math.round(a[i] + (b[i] - a[i]) * t); return (v < 16 ? "0" : "") + v.toString(16);
+    }).join("");
+  }
+  FX.hexToRgb = hexToRgb; FX.rgba = rgba; FX.mixHex = mixHex;
+  function buildPalette(p) {
+    var out = {};
+    Object.keys(p).forEach(function (k) { if (k !== "fighters") out[k] = p[k]; });
+    out.ink = p["Ink"]; out.inkRaised = p["Ink Raised"]; out.smoke = p["Smoke"];
+    out.whiteHot = p["White Hot"]; out.bone = p["Bone"];
+    out.gold = p["Champion Gold"]; out.goldDeep = p["Gold Deep"];
+    out.fighters = Object.keys(p.fighters).map(function (name, i) {
+      return { i: i, name: name, hex: p.fighters[name], rgb: hexToRgb(p.fighters[name]) };
+    }); // wheel order: Ryu, Ken, Dhalsim, Blanka, Guile, Chun-Li, M. Bison, E. Honda
+    return out;
+  }
+  /* hue(0..7 | "Ryu" | "R1" | "T5") -> hex */
+  FX.hue = function (k) {
+    if (typeof k === "number") return FX.hues[((k % 8) + 8) % 8].hex;
+    var m = /^[RT](\d)$/.exec(k);
+    if (m) return FX.hues[parseInt(m[1], 10) - 1].hex;
+    for (var i = 0; i < 8; i++) if (FX.hues[i].name.toLowerCase() === String(k).toLowerCase()) return FX.hues[i].hex;
+    if (/^#/.test(k)) return k;
+    throw new Error("FX.hue: unknown " + k);
+  };
+
+  /* ------------------------------------------------------------ random / noise */
+  function mulberry32(a) {
+    a = a >>> 0;
+    return function () {
+      a = (a + 0x6d2b79f5) >>> 0;
+      var t = a;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function hash1(i, seed) { return mulberry32((i * 374761393 + seed * 668265263) | 0)(); }
+  /* smooth 1D value noise, 0..1 */
+  function noise1(x, seed) {
+    var i = Math.floor(x), f = x - i, u = f * f * (3 - 2 * f);
+    return hash1(i, seed) * (1 - u) + hash1(i + 1, seed) * u;
+  }
+  FX.rng = mulberry32; FX.hash1 = hash1; FX.noise1 = noise1;
+
+  /* ------------------------------------------------------------ canvas helpers */
+  FX.canvas = function (w, h) {
+    if (typeof OffscreenCanvas !== "undefined" && typeof document === "undefined") return new OffscreenCanvas(w, h);
+    var c = document.createElement("canvas"); c.width = w; c.height = h; return c;
+  };
+  /* mount(canvas, draw, opts): draws draw(ctx, f, t) on every HyperFrames seek.
+     opts.startFrame = master frame at composition time 0 (default 0), so draw()
+     always receives master frames. opts.scale is passed as ctx.s. */
+  FX.mount = function (canvas, draw, opts) {
+    opts = opts || {};
+    var ctx = canvas.getContext("2d");
+    var s = opts.scale != null ? opts.scale : canvas.width / FX.W;
+    function renderAt(t) {
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.globalCompositeOperation = "source-over";
+      ctx.globalAlpha = 1;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      draw(ctx, (opts.startFrame || 0) + t * FX.fps, t, s);
+    }
+    if (typeof window !== "undefined") {
+      window.addEventListener("hf-seek", function (e) { renderAt(e.detail.time); });
+    }
+    renderAt(0);
+    return renderAt;
+  };
+
+  /* sprite cache: soft radial dot, white or tinted */
+  var spriteCache = {};
+  function dotSprite(hex, size, hard) {
+    var key = hex + "|" + size + "|" + hard;
+    if (spriteCache[key]) return spriteCache[key];
+    var c = FX.canvas(size, size), g = c.getContext("2d"), r = size / 2;
+    var gr = g.createRadialGradient(r, r, 0, r, r, r);
+    var col = hexToRgb(hex);
+    var cs = "rgba(" + col[0] + "," + col[1] + "," + col[2] + ",";
+    gr.addColorStop(0, cs + "1)");
+    gr.addColorStop(hard, cs + "0.9)");
+    gr.addColorStop(Math.min(0.99, hard + (1 - hard) * 0.35), cs + "0.25)");
+    gr.addColorStop(1, cs + "0)");
+    g.fillStyle = gr; g.fillRect(0, 0, size, size);
+    spriteCache[key] = c;
+    return c;
+  }
+  FX.dotSprite = dotSprite;
+
+  /* ------------------------------------------------------------ INK-BRUSH WIPE */
+  /* Horizontal dry-brush matte sweeping L->R. 3 variants:
+     0 "dry"   ragged bristles, many dry gaps (default)
+     1 "wet"   smooth loaded brush, rounded belly, few gaps
+     2 "split" two-lobed stroke with a slight tilt and streaky gaps        */
+  var WIPE_VARIANTS = [
+    { name: "dry",   lowAmp: 0.30, lowFreq: 2.2, jit: 0.55, gap: 0.42, tilt: 0.10, row: [2, 7] },
+    { name: "wet",   lowAmp: 0.55, lowFreq: 1.2, jit: 0.18, gap: 0.10, tilt: 0.00, row: [4, 12] },
+    { name: "split", lowAmp: 0.40, lowFreq: 3.4, jit: 0.35, gap: 0.28, tilt: 0.22, row: [3, 9] }
+  ];
+  FX.WIPE_VARIANTS = WIPE_VARIANTS;
+  var rowCache = {};
+  /* rows in normalised units (v 0..1), built for a 4K-pixel height hpx */
+  function wipeRows(variant, seed, hpx) {
+    var key = variant + "|" + seed + "|" + Math.round(hpx);
+    if (rowCache[key]) return rowCache[key];
+    var V = WIPE_VARIANTS[variant], R = mulberry32(seed * 7919 + variant * 104729 + 17);
+    var rows = [], y = 0;
+    while (y < hpx) {
+      var th = V.row[0] + R() * (V.row[1] - V.row[0]);
+      var v = (y + th / 2) / hpx;
+      var low = noise1(v * V.lowFreq * 4, seed + 11) * 0.65 + noise1(v * V.lowFreq * 11, seed + 23) * 0.35;
+      if (variant === 1) low = low * 0.6 + (1 - Math.sin(Math.PI * v)) * 0.4;       // belly leads
+      if (variant === 2) low = low * 0.6 + (0.5 + 0.5 * Math.cos(v * Math.PI * 4)) * 0.4; // two lobes
+      var lag = V.lowAmp * low + V.jit * R() * R() + V.tilt * v;
+      var hasGap = R() < V.gap;
+      rows.push({ v0: y / hpx, v1: Math.min(1, (y + th) / hpx), lag: lag,
+                  gap: hasGap ? { at: 0.02 + R() * 0.16, len: 0.03 + R() * 0.22 } : null,
+                  bright: 0.6 + R() * 0.4 });
+      y += th;
+    }
+    var mx = 0; rows.forEach(function (r) { mx = Math.max(mx, r.lag); });
+    rows.forEach(function (r) { r.lag /= mx || 1; });
+    rowCache[key] = rows;
+    return rows;
+  }
+  /* wipe progress for a wipe that starts on frame f0 (default 6 f, ease.out) */
+  FX.wipeProgress = function (f, f0, dur, fn) { return (fn || ease.out)(clamp01((f - f0) / (dur || 6))); };
+  /* geometry shared by matte + fringe so they always line up */
+  function wipeEdges(rect, p, opt) {
+    var s = opt.s == null ? 1 : opt.s;
+    var x = rect[0], y = rect[1], w = rect[2], h = rect[3];
+    var variant = opt.variant || 0, seed = opt.seed == null ? 1 : opt.seed;
+    var rows = wipeRows(variant, seed, h / s);
+    var maxLag = (opt.ragged == null ? 0.22 : opt.ragged) * w;   // raggedness of the leading edge
+    var fr = (opt.fringe == null ? 40 : opt.fringe) * s;
+    var travel = w + maxLag + 2 * fr + 4 * s;
+    var head = x - fr + p * travel;                               // leading point of the brush
+    var gapK = 1 - clamp01((p - 0.6) / 0.35);                     // gaps close before p = 1
+    return { rows: rows, x: x, y: y, w: w, h: h, s: s, head: head, maxLag: maxLag, fr: fr, gapK: gapK };
+  }
+  /* brushMatte(ctx, rect, p, opt): fills the REVEALED part (opaque) of rect.
+     p 0 = nothing, 1 = full rect. opt: {variant 0-2, seed, s, ragged, fringe, color}
+     ALWAYS draw it source-over onto its own (cleared) canvas, then apply that
+     canvas once with "destination-in" (see brushWipe) or use it as a CSS mask.
+     Drawing it directly with "destination-in" erases the layer (many rects). */
+  FX.brushMatte = function (ctx, rect, p, opt) {
+    opt = opt || {};
+    if (p <= 0) return;
+    ctx.save();
+    ctx.beginPath(); ctx.rect(rect[0], rect[1], rect[2], rect[3]); ctx.clip();
+    ctx.fillStyle = opt.color || "#ffffff";
+    if (p >= 1) { ctx.fillRect(rect[0], rect[1], rect[2], rect[3]); ctx.restore(); return; }
+    var E = wipeEdges(rect, p, opt);
+    for (var i = 0; i < E.rows.length; i++) {
+      var r = E.rows[i];
+      var y0 = E.y + r.v0 * E.h, y1 = E.y + r.v1 * E.h;
+      var ex = E.head - r.lag * E.maxLag;
+      if (ex <= E.x) continue;
+      var hh = y1 - y0 + 0.75; // overlap rows: no hairline seams
+      if (r.gap && E.gapK > 0) {
+        var g0 = ex - (r.gap.at + r.gap.len) * E.w * 0.5 * E.gapK;
+        var g1 = ex - r.gap.at * E.w * 0.5 * E.gapK;
+        if (g0 > E.x) ctx.fillRect(E.x, y0, g0 - E.x, hh);
+        if (ex > g1) ctx.fillRect(Math.max(E.x, g1), y0, ex - Math.max(E.x, g1), hh);
+      } else {
+        ctx.fillRect(E.x, y0, ex - E.x, hh);
+      }
+    }
+    ctx.restore();
+  };
+  /* brushFringe(ctx, rect, p, hex, opt): the 40 px glowing leading edge in hex,
+     with a thin White Hot tip. Draws additively ("lighter"). Draw it ABOVE the
+     revealed layer. opt.alpha (default 1), same opt as brushMatte. */
+  FX.brushFringe = function (ctx, rect, p, hex, opt) {
+    opt = opt || {};
+    if (p <= 0 || p >= 1) return;
+    var E = wipeEdges(rect, p, opt), a = opt.alpha == null ? 1 : opt.alpha;
+    ctx.save();
+    ctx.beginPath(); ctx.rect(rect[0], rect[1], rect[2], rect[3]); ctx.clip();
+    ctx.globalCompositeOperation = opt.composite || "lighter";
+    var fr = E.fr;
+    var gFr = ctx.createLinearGradient(-fr, 0, 0, 0);
+    gFr.addColorStop(0, rgba(hex, 0));
+    gFr.addColorStop(0.55, rgba(hex, 0.45 * a));
+    gFr.addColorStop(1, rgba(hex, 0.95 * a));
+    var gHalo = ctx.createLinearGradient(0, 0, fr * 1.6, 0);
+    gHalo.addColorStop(0, rgba(hex, 0.5 * a));
+    gHalo.addColorStop(1, rgba(hex, 0));
+    var tip = Math.max(1, 3 * E.s), wh = FX.palette ? FX.palette.whiteHot : "#FFF8EC";
+    for (var i = 0; i < E.rows.length; i++) {
+      var r = E.rows[i];
+      var y0 = E.y + r.v0 * E.h, hh = (r.v1 - r.v0) * E.h + 0.75;
+      var ex = E.head - r.lag * E.maxLag;
+      if (ex < E.x - fr) continue;
+      ctx.save(); ctx.translate(ex, 0); ctx.globalAlpha = r.bright;
+      ctx.fillStyle = gFr; ctx.fillRect(-fr, y0, fr, hh);
+      ctx.fillStyle = gHalo; ctx.fillRect(0, y0, fr * 1.6, hh);
+      ctx.fillStyle = rgba(wh, 0.85 * a); ctx.fillRect(-tip, y0, tip, hh);
+      ctx.restore();
+    }
+    ctx.restore();
+  };
+  /* convenience: whole wipe at master frame f. Draws `drawNew(ctx)` revealed
+     through the matte into a scratch canvas, then the fringe. */
+  FX.brushWipe = function (ctx, f, f0, rect, hex, drawNew, opt) {
+    opt = opt || {};
+    var p = FX.wipeProgress(f, f0, opt.dur || 6, opt.ease);
+    if (p <= 0) return p;
+    var cw = ctx.canvas.width, ch = ctx.canvas.height;
+    var tmp = FX._wipeTmp && FX._wipeTmp.width === cw && FX._wipeTmp.height === ch ? FX._wipeTmp : (FX._wipeTmp = FX.canvas(cw, ch));
+    var t = tmp.getContext("2d");
+    t.setTransform(1, 0, 0, 1, 0, 0); t.globalCompositeOperation = "source-over"; t.clearRect(0, 0, cw, ch);
+    drawNew(t);
+    // matte goes into its own canvas first: per-row fillRects under "destination-in"
+    // would each erase everything outside themselves.
+    var mc = FX._wipeMatte && FX._wipeMatte.width === cw && FX._wipeMatte.height === ch ? FX._wipeMatte : (FX._wipeMatte = FX.canvas(cw, ch));
+    var m = mc.getContext("2d");
+    m.setTransform(1, 0, 0, 1, 0, 0); m.globalCompositeOperation = "source-over"; m.clearRect(0, 0, cw, ch);
+    FX.brushMatte(m, rect, p, opt);
+    t.globalCompositeOperation = "destination-in";
+    t.drawImage(mc, 0, 0);
+    t.globalCompositeOperation = "source-over";
+    ctx.drawImage(tmp, 0, 0);
+    FX.brushFringe(ctx, rect, p, hex, opt);
+    return p;
+  };
+
+  /* ------------------------------------------------------------ COLOUR PLUME / GLOW */
+  /* glow(ctx, x, y, r, hex, a): soft additive radial glow */
+  FX.glow = function (ctx, x, y, r, hex, a, composite) {
+    if (r <= 0 || a <= 0) return;
+    ctx.save();
+    ctx.globalCompositeOperation = composite || "lighter";
+    var g = ctx.createRadialGradient(x, y, 0, x, y, r);
+    g.addColorStop(0, rgba(hex, a));
+    g.addColorStop(0.35, rgba(hex, a * 0.45));
+    g.addColorStop(0.7, rgba(hex, a * 0.12));
+    g.addColorStop(1, rgba(hex, 0));
+    ctx.fillStyle = g; ctx.fillRect(x - r, y - r, 2 * r, 2 * r);
+    ctx.restore();
+  };
+  /* plume(ctx, f, hex, opt): the breathing colour plume from the frame edges.
+     Loops every opt.period frames (default 100 = 4 s) seamlessly.
+     opt: {opacity 0.25 max, seed, s, w, h, depth 0.2 parallax drift, blobs 7} */
+  FX.plume = function (ctx, f, hex, opt) {
+    opt = opt || {};
+    var s = opt.s == null ? 1 : opt.s, W = opt.w || FX.W * s, H = opt.h || FX.H * s;
+    var op = opt.opacity == null ? 0.25 : opt.opacity, period = opt.period || 100;
+    var seed = opt.seed == null ? 3 : opt.seed, n = opt.blobs || 7;
+    var ph = (((f % period) + period) % period) / period * Math.PI * 2;
+    var R = mulberry32(seed * 131 + 7);
+    ctx.save();
+    ctx.globalCompositeOperation = opt.composite || "lighter";
+    for (var i = 0; i < n; i++) {
+      var side = i % 4; // 0 L, 1 R, 2 top, 3 bottom
+      var along = 0.1 + R() * 0.8, k1 = 1 + Math.floor(R() * 2), off = R() * 6.283;
+      var bx, by;
+      var drift = Math.sin(ph * k1 + off) * 0.06;
+      if (side === 0) { bx = -0.05 * W; by = (along + drift) * H; }
+      else if (side === 1) { bx = 1.05 * W; by = (along - drift) * H; }
+      else if (side === 2) { bx = (along + drift) * W; by = -0.03 * H; }
+      else { bx = (along - drift) * W; by = 1.03 * H; }
+      var r = (0.45 + R() * 0.35) * W * (1 + 0.12 * Math.sin(ph + off));
+      var a = op * (0.55 + 0.45 * (0.5 + 0.5 * Math.sin(ph * k1 + off * 1.7)));
+      var g = ctx.createRadialGradient(bx, by, 0, bx, by, r);
+      g.addColorStop(0, rgba(hex, a));
+      g.addColorStop(0.4, rgba(hex, a * 0.5));
+      g.addColorStop(0.75, rgba(hex, a * 0.12));
+      g.addColorStop(1, rgba(hex, 0));
+      ctx.fillStyle = g; ctx.fillRect(bx - r, by - r, 2 * r, 2 * r);
+    }
+    ctx.restore();
+  };
+
+  /* ------------------------------------------------------------ DUST MOTES */
+  /* dust(ctx, f, opt): faint drifting motes, wrap around the frame forever.
+     opt: {count 90, seed, s, w, h, hues: "all" | [hex..] (default all 8 + Bone),
+           opacity 0.55, speed 1 (px/f at 4K ~ 0.2x layer), size [3,9] 4K px,
+           inFrom: [f0, f1] -> motes fly in from the nearest frame edge (ease.out)} */
+  FX.dust = function (ctx, f, opt) {
+    opt = opt || {};
+    var s = opt.s == null ? 1 : opt.s, W = opt.w || FX.W * s, H = opt.h || FX.H * s;
+    var n = opt.count == null ? 90 : opt.count, seed = opt.seed == null ? 5 : opt.seed;
+    var op = opt.opacity == null ? 0.55 : opt.opacity, sp = opt.speed == null ? 1 : opt.speed;
+    var size = opt.size || [3, 9];
+    var hues = opt.hues && opt.hues !== "all" ? opt.hues : FX.hues.map(function (h) { return h.hex; }).concat([FX.palette.bone, FX.palette.bone]);
+    var inP = opt.inFrom ? ease.out(clamp01((f - opt.inFrom[0]) / (opt.inFrom[1] - opt.inFrom[0]))) : 1;
+    var R = mulberry32(seed * 977 + 3), M = 40 * s;
+    ctx.save();
+    ctx.globalCompositeOperation = opt.composite || "lighter";
+    for (var i = 0; i < n; i++) {
+      var x0 = R() * W, y0 = R() * H, ang = R() * 6.283, v = (0.15 + R() * 0.5) * sp * s;
+      var sz = (size[0] + R() * (size[1] - size[0])) * s, hex = hues[Math.floor(R() * hues.length)];
+      var tw = R() * 6.283, twf = 0.03 + R() * 0.05, wob = (6 + R() * 18) * s, wf = 0.01 + R() * 0.02;
+      var depth = 0.4 + R() * 0.6;
+      var x = x0 + Math.cos(ang) * v * f + Math.sin(f * wf + tw) * wob;
+      var y = y0 + Math.sin(ang) * v * f - 0.08 * s * f + Math.cos(f * wf * 1.3 + tw) * wob;
+      x = ((x + M) % (W + 2 * M) + (W + 2 * M)) % (W + 2 * M) - M;
+      y = ((y + M) % (H + 2 * M) + (H + 2 * M)) % (H + 2 * M) - M;
+      if (inP < 1) { // fly in from nearest edge
+        var dl = x, dr = W - x, dt = y, db = H - y, m = Math.min(dl, dr, dt, db), ex = x, ey = y;
+        if (m === dl) ex = -M; else if (m === dr) ex = W + M; else if (m === dt) ey = -M; else ey = H + M;
+        var pi = clamp01(inP * 1.4 - (i % 7) * 0.05);
+        x = ex + (x - ex) * pi; y = ey + (y - ey) * pi;
+      }
+      var a = op * depth * (0.55 + 0.45 * Math.sin(f * twf * 6.283 + tw)) * (opt.inFrom ? Math.min(1, inP * 2) : 1);
+      if (a <= 0.002) continue;
+      ctx.globalAlpha = Math.min(1, a);
+      var spr = dotSprite(hex, 64, 0.18);
+      ctx.drawImage(spr, x - sz * 1.5, y - sz * 1.5, sz * 3, sz * 3);
+    }
+    ctx.restore();
+  };
+
+  /* ------------------------------------------------------------ SPARKS */
+  /* Analytic ballistic sparks (no state): pos(t) under drag + gravity.
+     sparks(ctx, f, opt): opt = {
+       f0: emit frame (all sparks born in a burst over opt.emit frames, default 2),
+       origins: [{x, y, hex, dir (radians, 0 = right, -PI/2 = up), spread (radians)}],
+       count 220 (split across origins), seed, s,
+       life [8,20] f, speed [900,3200] 4K px/s, gravity 1800 px/s^2, drag 0.08 per frame,
+       trail 1.6 f, width [2,6] 4K px, whiteCore true }                  */
+  FX.sparks = function (ctx, f, opt) {
+    var s = opt.s == null ? 1 : opt.s, orgs = opt.origins, n = opt.count == null ? 220 : opt.count;
+    var seed = opt.seed == null ? 9 : opt.seed, life = opt.life || [8, 20], spd = opt.speed || [900, 3200];
+    var g = (opt.gravity == null ? 1800 : opt.gravity) * s, dragF = opt.drag == null ? 0.08 : opt.drag;
+    var k = -Math.log(1 - Math.min(0.99, dragF)) * FX.fps; // per second
+    var trail = opt.trail == null ? 1.6 : opt.trail, wr = opt.width || [2, 6], emit = opt.emit == null ? 2 : opt.emit;
+    var wh = FX.palette.whiteHot;
+    function pos(o, vx, vy, tt) {
+      if (tt <= 0) return [o.x, o.y];
+      var e = (1 - Math.exp(-k * tt)) / k;
+      return [o.x + vx * e, o.y + (vy + g / k) * e - g * tt / k];
+    }
+    var R = mulberry32(seed * 4241 + 1);
+    ctx.save();
+    ctx.globalCompositeOperation = opt.composite || "lighter";
+    ctx.lineCap = "round";
+    for (var i = 0; i < n; i++) {
+      var o = orgs[i % orgs.length];
+      var r1 = R(), r2 = R();
+      var dir = o.dir == null ? r1 * 6.283 : o.dir + (r2 - 0.5) * (o.spread == null ? 1.2 : o.spread);
+      var v = (spd[0] + Math.pow(R(), 1.6) * (spd[1] - spd[0])) * s;
+      var L = life[0] + R() * (life[1] - life[0]), birth = opt.f0 + R() * emit;
+      var w = (wr[0] + R() * (wr[1] - wr[0])) * s, hot = R();
+      var age = f - birth;
+      if (age < 0 || age > L) continue;
+      var vx = Math.cos(dir) * v, vy = Math.sin(dir) * v;
+      var lf = age / L, fade = 1 - lf * lf;
+      var p1 = pos(o, vx, vy, age / FX.fps), p0 = pos(o, vx, vy, Math.max(0, age - trail) / FX.fps);
+      var hex = o.hex || wh;
+      ctx.strokeStyle = hex; ctx.lineWidth = w * 2.6;
+      ctx.globalAlpha = 0.35 * fade;
+      ctx.beginPath(); ctx.moveTo(p0[0], p0[1]); ctx.lineTo(p1[0], p1[1]); ctx.stroke();
+      ctx.globalAlpha = 0.95 * fade;
+      ctx.lineWidth = w;
+      ctx.beginPath(); ctx.moveTo(p0[0], p0[1]); ctx.lineTo(p1[0], p1[1]); ctx.stroke();
+      if (opt.whiteCore !== false) {
+        // hue -> White Hot: young sparks have a hot core, fading out with age
+        ctx.globalAlpha = fade * (1 - lf) * (0.5 + 0.5 * hot);
+        ctx.strokeStyle = wh; ctx.lineWidth = Math.max(1, w * 0.45);
+        ctx.beginPath(); ctx.moveTo((p0[0] + p1[0]) / 2, (p0[1] + p1[1]) / 2); ctx.lineTo(p1[0], p1[1]); ctx.stroke();
+      }
+    }
+    ctx.restore();
+  };
+
+  /* ------------------------------------------------------------ LIGHT POINT */
+  /* lightPoint(ctx, x, y, f, opt): White Hot point, 24 px core + 80 px soft halo,
+     8-hue fringe 6 px wide rotating 15 deg/frame (wheel order clockwise from 12).
+     opt: {scale 1 (MG2 breathes 1.0 -> 1.15), s, intensity 1, rot (deg/f) 15} */
+  FX.lightPoint = function (ctx, x, y, f, opt) {
+    opt = opt || {};
+    var s = (opt.s == null ? 1 : opt.s) * (opt.scale == null ? 1 : opt.scale);
+    var I = opt.intensity == null ? 1 : opt.intensity, wh = FX.palette.whiteHot;
+    var core = 12 * s, halo = 80 * s, fw = 6 * s;
+    var rot = (opt.rot == null ? 15 : opt.rot) * f * Math.PI / 180;
+    ctx.save();
+    ctx.globalCompositeOperation = opt.composite || "lighter";
+    // halo
+    var g = ctx.createRadialGradient(x, y, 0, x, y, halo);
+    g.addColorStop(0, rgba(wh, 0.55 * I)); g.addColorStop(0.25, rgba(wh, 0.22 * I));
+    g.addColorStop(0.6, rgba(wh, 0.06 * I)); g.addColorStop(1, rgba(wh, 0));
+    ctx.fillStyle = g; ctx.fillRect(x - halo, y - halo, halo * 2, halo * 2);
+    // 8-hue fringe ring (each hue a 45 deg arc, soft radial falloff)
+    var r0 = core * 0.85, r1 = core + fw;
+    for (var i = 0; i < 8; i++) {
+      var a0 = -Math.PI / 2 + rot + i * Math.PI / 4, a1 = a0 + Math.PI / 4 + 0.02;
+      var hex = FX.hues[i].hex;
+      var rg = ctx.createRadialGradient(x, y, r0, x, y, r1 + fw);
+      rg.addColorStop(0, rgba(hex, 0)); rg.addColorStop(0.35, rgba(hex, 0.95 * I));
+      rg.addColorStop(1, rgba(hex, 0));
+      ctx.fillStyle = rg;
+      ctx.beginPath(); ctx.moveTo(x, y); ctx.arc(x, y, r1 + fw, a0, a1); ctx.closePath(); ctx.fill();
+    }
+    // core: solid White Hot disc with a 2 px soft edge (drawn source-over so it stays exactly White Hot)
+    ctx.globalCompositeOperation = "source-over";
+    var cg = ctx.createRadialGradient(x, y, 0, x, y, core + 2 * s);
+    cg.addColorStop(0, rgba(wh, I)); cg.addColorStop(core / (core + 2 * s), rgba(wh, I)); cg.addColorStop(1, rgba(wh, 0));
+    ctx.fillStyle = cg;
+    ctx.beginPath(); ctx.arc(x, y, core + 2 * s, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
+  };
+
+  /* ------------------------------------------------------------ GLOW STROKE */
+  /* glowStroke(ctx, pts [[x,y]..], hex, opt): additive core + glow polyline
+     (rays, streaks, spirals). opt: {core 10, glow 60, alpha 1, s, whiteCore} */
+  FX.glowStroke = function (ctx, pts, hex, opt) {
+    opt = opt || {};
+    if (!pts || pts.length < 2) return;
+    var s = opt.s == null ? 1 : opt.s, a = opt.alpha == null ? 1 : opt.alpha;
+    var core = (opt.core || 10) * s, glow = (opt.glow || 60) * s;
+    ctx.save();
+    ctx.globalCompositeOperation = opt.composite || "lighter";
+    ctx.lineCap = "round"; ctx.lineJoin = "round";
+    function path() { ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]); for (var i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]); }
+    var layers = [[glow, 0.10], [glow * 0.55, 0.16], [glow * 0.28, 0.28], [core, 0.95]];
+    for (var j = 0; j < layers.length; j++) {
+      ctx.strokeStyle = rgba(hex, layers[j][1] * a); ctx.lineWidth = layers[j][0]; path(); ctx.stroke();
+    }
+    if (opt.whiteCore !== false) {
+      ctx.strokeStyle = rgba(FX.palette.whiteHot, 0.85 * a); ctx.lineWidth = Math.max(1, core * 0.35); path(); ctx.stroke();
+    }
+    ctx.restore();
+  };
+
+  indexCues(CUES);
+  return FX;
+});
+
+  </script>
+  <script>
+    // MG3 'SPECTRUM' flurry + wall + title. GENERATED by tools/build.py; scene time = master frame / 25.
+    const EOUT = (p) => FX.ease.out(p);   // entrances cubic-bezier(0.16,1,0.3,1)
+    const EIN  = (p) => FX.ease.in(p);    // exits     cubic-bezier(0.7,0,0.84,0)
+    const tl = gsap.timeline({ paused: true });
+    gsap.set("#mg3-stage", { scale: 1 });
+    
+    const OFF = 0, PX = 1;            // canvas backing px per 4K px
+    const NL = {"font": {"family": "Unbounded", "weight": 900, "file": "shots/sh010/director/v001/fonts/Unbounded-900.ttf", "size_px": 306.667, "cap_height_px": 230.0, "letter_spacing_px": 6.133, "tracking_em": 0.02, "kerning": "font GPOS on (only pairs in the name: A-Y -165u, R-O -9u)", "text_transform": "none (text is already caps)", "ascent_px": 305.133, "descent_px": 75.133}, "lines": [{"baseline_y": 1395.0, "glyphs": [{"ch": "V", "pen_x": 435.23}, {"ch": "I", "pen_x": 738.22}, {"ch": "N", "pen_x": 860.27}, {"ch": "A", "pen_x": 1171.54}, {"ch": "Y", "pen_x": 1432.51}]}, {"baseline_y": 1665.0, "glyphs": [{"ch": "K", "pen_x": 146.81}, {"ch": "R", "pen_x": 427.41}, {"ch": "I", "pen_x": 702.19}, {"ch": "S", "pen_x": 824.24}, {"ch": "H", "pen_x": 1097.17}, {"ch": "A", "pen_x": 1396.48}, {"ch": "N", "pen_x": 1708.05}]}, {"baseline_y": 1935.0, "glyphs": [{"ch": "R", "pen_x": 172.57}, {"ch": "O", "pen_x": 444.59}, {"ch": "H", "pen_x": 750.03}, {"ch": "I", "pen_x": 1049.33}, {"ch": "L", "pen_x": 1171.39}, {"ch": "L", "pen_x": 1417.03}, {"ch": "A", "pen_x": 1662.67}]}]};
+    const RIMS = [[387, "#E3203A"], [398, "#FF5E1A"], [409, "#FFA21C"], [420, "#9BEA2E"], [430, "#17C9A6"], [441, "#2F6DFF"], [451, "#8B3DFF"], [463, "#FF2D8F"], [474, "#E3203A"]], TILES = [[494, "#E3203A", [80, 2300, 482, 430]], [512, "#FF5E1A", [586, 2300, 482, 430]], [529, "#FFA21C", [1092, 2300, 482, 430]], [547, "#9BEA2E", [1598, 2300, 482, 430]], [564, "#17C9A6", [80, 2754, 482, 430]], [582, "#2F6DFF", [586, 2754, 482, 430]], [599, "#8B3DFF", [1092, 2754, 482, 430]], [616, "#FF2D8F", [1598, 2754, 482, 430]]];
+    const PAL = FX.palette, WHITE = PAL.whiteHot, GOLD = PAL.gold, GOLDD = PAL.goldDeep;
+    const W4 = 2160, H4 = 3840;
+    function mk(el) { const c = el || document.createElement("canvas"); c.width = Math.round(W4 * PX); c.height = Math.round(H4 * PX); return c; }
+    const nmC = mk(document.getElementById("mg3-name")), bkC = mk(document.getElementById("mg3-bk")), frC = mk(document.getElementById("mg3-fr"));
+    const nm = nmC.getContext("2d"), bk = bkC.getContext("2d"), fr = frC.getContext("2d");
+    const tmpC = mk(), tmp = tmpC.getContext("2d");
+    const reset = (c) => { c.setTransform(PX, 0, 0, PX, 0, 0); c.globalAlpha = 1; c.globalCompositeOperation = "source-over"; c.filter = "none"; };
+    const FONT = "900 " + NL.font.size_px + "px Unbounded";
+    // same glyph placement as MG2 (each glyph at pen_x on its baseline)
+    function nameAt(c, ox, oy, mode) {
+      c.save(); c.translate(ox, oy); c.font = FONT; c.textBaseline = "alphabetic"; c.textAlign = "left";
+      for (const ln of NL.lines) for (const g of ln.glyphs) {
+        if (mode !== "fill") c.strokeText(g.ch, g.pen_x, ln.baseline_y);
+        if (mode !== "stroke") c.fillText(g.ch, g.pen_x, ln.baseline_y);
+      }
+      c.restore();
+    }
+    const cache = new Map();
+    function glowName(colour, blur, stroke) {   // blurred copy of the name, cached
+      const key = colour + "|" + blur + "|" + stroke;
+      if (cache.has(key)) return cache.get(key);
+      reset(tmp); tmp.clearRect(0, 0, W4, H4);
+      tmp.fillStyle = colour; tmp.strokeStyle = colour; tmp.lineWidth = stroke; tmp.lineJoin = "round";
+      nameAt(tmp, 0, 0, stroke > 0 ? "both" : "fill");
+      const out = mk(), o = out.getContext("2d");
+      o.filter = "blur(" + (blur * PX) + "px)"; o.drawImage(tmpC, 0, 0);
+      cache.set(key, out); return out;
+    }
+    const pr = FX.prog, EO = FX.ease.out, EI = FX.ease.in;
+    function drawName(f) {
+      reset(nm); nm.clearRect(0, 0, W4, H4);
+      if (f < 387 - 0.01) return;
+      // breath f634-669: the gold glow swells once
+      const br = f >= 634 && f <= 669 ? Math.sin(Math.PI * (f - 634) / 35) : 0;
+      // MG2's settled look: gold glow 45 % (18 px) + 30 % (36 px), Gold Deep keyline (0,+6), White Hot fill
+      nm.save(); nm.setTransform(1, 0, 0, 1, 0, 0);
+      nm.globalAlpha = Math.min(1, 0.45 * (1 + 0.6 * br)); nm.drawImage(glowName(GOLD, 18, 10), 0, 0);
+      nm.globalAlpha = Math.min(1, 0.30 * (1 + 1.2 * br)); nm.drawImage(glowName(GOLD, 36, 10), 0, 0);
+      nm.restore();
+      // rim pulse: on every flurry cut the rim takes that cut's hue at 30 %, decaying over 4 f
+      for (const [rf, hex] of RIMS) {
+        if (f >= rf - 0.01 && f < rf + 4) {
+          const a = 0.30 * (1 - EI(pr(f, rf, rf + 4)));
+          nm.save(); nm.setTransform(1, 0, 0, 1, 0, 0); nm.globalCompositeOperation = "lighter";
+          nm.globalAlpha = a; nm.drawImage(glowName(hex, 14, 16), 0, 0); nm.restore();
+          nm.save(); nm.globalAlpha = Math.min(1, a * 2); nm.strokeStyle = hex; nm.lineWidth = 10; nm.lineJoin = "round"; nameAt(nm, 0, 0, "stroke"); nm.restore();
+        }
+      }
+      nm.save(); nm.fillStyle = GOLDD; nm.strokeStyle = GOLDD; nm.lineWidth = 4; nm.lineJoin = "round"; nameAt(nm, 0, 6, "both"); nm.restore();
+      nm.save(); nm.fillStyle = WHITE; nameAt(nm, 0, 0, "fill"); nm.restore();
+      // light sweep f651-669: a White Hot glow band crosses the name L->R (linear)
+      if (f >= 651 && f < 670) {
+        const x = -300 + pr(f, 651, 669) * (W4 + 600);
+        reset(tmp); tmp.clearRect(0, 0, W4, H4);
+        tmp.setTransform(1, 0, 0, 1, 0, 0); tmp.drawImage(glowName(WHITE, 22, 6), 0, 0);
+        tmp.setTransform(PX, 0, 0, PX, 0, 0); tmp.globalCompositeOperation = "destination-in";
+        const g = tmp.createLinearGradient(x - 260, 0, x + 260, 0);
+        g.addColorStop(0, "rgba(0,0,0,0)"); g.addColorStop(0.5, "rgba(0,0,0,1)"); g.addColorStop(1, "rgba(0,0,0,0)");
+        tmp.fillStyle = g; tmp.fillRect(0, 0, W4, H4);
+        nm.save(); nm.setTransform(1, 0, 0, 1, 0, 0); nm.globalCompositeOperation = "lighter"; nm.globalAlpha = 0.9;
+        nm.drawImage(tmpC, 0, 0); nm.drawImage(tmpC, 0, 0); nm.restore();
+      }
+    }
+    const maskC = [], maskEl = [];
+    TILES.forEach((t, i) => {
+      const c = document.createElement("canvas"); c.width = Math.max(1, Math.round(t[2][2] * PX)); c.height = Math.max(1, Math.round(t[2][3] * PX));
+      maskC.push(c); maskEl.push(document.getElementById("mg3-t" + (i + 1) + "m"));
+    });
+    function setMask(el, v) { el.style.webkitMaskImage = v; el.style.maskImage = v; el.style.webkitMaskSize = "100% 100%"; el.style.maskSize = "100% 100%"; }
+    function drawTiles(f) {
+      reset(fr); fr.clearRect(0, 0, W4, H4);
+      TILES.forEach(([a, hex, r], i) => {
+        const p = FX.wipeProgress(f, a, 6), opt = { variant: i % 3, seed: i + 1, s: 1 };
+        const el = maskEl[i];
+        if (p >= 1) { setMask(el, "none"); return; }
+        if (p <= 0) { setMask(el, "linear-gradient(transparent, transparent)"); return; }
+        const c = maskC[i], m = c.getContext("2d");
+        m.setTransform(PX, 0, 0, PX, 0, 0); m.clearRect(0, 0, r[2], r[3]);
+        FX.brushMatte(m, [0, 0, r[2], r[3]], p, opt);
+        setMask(el, "url(" + c.toDataURL() + ")");
+        FX.brushFringe(fr, r, p, hex, opt);
+      });
+    }
+    function drawBack(f) {
+      reset(bk); bk.clearRect(0, 0, W4, H4);
+      if (f >= 634) { bk.save(); bk.globalAlpha = EO(pr(f, 634, 660)); FX.dust(bk, f, { count: 90, s: 1, opacity: 0.5 }); bk.restore(); }
+    }
+    function draw(f) { f = Math.round(f * 1000) / 1000; drawBack(f); drawName(f); drawTiles(f); }
+    
+    tl.set("#mg3-winb",{borderColor:"#E3203A"},15.46);tl.set("#mg3-winb",{borderColor:"#2B2632"},15.54);
+    tl.set("#mg3-winb",{borderColor:"#FF5E1A"},15.9);tl.set("#mg3-winb",{borderColor:"#2B2632"},15.98);
+    tl.set("#mg3-winb",{borderColor:"#FFA21C"},16.34);tl.set("#mg3-winb",{borderColor:"#2B2632"},16.42);
+    tl.set("#mg3-winb",{borderColor:"#9BEA2E"},16.78);tl.set("#mg3-winb",{borderColor:"#2B2632"},16.86);
+    tl.set("#mg3-winb",{borderColor:"#17C9A6"},17.18);tl.set("#mg3-winb",{borderColor:"#2B2632"},17.26);
+    tl.set("#mg3-winb",{borderColor:"#2F6DFF"},17.62);tl.set("#mg3-winb",{borderColor:"#2B2632"},17.7);
+    tl.set("#mg3-winb",{borderColor:"#8B3DFF"},18.02);tl.set("#mg3-winb",{borderColor:"#2B2632"},18.1);
+    tl.set("#mg3-winb",{borderColor:"#FF2D8F"},18.5);tl.set("#mg3-winb",{borderColor:"#2B2632"},18.58);
+    tl.set("#mg3-winb",{borderColor:"#E3203A"},18.94);tl.set("#mg3-winb",{borderColor:"#2B2632"},19.02);
+    tl.fromTo("#mg3-pc1",{x:0,y:0,scaleX:1,scaleY:1},{x:80.0,y:20.0,scaleX:0.8926,scaleY:0.9513,duration:0.24,ease:EOUT},19.4);
+    tl.fromTo("#mg3-pc1i",{opacity:1},{opacity:0,duration:0.24,ease:EIN},19.52);
+    tl.fromTo("#mg3-pc2",{x:0,y:0,scaleX:1,scaleY:1},{x:46.0,y:20.0,scaleX:0.8926,scaleY:0.9513,duration:0.24,ease:EOUT},19.4);
+    tl.fromTo("#mg3-pc2i",{opacity:1},{opacity:0,duration:0.24,ease:EIN},19.52);
+    tl.fromTo("#mg3-pc3",{x:0,y:0,scaleX:1,scaleY:1},{x:12.0,y:20.0,scaleX:0.8926,scaleY:0.9513,duration:0.24,ease:EOUT},19.4);
+    tl.fromTo("#mg3-pc3i",{opacity:1},{opacity:0,duration:0.24,ease:EIN},19.52);
+    tl.fromTo("#mg3-pc4",{x:0,y:0,scaleX:1,scaleY:1},{x:-22.0,y:20.0,scaleX:0.8926,scaleY:0.9513,duration:0.24,ease:EOUT},19.4);
+    tl.fromTo("#mg3-pc4i",{opacity:1},{opacity:0,duration:0.24,ease:EIN},19.52);
+    tl.fromTo("#mg3-pc5",{x:0,y:0,scaleX:1,scaleY:1},{x:80.0,y:22.0,scaleX:0.8926,scaleY:0.9513,duration:0.24,ease:EOUT},19.4);
+    tl.fromTo("#mg3-pc5i",{opacity:1},{opacity:0,duration:0.24,ease:EIN},19.52);
+    tl.fromTo("#mg3-pc6",{x:0,y:0,scaleX:1,scaleY:1},{x:46.0,y:22.0,scaleX:0.8926,scaleY:0.9513,duration:0.24,ease:EOUT},19.4);
+    tl.fromTo("#mg3-pc6i",{opacity:1},{opacity:0,duration:0.24,ease:EIN},19.52);
+    tl.fromTo("#mg3-pc7",{x:0,y:0,scaleX:1,scaleY:1},{x:12.0,y:22.0,scaleX:0.8926,scaleY:0.9513,duration:0.24,ease:EOUT},19.4);
+    tl.fromTo("#mg3-pc7i",{opacity:1},{opacity:0,duration:0.24,ease:EIN},19.52);
+    tl.fromTo("#mg3-pc8",{x:0,y:0,scaleX:1,scaleY:1},{x:-22.0,y:22.0,scaleX:0.8926,scaleY:0.9513,duration:0.24,ease:EOUT},19.4);
+    tl.fromTo("#mg3-pc8i",{opacity:1},{opacity:0,duration:0.24,ease:EIN},19.52);
+    tl.fromTo(["#mg3-t1b","#mg3-t1tag"],{opacity:0},{opacity:1,duration:0.24,ease:EOUT},19.84);
+    tl.fromTo("#mg3-t1b",{borderColor:"#E3203A"},{borderColor:"#FFC94D",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo("#mg3-t1tag",{color:"#E3203A"},{color:"#E6DED2",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo(["#mg3-t2b","#mg3-t2tag"],{opacity:0},{opacity:1,duration:0.24,ease:EOUT},20.56);
+    tl.fromTo("#mg3-t2b",{borderColor:"#FF5E1A"},{borderColor:"#FFC94D",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo("#mg3-t2tag",{color:"#FF5E1A"},{color:"#E6DED2",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo(["#mg3-t3b","#mg3-t3tag"],{opacity:0},{opacity:1,duration:0.24,ease:EOUT},21.24);
+    tl.fromTo("#mg3-t3b",{borderColor:"#FFA21C"},{borderColor:"#FFC94D",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo("#mg3-t3tag",{color:"#FFA21C"},{color:"#E6DED2",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo(["#mg3-t4b","#mg3-t4tag"],{opacity:0},{opacity:1,duration:0.24,ease:EOUT},21.96);
+    tl.fromTo("#mg3-t4b",{borderColor:"#9BEA2E"},{borderColor:"#FFC94D",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo("#mg3-t4tag",{color:"#9BEA2E"},{color:"#E6DED2",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo(["#mg3-t5b","#mg3-t5tag"],{opacity:0},{opacity:1,duration:0.24,ease:EOUT},22.64);
+    tl.fromTo("#mg3-t5b",{borderColor:"#17C9A6"},{borderColor:"#FFC94D",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo("#mg3-t5tag",{color:"#17C9A6"},{color:"#E6DED2",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo(["#mg3-t6b","#mg3-t6tag"],{opacity:0},{opacity:1,duration:0.24,ease:EOUT},23.36);
+    tl.fromTo("#mg3-t6b",{borderColor:"#2F6DFF"},{borderColor:"#FFC94D",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo("#mg3-t6tag",{color:"#2F6DFF"},{color:"#E6DED2",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo(["#mg3-t7b","#mg3-t7tag"],{opacity:0},{opacity:1,duration:0.24,ease:EOUT},24.04);
+    tl.fromTo("#mg3-t7b",{borderColor:"#8B3DFF"},{borderColor:"#FFC94D",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo("#mg3-t7tag",{color:"#8B3DFF"},{color:"#E6DED2",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo(["#mg3-t8b","#mg3-t8tag"],{opacity:0},{opacity:1,duration:0.24,ease:EOUT},24.72);
+    tl.fromTo("#mg3-t8b",{borderColor:"#FF2D8F"},{borderColor:"#FFC94D",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo("#mg3-t8tag",{color:"#FF2D8F"},{color:"#E6DED2",duration:0.24,ease:EOUT,immediateRender:false},27.44);
+    tl.fromTo("#mg3-rolei",{y:24,opacity:0},{y:0,opacity:1,duration:0.24,ease:EOUT},15.48);
+    tl.fromTo("#mg3-rulei",{scaleX:0},{scaleX:1,duration:0.24,ease:EOUT},15.92);
+    tl.fromTo("#mg3-sfi",{y:16,opacity:0},{y:0,opacity:1,duration:0.36,ease:EOUT},19.4);
+    tl.fromTo("#mg3-logoi",{scale:1.12},{scale:0.97,duration:0.12,ease:EOUT},27.44);tl.to("#mg3-logoi",{scale:1,duration:0.08,ease:EOUT},27.56);
+    tl.set("#mg3-flashi",{opacity:0.40},27.44);tl.set("#mg3-flashi",{opacity:0.15},27.46);
+    tl.fromTo("#mg3-push",{scale:1},{scale:1.005,duration:2.52,ease:"none",immediateRender:false},27.48);
+    const drv = { t: 0 };
+    tl.fromTo(drv, { t: 0 }, { t: 30.0, duration: 30.0, ease: "none", onUpdate: () => draw(OFF + drv.t * 25) }, 0);
+    draw(OFF);
+    window.__timelines["mg3"] = tl;
+  </script>
+</template>

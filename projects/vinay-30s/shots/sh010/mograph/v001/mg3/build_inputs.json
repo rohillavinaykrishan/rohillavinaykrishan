@@ -1,0 +1,31 @@
+{
+ "inputs": [
+  "F1: edit",
+  "F2: edit",
+  "F3: edit",
+  "F4: edit",
+  "F5: edit",
+  "F6: edit",
+  "F7: edit",
+  "F8: edit",
+  "F9: edit",
+  "T1_duo: placeholder",
+  "T1_true: placeholder",
+  "T2_duo: placeholder",
+  "T2_true: placeholder",
+  "T3_duo: placeholder",
+  "T3_true: placeholder",
+  "T4_duo: placeholder",
+  "T4_true: placeholder",
+  "T5_duo: placeholder",
+  "T5_true: placeholder",
+  "T6_duo: placeholder",
+  "T6_true: placeholder",
+  "T7_duo: placeholder",
+  "T7_true: placeholder",
+  "T8_duo: placeholder",
+  "T8_true: placeholder",
+  "kit: mograph/v001/kit/kit.js (inlined)",
+  "name_layout: MG2 v001"
+ ]
+}

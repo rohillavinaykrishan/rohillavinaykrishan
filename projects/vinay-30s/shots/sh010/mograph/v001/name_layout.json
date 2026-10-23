@@ -1,0 +1,201 @@
+{
+ "owner": "MG2 (shots/sh010/mograph/v001/mg2)",
+ "version": "v001",
+ "canvas": [
+  2160,
+  3840
+ ],
+ "units": "px at 4K (2160x3840), y down",
+ "font": {
+  "family": "Unbounded",
+  "weight": 900,
+  "file": "shots/sh010/director/v001/fonts/Unbounded-900.ttf",
+  "size_px": 306.667,
+  "cap_height_px": 230.0,
+  "letter_spacing_px": 6.133,
+  "tracking_em": 0.02,
+  "kerning": "font GPOS on (only pairs in the name: A-Y -165u, R-O -9u)",
+  "text_transform": "none (text is already caps)",
+  "ascent_px": 305.133,
+  "descent_px": 75.133
+ },
+ "name_centre": [
+  1080,
+  1550
+ ],
+ "line_pitch_px": 270.0,
+ "scale_applied": 1.0,
+ "block_ink_box": [
+  165.21,
+  1165.0,
+  1829.57,
+  770.0
+ ],
+ "lines": [
+  {
+   "text": "VINAY",
+   "baseline_y": 1395.0,
+   "pen_x0": 435.23,
+   "ink_box": [
+    434.31,
+    1165.0,
+    1291.37,
+    230.0
+   ],
+   "ink_box_note": "[x,y,w,h]: cap-height box (no overshoot); letters have no descenders",
+   "css_top_px": 1089.87,
+   "glyphs": [
+    {
+     "ch": "V",
+     "pen_x": 435.23,
+     "ink_x0": 434.31,
+     "ink_x1": 733.01
+    },
+    {
+     "ch": "I",
+     "pen_x": 738.22,
+     "ink_x0": 756.62,
+     "ink_x1": 835.74
+    },
+    {
+     "ch": "N",
+     "pen_x": 860.27,
+     "ink_x0": 878.67,
+     "ink_x1": 1147.01
+    },
+    {
+     "ch": "A",
+     "pen_x": 1171.54,
+     "ink_x0": 1170.62,
+     "ink_x1": 1477.9
+    },
+    {
+     "ch": "Y",
+     "pen_x": 1432.51,
+     "ink_x0": 1432.51,
+     "ink_x1": 1725.69
+    }
+   ]
+  },
+  {
+   "text": "KRISHAN",
+   "baseline_y": 1665.0,
+   "pen_x0": 146.81,
+   "ink_box": [
+    165.21,
+    1435.0,
+    1829.57,
+    230.0
+   ],
+   "ink_box_note": "[x,y,w,h]: cap-height box (no overshoot); letters have no descenders",
+   "css_top_px": 1359.87,
+   "glyphs": [
+    {
+     "ch": "K",
+     "pen_x": 146.81,
+     "ink_x0": 165.21,
+     "ink_x1": 424.04
+    },
+    {
+     "ch": "R",
+     "pen_x": 427.41,
+     "ink_x0": 445.81,
+     "ink_x1": 691.15
+    },
+    {
+     "ch": "I",
+     "pen_x": 702.19,
+     "ink_x0": 720.59,
+     "ink_x1": 799.71
+    },
+    {
+     "ch": "S",
+     "pen_x": 824.24,
+     "ink_x0": 834.97,
+     "ink_x1": 1081.53
+    },
+    {
+     "ch": "H",
+     "pen_x": 1097.17,
+     "ink_x0": 1115.57,
+     "ink_x1": 1371.95
+    },
+    {
+     "ch": "A",
+     "pen_x": 1396.48,
+     "ink_x0": 1395.56,
+     "ink_x1": 1702.84
+    },
+    {
+     "ch": "N",
+     "pen_x": 1708.05,
+     "ink_x0": 1726.45,
+     "ink_x1": 1994.79
+    }
+   ]
+  },
+  {
+   "text": "ROHILLA",
+   "baseline_y": 1935.0,
+   "pen_x0": 172.57,
+   "ink_box": [
+    190.97,
+    1705.0,
+    1778.05,
+    230.0
+   ],
+   "ink_box_note": "[x,y,w,h]: cap-height box (no overshoot); letters have no descenders",
+   "css_top_px": 1629.87,
+   "glyphs": [
+    {
+     "ch": "R",
+     "pen_x": 172.57,
+     "ink_x0": 190.97,
+     "ink_x1": 436.31
+    },
+    {
+     "ch": "O",
+     "pen_x": 444.59,
+     "ink_x0": 454.4,
+     "ink_x1": 734.08
+    },
+    {
+     "ch": "H",
+     "pen_x": 750.03,
+     "ink_x0": 768.43,
+     "ink_x1": 1024.8
+    },
+    {
+     "ch": "I",
+     "pen_x": 1049.33,
+     "ink_x0": 1067.73,
+     "ink_x1": 1146.85
+    },
+    {
+     "ch": "L",
+     "pen_x": 1171.39,
+     "ink_x0": 1189.79,
+     "ink_x1": 1404.45
+    },
+    {
+     "ch": "L",
+     "pen_x": 1417.03,
+     "ink_x0": 1435.43,
+     "ink_x1": 1650.09
+    },
+    {
+     "ch": "A",
+     "pen_x": 1662.67,
+     "ink_x0": 1661.75,
+     "ink_x1": 1969.03
+    }
+   ]
+  }
+ ],
+ "css_recipe": "Each line: position:absolute; left:<pen_x0>px; top:<baseline_y - ascent_px>px; font:900 <size_px>px Unbounded; letter-spacing:<letter_spacing_px>px; line-height:<ascent_px+descent_px>px; white-space:nowrap; font-kerning:normal. ascent/descent = hhea 995/245 units -> see font.ascent_px. Or place each glyph at glyphs[].pen_x (absolute) on the baseline. Visual centre = ink centre (not advance centre).",
+ "colours": {
+  "fill": "#FFF8EC",
+  "glow": "#FFC94D 45% outer 36px",
+  "keyline": "#C7851E 2px offset (0,+6px)"
+ }
+}
