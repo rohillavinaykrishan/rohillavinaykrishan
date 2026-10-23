@@ -147,7 +147,7 @@ def band(rgb, cast=(0.0, 0.0), k=0.0, warm=0.0):
     C = C * (1 - 0.3 * wb)
     # 2. no green: greens/olives/teals (h 95-200) are pulled toward ochre-saffron and lose chroma,
     #    hardest in the shadows and mids (the board mock's B01 went green there)
-    wg = smooth_bump(h, 150, 60)
+    wg = smooth_bump(h, 130, 60)
     wl = np.clip(1 - (L - 0.35) / 0.45, 0.35, 1)
     dh = ((85 - h + 180) % 360) - 180
     h = h + dh * 0.6 * wg * wl
