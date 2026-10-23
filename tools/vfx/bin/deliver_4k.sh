@@ -18,15 +18,17 @@
 #
 #   Heavy job (4K x264 slow ~ 1-2 s/frame on this box): check pgrep first, at most 2 heavy jobs.
 #
-# Tested 2026-10-23 (light test, 1 s only, no full render): 25-frame 4K stream-copy cut of
-#   projects/sukanya-v2/deliver/Sukanya_..._v2_4K.mp4 + projects/sukanya-v2/shots/sh010/sound/v001/master.wav
-#   THREADS=2 deliver_4k.sh cut1s.mp4 master.wav <scratch>/test_4K.mp4
-#   -> RESULT: see the line below (filled from the real run).
-# RESULT: h264 High L5.2 yuv420p bt709 2160x3840 25/1, 25 frames, 1.000 s; aac LC 48000 Hz 2 ch 320k,
-#   start 0/0; ebur128 on 1 s = no gated integrated value (I needs >400 ms of signal above gate; use the
-#   full master); encode 31 s wall at THREADS=2 (~1.2 s/frame -> ~15 min for a 30 s / 750-frame master).
+# Tested 2026-10-23 (light test, no full render): a 1 s stream-copy cut (27 frames) of
+#   projects/sukanya-v2/deliver/Sukanya_Dilip_Dhariya_StreetFighter_SrMatchmove_v2_4K.mp4 (delivered file untouched,
+#   md5 49c6ec79...) + projects/sukanya-v2/shots/sh010/sound/v001/master.wav:
+#   ffmpeg -i <delivered>.mp4 -t 1 -an -c copy cut1s.mp4
+#   THREADS=2 deliver_4k.sh cut1s.mp4 .../sound/v001/master.wav <scratchpad>/d4k/test_4K.mp4
+# RESULT: exit 0, 37 s wall for 27 frames at THREADS=2 (~1.4 s/frame -> ~15-18 min for a 750-frame 30 s master).
+#   h264 High L5.2 yuv420p bt709/bt709/bt709 2160x3840 25/1 r+avg, 27 frames (all input frames kept), start 0.000;
+#   aac LC 48000 Hz 2 ch 327 kb/s, start 0.000, 1.066 s vs video 1.080 s (-shortest, < 1 frame); 183 Mb/s.
+#   ebur128 on this 1 s cut: I -14.9 LUFS, Peak -5.5 (on a 1 s cut these are not meaningful; judge on the full master).
 set -euo pipefail
-usage() { sed -n '2,27p' "$0"; exit 2; }
+usage() { sed -n '2,29p' "$0"; exit 2; }
 [ $# -eq 3 ] || usage
 in="$1"; wav="$2"; out="$3"
 [ -f "$in" ] || { echo "no video: $in"; exit 2; }

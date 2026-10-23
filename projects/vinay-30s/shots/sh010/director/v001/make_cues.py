@@ -104,6 +104,7 @@ cues = {
    "Champion Gold": "#FFC94D", "Gold Deep": "#C7851E", "fighters": {k: v[1] for k, v in HUES.items()}},
  "fonts": {"name": "Unbounded 900", "role": "Unbounded 500", "hud": "Space Mono 700", "dir": "shots/sh010/director/v001/fonts/"},
 }
+cues["music"]["dialogue_check"] = json.load(open(os.path.join(HERE, "cues.json")))["music"].get("dialogue_check") if os.path.exists(os.path.join(HERE, "cues.json")) else None
 json.dump(cues, open(os.path.join(HERE, "cues.json"), "w"), indent=1)
 print("shots", len(shots), "tiles", len(tiles), "frames covered by plates/graphics ok")
 for s in shots: print(s["id"], s["f_in"], s["f_out"], s["lib"], s["src_in"], s["src_out"], s["crop"], s["characters"])

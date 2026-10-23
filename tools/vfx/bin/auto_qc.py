@@ -11,9 +11,9 @@ Checks (one ffprobe pass, one audio pass, one downscaled decode pass, one Whispe
                (packets; = --expect-frames if given), duration, video+audio start_time 0, A/V duration
                within 1 frame, codec/pix_fmt/BT.709 tags (tags = WARN only).
   2. loudness  ebur128 peak=true: integrated within --lufs +/- --lufs-tol, true peak <= --tp-max.
-  3. black     frames where >= 98% of pixels have luma < 0.10 (blackdetect-like)  -> FAIL, spans listed.
-     frozen    frames whose mean abs diff to the previous frame < 0.20/255 at 360 px -> WARN, spans listed
-               (intentional holds exist; the reviewer decides).
+  3. black     frames where >= 98% of pixels have luma < 0.05 (= blackdetect pix_th)  -> FAIL, spans listed.
+     frozen    frames whose mean abs diff to the previous frame < 0.05/255 at 360x640 -> WARN, spans listed
+               (intentional holds exist; the reviewer decides). < 0.20/255 = "near-still" -> INFO only.
   4. blue cast per-frame mean R >= mean B - --rb-tol (0..255 scale) -> FAIL, worst frames listed.
   5. whisper   faster-whisper small, int8, vad_filter=False, temperature 0, word timestamps; every
                segment with times; known hallucinations ("Thanks for watching!", "Music", ...) flagged.
@@ -25,11 +25,20 @@ Checks (one ffprobe pass, one audio pass, one downscaled decode pass, one Whispe
 Output: markdown report (default ./<video-stem>_qc.md) + contact sheet. Exit 0 = pass, 1 = fail, 2 = usage.
 Never writes next to the video unless --out points there (do not put reports in deliver/).
 
-Tested 2026-10-23 on projects/sukanya-v2/deliver/Sukanya_Dilip_Dhariya_StreetFighter_SrMatchmove_v2_4K.mp4
-(2160x3840, 25 fps, 450 frames, 18 s), with other jobs idle:
-  vfx-python tools/vfx/bin/auto_qc.py projects/sukanya-v2/deliver/Sukanya_..._v2_4K.mp4 \
-      --expect-frames 450 --names "SUKANYA DILIP DHARIYA" --out <scratch>/sukanya_v2_qc.md
-  -> see RESULT block in tools/vfx/bin/auto_qc.README.md (written from the real run).
+Tested 2026-10-23 on real delivered masters (read-only; reports written to the scratchpad):
+  vfx-python tools/vfx/bin/auto_qc.py projects/sukanya-v2/deliver/Sukanya_Dilip_Dhariya_StreetFighter_SrMatchmove_v2_4K.mp4 \
+      --expect-frames 450 --names "SUKANYA DILIP DHARIYA" --out <scratch>/qc/sukanya_v2_qc.md
+  RESULT: exit 0, VERDICT PASS. 2160x3840 25 fps CFR, 450 fr, 18.000 s, a/v start 0; I -14.1 LUFS, TP -4.6 dBTP,
+    LRA 3.8; no black, no frozen; near-still INFO f365-449 (end card with embers); R>=B on all 450 frames
+    (worst f0 R-B +5.5); Whisper 1 segment "Music" 3.08-4.48 = known hallucination; 12-frame sheet OK.
+    28 s wall with the Whisper model cached (first run, incl. model load: 1m43s), threads 2.
+  vfx-python tools/vfx/bin/auto_qc.py projects/vinay-v4/deliver/Vinay_Krishan_Rohilla_StreetFighter_SrMatchmove_v4_4K.mp4 \
+      --expect-frames 375 --no-words --names "VINAY KRISHAN ROHILLA" --out <scratch>/qc/vinay_v4_qc.md
+  RESULT: exit 1, VERDICT FAIL on Whisper only ("...make it down the chain", "Knock, knock, knock", "It's my
+    signature!"), the same lyric the team lead found by hand (review/qc_v4_final.md 6b). Specs, I -14.0 LUFS,
+    TP -1.5 dBTP, darkest f221 mean 13.6 (not black), R>=B all PASS, as in that QC. 48 s wall.
+  Thresholds were calibrated on these two files: black uses blackdetect's pix_th 0.05 (0.10 flagged v4 f221
+  by mistake); freeze 0.05/255 (0.20 flagged the sukanya end card's slow embers, now INFO "near-still").
 """
 import argparse, json, os, re, subprocess, sys, tempfile, time
 import numpy as np

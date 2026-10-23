@@ -45,7 +45,33 @@
    "audio/whisper_bed_vadoff.json",
    "audio/whisper_bed_strict_small.json",
    "audio/whisper_bed_strict_medium.json"
-  ]
+  ],
+  "dialogue_check": {
+   "verdict": "no spoken dialogue",
+   "allowed_vocals": [
+    {
+     "f": [
+      320,
+      356
+     ],
+     "text": "I'm a street fighter",
+     "type": "sung hook"
+    },
+    {
+     "f": [
+      486,
+      523
+     ],
+     "text": "my business ...",
+     "type": "chant/rap lyric (src 146.18, confirmed on raw trailer clip)"
+    }
+   ],
+   "hallucinations": [
+    "medium: repeat of the hook at 15.4 s (over the hit, no vocal)",
+    "small strict: 29.2 s p=0.06; raw 153.5-156.8 = Thank you for watching (no_speech 0.91)"
+   ],
+   "spoken_line_after_bed": "src 156.69 (bed ends 156.525)"
+  }
  },
  "beats_f": {
   "S1_117.5bpm_12.77f": [

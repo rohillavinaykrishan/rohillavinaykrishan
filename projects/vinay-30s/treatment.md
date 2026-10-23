@@ -1,7 +1,7 @@
 # Treatment: "SPECTRUM"
 VINAY KRISHAN ROHILLA · Sr. Matchmove Artist · DNEG · Street Fighter
 30.0 s · 2160x3840 · 25 fps · **750 frames (f0-f749)** · ONE deliverable: `deliver/Vinay_Krishan_Rohilla_StreetFighter_SrMatchmove_30s_4K.mp4`
-Written by the Director, 2026-10-24, 00:40-01:15 IST.
+Written by the Director, 2026-10-24, 00:40-01:15 IST; finalised 02:45 IST after a container restart.
 
 Director data (inputs, not reports): `shots/sh010/director/v001/`
 - **`cues.json`**: the single source of truth for timing: music segments, beat grids (frames), events, every shot (library id, trailer in/out, speed, crop, characters, grade, hue), the 8 wall tiles, the 4K layout boxes, palette and fonts. **If this document and `cues.json` disagree, `cues.json` wins.**
@@ -43,7 +43,7 @@ New to this series: **ten named fighters** (Ryu, Ken, Dhalsim, Blanka, Guile, Ch
   - small, default thresholds: **0 segments**.
   - small, `no_speech_threshold=None`: one low-confidence hit, "My business that's a" at 29.2-29.98 (first word p=0.06), in the title stinger under the tail fade.
   - medium, `no_speech_threshold=None`: **"I'm a street fighter"** at 12.76 (the sung hook, expected and wanted), a repeat of it at 15.38 (a hallucination over the hit: no vocal there, the trailer's own map has no voice at 104.9-110.2), and "My business is a Ferrari" at 19.46-20.94 (src 146.0-147.5, inside the librarian's **sung chant** span 144.0-153.92; "Ferrari" p=0.01).
-  - The repeated "my business" (p≈0.92 on "business" in both models) is most likely a rap lyric inside the music cue (the trailer's spoken lines at 156.69+ are "You did that to your face..." and are not in the bed). A raw-trailer cross-check is in `audio/raw_trailer_1440.json` / `raw_trailer_1535.json`. **Sound owns the final call**: if it is judged spoken, the fix is pre-planned (section 9).
+  - **Resolved (raw-trailer cross-check, medium, VAD off):** src 144.0-149.0 alone gives "My, my business is a priority" with "business" at src 146.18: the same words at the same place as in the bed, inside the librarian's sung chant span, so it is a **rap/chant lyric in the music cue** (allowed). Src 153.5-156.8 alone gives only "Thank you for watching!" (no_speech 0.91, first word p=0.00: the classic Whisper hallucination on music) and no "my business", so the bed's 29.2 s hit (p=0.06) is a hallucination. The real spoken line "You did that to your face" starts at src 156.69, 0.165 s after the bed ends (156.525) and under the tail fade. **Verdict: the bed contains no spoken dialogue.** Files: `audio/raw_trailer_1440.json`, `audio/raw_trailer_1535.json`.
 
 ### 2.2 The footage
 The trailer is graded all over the map (blue alleys, magenta clubs, amber arenas). The answer here is not one grade for everything but **one colour per fighter** in Act 1 (duotones remove the mess and make it a system), then **true colour** only after the roster collides (Act 2 onward), so colour itself tells the story. All framings are widescreen windows at ≤2.25x scale (crisp), never vertical 7x crops. Tiles at the end are *downscaled* crops (600x536 → 482x430), the sharpest image in the piece.
@@ -180,7 +180,7 @@ All type native vector at 2160x3840 (HTML/SVG). Never rasterise at 1080 and upsc
 - **Music only**: `audio/bed_vinay30_v001.wav` (built by `audio/make_bed.py`; segments in section 2.1). **No added SFX**: the trailer's own hit is the strike; the silence is real.
 - Sound polishes, never re-times: splice crossfades may be tuned ±10 ms, but the **hit onset must stay at 14.594 s ±20 ms (f365)** and S4's title hit at f686 ±1 f.
 - **One creative move:** none on the hit; instead **keep the silence honest**: no reverb tail, no riser into it. If the S2→S3 cut leaves any click, a 3 ms fade on S2's last word only.
-- **Whisper re-check (VAD OFF) on the mastered file**, both `whisper_vadoff.py` (small) and `whisper_vadoff_strict.py ... medium`. Allowed text: the sung hook and chant lyrics. **If "my business" is judged spoken** (listen + `raw_trailer_*.json`): S4-B fix = end the bed at src 155.70 and start S4 0.825 s later in src at the same master frame (keeps f686 locked? no: the stinger moves) → instead use the pre-approved fix: **duck 155.70-156.525 under a 0.8 s tail fade (f730-749)**, and for 19.46-20.94 swap S4's in-point to src 146.31 with S3 extended to 110.18 is NOT allowed (dialogue 110.33); escalate to the Director with a measured note.
+- **Whisper re-check (VAD OFF) on the mastered file**, both `whisper_vadoff.py` (small) and `whisper_vadoff_strict.py ... medium`. Expected/allowed text: "I'm a street fighter" (~12.8 s, sung), "my business..." (~19.5 s, chant lyric) and hallucinations on music ("Thank you for watching", repeats over the hit). Any *new* phrase is a fail: report it with times to the Director. Never let the tail extend past src 156.525 (spoken line at 156.69).
 - **Master**: `tools/vfx/bin/master_audio.sh mix.wav master.wav youtube` → **-14 LUFS integrated, ≤ -1 dBTP after AAC 320k** (re-measure after encode).
 - **Sync proof**: on the final file, the hit transient within ±1 frame of f365, the title hit within ±1 frame of f686.
 
@@ -209,16 +209,16 @@ The Director reviews the animatic, MG2 proxy and the master proxy, and writes `r
 - **Sub-comps:** each MG delivers a self-contained 2160x3840 HyperFrames comp in master frame numbers, transparent where it doesn't own pixels, plus a 540x960 proxy. **No MG renders at 4K.**
 - **Fonts/colours:** only `director/v001/fonts/` and section 5. New hex needs the Colorist's sign-off.
 
-### Schedule (IST; T0 = producer spawn ≈ 01:15 IST, Sat 24 Oct)
+### Schedule (IST; T0 = producer spawn ≈ 02:50 IST, Sat 24 Oct)
 | IST | Milestone |
 |---|---|
-| T0 ≈ 01:15 | spawn all 9; Editor starts with R1-R8 + H0 proof; Colorist builds LUTs on library stills; FX kit; MG1-3 build on stills/placeholders; QC builds the animatic; Sound runs checks + master v1 |
-| +20 (01:35) | animatic → Director timing pass (10 min); kit v1; LUTs v1; R1-R8 + H0 plates |
-| +40 (01:55) | all plates + graded plates; sound master v1; `name_layout.json` |
-| +65 (02:20) | MG1/MG2/MG3 540 proxies → **Director review 1** (notes by 02:30) |
-| +90 (02:45) | fixes in; comp lead's full 540 master proxy + QC → **Director review 2** (by 02:55) |
-| +100 (02:55) | **4K render** (750 f), run as two halves f0-364 / f365-749 in parallel (the only 2 heavy jobs on the box; nothing else heavy runs), est. 35-50 min |
-| +150 (03:45) | concat frame-exact, mux master audio, QC on the 4K → **deliver ≈ 04:00 IST** |
+| T0 ≈ 02:50 | spawn all 9; Editor starts with R1-R8 + H0 proof; Colorist builds LUTs on library stills; FX kit; MG1-3 build on stills/placeholders; QC builds the animatic; Sound runs checks + master v1 |
+| +20 (03:10) | animatic → Director timing pass (10 min); kit v1; LUTs v1; R1-R8 + H0 plates |
+| +40 (03:30) | all plates + graded plates; sound master v1; `name_layout.json` |
+| +65 (03:55) | MG1/MG2/MG3 540 proxies → **Director review 1** (notes by 04:05) |
+| +90 (04:20) | fixes in; comp lead's full 540 master proxy + QC → **Director review 2** (by 04:30) |
+| +100 (04:30) | **4K render** (750 f), run as two halves f0-364 / f365-749 in parallel (the only 2 heavy jobs on the box; nothing else heavy runs), est. 35-50 min |
+| +150 (05:20) | concat frame-exact, mux master audio, QC on the 4K → **deliver ≈ 05:35 IST** |
 **Heavy-job queue:** Editor's minterpolate (R7 is frame-blend, C1, C6, H0, tiles) → MG proxies (one at a time, alternating) → master proxy → 4K halves (alone).
 
 ## 11. The Short: thumb-stopping moment
@@ -231,4 +231,4 @@ The Director reviews the animatic, MG2 proxy and the master proxy, and writes `r
 - **H0 contact can't be found cleanly:** use F8 (Ken & Ryu back to back, sf120) at 1.0x on f365, no slow-mo.
 - **Slow-mo warps** (C1 0.7x, C6 ramp, H0 0.3x): frame-blend instead; H0 may hold a 4-frame freeze on contact.
 - **4K render slow:** render halves as one queue; if > 60 min estimated, drop sparks to 120 and plume resolution to 1080 (upscaled bg only, never type).
-- **"my business" judged spoken:** Sound escalates; Director re-cuts S4's in-point inside the chant on a beat (cues regenerate; every downstream frame is cues-driven).
+- **A Whisper re-check on the master finds a new phrase:** Sound escalates; the Director re-cuts S4's in-point inside the chant on a beat (cues regenerate; every downstream frame is cues-driven).
