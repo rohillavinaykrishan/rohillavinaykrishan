@@ -1,0 +1,18 @@
+namespace: ""
+name: punjabi-script-converter
+title: Punjabi Script Converter
+description: "Convert Punjabi lyrics between Gurmukhi, Hindi (Devanagari) and readable Roman letters. Handles addak, tippi/bindi, pairin and ੜ/ढ़; keeps line breaks; works on mixed text."
+metadata: {}
+category: other
+images:
+    card: ""
+    thumbnail: ""
+    banner: ""
+env: {}
+kernel: python-3.11
+resources:
+    gpu:
+        count: 0
+        vram: 0
+        type: none
+    ram: 0

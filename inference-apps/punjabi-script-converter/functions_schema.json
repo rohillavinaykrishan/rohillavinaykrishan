@@ -1,0 +1,58 @@
+{
+  "run": {
+    "description": "",
+    "kind": "run",
+    "capabilities": [],
+    "input_schema": {
+      "properties": {
+        "text": {
+          "description": "Lyrics or any text in Gurmukhi (Punjabi), Devanagari (Hindi), or a mix of both. Line breaks are kept.",
+          "examples": [
+            "\u0a38\u0a24\u0a3f \u0a38\u0a4d\u0a30\u0a40 \u0a05\u0a15\u0a3e\u0a32\n\u0a2a\u0a70\u0a1c\u0a3e\u0a2c \u0a26\u0a40 \u0a27\u0a30\u0a24\u0a40"
+          ],
+          "title": "Text",
+          "type": "string"
+        },
+        "target_script": {
+          "default": "devanagari",
+          "description": "Script to convert to: devanagari (Hindi letters), gurmukhi (Punjabi letters), or roman (readable English letters for lyrics and captions).",
+          "enum": [
+            "devanagari",
+            "gurmukhi",
+            "roman"
+          ],
+          "title": "Target Script",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "RunInput",
+      "type": "object"
+    },
+    "output_schema": {
+      "properties": {
+        "text": {
+          "description": "The converted text",
+          "title": "Text",
+          "type": "string"
+        },
+        "detected_scripts": {
+          "description": "Indic scripts found in the input (gurmukhi, devanagari)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Detected Scripts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "text",
+        "detected_scripts"
+      ],
+      "title": "RunOutput",
+      "type": "object"
+    }
+  }
+}
