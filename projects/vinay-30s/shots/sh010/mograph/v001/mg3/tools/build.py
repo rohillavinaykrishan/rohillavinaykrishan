@@ -4,8 +4,7 @@
 Generates from cues.json + name_layout.json (MG2) + kit.js + whatever plates exist:
   compositions/mg3.html   THE DELIVERABLE scene: 2160x3840, MASTER time (scene t = f/25), transparent
   index.html              4K root that mounts mg3 at t=0 for 30 s (what the comp lead imports / mirrors)
-  compositions/mg3p.html  same scene, time offset to f387 and stage scaled 0.25 (proxy only)
-  proxy.html              540x960 root on Ink, renders mg3_proxy_540.mp4 (master f387-749)
+  proxy/                  540x960 project (scene offset to f387, stage x0.25, Ink bg) -> mg3_proxy_540.mp4
 and stages assets/ (symlinked plates, extracted last-frame stills, logo, fonts).
 
 Plate priority: color/v001/plates > edit/v001/plates > ./placeholders (mine, low-res).
@@ -96,7 +95,9 @@ def scene(cid, off, scale):
     # ---- Act-3 window: F1-F9 hard cuts (f387-484); border flashes the next hue for 2 f per cut
     win = [clip(s["f_in"], s["f_out"], f'id="{cid}-{s["id"]}" src="assets/plates/{s["id"]}.mp4" muted playsinline', tag="video")
            for s in F_SHOTS]
-    els.append(clip(F0, SPLIT, f'id="{cid}-win"', "".join(win) + f'<div id="{cid}-winb" class="winb"></div>'))
+    # untimed container (videos are timed); shown f387-484 by opacity
+    els.append(f'<div id="{cid}-win" style="z-index:{z[0]}">' + "".join(win) + f'<div id="{cid}-winb" class="winb"></div></div>')
+    js.append(f'tl.set("#{cid}-win",{{opacity:1}},{S(F0)});tl.set("#{cid}-win",{{opacity:0}},{S(SPLIT)});')
     for k, s in enumerate(F_SHOTS):
         js.append(f'tl.set("#{cid}-winb",{{borderColor:"{WHEEL[k % 8]}"}},{S(s["f_in"])});'
                   f'tl.set("#{cid}-winb",{{borderColor:"{SMOKE}"}},{S(s["f_in"] + 2)});')
@@ -126,8 +127,8 @@ def scene(cid, off, scale):
                  + clip(TITLE, END, f'id="{tid}ft" src="assets/stills/{t["id"]}_true_last.png"', tag="img")
                  + f'</div><div id="{tid}b" class="tborder" style="border-color:{t["hue"]}"></div>'
                  f'<div id="{tid}tag" class="ttag" style="color:{t["hue"]}">{t["character"].upper()}</div>')
-        els.append(clip(a, END, f'id="{tid}" data-layout-allow-overflow', inner, cls="tile",
-                        style=f"left:{tx}px;top:{ty}px;width:{tw}px;height:{th}px;"))
+        z[0] += 1   # untimed container: its media/stills are timed; border + tag fade in on arrival
+        els.append(f'<div id="{tid}" class="tile" data-layout-allow-overflow style="left:{tx}px;top:{ty}px;width:{tw}px;height:{th}px;z-index:{z[0]}">{inner}</div>')
         js.append(f'tl.fromTo(["#{tid}b","#{tid}tag"],{{opacity:0}},{{opacity:1,duration:{6/FPS},ease:EOUT}},{A(a + 2)});')
         js.append(f'tl.fromTo("#{tid}b",{{borderColor:"{t["hue"]}"}},{{borderColor:"{GOLD}",duration:{6/FPS},ease:EOUT,immediateRender:false}},{A(TITLE)});')
         js.append(f'tl.fromTo("#{tid}tag",{{color:"{t["hue"]}"}},{{color:"{BONE}",duration:{6/FPS},ease:EOUT,immediateRender:false}},{A(TITLE)});')
@@ -176,11 +177,13 @@ def scene(cid, off, scale):
     #{cid}-push {{ position:absolute; left:0; top:0; width:2160px; height:3840px; transform-origin:1080px 2300px; }}
     #{cid}-push > .clip {{ position:absolute; left:0; top:0; width:2160px; height:3840px; }}
     .fxc {{ position:absolute; left:0; top:0; width:2160px; height:3840px; pointer-events:none; }}
-    #{cid}-push > #{cid}-win {{ left:{WX}px; top:{WY}px; width:{WW}px; height:{WH}px; background:{RAISED}; overflow:hidden; }}
+    #{cid}-win {{ position:absolute; opacity:0; left:{WX}px; top:{WY}px; width:{WW}px; height:{WH}px; background:{RAISED}; overflow:hidden; }}
     #{cid}-win video {{ position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover; }}
     .winb {{ position:absolute; inset:0; border:4px solid {SMOKE}; z-index:99; }}
     .piece {{ position:absolute; overflow:hidden; transform-origin:0 0; background:{RAISED}; outline:2px solid {SMOKE}; outline-offset:-2px; }}
     .piece img {{ position:absolute; max-width:none; }}
+    .tile {{ position:absolute; }}
+    .tborder, .ttag {{ opacity:0; }}
     .tmask {{ position:absolute; inset:0; overflow:hidden; }}
     .tmask > .clip {{ position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover; }}
     .tborder {{ position:absolute; inset:0; border:3px solid; z-index:50; }}
@@ -342,8 +345,17 @@ def root(cid_root, scene_id, src, w, h, dur, bg):
 
 os.makedirs(f"{HERE}/compositions", exist_ok=True)
 open(f"{HERE}/compositions/mg3.html", "w").write(scene("mg3", 0, 1))
-open(f"{HERE}/compositions/mg3p.html", "w").write(scene("mg3p", F0, 0.25))
 open(f"{HERE}/index.html", "w").write(root("main", "mg3", "compositions/mg3.html", 2160, 3840, END / FPS, "transparent"))
-open(f"{HERE}/proxy.html", "w").write(root("proxy", "mg3p", "compositions/mg3p.html", 540, 960, round((END - F0) / FPS, 4), pal["Ink"]))
+# proxy = its own tiny HyperFrames project (one root per project), sharing ../assets
+PX_DIR = f"{HERE}/proxy"
+os.makedirs(f"{PX_DIR}/compositions", exist_ok=True)
+if not os.path.lexists(f"{PX_DIR}/assets"):
+    os.symlink("../assets", f"{PX_DIR}/assets")
+for fn in ("hyperframes.json", "package.json"):
+    open(f"{PX_DIR}/{fn}", "w").write(open(f"{HERE}/{fn}").read())
+open(f"{PX_DIR}/compositions/mg3p.html", "w").write(scene("mg3p", F0, 0.25))
+open(f"{PX_DIR}/index.html", "w").write(root("proxy", "mg3p", "compositions/mg3p.html", 540, 960, round((END - F0) / FPS, 4), pal["Ink"]))
+for old in (f"{HERE}/proxy.html", f"{HERE}/compositions/mg3p.html"):
+    if os.path.exists(old): os.remove(old)
 json.dump({"inputs": log}, open(f"{HERE}/build_inputs.json", "w"), indent=1)
 print("\n".join(log))
