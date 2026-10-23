@@ -1,0 +1,531 @@
+{
+  "ok": false,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 2,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg2-b01\"> has data-start=\"0.72\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg2-b01",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg2_superart/proxy/compositions/mg2.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.72\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "composition_file_too_large",
+        "severity": "warning",
+        "message": "This HTML composition file has 416 lines. Smaller sub-compositions are easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg2_superart/proxy/compositions/mg2.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Split this sub-composition further into smaller .html files, then mount them from the parent with data-composition-src so each file stays small enough to inspect, revise, and validate independently."
+      }
+    ],
+    "filesScanned": 2
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": false,
+    "errorCount": 6,
+    "warningCount": 0,
+    "infoCount": 4,
+    "findings": [
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 0.831,
+        "selector": "#mg2-c53 > span:nth-of-type(1) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 408.85,
+          "top": 390.51,
+          "right": 962.35,
+          "bottom": 464.28,
+          "width": 553.5,
+          "height": 73.77
+        },
+        "containerSelector": "#mg2-motes",
+        "text": "SATHISH KUMAR R",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.33,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 408.85,
+          "y": 390.51,
+          "width": 553.5,
+          "height": 73.77
+        },
+        "firstSeen": 0.831,
+        "lastSeen": 0.982,
+        "occurrences": 2,
+        "heldMs": 151.00000000000003,
+        "times": [
+          0.831,
+          0.982
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 0.831,
+        "selector": "#mg2-c55 > span:nth-of-type(1) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 154.51,
+          "top": 621.86,
+          "right": 845.73,
+          "bottom": 698.52,
+          "width": 691.22,
+          "height": 76.65
+        },
+        "containerSelector": "#mg2-motes",
+        "text": "SATISH BAPURAO YELE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.56,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 154.51,
+          "y": 621.86,
+          "width": 691.22,
+          "height": 76.65
+        },
+        "firstSeen": 0.831,
+        "lastSeen": 1.133,
+        "occurrences": 3,
+        "heldMs": 302.00000000000006,
+        "times": [
+          0.831,
+          0.982,
+          1.133
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 0.831,
+        "selector": "#mg2-c57 > span:nth-of-type(1) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 59.49,
+          "top": 807.05,
+          "right": 831.78,
+          "bottom": 883.78,
+          "width": 772.29,
+          "height": 76.73
+        },
+        "containerSelector": "#mg2-motes",
+        "text": "SATISH MARUTI KHEDKAR",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.56,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 59.49,
+          "y": 807.05,
+          "width": 772.29,
+          "height": 76.73
+        },
+        "firstSeen": 0.831,
+        "lastSeen": 1.133,
+        "occurrences": 3,
+        "heldMs": 302.00000000000006,
+        "times": [
+          0.831,
+          0.982,
+          1.133
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 0.831,
+        "selector": "#mg2-c59 > span:nth-of-type(1) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 137.09,
+          "top": 923.35,
+          "right": 717.31,
+          "bottom": 996.69,
+          "width": 580.22,
+          "height": 73.34
+        },
+        "containerSelector": "#mg2-motes",
+        "text": "SEKH JAKIR HOSEN",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.22,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 137.09,
+          "y": 923.35,
+          "width": 580.22,
+          "height": 73.34
+        },
+        "firstSeen": 0.831,
+        "lastSeen": 1.133,
+        "occurrences": 3,
+        "heldMs": 302.00000000000006,
+        "times": [
+          0.831,
+          0.982,
+          1.133
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 0.982,
+        "selector": "#mg2-c59 > span:nth-of-type(2) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 425.56,
+          "top": 527.46,
+          "right": 887.58,
+          "bottom": 608.58,
+          "width": 462.02,
+          "height": 81.12
+        },
+        "containerSelector": "#mg2-motes",
+        "text": "SUJEET KUMAR",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.33,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 425.56,
+          "y": 527.46,
+          "width": 462.02,
+          "height": 81.12
+        },
+        "firstSeen": 0.982,
+        "lastSeen": 1.133,
+        "occurrences": 2,
+        "heldMs": 151.00000000000003,
+        "times": [
+          0.982,
+          1.133
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 0.982,
+        "selector": "#mg2-c60 > span:nth-of-type(1) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": -259.82,
+          "top": 758.07,
+          "right": 486.64,
+          "bottom": 860.77,
+          "width": 746.46,
+          "height": 102.7
+        },
+        "containerSelector": "#mg2-motes",
+        "text": "SEKH MASIUR RAHAMAN",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.67,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -259.82,
+          "y": 758.07,
+          "width": 746.46,
+          "height": 102.7
+        },
+        "firstSeen": 0.982,
+        "lastSeen": 1.133,
+        "occurrences": 2,
+        "heldMs": 151.00000000000003,
+        "times": [
+          0.982,
+          1.133
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 0.831,
+        "selector": "#mg2-c52 > span:nth-of-type(1) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 42.74,
+          "top": 313.37,
+          "right": 861.29,
+          "bottom": 394.47,
+          "width": 818.55,
+          "height": 81.1
+        },
+        "containerSelector": "#mg2-motes",
+        "text": "SARTHAK SUNIL PACHPUTE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.56,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 42.74,
+          "y": 313.37,
+          "width": 818.55,
+          "height": 81.1
+        },
+        "firstSeen": 0.831,
+        "lastSeen": 0.831,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          0.831
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 0.831,
+        "selector": "#mg2-c56 > span:nth-of-type(1) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 104.66,
+          "top": 492.48,
+          "right": 847.78,
+          "bottom": 568.61,
+          "width": 743.12,
+          "height": 76.14
+        },
+        "containerSelector": "#mg2-motes",
+        "text": "SATISH KUMAR VARIKUTI",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.56,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 104.66,
+          "y": 492.48,
+          "width": 743.12,
+          "height": 76.14
+        },
+        "firstSeen": 0.831,
+        "lastSeen": 0.831,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          0.831
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 0.831,
+        "selector": "#mg2-c58 > span:nth-of-type(1) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 438.91,
+          "top": 832.14,
+          "right": 1168.22,
+          "bottom": 910.66,
+          "width": 729.31,
+          "height": 78.52
+        },
+        "containerSelector": "#mg2-motes",
+        "text": "SAYED IRSHAD HUSSAIN",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.22,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 438.91,
+          "y": 832.14,
+          "width": 729.31,
+          "height": 78.52
+        },
+        "firstSeen": 0.831,
+        "lastSeen": 0.831,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          0.831
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 1.133,
+        "selector": "#mg2-c60 > span:nth-of-type(2) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 462.32,
+          "top": 646.98,
+          "right": 1174.25,
+          "bottom": 765.84,
+          "width": 711.94,
+          "height": 118.86
+        },
+        "containerSelector": "#mg2-motes",
+        "text": "SUJEETKUMAR PRASAD",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.22,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 462.32,
+          "y": 646.98,
+          "width": 711.94,
+          "height": 118.86
+        },
+        "firstSeen": 1.133,
+        "lastSeen": 1.133,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          1.133
+        ]
+      }
+    ],
+    "duration": 1.36,
+    "samples": [
+      0.076,
+      0.227,
+      0.378,
+      0.529,
+      0.68,
+      0.831,
+      0.982,
+      1.133,
+      1.284
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 10,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      0.076,
+      0.378,
+      0.68,
+      0.982,
+      1.284
+    ],
+    "checked": 0,
+    "passed": 0
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 3,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"SATHISH KUMAR R\" (3 words) is on screen 0.04 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "SATHISH KUMAR R",
+        "selector": "#mg2-c53 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 461.21,
+          "y": 589.73,
+          "width": 78.79000000000002,
+          "height": 68.95000000000005
+        },
+        "time": 0.734,
+        "words": 3,
+        "seconds": 0.039,
+        "floorSeconds": 2
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"SATISH BAPURAO YELE\" (3 words) is on screen 0.04 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "SATISH BAPURAO YELE",
+        "selector": "#mg2-c55 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 302,
+          "y": 788.71,
+          "width": 238,
+          "height": 69.41999999999996
+        },
+        "time": 0.734,
+        "words": 3,
+        "seconds": 0.039,
+        "floorSeconds": 2
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"SATISH KUMAR VARIKUTI\" (3 words) is on screen 0.07 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "SATISH KUMAR VARIKUTI",
+        "selector": "#mg2-c56 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 250.41,
+          "y": 843.28,
+          "width": 289.59000000000003,
+          "height": 69.27999999999997
+        },
+        "time": 0.734,
+        "words": 3,
+        "seconds": 0.069,
+        "floorSeconds": 2
+      }
+    ],
+    "enabled": true,
+    "step": 0.124,
+    "samples": 11
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "historyId": "35fe5b52-c117-4a1d-b709-3ab2b4e169c2",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "index.html": {
+      "hash": "68f2632dd8df71ef7236edaccdf188353f5acad50e1c6ab08a54bdc88c35be5c",
+      "content": "/root/.cache/hyperframes/history/35fe5b52-c117-4a1d-b709-3ab2b4e169c2/blobs/68/68f2632dd8df71ef7236edaccdf188353f5acad50e1c6ab08a54bdc88c35be5c"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  }
+}

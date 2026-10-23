@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "historyId": "6e32a98b-a5c3-4048-ab8b-2693f37c339d",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "index.html": {
+      "hash": "1ed4023efd13003c85865153d4fd4e5dfff384ee6ef11477e251e19488d942f9",
+      "content": "/root/.cache/hyperframes/history/6e32a98b-a5c3-4048-ab8b-2693f37c339d/blobs/1e/1ed4023efd13003c85865153d4fd4e5dfff384ee6ef11477e251e19488d942f9"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": {
+      "revision": null,
+      "id": "57a09746-0357-4634-a968-cdaffc5fca32"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "id": "57a09746-0357-4634-a968-cdaffc5fca32",
+        "scope": "project",
+        "report": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg2_superart/proxy/.hyperframes/artifacts/checks/57a09746-0357-4634-a968-cdaffc5fca32.json",
+        "metadata": {
+          "ok": false,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 3000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1792771306487,
+        "contentHash": "07de6fc9c6f4c6f8504710f7f9dde5d39e263ad2abcdd4ad08c1e3a9ed59f2d1",
+        "revision": null,
+        "inputFingerprint": "bf34ec91e88e0a559073c6c5c3ae0e8df95c44517918dbd46f83e972578c85c7",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "214d4b3c-5d02-49cf-9026-d9363f747a8b",
+      "completedAt": 1792771435278,
+      "output": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg2_superart/mg2_proxy_540.webm",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}

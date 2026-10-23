@@ -1,0 +1,54 @@
+{
+ "frame_base": "master frames, 25 fps",
+ "shake_px_along_minus12deg": {
+  "axis": [
+   0.9781,
+   -0.2079
+  ],
+  "261": 18,
+  "262": -10,
+  "263": 5,
+  "264": -2,
+  "note": "MG2 shakes its own non-type layers. Comp lead: apply the same offsets to MG1/background/MG3 plates on f261-264, never to type."
+ },
+ "push_in": {
+  "f243_260": "scale 1.00->1.03, ease cubic-bezier(0.65,0,0.35,1), origin = her name cell centre (same as MG1)",
+  "origin": [
+   1507.315625,
+   1536.0
+  ],
+  "note": "MG2 shatter cards start from the 1.03-pushed row positions at f261; band/name/rings are authored at 1.00."
+ },
+ "name_pose_settled_f272": {
+  "block_centre": [
+   1080,
+   1700
+  ],
+  "scale": 1.0,
+  "font": "Barlow Condensed 900 Italic",
+  "SUKANYA": {
+   "font_px": 428.57,
+   "cap": 300,
+   "baseline_y": 1707
+  },
+  "DILIP DHARIYA": {
+   "font_px": 314.29,
+   "cap": 220,
+   "baseline_y": 1993
+  },
+  "fill": "#FFF3DC",
+  "inner_glow": "#FFB12A 18px 80%",
+  "shadow": "#4A1838 0,+18",
+  "rim_glow": "#FFB12A blur 26px, 30% base, +10% pulse per beat from f266"
+ },
+ "band_settled_f267": {
+  "box": "x -120..2280, y 1250..2150 (2400x900), skewY(-12deg) about (1080,1700)",
+  "border": "6px #FFB12A + 40px #FFB12A glow 50%",
+  "plate": "counter-skewed skewY(12deg) scale 1.575, B01 2400x900"
+ },
+ "cursor_geometry": {
+  "rect": "x name_x-16, w name_w+32, h cap+32, centred on her row y",
+  "brackets": "40px L, 5px, box +24px",
+  "tag": "Chakra Petch 600 34px, h 50, 58px above rect top"
+ }
+}
