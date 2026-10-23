@@ -48,11 +48,13 @@
   "frames": 10
  },
  "B02_pop": {
-  "key": "none|shots/sh010/color/v001/plates/B02.mp4|1957743|1792754285|graded",
-  "mode": "NO_MATTE_YET (transparent)"
+  "key": "shots/sh010/roto/v001/B02_matte.webm|408710|1792771868|shots/sh010/color/v001/plates/B02.mp4|1957743|1792754285|graded",
+  "mode": "roto (luma)",
+  "matte_frames": 12
  },
  "B03_pop": {
-  "key": "none|shots/sh010/color/v001/plates/B03.mp4|1489448|1792754291|graded",
-  "mode": "NO_MATTE_YET (transparent)"
+  "key": "shots/sh010/roto/v001/B03_matte.webm|159902|1792771874|shots/sh010/color/v001/plates/B03.mp4|1489448|1792754291|graded",
+  "mode": "roto (luma)",
+  "matte_frames": 11
  }
 }
