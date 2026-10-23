@@ -60,20 +60,20 @@
           <div id="roll" data-composition-id="roll" data-composition-src="compositions/roll.html"
                data-start="0" data-duration="10.44" data-width="2160" data-height="3840"></div>
         </div>
-        <div id="mg1-hername" class="mg1-abs">SUKANYA DILIP DHARIYA</div>
-        <div id="mg1-fadeT" class="mg1-abs"></div>
-        <div id="mg1-fadeB" class="mg1-abs"></div>
+        <div id="mg1-hername" data-layout-allow-occlusion class="mg1-abs">SUKANYA DILIP DHARIYA</div>
+        <div id="mg1-fadeT" data-layout-allow-occlusion class="mg1-abs"></div>
+        <div id="mg1-fadeB" data-layout-allow-occlusion class="mg1-abs"></div>
         <div id="mg1-header" class="mg1-abs">Thanks to our talented teams!</div>
-        <div id="mg1-cursor" class="mg1-abs">
+        <div id="mg1-cursor" data-layout-allow-occlusion class="mg1-abs">
           <div id="mg1-rect"></div>
           <div id="mg1-brk"><div id="mg1-b1" class="mg1-b"></div><div id="mg1-b2" class="mg1-b"></div><div id="mg1-b3" class="mg1-b"></div><div id="mg1-b4" class="mg1-b"></div></div>
           <div id="mg1-tag">P1 · SELECT</div>
         </div>
-        <canvas id="mg1-motes" class="mg1-abs" width="2160" height="3840"></canvas>
-        <div id="mg1-grain" class="mg1-abs"></div>
-        <div id="mg1-vig" class="mg1-abs"></div>
+        <canvas id="mg1-motes" data-layout-allow-occlusion class="mg1-abs" width="2160" height="3840"></canvas>
+        <div id="mg1-grain" data-layout-allow-occlusion class="mg1-abs"></div>
+        <div id="mg1-vig" data-layout-allow-occlusion class="mg1-abs"></div>
       </div>
-      <div id="mg1-fadeup" class="mg1-abs"></div>
+      <div id="mg1-fadeup" data-layout-allow-occlusion class="mg1-abs"></div>
     </div>
   </div>
   <script>
@@ -84,8 +84,9 @@
       const stage = $("mg1-stage"), cam = $("mg1-cam");
       // fit the 2160x3840 stage to whatever size the host gives this comp (4K master or 540 proxy)
       function fit() {
-        const host = stage.parentElement;
-        const w = host.clientWidth || 2160;
+        const host = stage.closest("[data-composition-src]");
+        let w = host ? parseFloat(host.getAttribute("data-width")) : NaN;
+        if (!(w > 0)) w = window.innerWidth || 2160;
         stage.style.transform = "scale(" + (w / 2160) + ")";
       }
       fit();
