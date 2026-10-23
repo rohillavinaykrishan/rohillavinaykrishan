@@ -1,0 +1,30 @@
+[
+ {
+  "id": "S1_bathhouse_build",
+  "src_in": 63.875,
+  "src_out": 73.35,
+  "master_in_s": 0.0,
+  "master_in_f": 0.0
+ },
+ {
+  "id": "S2_streetfighter_line",
+  "src_in": 122.825,
+  "src_out": 127.62,
+  "master_in_s": 9.475,
+  "master_in_f": 236.87
+ },
+ {
+  "id": "S3_silence_HIT",
+  "src_in": 104.88,
+  "src_out": 109.995,
+  "master_in_s": 14.27,
+  "master_in_f": 356.75
+ },
+ {
+  "id": "S4_chant_title",
+  "src_in": 145.925,
+  "src_out": 156.54,
+  "master_in_s": 19.385,
+  "master_in_f": 484.63
+ }
+]

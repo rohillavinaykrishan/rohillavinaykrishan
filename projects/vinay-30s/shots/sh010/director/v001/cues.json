@@ -1,0 +1,881 @@
+{
+ "project": "vinay-30s",
+ "title": "SPECTRUM",
+ "fps": 25,
+ "frames": 750,
+ "duration_s": 30.0,
+ "size": "2160x3840",
+ "deliver": "deliver/Vinay_Krishan_Rohilla_StreetFighter_SrMatchmove_30s_4K.mp4",
+ "music": {
+  "source": "source/trailer.mp4 (audio)",
+  "bed": "shots/sh010/director/v001/audio/bed_vinay30_v001.wav",
+  "builder": "shots/sh010/director/v001/audio/make_bed.py",
+  "segments": [
+   {
+    "id": "S1_bathhouse_build",
+    "src_in": 63.875,
+    "src_out": 73.35,
+    "master_in_s": 0.0,
+    "master_in_f": 0.0
+   },
+   {
+    "id": "S2_streetfighter_line",
+    "src_in": 122.825,
+    "src_out": 127.62,
+    "master_in_s": 9.475,
+    "master_in_f": 236.87
+   },
+   {
+    "id": "S3_silence_HIT",
+    "src_in": 104.88,
+    "src_out": 109.995,
+    "master_in_s": 14.27,
+    "master_in_f": 356.75
+   },
+   {
+    "id": "S4_chant_title",
+    "src_in": 145.925,
+    "src_out": 156.54,
+    "master_in_s": 19.385,
+    "master_in_f": 484.63
+   }
+  ],
+  "splices": "6 ms equal-power crossfades; in-points ~15 ms before the onset; 4 ms head fade; 0.6 s equal-power tail fade",
+  "whisper_vad_off": [
+   "audio/whisper_bed_vadoff.json",
+   "audio/whisper_bed_strict_small.json",
+   "audio/whisper_bed_strict_medium.json"
+  ]
+ },
+ "beats_f": {
+  "S1_117.5bpm_12.77f": [
+   6,
+   19,
+   33,
+   46,
+   59,
+   71,
+   84,
+   96,
+   109,
+   121,
+   134,
+   145,
+   158,
+   171,
+   183,
+   197,
+   210,
+   223,
+   236
+  ],
+  "S2_86.1bpm_17.4f": [
+   237,
+   245,
+   263,
+   280,
+   298,
+   316,
+   336
+  ],
+  "S3_136bpm_11.03f": [
+   365,
+   376,
+   387,
+   398,
+   409,
+   420,
+   430,
+   441,
+   451,
+   463,
+   474
+  ],
+  "S4_172.3bpm_8.7f": [
+   486,
+   494,
+   503,
+   512,
+   521,
+   529,
+   538,
+   547,
+   555,
+   564,
+   573,
+   582,
+   590,
+   599,
+   608,
+   616,
+   625,
+   634,
+   643,
+   651,
+   660,
+   669,
+   677,
+   686,
+   695,
+   703,
+   712,
+   721,
+   730,
+   738
+  ]
+ },
+ "events": {
+  "cold_open": {
+   "f": [
+    0,
+    18
+   ]
+  },
+  "S2_entry_hit": {
+   "f": 237,
+   "src_s": 122.84,
+   "note": "splice S1->S2 lands on the explosion hit (+15 dB)"
+  },
+  "lyric_im_a_street_fighter": {
+   "f": [
+    320,
+    356
+   ],
+   "src_s": [
+    126.16,
+    127.58
+   ],
+   "note": "sung line; the charge"
+  },
+  "SILENCE": {
+   "f": [
+    357,
+    364
+   ],
+   "src_s": [
+    104.88,
+    105.2
+   ],
+   "note": "-43 dBFS: the only still moment"
+  },
+  "HIT": {
+   "f": 365,
+   "src_s": 105.21,
+   "note": "biggest hit of the trailer (onset 14.594 s in the bed). NAME STRIKE + GLOVE CONTACT"
+  },
+  "role_line_in": {
+   "f": 387
+  },
+  "split_to_wall": {
+   "f": 485,
+   "note": "S3->S4 splice, chant begins"
+  },
+  "TITLE_STINGER": {
+   "f": 686,
+   "src_s": 153.97,
+   "note": "SF title-card hit: logo slam + roster unlock to true colour"
+  },
+  "tail_fade": {
+   "f": [
+    735,
+    749
+   ]
+  }
+ },
+ "layout_4k": {
+  "safe": {
+   "top": 420,
+   "bottom_critical_text": 3140
+  },
+  "act1_window": [
+   0,
+   1048,
+   2160,
+   904
+  ],
+  "act2_window": [
+   0,
+   897,
+   2160,
+   1206
+  ],
+  "act3_window": [
+   0,
+   2280,
+   2160,
+   904
+  ],
+  "name_block": [
+   0,
+   1150,
+   2160,
+   800
+  ],
+  "role_lines_y": [
+   2030,
+   2160
+  ],
+  "logo_box": [
+   380,
+   420,
+   1400,
+   600
+  ],
+  "wall_rect": [
+   80,
+   2300,
+   2000,
+   884
+  ]
+ },
+ "shots": [
+  {
+   "id": "R1",
+   "layer": "roster",
+   "f_in": 19,
+   "f_out": 46,
+   "frames": 27,
+   "lib": "sf125",
+   "src_in": 142.8,
+   "src_out": 143.7,
+   "speed": 0.833,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "Ryu"
+   ],
+   "grade": "duo:Ryu",
+   "hue": "#E3203A",
+   "note": "raises fist, blue light",
+   "lib_quality": 4
+  },
+  {
+   "id": "R2",
+   "layer": "roster",
+   "f_in": 46,
+   "f_out": 71,
+   "frames": 25,
+   "lib": "sf117",
+   "src_in": 133.25,
+   "src_out": 134.25,
+   "speed": 1.0,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "Ken"
+   ],
+   "grade": "duo:Ken",
+   "hue": "#FF5E1A",
+   "note": "yells as he charges, light shafts",
+   "lib_quality": 4
+  },
+  {
+   "id": "R3",
+   "layer": "roster",
+   "f_in": 71,
+   "f_out": 96,
+   "frames": 25,
+   "lib": "sf032",
+   "src_in": 38.3,
+   "src_out": 39.3,
+   "speed": 1.0,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "Dhalsim"
+   ],
+   "grade": "duo:Dhalsim",
+   "hue": "#FFA21C",
+   "note": "fighting stance, arena (tilt)",
+   "lib_quality": 4
+  },
+  {
+   "id": "R4",
+   "layer": "roster",
+   "f_in": 96,
+   "f_out": 121,
+   "frames": 25,
+   "lib": "sf100",
+   "src_in": 112.58,
+   "src_out": 113.48,
+   "speed": 0.9,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "Blanka"
+   ],
+   "grade": "duo:Blanka",
+   "hue": "#9BEA2E",
+   "note": "roars, arms raised (pan)",
+   "lib_quality": 5
+  },
+  {
+   "id": "R5",
+   "layer": "roster",
+   "f_in": 121,
+   "f_out": 145,
+   "frames": 24,
+   "lib": "sf082",
+   "src_in": 95.02,
+   "src_out": 95.932,
+   "speed": 0.95,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "Guile"
+   ],
+   "grade": "duo:Guile",
+   "hue": "#17C9A6",
+   "note": "flat-top stare into camera",
+   "lib_quality": 4
+  },
+  {
+   "id": "R6",
+   "layer": "roster",
+   "f_in": 145,
+   "f_out": 171,
+   "frames": 26,
+   "lib": "sf135",
+   "src_in": 151.9,
+   "src_out": 152.94,
+   "speed": 1.0,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "Chun-Li"
+   ],
+   "grade": "duo:Chun-Li",
+   "hue": "#2F6DFF",
+   "note": "blue qipao, bloodied, glares",
+   "lib_quality": 4
+  },
+  {
+   "id": "R7",
+   "layer": "roster",
+   "f_in": 171,
+   "f_out": 197,
+   "frames": 26,
+   "lib": "sf107",
+   "src_in": 119.6,
+   "src_out": 120.276,
+   "speed": 0.65,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "M. Bison"
+   ],
+   "grade": "duo:M. Bison",
+   "hue": "#8B3DFF",
+   "note": "red uniform, peaked cap; 0.65x = frame-blend, not mci",
+   "lib_quality": 3
+  },
+  {
+   "id": "R8",
+   "layer": "roster",
+   "f_in": 197,
+   "f_out": 223,
+   "frames": 26,
+   "lib": "sf053",
+   "src_in": 62.0,
+   "src_out": 62.988,
+   "speed": 0.95,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "E. Honda"
+   ],
+   "grade": "duo:E. Honda",
+   "hue": "#FF2D8F",
+   "note": "sumo topknot glare (picture only)",
+   "lib_quality": 3
+  },
+  {
+   "id": "C1",
+   "layer": "clash",
+   "f_in": 237,
+   "f_out": 263,
+   "frames": 26,
+   "lib": "sf110",
+   "src_in": 122.93,
+   "src_out": 123.658,
+   "speed": 0.7,
+   "crop": "960:536:262:92",
+   "characters": [
+    "fighters (silhouettes)"
+   ],
+   "grade": "true",
+   "hue": null,
+   "note": "silhouettes vs explosion; lands on the S2 entry hit",
+   "lib_quality": 4
+  },
+  {
+   "id": "C2",
+   "layer": "clash",
+   "f_in": 263,
+   "f_out": 280,
+   "frames": 17,
+   "lib": "sf046",
+   "src_in": 52.0,
+   "src_out": 52.68,
+   "speed": 1.0,
+   "crop": "960:536:76:92",
+   "characters": [
+    "Balrog",
+    "Ken"
+   ],
+   "grade": "true",
+   "hue": null,
+   "note": "Balrog stands over a downed Ken",
+   "lib_quality": 4
+  },
+  {
+   "id": "C3",
+   "layer": "clash",
+   "f_in": 280,
+   "f_out": 298,
+   "frames": 18,
+   "lib": "sf116",
+   "src_in": 131.9,
+   "src_out": 132.62,
+   "speed": 1.0,
+   "crop": "960:536:90:92",
+   "characters": [
+    "Ken",
+    "Dhalsim"
+   ],
+   "grade": "true",
+   "hue": null,
+   "note": "Ken squares up to Dhalsim",
+   "lib_quality": 5
+  },
+  {
+   "id": "C4",
+   "layer": "clash",
+   "f_in": 298,
+   "f_out": 316,
+   "frames": 18,
+   "lib": "sf121",
+   "src_in": 138.4,
+   "src_out": 139.12,
+   "speed": 1.0,
+   "crop": "960:536:314:92",
+   "characters": [
+    "Ken",
+    "Ryu"
+   ],
+   "grade": "true",
+   "hue": null,
+   "note": "Ken and Ryu side by side, stances",
+   "lib_quality": 3
+  },
+  {
+   "id": "C5",
+   "layer": "clash",
+   "f_in": 316,
+   "f_out": 336,
+   "frames": 20,
+   "lib": "sf119",
+   "src_in": 135.9,
+   "src_out": 136.7,
+   "speed": 1.0,
+   "crop": "960:536:82:92",
+   "characters": [
+    "Ken"
+   ],
+   "grade": "true",
+   "hue": null,
+   "note": "jump kick, arena wide",
+   "lib_quality": 4
+  },
+  {
+   "id": "C6",
+   "layer": "clash",
+   "f_in": 336,
+   "f_out": 357,
+   "frames": 21,
+   "lib": "sf033",
+   "src_in": 39.65,
+   "src_out": 40.154,
+   "speed": 0.6,
+   "crop": "960:536:80:92",
+   "characters": [
+    "Dhalsim"
+   ],
+   "grade": "true>drain",
+   "hue": null,
+   "note": "lunge; ramp 1.0 -> 0.2 (avg 0.6) under 'I'm a street fighter', drains to mono by f356",
+   "lib_quality": 3
+  },
+  {
+   "id": "H0",
+   "layer": "strike",
+   "f_in": 365,
+   "f_out": 387,
+   "frames": 22,
+   "lib": "sf045",
+   "src_in": 50.75,
+   "src_out": 51.014,
+   "speed": 0.3,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "Balrog",
+    "Ken"
+   ],
+   "grade": "true",
+   "hue": null,
+   "note": "GLOVE CONTACT FRAME = f365 (editor frame-steps 50.05-51.97 and sets src_in; proof PNG). 0.30x after contact",
+   "lib_quality": 5
+  },
+  {
+   "id": "F1",
+   "layer": "strike",
+   "f_in": 387,
+   "f_out": 398,
+   "frames": 11,
+   "lib": "sf130",
+   "src_in": 146.15,
+   "src_out": 146.59,
+   "speed": 1.0,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "unknown (red spin kick)"
+   ],
+   "grade": "true",
+   "hue": null,
+   "note": "upside-down spin kick, crowd",
+   "lib_quality": 5
+  },
+  {
+   "id": "F2",
+   "layer": "strike",
+   "f_in": 398,
+   "f_out": 409,
+   "frames": 11,
+   "lib": "sf128",
+   "src_in": 144.86,
+   "src_out": 145.3,
+   "speed": 1.0,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "Blanka"
+   ],
+   "grade": "true",
+   "hue": null,
+   "note": "swats a man in an orange jumpsuit",
+   "lib_quality": 3
+  },
+  {
+   "id": "F3",
+   "layer": "strike",
+   "f_in": 409,
+   "f_out": 420,
+   "frames": 11,
+   "lib": "sf109",
+   "src_in": 121.4,
+   "src_out": 121.84,
+   "speed": 1.0,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "Cammy"
+   ],
+   "grade": "true",
+   "hue": null,
+   "note": "fires rotary weapon, muzzle flash",
+   "lib_quality": 3
+  },
+  {
+   "id": "F4",
+   "layer": "strike",
+   "f_in": 420,
+   "f_out": 430,
+   "frames": 10,
+   "lib": "sf095",
+   "src_in": 108.16,
+   "src_out": 108.56,
+   "speed": 1.0,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "Chun-Li"
+   ],
+   "grade": "true",
+   "hue": null,
+   "note": "slash, blade across frame",
+   "lib_quality": 3
+  },
+  {
+   "id": "F5",
+   "layer": "strike",
+   "f_in": 430,
+   "f_out": 441,
+   "frames": 11,
+   "lib": "sf122",
+   "src_in": 139.76,
+   "src_out": 140.2,
+   "speed": 1.0,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "Blanka"
+   ],
+   "grade": "true",
+   "hue": null,
+   "note": "leaps across the warehouse",
+   "lib_quality": 4
+  },
+  {
+   "id": "F6",
+   "layer": "strike",
+   "f_in": 441,
+   "f_out": 451,
+   "frames": 10,
+   "lib": "sf084",
+   "src_in": 97.4,
+   "src_out": 97.8,
+   "speed": 1.0,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "Cammy"
+   ],
+   "grade": "true",
+   "hue": null,
+   "note": "strides down a neon street",
+   "lib_quality": 3
+  },
+  {
+   "id": "F7",
+   "layer": "strike",
+   "f_in": 451,
+   "f_out": 463,
+   "frames": 12,
+   "lib": "sf131",
+   "src_in": 147.0,
+   "src_out": 147.48,
+   "speed": 1.0,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "unknown (handstand)"
+   ],
+   "grade": "true",
+   "hue": null,
+   "note": "handstand in light shafts",
+   "lib_quality": 4
+  },
+  {
+   "id": "F8",
+   "layer": "strike",
+   "f_in": 463,
+   "f_out": 474,
+   "frames": 11,
+   "lib": "sf120",
+   "src_in": 137.3,
+   "src_out": 137.74,
+   "speed": 1.0,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "Ken",
+    "Ryu"
+   ],
+   "grade": "true",
+   "hue": null,
+   "note": "back to back, warehouse",
+   "lib_quality": 4
+  },
+  {
+   "id": "F9",
+   "layer": "strike",
+   "f_in": 474,
+   "f_out": 485,
+   "frames": 11,
+   "lib": "sf123",
+   "src_in": 140.8,
+   "src_out": 141.24,
+   "speed": 1.0,
+   "crop": "1280:536:0:92",
+   "characters": [
+    "unknown"
+   ],
+   "grade": "true",
+   "hue": null,
+   "note": "fighter on the arena floor after a hit",
+   "lib_quality": 4
+  }
+ ],
+ "tiles": [
+  {
+   "id": "T1",
+   "character": "Ryu",
+   "hue": "#E3203A",
+   "hue_name": "HADOU CRIMSON",
+   "lib": "sf125",
+   "src_in": 142.95,
+   "src_out": 143.59,
+   "speed": 0.4,
+   "clip_frames": 40,
+   "arrive_f": 494,
+   "freeze_from_f": 534,
+   "crop": "600:536:122:92",
+   "rect_4k": [
+    80,
+    2300,
+    482,
+    430
+   ]
+  },
+  {
+   "id": "T2",
+   "character": "Ken",
+   "hue": "#FF5E1A",
+   "hue_name": "SHORYU ORANGE",
+   "lib": "sf031",
+   "src_in": 37.52,
+   "src_out": 38.16,
+   "speed": 0.4,
+   "clip_frames": 40,
+   "arrive_f": 512,
+   "freeze_from_f": 552,
+   "crop": "600:536:310:92",
+   "rect_4k": [
+    586,
+    2300,
+    482,
+    430
+   ]
+  },
+  {
+   "id": "T3",
+   "character": "Dhalsim",
+   "hue": "#FFA21C",
+   "hue_name": "YOGA AMBER",
+   "lib": "sf032",
+   "src_in": 38.7,
+   "src_out": 39.34,
+   "speed": 0.4,
+   "clip_frames": 40,
+   "arrive_f": 529,
+   "freeze_from_f": 569,
+   "crop": "600:536:280:92",
+   "rect_4k": [
+    1092,
+    2300,
+    482,
+    430
+   ]
+  },
+  {
+   "id": "T4",
+   "character": "Blanka",
+   "hue": "#9BEA2E",
+   "hue_name": "VOLT LIME",
+   "lib": "sf100",
+   "src_in": 112.7,
+   "src_out": 113.34,
+   "speed": 0.4,
+   "clip_frames": 40,
+   "arrive_f": 547,
+   "freeze_from_f": 587,
+   "crop": "600:536:188:92",
+   "rect_4k": [
+    1598,
+    2300,
+    482,
+    430
+   ]
+  },
+  {
+   "id": "T5",
+   "character": "Guile",
+   "hue": "#17C9A6",
+   "hue_name": "SONIC TEAL",
+   "lib": "sf082",
+   "src_in": 95.2,
+   "src_out": 95.84,
+   "speed": 0.4,
+   "clip_frames": 40,
+   "arrive_f": 564,
+   "freeze_from_f": 604,
+   "crop": "600:536:180:92",
+   "rect_4k": [
+    80,
+    2754,
+    482,
+    430
+   ]
+  },
+  {
+   "id": "T6",
+   "character": "Chun-Li",
+   "hue": "#2F6DFF",
+   "hue_name": "KIKOKEN BLUE",
+   "lib": "sf135",
+   "src_in": 152.4,
+   "src_out": 153.04,
+   "speed": 0.4,
+   "clip_frames": 40,
+   "arrive_f": 582,
+   "freeze_from_f": 622,
+   "crop": "600:536:550:92",
+   "rect_4k": [
+    586,
+    2754,
+    482,
+    430
+   ]
+  },
+  {
+   "id": "T7",
+   "character": "M. Bison",
+   "hue": "#8B3DFF",
+   "hue_name": "PSYCHO VIOLET",
+   "lib": "sf107",
+   "src_in": 119.6,
+   "src_out": 120.24,
+   "speed": 0.4,
+   "clip_frames": 40,
+   "arrive_f": 599,
+   "freeze_from_f": 639,
+   "crop": "600:536:222:92",
+   "rect_4k": [
+    1092,
+    2754,
+    482,
+    430
+   ]
+  },
+  {
+   "id": "T8",
+   "character": "E. Honda",
+   "hue": "#FF2D8F",
+   "hue_name": "SUMO MAGENTA",
+   "lib": "sf053",
+   "src_in": 62.3,
+   "src_out": 62.94,
+   "speed": 0.4,
+   "clip_frames": 40,
+   "arrive_f": 616,
+   "freeze_from_f": 656,
+   "crop": "600:536:326:92",
+   "rect_4k": [
+    1598,
+    2754,
+    482,
+    430
+   ]
+  }
+ ],
+ "palette": {
+  "Ink": "#07060A",
+  "Ink Raised": "#13111A",
+  "Smoke": "#2B2632",
+  "White Hot": "#FFF8EC",
+  "Bone": "#E6DED2",
+  "Champion Gold": "#FFC94D",
+  "Gold Deep": "#C7851E",
+  "fighters": {
+   "Ryu": "#E3203A",
+   "Ken": "#FF5E1A",
+   "Dhalsim": "#FFA21C",
+   "Blanka": "#9BEA2E",
+   "Guile": "#17C9A6",
+   "Chun-Li": "#2F6DFF",
+   "M. Bison": "#8B3DFF",
+   "E. Honda": "#FF2D8F"
+  }
+ },
+ "fonts": {
+  "name": "Unbounded 900",
+  "role": "Unbounded 500",
+  "hud": "Space Mono 700",
+  "dir": "shots/sh010/director/v001/fonts/"
+ }
+}
