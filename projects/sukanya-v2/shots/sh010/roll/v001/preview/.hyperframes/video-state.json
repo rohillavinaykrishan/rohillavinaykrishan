@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "historyId": "9a9e4ce0-ce95-4c1c-a620-47b4c340f661",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "assets/fonts/Montserrat-500.ttf": {
+      "hash": "637639da93fdd9178e52662cce4bd5a59a544eb60677bb6ef9f89bc472607e5d",
+      "content": "/root/.cache/hyperframes/history/9a9e4ce0-ce95-4c1c-a620-47b4c340f661/blobs/63/637639da93fdd9178e52662cce4bd5a59a544eb60677bb6ef9f89bc472607e5d"
+    },
+    "compositions/roll.html": {
+      "hash": "e398f5b5e822e4f3be8ee2aa2e1370671dfc05814c462a4db9e4d4095ee261f3",
+      "content": "/root/.cache/hyperframes/history/9a9e4ce0-ce95-4c1c-a620-47b4c340f661/blobs/e3/e398f5b5e822e4f3be8ee2aa2e1370671dfc05814c462a4db9e4d4095ee261f3"
+    },
+    "index.html": {
+      "hash": "415ee44d8b0090bad70194f30f4f84c471b5a55323e29c658be30dd155eda659",
+      "content": "/root/.cache/hyperframes/history/9a9e4ce0-ce95-4c1c-a620-47b4c340f661/blobs/41/415ee44d8b0090bad70194f30f4f84c471b5a55323e29c658be30dd155eda659"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": {
+      "revision": null,
+      "id": "fceb9bd9-79a3-4642-8c25-c8c16b5737b1"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "id": "fceb9bd9-79a3-4642-8c25-c8c16b5737b1",
+        "scope": "project",
+        "report": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/roll/v001/preview/.hyperframes/artifacts/checks/fceb9bd9-79a3-4642-8c25-c8c16b5737b1.json",
+        "metadata": {
+          "ok": true,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 3000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1792753717790,
+        "contentHash": "755e82ef0a9ab878da8567a48a1b253e90948f56778106001406b73c7770bc07",
+        "revision": null,
+        "inputFingerprint": "a14afe4b4639447072d06aff8627dc59fae634cfb35e81a3f05012a2320ceca2",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  }
+}

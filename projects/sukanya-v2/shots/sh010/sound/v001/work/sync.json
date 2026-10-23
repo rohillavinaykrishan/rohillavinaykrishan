@@ -1,0 +1,16 @@
+{
+ "sub_jump_db_0p3s": 34.4,
+ "sub_jump_start_s": 10.02,
+ "sub_hole_min_db": -47.1,
+ "sub_hole_min_s": 10.41,
+ "sub_plateau_db": -15.1,
+ "pickup_sub_peak_s": 10.25,
+ "sub_onset_s": 10.43,
+ "sub_onset_frame": 260.75,
+ "sub_onset_err_frames": -0.25,
+ "strongest_fullband_onset_s": 9.25,
+ "strongest_onset_frame": 231.25,
+ "onset_nearest_f261_s": 10.45,
+ "onset_nearest_f261_err_frames": 0.25,
+ "max_diff_after_f261": 1.1990320630816953e-07
+}

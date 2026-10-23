@@ -1,0 +1,4 @@
+C00: 2400,900,25/1,18
+[concat @ 0x563a58748080] Impossible to open '/tmp/claude-0/-home-user-rohillavinaykrishan/5fe3b9fd-8381-5a1b-b6a0-30ea036f781a/scratchpad/editB/mi/s_0179.png'
+[in#0/concat @ 0x563a58747f80] Error during demuxing: No such file or directory
+[in#0/concat @ 0x563a58747f80] Error retrieving a packet from demuxer: No such file or directory
