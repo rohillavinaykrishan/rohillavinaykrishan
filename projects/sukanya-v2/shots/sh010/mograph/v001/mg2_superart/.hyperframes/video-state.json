@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "historyId": "9744b8c3-5c0c-4eed-a72b-21c1d44722c6",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "assets/B01.mp4": {
+      "hash": "292a8cdd480a2ad3d059ed3febbb65a1d365099671b1bfdbd90763886bbc1549",
+      "content": "/root/.cache/hyperframes/history/9744b8c3-5c0c-4eed-a72b-21c1d44722c6/blobs/29/292a8cdd480a2ad3d059ed3febbb65a1d365099671b1bfdbd90763886bbc1549"
+    },
+    "assets/fonts/BarlowCondensed-600.ttf": {
+      "hash": "0d85af813fc3ed87db0c6265515689b2eef5cbaf7aab17922528dfc95a2cd73f",
+      "content": "/root/.cache/hyperframes/history/9744b8c3-5c0c-4eed-a72b-21c1d44722c6/blobs/0d/0d85af813fc3ed87db0c6265515689b2eef5cbaf7aab17922528dfc95a2cd73f"
+    },
+    "assets/fonts/BarlowCondensed-900Italic.ttf": {
+      "hash": "75338266e60b15dfc5ac0bae8b78fdc5535ea50703ed73c14dc598498ffe8173",
+      "content": "/root/.cache/hyperframes/history/9744b8c3-5c0c-4eed-a72b-21c1d44722c6/blobs/75/75338266e60b15dfc5ac0bae8b78fdc5535ea50703ed73c14dc598498ffe8173"
+    },
+    "assets/fonts/ChakraPetch-600.ttf": {
+      "hash": "b27ff10e18f96386894f25a9e53a3b7c0244a70556461d2a9a99acb3465299fa",
+      "content": "/root/.cache/hyperframes/history/9744b8c3-5c0c-4eed-a72b-21c1d44722c6/blobs/b2/b27ff10e18f96386894f25a9e53a3b7c0244a70556461d2a9a99acb3465299fa"
+    },
+    "assets/fonts/Montserrat-500.ttf": {
+      "hash": "637639da93fdd9178e52662cce4bd5a59a544eb60677bb6ef9f89bc472607e5d",
+      "content": "/root/.cache/hyperframes/history/9744b8c3-5c0c-4eed-a72b-21c1d44722c6/blobs/63/637639da93fdd9178e52662cce4bd5a59a544eb60677bb6ef9f89bc472607e5d"
+    },
+    "assets/ring_disp.png": {
+      "hash": "f79650b845c61e4c6c2ca3690ca9b0627efaafd26c26ebc642af7a1fe64b35b6",
+      "content": "/root/.cache/hyperframes/history/9744b8c3-5c0c-4eed-a72b-21c1d44722c6/blobs/f7/f79650b845c61e4c6c2ca3690ca9b0627efaafd26c26ebc642af7a1fe64b35b6"
+    },
+    "check/build_info.json": {
+      "hash": "f2b2eefb7eb246eda51b9042cad9887bedcc7e8f56a1c511999a419c4e8e6143",
+      "content": "/root/.cache/hyperframes/history/9744b8c3-5c0c-4eed-a72b-21c1d44722c6/blobs/f2/f2b2eefb7eb246eda51b9042cad9887bedcc7e8f56a1c511999a419c4e8e6143"
+    },
+    "compositions/mg2.html": {
+      "hash": "313a5f71156ba12dbbf388a24a4d34892b2dad1409ed12f8e0beefad8cb25371",
+      "content": "/root/.cache/hyperframes/history/9744b8c3-5c0c-4eed-a72b-21c1d44722c6/blobs/31/313a5f71156ba12dbbf388a24a4d34892b2dad1409ed12f8e0beefad8cb25371"
+    },
+    "index.html": {
+      "hash": "2dfab15bbb4b132ca9b902f6e4c416e27101cfe94922558178ee8f96ca6b7877",
+      "content": "/root/.cache/hyperframes/history/9744b8c3-5c0c-4eed-a72b-21c1d44722c6/blobs/2d/2dfab15bbb4b132ca9b902f6e4c416e27101cfe94922558178ee8f96ca6b7877"
+    },
+    "proxy.html": {
+      "hash": "1ed4023efd13003c85865153d4fd4e5dfff384ee6ef11477e251e19488d942f9",
+      "content": "/root/.cache/hyperframes/history/9744b8c3-5c0c-4eed-a72b-21c1d44722c6/blobs/1e/1ed4023efd13003c85865153d4fd4e5dfff384ee6ef11477e251e19488d942f9"
+    },
+    "src/mg2.tpl.html": {
+      "hash": "f5c8468d467b37f492ce710cfbff28542186e6031c6ab057dda66d8e197eaf43",
+      "content": "/root/.cache/hyperframes/history/9744b8c3-5c0c-4eed-a72b-21c1d44722c6/blobs/f5/f5c8468d467b37f492ce710cfbff28542186e6031c6ab057dda66d8e197eaf43"
+    },
+    "tools/build.py": {
+      "hash": "3baa15af1f91cfb787b9a6819f635fbc510f18ab04e4f23414211d3854a9ed55",
+      "content": "/root/.cache/hyperframes/history/9744b8c3-5c0c-4eed-a72b-21c1d44722c6/blobs/3b/3baa15af1f91cfb787b9a6819f635fbc510f18ab04e4f23414211d3854a9ed55"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": {
+      "revision": null,
+      "id": "8add0f01-ae94-41db-88c8-95053775bc4c"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "id": "6493bb63-8467-4168-9a00-1db52231215a",
+        "scope": "project",
+        "report": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg2_superart/.hyperframes/artifacts/checks/6493bb63-8467-4168-9a00-1db52231215a.json",
+        "metadata": {
+          "ok": false,
+          "browserSkipped": true,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 3000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1792771266457,
+        "contentHash": "057824cb8fc6593c87164b9024efa059cc6b3a7bd1dfb5b6014e7c5b6dd37e44",
+        "revision": null,
+        "inputFingerprint": "2bdce379a918a1887a927ff65dcdecfd9362a34216ed04ef616e02c7705964c2",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "id": "8add0f01-ae94-41db-88c8-95053775bc4c",
+        "scope": "project",
+        "report": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg2_superart/.hyperframes/artifacts/checks/8add0f01-ae94-41db-88c8-95053775bc4c.json",
+        "metadata": {
+          "ok": false,
+          "browserSkipped": true,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 3000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1792771271085,
+        "contentHash": "057824cb8fc6593c87164b9024efa059cc6b3a7bd1dfb5b6014e7c5b6dd37e44",
+        "revision": null,
+        "inputFingerprint": "2bdce379a918a1887a927ff65dcdecfd9362a34216ed04ef616e02c7705964c2",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  }
+}

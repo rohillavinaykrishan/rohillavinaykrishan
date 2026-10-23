@@ -1,0 +1,6 @@
+[INFO] [Compiler] Fetched 11 font face(s) for "Montserrat" from Google Fonts (cached to /root/.cache/hyperframes/fonts/montserrat)
+[INFO] [Compiler] Injected deterministic @font-face rules for 1 requested font families
+[INFO] [Compiler] Inlined CDN script: https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js
+[INFO] [Compiler] Embedded local font file: assets/fonts/Montserrat-500.ttf (176 KB → data URI)
+[INFO] [Compiler] Embedded local font file: assets/fonts/BarlowCondensed-600.ttf (85 KB → data URI)
+[INFO] [Compiler] Embedded local font file: assets/fonts/ChakraPetch-600.ttf (69 KB → data URI)
