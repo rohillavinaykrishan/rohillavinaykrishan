@@ -14,3 +14,22 @@ C6.mp4: true>drain; frames in 21 out 21 OK
 H0.mp4: true; frames in 22 out 22 OK
 F1.mp4: true; frames in 11 out 11 OK
 F2.mp4: true warm-pre rr+0.09 gg-0.022 bb-0.09; frames in 11 out 11 OK
+F3.mp4: true warm-pre rr+0.24 gg-0.060 bb-0.24; frames in 11 out 11 OK
+F4.mp4: true; frames in 10 out 10 OK
+F5.mp4: true warm-pre rr+0.15 gg-0.037 bb-0.15; frames in 11 out 11 OK
+F6.mp4: true warm-pre rr+0.06 gg-0.015 bb-0.06; frames in 10 out 10 OK
+F7.mp4: true; frames in 12 out 12 OK
+F8.mp4: true; frames in 11 out 11 OK
+F9.mp4: true; frames in 11 out 11 OK
+T1_duo.mp4: duo:Ryu levels 0.019-0.847 gamma 0.85; frames in 40 out 40 OK
+T1_true.mp4: true warm-pre rr+0.30 gg-0.075 bb-0.30; frames in 40 out 40 OK
+T4_duo.mp4: duo:Blanka levels 0.053-0.906 gamma 0.75; frames in 40 out 40 OK
+T4_true.mp4: true warm-pre rr+0.21 gg-0.052 bb-0.21; frames in 40 out 40 OK
+T5_duo.mp4: duo:Guile levels 0.048-0.892 gamma 0.88; frames in 40 out 40 OK
+T5_true.mp4: true; frames in 40 out 40 OK
+T6_duo.mp4: duo:Chun-Li levels 0.031-0.860 gamma 0.61; frames in 40 out 40 OK
+T6_true.mp4: true warm-pre 0.30 STILL FAILS min(R-B)=-24.13; frames in 40 out 40 OK
+T7_duo.mp4: duo:M. Bison levels 0.008-0.881 gamma 0.55; frames in 40 out 40 OK
+T7_true.mp4: true; frames in 40 out 40 OK
+T8_duo.mp4: duo:E. Honda levels 0.020-0.620 gamma 0.71; frames in 40 out 40 OK
+T8_true.mp4: true; frames in 40 out 40 OK

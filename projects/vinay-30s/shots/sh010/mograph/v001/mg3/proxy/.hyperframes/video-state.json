@@ -63,7 +63,6 @@
         {
           "id": "7948aa64-0a3f-48cf-be1d-91fbb0cb324c",
           "scope": "project",
-          "report": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/.hyperframes/artifacts/checks/7948aa64-0a3f-48cf-be1d-91fbb0cb324c.json",
           "metadata": {
             "ok": false,
             "browserSkipped": false,
@@ -85,7 +84,9 @@
           "revision": "a7468444-8a0f-431a-9397-4bd2a8421a73",
           "inputFingerprint": "ed047413d3085e4cdd8495c902efc785ddb9bd8af02bd937cb364800204741ac",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "00e673a7-704c-4fa3-bc9b-e62d28afd344"
         }
       ],
       "2cb77050-dcb4-414c-9a95-0611831c5ae6": [
@@ -152,5 +153,18 @@
     "latest": null,
     "revisions": {},
     "unversioned": []
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "00e673a7-704c-4fa3-bc9b-e62d28afd344",
+      "completedAt": 1792791017304,
+      "output": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/mg3_proxy_540.mp4",
+      "status": "completed",
+      "revision": "2cb77050-dcb4-414c-9a95-0611831c5ae6"
+    },
+    "retainedRevisions": [
+      "2cb77050-dcb4-414c-9a95-0611831c5ae6"
+    ]
+  },
+  "pendingArtifactCleanup": []
 }
