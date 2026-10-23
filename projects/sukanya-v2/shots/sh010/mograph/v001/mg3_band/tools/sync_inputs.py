@@ -136,6 +136,21 @@ for sid, f0 in POPS.items():
     outs = [os.path.join(A, "pop", f"{sid}_{i}.png") for i in range(POP_N)]
     if not FORCE and man.get(sid + "_pop", {}).get("key") == key and all(map(os.path.exists, outs)):
         continue
+    mdir = os.path.join(SH, "roto/v001", sid + "_matte_png")
+    if not os.path.exists(matte) and os.path.isdir(mdir) and len(os.listdir(mdir)) >= s["f_out"] - s["f_in"]:
+        key = "pngdir:" + str(sorted((f, int(os.stat(os.path.join(mdir, f)).st_mtime)) for f in os.listdir(mdir))) + "|" + man[sid]["key"]
+        if FORCE or man.get(sid + "_pop", {}).get("key") != key or not all(map(os.path.exists, outs)):
+            tmpd = tempfile.mkdtemp(dir=os.path.join(A, "pop"))
+            run(["ffmpeg", "-y", "-v", "error", "-i", plate, os.path.join(tmpd, "p%03d.png")])
+            for i, o in enumerate(outs):
+                fi = (f0 - s["f_in"]) + i
+                p = np.asarray(Image.open(os.path.join(tmpd, f"p{fi+1:03d}.png")).convert("RGB"))
+                m = np.asarray(Image.open(os.path.join(mdir, f"{sid}_matte.{fi:04d}.png")).convert("L").resize((2400, 900)))
+                Image.fromarray(np.dstack([p, m])).save(o)
+            shutil.rmtree(tmpd)
+            man[sid + "_pop"] = {"key": key, "mode": "roto png sequence " + os.path.relpath(mdir, PROJ)}
+            print(f"{sid}_pop: roto png matte applied")
+        continue
     if not os.path.exists(matte):
         for o in outs:
             Image.new("RGBA", (2400, 900), (0, 0, 0, 0)).save(o)

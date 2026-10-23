@@ -183,5 +183,16 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "ceb4dcd2-76f5-4d35-830e-e82f8b922c04",
+      "completedAt": 1792771822981,
+      "output": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg4_title/renders/mg4_proxy_540.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
 }

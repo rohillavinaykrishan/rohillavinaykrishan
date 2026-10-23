@@ -5,4 +5,6 @@
 - Panels: P1 cy 1300 / P2 cy 2500, 2160x1180, skew -12deg, 60% opacity, 0.6x drift (11.4 px/f, reset per shot), 6 f expo-out slash-open, 3 f ease-in close, 2 f saffron-edged wipes on the fills; A02 tail rides P2 from f63. Hold: P1 drops into a 900 px C00 band (cy 1750) at f243.
 - Charge (f243-260, flag `charge_fx` in build.py): bracket snap 1.25->1.0, P1 LOCKED at f254, 40 ki motes, push-in 1.00->1.03 with origin at her cell (1509, 1536). These overlap MG2's spec list: comp lead picks one owner.
 - Rebuild: python3 tools/sync_inputs.py (plates; chain colour plates > edit+colorist cube > edit+MG1 temp cube > trailer placeholder), then python3 tools/build.py.
-- Proxy: ../mg1_proxy540 (own root, symlinked assets/compositions) -> renders/mg1_proxy_540.mp4.
+- Proxy: ../mg1_proxy540 (own root; assets symlinked, compositions COPIED by build.py because a nested scene src does not resolve through a symlinked dir) -> renders/mg1_proxy_540.mp4 (261 f, 10.44 s, 25 fps). Stage fits to the OUTERMOST root data-width (the runtime resizes the scene host to 2160).
+- Plates: all 14 from color/v001/plates (graded, frame-exact), transcoded to yuv420p for Chrome.
+- check: lint 0 errors; layout reports text_occluded on roll rows sitting outside the roll window under the MG1 top/bottom fades (by design, no visible issue).

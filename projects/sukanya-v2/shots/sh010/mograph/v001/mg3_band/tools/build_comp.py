@@ -15,7 +15,7 @@ DUR = (F1 - F0) / FPS                   # 3.56 s
 P = CUES["palette"]
 B = [s for s in CUES["shots"] if s["layer"] == "super_band"]
 CUTS = [s["f_in"] for s in B[1:]]        # 277 289 300 310 320 330 340
-POPS = {"B02": dict(f=279, n=8, s=1.16, ty=-40), "B03": dict(f=290, n=8, s=1.30, ty=-70)}
+POPS = {"B02": dict(f=279, n=8, s=1.06, ty=-20), "B03": dict(f=290, n=8, s=1.25, ty=-40)}
 
 T = lambda f: round((f - F0) / FPS, 4)
 
@@ -43,8 +43,10 @@ svg_pts = lambda pts: " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
 # baseline pitch 0.86 x line-2 em, block (cap top line 1 -> baseline line 2) centred on y 1700.
 S1, S2 = round(300 / 0.70), round(220 / 0.70)   # 429, 314 px
 PITCH = round(0.86 * S2)                          # 270
-blk_top = CY - (300 + PITCH) / 2                  # 1415
-BL1, BL2 = blk_top + 300, blk_top + 300 + PITCH  # baselines 1715, 1985
+# MG2 hand-off (mg2_superart/fx_handoff.json name_pose_settled_f272) wins: baselines 1707 / 1993
+_H = json.load(open(os.path.join(os.path.dirname(MG), "mg2_superart/fx_handoff.json")))["name_pose_settled_f272"]
+BL1, BL2 = _H["SUKANYA"]["baseline_y"], _H["DILIP DHARIYA"]["baseline_y"]
+PLATE_SCALE = 1.575   # MG2 band_settled_f267: plate upright (counter-skewed), scale 1.575
 TOP1, TOP2 = BL1 - 0.9 * S1, BL2 - 0.9 * S2      # line-height:1 -> baseline sits 0.9 em below the box top
 
 vids = "\n".join(
@@ -86,7 +88,7 @@ for c in CUTS:
     js.append(f'tl.set("#mg3-glow", {{opacity: 0.5}}, {T(c + 2)});')
     for i, k in enumerate((1.0, 0.66, 0.33, 0.0)):
         js.append(f'tl.set("#mg3-name", {{x: {nx * k:.2f}, y: {ny * k:.2f}}}, {T(c + i)});')
-    js.append(f'tl.fromTo("#mg3-name-glow", {{opacity: 0.88}}, {{opacity: 0.80, duration: {6 / FPS}, ease: {E_OUT}{"" if c == CUTS[0] else ", immediateRender: false"}}}, {T(c)});')
+    js.append(f'tl.fromTo("#mg3-name-glow", {{opacity: 0.40}}, {{opacity: 0.30, duration: {6 / FPS}, ease: {E_OUT}{"" if c == CUTS[0] else ", immediateRender: false"}}}, {T(c)});')
 # echo bands: slash-wipe in f277-283 (expo-out), drift along the -12 deg axis at 0.35x (14 px/frame)
 for side, sign in (("u", -1), ("d", 1)):
     js.append(f'tl.fromTo("#mg3-echo-{side}-wipe, #mg3-echo-{side}-line", {{clipPath: "inset(0px 100% 0px 0px)"}}, '
@@ -118,15 +120,15 @@ scene = f"""<template>
     /* echo bands: tritone afterimage of the outgoing shot */
     #mg3-echo-u-clip {{ clip-path: {css_poly(eu_pts)}; }}
     #mg3-echo-d-clip {{ clip-path: {css_poly(ed_pts)}; }}
-    #root .echo-rot {{ position: absolute; width: 2400px; height: 900px; left: -120px; transform-origin: 1200px 450px; transform: rotate(-12deg); }}
+    #root .echo-rot {{ position: absolute; width: 2400px; height: 900px; left: -120px; }}
     #root .echo-img {{ position: absolute; left: 0; top: 0; width: 2400px; height: 900px; opacity: 0.62; }}
     /* band */
     #mg3-band-clip {{ clip-path: {css_poly(band_pts)}; }}
     #mg3-band-rot {{ position: absolute; left: {CX - BW / 2:.0f}px; top: {CY - BH / 2:.0f}px; width: {BW}px; height: {BH}px;
-      transform-origin: 50% 50%; transform: rotate(-12deg); }}
+      transform-origin: 50% 50%; transform: scale({PLATE_SCALE}); }}
     #root .plate {{ position: absolute; left: 0; top: 0; width: {BW}px; height: {BH}px; object-fit: cover; }}
     #mg3-pop-rot {{ position: absolute; left: {CX - BW / 2:.0f}px; top: {CY - BH / 2:.0f}px; width: {BW}px; height: {BH}px;
-      transform-origin: 50% 50%; transform: rotate(-12deg); }}
+      transform-origin: 50% 50%; transform: scale({PLATE_SCALE}); }}
     #root .pop {{ position: absolute; inset: 0; transform-origin: 50% 100%; filter: drop-shadow(0 22px 0 {P["mulberry"]}cc); }}
     #root .pop-img {{ position: absolute; left: 0; top: 0; width: {BW}px; height: {BH}px; }}
     /* SUPER ART HUD chip */
@@ -137,7 +139,7 @@ scene = f"""<template>
       letter-spacing: 0.01em; padding-left: 0.01em; white-space: nowrap; }}
     #root .l1 {{ top: {TOP1:.1f}px; font-size: {S1}px; }}
     #root .l2 {{ top: {TOP2:.1f}px; font-size: {S2}px; }}
-    #mg3-name-glow .nm {{ color: {P["saffron"]}; filter: blur(18px); }}
+    #mg3-name-glow .nm {{ color: {P["saffron"]}; filter: blur(26px); }}
     #mg3-name-main .nm {{ color: {P["ki_white"]}; text-shadow: 0 18px 0 {P["mulberry"]}, 0 0 6px {P["saffron"]}99; }}
   </style>
   <div id="root" data-composition-id="mg3_band" data-width="2160" data-height="3840" data-layout-allow-overflow data-layout-allow-overlap>
@@ -190,7 +192,7 @@ scene = f"""<template>
     <!-- HERO NAME f277-349 -->
     <div id="mg3-name-clip" class="layer clip" data-start="{T(277)}" data-duration="{T(F1) - T(277):.4f}" data-track-index="6" style="z-index:6">
       <div id="mg3-name" class="layer">
-        <div id="mg3-name-glow" class="layer" style="opacity:0.8"><div class="nm l1">SUKANYA</div><div class="nm l2">DILIP DHARIYA</div></div>
+        <div id="mg3-name-glow" class="layer" style="opacity:0.3"><div class="nm l1">SUKANYA</div><div class="nm l2">DILIP DHARIYA</div></div>
         <div id="mg3-name-main" class="layer"><div class="nm l1">SUKANYA</div><div class="nm l2">DILIP DHARIYA</div></div>
       </div>
     </div>
@@ -245,7 +247,7 @@ index = f"""<!doctype html>
 </html>
 """
 open(os.path.join(MG, "index.html"), "w").write(index)
-geo = dict(band_poly=band_pts, echo_up_poly=eu_pts, echo_dn_poly=ed_pts, plate_rot_deg=-12, plate_box=[CX - BW / 2, CY - BH / 2, BW, BH],
+geo = dict(band_poly=band_pts, echo_up_poly=eu_pts, echo_dn_poly=ed_pts, plate_rot_deg=0, plate_scale=PLATE_SCALE, plate_box=[CX - BW / 2, CY - BH / 2, BW, BH],
            name=dict(font="Barlow Condensed 900 Italic", l1=dict(text="SUKANYA", size_px=S1, cap_px=300, baseline_y=BL1),
                      l2=dict(text="DILIP DHARIYA", size_px=S2, cap_px=220, baseline_y=BL2), centre_x=CX, block_centre_y=CY,
                      tracking_em=0.01, fill=P["ki_white"], glow=f'{P["saffron"]} blur 18px 80%', shadow=f'{P["mulberry"]} 0,+18'),

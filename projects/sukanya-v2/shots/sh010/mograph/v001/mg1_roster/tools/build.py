@@ -155,9 +155,12 @@ def root(w, h, comment):
 open(os.path.join(MG1, "index.html"), "w").write(root(2160, 3840, "MG1 mount at master scale (2160x3840). Comp lead: mount compositions/mg1.html at data-start=0, data-duration=10.44."))
 PX = os.path.join(os.path.dirname(MG1), "mg1_proxy540")   # separate HyperFrames project (one root per project)
 os.makedirs(PX, exist_ok=True)
-for d in ("assets", "compositions"):
-    l = os.path.join(PX, d)
-    if not os.path.islink(l): os.symlink(os.path.join("..", "mg1_roster", d), l)
+l = os.path.join(PX, "assets")
+if not os.path.islink(l): os.symlink(os.path.join("..", "mg1_roster", "assets"), l)
+pc = os.path.join(PX, "compositions")   # real copies: nested scene src does not resolve through a symlinked dir
+if os.path.islink(pc): os.unlink(pc)
+os.makedirs(pc, exist_ok=True)
+for fn in ("mg1.html", "roll.html"): shutil.copyfile(os.path.join(MG1, "compositions", fn), os.path.join(pc, fn))
 open(os.path.join(PX, "index.html"), "w").write(root(540, 960, "MG1 review proxy mount (540x960): same mg1_roster composition (symlinked), stage scaled to fit."))
 info.update(name_x=name_x, name_w=round(name_w, 1), font_px=font_px, her_y_f200=track[200], her_y_f260=track[-1])
 print(json.dumps(info, indent=1))

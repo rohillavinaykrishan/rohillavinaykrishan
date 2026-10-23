@@ -1,0 +1,15 @@
+start Fri Oct 23 16:09:25 UTC 2026
+"B02_pop": "NO_MATTE_YET (transparent)",
+"B03_pop": "NO_MATTE_YET (transparent)"
+}
+wrote scene, index, geometry
+[initSession:screenshot] media + fonts + tailwind ready (1016ms)
+[initSession:screenshot] captureBeyondViewport downgraded: page content fits the capture viewport (1024ms)
+[initSession:screenshot] static-frame dedup: disabled (before-capture hook / video injection active) (1027ms)
+mg3 done Fri Oct 23 16:10:06 UTC 2026
+ok
+wrote mg4
+[initSession:beginframe] applyVideoMetadataHints complete (284ms)
+[initSession:beginframe] media + fonts + tailwind ready (341ms)
+[initSession:beginframe] static-frame dedup: disabled (capture mode beginframe, not screenshot) (348ms)
+mg4 done Fri Oct 23 16:10:23 UTC 2026

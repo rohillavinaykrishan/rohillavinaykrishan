@@ -21,7 +21,7 @@
     .mg1-edge { position: absolute; left: 0; width: 2400px; height: 6px; background: #FFB12A; box-shadow: 0 0 18px #FFB12A; opacity: 0; }
     /* roll */
     #mg1-rollwrap { width: 2160px; height: 3840px; }
-    #roll { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; }
+    #roll { position: absolute !important; left: 0 !important; top: 0 !important; width: 2160px !important; height: 3840px !important; transform: none !important; }
     #mg1-hername { font-family: "SA Montserrat"; font-weight: 500; font-size: 63px; letter-spacing: 0.02em; color: #FFB12A;
       line-height: 93px; height: 93px; white-space: nowrap; opacity: 0; text-shadow: 0 0 10px #14080F, 0 0 22px rgba(255,177,42,0.35); }
     #mg1-fadeT { width: 2160px; height: 900px; background: linear-gradient(#14080F 0px, #14080F 470px, rgba(20,8,15,0.85) 600px, rgba(20,8,15,0) 900px); }
@@ -84,8 +84,10 @@
       const stage = $("mg1-stage"), cam = $("mg1-cam");
       // fit the 2160x3840 stage to whatever size the host gives this comp (4K master or 540 proxy)
       function fit() {
-        const host = stage.closest("[data-composition-src]");
-        let w = host ? parseFloat(host.getAttribute("data-width")) : NaN;
+        // the runtime sizes this scene's host to the scene's own 2160 width, so fit to the OUTERMOST root's data-width
+        let top = null;
+        for (let e = stage.parentElement; e; e = e.parentElement) if (e.hasAttribute && e.hasAttribute("data-width")) top = e;
+        let w = top ? parseFloat(top.getAttribute("data-width")) : NaN;
         if (!(w > 0)) w = window.innerWidth || 2160;
         stage.style.transform = "scale(" + (w / 2160) + ")";
       }
