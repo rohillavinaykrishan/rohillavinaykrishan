@@ -15,13 +15,13 @@ IDS=("$@"); [ ${#IDS[@]} -eq 0 ] && IDS=(C00 B01 B02 B03 B04 B05 B06 B07 B08)
 
 need_mi=0; for i in "${IDS[@]}"; do [[ $i == C00 || $i == B01 ]] && need_mi=1; done
 if [ $need_mi = 1 ] && [ ! -f "$S/mi/done" ]; then
-  # optical-flow slow-mo source: trailer frames 3446..3454 (inside sf126 only), 24 sub-steps per frame
+  # optical-flow slow-mo source: trailer frames 3446..3456 (inside sf126 only), 24 sub-steps per frame
   rm -rf "$S/mi"; mkdir -p "$S/mi"
   SUB=$(python3 -c "
 import json;d=json.load(open('$V/edl_B.json'))
 ps=sorted({round((x-3446)*24) for p in d['plates'] if p['mode']=='minterpolate' for x in p['src_pos']})
 print('+'.join('eq(n,%d)'%k for k in ps))")
-  ffmpeg -v error -y -i "$SRC" -an -vf "select='between(n\,3446\,3454)',$PREP,settb=1,setpts=N,minterpolate=fps=24:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1,select='$SUB'" \
+  ffmpeg -v error -y -i "$SRC" -an -vf "select='between(n\,3446\,3456)',$PREP,settb=1,setpts=N,minterpolate=fps=24:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1,select='$SUB'" \
     -vsync 0 -frame_pts 1 "$S/mi/s_%04d.png"
   # -frame_pts names files by pts in 1/24 units = sub-step index from 3446
   touch "$S/mi/done"

@@ -1,0 +1,394 @@
+{
+ "project": "sukanya-v2",
+ "editor": "A (roster)",
+ "timing_source": "shots/sh010/director/v001/cues.json",
+ "fps": 25,
+ "size": "2160x1180",
+ "graded": false,
+ "codec": "H.264 crf 10 yuv444p",
+ "prep": "active crop -> pad 4 rows top -> deblock strong/8 -> crop back -> shot crop -> retime -> lanczos cover -> unsharp 5:5:0.4",
+ "f_out": "exclusive",
+ "shots": [
+  {
+   "id": "A01",
+   "file": "shots/sh010/edit/v001/plates/A01.mp4",
+   "f_in": 0,
+   "f_out": 42,
+   "frames": 42,
+   "src_in": 38.29,
+   "src_out": 39.62,
+   "speed": 0.7917,
+   "speed_applied": 0.7873,
+   "speed_clamped_to_cut": true,
+   "retime": "minterpolate 75fps mci/aobmc/vsbmc, frame-picked",
+   "trailer_frames": [
+    918,
+    949
+   ],
+   "lib_shot": "sf032",
+   "lib_range": [
+    918,
+    949
+   ],
+   "characters": [
+    "Dhalsim",
+    "Ken"
+   ],
+   "layer": "roll_panel",
+   "crop_full": "960:536:160:92",
+   "scale": "2160x1206",
+   "cover_crop": "2160:1180:0:13"
+  },
+  {
+   "id": "A02",
+   "file": "shots/sh010/edit/v001/plates/A02.mp4",
+   "f_in": 42,
+   "f_out": 84,
+   "frames": 42,
+   "src_in": 141.9,
+   "src_out": 142.76,
+   "speed": 0.5119,
+   "speed_applied": 0.5036,
+   "speed_clamped_to_cut": true,
+   "retime": "minterpolate 75fps mci/aobmc/vsbmc, frame-picked",
+   "trailer_frames": [
+    3402,
+    3422
+   ],
+   "lib_shot": "sf124",
+   "lib_range": [
+    3402,
+    3422
+   ],
+   "characters": [
+    "unknown (aerial kick; lib sf124)"
+   ],
+   "layer": "roll_panel",
+   "crop_full": "960:536:160:92",
+   "scale": "2160x1206",
+   "cover_crop": "2160:1180:0:13"
+  },
+  {
+   "id": "A03",
+   "file": "shots/sh010/edit/v001/plates/A03.mp4",
+   "f_in": 84,
+   "f_out": 105,
+   "frames": 21,
+   "src_in": 62.0,
+   "src_out": 62.9,
+   "speed": 1.0714,
+   "speed_applied": 1.0714,
+   "speed_clamped_to_cut": false,
+   "retime": "nearest source frame (no duplicates)",
+   "trailer_frames": [
+    1486,
+    1507
+   ],
+   "lib_shot": "sf053",
+   "lib_range": [
+    1486,
+    1510
+   ],
+   "characters": [
+    "E. Honda"
+   ],
+   "layer": "roll_panel",
+   "crop_full": "720:536:300:92",
+   "scale": "2160x1608",
+   "cover_crop": "2160:1180:0:107"
+  },
+  {
+   "id": "A04",
+   "file": "shots/sh010/edit/v001/plates/A04.mp4",
+   "f_in": 105,
+   "f_out": 126,
+   "frames": 21,
+   "src_in": 109.45,
+   "src_out": 110.45,
+   "speed": 1.1905,
+   "speed_applied": 1.1905,
+   "speed_clamped_to_cut": false,
+   "retime": "nearest source frame (no duplicates)",
+   "trailer_frames": [
+    2624,
+    2647
+   ],
+   "lib_shot": "sf097",
+   "lib_range": [
+    2624,
+    2653
+   ],
+   "characters": [
+    "unknown (red-jacket fighter; lib sf097)"
+   ],
+   "layer": "roll_panel",
+   "crop_full": "1280:536:0:92",
+   "scale": "2818x1180",
+   "cover_crop": "2160:1180:329:0"
+  },
+  {
+   "id": "A05",
+   "file": "shots/sh010/edit/v001/plates/A05.mp4",
+   "f_in": 126,
+   "f_out": 147,
+   "frames": 21,
+   "src_in": 112.58,
+   "src_out": 113.4,
+   "speed": 0.9762,
+   "speed_applied": 0.9762,
+   "speed_clamped_to_cut": false,
+   "retime": "minterpolate 75fps mci/aobmc/vsbmc, frame-picked",
+   "trailer_frames": [
+    2699,
+    2718
+   ],
+   "lib_shot": "sf100",
+   "lib_range": [
+    2699,
+    2721
+   ],
+   "characters": [
+    "Blanka"
+   ],
+   "layer": "roll_panel",
+   "crop_full": "960:536:160:92",
+   "scale": "2160x1206",
+   "cover_crop": "2160:1180:0:13"
+  },
+  {
+   "id": "A06",
+   "file": "shots/sh010/edit/v001/plates/A06.mp4",
+   "f_in": 147,
+   "f_out": 168,
+   "frames": 21,
+   "src_in": 135.9,
+   "src_out": 136.8,
+   "speed": 1.0714,
+   "speed_applied": 1.0714,
+   "speed_clamped_to_cut": false,
+   "retime": "nearest source frame (no duplicates)",
+   "trailer_frames": [
+    3258,
+    3278
+   ],
+   "lib_shot": "sf119",
+   "lib_range": [
+    3253,
+    3290
+   ],
+   "characters": [
+    "Ken",
+    "opponent (aerial)"
+   ],
+   "layer": "roll_panel",
+   "crop_full": "1280:536:0:92",
+   "scale": "2818x1180",
+   "cover_crop": "2160:1180:329:0"
+  },
+  {
+   "id": "A07",
+   "file": "shots/sh010/edit/v001/plates/A07.mp4",
+   "f_in": 168,
+   "f_out": 188,
+   "frames": 20,
+   "src_in": 40.92,
+   "src_out": 41.55,
+   "speed": 0.7875,
+   "speed_applied": 0.7875,
+   "speed_clamped_to_cut": false,
+   "retime": "minterpolate 75fps mci/aobmc/vsbmc, frame-picked",
+   "trailer_frames": [
+    981,
+    996
+   ],
+   "lib_shot": "sf035",
+   "lib_range": [
+    981,
+    997
+   ],
+   "characters": [
+    "Ken"
+   ],
+   "layer": "roll_panel",
+   "crop_full": "960:536:160:92",
+   "scale": "2160x1206",
+   "cover_crop": "2160:1180:0:13"
+  },
+  {
+   "id": "A08",
+   "file": "shots/sh010/edit/v001/plates/A08.mp4",
+   "f_in": 188,
+   "f_out": 209,
+   "frames": 21,
+   "src_in": 51.97,
+   "src_out": 52.76,
+   "speed": 0.9405,
+   "speed_applied": 0.9367,
+   "speed_clamped_to_cut": true,
+   "retime": "minterpolate 75fps mci/aobmc/vsbmc, frame-picked",
+   "trailer_frames": [
+    1246,
+    1264
+   ],
+   "lib_shot": "sf046",
+   "lib_range": [
+    1246,
+    1264
+   ],
+   "characters": [
+    "Balrog",
+    "Ken"
+   ],
+   "layer": "roll_panel",
+   "crop_full": "1280:536:0:92",
+   "scale": "2818x1180",
+   "cover_crop": "2160:1180:329:0"
+  },
+  {
+   "id": "A09",
+   "file": "shots/sh010/edit/v001/plates/A09.mp4",
+   "f_in": 209,
+   "f_out": 219,
+   "frames": 10,
+   "src_in": 107.0,
+   "src_out": 107.5,
+   "speed": 1.25,
+   "speed_applied": 1.25,
+   "speed_clamped_to_cut": false,
+   "retime": "nearest source frame (no duplicates)",
+   "trailer_frames": [
+    2565,
+    2576
+   ],
+   "lib_shot": "sf093",
+   "lib_range": [
+    2565,
+    2581
+   ],
+   "characters": [
+    "unknown (psycho-power energy ball; lib sf093 q2)"
+   ],
+   "layer": "roll_panel",
+   "crop_full": "960:536:160:92",
+   "scale": "2160x1206",
+   "cover_crop": "2160:1180:0:13"
+  },
+  {
+   "id": "A10",
+   "file": "shots/sh010/edit/v001/plates/A10.mp4",
+   "f_in": 219,
+   "f_out": 224,
+   "frames": 5,
+   "src_in": 123.7,
+   "src_out": 123.9,
+   "speed": 1.0,
+   "speed_applied": 1.0,
+   "speed_clamped_to_cut": false,
+   "retime": "nearest source frame (no duplicates)",
+   "trailer_frames": [
+    2965,
+    2969
+   ],
+   "lib_shot": "sf111",
+   "lib_range": [
+    2965,
+    2980
+   ],
+   "characters": [
+    "Chun-Li"
+   ],
+   "layer": "roll_panel",
+   "crop_full": "960:536:160:92",
+   "scale": "2160x1206",
+   "cover_crop": "2160:1180:0:13"
+  },
+  {
+   "id": "A11",
+   "file": "shots/sh010/edit/v001/plates/A11.mp4",
+   "f_in": 224,
+   "f_out": 232,
+   "frames": 8,
+   "src_in": 130.3,
+   "src_out": 130.62,
+   "speed": 1.0,
+   "speed_applied": 1.0,
+   "speed_clamped_to_cut": false,
+   "retime": "minterpolate 75fps mci/aobmc/vsbmc, frame-picked",
+   "trailer_frames": [
+    3124,
+    3131
+   ],
+   "lib_shot": "sf115",
+   "lib_range": [
+    3124,
+    3157
+   ],
+   "characters": [
+    "Ryu",
+    "Blanka"
+   ],
+   "layer": "roll_panel",
+   "crop_full": "960:536:160:92",
+   "scale": "2160x1206",
+   "cover_crop": "2160:1180:0:13"
+  },
+  {
+   "id": "A12",
+   "file": "shots/sh010/edit/v001/plates/A12.mp4",
+   "f_in": 232,
+   "f_out": 238,
+   "frames": 6,
+   "src_in": 95.45,
+   "src_out": 95.7,
+   "speed": 1.0417,
+   "speed_applied": 1.0417,
+   "speed_clamped_to_cut": false,
+   "retime": "nearest source frame (no duplicates)",
+   "trailer_frames": [
+    2288,
+    2293
+   ],
+   "lib_shot": "sf082",
+   "lib_range": [
+    2278,
+    2300
+   ],
+   "characters": [
+    "Guile"
+   ],
+   "layer": "roll_panel",
+   "crop_full": "720:536:280:92",
+   "scale": "2160x1608",
+   "cover_crop": "2160:1180:0:107"
+  },
+  {
+   "id": "A13",
+   "file": "shots/sh010/edit/v001/plates/A13.mp4",
+   "f_in": 238,
+   "f_out": 243,
+   "frames": 5,
+   "src_in": 121.3,
+   "src_out": 121.5,
+   "speed": 1.0,
+   "speed_applied": 1.0,
+   "speed_clamped_to_cut": false,
+   "retime": "nearest source frame (no duplicates)",
+   "trailer_frames": [
+    2908,
+    2912
+   ],
+   "lib_shot": "sf109",
+   "lib_range": [
+    2904,
+    2946
+   ],
+   "characters": [
+    "Cammy"
+   ],
+   "layer": "roll_panel",
+   "crop_full": "720:536:280:92",
+   "scale": "2160x1608",
+   "cover_crop": "2160:1180:0:214"
+  }
+ ]
+}

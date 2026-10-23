@@ -32,7 +32,8 @@ def plan(s):
     a = math.floor(pos[0] + 1e-6)
     b = min(math.ceil(pos[-1] - 1e-6), L['out_frame']) if use_mi else near[-1]
     if use_mi:
-        picks = [round((p - a) / FPS * 75) for p in pos]
+        kmax = math.floor((b - a) / FPS * 75 + 1e-6)   # last 75fps frame at/before the last real input frame
+        picks = [min(round((p - a) / FPS * 75), kmax) for p in pos]
         assert len(set(picks)) == n
     else:
         picks = [x - a for x in near]
@@ -52,6 +53,8 @@ def build(s):
           "crop=1280:536:0:92", "pad=1280:540:0:4", "deblock=filter=strong:block=8",
           "crop=1280:536:0:4", f"crop={cw}:{ch}:{cx}:{cy-92}"]
     if p['mi']:
+        # 2 cloned tail frames: minterpolate drops output at EOF; clones keep the tail inside this trailer shot
+        vf.append("tpad=stop=2:stop_mode=clone")
         vf.append("minterpolate=fps=75:mi_mode=mci:mc_mode=aobmc:vsbmc=1:scd=none")
     sel = '+'.join(f'eq(n\\,{k})' for k in p['picks'])
     vf += [f"select='{sel}'", "setpts=N/25/TB",

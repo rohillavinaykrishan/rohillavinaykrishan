@@ -22,8 +22,8 @@ DECEL_N = F_STOP1 - F_STOP0            # 9 frames
 DECEL_D = V * DECEL_N / 2.0            # quad ease-out with v0 = 19 -> 85.5 px, C1-continuous
 F_END = 261                            # roll hands over to MG2's shatter at f261
 F_JSON_END = 272                       # json covers f0..272 (static after f252)
-FONT_PX = 63                           # Montserrat cap 0.70 em -> cap 44 px
-CAP = 44
+FONT_PX = 54                           # matches the real roll x4.05 (her name 721 px wide, cap 38); 63 px overflowed x 2160
+CAP = 38
 TRACK = "0.02em"
 WIN_TOP, WIN_BOT = 570, 3060           # roll window (header owns 470-560)
 FEATHER = 48

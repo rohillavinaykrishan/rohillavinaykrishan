@@ -1,0 +1,1545 @@
+{
+ "model": "small",
+ "vad_filter": false,
+ "segments": [
+  {
+   "start": 1.96,
+   "end": 3.82,
+   "text": "Brother, I failed you.",
+   "avg_logprob": -0.297,
+   "no_speech_prob": 0.686,
+   "words": [
+    {
+     "start": 1.96,
+     "end": 2.6,
+     "word": "Brother,",
+     "p": 0.562
+    },
+    {
+     "start": 3.02,
+     "end": 3.26,
+     "word": "I",
+     "p": 0.984
+    },
+    {
+     "start": 3.26,
+     "end": 3.58,
+     "word": "failed",
+     "p": 0.983
+    },
+    {
+     "start": 3.58,
+     "end": 3.82,
+     "word": "you.",
+     "p": 0.989
+    }
+   ]
+  },
+  {
+   "start": 4.6,
+   "end": 7.06,
+   "text": "There was darkness growing within me.",
+   "avg_logprob": -0.297,
+   "no_speech_prob": 0.686,
+   "words": [
+    {
+     "start": 4.6,
+     "end": 4.96,
+     "word": "There",
+     "p": 0.592
+    },
+    {
+     "start": 4.96,
+     "end": 5.14,
+     "word": "was",
+     "p": 0.912
+    },
+    {
+     "start": 5.14,
+     "end": 5.62,
+     "word": "darkness",
+     "p": 0.982
+    },
+    {
+     "start": 5.62,
+     "end": 6.18,
+     "word": "growing",
+     "p": 0.678
+    },
+    {
+     "start": 6.18,
+     "end": 6.46,
+     "word": "within",
+     "p": 0.988
+    },
+    {
+     "start": 6.46,
+     "end": 7.06,
+     "word": "me.",
+     "p": 0.923
+    }
+   ]
+  },
+  {
+   "start": 9.14,
+   "end": 10.36,
+   "text": "You're not my brother.",
+   "avg_logprob": -0.297,
+   "no_speech_prob": 0.686,
+   "words": [
+    {
+     "start": 9.14,
+     "end": 9.78,
+     "word": "You're",
+     "p": 0.916
+    },
+    {
+     "start": 9.78,
+     "end": 9.88,
+     "word": "not",
+     "p": 0.987
+    },
+    {
+     "start": 9.88,
+     "end": 10.06,
+     "word": "my",
+     "p": 0.997
+    },
+    {
+     "start": 10.06,
+     "end": 10.36,
+     "word": "brother.",
+     "p": 0.995
+    }
+   ]
+  },
+  {
+   "start": 13.2,
+   "end": 14.64,
+   "text": "Do you suffer?",
+   "avg_logprob": -0.297,
+   "no_speech_prob": 0.686,
+   "words": [
+    {
+     "start": 13.2,
+     "end": 13.2,
+     "word": "Do",
+     "p": 0.17
+    },
+    {
+     "start": 13.2,
+     "end": 14.36,
+     "word": "you",
+     "p": 0.857
+    },
+    {
+     "start": 14.36,
+     "end": 14.64,
+     "word": "suffer?",
+     "p": 0.646
+    }
+   ]
+  },
+  {
+   "start": 15.14,
+   "end": 16.12,
+   "text": "What are you waiting for?",
+   "avg_logprob": -0.297,
+   "no_speech_prob": 0.686,
+   "words": [
+    {
+     "start": 15.14,
+     "end": 15.34,
+     "word": "What",
+     "p": 0.979
+    },
+    {
+     "start": 15.34,
+     "end": 15.42,
+     "word": "are",
+     "p": 0.977
+    },
+    {
+     "start": 15.42,
+     "end": 15.52,
+     "word": "you",
+     "p": 0.999
+    },
+    {
+     "start": 15.52,
+     "end": 15.76,
+     "word": "waiting",
+     "p": 0.996
+    },
+    {
+     "start": 15.76,
+     "end": 16.12,
+     "word": "for?",
+     "p": 0.999
+    }
+   ]
+  },
+  {
+   "start": 16.94,
+   "end": 17.62,
+   "text": "Forgive me.",
+   "avg_logprob": -0.297,
+   "no_speech_prob": 0.686,
+   "words": [
+    {
+     "start": 16.94,
+     "end": 17.3,
+     "word": "Forgive",
+     "p": 0.804
+    },
+    {
+     "start": 17.3,
+     "end": 17.62,
+     "word": "me.",
+     "p": 0.998
+    }
+   ]
+  },
+  {
+   "start": 17.8,
+   "end": 18.6,
+   "text": "Put him down!",
+   "avg_logprob": -0.297,
+   "no_speech_prob": 0.686,
+   "words": [
+    {
+     "start": 17.8,
+     "end": 17.98,
+     "word": "Put",
+     "p": 0.039
+    },
+    {
+     "start": 17.98,
+     "end": 18.14,
+     "word": "him",
+     "p": 0.485
+    },
+    {
+     "start": 18.14,
+     "end": 18.6,
+     "word": "down!",
+     "p": 0.937
+    }
+   ]
+  },
+  {
+   "start": 22.28,
+   "end": 25.78,
+   "text": "You were the best fighter in the world, and then you disappeared.",
+   "avg_logprob": -0.297,
+   "no_speech_prob": 0.686,
+   "words": [
+    {
+     "start": 22.28,
+     "end": 22.92,
+     "word": "You",
+     "p": 0.969
+    },
+    {
+     "start": 22.92,
+     "end": 23.56,
+     "word": "were",
+     "p": 0.822
+    },
+    {
+     "start": 23.56,
+     "end": 23.64,
+     "word": "the",
+     "p": 0.998
+    },
+    {
+     "start": 23.64,
+     "end": 23.84,
+     "word": "best",
+     "p": 0.998
+    },
+    {
+     "start": 23.84,
+     "end": 24.1,
+     "word": "fighter",
+     "p": 0.992
+    },
+    {
+     "start": 24.1,
+     "end": 24.32,
+     "word": "in",
+     "p": 0.999
+    },
+    {
+     "start": 24.32,
+     "end": 24.42,
+     "word": "the",
+     "p": 0.998
+    },
+    {
+     "start": 24.42,
+     "end": 24.74,
+     "word": "world,",
+     "p": 0.996
+    },
+    {
+     "start": 25.08,
+     "end": 25.22,
+     "word": "and",
+     "p": 0.986
+    },
+    {
+     "start": 25.22,
+     "end": 25.34,
+     "word": "then",
+     "p": 0.997
+    },
+    {
+     "start": 25.34,
+     "end": 25.42,
+     "word": "you",
+     "p": 0.988
+    },
+    {
+     "start": 25.42,
+     "end": 25.78,
+     "word": "disappeared.",
+     "p": 0.996
+    }
+   ]
+  },
+  {
+   "start": 26.38,
+   "end": 26.84,
+   "text": "What happened?",
+   "avg_logprob": -0.297,
+   "no_speech_prob": 0.686,
+   "words": [
+    {
+     "start": 26.38,
+     "end": 26.52,
+     "word": "What",
+     "p": 0.979
+    },
+    {
+     "start": 26.52,
+     "end": 26.84,
+     "word": "happened?",
+     "p": 0.998
+    }
+   ]
+  },
+  {
+   "start": 26.84,
+   "end": 29.84,
+   "text": "The path I'm on now is not one of combat.",
+   "avg_logprob": -0.229,
+   "no_speech_prob": 0.335,
+   "words": [
+    {
+     "start": 26.84,
+     "end": 27.6,
+     "word": "The",
+     "p": 0.625
+    },
+    {
+     "start": 27.6,
+     "end": 27.86,
+     "word": "path",
+     "p": 0.976
+    },
+    {
+     "start": 27.86,
+     "end": 28.2,
+     "word": "I'm",
+     "p": 0.955
+    },
+    {
+     "start": 28.2,
+     "end": 28.32,
+     "word": "on",
+     "p": 0.997
+    },
+    {
+     "start": 28.32,
+     "end": 28.7,
+     "word": "now",
+     "p": 0.945
+    },
+    {
+     "start": 28.7,
+     "end": 29.0,
+     "word": "is",
+     "p": 0.696
+    },
+    {
+     "start": 29.0,
+     "end": 29.14,
+     "word": "not",
+     "p": 0.992
+    },
+    {
+     "start": 29.14,
+     "end": 29.32,
+     "word": "one",
+     "p": 0.973
+    },
+    {
+     "start": 29.32,
+     "end": 29.44,
+     "word": "of",
+     "p": 0.993
+    },
+    {
+     "start": 29.44,
+     "end": 29.84,
+     "word": "combat.",
+     "p": 0.993
+    }
+   ]
+  },
+  {
+   "start": 30.24,
+   "end": 31.48,
+   "text": "I don't fight anymore.",
+   "avg_logprob": -0.229,
+   "no_speech_prob": 0.335,
+   "words": [
+    {
+     "start": 30.24,
+     "end": 30.4,
+     "word": "I",
+     "p": 0.979
+    },
+    {
+     "start": 30.4,
+     "end": 30.72,
+     "word": "don't",
+     "p": 0.988
+    },
+    {
+     "start": 30.72,
+     "end": 30.98,
+     "word": "fight",
+     "p": 0.995
+    },
+    {
+     "start": 30.98,
+     "end": 31.48,
+     "word": "anymore.",
+     "p": 0.938
+    }
+   ]
+  },
+  {
+   "start": 33.16,
+   "end": 35.36,
+   "text": "It's honestly the stupidest thing I've ever heard.",
+   "avg_logprob": -0.229,
+   "no_speech_prob": 0.335,
+   "words": [
+    {
+     "start": 33.16,
+     "end": 33.72,
+     "word": "It's",
+     "p": 0.934
+    },
+    {
+     "start": 33.72,
+     "end": 34.0,
+     "word": "honestly",
+     "p": 0.99
+    },
+    {
+     "start": 34.0,
+     "end": 34.2,
+     "word": "the",
+     "p": 0.99
+    },
+    {
+     "start": 34.2,
+     "end": 34.64,
+     "word": "stupidest",
+     "p": 0.938
+    },
+    {
+     "start": 34.64,
+     "end": 34.76,
+     "word": "thing",
+     "p": 0.997
+    },
+    {
+     "start": 34.76,
+     "end": 34.94,
+     "word": "I've",
+     "p": 0.986
+    },
+    {
+     "start": 34.94,
+     "end": 35.1,
+     "word": "ever",
+     "p": 0.994
+    },
+    {
+     "start": 35.1,
+     "end": 35.36,
+     "word": "heard.",
+     "p": 0.998
+    }
+   ]
+  },
+  {
+   "start": 36.6,
+   "end": 39.54,
+   "text": "Your brother, Ken, is in danger.",
+   "avg_logprob": -0.229,
+   "no_speech_prob": 0.335,
+   "words": [
+    {
+     "start": 36.6,
+     "end": 36.82,
+     "word": "Your",
+     "p": 0.816
+    },
+    {
+     "start": 36.82,
+     "end": 37.06,
+     "word": "brother,",
+     "p": 0.986
+    },
+    {
+     "start": 37.24,
+     "end": 37.44,
+     "word": "Ken,",
+     "p": 0.979
+    },
+    {
+     "start": 38.0,
+     "end": 38.98,
+     "word": "is",
+     "p": 0.975
+    },
+    {
+     "start": 38.98,
+     "end": 39.16,
+     "word": "in",
+     "p": 0.998
+    },
+    {
+     "start": 39.16,
+     "end": 39.54,
+     "word": "danger.",
+     "p": 0.998
+    }
+   ]
+  },
+  {
+   "start": 42.06,
+   "end": 45.3,
+   "text": "I spent years living in Ryu Shadow.",
+   "avg_logprob": -0.229,
+   "no_speech_prob": 0.335,
+   "words": [
+    {
+     "start": 42.06,
+     "end": 42.62,
+     "word": "I",
+     "p": 0.708
+    },
+    {
+     "start": 42.62,
+     "end": 43.18,
+     "word": "spent",
+     "p": 0.658
+    },
+    {
+     "start": 43.18,
+     "end": 43.76,
+     "word": "years",
+     "p": 0.998
+    },
+    {
+     "start": 43.76,
+     "end": 44.5,
+     "word": "living",
+     "p": 0.963
+    },
+    {
+     "start": 44.5,
+     "end": 44.78,
+     "word": "in",
+     "p": 0.991
+    },
+    {
+     "start": 44.78,
+     "end": 44.9,
+     "word": "Ryu",
+     "p": 0.367
+    },
+    {
+     "start": 44.9,
+     "end": 45.3,
+     "word": "Shadow.",
+     "p": 0.526
+    }
+   ]
+  },
+  {
+   "start": 47.34,
+   "end": 48.16,
+   "text": "And now?",
+   "avg_logprob": -0.229,
+   "no_speech_prob": 0.335,
+   "words": [
+    {
+     "start": 47.34,
+     "end": 47.9,
+     "word": "And",
+     "p": 0.417
+    },
+    {
+     "start": 47.9,
+     "end": 48.16,
+     "word": "now?",
+     "p": 0.997
+    }
+   ]
+  },
+  {
+   "start": 48.72,
+   "end": 49.4,
+   "text": "I'm gonna win it all.",
+   "avg_logprob": -0.229,
+   "no_speech_prob": 0.335,
+   "words": [
+    {
+     "start": 48.72,
+     "end": 48.88,
+     "word": "I'm",
+     "p": 0.986
+    },
+    {
+     "start": 48.88,
+     "end": 48.96,
+     "word": "gonna",
+     "p": 0.706
+    },
+    {
+     "start": 48.96,
+     "end": 49.16,
+     "word": "win",
+     "p": 0.999
+    },
+    {
+     "start": 49.16,
+     "end": 49.26,
+     "word": "it",
+     "p": 0.959
+    },
+    {
+     "start": 49.26,
+     "end": 49.4,
+     "word": "all.",
+     "p": 0.999
+    }
+   ]
+  },
+  {
+   "start": 52.68,
+   "end": 54.58,
+   "text": "This tournament isn't what you think it is.",
+   "avg_logprob": -0.229,
+   "no_speech_prob": 0.335,
+   "words": [
+    {
+     "start": 52.68,
+     "end": 53.24,
+     "word": "This",
+     "p": 0.441
+    },
+    {
+     "start": 53.24,
+     "end": 53.54,
+     "word": "tournament",
+     "p": 0.935
+    },
+    {
+     "start": 53.54,
+     "end": 53.84,
+     "word": "isn't",
+     "p": 0.936
+    },
+    {
+     "start": 53.84,
+     "end": 53.98,
+     "word": "what",
+     "p": 0.996
+    },
+    {
+     "start": 53.98,
+     "end": 54.1,
+     "word": "you",
+     "p": 0.998
+    },
+    {
+     "start": 54.1,
+     "end": 54.28,
+     "word": "think",
+     "p": 0.996
+    },
+    {
+     "start": 54.28,
+     "end": 54.42,
+     "word": "it",
+     "p": 0.99
+    },
+    {
+     "start": 54.42,
+     "end": 54.58,
+     "word": "is.",
+     "p": 0.992
+    }
+   ]
+  },
+  {
+   "start": 54.58,
+   "end": 58.48,
+   "text": "If you want to save your brother, then you must fight.",
+   "avg_logprob": -0.414,
+   "no_speech_prob": 0.523,
+   "words": [
+    {
+     "start": 54.58,
+     "end": 55.3,
+     "word": "If",
+     "p": 0.664
+    },
+    {
+     "start": 55.3,
+     "end": 55.9,
+     "word": "you",
+     "p": 0.993
+    },
+    {
+     "start": 55.9,
+     "end": 56.04,
+     "word": "want",
+     "p": 0.628
+    },
+    {
+     "start": 56.04,
+     "end": 56.14,
+     "word": "to",
+     "p": 0.99
+    },
+    {
+     "start": 56.14,
+     "end": 56.28,
+     "word": "save",
+     "p": 0.997
+    },
+    {
+     "start": 56.28,
+     "end": 56.42,
+     "word": "your",
+     "p": 0.996
+    },
+    {
+     "start": 56.42,
+     "end": 56.68,
+     "word": "brother,",
+     "p": 0.995
+    },
+    {
+     "start": 56.96,
+     "end": 57.68,
+     "word": "then",
+     "p": 0.956
+    },
+    {
+     "start": 57.68,
+     "end": 57.82,
+     "word": "you",
+     "p": 0.996
+    },
+    {
+     "start": 57.82,
+     "end": 58.02,
+     "word": "must",
+     "p": 0.997
+    },
+    {
+     "start": 58.02,
+     "end": 58.48,
+     "word": "fight.",
+     "p": 0.984
+    }
+   ]
+  },
+  {
+   "start": 62.58,
+   "end": 63.74,
+   "text": "Round one.",
+   "avg_logprob": -0.414,
+   "no_speech_prob": 0.523,
+   "words": [
+    {
+     "start": 62.52,
+     "end": 62.98,
+     "word": "Round",
+     "p": 0.523
+    },
+    {
+     "start": 62.98,
+     "end": 63.74,
+     "word": "one.",
+     "p": 0.722
+    }
+   ]
+  },
+  {
+   "start": 77.98,
+   "end": 81.2,
+   "text": "I won't deny a machine.",
+   "avg_logprob": -0.414,
+   "no_speech_prob": 0.523,
+   "words": [
+    {
+     "start": 77.98,
+     "end": 78.9,
+     "word": "I",
+     "p": 0.388
+    },
+    {
+     "start": 78.9,
+     "end": 79.82,
+     "word": "won't",
+     "p": 0.95
+    },
+    {
+     "start": 79.82,
+     "end": 80.24,
+     "word": "deny",
+     "p": 0.989
+    },
+    {
+     "start": 80.24,
+     "end": 80.82,
+     "word": "a",
+     "p": 0.855
+    },
+    {
+     "start": 80.82,
+     "end": 81.2,
+     "word": "machine.",
+     "p": 0.74
+    }
+   ]
+  },
+  {
+   "start": 82.5,
+   "end": 83.94,
+   "text": "You win.",
+   "avg_logprob": -0.299,
+   "no_speech_prob": 0.232,
+   "words": [
+    {
+     "start": 82.5,
+     "end": 83.3,
+     "word": "You",
+     "p": 0.347
+    },
+    {
+     "start": 83.3,
+     "end": 83.94,
+     "word": "win.",
+     "p": 0.891
+    }
+   ]
+  },
+  {
+   "start": 87.22,
+   "end": 88.92,
+   "text": "Oh, hell no!",
+   "avg_logprob": -0.299,
+   "no_speech_prob": 0.232,
+   "words": [
+    {
+     "start": 87.22,
+     "end": 88.02,
+     "word": "Oh,",
+     "p": 0.152
+    },
+    {
+     "start": 88.14,
+     "end": 88.58,
+     "word": "hell",
+     "p": 0.939
+    },
+    {
+     "start": 88.58,
+     "end": 88.92,
+     "word": "no!",
+     "p": 0.498
+    }
+   ]
+  },
+  {
+   "start": 88.98,
+   "end": 90.32,
+   "text": "This is about to get interesting.",
+   "avg_logprob": -0.299,
+   "no_speech_prob": 0.232,
+   "words": [
+    {
+     "start": 88.98,
+     "end": 89.12,
+     "word": "This",
+     "p": 0.952
+    },
+    {
+     "start": 89.12,
+     "end": 89.28,
+     "word": "is",
+     "p": 0.993
+    },
+    {
+     "start": 89.28,
+     "end": 89.5,
+     "word": "about",
+     "p": 0.998
+    },
+    {
+     "start": 89.5,
+     "end": 89.66,
+     "word": "to",
+     "p": 0.998
+    },
+    {
+     "start": 89.66,
+     "end": 89.78,
+     "word": "get",
+     "p": 0.998
+    },
+    {
+     "start": 89.78,
+     "end": 90.32,
+     "word": "interesting.",
+     "p": 0.998
+    }
+   ]
+  },
+  {
+   "start": 90.62,
+   "end": 92.04,
+   "text": "I'm gonna kill you!",
+   "avg_logprob": -0.299,
+   "no_speech_prob": 0.232,
+   "words": [
+    {
+     "start": 90.62,
+     "end": 91.42,
+     "word": "I'm",
+     "p": 0.867
+    },
+    {
+     "start": 91.42,
+     "end": 91.5,
+     "word": "gonna",
+     "p": 0.793
+    },
+    {
+     "start": 91.5,
+     "end": 91.82,
+     "word": "kill",
+     "p": 0.996
+    },
+    {
+     "start": 91.82,
+     "end": 92.04,
+     "word": "you!",
+     "p": 0.892
+    }
+   ]
+  },
+  {
+   "start": 94.38,
+   "end": 99.06,
+   "text": "The fiercest, strongest, deadliest fighter on earth.",
+   "avg_logprob": -0.299,
+   "no_speech_prob": 0.232,
+   "words": [
+    {
+     "start": 94.38,
+     "end": 95.18,
+     "word": "The",
+     "p": 0.847
+    },
+    {
+     "start": 95.18,
+     "end": 95.98,
+     "word": "fiercest,",
+     "p": 0.991
+    },
+    {
+     "start": 96.3,
+     "end": 96.96,
+     "word": "strongest,",
+     "p": 0.993
+    },
+    {
+     "start": 97.44,
+     "end": 98.12,
+     "word": "deadliest",
+     "p": 0.996
+    },
+    {
+     "start": 98.12,
+     "end": 98.5,
+     "word": "fighter",
+     "p": 0.186
+    },
+    {
+     "start": 98.5,
+     "end": 98.8,
+     "word": "on",
+     "p": 0.897
+    },
+    {
+     "start": 98.8,
+     "end": 99.06,
+     "word": "earth.",
+     "p": 0.558
+    }
+   ]
+  },
+  {
+   "start": 99.4,
+   "end": 101.08,
+   "text": "This is free fighting!",
+   "avg_logprob": -0.299,
+   "no_speech_prob": 0.232,
+   "words": [
+    {
+     "start": 99.4,
+     "end": 99.82,
+     "word": "This",
+     "p": 0.958
+    },
+    {
+     "start": 99.82,
+     "end": 100.22,
+     "word": "is",
+     "p": 0.977
+    },
+    {
+     "start": 100.22,
+     "end": 100.62,
+     "word": "free",
+     "p": 0.689
+    },
+    {
+     "start": 100.62,
+     "end": 101.08,
+     "word": "fighting!",
+     "p": 0.632
+    }
+   ]
+  },
+  {
+   "start": 102.64,
+   "end": 104.66,
+   "text": "Such a ridiculous look.",
+   "avg_logprob": -0.299,
+   "no_speech_prob": 0.232,
+   "words": [
+    {
+     "start": 102.64,
+     "end": 103.44,
+     "word": "Such",
+     "p": 0.762
+    },
+    {
+     "start": 103.44,
+     "end": 103.56,
+     "word": "a",
+     "p": 0.993
+    },
+    {
+     "start": 103.56,
+     "end": 104.12,
+     "word": "ridiculous",
+     "p": 0.998
+    },
+    {
+     "start": 104.12,
+     "end": 104.66,
+     "word": "look.",
+     "p": 0.995
+    }
+   ]
+  },
+  {
+   "start": 109.86,
+   "end": 112.12,
+   "text": "Oops, you dropped something.",
+   "avg_logprob": -0.673,
+   "no_speech_prob": 0.343,
+   "words": [
+    {
+     "start": 109.86,
+     "end": 110.78,
+     "word": "Oops,",
+     "p": 0.604
+    },
+    {
+     "start": 111.2,
+     "end": 111.38,
+     "word": "you",
+     "p": 0.937
+    },
+    {
+     "start": 111.38,
+     "end": 111.58,
+     "word": "dropped",
+     "p": 0.979
+    },
+    {
+     "start": 111.58,
+     "end": 112.12,
+     "word": "something.",
+     "p": 0.997
+    }
+   ]
+  },
+  {
+   "start": 117.0,
+   "end": 118.5,
+   "text": "You lose.",
+   "avg_logprob": -0.673,
+   "no_speech_prob": 0.343,
+   "words": [
+    {
+     "start": 117.0,
+     "end": 117.92,
+     "word": "You",
+     "p": 0.956
+    },
+    {
+     "start": 117.92,
+     "end": 118.5,
+     "word": "lose.",
+     "p": 0.973
+    }
+   ]
+  },
+  {
+   "start": 127.3,
+   "end": 130.42,
+   "text": "I made a promise to protect you.",
+   "avg_logprob": -0.673,
+   "no_speech_prob": 0.343,
+   "words": [
+    {
+     "start": 127.3,
+     "end": 128.22,
+     "word": "I",
+     "p": 0.371
+    },
+    {
+     "start": 128.22,
+     "end": 129.14,
+     "word": "made",
+     "p": 0.935
+    },
+    {
+     "start": 129.14,
+     "end": 129.3,
+     "word": "a",
+     "p": 0.99
+    },
+    {
+     "start": 129.3,
+     "end": 129.5,
+     "word": "promise",
+     "p": 0.992
+    },
+    {
+     "start": 129.5,
+     "end": 129.78,
+     "word": "to",
+     "p": 0.97
+    },
+    {
+     "start": 129.78,
+     "end": 130.04,
+     "word": "protect",
+     "p": 0.999
+    },
+    {
+     "start": 130.04,
+     "end": 130.42,
+     "word": "you.",
+     "p": 0.999
+    }
+   ]
+  },
+  {
+   "start": 131.62,
+   "end": 132.26,
+   "text": "No.",
+   "avg_logprob": -1.077,
+   "no_speech_prob": 0.191,
+   "words": [
+    {
+     "start": 131.62,
+     "end": 132.26,
+     "word": "No.",
+     "p": 0.025
+    }
+   ]
+  },
+  {
+   "start": 138.48,
+   "end": 140.72,
+   "text": "To live has to fight.",
+   "avg_logprob": -1.077,
+   "no_speech_prob": 0.191,
+   "words": [
+    {
+     "start": 138.48,
+     "end": 139.12,
+     "word": "To",
+     "p": 0.009
+    },
+    {
+     "start": 139.12,
+     "end": 139.76,
+     "word": "live",
+     "p": 0.413
+    },
+    {
+     "start": 139.76,
+     "end": 140.24,
+     "word": "has",
+     "p": 0.192
+    },
+    {
+     "start": 140.24,
+     "end": 140.4,
+     "word": "to",
+     "p": 0.996
+    },
+    {
+     "start": 140.4,
+     "end": 140.72,
+     "word": "fight.",
+     "p": 0.999
+    }
+   ]
+  },
+  {
+   "start": 142.78,
+   "end": 144.12,
+   "text": "To fight is to live.",
+   "avg_logprob": -1.077,
+   "no_speech_prob": 0.191,
+   "words": [
+    {
+     "start": 142.78,
+     "end": 143.3,
+     "word": "To",
+     "p": 0.544
+    },
+    {
+     "start": 143.3,
+     "end": 143.48,
+     "word": "fight",
+     "p": 0.901
+    },
+    {
+     "start": 143.48,
+     "end": 143.7,
+     "word": "is",
+     "p": 0.712
+    },
+    {
+     "start": 143.7,
+     "end": 143.82,
+     "word": "to",
+     "p": 0.963
+    },
+    {
+     "start": 143.82,
+     "end": 144.12,
+     "word": "live.",
+     "p": 0.952
+    }
+   ]
+  },
+  {
+   "start": 156.5,
+   "end": 159.0,
+   "text": "You did that to your face, Kyle.",
+   "avg_logprob": -1.077,
+   "no_speech_prob": 0.191,
+   "words": [
+    {
+     "start": 156.5,
+     "end": 157.14,
+     "word": "You",
+     "p": 0.225
+    },
+    {
+     "start": 157.14,
+     "end": 157.78,
+     "word": "did",
+     "p": 0.978
+    },
+    {
+     "start": 157.78,
+     "end": 158.04,
+     "word": "that",
+     "p": 0.997
+    },
+    {
+     "start": 158.04,
+     "end": 158.2,
+     "word": "to",
+     "p": 0.998
+    },
+    {
+     "start": 158.2,
+     "end": 158.3,
+     "word": "your",
+     "p": 0.993
+    },
+    {
+     "start": 158.3,
+     "end": 158.64,
+     "word": "face,",
+     "p": 0.998
+    },
+    {
+     "start": 158.8,
+     "end": 159.0,
+     "word": "Kyle.",
+     "p": 0.137
+    }
+   ]
+  },
+  {
+   "start": 159.0,
+   "end": 160.22,
+   "text": "Oh, I don't know, Dan.",
+   "avg_logprob": -0.518,
+   "no_speech_prob": 0.191,
+   "words": [
+    {
+     "start": 159.0,
+     "end": 159.42,
+     "word": "Oh,",
+     "p": 0.78
+    },
+    {
+     "start": 159.5,
+     "end": 159.56,
+     "word": "I",
+     "p": 0.997
+    },
+    {
+     "start": 159.56,
+     "end": 159.74,
+     "word": "don't",
+     "p": 0.999
+    },
+    {
+     "start": 159.74,
+     "end": 159.84,
+     "word": "know,",
+     "p": 0.997
+    },
+    {
+     "start": 159.96,
+     "end": 160.22,
+     "word": "Dan.",
+     "p": 0.925
+    }
+   ]
+  },
+  {
+   "start": 160.94,
+   "end": 162.34,
+   "text": "You know anybody in this tournament",
+   "avg_logprob": -0.518,
+   "no_speech_prob": 0.191,
+   "words": [
+    {
+     "start": 160.94,
+     "end": 161.14,
+     "word": "You",
+     "p": 0.396
+    },
+    {
+     "start": 161.14,
+     "end": 161.58,
+     "word": "know",
+     "p": 0.995
+    },
+    {
+     "start": 161.58,
+     "end": 161.8,
+     "word": "anybody",
+     "p": 0.964
+    },
+    {
+     "start": 161.8,
+     "end": 161.96,
+     "word": "in",
+     "p": 0.967
+    },
+    {
+     "start": 161.96,
+     "end": 162.08,
+     "word": "this",
+     "p": 0.998
+    },
+    {
+     "start": 162.08,
+     "end": 162.34,
+     "word": "tournament",
+     "p": 0.998
+    }
+   ]
+  },
+  {
+   "start": 162.34,
+   "end": 163.68,
+   "text": "who fights with a claw hand?",
+   "avg_logprob": -0.518,
+   "no_speech_prob": 0.191,
+   "words": [
+    {
+     "start": 162.34,
+     "end": 162.52,
+     "word": "who",
+     "p": 0.976
+    },
+    {
+     "start": 162.52,
+     "end": 162.8,
+     "word": "fights",
+     "p": 0.999
+    },
+    {
+     "start": 162.8,
+     "end": 162.96,
+     "word": "with",
+     "p": 0.997
+    },
+    {
+     "start": 162.96,
+     "end": 163.08,
+     "word": "a",
+     "p": 0.969
+    },
+    {
+     "start": 163.08,
+     "end": 163.32,
+     "word": "claw",
+     "p": 0.992
+    },
+    {
+     "start": 163.32,
+     "end": 163.68,
+     "word": "hand?",
+     "p": 0.874
+    }
+   ]
+  },
+  {
+   "start": 163.92,
+   "end": 166.36,
+   "text": "I'm paying attention to my business at the bar.",
+   "avg_logprob": -0.518,
+   "no_speech_prob": 0.191,
+   "words": [
+    {
+     "start": 163.92,
+     "end": 164.38,
+     "word": "I'm",
+     "p": 0.172
+    },
+    {
+     "start": 164.38,
+     "end": 164.38,
+     "word": "paying",
+     "p": 0.141
+    },
+    {
+     "start": 164.38,
+     "end": 164.68,
+     "word": "attention",
+     "p": 0.92
+    },
+    {
+     "start": 164.68,
+     "end": 165.02,
+     "word": "to",
+     "p": 0.993
+    },
+    {
+     "start": 165.02,
+     "end": 165.28,
+     "word": "my",
+     "p": 0.988
+    },
+    {
+     "start": 165.28,
+     "end": 165.62,
+     "word": "business",
+     "p": 0.968
+    },
+    {
+     "start": 165.62,
+     "end": 165.92,
+     "word": "at",
+     "p": 0.157
+    },
+    {
+     "start": 165.92,
+     "end": 166.02,
+     "word": "the",
+     "p": 0.938
+    },
+    {
+     "start": 166.02,
+     "end": 166.36,
+     "word": "bar.",
+     "p": 0.746
+    }
+   ]
+  },
+  {
+   "start": 167.38,
+   "end": 168.42,
+   "text": "You win.",
+   "avg_logprob": -0.518,
+   "no_speech_prob": 0.191,
+   "words": [
+    {
+     "start": 167.38,
+     "end": 167.9,
+     "word": "You",
+     "p": 0.876
+    },
+    {
+     "start": 167.9,
+     "end": 168.42,
+     "word": "win.",
+     "p": 0.984
+    }
+   ]
+  }
+ ]
+}

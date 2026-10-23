@@ -11,7 +11,7 @@
       mask-image: linear-gradient(to bottom, transparent 0, #000 48px, #000 calc(100% - 48px), transparent 100%); }
     #roll-strip { position: absolute; left: 0; top: -570px; width: 2160px; height: 4278px; will-change: transform; }
     .rr { position: absolute; left: 0; width: 2160px; height: 93px; line-height: 93px;
-      font-family: "Montserrat Roll", Montserrat, sans-serif; font-weight: 500; font-size: 63px;
+      font-family: "Montserrat Roll", Montserrat, sans-serif; font-weight: 500; font-size: 54px;
       letter-spacing: 0.02em; text-transform: uppercase; white-space: nowrap; font-kerning: normal; }
     .rr span { position: absolute; top: 0; color: var(--ki-white, #FFF3DC); }
     .rr .l { right: 1140px; text-align: right; }
@@ -76,8 +76,8 @@
       const tl = gsap.timeline({ paused: true });
       const F = (f) => f / 25;
       // scroll: linear 19 px/f f0-243, then quad ease-out (power1.out, velocity-continuous) f243-252, park
-      tl.fromTo("#roll-strip", { y: 3494.465 }, { y: -1122.535, duration: F(243), ease: "none" }, 0);
-      tl.to("#roll-strip", { y: -1208.035, duration: F(9), ease: "power1.out" }, F(243));
+      tl.fromTo("#roll-strip", { y: 3494.541 }, { y: -1122.459, duration: F(243), ease: "none" }, 0);
+      tl.to("#roll-strip", { y: -1207.959, duration: F(9), ease: "power1.out" }, F(243));
       // dimming: others 100% -> 60% (Ki White -> Chalk) f200-232 linear; -> 22% f243-252 expo-out
       tl.fromTo("#roll-strip .dim", { opacity: 1, color: "#FFF3DC" }, { opacity: 0.6, color: "#D9CFC3", duration: F(32), ease: "none" }, F(200));
       tl.fromTo("#roll-strip .herl", { color: "#FFF3DC" }, { color: "#D9CFC3", duration: F(32), ease: "none" }, F(200));

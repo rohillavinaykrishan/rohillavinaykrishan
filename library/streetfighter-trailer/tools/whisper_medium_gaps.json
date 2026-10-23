@@ -1,0 +1,273 @@
+[
+ {
+  "start": 79.06,
+  "end": 81.42,
+  "text": "I won't deny it, I'ma show you",
+  "avg_logprob": -0.569,
+  "no_speech_prob": 0.63,
+  "words": [
+   {
+    "start": 79.06,
+    "end": 79.74,
+    "word": "I",
+    "p": 0.371
+   },
+   {
+    "start": 79.74,
+    "end": 79.98,
+    "word": "won't",
+    "p": 0.969
+   },
+   {
+    "start": 79.98,
+    "end": 80.44,
+    "word": "deny",
+    "p": 0.993
+   },
+   {
+    "start": 80.44,
+    "end": 80.78,
+    "word": "it,",
+    "p": 0.909
+   },
+   {
+    "start": 80.78,
+    "end": 81.18,
+    "word": "I'ma",
+    "p": 0.736
+   },
+   {
+    "start": 81.18,
+    "end": 81.4,
+    "word": "show",
+    "p": 0.295
+   },
+   {
+    "start": 81.4,
+    "end": 81.42,
+    "word": "you",
+    "p": 0.869
+   }
+  ],
+  "gap": [
+   77.5,
+   81.6
+  ]
+ },
+ {
+  "start": 84.3,
+  "end": 87.0,
+  "text": "Ain't no stopping me",
+  "avg_logprob": -0.677,
+  "no_speech_prob": 0.68,
+  "words": [
+   {
+    "start": 84.3,
+    "end": 85.9,
+    "word": "Ain't",
+    "p": 0.56
+   },
+   {
+    "start": 85.9,
+    "end": 85.92,
+    "word": "no",
+    "p": 0.963
+   },
+   {
+    "start": 85.92,
+    "end": 86.38,
+    "word": "stopping",
+    "p": 0.859
+   },
+   {
+    "start": 86.38,
+    "end": 87.0,
+    "word": "me",
+    "p": 0.978
+   }
+  ],
+  "gap": [
+   84.3,
+   87.3
+  ]
+ },
+ {
+  "start": 111.6,
+  "end": 112.08,
+  "text": "Something.",
+  "avg_logprob": -0.678,
+  "no_speech_prob": 0.027,
+  "words": [
+   {
+    "start": 111.6,
+    "end": 112.08,
+    "word": "Something.",
+    "p": 0.622
+   }
+  ],
+  "gap": [
+   111.6,
+   117.3
+  ]
+ },
+ {
+  "start": 120.96,
+  "end": 122.56,
+  "text": "It's nice to be a little...",
+  "avg_logprob": -0.793,
+  "no_speech_prob": 0.274,
+  "words": [
+   {
+    "start": 120.96,
+    "end": 121.4,
+    "word": "It's",
+    "p": 0.367
+   },
+   {
+    "start": 121.4,
+    "end": 121.58,
+    "word": "nice",
+    "p": 0.298
+   },
+   {
+    "start": 121.58,
+    "end": 121.84,
+    "word": "to",
+    "p": 0.608
+   },
+   {
+    "start": 121.84,
+    "end": 121.96,
+    "word": "be",
+    "p": 0.325
+   },
+   {
+    "start": 121.96,
+    "end": 121.98,
+    "word": "a",
+    "p": 0.891
+   },
+   {
+    "start": 121.98,
+    "end": 122.56,
+    "word": "little...",
+    "p": 0.698
+   }
+  ],
+  "gap": [
+   119.6,
+   123.0
+  ]
+ },
+ {
+  "start": 126.32,
+  "end": 127.58,
+  "text": "I'm a street fighter",
+  "avg_logprob": -0.955,
+  "no_speech_prob": 0.741,
+  "words": [
+   {
+    "start": 126.32,
+    "end": 126.86,
+    "word": "I'm",
+    "p": 0.584
+   },
+   {
+    "start": 126.86,
+    "end": 127.04,
+    "word": "a",
+    "p": 0.84
+   },
+   {
+    "start": 127.04,
+    "end": 127.28,
+    "word": "street",
+    "p": 0.487
+   },
+   {
+    "start": 127.28,
+    "end": 127.58,
+    "word": "fighter",
+    "p": 0.077
+   }
+  ],
+  "gap": [
+   125.3,
+   127.6
+  ]
+ },
+ {
+  "start": 135.5,
+  "end": 137.42,
+  "text": "Or you can!",
+  "avg_logprob": -0.935,
+  "no_speech_prob": 0.646,
+  "words": [
+   {
+    "start": 135.5,
+    "end": 136.7,
+    "word": "Or",
+    "p": 0.045
+   },
+   {
+    "start": 136.7,
+    "end": 137.14,
+    "word": "you",
+    "p": 0.887
+   },
+   {
+    "start": 137.14,
+    "end": 137.42,
+    "word": "can!",
+    "p": 0.94
+   }
+  ],
+  "gap": [
+   135.5,
+   138.6
+  ]
+ },
+ {
+  "start": 144.0,
+  "end": 153.92,
+  "text": "Five, four, three, two, one!",
+  "avg_logprob": -0.797,
+  "no_speech_prob": 0.623,
+  "words": [
+   {
+    "start": 144.0,
+    "end": 144.78,
+    "word": "Five,",
+    "p": 0.035
+   },
+   {
+    "start": 145.6,
+    "end": 146.0,
+    "word": "four,",
+    "p": 0.791
+   },
+   {
+    "start": 146.3,
+    "end": 147.42,
+    "word": "three,",
+    "p": 0.496
+   },
+   {
+    "start": 148.86,
+    "end": 151.5,
+    "word": "two,",
+    "p": 0.958
+   },
+   {
+    "start": 153.92,
+    "end": 153.92,
+    "word": "one!",
+    "p": 0.978
+   }
+  ],
+  "gap": [
+   144.0,
+   156.7
+  ]
+ }
+]

@@ -43,7 +43,9 @@
    "mean_luma": 39,
    "hero": false,
    "still": "stills/sf001.jpg",
-   "still_frame": 25
+   "still_frame": 25,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf002",
@@ -81,7 +83,16 @@
    "mean_luma": 30,
    "hero": false,
    "still": "stills/sf002.jpg",
-   "still_frame": 58
+   "still_frame": 58,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Brother, I failed you.",
+     "start": 2.15,
+     "end": 3.82
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf003",
@@ -119,7 +130,16 @@
    "mean_luma": 38,
    "hero": true,
    "still": "stills/sf003.jpg",
-   "still_frame": 86
+   "still_frame": 86,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Brother, I failed you.",
+     "start": 2.15,
+     "end": 3.82
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf004",
@@ -157,7 +177,16 @@
    "mean_luma": 25,
    "hero": false,
    "still": "stills/sf004.jpg",
-   "still_frame": 110
+   "still_frame": 110,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "There was darkness growing within me.",
+     "start": 4.6,
+     "end": 7.06
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf005",
@@ -195,7 +224,16 @@
    "mean_luma": 27,
    "hero": false,
    "still": "stills/sf005.jpg",
-   "still_frame": 122
+   "still_frame": 122,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "There was darkness growing within me.",
+     "start": 4.6,
+     "end": 7.06
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf006",
@@ -233,7 +271,16 @@
    "mean_luma": 17,
    "hero": false,
    "still": "stills/sf006.jpg",
-   "still_frame": 167
+   "still_frame": 167,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "There was darkness growing within me.",
+     "start": 4.6,
+     "end": 7.06
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf007",
@@ -271,7 +318,16 @@
    "mean_luma": 25,
    "hero": false,
    "still": "stills/sf007.jpg",
-   "still_frame": 202
+   "still_frame": 202,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "You're not my brother.",
+     "start": 9.33,
+     "end": 10.36
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf008",
@@ -309,7 +365,16 @@
    "mean_luma": 13,
    "hero": false,
    "still": "stills/sf008.jpg",
-   "still_frame": 242
+   "still_frame": 242,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "You're not my brother.",
+     "start": 9.33,
+     "end": 10.36
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf009",
@@ -347,7 +412,9 @@
    "mean_luma": 14,
    "hero": false,
    "still": "stills/sf009.jpg",
-   "still_frame": 266
+   "still_frame": 266,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf010",
@@ -385,7 +452,9 @@
    "mean_luma": 26,
    "hero": false,
    "still": "stills/sf010.jpg",
-   "still_frame": 308
+   "still_frame": 308,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf011",
@@ -423,7 +492,16 @@
    "mean_luma": 24,
    "hero": false,
    "still": "stills/sf011.jpg",
-   "still_frame": 343
+   "still_frame": 343,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Do you suffer?",
+     "start": 13.2,
+     "end": 14.64
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf012",
@@ -461,7 +539,16 @@
    "mean_luma": 25,
    "hero": false,
    "still": "stills/sf012.jpg",
-   "still_frame": 366
+   "still_frame": 366,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "What are you waiting for?",
+     "start": 15.14,
+     "end": 16.12
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf013",
@@ -499,7 +586,16 @@
    "mean_luma": 32,
    "hero": false,
    "still": "stills/sf013.jpg",
-   "still_frame": 415
+   "still_frame": 415,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Forgive me.",
+     "start": 16.94,
+     "end": 17.62
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf014",
@@ -537,7 +633,22 @@
    "mean_luma": 46,
    "hero": false,
    "still": "stills/sf014.jpg",
-   "still_frame": 423
+   "still_frame": 423,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Forgive me.",
+     "start": 16.94,
+     "end": 17.62
+    },
+    {
+     "label": "dialogue",
+     "text": "Put him down!",
+     "start": 17.8,
+     "end": 18.6
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf015",
@@ -575,7 +686,16 @@
    "mean_luma": 48,
    "hero": false,
    "still": "stills/sf015.jpg",
-   "still_frame": 436
+   "still_frame": 436,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Put him down!",
+     "start": 17.8,
+     "end": 18.6
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf016",
@@ -613,7 +733,16 @@
    "mean_luma": 37,
    "hero": false,
    "still": "stills/sf016.jpg",
-   "still_frame": 444
+   "still_frame": 444,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Put him down!",
+     "start": 17.8,
+     "end": 18.6
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf017",
@@ -651,7 +780,9 @@
    "mean_luma": 19,
    "hero": false,
    "still": "stills/sf017.jpg",
-   "still_frame": 499
+   "still_frame": 499,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf018",
@@ -687,7 +818,16 @@
    "mean_luma": 96,
    "hero": false,
    "still": "stills/sf018.jpg",
-   "still_frame": 537
+   "still_frame": 537,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "You were the best fighter in the world, and then you disappeared.",
+     "start": 22.47,
+     "end": 25.78
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf019",
@@ -725,7 +865,16 @@
    "mean_luma": 44,
    "hero": false,
    "still": "stills/sf019.jpg",
-   "still_frame": 556
+   "still_frame": 556,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "You were the best fighter in the world, and then you disappeared.",
+     "start": 22.47,
+     "end": 25.78
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf020",
@@ -763,7 +912,16 @@
    "mean_luma": 57,
    "hero": true,
    "still": "stills/sf020.jpg",
-   "still_frame": 594
+   "still_frame": 594,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "You were the best fighter in the world, and then you disappeared.",
+     "start": 22.47,
+     "end": 25.78
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf021",
@@ -801,7 +959,28 @@
    "mean_luma": 15,
    "hero": false,
    "still": "stills/sf021.jpg",
-   "still_frame": 641
+   "still_frame": 641,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "You were the best fighter in the world, and then you disappeared.",
+     "start": 22.47,
+     "end": 25.78
+    },
+    {
+     "label": "dialogue",
+     "text": "What happened?",
+     "start": 26.38,
+     "end": 26.84
+    },
+    {
+     "label": "dialogue",
+     "text": "The path I'm on now is not one of combat.",
+     "start": 27.15,
+     "end": 29.84
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf022",
@@ -839,7 +1018,16 @@
    "mean_luma": 65,
    "hero": false,
    "still": "stills/sf022.jpg",
-   "still_frame": 677
+   "still_frame": 677,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "The path I'm on now is not one of combat.",
+     "start": 27.15,
+     "end": 29.84
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf023",
@@ -877,7 +1065,16 @@
    "mean_luma": 65,
    "hero": false,
    "still": "stills/sf023.jpg",
-   "still_frame": 712
+   "still_frame": 712,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "The path I'm on now is not one of combat.",
+     "start": 27.15,
+     "end": 29.84
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf024",
@@ -915,7 +1112,16 @@
    "mean_luma": 18,
    "hero": false,
    "still": "stills/sf024.jpg",
-   "still_frame": 748
+   "still_frame": 748,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "I don't fight anymore.",
+     "start": 30.24,
+     "end": 31.48
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf025",
@@ -953,7 +1159,9 @@
    "mean_luma": 43,
    "hero": false,
    "still": "stills/sf025.jpg",
-   "still_frame": 758
+   "still_frame": 758,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf026",
@@ -991,7 +1199,9 @@
    "mean_luma": 46,
    "hero": false,
    "still": "stills/sf026.jpg",
-   "still_frame": 778
+   "still_frame": 778,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf027",
@@ -1029,7 +1239,16 @@
    "mean_luma": 67,
    "hero": false,
    "still": "stills/sf027.jpg",
-   "still_frame": 802
+   "still_frame": 802,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "It's honestly the stupidest thing I've ever heard.",
+     "start": 33.27,
+     "end": 35.36
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf028",
@@ -1067,7 +1286,16 @@
    "mean_luma": 48,
    "hero": false,
    "still": "stills/sf028.jpg",
-   "still_frame": 813
+   "still_frame": 813,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "It's honestly the stupidest thing I've ever heard.",
+     "start": 33.27,
+     "end": 35.36
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf029",
@@ -1103,7 +1331,16 @@
    "mean_luma": 98,
    "hero": false,
    "still": "stills/sf029.jpg",
-   "still_frame": 874
+   "still_frame": 874,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Your brother, Ken, is in danger.",
+     "start": 36.6,
+     "end": 39.54
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf030",
@@ -1141,7 +1378,16 @@
    "mean_luma": 38,
    "hero": false,
    "still": "stills/sf030.jpg",
-   "still_frame": 894
+   "still_frame": 894,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Your brother, Ken, is in danger.",
+     "start": 36.6,
+     "end": 39.54
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf031",
@@ -1179,7 +1425,16 @@
    "mean_luma": 75,
    "hero": true,
    "still": "stills/sf031.jpg",
-   "still_frame": 903
+   "still_frame": 903,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Your brother, Ken, is in danger.",
+     "start": 36.6,
+     "end": 39.54
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf032",
@@ -1217,7 +1472,16 @@
    "mean_luma": 78,
    "hero": true,
    "still": "stills/sf032.jpg",
-   "still_frame": 944
+   "still_frame": 944,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Your brother, Ken, is in danger.",
+     "start": 36.6,
+     "end": 39.54
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf033",
@@ -1255,7 +1519,9 @@
    "mean_luma": 81,
    "hero": false,
    "still": "stills/sf033.jpg",
-   "still_frame": 961
+   "still_frame": 961,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf034",
@@ -1293,7 +1559,9 @@
    "mean_luma": 116,
    "hero": false,
    "still": "stills/sf034.jpg",
-   "still_frame": 972
+   "still_frame": 972,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf035",
@@ -1331,7 +1599,9 @@
    "mean_luma": 92,
    "hero": true,
    "still": "stills/sf035.jpg",
-   "still_frame": 991
+   "still_frame": 991,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf036",
@@ -1369,7 +1639,9 @@
    "mean_luma": 60,
    "hero": false,
    "still": "stills/sf036.jpg",
-   "still_frame": 1003
+   "still_frame": 1003,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf037",
@@ -1407,7 +1679,16 @@
    "mean_luma": 105,
    "hero": false,
    "still": "stills/sf037.jpg",
-   "still_frame": 1018
+   "still_frame": 1018,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "I spent years living in Ryu Shadow.",
+     "start": 42.17,
+     "end": 45.3
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf038",
@@ -1445,7 +1726,16 @@
    "mean_luma": 41,
    "hero": false,
    "still": "stills/sf038.jpg",
-   "still_frame": 1033
+   "still_frame": 1033,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "I spent years living in Ryu Shadow.",
+     "start": 42.17,
+     "end": 45.3
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf039",
@@ -1483,7 +1773,16 @@
    "mean_luma": 49,
    "hero": false,
    "still": "stills/sf039.jpg",
-   "still_frame": 1081
+   "still_frame": 1081,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "I spent years living in Ryu Shadow.",
+     "start": 42.17,
+     "end": 45.3
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf040",
@@ -1521,7 +1820,9 @@
    "mean_luma": 51,
    "hero": false,
    "still": "stills/sf040.jpg",
-   "still_frame": 1117
+   "still_frame": 1117,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf041",
@@ -1559,7 +1860,16 @@
    "mean_luma": 56,
    "hero": false,
    "still": "stills/sf041.jpg",
-   "still_frame": 1149
+   "still_frame": 1149,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "And now?",
+     "start": 47.45,
+     "end": 48.16
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf042",
@@ -1597,7 +1907,16 @@
    "mean_luma": 62,
    "hero": true,
    "still": "stills/sf042.jpg",
-   "still_frame": 1178
+   "still_frame": 1178,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "I'm gonna win it all.",
+     "start": 48.72,
+     "end": 49.4
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf043",
@@ -1635,7 +1954,16 @@
    "mean_luma": 120,
    "hero": false,
    "still": "stills/sf043.jpg",
-   "still_frame": 1188
+   "still_frame": 1188,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "I'm gonna win it all.",
+     "start": 48.72,
+     "end": 49.4
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf044",
@@ -1673,7 +2001,9 @@
    "mean_luma": 66,
    "hero": false,
    "still": "stills/sf044.jpg",
-   "still_frame": 1197
+   "still_frame": 1197,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf045",
@@ -1712,7 +2042,9 @@
    "mean_luma": 60,
    "hero": true,
    "still": "stills/sf045.jpg",
-   "still_frame": 1237
+   "still_frame": 1237,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf046",
@@ -1751,7 +2083,9 @@
    "mean_luma": 82,
    "hero": true,
    "still": "stills/sf046.jpg",
-   "still_frame": 1249
+   "still_frame": 1249,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf047",
@@ -1789,7 +2123,16 @@
    "mean_luma": 28,
    "hero": false,
    "still": "stills/sf047.jpg",
-   "still_frame": 1270
+   "still_frame": 1270,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "This tournament isn't what you think it is.",
+     "start": 52.79,
+     "end": 54.58
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf048",
@@ -1827,7 +2170,16 @@
    "mean_luma": 25,
    "hero": false,
    "still": "stills/sf048.jpg",
-   "still_frame": 1304
+   "still_frame": 1304,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "This tournament isn't what you think it is.",
+     "start": 52.79,
+     "end": 54.58
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf049",
@@ -1863,7 +2215,16 @@
    "mean_luma": 51,
    "hero": false,
    "still": "stills/sf049.jpg",
-   "still_frame": 1351
+   "still_frame": 1351,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "If you want to save your brother, then you must fight.",
+     "start": 54.85,
+     "end": 58.48
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf050",
@@ -1901,7 +2262,16 @@
    "mean_luma": 59,
    "hero": false,
    "still": "stills/sf050.jpg",
-   "still_frame": 1403
+   "still_frame": 1403,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "If you want to save your brother, then you must fight.",
+     "start": 54.85,
+     "end": 58.48
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf051",
@@ -1939,7 +2309,9 @@
    "mean_luma": 21,
    "hero": false,
    "still": "stills/sf051.jpg",
-   "still_frame": 1423
+   "still_frame": 1423,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf052",
@@ -1977,7 +2349,9 @@
    "mean_luma": 34,
    "hero": false,
    "still": "stills/sf052.jpg",
-   "still_frame": 1467
+   "still_frame": 1467,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf053",
@@ -2015,7 +2389,16 @@
    "mean_luma": 40,
    "hero": true,
    "still": "stills/sf053.jpg",
-   "still_frame": 1499
+   "still_frame": 1499,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Round one.",
+     "start": 62.58,
+     "end": 63.74
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf054",
@@ -2053,7 +2436,16 @@
    "mean_luma": 32,
    "hero": false,
    "still": "stills/sf054.jpg",
-   "still_frame": 1522
+   "still_frame": 1522,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Round one.",
+     "start": 62.58,
+     "end": 63.74
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf055",
@@ -2091,7 +2483,16 @@
    "mean_luma": 32,
    "hero": false,
    "still": "stills/sf055.jpg",
-   "still_frame": 1537
+   "still_frame": 1537,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Round one.",
+     "start": 62.58,
+     "end": 63.74
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf056",
@@ -2129,7 +2530,9 @@
    "mean_luma": 41,
    "hero": false,
    "still": "stills/sf056.jpg",
-   "still_frame": 1547
+   "still_frame": 1547,
+   "audio": [],
+   "in_clean_music_window": true
   },
   {
    "id": "sf057",
@@ -2167,7 +2570,9 @@
    "mean_luma": 35,
    "hero": false,
    "still": "stills/sf057.jpg",
-   "still_frame": 1588
+   "still_frame": 1588,
+   "audio": [],
+   "in_clean_music_window": true
   },
   {
    "id": "sf058",
@@ -2205,7 +2610,9 @@
    "mean_luma": 34,
    "hero": false,
    "still": "stills/sf058.jpg",
-   "still_frame": 1617
+   "still_frame": 1617,
+   "audio": [],
+   "in_clean_music_window": true
   },
   {
    "id": "sf059",
@@ -2243,7 +2650,9 @@
    "mean_luma": 28,
    "hero": false,
    "still": "stills/sf059.jpg",
-   "still_frame": 1632
+   "still_frame": 1632,
+   "audio": [],
+   "in_clean_music_window": true
   },
   {
    "id": "sf060",
@@ -2281,7 +2690,9 @@
    "mean_luma": 29,
    "hero": false,
    "still": "stills/sf060.jpg",
-   "still_frame": 1652
+   "still_frame": 1652,
+   "audio": [],
+   "in_clean_music_window": true
   },
   {
    "id": "sf061",
@@ -2319,7 +2730,9 @@
    "mean_luma": 21,
    "hero": false,
    "still": "stills/sf061.jpg",
-   "still_frame": 1684
+   "still_frame": 1684,
+   "audio": [],
+   "in_clean_music_window": true
   },
   {
    "id": "sf062",
@@ -2357,7 +2770,9 @@
    "mean_luma": 39,
    "hero": false,
    "still": "stills/sf062.jpg",
-   "still_frame": 1723
+   "still_frame": 1723,
+   "audio": [],
+   "in_clean_music_window": true
   },
   {
    "id": "sf063",
@@ -2395,7 +2810,9 @@
    "mean_luma": 72,
    "hero": false,
    "still": "stills/sf063.jpg",
-   "still_frame": 1745
+   "still_frame": 1745,
+   "audio": [],
+   "in_clean_music_window": true
   },
   {
    "id": "sf064",
@@ -2433,7 +2850,9 @@
    "mean_luma": 42,
    "hero": false,
    "still": "stills/sf064.jpg",
-   "still_frame": 1764
+   "still_frame": 1764,
+   "audio": [],
+   "in_clean_music_window": true
   },
   {
    "id": "sf065",
@@ -2471,7 +2890,9 @@
    "mean_luma": 45,
    "hero": false,
    "still": "stills/sf065.jpg",
-   "still_frame": 1794
+   "still_frame": 1794,
+   "audio": [],
+   "in_clean_music_window": true
   },
   {
    "id": "sf066",
@@ -2509,7 +2930,9 @@
    "mean_luma": 31,
    "hero": false,
    "still": "stills/sf066.jpg",
-   "still_frame": 1815
+   "still_frame": 1815,
+   "audio": [],
+   "in_clean_music_window": true
   },
   {
    "id": "sf067",
@@ -2547,7 +2970,9 @@
    "mean_luma": 39,
    "hero": false,
    "still": "stills/sf067.jpg",
-   "still_frame": 1838
+   "still_frame": 1838,
+   "audio": [],
+   "in_clean_music_window": true
   },
   {
    "id": "sf068",
@@ -2585,7 +3010,16 @@
    "mean_luma": 54,
    "hero": false,
    "still": "stills/sf068.jpg",
-   "still_frame": 1883
+   "still_frame": 1883,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "I won't deny it, I'ma show you",
+     "start": 79.06,
+     "end": 81.42
+    }
+   ],
+   "in_clean_music_window": true
   },
   {
    "id": "sf069",
@@ -2623,7 +3057,16 @@
    "mean_luma": 40,
    "hero": false,
    "still": "stills/sf069.jpg",
-   "still_frame": 1942
+   "still_frame": 1942,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "I won't deny it, I'ma show you",
+     "start": 79.06,
+     "end": 81.42
+    }
+   ],
+   "in_clean_music_window": true
   },
   {
    "id": "sf070",
@@ -2661,7 +3104,9 @@
    "mean_luma": 35,
    "hero": false,
    "still": "stills/sf070.jpg",
-   "still_frame": 1981
+   "still_frame": 1981,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf071",
@@ -2699,7 +3144,16 @@
    "mean_luma": 47,
    "hero": false,
    "still": "stills/sf071.jpg",
-   "still_frame": 1989
+   "still_frame": 1989,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "You win.",
+     "start": 82.85,
+     "end": 83.94
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf072",
@@ -2737,7 +3191,16 @@
    "mean_luma": 49,
    "hero": false,
    "still": "stills/sf072.jpg",
-   "still_frame": 2021
+   "still_frame": 2021,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "Ain't no stopping me",
+     "start": 84.3,
+     "end": 87.0
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf073",
@@ -2775,7 +3238,16 @@
    "mean_luma": 42,
    "hero": false,
    "still": "stills/sf073.jpg",
-   "still_frame": 2052
+   "still_frame": 2052,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "Ain't no stopping me",
+     "start": 84.3,
+     "end": 87.0
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf074",
@@ -2813,7 +3285,16 @@
    "mean_luma": 49,
    "hero": false,
    "still": "stills/sf074.jpg",
-   "still_frame": 2077
+   "still_frame": 2077,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "Ain't no stopping me",
+     "start": 84.3,
+     "end": 87.0
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf075",
@@ -2851,7 +3332,22 @@
    "mean_luma": 42,
    "hero": false,
    "still": "stills/sf075.jpg",
-   "still_frame": 2114
+   "still_frame": 2114,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "Ain't no stopping me",
+     "start": 84.3,
+     "end": 87.0
+    },
+    {
+     "label": "dialogue",
+     "text": "Oh, hell no!",
+     "start": 87.57,
+     "end": 88.92
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf076",
@@ -2889,7 +3385,22 @@
    "mean_luma": 29,
    "hero": false,
    "still": "stills/sf076.jpg",
-   "still_frame": 2150
+   "still_frame": 2150,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Oh, hell no!",
+     "start": 87.57,
+     "end": 88.92
+    },
+    {
+     "label": "dialogue",
+     "text": "This is about to get interesting.",
+     "start": 88.98,
+     "end": 90.32
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf077",
@@ -2927,7 +3438,22 @@
    "mean_luma": 31,
    "hero": false,
    "still": "stills/sf077.jpg",
-   "still_frame": 2181
+   "still_frame": 2181,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "This is about to get interesting.",
+     "start": 88.98,
+     "end": 90.32
+    },
+    {
+     "label": "dialogue",
+     "text": "I'm gonna kill you!",
+     "start": 90.97,
+     "end": 92.04
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf078",
@@ -2965,7 +3491,16 @@
    "mean_luma": 57,
    "hero": false,
    "still": "stills/sf078.jpg",
-   "still_frame": 2188
+   "still_frame": 2188,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "I'm gonna kill you!",
+     "start": 90.97,
+     "end": 92.04
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf079",
@@ -3003,7 +3538,16 @@
    "mean_luma": 47,
    "hero": false,
    "still": "stills/sf079.jpg",
-   "still_frame": 2216
+   "still_frame": 2216,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "I'm gonna kill you!",
+     "start": 90.97,
+     "end": 92.04
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf080",
@@ -3039,7 +3583,9 @@
    "mean_luma": 46,
    "hero": false,
    "still": "stills/sf080.jpg",
-   "still_frame": 2230
+   "still_frame": 2230,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf081",
@@ -3077,7 +3623,16 @@
    "mean_luma": 78,
    "hero": false,
    "still": "stills/sf081.jpg",
-   "still_frame": 2273
+   "still_frame": 2273,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "The fiercest, strongest, deadliest fighter on earth.",
+     "start": 94.73,
+     "end": 99.06
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf082",
@@ -3115,7 +3670,16 @@
    "mean_luma": 63,
    "hero": true,
    "still": "stills/sf082.jpg",
-   "still_frame": 2290
+   "still_frame": 2290,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "The fiercest, strongest, deadliest fighter on earth.",
+     "start": 94.73,
+     "end": 99.06
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf083",
@@ -3153,7 +3717,16 @@
    "mean_luma": 143,
    "hero": false,
    "still": "stills/sf083.jpg",
-   "still_frame": 2317
+   "still_frame": 2317,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "The fiercest, strongest, deadliest fighter on earth.",
+     "start": 94.73,
+     "end": 99.06
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf084",
@@ -3191,7 +3764,16 @@
    "mean_luma": 25,
    "hero": true,
    "still": "stills/sf084.jpg",
-   "still_frame": 2350
+   "still_frame": 2350,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "The fiercest, strongest, deadliest fighter on earth.",
+     "start": 94.73,
+     "end": 99.06
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf085",
@@ -3229,7 +3811,16 @@
    "mean_luma": 111,
    "hero": false,
    "still": "stills/sf085.jpg",
-   "still_frame": 2370
+   "still_frame": 2370,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "The fiercest, strongest, deadliest fighter on earth.",
+     "start": 94.73,
+     "end": 99.06
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf086",
@@ -3267,7 +3858,22 @@
    "mean_luma": 48,
    "hero": false,
    "still": "stills/sf086.jpg",
-   "still_frame": 2379
+   "still_frame": 2379,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "The fiercest, strongest, deadliest fighter on earth.",
+     "start": 94.73,
+     "end": 99.06
+    },
+    {
+     "label": "dialogue",
+     "text": "This is free fighting!",
+     "start": 99.4,
+     "end": 101.08
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf087",
@@ -3305,7 +3911,16 @@
    "mean_luma": 48,
    "hero": true,
    "still": "stills/sf087.jpg",
-   "still_frame": 2423
+   "still_frame": 2423,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "This is free fighting!",
+     "start": 99.4,
+     "end": 101.08
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf088",
@@ -3343,7 +3958,9 @@
    "mean_luma": 68,
    "hero": false,
    "still": "stills/sf088.jpg",
-   "still_frame": 2436
+   "still_frame": 2436,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf089",
@@ -3381,7 +3998,16 @@
    "mean_luma": 62,
    "hero": false,
    "still": "stills/sf089.jpg",
-   "still_frame": 2466
+   "still_frame": 2466,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Such a ridiculous look.",
+     "start": 102.99,
+     "end": 104.66
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf090",
@@ -3419,7 +4045,16 @@
    "mean_luma": 35,
    "hero": true,
    "still": "stills/sf090.jpg",
-   "still_frame": 2518
+   "still_frame": 2518,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Such a ridiculous look.",
+     "start": 102.99,
+     "end": 104.66
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf091",
@@ -3457,7 +4092,9 @@
    "mean_luma": 33,
    "hero": false,
    "still": "stills/sf091.jpg",
-   "still_frame": 2546
+   "still_frame": 2546,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf092",
@@ -3495,7 +4132,9 @@
    "mean_luma": 56,
    "hero": false,
    "still": "stills/sf092.jpg",
-   "still_frame": 2562
+   "still_frame": 2562,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf093",
@@ -3533,7 +4172,9 @@
    "mean_luma": 33,
    "hero": false,
    "still": "stills/sf093.jpg",
-   "still_frame": 2578
+   "still_frame": 2578,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf094",
@@ -3571,7 +4212,9 @@
    "mean_luma": 41,
    "hero": false,
    "still": "stills/sf094.jpg",
-   "still_frame": 2590
+   "still_frame": 2590,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf095",
@@ -3609,7 +4252,9 @@
    "mean_luma": 25,
    "hero": true,
    "still": "stills/sf095.jpg",
-   "still_frame": 2601
+   "still_frame": 2601,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf096",
@@ -3647,7 +4292,9 @@
    "mean_luma": 82,
    "hero": false,
    "still": "stills/sf096.jpg",
-   "still_frame": 2620
+   "still_frame": 2620,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf097",
@@ -3685,7 +4332,16 @@
    "mean_luma": 42,
    "hero": false,
    "still": "stills/sf097.jpg",
-   "still_frame": 2636
+   "still_frame": 2636,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Oops, you dropped something.",
+     "start": 110.33,
+     "end": 112.12
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf098",
@@ -3723,7 +4379,16 @@
    "mean_luma": 29,
    "hero": false,
    "still": "stills/sf098.jpg",
-   "still_frame": 2678
+   "still_frame": 2678,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Oops, you dropped something.",
+     "start": 110.33,
+     "end": 112.12
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf099",
@@ -3761,7 +4426,22 @@
    "mean_luma": 39,
    "hero": false,
    "still": "stills/sf099.jpg",
-   "still_frame": 2694
+   "still_frame": 2694,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Oops, you dropped something.",
+     "start": 110.33,
+     "end": 112.12
+    },
+    {
+     "label": "sung",
+     "text": "(rap hook - words unclear)",
+     "start": 112.1,
+     "end": 116.1
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf100",
@@ -3799,7 +4479,16 @@
    "mean_luma": 57,
    "hero": true,
    "still": "stills/sf100.jpg",
-   "still_frame": 2715
+   "still_frame": 2715,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "(rap hook - words unclear)",
+     "start": 112.1,
+     "end": 116.1
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf101",
@@ -3837,7 +4526,16 @@
    "mean_luma": 30,
    "hero": false,
    "still": "stills/sf101.jpg",
-   "still_frame": 2749
+   "still_frame": 2749,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "(rap hook - words unclear)",
+     "start": 112.1,
+     "end": 116.1
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf102",
@@ -3875,7 +4573,16 @@
    "mean_luma": 24,
    "hero": false,
    "still": "stills/sf102.jpg",
-   "still_frame": 2771
+   "still_frame": 2771,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "(rap hook - words unclear)",
+     "start": 112.1,
+     "end": 116.1
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf103",
@@ -3913,7 +4620,9 @@
    "mean_luma": 56,
    "hero": false,
    "still": "stills/sf103.jpg",
-   "still_frame": 2800
+   "still_frame": 2800,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf104",
@@ -3949,7 +4658,16 @@
    "mean_luma": 36,
    "hero": false,
    "still": "stills/sf104.jpg",
-   "still_frame": 2811
+   "still_frame": 2811,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "You lose.",
+     "start": 117.37,
+     "end": 118.46
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf105",
@@ -3987,7 +4705,16 @@
    "mean_luma": 80,
    "hero": false,
    "still": "stills/sf105.jpg",
-   "still_frame": 2831
+   "still_frame": 2831,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "You lose.",
+     "start": 117.37,
+     "end": 118.46
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf106",
@@ -4025,7 +4752,9 @@
    "mean_luma": 26,
    "hero": false,
    "still": "stills/sf106.jpg",
-   "still_frame": 2861
+   "still_frame": 2861,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf107",
@@ -4063,7 +4792,9 @@
    "mean_luma": 33,
    "hero": true,
    "still": "stills/sf107.jpg",
-   "still_frame": 2880
+   "still_frame": 2880,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf108",
@@ -4099,7 +4830,16 @@
    "mean_luma": 34,
    "hero": false,
    "still": "stills/sf108.jpg",
-   "still_frame": 2893
+   "still_frame": 2893,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "It might sting a little",
+     "start": 121.0,
+     "end": 122.46
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf109",
@@ -4137,7 +4877,16 @@
    "mean_luma": 32,
    "hero": true,
    "still": "stills/sf109.jpg",
-   "still_frame": 2938
+   "still_frame": 2938,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "It might sting a little",
+     "start": 121.0,
+     "end": 122.46
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf110",
@@ -4175,7 +4924,9 @@
    "mean_luma": 191,
    "hero": false,
    "still": "stills/sf110.jpg",
-   "still_frame": 2961
+   "still_frame": 2961,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf111",
@@ -4213,7 +4964,9 @@
    "mean_luma": 209,
    "hero": true,
    "still": "stills/sf111.jpg",
-   "still_frame": 2975
+   "still_frame": 2975,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf112",
@@ -4252,7 +5005,22 @@
    "mean_luma": 134,
    "hero": true,
    "still": "stills/sf112.jpg",
-   "still_frame": 3020
+   "still_frame": 3020,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "I'm a street fighter",
+     "start": 126.16,
+     "end": 127.58
+    },
+    {
+     "label": "dialogue",
+     "text": "I made a promise to protect you.",
+     "start": 127.77,
+     "end": 130.42
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf113",
@@ -4288,7 +5056,16 @@
    "mean_luma": 38,
    "hero": false,
    "still": "stills/sf113.jpg",
-   "still_frame": 3084
+   "still_frame": 3084,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "I made a promise to protect you.",
+     "start": 127.77,
+     "end": 130.42
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf114",
@@ -4326,7 +5103,16 @@
    "mean_luma": 15,
    "hero": false,
    "still": "stills/sf114.jpg",
-   "still_frame": 3104
+   "still_frame": 3104,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "I made a promise to protect you.",
+     "start": 127.77,
+     "end": 130.42
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf115",
@@ -4364,7 +5150,16 @@
    "mean_luma": 34,
    "hero": false,
    "still": "stills/sf115.jpg",
-   "still_frame": 3152
+   "still_frame": 3152,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "I made a promise to protect you.",
+     "start": 127.77,
+     "end": 130.42
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf116",
@@ -4403,7 +5198,9 @@
    "mean_luma": 74,
    "hero": true,
    "still": "stills/sf116.jpg",
-   "still_frame": 3173
+   "still_frame": 3173,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf117",
@@ -4441,7 +5238,9 @@
    "mean_luma": 96,
    "hero": true,
    "still": "stills/sf117.jpg",
-   "still_frame": 3221
+   "still_frame": 3221,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf118",
@@ -4479,7 +5278,9 @@
    "mean_luma": 84,
    "hero": false,
    "still": "stills/sf118.jpg",
-   "still_frame": 3241
+   "still_frame": 3241,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf119",
@@ -4517,7 +5318,9 @@
    "mean_luma": 107,
    "hero": false,
    "still": "stills/sf119.jpg",
-   "still_frame": 3259
+   "still_frame": 3259,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf120",
@@ -4556,7 +5359,9 @@
    "mean_luma": 59,
    "hero": false,
    "still": "stills/sf120.jpg",
-   "still_frame": 3309
+   "still_frame": 3309,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf121",
@@ -4595,7 +5400,16 @@
    "mean_luma": 44,
    "hero": true,
    "still": "stills/sf121.jpg",
-   "still_frame": 3333
+   "still_frame": 3333,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "To live has to fight.",
+     "start": 138.67,
+     "end": 140.72
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf122",
@@ -4633,7 +5447,16 @@
    "mean_luma": 37,
    "hero": false,
    "still": "stills/sf122.jpg",
-   "still_frame": 3354
+   "still_frame": 3354,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "To live has to fight.",
+     "start": 138.67,
+     "end": 140.72
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf123",
@@ -4671,7 +5494,9 @@
    "mean_luma": 95,
    "hero": false,
    "still": "stills/sf123.jpg",
-   "still_frame": 3382
+   "still_frame": 3382,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf124",
@@ -4709,7 +5534,9 @@
    "mean_luma": 80,
    "hero": false,
    "still": "stills/sf124.jpg",
-   "still_frame": 3418
+   "still_frame": 3418,
+   "audio": [],
+   "in_clean_music_window": false
   },
   {
    "id": "sf125",
@@ -4747,7 +5574,16 @@
    "mean_luma": 46,
    "hero": true,
    "still": "stills/sf125.jpg",
-   "still_frame": 3441
+   "still_frame": 3441,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "To fight is to live.",
+     "start": 142.85,
+     "end": 144.12
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf126",
@@ -4785,7 +5621,22 @@
    "mean_luma": 67,
    "hero": true,
    "still": "stills/sf126.jpg",
-   "still_frame": 3455
+   "still_frame": 3455,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "To fight is to live.",
+     "start": 142.85,
+     "end": 144.12
+    },
+    {
+     "label": "sung",
+     "text": "(chanted count - 'five, four, three, two, one' / 'one, two, three, four')",
+     "start": 144.0,
+     "end": 153.92
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf127",
@@ -4823,7 +5674,16 @@
    "mean_luma": 38,
    "hero": false,
    "still": "stills/sf127.jpg",
-   "still_frame": 3467
+   "still_frame": 3467,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "(chanted count - 'five, four, three, two, one' / 'one, two, three, four')",
+     "start": 144.0,
+     "end": 153.92
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf128",
@@ -4861,7 +5721,16 @@
    "mean_luma": 45,
    "hero": true,
    "still": "stills/sf128.jpg",
-   "still_frame": 3481
+   "still_frame": 3481,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "(chanted count - 'five, four, three, two, one' / 'one, two, three, four')",
+     "start": 144.0,
+     "end": 153.92
+    }
+   ],
+   "in_clean_music_window": true
   },
   {
    "id": "sf129",
@@ -4899,7 +5768,16 @@
    "mean_luma": 33,
    "hero": false,
    "still": "stills/sf129.jpg",
-   "still_frame": 3493
+   "still_frame": 3493,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "(chanted count - 'five, four, three, two, one' / 'one, two, three, four')",
+     "start": 144.0,
+     "end": 153.92
+    }
+   ],
+   "in_clean_music_window": true
   },
   {
    "id": "sf130",
@@ -4937,7 +5815,16 @@
    "mean_luma": 95,
    "hero": false,
    "still": "stills/sf130.jpg",
-   "still_frame": 3508
+   "still_frame": 3508,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "(chanted count - 'five, four, three, two, one' / 'one, two, three, four')",
+     "start": 144.0,
+     "end": 153.92
+    }
+   ],
+   "in_clean_music_window": true
   },
   {
    "id": "sf131",
@@ -4975,7 +5862,16 @@
    "mean_luma": 105,
    "hero": false,
    "still": "stills/sf131.jpg",
-   "still_frame": 3540
+   "still_frame": 3540,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "(chanted count - 'five, four, three, two, one' / 'one, two, three, four')",
+     "start": 144.0,
+     "end": 153.92
+    }
+   ],
+   "in_clean_music_window": true
   },
   {
    "id": "sf132",
@@ -5013,7 +5909,16 @@
    "mean_luma": 90,
    "hero": false,
    "still": "stills/sf132.jpg",
-   "still_frame": 3561
+   "still_frame": 3561,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "(chanted count - 'five, four, three, two, one' / 'one, two, three, four')",
+     "start": 144.0,
+     "end": 153.92
+    }
+   ],
+   "in_clean_music_window": true
   },
   {
    "id": "sf133",
@@ -5051,7 +5956,16 @@
    "mean_luma": 41,
    "hero": false,
    "still": "stills/sf133.jpg",
-   "still_frame": 3578
+   "still_frame": 3578,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "(chanted count - 'five, four, three, two, one' / 'one, two, three, four')",
+     "start": 144.0,
+     "end": 153.92
+    }
+   ],
+   "in_clean_music_window": true
   },
   {
    "id": "sf134",
@@ -5089,7 +6003,16 @@
    "mean_luma": 71,
    "hero": false,
    "still": "stills/sf134.jpg",
-   "still_frame": 3593
+   "still_frame": 3593,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "(chanted count - 'five, four, three, two, one' / 'one, two, three, four')",
+     "start": 144.0,
+     "end": 153.92
+    }
+   ],
+   "in_clean_music_window": true
   },
   {
    "id": "sf135",
@@ -5127,7 +6050,16 @@
    "mean_luma": 41,
    "hero": true,
    "still": "stills/sf135.jpg",
-   "still_frame": 3654
+   "still_frame": 3654,
+   "audio": [
+    {
+     "label": "sung",
+     "text": "(chanted count - 'five, four, three, two, one' / 'one, two, three, four')",
+     "start": 144.0,
+     "end": 153.92
+    }
+   ],
+   "in_clean_music_window": true
   },
   {
    "id": "sf136",
@@ -5163,7 +6095,16 @@
    "mean_luma": 27,
    "hero": true,
    "still": "stills/sf136.jpg",
-   "still_frame": 3713
+   "still_frame": 3713,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "You did that to your face, Kyle.",
+     "start": 156.69,
+     "end": 159.0
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf137",
@@ -5202,7 +6143,16 @@
    "mean_luma": 105,
    "hero": true,
    "still": "stills/sf137.jpg",
-   "still_frame": 3770
+   "still_frame": 3770,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "You did that to your face, Kyle.",
+     "start": 156.69,
+     "end": 159.0
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf138",
@@ -5242,7 +6192,22 @@
    "mean_luma": 114,
    "hero": false,
    "still": "stills/sf138.jpg",
-   "still_frame": 3809
+   "still_frame": 3809,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "You did that to your face, Kyle.",
+     "start": 156.69,
+     "end": 159.0
+    },
+    {
+     "label": "dialogue",
+     "text": "Oh, I don't know, Dan.",
+     "start": 159.0,
+     "end": 160.22
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf139",
@@ -5282,7 +6247,16 @@
    "mean_luma": 106,
    "hero": false,
    "still": "stills/sf139.jpg",
-   "still_frame": 3843
+   "still_frame": 3843,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "Oh, I don't know, Dan.",
+     "start": 159.0,
+     "end": 160.22
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf140",
@@ -5322,7 +6296,16 @@
    "mean_luma": 96,
    "hero": false,
    "still": "stills/sf140.jpg",
-   "still_frame": 3858
+   "still_frame": 3858,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "You know anybody in this tournament",
+     "start": 160.94,
+     "end": 162.34
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf141",
@@ -5361,7 +6344,22 @@
    "mean_luma": 80,
    "hero": false,
    "still": "stills/sf141.jpg",
-   "still_frame": 3909
+   "still_frame": 3909,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "You know anybody in this tournament",
+     "start": 160.94,
+     "end": 162.34
+    },
+    {
+     "label": "dialogue",
+     "text": "who fights with a claw hand?",
+     "start": 162.34,
+     "end": 163.68
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf142",
@@ -5399,7 +6397,22 @@
    "mean_luma": 71,
    "hero": false,
    "still": "stills/sf142.jpg",
-   "still_frame": 3956
+   "still_frame": 3956,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "who fights with a claw hand?",
+     "start": 162.34,
+     "end": 163.68
+    },
+    {
+     "label": "dialogue",
+     "text": "I'm paying attention to my business at the bar.",
+     "start": 163.92,
+     "end": 166.36
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf143",
@@ -5437,7 +6450,16 @@
    "mean_luma": 26,
    "hero": false,
    "still": "stills/sf143.jpg",
-   "still_frame": 3987
+   "still_frame": 3987,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "I'm paying attention to my business at the bar.",
+     "start": 163.92,
+     "end": 166.36
+    }
+   ],
+   "in_clean_music_window": false
   },
   {
    "id": "sf144",
@@ -5473,7 +6495,16 @@
    "mean_luma": 17,
    "hero": false,
    "still": "stills/sf144.jpg",
-   "still_frame": 4018
+   "still_frame": 4018,
+   "audio": [
+    {
+     "label": "dialogue",
+     "text": "You win.",
+     "start": 167.45,
+     "end": 168.42
+    }
+   ],
+   "in_clean_music_window": false
   }
  ]
 }
