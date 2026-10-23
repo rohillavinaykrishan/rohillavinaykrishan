@@ -128,7 +128,10 @@
       const D = /*@@DATA@@*/{};
       const $ = (id) => document.getElementById(id);
       const stage = $("mg2-stage");
-      function fit() { const w = stage.parentElement.clientWidth || 2160; stage.style.transform = "scale(" + (w / 2160) + ")"; }
+      // stage scale = host width / 2160, read once from the host's declared size (no DOM measurement during seeks)
+      const hostW = (function () { const h = stage.closest("[data-composition-src]") || stage.parentElement.parentElement;
+        const w = h && parseFloat(h.getAttribute && h.getAttribute("data-width")); return w > 0 ? w : 2160; })();
+      function fit() { stage.style.transform = "scale(" + (hostW / 2160) + ")"; }
       fit();
       // ---- the motion language: 2 eases (+ the push-in camera ease, same as MG1) ----
       function bez(x1, y1, x2, y2) {

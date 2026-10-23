@@ -145,6 +145,9 @@ proxy = proxy.replace('data-duration="11.08"', 'data-duration="1.36"').replace('
 proxy = proxy.replace('data-start="9.72"', 'data-start="0"')
 proxy = proxy.replace("<!-- MG2 SUPER ART FX on MASTER time: this root runs f0..f276 (11.08 s); the scene shows f243..f276. Transparent. -->",
                       "<!-- 540x960 REVIEW mount: local t0 = master f243. The scene fits its 2160x3840 stage to the host. -->")
-open(os.path.join(MG2, "proxy.html"), "w").write(proxy)
+PX = os.path.join(MG2, "proxy"); os.makedirs(PX, exist_ok=True)
+for d in ("assets", "compositions"):
+    if not os.path.islink(os.path.join(PX, d)): os.symlink(os.path.join("..", d), os.path.join(PX, d))
+open(os.path.join(PX, "index.html"), "w").write(proxy)
 json.dump(dict(info=info, name_w=name_w, stop_y=stop_y, cards=len(cards)), open(os.path.join(MG2, "check/build_info.json"), "w"), indent=1)
 print(json.dumps(info, indent=1))
