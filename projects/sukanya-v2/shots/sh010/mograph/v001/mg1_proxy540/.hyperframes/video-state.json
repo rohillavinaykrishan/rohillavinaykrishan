@@ -16,9 +16,73 @@
     "unversioned": []
   },
   "snapshots": {
-    "latest": null,
+    "latest": {
+      "revision": null,
+      "id": "370f9bfd-eecb-4087-971b-0be909dfdc0d-2"
+    },
     "revisions": {},
-    "unversioned": []
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "370f9bfd-eecb-4087-971b-0be909dfdc0d-0",
+        "image": "/tmp/claude-0/-home-user-rohillavinaykrishan/5fe3b9fd-8381-5a1b-b6a0-30ea036f781a/scratchpad/psnap/frame-00-at-0.1s.png",
+        "time": 0.1,
+        "metadata": {
+          "width": 540,
+          "height": 960,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792771684059,
+        "contentHash": "cdedda757feb55acc7de5f723d5b8c45dd33e8d257ace0c9f7dcca88a8eccf6e",
+        "revision": null,
+        "inputFingerprint": "caa474324fcb523324104805a4220db85f0360ee34fd5fa099fcb3b10fb6a094",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "370f9bfd-eecb-4087-971b-0be909dfdc0d-1",
+        "image": "/tmp/claude-0/-home-user-rohillavinaykrishan/5fe3b9fd-8381-5a1b-b6a0-30ea036f781a/scratchpad/psnap/frame-01-at-4.5s.png",
+        "time": 4.5,
+        "metadata": {
+          "width": 540,
+          "height": 960,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792771684059,
+        "contentHash": "d4a6d9fe7ba02a76c0c7e09d2149d0e73285fc4612688bed22a435d9cae8b644",
+        "revision": null,
+        "inputFingerprint": "caa474324fcb523324104805a4220db85f0360ee34fd5fa099fcb3b10fb6a094",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "370f9bfd-eecb-4087-971b-0be909dfdc0d-2",
+        "image": "/tmp/claude-0/-home-user-rohillavinaykrishan/5fe3b9fd-8381-5a1b-b6a0-30ea036f781a/scratchpad/psnap/frame-02-at-10.2s.png",
+        "time": 10.2,
+        "metadata": {
+          "width": 540,
+          "height": 960,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792771684060,
+        "contentHash": "763c367a2254839c4598932e4f4d38f0bcbe620814663eaf00aedb14e972e5b6",
+        "revision": null,
+        "inputFingerprint": "caa474324fcb523324104805a4220db85f0360ee34fd5fa099fcb3b10fb6a094",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
   },
   "renders": {
     "latest": {

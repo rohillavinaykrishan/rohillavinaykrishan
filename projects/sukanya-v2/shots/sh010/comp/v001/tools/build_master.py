@@ -86,6 +86,26 @@ def placeholder(cid, f0, f1, label):
 """
 
 
+# comp-lead ownership patches (producer decisions), applied to the master COPY only; each must match exactly once
+PATCHES = {
+    "mg1": [
+        # MG2 owns the ki motes f243-260
+        ("if (!D.charge_fx || f < 243) return;", "if (true) return; /* comp lead: MG2 owns the motes */"),
+        # MG2 owns the cursor from f243 (MG1 keeps it f200-242); MG1 keeps the camera push-in 1.00->1.03
+        ('if (f < 200) cur.style.opacity = "0";', 'if (f < 200 || f >= 243) cur.style.opacity = "0"; /* comp lead: MG2 owns the cursor f243+ */'),
+    ],
+}
+
+
+def apply_patches(cid, html):
+    for old, new in PATCHES.get(cid, []):
+        n = html.count(old)
+        if n != 1:
+            sys.exit(f"PATCH FAILED for {cid}: {n} matches for {old!r}")
+        html = html.replace(old, new)
+    return html
+
+
 def inject_css(html, css):
     return html.replace("</style>", css + "\n  </style>", 1) if css else html
 
@@ -116,6 +136,7 @@ def main():
             # nested roll host keeps pointing at master compositions/roll.html (the final roll)
             if 'data-composition-src="compositions/roll.html"' in html:
                 roll_nested = True
+            html = apply_patches(cid, html)
             html = inject_css(html, OVERRIDES.get(cid, ""))
             link(cid, adir)
         else:
@@ -167,18 +188,6 @@ def main():
 """
     open(f"{M}/index.html", "w").write(index)
 
-    # 540x960 review proxy: same hosts at 2160x3840 inside a 0.25 scale wrapper; assets/compositions symlinked
-    P = f"{SH}/comp/v001/proxy540"
-    os.makedirs(P, exist_ok=True)
-    for n in ("assets", "compositions"):
-        if not os.path.islink(f"{P}/{n}"):
-            os.symlink(f"../master/{n}", f"{P}/{n}")
-    proxy = index.replace('width=2160, height=3840', 'width=540, height=960') \
-        .replace('html, body { margin: 0; width: 2160px; height: 3840px;',
-                 '#proxy-scale { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; transform: scale(0.25); transform-origin: 0 0; }\n    html, body { margin: 0; width: 540px; height: 960px;') \
-        .replace('data-fps="25" data-width="2160" data-height="3840">', 'data-fps="25" data-width="540" data-height="960">\n     <div id="proxy-scale">', 1) \
-        .replace('      <audio id="master-audio"', '     </div>\n      <audio id="master-audio"')
-    open(f"{P}/index.html", "w").write(proxy)
     json.dump(status, open(f"{SH}/comp/v001/status.json", "w"), indent=1)
     for k, v in status.items():
         print(f"{k:10s} {'REAL' if v['real'] else 'placeholder'}  {v.get('src')}")
