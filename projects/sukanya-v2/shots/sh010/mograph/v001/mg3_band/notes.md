@@ -7,3 +7,11 @@ Self-contained HyperFrames sub-comp, 2160x3840, transparent outside the band/ech
 - geometry.json = band polygon, plate box/rotation, name setting (sizes/baselines), slam per-frame x. MG2 should match its settled name and band to this (or the comp lead keeps only one band layer f261-276).
 Design: band = -12 deg parallelogram 2400x900 centred y1700; plate rotated -12 deg inside it (dutch, no shear). Slam per-frame x 1150/160/-72(3% overshoot)/0 on f261-264. Cuts on beats 277,289,300,310,320,330,340: 2-frame border flash (Ki White 16px -> Saffron 11px -> 6px), 3 px name nudge on the -12 deg axis over 3 f, glow pulse .88 -> .80. Echo bands 260 px, 120 px clear of the band, tritone afterimage of the outgoing shot (upper = last frame, lower = mid frame), slash wipe in f277, drift 14 px/f opposite directions. SUPER ART chip in f266 (6 f expo-out along the axis), out f296-299. Pop-outs B02 f279-286 (x1.16, -40 px), B03 f290-297 (x1.30, -70 px), anchor = plate bottom centre, Mulberry hard shadow.
 Name: SUKANYA 429 px (cap 300) baseline 1715 / DILIP DHARIYA 314 px (cap 220) baseline 1985, Barlow Condensed 900 Italic, Ki White, Saffron glow 18 px 80%, Mulberry 0/+18 shadow. MG3 draws it from f277 (MG2 owns f261-276).
+
+## Update (after MG2 / Colorist / Roto hand-offs)
+- MG2 owns band + B01 f261-276. MG3's band (B02-B08) appears on the f277 cut, already settled, matching mg2_superart/fx_handoff.json band_settled_f267: same -12 deg skew polygon (x -120..2280, y 1250..2150), plate upright at scale 1.575, border 6 px Saffron + 40 px glow at 50%. No slam in MG3 any more.
+- Name = MG2 name_pose_settled_f272 (baselines 1707 / 1993, 428.57 / 314.29 px), rim glow Saffron blur 26 px at 30%, +10% pulse on each cut (.40 -> .30).
+- Plates = color/v001/plates/B02-B08.mp4 (graded, transcoded only). Echo stills = tritone of the graded plates.
+- Pop-outs use roto/v001/B02_matte.webm, B03_matte.webm (luma). They are clipped to the band polygon raised 420 px (break out of the TOP edge only), with a 14% soft top fade so the plate's rectangular edge never shows. B02 x1.06 / -20 px f279-286, B03 x1.25 / -40 px f290-297.
+- Proxy: renders/mg3_proxy_540.webm (89 frames, VP9 alpha). check/mg3_overwhite_*.png.
+- The echo bands are 62% opacity by design, so whatever sits under them shows through.

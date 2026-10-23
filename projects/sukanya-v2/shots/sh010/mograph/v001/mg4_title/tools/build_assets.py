@@ -26,31 +26,9 @@ def graded(img, fn):
     return np.clip(rgb, 0, 1), a[..., 3]
 
 
-# line-up: tritone + saffron rim (light from above: alpha minus alpha shifted down, blurred)
-lu = Image.open(os.path.join(PROJ, "assets_prev/lineup_restored_2160_r470.png"))
-rgb, al = graded(lu, CL.title_lineup)
-lum = rgb @ np.array([0.2126, 0.7152, 0.0722])
-# rim on the figures' upper-facing edges: luma gradient pointing up, gated by bright-ish detail
-g = np.zeros_like(lum); g[6:] = np.clip(lum[6:] - lum[:-6], 0, 1)
-rim = np.asarray(Image.fromarray((np.clip(g * 3, 0, 1) * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(3))) / 255.0
-rim = rim[..., None] * 0.55
-rgb = rgb * (1 - rim) + SAF * rim
-Image.fromarray(np.dstack([rgb * 255, al * 255]).astype(np.uint8), "RGBA").save(os.path.join(A, "lineup.png"))
-
-# logo: gold map + 6% bloom on highlights
-lg = Image.open(os.path.join(PROJ, "assets_prev/sf_logo_alpha.png"))
-rgb, al = graded(lg, CL.logo_gold)
-pad = 60
-H, W = al.shape
-canvas_rgb = np.zeros((H + 2 * pad, W + 2 * pad, 3)); canvas_a = np.zeros((H + 2 * pad, W + 2 * pad))
-canvas_rgb[pad:pad + H, pad:pad + W] = rgb; canvas_a[pad:pad + H, pad:pad + W] = al
-hl = np.clip((canvas_rgb @ np.array([0.2126, 0.7152, 0.0722]) - 0.6) / 0.4, 0, 1) * canvas_a
-bl = np.asarray(Image.fromarray((hl * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(24))) / 255.0
-bloom = 0.06 * 4 * bl                                            # 6% of a 4x-normalised wide blur
-out_a = np.clip(canvas_a + bloom * (1 - canvas_a), 0, 1)
-out_rgb = (canvas_rgb * canvas_a[..., None] + SAF * bloom[..., None] * (1 - canvas_a[..., None])) / np.maximum(out_a[..., None], 1e-6)
-Image.fromarray(np.dstack([np.clip(out_rgb, 0, 1) * 255, out_a * 255]).astype(np.uint8), "RGBA").save(os.path.join(A, "logo.png"))
-print("logo canvas", out_a.shape, "pad", pad)
+# line-up + logo: the Colorist's finished title assets (graded line-up, gold logo with alpha) are used as-is
+for src, dst in (("color/v001/title/lineup_tritone.png", "lineup.png"), ("color/v001/title/sf_logo_gold.png", "logo.png")):
+    shutil.copy(os.path.join(SH, src), os.path.join(A, dst))
 
 # collapse sources (from MG3's synced assets: same grade as the band chain)
 MG3 = os.path.join(os.path.dirname(MG), "mg3_band/assets")

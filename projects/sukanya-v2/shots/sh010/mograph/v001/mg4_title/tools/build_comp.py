@@ -37,8 +37,8 @@ NY = 1500 + blk_h * NS / 2 - CY                                                 
 
 # logo: canvas = 1618x862 logo + 60 px bloom pad; logo box y 700-1150 (450 px tall), centred x
 LK = 450 / 862
-LW, LH = 1738 * LK, 982 * LK
-LX, LY = CX - LW / 2, 700 - 60 * LK
+LW, LH = 1618 * LK, 862 * LK          # Colorist's color/v001/title/sf_logo_gold.png (1618x862, no pad)
+LX, LY = CX - LW / 2, 700
 lean = 0.5 * (1220 - 600) * TAN
 
 
@@ -63,7 +63,7 @@ for i in ("edge", "glow"):
 js.append(f'tl.set("#mg4-collapse", {{opacity: 0}}, {T(356)});')
 js.append(f'tl.set("#mg4-slash", {{opacity: 1}}, {T(356)});')
 js.append(f'tl.set("#mg4-slash", {{opacity: 0}}, {T(357)});')
-# name: f356-367 (11 f) to the title setting, Ki glow 80% -> 40%
+# name: f356-367 (11 f) to the title setting; rim glow from MG2/MG3's 30% to the title's 40%
 js.append(f'tl.to("#mg4-name", {{scale: {NS}, y: {NY:.1f}, duration: {11 / FPS}, ease: {eo}}}, {T(356)});')
 js.append(f'tl.to("#mg4-name-glow", {{opacity: 0.4, duration: {11 / FPS}, ease: {eo}}}, {T(356)});')
 # line-up rises in from below (11 f) + slow push 1.00 -> 1.04 to f449
@@ -109,7 +109,8 @@ scene = f"""<template>
     #mg4-eu-clip {{ clip-path: {css_poly(eu)}; }}
     #mg4-ed-clip {{ clip-path: {css_poly(ed)}; }}
     #mg4-band-clip {{ clip-path: {css_poly(band)}; }}
-    #root .rot {{ position: absolute; width: 2400px; height: 900px; left: -120px; transform-origin: 1200px 450px; transform: rotate(-12deg); }}
+    #root .rot {{ position: absolute; width: 2400px; height: 900px; left: -120px; }}
+    #mg4-band-rot {{ transform-origin: 1200px 450px; transform: scale({GEO.get("plate_scale", 1)}); }}   /* = MG3 / MG2 settled band plate */
     #root .rot img {{ position: absolute; left: 0; top: 0; width: 2400px; height: 900px; }}
     #root .echo img {{ opacity: 0.62; }}
     #mg4-logo-wipe {{ opacity: 0; clip-path: {wipe(LX - 2 * lean)}; }}
@@ -119,7 +120,7 @@ scene = f"""<template>
     #root .l1 {{ top: {TOP1:.1f}px; font-size: {S1}px; }}
     #root .l2 {{ top: {TOP2:.1f}px; font-size: {S2}px; }}
     #mg4-name {{ transform-origin: {CX}px {CY}px; }}
-    #mg4-name-glow .nm {{ color: {P["saffron"]}; filter: blur(18px); }}
+    #mg4-name-glow .nm {{ color: {P["saffron"]}; filter: blur(26px); }}
     #mg4-name-main .nm {{ color: {P["ki_white"]}; text-shadow: 0 18px 0 {P["mulberry"]}, 0 0 6px {P["saffron"]}99; }}
     #mg4-rule {{ position: absolute; left: {CX - 210}px; top: {RULE_Y}px; width: 420px; height: 8px; background: {P["saffron"]};
       transform-origin: 0 50%; box-shadow: 0 0 18px {P["saffron"]}88; }}
@@ -145,7 +146,7 @@ scene = f"""<template>
     <div id="mg4-collapse" class="layer" style="z-index:2">
       <div id="mg4-eu-clip" class="layer echo"><div class="rot" style="top:{GEO['echo_up_poly'][0][1] - 255.1 + 130 - 450:.0f}px"><img src="assets/echo_u.jpg" alt=""></div></div>
       <div id="mg4-ed-clip" class="layer echo"><div class="rot" style="top:{GEO['echo_dn_poly'][0][1] - 255.1 + 130 - 450:.0f}px"><img src="assets/echo_d.jpg" alt=""></div></div>
-      <div id="mg4-band-clip" class="layer"><div class="rot" style="top:{CY - 450}px"><img src="assets/band_B08.jpg" alt=""></div></div>
+      <div id="mg4-band-clip" class="layer"><div id="mg4-band-rot" class="rot" style="top:{CY - 450}px"><img src="assets/band_B08.jpg" alt=""></div></div>
       <svg class="layer" viewBox="0 0 2160 3840" width="2160" height="3840" style="overflow:visible">
         <defs><filter id="mg4-blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="20"/></filter></defs>
         <polygon id="mg4-glow" points="{svg_pts(band)}" fill="none" stroke="{P["saffron"]}" stroke-width="40" opacity="0.5" filter="url(#mg4-blur)"/>
@@ -163,7 +164,7 @@ scene = f"""<template>
     <div id="mg4-logo-wipe" class="layer" style="z-index:5"><img id="mg4-logo" src="assets/logo.png" alt="STREET FIGHTER"></div>
     <!-- NAME: band position at f350 -> title setting (x0.8, y 1500-1956) f356-367 -->
     <div id="mg4-name" class="layer" style="z-index:6">
-      <div id="mg4-name-glow" class="layer" style="opacity:0.8"><div class="nm l1">SUKANYA</div><div class="nm l2">DILIP DHARIYA</div></div>
+      <div id="mg4-name-glow" class="layer" style="opacity:0.3"><div class="nm l1">SUKANYA</div><div class="nm l2">DILIP DHARIYA</div></div>
       <div id="mg4-name-main" class="layer"><div class="nm l1">SUKANYA</div><div class="nm l2">DILIP DHARIYA</div></div>
     </div>
     <div class="layer" style="z-index:7">

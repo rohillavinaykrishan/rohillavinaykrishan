@@ -7,16 +7,18 @@
     /* echo bands: tritone afterimage of the outgoing shot */
     #mg3-echo-u-clip { clip-path: polygon(-120.0px 1125.1px,2280.0px 614.9px,2280.0px 874.9px,-120.0px 1385.1px); }
     #mg3-echo-d-clip { clip-path: polygon(-120.0px 2525.1px,2280.0px 2014.9px,2280.0px 2274.9px,-120.0px 2785.1px); }
-    #root .echo-rot { position: absolute; width: 2400px; height: 900px; left: -120px; transform-origin: 1200px 450px; transform: rotate(-12deg); }
+    #root .echo-rot { position: absolute; width: 2400px; height: 900px; left: -120px; }
     #root .echo-img { position: absolute; left: 0; top: 0; width: 2400px; height: 900px; opacity: 0.62; }
     /* band */
     #mg3-band-clip { clip-path: polygon(-120.0px 1505.1px,2280.0px 994.9px,2280.0px 1894.9px,-120.0px 2405.1px); }
     #mg3-band-rot { position: absolute; left: -120px; top: 1250px; width: 2400px; height: 900px;
-      transform-origin: 50% 50%; transform: rotate(-12deg); }
+      transform-origin: 50% 50%; transform: scale(1.575); }
     #root .plate { position: absolute; left: 0; top: 0; width: 2400px; height: 900px; object-fit: cover; }
+    #mg3-pop-clip { clip-path: polygon(-120.0px 1085.1px,2280.0px 574.9px,2280.0px 1894.9px,-120.0px 2405.1px); }
     #mg3-pop-rot { position: absolute; left: -120px; top: 1250px; width: 2400px; height: 900px;
-      transform-origin: 50% 50%; transform: rotate(-12deg); }
-    #root .pop { position: absolute; inset: 0; transform-origin: 50% 100%; filter: drop-shadow(0 22px 0 #4A1838cc); }
+      transform-origin: 50% 50%; transform: scale(1.575); }
+    #root .pop { position: absolute; inset: 0; transform-origin: 50% 100%;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); filter: drop-shadow(0 22px 0 #4A1838cc); }
     #root .pop-img { position: absolute; left: 0; top: 0; width: 2400px; height: 900px; }
     /* SUPER ART HUD chip */
     #mg3-tag { opacity: 0; position: absolute; left: 150px; top: 2380px; padding: 12px 18px 10px 22px; background: #FFF3DC;
@@ -24,9 +26,9 @@
     /* hero name (settled state of MG2's Super Art; MG3 carries it f277-349) */
     #root .nm { position: absolute; left: 0; width: 2160px; text-align: center; font-family: "BCI"; line-height: 1;
       letter-spacing: 0.01em; padding-left: 0.01em; white-space: nowrap; }
-    #root .l1 { top: 1328.9px; font-size: 429px; }
-    #root .l2 { top: 1702.4px; font-size: 314px; }
-    #mg3-name-glow .nm { color: #FFB12A; filter: blur(18px); }
+    #root .l1 { top: 1320.9px; font-size: 429px; }
+    #root .l2 { top: 1710.4px; font-size: 314px; }
+    #mg3-name-glow .nm { color: #FFB12A; filter: blur(26px); }
     #mg3-name-main .nm { color: #FFF3DC; text-shadow: 0 18px 0 #4A1838, 0 0 6px #FFB12A99; }
   </style>
   <div id="root" data-composition-id="mg3_band" data-width="2160" data-height="3840" data-layout-allow-overflow data-layout-allow-overlap>
@@ -67,7 +69,6 @@
     <div id="mg3-slam" class="layer" style="z-index:2">
       <div id="mg3-band-clip" class="layer">
         <div id="mg3-band-rot">
-        <video id="mg3-B01" class="clip plate" muted playsinline src="assets/mg3_band/plates/B01.mp4" data-start="0.0" data-duration="0.6400" data-track-index="2"></video>  <!-- master f261-276 -->
         <video id="mg3-B02" class="clip plate" muted playsinline src="assets/mg3_band/plates/B02.mp4" data-start="0.64" data-duration="0.4800" data-track-index="2"></video>  <!-- master f277-288 -->
         <video id="mg3-B03" class="clip plate" muted playsinline src="assets/mg3_band/plates/B03.mp4" data-start="1.12" data-duration="0.4400" data-track-index="2"></video>  <!-- master f289-299 -->
         <video id="mg3-B04" class="clip plate" muted playsinline src="assets/mg3_band/plates/B04.mp4" data-start="1.56" data-duration="0.4000" data-track-index="2"></video>  <!-- master f300-309 -->
@@ -82,7 +83,7 @@
         <polygon id="mg3-glow" points="-120.0,1505.1 2280.0,994.9 2280.0,1894.9 -120.0,2405.1" fill="none" stroke="#FFB12A" stroke-width="40" opacity="0.5" filter="url(#mg3-blur)"/>
         <polygon id="mg3-edge" points="-120.0,1505.1 2280.0,994.9 2280.0,1894.9 -120.0,2405.1" fill="none" stroke="#FFB12A" stroke-width="6"/>
       </svg>
-      <div id="mg3-pop-rot">
+      <div id="mg3-pop-clip" class="layer"><div id="mg3-pop-rot">
         <div id="mg3-pop-B02" class="pop">
           <img id="mg3-pop-B02-0" class="clip pop-img" src="assets/mg3_band/pop/B02_0.png" data-start="0.72" data-duration="0.0400" data-track-index="4" alt="">
           <img id="mg3-pop-B02-1" class="clip pop-img" src="assets/mg3_band/pop/B02_1.png" data-start="0.76" data-duration="0.0400" data-track-index="4" alt="">
@@ -103,7 +104,7 @@
           <img id="mg3-pop-B03-6" class="clip pop-img" src="assets/mg3_band/pop/B03_6.png" data-start="1.4" data-duration="0.0400" data-track-index="4" alt="">
           <img id="mg3-pop-B03-7" class="clip pop-img" src="assets/mg3_band/pop/B03_7.png" data-start="1.44" data-duration="0.0400" data-track-index="4" alt="">
         </div>
-      </div>
+      </div></div>
     </div>
     <!-- SUPER ART tag f266-299 -->
     <div class="layer" style="z-index:5">
@@ -112,7 +113,7 @@
     <!-- HERO NAME f277-349 -->
     <div id="mg3-name-clip" class="layer clip" data-start="0.64" data-duration="2.9200" data-track-index="6" style="z-index:6">
       <div id="mg3-name" class="layer">
-        <div id="mg3-name-glow" class="layer" style="opacity:0.8"><div class="nm l1">SUKANYA</div><div class="nm l2">DILIP DHARIYA</div></div>
+        <div id="mg3-name-glow" class="layer" style="opacity:0.3"><div class="nm l1">SUKANYA</div><div class="nm l2">DILIP DHARIYA</div></div>
         <div id="mg3-name-main" class="layer"><div class="nm l1">SUKANYA</div><div class="nm l2">DILIP DHARIYA</div></div>
       </div>
     </div>
@@ -137,10 +138,8 @@
       }
       const expoOut = bez(0.16, 1, 0.3, 1), expoIn = bez(0.7, 0, 0.84, 0);
       const tl = gsap.timeline({ paused: true });
-      gsap.set("#mg3-slam", { x: 1150 });
-      tl.set("#mg3-slam", {x: 160}, 0.04);
-      tl.set("#mg3-slam", {x: -72}, 0.08);
-      tl.set("#mg3-slam", {x: 0}, 0.12);
+      gsap.set("#mg3-slam", { opacity: 0 });
+      tl.set("#mg3-slam", {opacity: 1}, 0.64);
       tl.set("#mg3-edge", {attr: {stroke: "#FFF3DC", "stroke-width": 16}}, 0.64);
       tl.set("#mg3-glow", {opacity: 1}, 0.64);
       tl.set("#mg3-edge", {attr: {stroke: "#FFB12A", "stroke-width": 11}}, 0.68);
@@ -151,7 +150,7 @@
       tl.set("#mg3-name", {x: 1.94, y: -0.41}, 0.68);
       tl.set("#mg3-name", {x: 0.97, y: -0.21}, 0.72);
       tl.set("#mg3-name", {x: 0.00, y: -0.00}, 0.76);
-      tl.fromTo("#mg3-name-glow", {opacity: 0.88}, {opacity: 0.80, duration: 0.24, ease: expoOut}, 0.64);
+      tl.fromTo("#mg3-name-glow", {opacity: 0.40}, {opacity: 0.30, duration: 0.24, ease: expoOut}, 0.64);
       tl.set("#mg3-edge", {attr: {stroke: "#FFF3DC", "stroke-width": 16}}, 1.12);
       tl.set("#mg3-glow", {opacity: 1}, 1.12);
       tl.set("#mg3-edge", {attr: {stroke: "#FFB12A", "stroke-width": 11}}, 1.16);
@@ -162,7 +161,7 @@
       tl.set("#mg3-name", {x: 1.94, y: -0.41}, 1.16);
       tl.set("#mg3-name", {x: 0.97, y: -0.21}, 1.2);
       tl.set("#mg3-name", {x: 0.00, y: -0.00}, 1.24);
-      tl.fromTo("#mg3-name-glow", {opacity: 0.88}, {opacity: 0.80, duration: 0.24, ease: expoOut, immediateRender: false}, 1.12);
+      tl.fromTo("#mg3-name-glow", {opacity: 0.40}, {opacity: 0.30, duration: 0.24, ease: expoOut, immediateRender: false}, 1.12);
       tl.set("#mg3-edge", {attr: {stroke: "#FFF3DC", "stroke-width": 16}}, 1.56);
       tl.set("#mg3-glow", {opacity: 1}, 1.56);
       tl.set("#mg3-edge", {attr: {stroke: "#FFB12A", "stroke-width": 11}}, 1.6);
@@ -173,7 +172,7 @@
       tl.set("#mg3-name", {x: 1.94, y: -0.41}, 1.6);
       tl.set("#mg3-name", {x: 0.97, y: -0.21}, 1.64);
       tl.set("#mg3-name", {x: 0.00, y: -0.00}, 1.68);
-      tl.fromTo("#mg3-name-glow", {opacity: 0.88}, {opacity: 0.80, duration: 0.24, ease: expoOut, immediateRender: false}, 1.56);
+      tl.fromTo("#mg3-name-glow", {opacity: 0.40}, {opacity: 0.30, duration: 0.24, ease: expoOut, immediateRender: false}, 1.56);
       tl.set("#mg3-edge", {attr: {stroke: "#FFF3DC", "stroke-width": 16}}, 1.96);
       tl.set("#mg3-glow", {opacity: 1}, 1.96);
       tl.set("#mg3-edge", {attr: {stroke: "#FFB12A", "stroke-width": 11}}, 2.0);
@@ -184,7 +183,7 @@
       tl.set("#mg3-name", {x: 1.94, y: -0.41}, 2.0);
       tl.set("#mg3-name", {x: 0.97, y: -0.21}, 2.04);
       tl.set("#mg3-name", {x: 0.00, y: -0.00}, 2.08);
-      tl.fromTo("#mg3-name-glow", {opacity: 0.88}, {opacity: 0.80, duration: 0.24, ease: expoOut, immediateRender: false}, 1.96);
+      tl.fromTo("#mg3-name-glow", {opacity: 0.40}, {opacity: 0.30, duration: 0.24, ease: expoOut, immediateRender: false}, 1.96);
       tl.set("#mg3-edge", {attr: {stroke: "#FFF3DC", "stroke-width": 16}}, 2.36);
       tl.set("#mg3-glow", {opacity: 1}, 2.36);
       tl.set("#mg3-edge", {attr: {stroke: "#FFB12A", "stroke-width": 11}}, 2.4);
@@ -195,7 +194,7 @@
       tl.set("#mg3-name", {x: 1.94, y: -0.41}, 2.4);
       tl.set("#mg3-name", {x: 0.97, y: -0.21}, 2.44);
       tl.set("#mg3-name", {x: 0.00, y: -0.00}, 2.48);
-      tl.fromTo("#mg3-name-glow", {opacity: 0.88}, {opacity: 0.80, duration: 0.24, ease: expoOut, immediateRender: false}, 2.36);
+      tl.fromTo("#mg3-name-glow", {opacity: 0.40}, {opacity: 0.30, duration: 0.24, ease: expoOut, immediateRender: false}, 2.36);
       tl.set("#mg3-edge", {attr: {stroke: "#FFF3DC", "stroke-width": 16}}, 2.76);
       tl.set("#mg3-glow", {opacity: 1}, 2.76);
       tl.set("#mg3-edge", {attr: {stroke: "#FFB12A", "stroke-width": 11}}, 2.8);
@@ -206,7 +205,7 @@
       tl.set("#mg3-name", {x: 1.94, y: -0.41}, 2.8);
       tl.set("#mg3-name", {x: 0.97, y: -0.21}, 2.84);
       tl.set("#mg3-name", {x: 0.00, y: -0.00}, 2.88);
-      tl.fromTo("#mg3-name-glow", {opacity: 0.88}, {opacity: 0.80, duration: 0.24, ease: expoOut, immediateRender: false}, 2.76);
+      tl.fromTo("#mg3-name-glow", {opacity: 0.40}, {opacity: 0.30, duration: 0.24, ease: expoOut, immediateRender: false}, 2.76);
       tl.set("#mg3-edge", {attr: {stroke: "#FFF3DC", "stroke-width": 16}}, 3.16);
       tl.set("#mg3-glow", {opacity: 1}, 3.16);
       tl.set("#mg3-edge", {attr: {stroke: "#FFB12A", "stroke-width": 11}}, 3.2);
@@ -217,7 +216,7 @@
       tl.set("#mg3-name", {x: 1.94, y: -0.41}, 3.2);
       tl.set("#mg3-name", {x: 0.97, y: -0.21}, 3.24);
       tl.set("#mg3-name", {x: 0.00, y: -0.00}, 3.28);
-      tl.fromTo("#mg3-name-glow", {opacity: 0.88}, {opacity: 0.80, duration: 0.24, ease: expoOut, immediateRender: false}, 3.16);
+      tl.fromTo("#mg3-name-glow", {opacity: 0.40}, {opacity: 0.30, duration: 0.24, ease: expoOut, immediateRender: false}, 3.16);
       tl.fromTo("#mg3-echo-u-wipe, #mg3-echo-u-line", {clipPath: "inset(0px 100% 0px 0px)"}, {clipPath: "inset(0px 0% 0px 0px)", duration: 0.24, ease: expoOut}, 0.64);
       tl.fromTo("#mg3-echo-d-wipe, #mg3-echo-d-line", {clipPath: "inset(0px 100% 0px 0px)"}, {clipPath: "inset(0px 0% 0px 0px)", duration: 0.24, ease: expoOut}, 0.64);
       tl.fromTo("#mg3-eu-B01", {x: 84}, {x: -84, duration: 0.48, ease: "none"}, 0.64);
@@ -236,9 +235,9 @@
       tl.fromTo("#mg3-ed-B07", {x: -70}, {x: 70, duration: 0.4, ease: "none"}, 3.16);
       tl.fromTo("#mg3-tag", {x: -410.8, y: 87.3, opacity: 0}, {x: 0, y: 0, opacity: 1, duration: 0.24, ease: expoOut}, 0.2);
       tl.to("#mg3-tag", {x: -410.8, y: 87.3, opacity: 0, duration: 0.16, ease: expoIn}, 1.4);
-      tl.fromTo("#mg3-pop-B02", {scale: 1, y: 0}, {scale: 1.16, y: -40, duration: 0.08, ease: expoOut}, 0.72);
+      tl.fromTo("#mg3-pop-B02", {scale: 1, y: 0}, {scale: 1.06, y: -20, duration: 0.08, ease: expoOut}, 0.72);
       tl.to("#mg3-pop-B02", {scale: 1, y: 0, duration: 0.08, ease: expoIn}, 0.96);
-      tl.fromTo("#mg3-pop-B03", {scale: 1, y: 0}, {scale: 1.3, y: -70, duration: 0.08, ease: expoOut}, 1.16);
+      tl.fromTo("#mg3-pop-B03", {scale: 1, y: 0}, {scale: 1.25, y: -40, duration: 0.08, ease: expoOut}, 1.16);
       tl.to("#mg3-pop-B03", {scale: 1, y: 0, duration: 0.08, ease: expoIn}, 1.4);
       tl.set({}, {}, 3.56);
       window.__timelines["mg3_band"] = tl;
