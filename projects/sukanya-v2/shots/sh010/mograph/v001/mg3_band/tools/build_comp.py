@@ -32,6 +32,8 @@ def para(cx, cy, w, h):
 
 
 band_pts = para(CX, CY, BW, BH)
+# pop-outs may break out through the band's TOP edge only (up to 420 px), never below its bottom edge
+pop_pts = [(x, y - 420) for x, y in band_pts[:2]] + band_pts[2:]
 ECHO_H, ECHO_GAP = 260, 120
 eu_cy = CY - BH / 2 - ECHO_GAP - ECHO_H / 2      # 1000
 ed_cy = CY + BH / 2 + ECHO_GAP + ECHO_H / 2      # 2400
@@ -53,7 +55,7 @@ vids = "\n".join(
     f'        <video id="mg3-{s["id"]}" class="clip plate" muted playsinline src="assets/plates/{s["id"]}.mp4" '
     f'data-start="{T(s["f_in"])}" data-duration="{T(s["f_out"]) - T(s["f_in"]):.4f}" data-track-index="2"></video>'
     f'  <!-- master f{s["f_in"]}-{s["f_out"]-1} -->'
-    for s in B)
+    for s in B if s["id"] != "B01")
 # echo bands: during shot k they show shot k-1's afterimage (tritone still of its last frame)
 echo_imgs = []
 for k in range(1, len(B)):
@@ -75,8 +77,8 @@ pop_html = "\n".join(pop_imgs)
 js = []
 E_OUT = "expoOut"; E_IN = "expoIn"
 # band slam, f261-264 (MG3 owns the band from the drop): per-frame keys, 3% overshoot (-72 px) on f263
-for f, x in [(262, 160), (263, -72), (264, 0)]:   # f261 = 1150 is set immediately (gsap.set) below
-    js.append(f'tl.set("#mg3-slam", {{x: {x}}}, {T(f)});')
+# MG2 owns the band (slam + B01) f261-276; MG3's band appears on the f277 cut, settled (MG2 band_settled_f267)
+js.append(f'tl.set("#mg3-slam", {{opacity: 1}}, {T(277)});')
 # border flash + name nudge + rim pulse on every cut
 nx, ny = 3 * math.cos(math.radians(12)), -3 * math.sin(math.radians(12))
 for c in CUTS:
@@ -127,9 +129,11 @@ scene = f"""<template>
     #mg3-band-rot {{ position: absolute; left: {CX - BW / 2:.0f}px; top: {CY - BH / 2:.0f}px; width: {BW}px; height: {BH}px;
       transform-origin: 50% 50%; transform: scale({PLATE_SCALE}); }}
     #root .plate {{ position: absolute; left: 0; top: 0; width: {BW}px; height: {BH}px; object-fit: cover; }}
+    #mg3-pop-clip {{ clip-path: {css_poly(pop_pts)}; }}
     #mg3-pop-rot {{ position: absolute; left: {CX - BW / 2:.0f}px; top: {CY - BH / 2:.0f}px; width: {BW}px; height: {BH}px;
       transform-origin: 50% 50%; transform: scale({PLATE_SCALE}); }}
-    #root .pop {{ position: absolute; inset: 0; transform-origin: 50% 100%; filter: drop-shadow(0 22px 0 {P["mulberry"]}cc); }}
+    #root .pop {{ position: absolute; inset: 0; transform-origin: 50% 100%;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); filter: drop-shadow(0 22px 0 {P["mulberry"]}cc); }}
     #root .pop-img {{ position: absolute; left: 0; top: 0; width: {BW}px; height: {BH}px; }}
     /* SUPER ART HUD chip */
     #mg3-tag {{ opacity: 0; position: absolute; left: 150px; top: 2380px; padding: 12px 18px 10px 22px; background: {P["ki_white"]};
@@ -176,14 +180,14 @@ scene = f"""<template>
         <polygon id="mg3-glow" points="{svg_pts(band_pts)}" fill="none" stroke="{P["saffron"]}" stroke-width="40" opacity="0.5" filter="url(#mg3-blur)"/>
         <polygon id="mg3-edge" points="{svg_pts(band_pts)}" fill="none" stroke="{P["saffron"]}" stroke-width="6"/>
       </svg>
-      <div id="mg3-pop-rot">
+      <div id="mg3-pop-clip" class="layer"><div id="mg3-pop-rot">
         <div id="mg3-pop-B02" class="pop">
 {chr(10).join(x for x in pop_imgs if "B02" in x)}
         </div>
         <div id="mg3-pop-B03" class="pop">
 {chr(10).join(x for x in pop_imgs if "B03" in x)}
         </div>
-      </div>
+      </div></div>
     </div>
     <!-- SUPER ART tag f266-299 -->
     <div class="layer" style="z-index:5">
@@ -217,7 +221,7 @@ scene = f"""<template>
       }}
       const expoOut = bez(0.16, 1, 0.3, 1), expoIn = bez(0.7, 0, 0.84, 0);
       const tl = gsap.timeline({{ paused: true }});
-      gsap.set("#mg3-slam", {{ x: 1150 }});
+      gsap.set("#mg3-slam", {{ opacity: 0 }});
       {js_body}
       tl.set({{}}, {{}}, {DUR});
       window.__timelines["mg3_band"] = tl;
@@ -251,6 +255,6 @@ geo = dict(band_poly=band_pts, echo_up_poly=eu_pts, echo_dn_poly=ed_pts, plate_r
            name=dict(font="Barlow Condensed 900 Italic", l1=dict(text="SUKANYA", size_px=S1, cap_px=300, baseline_y=BL1),
                      l2=dict(text="DILIP DHARIYA", size_px=S2, cap_px=220, baseline_y=BL2), centre_x=CX, block_centre_y=CY,
                      tracking_em=0.01, fill=P["ki_white"], glow=f'{P["saffron"]} blur 18px 80%', shadow=f'{P["mulberry"]} 0,+18'),
-           slam_x_by_frame={261: 1150, 262: 160, 263: -72, 264: 0})
+           band_visible_from_f=277)
 json.dump(geo, open(os.path.join(MG, "geometry.json"), "w"), indent=1)
 print("wrote scene, index, geometry")

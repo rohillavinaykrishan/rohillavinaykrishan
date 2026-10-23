@@ -82,10 +82,5 @@
   "glow": "#FFB12A blur 18px 80%",
   "shadow": "#4A1838 0,+18"
  },
- "slam_x_by_frame": {
-  "261": 1150,
-  "262": 160,
-  "263": -72,
-  "264": 0
- }
+ "band_visible_from_f": 277
 }

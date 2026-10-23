@@ -14,9 +14,11 @@
     #mg3-band-rot { position: absolute; left: -120px; top: 1250px; width: 2400px; height: 900px;
       transform-origin: 50% 50%; transform: scale(1.575); }
     #root .plate { position: absolute; left: 0; top: 0; width: 2400px; height: 900px; object-fit: cover; }
+    #mg3-pop-clip { clip-path: polygon(-120.0px 1085.1px,2280.0px 574.9px,2280.0px 1894.9px,-120.0px 2405.1px); }
     #mg3-pop-rot { position: absolute; left: -120px; top: 1250px; width: 2400px; height: 900px;
       transform-origin: 50% 50%; transform: scale(1.575); }
-    #root .pop { position: absolute; inset: 0; transform-origin: 50% 100%; filter: drop-shadow(0 22px 0 #4A1838cc); }
+    #root .pop { position: absolute; inset: 0; transform-origin: 50% 100%;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); filter: drop-shadow(0 22px 0 #4A1838cc); }
     #root .pop-img { position: absolute; left: 0; top: 0; width: 2400px; height: 900px; }
     /* SUPER ART HUD chip */
     #mg3-tag { opacity: 0; position: absolute; left: 150px; top: 2380px; padding: 12px 18px 10px 22px; background: #FFF3DC;
@@ -67,7 +69,6 @@
     <div id="mg3-slam" class="layer" style="z-index:2">
       <div id="mg3-band-clip" class="layer">
         <div id="mg3-band-rot">
-        <video id="mg3-B01" class="clip plate" muted playsinline src="assets/plates/B01.mp4" data-start="0.0" data-duration="0.6400" data-track-index="2"></video>  <!-- master f261-276 -->
         <video id="mg3-B02" class="clip plate" muted playsinline src="assets/plates/B02.mp4" data-start="0.64" data-duration="0.4800" data-track-index="2"></video>  <!-- master f277-288 -->
         <video id="mg3-B03" class="clip plate" muted playsinline src="assets/plates/B03.mp4" data-start="1.12" data-duration="0.4400" data-track-index="2"></video>  <!-- master f289-299 -->
         <video id="mg3-B04" class="clip plate" muted playsinline src="assets/plates/B04.mp4" data-start="1.56" data-duration="0.4000" data-track-index="2"></video>  <!-- master f300-309 -->
@@ -82,7 +83,7 @@
         <polygon id="mg3-glow" points="-120.0,1505.1 2280.0,994.9 2280.0,1894.9 -120.0,2405.1" fill="none" stroke="#FFB12A" stroke-width="40" opacity="0.5" filter="url(#mg3-blur)"/>
         <polygon id="mg3-edge" points="-120.0,1505.1 2280.0,994.9 2280.0,1894.9 -120.0,2405.1" fill="none" stroke="#FFB12A" stroke-width="6"/>
       </svg>
-      <div id="mg3-pop-rot">
+      <div id="mg3-pop-clip" class="layer"><div id="mg3-pop-rot">
         <div id="mg3-pop-B02" class="pop">
           <img id="mg3-pop-B02-0" class="clip pop-img" src="assets/pop/B02_0.png" data-start="0.72" data-duration="0.0400" data-track-index="4" alt="">
           <img id="mg3-pop-B02-1" class="clip pop-img" src="assets/pop/B02_1.png" data-start="0.76" data-duration="0.0400" data-track-index="4" alt="">
@@ -103,7 +104,7 @@
           <img id="mg3-pop-B03-6" class="clip pop-img" src="assets/pop/B03_6.png" data-start="1.4" data-duration="0.0400" data-track-index="4" alt="">
           <img id="mg3-pop-B03-7" class="clip pop-img" src="assets/pop/B03_7.png" data-start="1.44" data-duration="0.0400" data-track-index="4" alt="">
         </div>
-      </div>
+      </div></div>
     </div>
     <!-- SUPER ART tag f266-299 -->
     <div class="layer" style="z-index:5">
@@ -137,10 +138,8 @@
       }
       const expoOut = bez(0.16, 1, 0.3, 1), expoIn = bez(0.7, 0, 0.84, 0);
       const tl = gsap.timeline({ paused: true });
-      gsap.set("#mg3-slam", { x: 1150 });
-      tl.set("#mg3-slam", {x: 160}, 0.04);
-      tl.set("#mg3-slam", {x: -72}, 0.08);
-      tl.set("#mg3-slam", {x: 0}, 0.12);
+      gsap.set("#mg3-slam", { opacity: 0 });
+      tl.set("#mg3-slam", {opacity: 1}, 0.64);
       tl.set("#mg3-edge", {attr: {stroke: "#FFF3DC", "stroke-width": 16}}, 0.64);
       tl.set("#mg3-glow", {opacity: 1}, 0.64);
       tl.set("#mg3-edge", {attr: {stroke: "#FFB12A", "stroke-width": 11}}, 0.68);
