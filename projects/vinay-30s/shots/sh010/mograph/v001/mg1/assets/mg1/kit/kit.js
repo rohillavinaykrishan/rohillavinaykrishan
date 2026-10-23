@@ -268,7 +268,7 @@
     return rows;
   }
   /* wipe progress for a wipe that starts on frame f0 (default 6 f, ease.out) */
-  FX.wipeProgress = function (f, f0, dur) { return ease.out(clamp01((f - f0) / (dur || 6))); };
+  FX.wipeProgress = function (f, f0, dur, fn) { return (fn || ease.out)(clamp01((f - f0) / (dur || 6))); };
   /* geometry shared by matte + fringe so they always line up */
   function wipeEdges(rect, p, opt) {
     var s = opt.s == null ? 1 : opt.s;
@@ -284,8 +284,9 @@
   }
   /* brushMatte(ctx, rect, p, opt): fills the REVEALED part (opaque) of rect.
      p 0 = nothing, 1 = full rect. opt: {variant 0-2, seed, s, ragged, fringe, color}
-     Use with ctx.globalCompositeOperation = "destination-in" to cut a layer,
-     or draw white on a transparent canvas and use it as a CSS mask. */
+     ALWAYS draw it source-over onto its own (cleared) canvas, then apply that
+     canvas once with "destination-in" (see brushWipe) or use it as a CSS mask.
+     Drawing it directly with "destination-in" erases the layer (many rects). */
   FX.brushMatte = function (ctx, rect, p, opt) {
     opt = opt || {};
     if (p <= 0) return;
@@ -326,7 +327,7 @@
     gFr.addColorStop(0, rgba(hex, 0));
     gFr.addColorStop(0.55, rgba(hex, 0.45 * a));
     gFr.addColorStop(1, rgba(hex, 0.95 * a));
-    var gHalo = ctx.createLinearGradient(0, 0, fr * 0.9, 0);
+    var gHalo = ctx.createLinearGradient(0, 0, fr * 1.6, 0);
     gHalo.addColorStop(0, rgba(hex, 0.5 * a));
     gHalo.addColorStop(1, rgba(hex, 0));
     var tip = Math.max(1, 3 * E.s), wh = FX.palette ? FX.palette.whiteHot : "#FFF8EC";
@@ -337,7 +338,7 @@
       if (ex < E.x - fr) continue;
       ctx.save(); ctx.translate(ex, 0); ctx.globalAlpha = r.bright;
       ctx.fillStyle = gFr; ctx.fillRect(-fr, y0, fr, hh);
-      ctx.fillStyle = gHalo; ctx.fillRect(0, y0, fr * 0.9, hh);
+      ctx.fillStyle = gHalo; ctx.fillRect(0, y0, fr * 1.6, hh);
       ctx.fillStyle = rgba(wh, 0.85 * a); ctx.fillRect(-tip, y0, tip, hh);
       ctx.restore();
     }
@@ -347,15 +348,22 @@
      through the matte into a scratch canvas, then the fringe. */
   FX.brushWipe = function (ctx, f, f0, rect, hex, drawNew, opt) {
     opt = opt || {};
-    var p = FX.wipeProgress(f, f0, opt.dur || 6);
+    var p = FX.wipeProgress(f, f0, opt.dur || 6, opt.ease);
     if (p <= 0) return p;
     var cw = ctx.canvas.width, ch = ctx.canvas.height;
     var tmp = FX._wipeTmp && FX._wipeTmp.width === cw && FX._wipeTmp.height === ch ? FX._wipeTmp : (FX._wipeTmp = FX.canvas(cw, ch));
     var t = tmp.getContext("2d");
     t.setTransform(1, 0, 0, 1, 0, 0); t.globalCompositeOperation = "source-over"; t.clearRect(0, 0, cw, ch);
     drawNew(t);
+    // matte goes into its own canvas first: per-row fillRects under "destination-in"
+    // would each erase everything outside themselves.
+    var mc = FX._wipeMatte && FX._wipeMatte.width === cw && FX._wipeMatte.height === ch ? FX._wipeMatte : (FX._wipeMatte = FX.canvas(cw, ch));
+    var m = mc.getContext("2d");
+    m.setTransform(1, 0, 0, 1, 0, 0); m.globalCompositeOperation = "source-over"; m.clearRect(0, 0, cw, ch);
+    FX.brushMatte(m, rect, p, opt);
     t.globalCompositeOperation = "destination-in";
-    FX.brushMatte(t, rect, p, opt);
+    t.drawImage(mc, 0, 0);
+    t.globalCompositeOperation = "source-over";
     ctx.drawImage(tmp, 0, 0);
     FX.brushFringe(ctx, rect, p, hex, opt);
     return p;

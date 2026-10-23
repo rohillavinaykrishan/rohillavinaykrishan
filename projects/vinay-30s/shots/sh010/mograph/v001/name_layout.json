@@ -197,5 +197,34 @@
   "fill": "#FFF8EC",
   "glow": "#FFC94D 45% outer 36px",
   "keyline": "#C7851E 2px offset (0,+6px)"
+ },
+ "final_state_f386": {
+  "note": "Exact look of the name on MG2 last frame (f386); MG3 continues from this at f387.",
+  "fill": "#FFF8EC White Hot, opaque, scale 1.0, glyphs at glyphs[].pen_x on baseline_y",
+  "gold_glow": "name filled + 10px stroke in #FFC94D, gaussian blur 18px at 45% opacity, plus same at blur 36px at 30% (both source-over, under the fill)",
+  "keyline": "#C7851E name fill + 4px stroke (2px outside), offset (0,+6px), 100%, under the fill",
+  "layer_order": [
+   "gold glow",
+   "keyline",
+   "White Hot fill"
+  ]
+ },
+ "charge_spiral": {
+  "note": "MG2 draws the charge spirals f336-356 (variable drawCharge in compositions/mg2.html). Formula if MG1 needs to match/hand off:",
+  "r": "1300*(40/1300)^u",
+  "angle_from_12oclock_clockwise": "(22.5+45k)deg - 2 turns*(1-u)",
+  "u": "0.45p + 0.55*ease.in(p), p=(f-336)/20",
+  "hue_order": "Ryu,Ken,Dhalsim,Blanka,Guile,Chun-Li,M. Bison,E. Honda (k=0..7)",
+  "core_px": [
+   14,
+   8,
+   11,
+   6,
+   12,
+   9,
+   13,
+   7
+  ],
+  "trail_frames": 10
  }
 }

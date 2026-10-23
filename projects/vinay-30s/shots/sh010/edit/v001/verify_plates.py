@@ -43,7 +43,7 @@ for it in b.items():
     ow, oh = b.WIN[it['layer']]
     first, last = r['src_first_frame'], r['src_last_frame']
     # interpolation also reads one frame past the last position
-    read_last = last + (1 if r['mode'] != 'map' else 0)
+    read_last = min(last + (1 if r['mode'] != 'map' else 0), L['out_frame'])  # decode() clamps at the shot end
     inside = L['in_frame'] <= first and read_last <= L['out_frame']
     d = cut_scan(first, read_last)
     med = float(np.median(d)) if d else 0

@@ -26,6 +26,7 @@ LIB = ROOT + '/library/streetfighter-trailer/shots.json'
 SRC = P + '/source/trailer.mp4'
 OUT = P + '/shots/sh010/edit/v001'
 FPS_S = Fraction(24000, 1001)
+LIBSHOTS = {x['id']: x for x in json.load(open(LIB))['shots']}
 EPS = 1e-6
 
 # editor decisions (documented in notes.md / edl.json)
@@ -79,6 +80,16 @@ def plan(it):
         a = int(math.floor(t0 * FPS_S + EPS))
         off = float(t0 * FPS_S) - a
         pos = [off + float(x * FPS_S) for x in tau]
+    L = LIBSHOTS[it['lib']]
+    reach = math.ceil(pos[-1] - 1e-3) if mode != 'map' else math.floor(pos[-1] + EPS)
+    over = a + reach - L['out_frame']
+    if over > 0 and it['id'] != 'H0':
+        # slide the whole range back by the overshoot (fractional), never before the shot's first frame
+        shift = (a + pos[-1]) - L['out_frame']
+        pos = [p_ - shift for p_ in pos]
+        while pos[0] < 0:
+            a -= 1; pos = [p_ + 1 for p_ in pos]
+        assert a >= L['in_frame'], it['id']
     return mode, a, pos
 
 
@@ -86,7 +97,12 @@ def decode(it, a, count, extra_vf=''):
     w, h, x, y = [int(v) for v in it['crop'].split(':')]
     vf = ('setpts=N/(24000/1001)/TB,crop=1280:536:0:92,pad=1280:540:0:4,deblock=filter=strong:block=8,'
           'crop=1280:536:0:4,crop=%d:%d:%d:%d' % (w, h, x, y - 92))
-    vf += ',trim=end_frame=%d' % count
+    L = LIBSHOTS[it['lib']]
+    avail = L['out_frame'] - a + 1
+    pad = max(0, count - avail)
+    vf += ',trim=end_frame=%d' % min(count, avail)
+    if pad:
+        vf += ',tpad=stop_mode=clone:stop=%d' % pad
     if extra_vf:
         vf += ',' + extra_vf
     ss = float((a - 0.5) / FPS_S)

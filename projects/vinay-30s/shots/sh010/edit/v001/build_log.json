@@ -44,8 +44,8 @@
  "R7": {
   "mode": "blend",
   "src_first_frame": 2867,
-  "src_last_frame": 2884,
-  "src_in_actual": 119.6
+  "src_last_frame": 2883,
+  "src_in_actual": 119.5951
  },
  "R8": {
   "mode": "map",

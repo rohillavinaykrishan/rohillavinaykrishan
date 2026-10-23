@@ -1,0 +1,906 @@
+{
+  "ok": false,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 18,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-F2\"> has data-start=\"0.44\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-F2",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.44\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-F3\"> has data-start=\"0.88\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-F3",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.88\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-F4\"> has data-start=\"1.32\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-F4",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.32\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-F5\"> has data-start=\"1.72\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-F5",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.72\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-F6\"> has data-start=\"2.16\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-F6",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"2.16\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-F7\"> has data-start=\"2.56\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-F7",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"2.56\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-F8\"> has data-start=\"3.04\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-F8",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"3.04\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-F9\"> has data-start=\"3.48\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-F9",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"3.48\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-t1v\"> has data-start=\"4.28\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-t1v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"4.28\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-t2v\"> has data-start=\"5.0\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-t2v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"5.0\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-t3v\"> has data-start=\"5.68\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-t3v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"5.68\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-t4v\"> has data-start=\"6.4\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-t4v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"6.4\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-t5v\"> has data-start=\"7.08\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-t5v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"7.08\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-t6v\"> has data-start=\"7.8\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-t6v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"7.8\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-t7v\"> has data-start=\"8.48\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-t7v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"8.48\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"mg3p-t8v\"> has data-start=\"9.16\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#mg3p-t8v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"9.16\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "duplicate_media_discovery_risk",
+        "severity": "warning",
+        "message": "Detected 8 matching img entries with the same source/start/duration.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Avoid duplicated media nodes that can be discovered twice during compilation."
+      },
+      {
+        "code": "composition_file_too_large",
+        "severity": "warning",
+        "message": "This HTML composition file has 769 lines. Smaller sub-compositions are easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/proxy/compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Split this sub-composition further into smaller .html files, then mount them from the parent with data-composition-src so each file stays small enough to inspect, revise, and validate independently."
+      }
+    ],
+    "filesScanned": 2
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": false,
+    "errorCount": 10,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 0.807,
+        "selector": "#mg3p-rolei",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 55.09,
+          "top": 493,
+          "right": 489.05,
+          "bottom": 521.75,
+          "width": 433.96,
+          "height": 28.75
+        },
+        "containerSelector": "#mg3p-fr",
+        "text": "SR. MATCHMOVE ARTIST",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/mg3p.html",
+        "bbox": {
+          "x": 55.09,
+          "y": 493,
+          "width": 433.96,
+          "height": 28.75
+        },
+        "firstSeen": 0.807,
+        "lastSeen": 13.713,
+        "occurrences": 9,
+        "heldMs": 0,
+        "times": [
+          0.807,
+          2.42,
+          4.033,
+          5.647,
+          7.26,
+          8.873,
+          10.487,
+          12.1,
+          13.713
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 4.033,
+        "selector": "#mg3p-sfi",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 95.04,
+          "top": 530.85,
+          "right": 449.76,
+          "bottom": 550.85,
+          "width": 354.72,
+          "height": 20
+        },
+        "containerSelector": "#mg3p-fr",
+        "text": "STREET FIGHTER · DNEG",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/mg3p.html",
+        "bbox": {
+          "x": 95.04,
+          "y": 530.85,
+          "width": 354.72,
+          "height": 20
+        },
+        "firstSeen": 4.033,
+        "lastSeen": 13.713,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          4.033,
+          5.647,
+          7.26,
+          8.873,
+          10.487,
+          12.1,
+          13.713
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 5.647,
+        "selector": "#mg3p-t1tag",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 24.25,
+          "top": 671,
+          "right": 41.3,
+          "bottom": 681.25,
+          "width": 17.05,
+          "height": 10.25
+        },
+        "containerSelector": "#mg3p-fr",
+        "text": "RYU",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/mg3p.html",
+        "bbox": {
+          "x": 24.25,
+          "y": 671,
+          "width": 17.05,
+          "height": 10.25
+        },
+        "firstSeen": 5.647,
+        "lastSeen": 13.713,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          5.647,
+          7.26,
+          8.873,
+          10.487,
+          12.1,
+          13.713
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 5.647,
+        "selector": "#mg3p-t2tag",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 150.75,
+          "top": 671,
+          "right": 167.8,
+          "bottom": 681.25,
+          "width": 17.05,
+          "height": 10.25
+        },
+        "containerSelector": "#mg3p-fr",
+        "text": "KEN",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/mg3p.html",
+        "bbox": {
+          "x": 150.75,
+          "y": 671,
+          "width": 17.05,
+          "height": 10.25
+        },
+        "firstSeen": 5.647,
+        "lastSeen": 13.713,
+        "occurrences": 6,
+        "heldMs": 0,
+        "times": [
+          5.647,
+          7.26,
+          8.873,
+          10.487,
+          12.1,
+          13.713
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 7.26,
+        "selector": "#mg3p-t3tag",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 277.25,
+          "top": 671,
+          "right": 317.04,
+          "bottom": 681.25,
+          "width": 39.79,
+          "height": 10.25
+        },
+        "containerSelector": "#mg3p-fr",
+        "text": "DHALSIM",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/mg3p.html",
+        "bbox": {
+          "x": 277.25,
+          "y": 671,
+          "width": 39.79,
+          "height": 10.25
+        },
+        "firstSeen": 7.26,
+        "lastSeen": 13.713,
+        "occurrences": 5,
+        "heldMs": 0,
+        "times": [
+          7.26,
+          8.873,
+          10.487,
+          12.1,
+          13.713
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 7.26,
+        "selector": "#mg3p-t4tag",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 403.75,
+          "top": 671,
+          "right": 437.86,
+          "bottom": 681.25,
+          "width": 34.11,
+          "height": 10.25
+        },
+        "containerSelector": "#mg3p-fr",
+        "text": "BLANKA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/mg3p.html",
+        "bbox": {
+          "x": 403.75,
+          "y": 671,
+          "width": 34.11,
+          "height": 10.25
+        },
+        "firstSeen": 7.26,
+        "lastSeen": 13.713,
+        "occurrences": 5,
+        "heldMs": 0,
+        "times": [
+          7.26,
+          8.873,
+          10.487,
+          12.1,
+          13.713
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 7.26,
+        "selector": "#mg3p-t5tag",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 24.25,
+          "top": 784.5,
+          "right": 52.67,
+          "bottom": 794.75,
+          "width": 28.42,
+          "height": 10.25
+        },
+        "containerSelector": "#mg3p-fr",
+        "text": "GUILE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/mg3p.html",
+        "bbox": {
+          "x": 24.25,
+          "y": 784.5,
+          "width": 28.42,
+          "height": 10.25
+        },
+        "firstSeen": 7.26,
+        "lastSeen": 13.713,
+        "occurrences": 5,
+        "heldMs": 0,
+        "times": [
+          7.26,
+          8.873,
+          10.487,
+          12.1,
+          13.713
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 8.873,
+        "selector": "#mg3p-t6tag",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 150.75,
+          "top": 784.5,
+          "right": 190.54,
+          "bottom": 794.75,
+          "width": 39.79,
+          "height": 10.25
+        },
+        "containerSelector": "#mg3p-fr",
+        "text": "CHUN-LI",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/mg3p.html",
+        "bbox": {
+          "x": 150.75,
+          "y": 784.5,
+          "width": 39.79,
+          "height": 10.25
+        },
+        "firstSeen": 8.873,
+        "lastSeen": 13.713,
+        "occurrences": 4,
+        "heldMs": 0,
+        "times": [
+          8.873,
+          10.487,
+          12.1,
+          13.713
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 8.873,
+        "selector": "#mg3p-t7tag",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 277.25,
+          "top": 784.5,
+          "right": 322.72,
+          "bottom": 794.75,
+          "width": 45.47,
+          "height": 10.25
+        },
+        "containerSelector": "#mg3p-fr",
+        "text": "M. BISON",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/mg3p.html",
+        "bbox": {
+          "x": 277.25,
+          "y": 784.5,
+          "width": 45.47,
+          "height": 10.25
+        },
+        "firstSeen": 8.873,
+        "lastSeen": 13.713,
+        "occurrences": 4,
+        "heldMs": 0,
+        "times": [
+          8.873,
+          10.487,
+          12.1,
+          13.713
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 10.487,
+        "selector": "#mg3p-t8tag",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 403.75,
+          "top": 784.5,
+          "right": 449.22,
+          "bottom": 794.75,
+          "width": 45.47,
+          "height": 10.25
+        },
+        "containerSelector": "#mg3p-fr",
+        "text": "E. HONDA",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/mg3p.html",
+        "bbox": {
+          "x": 403.75,
+          "y": 784.5,
+          "width": 45.47,
+          "height": 10.25
+        },
+        "firstSeen": 10.487,
+        "lastSeen": 13.713,
+        "occurrences": 3,
+        "heldMs": 0,
+        "times": [
+          10.487,
+          12.1,
+          13.713
+        ]
+      },
+      {
+        "code": "escaped_container",
+        "severity": "warning",
+        "time": 0.807,
+        "selector": "#mg3p > div:nth-of-type(1)",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 2160,
+          "bottom": 3840,
+          "width": 2160,
+          "height": 3840
+        },
+        "containerSelector": "#mg3p",
+        "text": "RYU KEN DHALSIM BLANKA GUILE CHUN-LI M. BISON E. HONDA SR. MATCHMOVE ARTIST",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 540,
+          "bottom": 960,
+          "width": 540,
+          "height": 960
+        },
+        "dataAttributes": {
+          "data-hf-inner-root": "true",
+          "data-hf-authored-id": "root",
+          "data-width": "2160",
+          "data-height": "3840"
+        },
+        "sourceFile": "compositions/mg3p.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 2160,
+          "height": 3840
+        },
+        "firstSeen": 0.807,
+        "lastSeen": 13.713,
+        "occurrences": 9,
+        "heldMs": 0,
+        "times": [
+          0.807,
+          2.42,
+          4.033,
+          5.647,
+          7.26,
+          8.873,
+          10.487,
+          12.1,
+          13.713
+        ]
+      }
+    ],
+    "duration": 14.52,
+    "samples": [
+      0.807,
+      2.42,
+      4.033,
+      5.647,
+      7.26,
+      8.873,
+      10.487,
+      12.1,
+      13.713
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 11,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      0.807,
+      4.033,
+      7.26,
+      10.487,
+      13.713
+    ],
+    "checked": 30,
+    "passed": 30
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 14 px (2.6% of the 540 px short side, what a phone can read) and 8 text elements stay under it for 0.5 s or more, the smallest \"RYU\" at 7 px: set reading text to at least 14 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "RYU",
+        "selector": "#mg3p-t1tag",
+        "dataAttributes": {},
+        "sourceFile": "compositions/mg3p.html",
+        "bbox": {
+          "x": 24.25,
+          "y": 671,
+          "width": 17.05,
+          "height": 10.25
+        },
+        "time": 4.468,
+        "times": [
+          4.468,
+          5.212,
+          5.833,
+          6.577,
+          7.322,
+          7.943,
+          8.687,
+          9.308
+        ],
+        "fontPx": 7,
+        "floorPx": 14,
+        "seconds": 10.052,
+        "elements": [
+          {
+            "selector": "#mg3p-t1tag",
+            "text": "RYU",
+            "fontPx": 7,
+            "time": 4.468,
+            "seconds": 10.052
+          },
+          {
+            "selector": "#mg3p-t2tag",
+            "text": "KEN",
+            "fontPx": 7,
+            "time": 5.212,
+            "seconds": 9.308
+          },
+          {
+            "selector": "#mg3p-t3tag",
+            "text": "DHALSIM",
+            "fontPx": 7,
+            "time": 5.833,
+            "seconds": 8.687
+          },
+          {
+            "selector": "#mg3p-t4tag",
+            "text": "BLANKA",
+            "fontPx": 7,
+            "time": 6.577,
+            "seconds": 7.943
+          },
+          {
+            "selector": "#mg3p-t5tag",
+            "text": "GUILE",
+            "fontPx": 7,
+            "time": 7.322,
+            "seconds": 7.198
+          },
+          {
+            "selector": "#mg3p-t6tag",
+            "text": "CHUN-LI",
+            "fontPx": 7,
+            "time": 7.943,
+            "seconds": 6.577
+          },
+          {
+            "selector": "#mg3p-t7tag",
+            "text": "M. BISON",
+            "fontPx": 7,
+            "time": 8.687,
+            "seconds": 5.833
+          },
+          {
+            "selector": "#mg3p-t8tag",
+            "text": "E. HONDA",
+            "fontPx": 7,
+            "time": 9.308,
+            "seconds": 5.212
+          }
+        ]
+      }
+    ],
+    "enabled": true,
+    "step": 0.12400000000000011,
+    "samples": 117
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

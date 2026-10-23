@@ -50,6 +50,14 @@ for i,w in enumerate(lines):
         css_top_px=round(base-asc,2),glyphs=gl))
     bx0=min(bx0,box[0]);by0=min(by0,box[1]);bx1=max(bx1,box[0]+box[2]);by1=max(by1,box[1]+box[3])
 out['block_ink_box']=[round(bx0,2),round(by0,2),round(bx1-bx0,2),round(by1-by0,2)]
+out['final_state_f386']=dict(note='Exact look of the name on MG2 last frame (f386); MG3 continues from this at f387.',
+  fill='#FFF8EC White Hot, opaque, scale 1.0, glyphs at glyphs[].pen_x on baseline_y',
+  gold_glow='name filled + 10px stroke in #FFC94D, gaussian blur 18px at 45% opacity, plus same at blur 36px at 30% (both source-over, under the fill)',
+  keyline='#C7851E name fill + 4px stroke (2px outside), offset (0,+6px), 100%, under the fill',
+  layer_order=['gold glow','keyline','White Hot fill'])
+out['charge_spiral']=dict(note='MG2 draws the charge spirals f336-356 (variable drawCharge in compositions/mg2.html). Formula if MG1 needs to match/hand off:',
+  r='1300*(40/1300)^u', angle_from_12oclock_clockwise='(22.5+45k)deg - 2 turns*(1-u)', u='0.45p + 0.55*ease.in(p), p=(f-336)/20',
+  hue_order='Ryu,Ken,Dhalsim,Blanka,Guile,Chun-Li,M. Bison,E. Honda (k=0..7)', core_px=[14,8,11,6,12,9,13,7], trail_frames=10)
 p=os.path.join(SH,'mograph/v001/name_layout.json')
 json.dump(out,open(p,'w'),indent=1); print(json.dumps({k:out[k] for k in ['font','block_ink_box']},indent=1))
 for l in out['lines']: print(l['text'],l['ink_box'],l['baseline_y'],l['pen_x0'],l['css_top_px'])

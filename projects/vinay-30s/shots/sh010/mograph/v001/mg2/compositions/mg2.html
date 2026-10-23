@@ -734,7 +734,7 @@
       function drawCharge(f) {
         const push = 1 + 0.04 * prog(f, F0, CH1);
         fx.save(); fx.translate(CX, CY); fx.scale(push, push); fx.translate(-CX, -CY);
-        fx.globalCompositeOperation = "lighter"; fx.lineCap = "round";
+        fx.globalCompositeOperation = "lighter"; fx.lineCap = "butt";
         const uh = spiralU(f), ut = spiralU(f - 10), N = 48;
         for (let k = 0; k < 8; k++) {
           for (let pass = 0; pass < 2; pass++) {
@@ -747,9 +747,8 @@
               fx.lineWidth = w; fx.beginPath(); fx.moveTo(prev[0], prev[1]); fx.lineTo(pt[0], pt[1]); fx.stroke(); prev = pt;
             }
           }
-          const h = spiralPt(uh, k), g = fx.createRadialGradient(h[0], h[1], 0, h[0], h[1], 60);
-          g.addColorStop(0, rgba(WHITE, 0.9)); g.addColorStop(0.25, rgba(HUES[k], 0.6)); g.addColorStop(1, rgba(HUES[k], 0));
-          fx.globalAlpha = 1; fx.fillStyle = g; fx.beginPath(); fx.arc(h[0], h[1], 60, 0, 7); fx.fill();
+          const h = spiralPt(uh, k); fx.globalAlpha = 1;
+          FX.glow(fx, h[0], h[1], 70, HUES[k], 0.7); FX.glow(fx, h[0], h[1], 18, WHITE, 0.95);
         }
         fx.restore();
       }
@@ -849,6 +848,7 @@
       function drawBurst(f) {
         const s = f - HIT; if (s < 0 || s > 5) return;
         const a = 1 - EOUT(s / 5), r = 420 + 500 * EOUT(s / 5);
+        if (window.FX && window.FX.glow) { FX.glow(fx, CX, CY, r, WHITE, a); FX.glow(fx, CX, CY, r * 0.3, WHITE, a); return; }
         fx.save(); fx.globalCompositeOperation = "lighter";
         const g = fx.createRadialGradient(CX, CY, 0, CX, CY, r);
         g.addColorStop(0, rgba(WHITE, a)); g.addColorStop(0.15, rgba(WHITE, 0.6 * a)); g.addColorStop(1, rgba(WHITE, 0));

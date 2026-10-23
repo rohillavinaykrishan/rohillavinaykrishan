@@ -1,0 +1,37 @@
+21:24:04 grading R2 (src mtime 21:17:40, expect 25 f)
+21:24:39 R2.mp4: duo:Ken levels 0.068-0.888 gamma 0.95; frames in 25 out 25 OK
+21:24:41 PASS  R2         frames= 25 master_f_in=46 min(R-B)= +53.26 mean(R-B)=+70.12 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:24:41 grading R3 (src mtime 21:17:50, expect 25 f)
+21:25:21 R3.mp4: duo:Dhalsim levels 0.064-0.860 gamma 0.78; frames in 25 out 25 OK
+21:25:26 PASS  R3         frames= 25 master_f_in=71 min(R-B)= +48.52 mean(R-B)=+56.68 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:25:26 grading R4 (src mtime 21:17:59, expect 25 f)
+21:26:00 R4.mp4: duo:Blanka levels 0.031-0.895 gamma 0.71; frames in 25 out 25 OK
+21:26:03 PASS  R4         frames= 25 master_f_in=96 min(R-B)= +25.41 mean(R-B)=+28.76 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:26:03 grading R5 (src mtime 21:18:04, expect 24 f)
+21:26:24 R5.mp4: duo:Guile levels 0.051-0.887 gamma 0.70; frames in 24 out 24 OK
+21:26:28 PASS  R5         frames= 24 master_f_in=121 min(R-B)= -38.44 mean(R-B)=-37.21 exempt=24 ink=0 below_ink=0.000% white_clip=0.000%
+21:26:28 grading R6 (src mtime 21:18:10, expect 26 f)
+21:27:01 R6.mp4: duo:Chun-Li levels 0.038-0.874 gamma 0.55; frames in 26 out 26 OK
+21:27:05 PASS  R6         frames= 26 master_f_in=145 min(R-B)= -89.14 mean(R-B)=-84.63 exempt=26 ink=0 below_ink=0.000% white_clip=0.000%
+21:27:05 grading R7 (src mtime 21:24:03, expect 26 f)
+21:27:34 R7.mp4: duo:M. Bison levels 0.008-0.869 gamma 0.55; frames in 26 out 26 OK
+21:27:39 PASS  R7         frames= 26 master_f_in=171 min(R-B)= -38.34 mean(R-B)=-37.90 exempt=26 ink=0 below_ink=0.000% white_clip=0.000%
+21:27:39 grading R8 (src mtime 21:18:17, expect 26 f)
+21:27:59 R8.mp4: duo:E. Honda levels 0.022-0.620 gamma 0.74; frames in 26 out 26 OK
+21:28:00 PASS  R8         frames= 26 master_f_in=197 min(R-B)= +39.79 mean(R-B)=+40.29 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:28:00 grading C1 (src mtime 21:24:42, expect 26 f)
+21:28:18 C1.mp4: true; frames in 26 out 26 OK
+21:28:21 PASS  C1         frames= 26 master_f_in=237 min(R-B)= +71.31 mean(R-B)=+80.92 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:28:21 grading C2 (src mtime 21:18:43, expect 17 f)
+21:28:30 C2.mp4: true; frames in 17 out 17 OK
+21:28:31 PASS  C2         frames= 17 master_f_in=263 min(R-B)= +24.85 mean(R-B)=+25.29 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:28:31 grading C3 (src mtime 21:18:51, expect 18 f)
+21:28:45 C3.mp4: true; frames in 18 out 18 OK
+21:28:46 PASS  C3         frames= 18 master_f_in=280 min(R-B)= +34.84 mean(R-B)=+39.94 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:28:46 grading C4 (src mtime 21:18:56, expect 18 f)
+21:28:52 C4.mp4: true; frames in 18 out 18 OK
+21:28:53 PASS  C4         frames= 18 master_f_in=298 min(R-B)= +21.64 mean(R-B)=+22.73 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:28:53 grading C5 (src mtime 21:19:03, expect 20 f)
+21:29:02 C5.mp4: true; frames in 20 out 20 OK
+21:29:03 PASS  C5         frames= 20 master_f_in=316 min(R-B)= +30.10 mean(R-B)=+31.19 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:29:03 grading C6 (src mtime 21:19:47, expect 21 f)

@@ -13,7 +13,7 @@
   var stage = $("mg1-stage"), bgC = $("mg1-bgfx"), fgC = $("mg1-fgfx");
   [bgC, fgC].forEach(function (c) { c.width = Math.round(D.W * fxScale); c.height = Math.round(D.H * fxScale); });
   var bg = bgC.getContext("2d"), fg = fgC.getContext("2d");
-  var tmpA = FX.canvas(bgC.width, bgC.height), tmpB = FX.canvas(bgC.width, bgC.height);
+  var tmpA = FX.canvas(bgC.width, bgC.height), tmpB = FX.canvas(bgC.width, bgC.height), tmpM = FX.canvas(bgC.width, bgC.height);
 
   var R = D.roster, NR = R.length, CARD = D.cardRect, WIN1 = D.win1, WIN2 = D.win2;
   var SH0 = D.shutter.f0, SH1 = D.shutter.f1; // 223, 236
@@ -132,14 +132,20 @@
       if (p >= 1) plumeAt(bg, f, R[k].hue, fadeOut);
       else {
         var full = [0, 0, D.W, D.H], o = wipeOpt(k);
+        // matte on its own cleared canvas, applied ONCE (kit rule: never draw brushMatte in destination-in mode)
+        var mc = tmpM.getContext("2d");
+        mc.setTransform(1, 0, 0, 1, 0, 0); mc.globalCompositeOperation = "source-over"; mc.clearRect(0, 0, tmpM.width, tmpM.height);
+        mc.setTransform(fxScale, 0, 0, fxScale, 0, 0);
+        FX.brushMatte(mc, full, p, o);
         [tmpA, tmpB].forEach(function (t, n) {
           var c = t.getContext("2d");
           c.setTransform(1, 0, 0, 1, 0, 0); c.globalCompositeOperation = "source-over"; c.clearRect(0, 0, t.width, t.height);
           c.setTransform(fxScale, 0, 0, fxScale, 0, 0);
           if (n === 0 && k > 0) plumeAt(c, f, R[k - 1].hue, 1);
           if (n === 1) plumeAt(c, f, R[k].hue, 1);
+          c.setTransform(1, 0, 0, 1, 0, 0);
           c.globalCompositeOperation = n === 0 ? "destination-out" : "destination-in";
-          FX.brushMatte(c, full, p, o);
+          c.drawImage(tmpM, 0, 0);
         });
         bg.setTransform(1, 0, 0, 1, 0, 0);
         bg.drawImage(tmpA, 0, 0); bg.drawImage(tmpB, 0, 0);
@@ -152,7 +158,7 @@
   /* ---- foreground canvas: brush fringes + light streaks */
   function streakPts(k, f, trail) {
     var pts = [], t0 = Math.max(CL0, f - trail);
-    for (var t = t0; t <= f + 1e-6; t += 0.5) pts.push(ST.pos(k, t, E_OUT, useSpirals));
+    for (var t = t0; t <= f + 1e-6; t += 0.125) pts.push(ST.pos(k, t, E_OUT, useSpirals));
     return pts;
   }
   function renderFg(f) {

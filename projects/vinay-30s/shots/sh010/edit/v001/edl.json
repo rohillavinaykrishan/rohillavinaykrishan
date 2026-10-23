@@ -169,10 +169,10 @@
    ],
    "cue_src_in": 119.6,
    "cue_src_out": 120.276,
-   "src_in_used": 119.6,
+   "src_in_used": 119.5951,
    "src_frames_used": [
     2867,
-    2884
+    2883
    ],
    "speed": 0.65,
    "retime": "blend",

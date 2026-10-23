@@ -90,7 +90,7 @@ def scene(cid, off, scale):
     A = lambda f: T(f, off)
 
     # back canvas: dust (ambient), lowest
-    els.append(f'<canvas id="{cid}-bk" class="fxc" style="z-index:1"></canvas>')
+    els.append(f'<canvas id="{cid}-bk" data-layout-ignore data-layout-allow-occlusion class="fxc" style="z-index:1"></canvas>')
 
     # ---- Act-3 window: F1-F9 hard cuts (f387-484); border flashes the next hue for 2 f per cut
     win = [clip(s["f_in"], s["f_out"], f'id="{cid}-{s["id"]}" src="assets/plates/{s["id"]}.mp4" muted playsinline', tag="video")
@@ -135,7 +135,7 @@ def scene(cid, off, scale):
 
     # ---- name canvas (MG2 geometry + MG2's settled look), always on from f387
     els.append(clip(F0, END, f'id="{cid}-namew" data-layout-allow-overflow',
-                    f'<canvas id="{cid}-name" class="fxc"></canvas>'))
+                    f'<canvas id="{cid}-name" data-layout-ignore data-layout-allow-occlusion class="fxc"></canvas>'))
 
     # ---- role line, rule, STREET FIGHTER · DNEG
     ry, sy2 = L["role_lines_y"]
@@ -160,7 +160,7 @@ def scene(cid, off, scale):
     js.append(f'tl.set("#{cid}-flashi",{{opacity:0.40}},{A(TITLE)});tl.set("#{cid}-flashi",{{opacity:0.15}},{S(TITLE + 1)});')
 
     # front canvas: brush fringes
-    els.append(f'<canvas id="{cid}-fr" class="fxc" style="z-index:900"></canvas>')
+    els.append(f'<canvas id="{cid}-fr" data-layout-ignore data-layout-allow-occlusion class="fxc" style="z-index:900"></canvas>')
 
     # ---- final hold: 0.5 % ambient push on the whole MG3 stage
     js.append(f'tl.fromTo("#{cid}-push",{{scale:1}},{{scale:1.005,duration:{(END - TITLE - 1)/FPS},ease:"none",immediateRender:false}},{A(TITLE + 1)});')
@@ -177,6 +177,7 @@ def scene(cid, off, scale):
     #{cid}-push {{ position:absolute; left:0; top:0; width:2160px; height:3840px; transform-origin:1080px 2300px; }}
     #{cid}-push > .clip {{ position:absolute; left:0; top:0; width:2160px; height:3840px; }}
     .fxc {{ position:absolute; left:0; top:0; width:2160px; height:3840px; pointer-events:none; }}
+    #{cid}-bk, #{cid}-fr {{ mix-blend-mode:screen; }}   /* kit light layers are additive */
     #{cid}-win {{ position:absolute; opacity:0; left:{WX}px; top:{WY}px; width:{WW}px; height:{WH}px; background:{RAISED}; overflow:hidden; }}
     #{cid}-win video {{ position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover; }}
     .winb {{ position:absolute; inset:0; border:4px solid {SMOKE}; z-index:99; }}

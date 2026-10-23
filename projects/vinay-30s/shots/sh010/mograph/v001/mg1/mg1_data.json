@@ -1,0 +1,225 @@
+{
+ "W": 2160,
+ "H": 3840,
+ "fps": 25,
+ "lastFrame": 356,
+ "duration": 14.28,
+ "defaults": {
+  "fxScale": 1,
+  "spirals": true,
+  "push": true
+ },
+ "cardRect": [
+  0,
+  500,
+  2160,
+  1600
+ ],
+ "win1": [
+  0,
+  1048,
+  2160,
+  904
+ ],
+ "win2": [
+  0,
+  897,
+  2160,
+  1206
+ ],
+ "wipeDur": 6,
+ "coldOpen": {
+  "end": 18,
+  "hairDur": 12,
+  "labelF": 6
+ },
+ "name": {
+  "x0": 40,
+  "slide": 80
+ },
+ "shutter": {
+  "f0": 223,
+  "f1": 236,
+  "tighten": 229,
+  "lineH": 6,
+  "stagger": 1
+ },
+ "clash": {
+  "f0": 237,
+  "slam": 3
+ },
+ "charge": {
+  "f0": 336,
+  "push": 0.04
+ },
+ "plume": {
+  "opacity": 0.25
+ },
+ "dust": {
+  "count": 90,
+  "opacity": 0.5
+ },
+ "streakTrail": 10,
+ "roster": [
+  {
+   "id": "R1",
+   "f_in": 19,
+   "f_out": 46,
+   "hue": "#E3203A",
+   "char": "Ryu",
+   "name": "RYU",
+   "nameSize": 560.0,
+   "nameW": 1529.9,
+   "tag": "01 / 08",
+   "hueName": "HADOU CRIMSON"
+  },
+  {
+   "id": "R2",
+   "f_in": 46,
+   "f_out": 71,
+   "hue": "#FF5E1A",
+   "char": "Ken",
+   "name": "KEN",
+   "nameSize": 560.0,
+   "nameW": 1557.9,
+   "tag": "02 / 08",
+   "hueName": "SHORYU ORANGE"
+  },
+  {
+   "id": "R3",
+   "f_in": 71,
+   "f_out": 96,
+   "hue": "#FFA21C",
+   "char": "Dhalsim",
+   "name": "DHALSIM",
+   "nameSize": 305.15,
+   "nameW": 1960.0,
+   "tag": "03 / 08",
+   "hueName": "YOGA AMBER"
+  },
+  {
+   "id": "R4",
+   "f_in": 96,
+   "f_out": 121,
+   "hue": "#9BEA2E",
+   "char": "Blanka",
+   "name": "BLANKA",
+   "nameSize": 339.69,
+   "nameW": 1960.0,
+   "tag": "04 / 08",
+   "hueName": "VOLT LIME"
+  },
+  {
+   "id": "R5",
+   "f_in": 121,
+   "f_out": 145,
+   "hue": "#17C9A6",
+   "char": "Guile",
+   "name": "GUILE",
+   "nameSize": 490.49,
+   "nameW": 1960.0,
+   "tag": "05 / 08",
+   "hueName": "SONIC TEAL"
+  },
+  {
+   "id": "R6",
+   "f_in": 145,
+   "f_out": 171,
+   "hue": "#2F6DFF",
+   "char": "Chun-Li",
+   "name": "CHUN-LI",
+   "nameSize": 351.76,
+   "nameW": 1960.0,
+   "tag": "06 / 08",
+   "hueName": "KIKOKEN BLUE"
+  },
+  {
+   "id": "R7",
+   "f_in": 171,
+   "f_out": 197,
+   "hue": "#8B3DFF",
+   "char": "M. Bison",
+   "name": "M. BISON",
+   "nameSize": 313.85,
+   "nameW": 1960.0,
+   "tag": "07 / 08",
+   "hueName": "PSYCHO VIOLET"
+  },
+  {
+   "id": "R8",
+   "f_in": 197,
+   "f_out": 223,
+   "hue": "#FF2D8F",
+   "char": "E. Honda",
+   "name": "E. HONDA",
+   "nameSize": 302.66,
+   "nameW": 1960.0,
+   "tag": "08 / 08",
+   "hueName": "SUMO MAGENTA"
+  }
+ ],
+ "clashShots": [
+  {
+   "id": "C1",
+   "f_in": 237,
+   "f_out": 263
+  },
+  {
+   "id": "C2",
+   "f_in": 263,
+   "f_out": 280
+  },
+  {
+   "id": "C3",
+   "f_in": 280,
+   "f_out": 298
+  },
+  {
+   "id": "C4",
+   "f_in": 298,
+   "f_out": 316
+  },
+  {
+   "id": "C5",
+   "f_in": 316,
+   "f_out": 336
+  },
+  {
+   "id": "C6",
+   "f_in": 336,
+   "f_out": 357
+  }
+ ],
+ "streaks": {
+  "win2": [
+   0,
+   897,
+   2160,
+   1206
+  ],
+  "clashCuts": [
+   237,
+   263,
+   280,
+   298,
+   316
+  ],
+  "speeds": [
+   40,
+   55,
+   72,
+   92,
+   115
+  ],
+  "burstF": 237,
+  "spiralF0": 336,
+  "spiralF1": 356,
+  "centre": [
+   1080,
+   1550
+  ],
+  "rEnd": 40,
+  "turns": 2,
+  "n": 8
+ }
+}
