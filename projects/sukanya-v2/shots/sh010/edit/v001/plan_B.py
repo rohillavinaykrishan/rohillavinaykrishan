@@ -24,6 +24,10 @@ def pos(t):                   # source time -> source frame position (float)
 out = {"fps": 25, "size": "2400x900", "source": "source/trailer.mp4",
        "source_fps": "24000/1001", "timing_source": "shots/sh010/director/v001/cues.json",
        "prep": "crop=1280:536:0:92,pad=1280:540:0:4,deblock=filter=strong:block=8,crop=1280:536:0:4 -> [minterpolate mci x24 for C00/B01] -> scale 2400:1005 lanczos -> crop 2400:900:0:Y -> unsharp=5:5:0.4",
+       "notes": ["deblock pad is 4 rows at the TOP (pad=1280:540:0:4): the active picture starts at coded row 92 = 8*11+4, so a top pad puts the 8x8 grid back on block edges (the treatment text shows pad ...:0:0 which pads the bottom and does not realign)",
+                 "C00/B01 minterpolate input = trailer frames 3446-3456 (all inside sf126 3446-3458; the cut is at 3459); src_pos are fractional source-frame positions, quantised to 1/24 frame",
+                 "B01 honours cues src_out 144.06: only ~2 source frames after contact are available, so the 100%->20% ramp is a geometric decay (100% on f261, 20% by f263-264) settling into the freeze; true freeze f272-f276",
+                 "contact: plate B01 frame 0 (= master f261) is source frame 3452 (t 143.977) exactly; see contact_proof.png"],
        "plates": []}
 for sid in ["C00"] + ["B%02d" % i for i in range(1, 9)]:
     s = shots[sid]
@@ -74,6 +78,7 @@ for sid in ["C00"] + ["B%02d" % i for i in range(1, 9)]:
     assert lo <= a and b <= hi, (sid, a, b, lo, hi)
     assert len(rec["src_pos"]) == n
     rec["inside_one_trailer_shot"] = True
+    rec["band_y"] = {"B02": 0, "B03": 0, "B08": 10}.get(sid, 52)   # y of the 2400x900 window in the 2400x1005 scale
     out["plates"].append(rec)
 json.dump(out, open(sys.argv[1], "w"), indent=1)
 for r in out["plates"]:

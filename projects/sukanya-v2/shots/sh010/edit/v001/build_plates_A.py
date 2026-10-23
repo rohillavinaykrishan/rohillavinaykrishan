@@ -7,6 +7,7 @@ crop back -> shot crop -> [minterpolate 75 fps if nearest-frame picking would du
 frame-map conform src_t = src_in + (f-f_in)/25*speed -> lanczos cover-scale to 2160x1180 ->
 unsharp 5:5:0.4 -> H.264 crf 10 yuv444p 25 fps, exactly f_out-f_in frames."""
 import json, math, subprocess, sys, os
+from fractions import Fraction
 ROOT = '/home/user/rohillavinaykrishan'
 PRJ = f'{ROOT}/projects/sukanya-v2'
 OUT = f'{PRJ}/shots/sh010/edit/v001'
@@ -30,15 +31,18 @@ def plan(s):
     near = [math.floor(p + 1e-6) for p in pos]
     use_mi = len(set(near)) < n
     a = math.floor(pos[0] + 1e-6)
-    b = min(math.ceil(pos[-1] - 1e-6), L['out_frame']) if use_mi else near[-1]
+    b = min(math.ceil(pos[-1] - 1e-6) + 1, L['out_frame']) if use_mi else near[-1]
     if use_mi:
-        kmax = math.floor((b - a) / FPS * 75 + 1e-6)   # last 75fps frame at/before the last real input frame
-        picks = [min(round((p - a) / FPS * 75), kmax) for p in pos]
+        # interpolate at exactly 3x the needed rate so picks are evenly spaced (a fixed 75 fps grid
+        # gives uneven 2/3-frame cadence = judder in slow-mo)
+        R = Fraction(3 * 25 * FPS / (step * 25)).limit_denominator(1000)   # = 3 * FPS / step
+        kmax = math.floor((b - a) / FPS * float(R) + 1e-6)   # last interp frame at/before the last real input frame
+        picks = [min(round((p - a) / FPS * float(R)), kmax) for p in pos]
         assert len(set(picks)) == n
     else:
         picks = [x - a for x in near]
     assert L['in_frame'] <= a and b <= L['out_frame'], 'crosses a trailer cut'
-    return dict(n=n, speed=speed, eff_speed=step * 25 / FPS, a=a, b=b, lib=L, mi=use_mi,
+    return dict(R=(R if use_mi else None), n=n, speed=speed, eff_speed=step * 25 / FPS, a=a, b=b, lib=L, mi=use_mi,
                 picks=picks, clamped=clamped, src_frames=near)
 
 def build(s):
@@ -55,7 +59,7 @@ def build(s):
     if p['mi']:
         # 2 cloned tail frames: minterpolate drops output at EOF; clones keep the tail inside this trailer shot
         vf.append("tpad=stop=2:stop_mode=clone")
-        vf.append("minterpolate=fps=75:mi_mode=mci:mc_mode=aobmc:vsbmc=1:scd=none")
+        vf.append(f"minterpolate=fps={p['R'].numerator}/{p['R'].denominator}:mi_mode=mci:mc_mode=aobmc:vsbmc=1:scd=none")
     sel = '+'.join(f'eq(n\\,{k})' for k in p['picks'])
     vf += [f"select='{sel}'", "setpts=N/25/TB",
            f"scale={sw}:{sh}:flags=lanczos+accurate_rnd+full_chroma_int", f"crop={W}:{H}:{ox}:{oy}",
@@ -79,7 +83,7 @@ if __name__ == '__main__':
                     'frames': p['n'], 'src_in': s['src_in'], 'src_out': s['src_out'],
                     'speed': round(p['speed'], 4), 'speed_applied': round(p['eff_speed'], 4),
                     'speed_clamped_to_cut': p['clamped'],
-                    'retime': 'minterpolate 75fps mci/aobmc/vsbmc, frame-picked' if p['mi'] else 'nearest source frame (no duplicates)',
+                    'retime': f"minterpolate {float(p['R']):.3f} fps (3x needed rate) mci/aobmc/vsbmc, every 3rd frame picked" if p['mi'] else 'nearest source frame (no duplicates)',
                     'trailer_frames': [p['a'], p['b']], 'lib_shot': p['lib']['id'],
                     'lib_range': [p['lib']['in_frame'], p['lib']['out_frame']],
                     'characters': s['characters'], 'layer': s['layer'], **g})

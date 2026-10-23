@@ -107,6 +107,21 @@ def smooth_bump(h, centre, half):
     d = np.abs((h - centre + 180) % 360 - 180)
     return np.where(d < half, 0.5 + 0.5 * np.cos(np.pi * d / half), 0.0)
 
+def rehue(lab):
+    """Step 1 of UNLOCK, before any balance (so blue never passes through cyan/green)."""
+    L, a, b = lab[..., 0], lab[..., 1], lab[..., 2]
+    C = np.hypot(a, b); h = np.degrees(np.arctan2(b, a)) % 360
+    # 1. blues -> violet-mulberry. Treatment: hue +35, chroma x0.7. A plain +35 leaves pure blue
+    #    (h~265) at violet h~300 where B > R, so the warp is monotonic piecewise: +35 at the
+    #    cyan edge rising to +56 on blue, landing on 321-340 (R ~= B .. mulberry 344).
+    HK = [150, 195, 235, 265, 290, 325, 355]
+    HV = [150, 207, 290, 321, 333, 342, 355]
+    hw = np.where((h > 150) & (h < 355), np.interp(h, HK, HV), h)
+    wb = smooth_bump(h, 250, 80)                       # blue weight 170..330, peak on blue
+    h = hw
+    C = C * (1 - 0.3 * wb)
+    return np.stack([L, C * np.cos(np.radians(h)), C * np.sin(np.radians(h))], -1)
+
 def balance_lab(lab, cast=(0.0, 0.0), k=1.0, warm=0.012):
     """Per-shot primary balance in OKLab: remove k x the shot's mean (a,b) cast vector and add a
     small warm offset toward Saffron's hue (75 deg). A shift in (a,b) moves blue toward neutral
@@ -121,30 +136,21 @@ def balance_lab(lab, cast=(0.0, 0.0), k=1.0, warm=0.012):
     return out
 
 def shot_cast(rgb_frames):
-    """Mean OKLab (a,b) of a shot, weighted to midtones/highlights (what the eye reads as the cast)."""
+    """Mean OKLab (a,b) of a shot after the blue re-hue, weighted to midtones/highlights (what the eye reads as the cast)."""
     acc = np.zeros(2); wsum = 0.0
     for f in rgb_frames:
-        lab = srgb2oklab(f.reshape(-1, 3))
+        lab = rehue(srgb2oklab(f.reshape(-1, 3)))
         w = np.clip((lab[:, 0] - 0.2) / 0.3, 0, 1)
         acc += (lab[:, 1:] * w[:, None]).sum(0); wsum += w.sum()
     return acc / max(wsum, 1e-6)
 
 def band(rgb, cast=(0.0, 0.0), k=0.0, warm=0.0):
     """UNLOCK grade. band.cube = no per-shot trim; band_<ID>.cube = balance_lab(cast) then this."""
-    lab = srgb2oklab(rgb)
+    lab = rehue(srgb2oklab(rgb))
     if k or warm:
         lab = balance_lab(lab, cast, k, warm)
     L, a, b = lab[..., 0], lab[..., 1], lab[..., 2]
     C = np.hypot(a, b); h = np.degrees(np.arctan2(b, a)) % 360
-    # 1. blues -> violet-mulberry. Treatment: hue +35, chroma x0.7. A plain +35 leaves pure blue
-    #    (h~265) at violet h~300 where B > R, so the warp is monotonic piecewise: +35 at the
-    #    cyan edge rising to +56 on blue, landing on 321-340 (R ~= B .. mulberry 344).
-    HK = [150, 195, 235, 265, 290, 325, 355]
-    HV = [150, 207, 290, 321, 333, 342, 355]
-    hw = np.where((h > 150) & (h < 355), np.interp(h, HK, HV), h)
-    wb = smooth_bump(h, 250, 80)                       # blue weight 170..330, peak on blue
-    h = hw
-    C = C * (1 - 0.3 * wb)
     # 2. no green: greens/olives/teals (h 95-200) are pulled toward ochre-saffron and lose chroma,
     #    hardest in the shadows and mids (the board mock's B01 went green there)
     wg = smooth_bump(h, 130, 60)
@@ -153,7 +159,7 @@ def band(rgb, cast=(0.0, 0.0), k=0.0, warm=0.0):
     h = h + dh * 0.6 * wg * wl
     C = C * (1 - 0.6 * wg * wl)
     # 3. saturation 1.15 on skin / reds / oranges / greens (h ~ 0-150)
-    ws = smooth_bump(h, 75, 85) * (1 - wb)
+    ws = smooth_bump(h, 75, 85)
     C = C * (1 + 0.15 * ws)
     # 4. contrast S-curve on L (pivot ~0.5)
     L = curve(L, ((0, 0), (0.22, 0.13), (0.5, 0.48), (0.78, 0.84), (1, 1)))
@@ -183,6 +189,12 @@ def write_cube(path, fn, n=65, title=None):
 
 if __name__ == '__main__':
     od = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.abspath(__file__))
-    for name, fn in [('tritone', tritone), ('drain', drain), ('band', band),
+    for name, fn in [('tritone', tritone), ('drain', drain), ('band', lambda x: band(x, warm=0.015)),
                      ('title_lineup', title_lineup), ('logo_gold', logo_gold)]:
         write_cube(os.path.join(od, name + '.cube'), fn); print('wrote', name)
+
+def write_band_shot(od, sid, cast, k=1.0, warm=0.015):
+    """Per-shot unlock: band.cube with the shot's own cast trim baked in (band_<ID>.cube)."""
+    path = os.path.join(od, f'band_{sid}.cube')
+    write_cube(path, lambda x: band(x, cast, k, warm), title=f'band_{sid} cast={cast[0]:.4f},{cast[1]:.4f} k={k} warm={warm}')
+    return path

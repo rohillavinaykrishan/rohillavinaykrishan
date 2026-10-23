@@ -1,0 +1,58 @@
+{
+ "B01": {
+  "key": "shots/sh010/edit/v001/plates/B01.mp4|1076687|1792753820|edit+mg3_copy_of_colorist_band()",
+  "mode": "edit+mg3_copy_of_colorist_band()",
+  "src": "shots/sh010/edit/v001/plates/B01.mp4",
+  "frames": 16
+ },
+ "B02": {
+  "key": "shots/sh010/edit/v001/plates/B02.mp4|1627261|1792753945|edit+mg3_copy_of_colorist_band()",
+  "mode": "edit+mg3_copy_of_colorist_band()",
+  "src": "shots/sh010/edit/v001/plates/B02.mp4",
+  "frames": 12
+ },
+ "B03": {
+  "key": "shots/sh010/edit/v001/plates/B03.mp4|1345398|1792753952|edit+mg3_copy_of_colorist_band()",
+  "mode": "edit+mg3_copy_of_colorist_band()",
+  "src": "shots/sh010/edit/v001/plates/B03.mp4",
+  "frames": 11
+ },
+ "B04": {
+  "key": "shots/sh010/edit/v001/plates/B04.mp4|875469|1792753855|edit+mg3_copy_of_colorist_band()",
+  "mode": "edit+mg3_copy_of_colorist_band()",
+  "src": "shots/sh010/edit/v001/plates/B04.mp4",
+  "frames": 10
+ },
+ "B05": {
+  "key": "shots/sh010/edit/v001/plates/B05.mp4|1265981|1792753862|edit+mg3_copy_of_colorist_band()",
+  "mode": "edit+mg3_copy_of_colorist_band()",
+  "src": "shots/sh010/edit/v001/plates/B05.mp4",
+  "frames": 10
+ },
+ "B06": {
+  "key": "shots/sh010/edit/v001/plates/B06.mp4|2419172|1792753872|edit+mg3_copy_of_colorist_band()",
+  "mode": "edit+mg3_copy_of_colorist_band()",
+  "src": "shots/sh010/edit/v001/plates/B06.mp4",
+  "frames": 10
+ },
+ "B07": {
+  "key": "shots/sh010/edit/v001/plates/B07.mp4|1960693|1792753882|edit+mg3_copy_of_colorist_band()",
+  "mode": "edit+mg3_copy_of_colorist_band()",
+  "src": "shots/sh010/edit/v001/plates/B07.mp4",
+  "frames": 10
+ },
+ "B08": {
+  "key": "shots/sh010/edit/v001/plates/B08.mp4|1256716|1792753959|edit+mg3_copy_of_colorist_band()",
+  "mode": "edit+mg3_copy_of_colorist_band()",
+  "src": "shots/sh010/edit/v001/plates/B08.mp4",
+  "frames": 10
+ },
+ "B02_pop": {
+  "key": "none|shots/sh010/edit/v001/plates/B02.mp4|1627261|1792753945|edit+mg3_copy_of_colorist_band()",
+  "mode": "NO_MATTE_YET (transparent)"
+ },
+ "B03_pop": {
+  "key": "none|shots/sh010/edit/v001/plates/B03.mp4|1345398|1792753952|edit+mg3_copy_of_colorist_band()",
+  "mode": "NO_MATTE_YET (transparent)"
+ }
+}
