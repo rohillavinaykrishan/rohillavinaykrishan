@@ -119,6 +119,10 @@ for sid, s in SHOTS.items():
             run(["ffmpeg", "-y", "-v", "error", "-i", dst, "-vf",
                  f"select=eq(n\\,{n-1}),lut3d=file='{tri_cube}'", "-frames:v", "1", tmp])
         Image.open(tmp).convert("RGB").save(os.path.join(A, "echo", sid + ".jpg"), quality=88)
+        # lower echo band uses the shot's middle frame (a second afterimage, not a duplicate)
+        run(["ffmpeg", "-y", "-v", "error", "-i", raw_src if (raw_src and raw_src != graded) else dst, "-vf",
+             f"select=eq(n\\,{n//2}),scale=2400:900,lut3d=file='{tri_cube}'", "-frames:v", "1", tmp])
+        Image.open(tmp).convert("RGB").save(os.path.join(A, "echo", sid + "_mid.jpg"), quality=88)
         os.remove(tmp)
         man[sid] = {"key": key, "mode": mode, "src": os.path.relpath(src, PROJ), "frames": n}
         print(f"{sid}: {mode}")

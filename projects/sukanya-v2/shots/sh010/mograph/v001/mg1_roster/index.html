@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head><script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script></head>
+  <body style="margin:0;background:#14080F">
+    <!-- MG1 mount at master scale (2160x3840). Comp lead: mount compositions/mg1.html at data-start=0, data-duration=10.44. -->
+    <div id="main" data-composition-id="main" data-start="0" data-duration="10.44" data-width="2160" data-height="3840" data-fps="25">
+      <div id="mg1" data-composition-id="mg1" data-composition-src="compositions/mg1.html" data-start="0" data-duration="10.44"
+           data-track-index="1" data-track-kind="graphics" data-width="2160" data-height="3840" style="z-index:1"></div>
+    </div>
+    <script>window.__timelines["main"] = gsap.timeline({ paused: true });</script>
+  </body>
+</html>

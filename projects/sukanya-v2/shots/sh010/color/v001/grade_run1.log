@@ -1,3 +1,6 @@
 A01: source changed <90 s ago, still being written? skipped
 A02: source changed <90 s ago, still being written? skipped
 A03: tritone.cube frames 21->21 (cues 21) OK | PASS  /home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A03.mp4  frames=21  R-B min=9.8 mean=9.9 (worst f0)  below-Aubergine max=0.21%  white max=0.00%
+A04: tritone.cube frames 21->21 (cues 21) OK | PASS  /home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A04.mp4  frames=21  R-B min=14.4 mean=14.7 (worst f5)  below-Aubergine max=0.60%  white max=0.00%
+A05: tritone.cube frames 21->21 (cues 21) OK | PASS  /home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A05.mp4  frames=21  R-B min=16.3 mean=17.1 (worst f0)  below-Aubergine max=0.07%  white max=0.00%
+A06: tritone.cube frames 21->21 (cues 21) OK | PASS  /home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A06.mp4  frames=21  R-B min=37.0 mean=38.5 (worst f19)  below-Aubergine max=0.01%  white max=0.00%

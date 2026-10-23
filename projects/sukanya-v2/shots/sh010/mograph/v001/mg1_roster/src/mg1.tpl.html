@@ -134,7 +134,7 @@
           // 0.6x drift: the active shot's window rises at 11.4 px/frame, centred on the shot's mid frame
           let sh = v.shots[0];
           for (const s of v.shots) if (f >= s.fin) sh = s;
-          const drift = D.drift * ((sh.fin + sh.fout) / 2 - f);
+          const drift = p.drift * D.drift * ((sh.fin + sh.fout) / 2 - f);
           return { a, dy: dy + drift, edge };
         }
         return null;
@@ -144,7 +144,7 @@
       const T = D.track;          // her row centre y per frame (roll space)
       const X0 = D.name_x, W0 = D.name_w, CAP = D.cap, PAD = 16;
       const XC = X0 + W0 / 2;
-      const hn = $("mg1-hername"); hn.style.left = X0 + "px";
+      const hn = $("mg1-hername"); hn.style.left = X0 + "px"; hn.style.fontSize = D.font_px + "px";
       const rect = $("mg1-rect"), brk = $("mg1-brk"), tag = $("mg1-tag"), cur = $("mg1-cursor");
       const RW = W0 + 2 * PAD, RH = CAP + 2 * PAD;
       rect.style.width = RW + "px"; rect.style.height = RH + "px";
@@ -220,7 +220,7 @@
         if (f >= 243) dim = lerp(0.6, 0.22, OUT((f - 243 + 1) / 6));
         let cell = 1;              // white roll cell alpha
         let saf = 0;               // MG1 saffron copy alpha
-        if (f >= 243) { const u = cl((f - 243 + 1) / 3, 0, 1); saf = u; cell = 1 - u; }
+        if (f >= 243 && D.dim_in_mg1) { const u = cl((f - 243 + 1) / 3, 0, 1); saf = u; cell = 1 - u; }
         if (D.dim_in_mg1) {
           // two non-overlapping mask layers: her row band (dim | cell | dim) + the rest of the frame (dim, hole at her row)
           const cy0 = Math.round(yc - 46.5), A = X0 - 20, B = X0 + W0 + 20;
