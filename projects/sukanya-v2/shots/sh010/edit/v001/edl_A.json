@@ -20,7 +20,7 @@
    "speed": 0.7917,
    "speed_applied": 0.7873,
    "speed_clamped_to_cut": true,
-   "retime": "minterpolate 75fps mci/aobmc/vsbmc, frame-picked",
+   "retime": "minterpolate 95.260 fps (3x needed rate) mci/aobmc/vsbmc, every 3rd frame picked",
    "trailer_frames": [
     918,
     949
@@ -50,7 +50,7 @@
    "speed": 0.5119,
    "speed_applied": 0.5036,
    "speed_clamped_to_cut": true,
-   "retime": "minterpolate 75fps mci/aobmc/vsbmc, frame-picked",
+   "retime": "minterpolate 148.925 fps (3x needed rate) mci/aobmc/vsbmc, every 3rd frame picked",
    "trailer_frames": [
     3402,
     3422
@@ -137,10 +137,10 @@
    "speed": 0.9762,
    "speed_applied": 0.9762,
    "speed_clamped_to_cut": false,
-   "retime": "minterpolate 75fps mci/aobmc/vsbmc, frame-picked",
+   "retime": "minterpolate 76.829 fps (3x needed rate) mci/aobmc/vsbmc, every 3rd frame picked",
    "trailer_frames": [
     2699,
-    2718
+    2719
    ],
    "lib_shot": "sf100",
    "lib_range": [
@@ -196,10 +196,10 @@
    "speed": 0.7875,
    "speed_applied": 0.7875,
    "speed_clamped_to_cut": false,
-   "retime": "minterpolate 75fps mci/aobmc/vsbmc, frame-picked",
+   "retime": "minterpolate 95.238 fps (3x needed rate) mci/aobmc/vsbmc, every 3rd frame picked",
    "trailer_frames": [
     981,
-    996
+    997
    ],
    "lib_shot": "sf035",
    "lib_range": [
@@ -225,7 +225,7 @@
    "speed": 0.9405,
    "speed_applied": 0.9367,
    "speed_clamped_to_cut": true,
-   "retime": "minterpolate 75fps mci/aobmc/vsbmc, frame-picked",
+   "retime": "minterpolate 80.071 fps (3x needed rate) mci/aobmc/vsbmc, every 3rd frame picked",
    "trailer_frames": [
     1246,
     1264
@@ -313,10 +313,10 @@
    "speed": 1.0,
    "speed_applied": 1.0,
    "speed_clamped_to_cut": false,
-   "retime": "minterpolate 75fps mci/aobmc/vsbmc, frame-picked",
+   "retime": "minterpolate 75.000 fps (3x needed rate) mci/aobmc/vsbmc, every 3rd frame picked",
    "trailer_frames": [
     3124,
-    3131
+    3132
    ],
    "lib_shot": "sf115",
    "lib_range": [

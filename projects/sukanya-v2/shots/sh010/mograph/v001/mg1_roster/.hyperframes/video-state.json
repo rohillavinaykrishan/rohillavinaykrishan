@@ -183,8 +183,212 @@
     ]
   },
   "snapshots": {
-    "latest": null,
+    "latest": {
+      "revision": null,
+      "id": "b1909c5d-816a-481e-b936-003c3e222949-9"
+    },
     "revisions": {},
-    "unversioned": []
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "b1909c5d-816a-481e-b936-003c3e222949-0",
+        "image": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg1_roster/check/snap1/frame-00-at-0.1s.png",
+        "time": 0.1,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792754270200,
+        "contentHash": "395d2d75c8667c5c131052b15e452953ca63199f6fc9d774083385c60238a684",
+        "revision": null,
+        "inputFingerprint": "573198363687926c5505aea4d041f8dc13f44dde7892e95fb6df1436b1ea84d0",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "b1909c5d-816a-481e-b936-003c3e222949-1",
+        "image": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg1_roster/check/snap1/frame-01-at-1s.png",
+        "time": 1,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792754270200,
+        "contentHash": "50802c80f3c40666a33c69281afb8a62ea7bf96d2acad4cb14e9d57fe605bc9b",
+        "revision": null,
+        "inputFingerprint": "573198363687926c5505aea4d041f8dc13f44dde7892e95fb6df1436b1ea84d0",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "b1909c5d-816a-481e-b936-003c3e222949-2",
+        "image": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg1_roster/check/snap1/frame-02-at-2.6s.png",
+        "time": 2.6,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792754270200,
+        "contentHash": "3e25cb71ae447c0cd27fdae221597ab3ecf1dc7cf2622fdc7f667fd2cc30a009",
+        "revision": null,
+        "inputFingerprint": "573198363687926c5505aea4d041f8dc13f44dde7892e95fb6df1436b1ea84d0",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "b1909c5d-816a-481e-b936-003c3e222949-3",
+        "image": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg1_roster/check/snap1/frame-03-at-4.5s.png",
+        "time": 4.5,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792754270200,
+        "contentHash": "58b04601edfa25fabb79ae67087eb855727a21644d3b527744a9e5769855f4b3",
+        "revision": null,
+        "inputFingerprint": "573198363687926c5505aea4d041f8dc13f44dde7892e95fb6df1436b1ea84d0",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "b1909c5d-816a-481e-b936-003c3e222949-4",
+        "image": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg1_roster/check/snap1/frame-04-at-7s.png",
+        "time": 7,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792754270200,
+        "contentHash": "72f8141fedfc03223fb28acaf050081b8252278c392cbb9024401a47da26798a",
+        "revision": null,
+        "inputFingerprint": "573198363687926c5505aea4d041f8dc13f44dde7892e95fb6df1436b1ea84d0",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "b1909c5d-816a-481e-b936-003c3e222949-5",
+        "image": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg1_roster/check/snap1/frame-05-at-8.2s.png",
+        "time": 8.2,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792754270200,
+        "contentHash": "e87f424296b7cf3a583a78ec1c83dc26bb749d804638f5fd9eaed2f546dba8ad",
+        "revision": null,
+        "inputFingerprint": "573198363687926c5505aea4d041f8dc13f44dde7892e95fb6df1436b1ea84d0",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "b1909c5d-816a-481e-b936-003c3e222949-6",
+        "image": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg1_roster/check/snap1/frame-06-at-8.96s.png",
+        "time": 8.96,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792754270200,
+        "contentHash": "6a858585258730fffdff00c0d7f4883c8cd6a5892cdc1993d565a8c4e55160a3",
+        "revision": null,
+        "inputFingerprint": "573198363687926c5505aea4d041f8dc13f44dde7892e95fb6df1436b1ea84d0",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "b1909c5d-816a-481e-b936-003c3e222949-7",
+        "image": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg1_roster/check/snap1/frame-07-at-9.3s.png",
+        "time": 9.3,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792754270200,
+        "contentHash": "48c4e066a881c100d223574338338edb918684ddfef6755b2e3795409a119619",
+        "revision": null,
+        "inputFingerprint": "573198363687926c5505aea4d041f8dc13f44dde7892e95fb6df1436b1ea84d0",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "b1909c5d-816a-481e-b936-003c3e222949-8",
+        "image": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg1_roster/check/snap1/frame-08-at-9.8s.png",
+        "time": 9.8,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792754270200,
+        "contentHash": "b3f0ac1813b300484dfb02b7c633195a73c3f49b93dc230d726301fd13414a49",
+        "revision": null,
+        "inputFingerprint": "573198363687926c5505aea4d041f8dc13f44dde7892e95fb6df1436b1ea84d0",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "b1909c5d-816a-481e-b936-003c3e222949-9",
+        "image": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg1_roster/check/snap1/frame-09-at-10.4s.png",
+        "time": 10.4,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792754270200,
+        "contentHash": "3df89a8a4cc5b5deb338b546507f6b33bf560f6f0ea3be6c86a75276ee3f01ca",
+        "revision": null,
+        "inputFingerprint": "573198363687926c5505aea4d041f8dc13f44dde7892e95fb6df1436b1ea84d0",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      }
+    ]
   }
 }
