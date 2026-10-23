@@ -1,0 +1,36 @@
+{
+ "file": "bed_client_116.30-134.30.wav",
+ "vad_filter": false,
+ "model": "small",
+ "language": "en",
+ "language_prob": 0.4410766661167145,
+ "segments": [
+  {
+   "start": 5.460000000000001,
+   "end": 7.4,
+   "text": " THANKS FOR WATCHING!",
+   "no_speech_prob": 0.589818000793457,
+   "avg_logprob": -0.7621567357670177,
+   "words": [
+    [
+     5.460000000000001,
+     6.86,
+     " THANKS",
+     0.5229658052170029
+    ],
+    [
+     6.86,
+     6.86,
+     " FOR",
+     0.7414586544036865
+    ],
+    [
+     6.86,
+     7.4,
+     " WATCHING!",
+     0.9891819755236307
+    ]
+   ]
+  }
+ ]
+}

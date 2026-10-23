@@ -1,0 +1,451 @@
+{
+ "project": "sukanya-v2",
+ "title": "SUPER ART",
+ "fps": 25,
+ "frames": 450,
+ "duration_s": 18.0,
+ "size": "2160x3840",
+ "music": {
+  "file": "source/client_music.mp3",
+  "src_in": 116.3,
+  "src_out": 134.3,
+  "bed": "shots/sh010/director/v001/audio/bed_client_116.30-134.30.wav",
+  "bpm": 136,
+  "frames_per_beat": 11.03,
+  "key": "D minor"
+ },
+ "beats_f": [
+  10,
+  21,
+  32,
+  42,
+  52,
+  63,
+  74,
+  84,
+  95,
+  105,
+  116,
+  126,
+  137,
+  147,
+  158,
+  168,
+  178,
+  188,
+  198,
+  209,
+  219,
+  232,
+  243,
+  254,
+  266,
+  277,
+  289,
+  300,
+  310,
+  320,
+  330,
+  340,
+  350,
+  360,
+  370,
+  380,
+  392,
+  403,
+  415,
+  425,
+  437,
+  448
+ ],
+ "events": {
+  "hats_build_start": {
+   "f": 8,
+   "src_s": 116.62,
+   "note": "hi-hat layer rises (+8 dB >4 kHz)"
+  },
+  "bass_thin": {
+   "f": 158,
+   "src_s": 122.62,
+   "note": "sub band starts falling (45->35 dB)"
+  },
+  "bass_back": {
+   "f": 178,
+   "src_s": 123.4,
+   "note": "bass returns briefly"
+  },
+  "fill_1": {
+   "f": 219,
+   "src_s": 125.06
+  },
+  "fill_2": {
+   "f": 224,
+   "src_s": 125.26
+  },
+  "fill_3": {
+   "f": 232,
+   "src_s": 125.56
+  },
+  "fill_4": {
+   "f": 238,
+   "src_s": 125.8
+  },
+  "bass_out": {
+   "f": 233,
+   "f_end": 253,
+   "src_s": [
+    125.6,
+    126.4
+   ],
+   "note": "sub band at 19-21 dB: the hole before the drop"
+  },
+  "riser": {
+   "f": 254,
+   "src_s": 126.48
+  },
+  "DROP": {
+   "f": 261,
+   "src_s": 126.74,
+   "note": "sub band +33 dB in 0.3 s; loudest attack of the window. NAME POP + FIST CONTACT"
+  },
+  "audio_fade": {
+   "f": 425,
+   "f_end": 450
+  }
+ },
+ "shots": [
+  {
+   "id": "A01",
+   "src_in": 38.29,
+   "src_out": 39.62,
+   "f_in": 0,
+   "f_out": 42,
+   "characters": [
+    "Dhalsim",
+    "Ken"
+   ],
+   "crop": "960:536:160:92",
+   "layer": "roll_panel",
+   "notes": "lib sf032 (q4): Ken knocked down on the white arena floor, Dhalsim stance"
+  },
+  {
+   "id": "A02",
+   "src_in": 141.9,
+   "src_out": 142.76,
+   "f_in": 42,
+   "f_out": 84,
+   "characters": [
+    "unknown (aerial kick; lib sf124)"
+   ],
+   "crop": "960:536:160:92",
+   "layer": "roll_panel",
+   "notes": "fighter id: librarian to confirm; flying kick through arena light shafts; 0.70 s source over 1.68 s = 42% (optical-flow slow-mo, establishing pace)"
+  },
+  {
+   "id": "A03",
+   "src_in": 62.0,
+   "src_out": 62.9,
+   "f_in": 84,
+   "f_out": 105,
+   "characters": [
+    "E. Honda"
+   ],
+   "crop": "720:536:300:92",
+   "layer": "roll_panel",
+   "notes": "close-up stare, sauna; 2-beat hold"
+  },
+  {
+   "id": "A04",
+   "src_in": 109.45,
+   "src_out": 110.45,
+   "f_in": 105,
+   "f_out": 126,
+   "characters": [
+    "unknown (red-jacket fighter; lib sf097)"
+   ],
+   "crop": "1280:536:0:92",
+   "layer": "roll_panel",
+   "notes": "fighter vs silhouettes in light slats"
+  },
+  {
+   "id": "A05",
+   "src_in": 112.58,
+   "src_out": 113.4,
+   "f_in": 126,
+   "f_out": 147,
+   "characters": [
+    "Blanka"
+   ],
+   "crop": "960:536:160:92",
+   "layer": "roll_panel",
+   "notes": "leaps over the cage, arms up"
+  },
+  {
+   "id": "A06",
+   "src_in": 135.9,
+   "src_out": 136.8,
+   "f_in": 147,
+   "f_out": 168,
+   "characters": [
+    "Ken",
+    "opponent (aerial)"
+   ],
+   "crop": "1280:536:0:92",
+   "layer": "roll_panel",
+   "notes": "arena light shafts, aerial clash"
+  },
+  {
+   "id": "A07",
+   "src_in": 40.92,
+   "src_out": 41.55,
+   "f_in": 168,
+   "f_out": 188,
+   "characters": [
+    "Ken"
+   ],
+   "crop": "960:536:160:92",
+   "layer": "roll_panel",
+   "notes": "handstand flip in light shafts"
+  },
+  {
+   "id": "A08",
+   "src_in": 51.97,
+   "src_out": 52.76,
+   "f_in": 188,
+   "f_out": 209,
+   "characters": [
+    "Balrog",
+    "Ken"
+   ],
+   "crop": "1280:536:0:92",
+   "layer": "roll_panel",
+   "notes": "lib sf046 (q4): Balrog stands over Ken knocked down, arena wide"
+  },
+  {
+   "id": "A09",
+   "src_in": 107.0,
+   "src_out": 107.5,
+   "f_in": 209,
+   "f_out": 219,
+   "characters": [
+    "unknown (psycho-power energy ball; lib sf093 q2)"
+   ],
+   "crop": "960:536:160:92",
+   "layer": "roll_panel",
+   "notes": "violet energy ball - stays in palette"
+  },
+  {
+   "id": "A10",
+   "src_in": 123.7,
+   "src_out": 123.9,
+   "f_in": 219,
+   "f_out": 224,
+   "characters": [
+    "Chun-Li"
+   ],
+   "crop": "960:536:160:92",
+   "layer": "roll_panel",
+   "notes": "lib sf111 (q4): Chun-Li screams in front of a fireball; half-beat flash"
+  },
+  {
+   "id": "A11",
+   "src_in": 130.3,
+   "src_out": 130.62,
+   "f_in": 224,
+   "f_out": 232,
+   "characters": [
+    "Ryu",
+    "Blanka"
+   ],
+   "crop": "960:536:160:92",
+   "layer": "roll_panel",
+   "notes": "cage, purple spark"
+  },
+  {
+   "id": "A12",
+   "src_in": 95.45,
+   "src_out": 95.7,
+   "f_in": 232,
+   "f_out": 238,
+   "characters": [
+    "Guile"
+   ],
+   "crop": "720:536:280:92",
+   "layer": "roll_panel",
+   "notes": "the flat-top glare"
+  },
+  {
+   "id": "A13",
+   "src_in": 121.3,
+   "src_out": 121.5,
+   "f_in": 238,
+   "f_out": 243,
+   "characters": [
+    "Cammy"
+   ],
+   "crop": "720:536:280:92",
+   "layer": "roll_panel",
+   "notes": "braids, blue leotard (tritone)"
+  },
+  {
+   "id": "C00",
+   "src_in": 143.73,
+   "src_out": 143.977,
+   "f_in": 243,
+   "f_out": 261,
+   "characters": [
+    "Ryu",
+    "Ken"
+   ],
+   "crop": "1280:536:0:92",
+   "layer": "charge",
+   "notes": "fists approach at ~33% speed (optical flow), drained to near-mono; CONTACT frame 143.977 lands on f261"
+  },
+  {
+   "id": "B01",
+   "src_in": 143.977,
+   "src_out": 144.06,
+   "f_in": 261,
+   "f_out": 277,
+   "characters": [
+    "Ryu",
+    "Ken"
+   ],
+   "crop": "1280:536:0:92",
+   "layer": "super_band",
+   "notes": "fist contact, hold+ramp 100%->20% then freeze-frame tail; full colour (blue remapped to mulberry)"
+  },
+  {
+   "id": "B02",
+   "src_in": 50.1,
+   "src_out": 50.65,
+   "f_in": 277,
+   "f_out": 289,
+   "characters": [
+    "Balrog",
+    "Ken"
+   ],
+   "crop": "1280:536:0:92",
+   "layer": "super_band",
+   "notes": "low-angle uppercut"
+  },
+  {
+   "id": "B03",
+   "src_in": 139.75,
+   "src_out": 140.25,
+   "f_in": 289,
+   "f_out": 300,
+   "characters": [
+    "Blanka"
+   ],
+   "crop": "1280:536:0:92",
+   "layer": "super_band",
+   "notes": "electric dash"
+  },
+  {
+   "id": "B04",
+   "src_in": 113.55,
+   "src_out": 114.0,
+   "f_in": 300,
+   "f_out": 310,
+   "characters": [
+    "Vega? (red room backflip, librarian to confirm)"
+   ],
+   "crop": "1280:536:0:92",
+   "layer": "super_band",
+   "notes": "backflip"
+  },
+  {
+   "id": "B05",
+   "src_in": 123.0,
+   "src_out": 123.45,
+   "f_in": 310,
+   "f_out": 320,
+   "characters": [
+    "fighters in silhouette"
+   ],
+   "crop": "1280:536:0:92",
+   "layer": "super_band",
+   "notes": "explosion silhouettes - saffron firewall"
+  },
+  {
+   "id": "B06",
+   "src_in": 132.35,
+   "src_out": 132.8,
+   "f_in": 320,
+   "f_out": 330,
+   "characters": [
+    "Ken",
+    "Dhalsim"
+   ],
+   "crop": "1280:536:0:92",
+   "layer": "super_band",
+   "notes": "punch exchange, crowd"
+  },
+  {
+   "id": "B07",
+   "src_in": 101.36,
+   "src_out": 101.81,
+   "f_in": 330,
+   "f_out": 340,
+   "characters": [
+    "Cammy? (aerial flip over club crowd)"
+   ],
+   "crop": "1280:536:0:92",
+   "layer": "super_band",
+   "notes": "flip over the crowd; magenta/blue club light -> remap"
+  },
+  {
+   "id": "B08",
+   "src_in": 152.0,
+   "src_out": 152.4,
+   "f_in": 340,
+   "f_out": 350,
+   "characters": [
+    "Chun-Li"
+   ],
+   "crop": "1280:536:0:92",
+   "layer": "super_band",
+   "notes": "buns, turn to camera; band collapses into the title on f350"
+  },
+  {
+   "id": "T01",
+   "src_in": null,
+   "src_out": null,
+   "f_in": 350,
+   "f_out": 450,
+   "characters": [
+    "line-up art (assets_prev/lineup_restored_2160_r470.png)"
+   ],
+   "crop": "full 2160 width, bottom-anchored",
+   "layer": "title",
+   "notes": "slow push 1.00->1.04, tritone + saffron rim"
+  }
+ ],
+ "palette": {
+  "aubergine_ink": "#14080F",
+  "mulberry": "#4A1838",
+  "plum_mid": "#7A2E5C",
+  "saffron": "#FFB12A",
+  "ki_white": "#FFF3DC",
+  "chalk": "#D9CFC3",
+  "cinnabar_spark": "#FF5A1F"
+ },
+ "fonts": {
+  "roll": "Montserrat 500",
+  "name_hero": "Barlow Condensed 900 Italic",
+  "card_lines": "Barlow Condensed 600 (tracked 0.30em)",
+  "hud": "Chakra Petch 600"
+ },
+ "roll": {
+  "source": "source/movie.mp4 63.5-66.0 s (720x1280)",
+  "row_pitch_src_px": 23,
+  "scroll_src_px_s": 117,
+  "gutter_x_src": 361,
+  "scale_to_4k": 4.050000000000001,
+  "row_pitch_4k": 93,
+  "scroll_4k_px_per_frame": 19.0,
+  "her_row": "SHAHRUKH KHAN | SUKANYA DILIP DHARIYA",
+  "her_row_y_at_f243": 1536
+ }
+}

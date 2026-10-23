@@ -1,0 +1,5479 @@
+{
+ "source": "projects/sukanya-v2/source/trailer.mp4",
+ "fps": "24000/1001",
+ "frames": 4046,
+ "duration": 168.752,
+ "active_picture": "crop=1280:536:0:92",
+ "coords": "times in seconds (in inclusive, out exclusive); frames 0-based source frames, out_frame inclusive; crop cx is 0-1 across the 1280-wide active picture; crop_x_px is the left edge of a 301.5x536 (9:16) window in active-picture pixels",
+ "method": "ffmpeg scene score + histogram and normalised pixel-difference peaks, every cut checked by eye on frame pairs; 12 false cuts (flashes, whip, title animation) removed",
+ "shots": [
+  {
+   "id": "sf001",
+   "in": 0.0,
+   "out": 1.501,
+   "in_frame": 0,
+   "out_frame": 35,
+   "frames": 36,
+   "duration": 1.501,
+   "characters": [
+    "unknown"
+   ],
+   "action": "figure slammed down onto a rain-soaked, blue-lit alley floor (wide)",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.16,
+    "parallax_residual": 0.17,
+    "net_travel_px": 5.2
+   },
+   "mean_rgb": [
+    11,
+    42,
+    70
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.513,
+   "best_vertical_crop_x_px": 506,
+   "crop_cx_source": "saliency",
+   "quality": 3,
+   "sharpness_lapvar": 111,
+   "blockiness": 1.74,
+   "mean_luma": 39,
+   "hero": false,
+   "still": "stills/sf001.jpg",
+   "still_frame": 25
+  },
+  {
+   "id": "sf002",
+   "in": 1.501,
+   "out": 2.961,
+   "in_frame": 36,
+   "out_frame": 70,
+   "frames": 35,
+   "duration": 1.46,
+   "characters": [
+    "unknown"
+   ],
+   "action": "man lying in a flooded street in green light, rain falling",
+   "camera": {
+    "move": "dolly",
+    "solvable": false,
+    "flow_px_per_frame": 1.1,
+    "parallax_residual": 0.99,
+    "net_travel_px": 4.0
+   },
+   "mean_rgb": [
+    21,
+    30,
+    30
+   ],
+   "dominant_hue": "cyan",
+   "dominant_hue_deg": 175,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.268,
+   "best_vertical_crop_x_px": 192,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 104,
+   "blockiness": 2.99,
+   "mean_luma": 30,
+   "hero": false,
+   "still": "stills/sf002.jpg",
+   "still_frame": 58
+  },
+  {
+   "id": "sf003",
+   "in": 2.961,
+   "out": 3.837,
+   "in_frame": 71,
+   "out_frame": 91,
+   "frames": 21,
+   "duration": 0.876,
+   "characters": [
+    "Ryu"
+   ],
+   "action": "Ryu, headband and torn gi, in the rain, blue light, close-up",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.43,
+    "parallax_residual": 0.35,
+    "net_travel_px": 1.2
+   },
+   "mean_rgb": [
+    3,
+    42,
+    75
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.514,
+   "best_vertical_crop_x_px": 507,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 58,
+   "blockiness": 1.96,
+   "mean_luma": 38,
+   "hero": true,
+   "still": "stills/sf003.jpg",
+   "still_frame": 86
+  },
+  {
+   "id": "sf004",
+   "in": 3.837,
+   "out": 4.838,
+   "in_frame": 92,
+   "out_frame": 115,
+   "frames": 24,
+   "duration": 1.001,
+   "characters": [
+    "unknown"
+   ],
+   "action": "long-haired fighter screams, face lit red and green, rain",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.33,
+    "parallax_residual": 0.24,
+    "net_travel_px": 5.0
+   },
+   "mean_rgb": [
+    9,
+    26,
+    39
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.592,
+   "best_vertical_crop_x_px": 607,
+   "crop_cx_source": "saliency",
+   "quality": 2,
+   "sharpness_lapvar": 76,
+   "blockiness": 1.98,
+   "mean_luma": 25,
+   "hero": false,
+   "still": "stills/sf004.jpg",
+   "still_frame": 110
+  },
+  {
+   "id": "sf005",
+   "in": 4.838,
+   "out": 6.632,
+   "in_frame": 116,
+   "out_frame": 158,
+   "frames": 43,
+   "duration": 1.793,
+   "characters": [
+    "unknown"
+   ],
+   "action": "blurred close-up of a face in green and blue light, rain",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.14,
+    "parallax_residual": 0.19,
+    "net_travel_px": 8.3
+   },
+   "mean_rgb": [
+    7,
+    30,
+    32
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.32,
+   "best_vertical_crop_x_px": 259,
+   "crop_cx_source": "by_eye",
+   "quality": 2,
+   "sharpness_lapvar": 48,
+   "blockiness": 2.48,
+   "mean_luma": 27,
+   "hero": false,
+   "still": "stills/sf005.jpg",
+   "still_frame": 122
+  },
+  {
+   "id": "sf006",
+   "in": 6.632,
+   "out": 8.217,
+   "in_frame": 159,
+   "out_frame": 196,
+   "frames": 38,
+   "duration": 1.585,
+   "characters": [
+    "unknown"
+   ],
+   "action": "two fighters grapple against a red-lit brick wall",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.08,
+    "parallax_residual": 0.08,
+    "net_travel_px": 1.0
+   },
+   "mean_rgb": [
+    38,
+    9,
+    17
+   ],
+   "dominant_hue": "red",
+   "dominant_hue_deg": 345,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.455,
+   "best_vertical_crop_x_px": 432,
+   "crop_cx_source": "human_mask",
+   "quality": 1,
+   "sharpness_lapvar": 30,
+   "blockiness": 4.22,
+   "mean_luma": 17,
+   "hero": false,
+   "still": "stills/sf006.jpg",
+   "still_frame": 167
+  },
+  {
+   "id": "sf007",
+   "in": 8.217,
+   "out": 9.343,
+   "in_frame": 197,
+   "out_frame": 223,
+   "frames": 27,
+   "duration": 1.126,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter in red light throws a kick, green backlight",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.13,
+    "parallax_residual": 0.15,
+    "net_travel_px": 0.7
+   },
+   "mean_rgb": [
+    30,
+    21,
+    22
+   ],
+   "dominant_hue": "red",
+   "dominant_hue_deg": 5,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.553,
+   "best_vertical_crop_x_px": 557,
+   "crop_cx_source": "human_mask",
+   "quality": 1,
+   "sharpness_lapvar": 20,
+   "blockiness": 4.05,
+   "mean_luma": 25,
+   "hero": false,
+   "still": "stills/sf007.jpg",
+   "still_frame": 202
+  },
+  {
+   "id": "sf008",
+   "in": 9.343,
+   "out": 10.928,
+   "in_frame": 224,
+   "out_frame": 261,
+   "frames": 38,
+   "duration": 1.585,
+   "characters": [
+    "unknown"
+   ],
+   "action": "long-haired fighter in red light, back turned",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.04,
+    "parallax_residual": 0.1,
+    "net_travel_px": 0.2
+   },
+   "mean_rgb": [
+    26,
+    8,
+    12
+   ],
+   "dominant_hue": "red",
+   "dominant_hue_deg": 345,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.362,
+   "best_vertical_crop_x_px": 313,
+   "crop_cx_source": "human_mask",
+   "quality": 1,
+   "sharpness_lapvar": 17,
+   "blockiness": 4.32,
+   "mean_luma": 13,
+   "hero": false,
+   "still": "stills/sf008.jpg",
+   "still_frame": 242
+  },
+  {
+   "id": "sf009",
+   "in": 10.928,
+   "out": 11.929,
+   "in_frame": 262,
+   "out_frame": 285,
+   "frames": 24,
+   "duration": 1.001,
+   "characters": [
+    "unknown"
+   ],
+   "action": "dark wide alley, figure at the far end",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.1,
+    "parallax_residual": 0.12,
+    "net_travel_px": 2.5
+   },
+   "mean_rgb": [
+    4,
+    14,
+    34
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.356,
+   "best_vertical_crop_x_px": 305,
+   "crop_cx_source": "saliency",
+   "quality": 1,
+   "sharpness_lapvar": 93,
+   "blockiness": 5.18,
+   "mean_luma": 14,
+   "hero": false,
+   "still": "stills/sf009.jpg",
+   "still_frame": 266
+  },
+  {
+   "id": "sf010",
+   "in": 11.929,
+   "out": 13.055,
+   "in_frame": 286,
+   "out_frame": 312,
+   "frames": 27,
+   "duration": 1.126,
+   "characters": [
+    "unknown"
+   ],
+   "action": "extreme close-up, glowing red eye, purple energy",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.27,
+    "parallax_residual": 0.24,
+    "net_travel_px": 0.6
+   },
+   "mean_rgb": [
+    33,
+    18,
+    56
+   ],
+   "dominant_hue": "purple",
+   "dominant_hue_deg": 275,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.35,
+   "best_vertical_crop_x_px": 297,
+   "crop_cx_source": "by_eye",
+   "quality": 1,
+   "sharpness_lapvar": 12,
+   "blockiness": 4.0,
+   "mean_luma": 26,
+   "hero": false,
+   "still": "stills/sf010.jpg",
+   "still_frame": 308
+  },
+  {
+   "id": "sf011",
+   "in": 13.055,
+   "out": 14.723,
+   "in_frame": 313,
+   "out_frame": 352,
+   "frames": 40,
+   "duration": 1.668,
+   "characters": [
+    "Ken"
+   ],
+   "action": "Ken, wet long hair, glaring in a dark alley, close-up",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.06,
+    "parallax_residual": 0.18,
+    "net_travel_px": 4.4
+   },
+   "mean_rgb": [
+    18,
+    23,
+    26
+   ],
+   "dominant_hue": "cyan",
+   "dominant_hue_deg": 195,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.505,
+   "best_vertical_crop_x_px": 496,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 50,
+   "blockiness": 2.0,
+   "mean_luma": 24,
+   "hero": false,
+   "still": "stills/sf011.jpg",
+   "still_frame": 343
+  },
+  {
+   "id": "sf012",
+   "in": 14.723,
+   "out": 16.308,
+   "in_frame": 353,
+   "out_frame": 390,
+   "frames": 38,
+   "duration": 1.585,
+   "characters": [
+    "unknown"
+   ],
+   "action": "hand charging a blue energy ball in the alley",
+   "camera": {
+    "move": "pan",
+    "solvable": false,
+    "flow_px_per_frame": 0.34,
+    "parallax_residual": 0.28,
+    "net_travel_px": 12.9
+   },
+   "mean_rgb": [
+    3,
+    27,
+    48
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.328,
+   "best_vertical_crop_x_px": 269,
+   "crop_cx_source": "saliency",
+   "quality": 2,
+   "sharpness_lapvar": 30,
+   "blockiness": 1.88,
+   "mean_luma": 25,
+   "hero": false,
+   "still": "stills/sf012.jpg",
+   "still_frame": 366
+  },
+  {
+   "id": "sf013",
+   "in": 16.308,
+   "out": 17.601,
+   "in_frame": 391,
+   "out_frame": 421,
+   "frames": 31,
+   "duration": 1.293,
+   "characters": [
+    "unknown"
+   ],
+   "action": "blue-lit close detail of cloth / body, dark",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.14,
+    "parallax_residual": 0.22,
+    "net_travel_px": 1.4
+   },
+   "mean_rgb": [
+    1,
+    36,
+    71
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.411,
+   "best_vertical_crop_x_px": 375,
+   "crop_cx_source": "saliency",
+   "quality": 1,
+   "sharpness_lapvar": 18,
+   "blockiness": 4.76,
+   "mean_luma": 32,
+   "hero": false,
+   "still": "stills/sf013.jpg",
+   "still_frame": 415
+  },
+  {
+   "id": "sf014",
+   "in": 17.601,
+   "out": 17.935,
+   "in_frame": 422,
+   "out_frame": 429,
+   "frames": 8,
+   "duration": 0.334,
+   "characters": [
+    "unknown"
+   ],
+   "action": "blue energy ball (hadoken-style) flares toward camera",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.4,
+    "parallax_residual": 0.39,
+    "net_travel_px": 0.4
+   },
+   "mean_rgb": [
+    14,
+    51,
+    78
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.43,
+   "best_vertical_crop_x_px": 400,
+   "crop_cx_source": "saliency",
+   "quality": 1,
+   "sharpness_lapvar": 29,
+   "blockiness": 3.9,
+   "mean_luma": 46,
+   "hero": false,
+   "still": "stills/sf014.jpg",
+   "still_frame": 423
+  },
+  {
+   "id": "sf015",
+   "in": 17.935,
+   "out": 18.31,
+   "in_frame": 430,
+   "out_frame": 438,
+   "frames": 9,
+   "duration": 0.375,
+   "characters": [
+    "unknown"
+   ],
+   "action": "energy blast impacts a fighter, sparks, neon street",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 2.73,
+    "parallax_residual": 2.59,
+    "net_travel_px": 7.8
+   },
+   "mean_rgb": [
+    13,
+    52,
+    83
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.515,
+   "best_vertical_crop_x_px": 508,
+   "crop_cx_source": "saliency",
+   "quality": 2,
+   "sharpness_lapvar": 113,
+   "blockiness": 2.56,
+   "mean_luma": 48,
+   "hero": false,
+   "still": "stills/sf015.jpg",
+   "still_frame": 436
+  },
+  {
+   "id": "sf016",
+   "in": 18.31,
+   "out": 19.937,
+   "in_frame": 439,
+   "out_frame": 477,
+   "frames": 39,
+   "duration": 1.627,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter knocked flying down a neon-lit alley",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.42,
+    "parallax_residual": 0.37,
+    "net_travel_px": 12.8
+   },
+   "mean_rgb": [
+    17,
+    38,
+    56
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.417,
+   "best_vertical_crop_x_px": 383,
+   "crop_cx_source": "saliency",
+   "quality": 1,
+   "sharpness_lapvar": 97,
+   "blockiness": 4.07,
+   "mean_luma": 37,
+   "hero": false,
+   "still": "stills/sf016.jpg",
+   "still_frame": 444
+  },
+  {
+   "id": "sf017",
+   "in": 19.937,
+   "out": 21.021,
+   "in_frame": 478,
+   "out_frame": 503,
+   "frames": 26,
+   "duration": 1.084,
+   "characters": [
+    "unknown"
+   ],
+   "action": "red-orange explosion of smoke and debris",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.01,
+    "parallax_residual": 0.04,
+    "net_travel_px": 0.4
+   },
+   "mean_rgb": [
+    27,
+    14,
+    14
+   ],
+   "dominant_hue": "red",
+   "dominant_hue_deg": 5,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.586,
+   "best_vertical_crop_x_px": 599,
+   "crop_cx_source": "human_mask",
+   "quality": 1,
+   "sharpness_lapvar": 21,
+   "blockiness": 3.08,
+   "mean_luma": 19,
+   "hero": false,
+   "still": "stills/sf017.jpg",
+   "still_frame": 499
+  },
+  {
+   "id": "sf018",
+   "in": 21.021,
+   "out": 23.023,
+   "in_frame": 504,
+   "out_frame": 551,
+   "frames": 48,
+   "duration": 2.002,
+   "characters": [],
+   "action": "studio logos over a seascape: Paramount, then Legendary, then Capcom",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.45,
+    "parallax_residual": 0.36,
+    "net_travel_px": 20.4
+   },
+   "mean_rgb": [
+    107,
+    92,
+    80
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.5,
+   "best_vertical_crop_x_px": 489,
+   "crop_cx_source": "by_eye",
+   "quality": 5,
+   "sharpness_lapvar": 443,
+   "blockiness": 1.3,
+   "mean_luma": 96,
+   "hero": false,
+   "still": "stills/sf018.jpg",
+   "still_frame": 537
+  },
+  {
+   "id": "sf019",
+   "in": 23.023,
+   "out": 24.024,
+   "in_frame": 552,
+   "out_frame": 575,
+   "frames": 24,
+   "duration": 1.001,
+   "characters": [
+    "Ryu"
+   ],
+   "action": "Ryu, long-haired and bearded, stands in a dim warehouse gym",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.03,
+    "parallax_residual": 0.05,
+    "net_travel_px": 1.8
+   },
+   "mean_rgb": [
+    40,
+    42,
+    45
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.386,
+   "best_vertical_crop_x_px": 343,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 84,
+   "blockiness": 1.73,
+   "mean_luma": 44,
+   "hero": false,
+   "still": "stills/sf019.jpg",
+   "still_frame": 556
+  },
+  {
+   "id": "sf020",
+   "in": 24.024,
+   "out": 24.983,
+   "in_frame": 576,
+   "out_frame": 598,
+   "frames": 23,
+   "duration": 0.959,
+   "characters": [
+    "Chun-Li"
+   ],
+   "action": "Chun-Li in a black dress walks through the warehouse backlight",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.28,
+    "parallax_residual": 0.24,
+    "net_travel_px": 8.4
+   },
+   "mean_rgb": [
+    49,
+    56,
+    65
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.454,
+   "best_vertical_crop_x_px": 430,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 145,
+   "blockiness": 1.4,
+   "mean_luma": 57,
+   "hero": true,
+   "still": "stills/sf020.jpg",
+   "still_frame": 594
+  },
+  {
+   "id": "sf021",
+   "in": 24.983,
+   "out": 27.152,
+   "in_frame": 599,
+   "out_frame": 650,
+   "frames": 52,
+   "duration": 2.169,
+   "characters": [
+    "Ryu"
+   ],
+   "action": "Ryu, bruised face, close-up in the dark",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.0,
+    "parallax_residual": 0.03,
+    "net_travel_px": 0.6
+   },
+   "mean_rgb": [
+    14,
+    13,
+    13
+   ],
+   "dominant_hue": "neutral",
+   "dominant_hue_deg": null,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.517,
+   "best_vertical_crop_x_px": 511,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 13,
+   "blockiness": 2.37,
+   "mean_luma": 15,
+   "hero": false,
+   "still": "stills/sf021.jpg",
+   "still_frame": 641
+  },
+  {
+   "id": "sf022",
+   "in": 27.152,
+   "out": 28.57,
+   "in_frame": 651,
+   "out_frame": 684,
+   "frames": 34,
+   "duration": 1.418,
+   "characters": [
+    "unknown"
+   ],
+   "action": "period street: crowd, vintage car, woman in red crossing",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.14,
+    "parallax_residual": 0.12,
+    "net_travel_px": 4.6
+   },
+   "mean_rgb": [
+    73,
+    62,
+    55
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.624,
+   "best_vertical_crop_x_px": 648,
+   "crop_cx_source": "human_mask",
+   "quality": 5,
+   "sharpness_lapvar": 704,
+   "blockiness": 1.65,
+   "mean_luma": 65,
+   "hero": false,
+   "still": "stills/sf022.jpg",
+   "still_frame": 677
+  },
+  {
+   "id": "sf023",
+   "in": 28.57,
+   "out": 29.947,
+   "in_frame": 685,
+   "out_frame": 717,
+   "frames": 33,
+   "duration": 1.376,
+   "characters": [
+    "Ryu"
+   ],
+   "action": "Ryu with headband sitting in a red-lantern dojo / restaurant",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.26,
+    "parallax_residual": 0.12,
+    "net_travel_px": 11.0
+   },
+   "mean_rgb": [
+    85,
+    58,
+    47
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.54,
+   "best_vertical_crop_x_px": 540,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 170,
+   "blockiness": 1.27,
+   "mean_luma": 65,
+   "hero": false,
+   "still": "stills/sf023.jpg",
+   "still_frame": 712
+  },
+  {
+   "id": "sf024",
+   "in": 29.947,
+   "out": 31.49,
+   "in_frame": 718,
+   "out_frame": 754,
+   "frames": 37,
+   "duration": 1.543,
+   "characters": [
+    "Chun-Li"
+   ],
+   "action": "Chun-Li stands in the warehouse, calm, medium-wide",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.02,
+    "parallax_residual": 0.07,
+    "net_travel_px": 0.8
+   },
+   "mean_rgb": [
+    15,
+    17,
+    19
+   ],
+   "dominant_hue": "neutral",
+   "dominant_hue_deg": null,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.561,
+   "best_vertical_crop_x_px": 567,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 90,
+   "blockiness": 2.36,
+   "mean_luma": 18,
+   "hero": false,
+   "still": "stills/sf024.jpg",
+   "still_frame": 748
+  },
+  {
+   "id": "sf025",
+   "in": 31.49,
+   "out": 31.907,
+   "in_frame": 755,
+   "out_frame": 764,
+   "frames": 10,
+   "duration": 0.417,
+   "characters": [
+    "Ryu"
+   ],
+   "action": "Ryu in shadow, practical lamps behind",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.19,
+    "parallax_residual": 0.14,
+    "net_travel_px": 1.6
+   },
+   "mean_rgb": [
+    39,
+    41,
+    45
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.457,
+   "best_vertical_crop_x_px": 434,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 38,
+   "blockiness": 2.35,
+   "mean_luma": 43,
+   "hero": false,
+   "still": "stills/sf025.jpg",
+   "still_frame": 758
+  },
+  {
+   "id": "sf026",
+   "in": 31.907,
+   "out": 32.658,
+   "in_frame": 765,
+   "out_frame": 782,
+   "frames": 18,
+   "duration": 0.751,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter flips through the air in the dark warehouse",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.74,
+    "parallax_residual": 0.39,
+    "net_travel_px": 6.0
+   },
+   "mean_rgb": [
+    37,
+    46,
+    53
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.504,
+   "best_vertical_crop_x_px": 494,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 202,
+   "blockiness": 1.41,
+   "mean_luma": 46,
+   "hero": false,
+   "still": "stills/sf026.jpg",
+   "still_frame": 778
+  },
+  {
+   "id": "sf027",
+   "in": 32.658,
+   "out": 33.659,
+   "in_frame": 783,
+   "out_frame": 806,
+   "frames": 24,
+   "duration": 1.001,
+   "characters": [
+    "unknown"
+   ],
+   "action": "man thrown to the warehouse floor, backlit windows",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.23,
+    "parallax_residual": 0.18,
+    "net_travel_px": 7.0
+   },
+   "mean_rgb": [
+    57,
+    66,
+    77
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.349,
+   "best_vertical_crop_x_px": 296,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 145,
+   "blockiness": 1.49,
+   "mean_luma": 67,
+   "hero": false,
+   "still": "stills/sf027.jpg",
+   "still_frame": 802
+  },
+  {
+   "id": "sf028",
+   "in": 33.659,
+   "out": 35.452,
+   "in_frame": 807,
+   "out_frame": 849,
+   "frames": 43,
+   "duration": 1.793,
+   "characters": [
+    "Chun-Li"
+   ],
+   "action": "Chun-Li stands over a fallen man in the warehouse",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.0,
+    "parallax_residual": 0.01,
+    "net_travel_px": 0.3
+   },
+   "mean_rgb": [
+    37,
+    47,
+    54
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.315,
+   "best_vertical_crop_x_px": 252,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 79,
+   "blockiness": 1.87,
+   "mean_luma": 48,
+   "hero": false,
+   "still": "stills/sf028.jpg",
+   "still_frame": 813
+  },
+  {
+   "id": "sf029",
+   "in": 35.452,
+   "out": 36.703,
+   "in_frame": 850,
+   "out_frame": 879,
+   "frames": 30,
+   "duration": 1.251,
+   "characters": [],
+   "action": "skyscraper with a giant World Warrior tournament banner, dusk city",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.65,
+    "parallax_residual": 0.25,
+    "net_travel_px": 10.9
+   },
+   "mean_rgb": [
+    106,
+    93,
+    96
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 15,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.48,
+   "best_vertical_crop_x_px": 464,
+   "crop_cx_source": "saliency",
+   "quality": 5,
+   "sharpness_lapvar": 297,
+   "blockiness": 1.23,
+   "mean_luma": 98,
+   "hero": false,
+   "still": "stills/sf029.jpg",
+   "still_frame": 874
+  },
+  {
+   "id": "sf030",
+   "in": 36.703,
+   "out": 37.496,
+   "in_frame": 880,
+   "out_frame": 898,
+   "frames": 19,
+   "duration": 0.792,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter in red tapes hands in a dark locker room",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.05,
+    "parallax_residual": 0.09,
+    "net_travel_px": 0.6
+   },
+   "mean_rgb": [
+    38,
+    36,
+    36
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 15,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.731,
+   "best_vertical_crop_x_px": 785,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 65,
+   "blockiness": 2.24,
+   "mean_luma": 38,
+   "hero": false,
+   "still": "stills/sf030.jpg",
+   "still_frame": 894
+  },
+  {
+   "id": "sf031",
+   "in": 37.496,
+   "out": 38.288,
+   "in_frame": 899,
+   "out_frame": 917,
+   "frames": 19,
+   "duration": 0.792,
+   "characters": [
+    "Ken"
+   ],
+   "action": "Ken in red gi and fight gloves wipes his face, arena crowd",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 1.16,
+    "parallax_residual": 0.93,
+    "net_travel_px": 13.4
+   },
+   "mean_rgb": [
+    87,
+    71,
+    61
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.477,
+   "best_vertical_crop_x_px": 460,
+   "crop_cx_source": "human_mask",
+   "quality": 5,
+   "sharpness_lapvar": 271,
+   "blockiness": 2.13,
+   "mean_luma": 75,
+   "hero": true,
+   "still": "stills/sf031.jpg",
+   "still_frame": 903
+  },
+  {
+   "id": "sf032",
+   "in": 38.288,
+   "out": 39.623,
+   "in_frame": 918,
+   "out_frame": 949,
+   "frames": 32,
+   "duration": 1.335,
+   "characters": [
+    "Dhalsim"
+   ],
+   "action": "Dhalsim, bald with skull necklace, takes a fighting stance in the arena",
+   "camera": {
+    "move": "tilt",
+    "solvable": true,
+    "flow_px_per_frame": 2.43,
+    "parallax_residual": 0.75,
+    "net_travel_px": 33.1
+   },
+   "mean_rgb": [
+    86,
+    75,
+    67
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.453,
+   "best_vertical_crop_x_px": 429,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 268,
+   "blockiness": 1.6,
+   "mean_luma": 78,
+   "hero": true,
+   "still": "stills/sf032.jpg",
+   "still_frame": 944
+  },
+  {
+   "id": "sf033",
+   "in": 39.623,
+   "out": 40.415,
+   "in_frame": 950,
+   "out_frame": 968,
+   "frames": 19,
+   "duration": 0.792,
+   "characters": [
+    "Dhalsim"
+   ],
+   "action": "Dhalsim lunges, low angle, arena roof light",
+   "camera": {
+    "move": "whip",
+    "solvable": false,
+    "flow_px_per_frame": 6.61,
+    "parallax_residual": 2.38,
+    "net_travel_px": 89.0
+   },
+   "mean_rgb": [
+    94,
+    76,
+    62
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 35,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.437,
+   "best_vertical_crop_x_px": 409,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 131,
+   "blockiness": 1.95,
+   "mean_luma": 81,
+   "hero": false,
+   "still": "stills/sf033.jpg",
+   "still_frame": 961
+  },
+  {
+   "id": "sf034",
+   "in": 40.415,
+   "out": 40.916,
+   "in_frame": 969,
+   "out_frame": 980,
+   "frames": 12,
+   "duration": 0.5,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter takes a fist to the face, arena",
+   "camera": {
+    "move": "tilt",
+    "solvable": false,
+    "flow_px_per_frame": 4.21,
+    "parallax_residual": 0.87,
+    "net_travel_px": 31.9
+   },
+   "mean_rgb": [
+    127,
+    111,
+    100
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.528,
+   "best_vertical_crop_x_px": 525,
+   "crop_cx_source": "human_mask",
+   "quality": 5,
+   "sharpness_lapvar": 277,
+   "blockiness": 1.96,
+   "mean_luma": 116,
+   "hero": false,
+   "still": "stills/sf034.jpg",
+   "still_frame": 972
+  },
+  {
+   "id": "sf035",
+   "in": 40.916,
+   "out": 41.625,
+   "in_frame": 981,
+   "out_frame": 997,
+   "frames": 17,
+   "duration": 0.709,
+   "characters": [
+    "Ken"
+   ],
+   "action": "Ken flips upside-down mid-air under the arena roof",
+   "camera": {
+    "move": "whip",
+    "solvable": false,
+    "flow_px_per_frame": 7.48,
+    "parallax_residual": 2.26,
+    "net_travel_px": 30.8
+   },
+   "mean_rgb": [
+    102,
+    87,
+    81
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.523,
+   "best_vertical_crop_x_px": 519,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 213,
+   "blockiness": 1.85,
+   "mean_luma": 92,
+   "hero": true,
+   "still": "stills/sf035.jpg",
+   "still_frame": 991
+  },
+  {
+   "id": "sf036",
+   "in": 41.625,
+   "out": 41.917,
+   "in_frame": 998,
+   "out_frame": 1004,
+   "frames": 7,
+   "duration": 0.292,
+   "characters": [
+    "unknown"
+   ],
+   "action": "silhouette by a sunlit curtain, very dark",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.17,
+    "parallax_residual": 0.24,
+    "net_travel_px": 1.5
+   },
+   "mean_rgb": [
+    75,
+    55,
+    34
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 35,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.613,
+   "best_vertical_crop_x_px": 634,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 130,
+   "blockiness": 1.91,
+   "mean_luma": 60,
+   "hero": false,
+   "still": "stills/sf036.jpg",
+   "still_frame": 1003
+  },
+  {
+   "id": "sf037",
+   "in": 41.917,
+   "out": 42.96,
+   "in_frame": 1005,
+   "out_frame": 1029,
+   "frames": 25,
+   "duration": 1.043,
+   "characters": [
+    "unknown"
+   ],
+   "action": "long-haired figure from behind, hand clawing at a lit curtain",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.22,
+    "parallax_residual": 0.24,
+    "net_travel_px": 8.5
+   },
+   "mean_rgb": [
+    137,
+    97,
+    57
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 35,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.622,
+   "best_vertical_crop_x_px": 645,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 144,
+   "blockiness": 1.38,
+   "mean_luma": 105,
+   "hero": false,
+   "still": "stills/sf037.jpg",
+   "still_frame": 1018
+  },
+  {
+   "id": "sf038",
+   "in": 42.96,
+   "out": 43.919,
+   "in_frame": 1030,
+   "out_frame": 1052,
+   "frames": 23,
+   "duration": 0.959,
+   "characters": [
+    "unknown"
+   ],
+   "action": "dark bedroom, figure by the window",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.01,
+    "parallax_residual": 0.03,
+    "net_travel_px": 0.5
+   },
+   "mean_rgb": [
+    56,
+    36,
+    20
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.518,
+   "best_vertical_crop_x_px": 512,
+   "crop_cx_source": "saliency",
+   "quality": 2,
+   "sharpness_lapvar": 46,
+   "blockiness": 2.18,
+   "mean_luma": 41,
+   "hero": false,
+   "still": "stills/sf038.jpg",
+   "still_frame": 1033
+  },
+  {
+   "id": "sf039",
+   "in": 43.919,
+   "out": 45.754,
+   "in_frame": 1053,
+   "out_frame": 1096,
+   "frames": 44,
+   "duration": 1.835,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter in a pink hooded robe walks out through a cheering crowd",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.41,
+    "parallax_residual": 0.34,
+    "net_travel_px": 2.6
+   },
+   "mean_rgb": [
+    49,
+    46,
+    51
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 35,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.318,
+   "best_vertical_crop_x_px": 256,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 177,
+   "blockiness": 1.98,
+   "mean_luma": 49,
+   "hero": false,
+   "still": "stills/sf039.jpg",
+   "still_frame": 1081
+  },
+  {
+   "id": "sf040",
+   "in": 45.754,
+   "out": 47.047,
+   "in_frame": 1097,
+   "out_frame": 1127,
+   "frames": 31,
+   "duration": 1.293,
+   "characters": [
+    "unknown"
+   ],
+   "action": "car-smash bonus stage: fighters around a wrecked car, '35' board, crowd",
+   "camera": {
+    "move": "pan",
+    "solvable": true,
+    "flow_px_per_frame": 1.5,
+    "parallax_residual": 0.53,
+    "net_travel_px": 33.2
+   },
+   "mean_rgb": [
+    43,
+    48,
+    73
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.48,
+   "best_vertical_crop_x_px": 464,
+   "crop_cx_source": "saliency",
+   "quality": 5,
+   "sharpness_lapvar": 439,
+   "blockiness": 1.91,
+   "mean_luma": 51,
+   "hero": false,
+   "still": "stills/sf040.jpg",
+   "still_frame": 1117
+  },
+  {
+   "id": "sf041",
+   "in": 47.047,
+   "out": 48.298,
+   "in_frame": 1128,
+   "out_frame": 1157,
+   "frames": 30,
+   "duration": 1.251,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter in a boxing ring under lights, confetti, huge crowd",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.34,
+    "parallax_residual": 0.22,
+    "net_travel_px": 3.7
+   },
+   "mean_rgb": [
+    47,
+    52,
+    90
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 235,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.334,
+   "best_vertical_crop_x_px": 277,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 255,
+   "blockiness": 1.62,
+   "mean_luma": 56,
+   "hero": false,
+   "still": "stills/sf041.jpg",
+   "still_frame": 1149
+  },
+  {
+   "id": "sf042",
+   "in": 48.298,
+   "out": 49.341,
+   "in_frame": 1158,
+   "out_frame": 1182,
+   "frames": 25,
+   "duration": 1.043,
+   "characters": [
+    "Ken"
+   ],
+   "action": "Ken in close-up, towel around his neck, talking",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.0,
+    "parallax_residual": 0.09,
+    "net_travel_px": 1.0
+   },
+   "mean_rgb": [
+    71,
+    58,
+    51
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.695,
+   "best_vertical_crop_x_px": 739,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 96,
+   "blockiness": 1.44,
+   "mean_luma": 62,
+   "hero": true,
+   "still": "stills/sf042.jpg",
+   "still_frame": 1178
+  },
+  {
+   "id": "sf043",
+   "in": 49.341,
+   "out": 49.633,
+   "in_frame": 1183,
+   "out_frame": 1189,
+   "frames": 7,
+   "duration": 0.292,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fight footwork, boxer's boots against bare feet, low angle",
+   "camera": {
+    "move": "dolly",
+    "solvable": false,
+    "flow_px_per_frame": 4.35,
+    "parallax_residual": 4.33,
+    "net_travel_px": 1.1
+   },
+   "mean_rgb": [
+    130,
+    116,
+    108
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.724,
+   "best_vertical_crop_x_px": 776,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 59,
+   "blockiness": 2.97,
+   "mean_luma": 120,
+   "hero": false,
+   "still": "stills/sf043.jpg",
+   "still_frame": 1188
+  },
+  {
+   "id": "sf044",
+   "in": 49.633,
+   "out": 50.05,
+   "in_frame": 1190,
+   "out_frame": 1199,
+   "frames": 10,
+   "duration": 0.417,
+   "characters": [
+    "Ken"
+   ],
+   "action": "Ken in red gi and gloves bounces in the arena",
+   "camera": {
+    "move": "whip",
+    "solvable": false,
+    "flow_px_per_frame": 6.95,
+    "parallax_residual": 1.11,
+    "net_travel_px": 20.9
+   },
+   "mean_rgb": [
+    76,
+    62,
+    54
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.526,
+   "best_vertical_crop_x_px": 523,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 216,
+   "blockiness": 1.9,
+   "mean_luma": 66,
+   "hero": false,
+   "still": "stills/sf044.jpg",
+   "still_frame": 1197
+  },
+  {
+   "id": "sf045",
+   "in": 50.05,
+   "out": 51.969,
+   "in_frame": 1200,
+   "out_frame": 1245,
+   "frames": 46,
+   "duration": 1.919,
+   "characters": [
+    "Ken",
+    "Balrog"
+   ],
+   "action": "Balrog's red-gloved punch lands on Ken's face, close",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 3.4,
+    "parallax_residual": 1.95,
+    "net_travel_px": 7.1
+   },
+   "mean_rgb": [
+    75,
+    54,
+    48
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.42,
+   "best_vertical_crop_x_px": 387,
+   "crop_cx_source": "by_eye",
+   "quality": 5,
+   "sharpness_lapvar": 295,
+   "blockiness": 2.12,
+   "mean_luma": 60,
+   "hero": true,
+   "still": "stills/sf045.jpg",
+   "still_frame": 1237
+  },
+  {
+   "id": "sf046",
+   "in": 51.969,
+   "out": 52.761,
+   "in_frame": 1246,
+   "out_frame": 1264,
+   "frames": 19,
+   "duration": 0.792,
+   "characters": [
+    "Ken",
+    "Balrog"
+   ],
+   "action": "Balrog stands over Ken knocked down, arena wide",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.02,
+    "parallax_residual": 0.03,
+    "net_travel_px": 0.4
+   },
+   "mean_rgb": [
+    89,
+    78,
+    73
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.435,
+   "best_vertical_crop_x_px": 406,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 195,
+   "blockiness": 1.81,
+   "mean_luma": 82,
+   "hero": true,
+   "still": "stills/sf046.jpg",
+   "still_frame": 1249
+  },
+  {
+   "id": "sf047",
+   "in": 52.761,
+   "out": 54.304,
+   "in_frame": 1265,
+   "out_frame": 1301,
+   "frames": 37,
+   "duration": 1.543,
+   "characters": [
+    "unknown"
+   ],
+   "action": "woman in a dark firelit room, back to camera",
+   "camera": {
+    "move": "dolly",
+    "solvable": false,
+    "flow_px_per_frame": 0.61,
+    "parallax_residual": 0.52,
+    "net_travel_px": 5.8
+   },
+   "mean_rgb": [
+    40,
+    23,
+    15
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 15,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.424,
+   "best_vertical_crop_x_px": 392,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 34,
+   "blockiness": 2.08,
+   "mean_luma": 28,
+   "hero": false,
+   "still": "stills/sf047.jpg",
+   "still_frame": 1270
+  },
+  {
+   "id": "sf048",
+   "in": 54.304,
+   "out": 54.805,
+   "in_frame": 1302,
+   "out_frame": 1313,
+   "frames": 12,
+   "duration": 0.5,
+   "characters": [
+    "unknown"
+   ],
+   "action": "woman shouts, dark room, close",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 1.26,
+    "parallax_residual": 0.66,
+    "net_travel_px": 2.3
+   },
+   "mean_rgb": [
+    35,
+    21,
+    15
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 15,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.568,
+   "best_vertical_crop_x_px": 576,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 22,
+   "blockiness": 2.26,
+   "mean_luma": 25,
+   "hero": false,
+   "still": "stills/sf048.jpg",
+   "still_frame": 1304
+  },
+  {
+   "id": "sf049",
+   "in": 54.805,
+   "out": 56.89,
+   "in_frame": 1314,
+   "out_frame": 1363,
+   "frames": 50,
+   "duration": 2.085,
+   "characters": [],
+   "action": "investigation wall of photos with nunchaku and desk lamp",
+   "camera": {
+    "move": "pan",
+    "solvable": false,
+    "flow_px_per_frame": 0.94,
+    "parallax_residual": 0.67,
+    "net_travel_px": 62.2
+   },
+   "mean_rgb": [
+    72,
+    44,
+    25
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.503,
+   "best_vertical_crop_x_px": 493,
+   "crop_cx_source": "saliency",
+   "quality": 3,
+   "sharpness_lapvar": 139,
+   "blockiness": 1.3,
+   "mean_luma": 51,
+   "hero": false,
+   "still": "stills/sf049.jpg",
+   "still_frame": 1351
+  },
+  {
+   "id": "sf050",
+   "in": 56.89,
+   "out": 58.934,
+   "in_frame": 1364,
+   "out_frame": 1412,
+   "frames": 49,
+   "duration": 2.044,
+   "characters": [
+    "unknown"
+   ],
+   "action": "man sits on a stool in a sunlit apartment, head down",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.06,
+    "parallax_residual": 0.04,
+    "net_travel_px": 0.9
+   },
+   "mean_rgb": [
+    79,
+    54,
+    28
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 35,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.512,
+   "best_vertical_crop_x_px": 505,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 184,
+   "blockiness": 1.4,
+   "mean_luma": 59,
+   "hero": false,
+   "still": "stills/sf050.jpg",
+   "still_frame": 1403
+  },
+  {
+   "id": "sf051",
+   "in": 58.934,
+   "out": 59.559,
+   "in_frame": 1413,
+   "out_frame": 1427,
+   "frames": 15,
+   "duration": 0.626,
+   "characters": [
+    "unknown"
+   ],
+   "action": "bearded man, very dark, blade in hand, close",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.02,
+    "parallax_residual": 0.11,
+    "net_travel_px": 0.6
+   },
+   "mean_rgb": [
+    28,
+    18,
+    7
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.542,
+   "best_vertical_crop_x_px": 543,
+   "crop_cx_source": "human_mask",
+   "quality": 1,
+   "sharpness_lapvar": 19,
+   "blockiness": 2.31,
+   "mean_luma": 21,
+   "hero": false,
+   "still": "stills/sf051.jpg",
+   "still_frame": 1423
+  },
+  {
+   "id": "sf052",
+   "in": 59.559,
+   "out": 61.979,
+   "in_frame": 1428,
+   "out_frame": 1485,
+   "frames": 58,
+   "duration": 2.419,
+   "characters": [
+    "unknown"
+   ],
+   "action": "shirtless man in a steamy bathhouse",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.18,
+    "parallax_residual": 0.23,
+    "net_travel_px": 2.6
+   },
+   "mean_rgb": [
+    39,
+    31,
+    25
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.44,
+   "best_vertical_crop_x_px": 412,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 32,
+   "blockiness": 2.04,
+   "mean_luma": 34,
+   "hero": false,
+   "still": "stills/sf052.jpg",
+   "still_frame": 1467
+  },
+  {
+   "id": "sf053",
+   "in": 61.979,
+   "out": 63.021,
+   "in_frame": 1486,
+   "out_frame": 1510,
+   "frames": 25,
+   "duration": 1.043,
+   "characters": [
+    "E. Honda"
+   ],
+   "action": "E. Honda, sumo topknot, glares in the bathhouse",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.03,
+    "parallax_residual": 0.1,
+    "net_travel_px": 1.8
+   },
+   "mean_rgb": [
+    56,
+    35,
+    20
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.489,
+   "best_vertical_crop_x_px": 475,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 28,
+   "blockiness": 2.1,
+   "mean_luma": 40,
+   "hero": true,
+   "still": "stills/sf053.jpg",
+   "still_frame": 1499
+  },
+  {
+   "id": "sf054",
+   "in": 63.021,
+   "out": 63.647,
+   "in_frame": 1511,
+   "out_frame": 1525,
+   "frames": 15,
+   "duration": 0.626,
+   "characters": [
+    "unknown"
+   ],
+   "action": "shirtless fighter turns in a dark bathhouse",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.03,
+    "parallax_residual": 0.05,
+    "net_travel_px": 0.7
+   },
+   "mean_rgb": [
+    43,
+    28,
+    16
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.541,
+   "best_vertical_crop_x_px": 542,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 29,
+   "blockiness": 2.32,
+   "mean_luma": 32,
+   "hero": false,
+   "still": "stills/sf054.jpg",
+   "still_frame": 1522
+  },
+  {
+   "id": "sf055",
+   "in": 63.647,
+   "out": 64.273,
+   "in_frame": 1526,
+   "out_frame": 1540,
+   "frames": 15,
+   "duration": 0.626,
+   "characters": [
+    "unknown"
+   ],
+   "action": "forearm smashes into a wooden panel",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.29,
+    "parallax_residual": 0.29,
+    "net_travel_px": 1.6
+   },
+   "mean_rgb": [
+    44,
+    28,
+    17
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.425,
+   "best_vertical_crop_x_px": 393,
+   "crop_cx_source": "saliency",
+   "quality": 1,
+   "sharpness_lapvar": 51,
+   "blockiness": 2.54,
+   "mean_luma": 32,
+   "hero": false,
+   "still": "stills/sf055.jpg",
+   "still_frame": 1537
+  },
+  {
+   "id": "sf056",
+   "in": 64.273,
+   "out": 66.108,
+   "in_frame": 1541,
+   "out_frame": 1584,
+   "frames": 44,
+   "duration": 1.835,
+   "characters": [
+    "unknown"
+   ],
+   "action": "shirtless fighter in the bathhouse, round window",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 1.5,
+    "parallax_residual": 1.32,
+    "net_travel_px": 8.1
+   },
+   "mean_rgb": [
+    56,
+    36,
+    23
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.244,
+   "best_vertical_crop_x_px": 162,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 59,
+   "blockiness": 2.71,
+   "mean_luma": 41,
+   "hero": false,
+   "still": "stills/sf056.jpg",
+   "still_frame": 1547
+  },
+  {
+   "id": "sf057",
+   "in": 66.108,
+   "out": 66.942,
+   "in_frame": 1585,
+   "out_frame": 1604,
+   "frames": 20,
+   "duration": 0.834,
+   "characters": [
+    "unknown"
+   ],
+   "action": "bathhouse brawl, blurred motion",
+   "camera": {
+    "move": "dolly",
+    "solvable": false,
+    "flow_px_per_frame": 0.71,
+    "parallax_residual": 0.52,
+    "net_travel_px": 4.9
+   },
+   "mean_rgb": [
+    47,
+    30,
+    16
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.381,
+   "best_vertical_crop_x_px": 337,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 41,
+   "blockiness": 2.14,
+   "mean_luma": 35,
+   "hero": false,
+   "still": "stills/sf057.jpg",
+   "still_frame": 1588
+  },
+  {
+   "id": "sf058",
+   "in": 66.942,
+   "out": 67.776,
+   "in_frame": 1605,
+   "out_frame": 1624,
+   "frames": 20,
+   "duration": 0.834,
+   "characters": [
+    "unknown"
+   ],
+   "action": "two shirtless fighters clash in the bathhouse",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 2.09,
+    "parallax_residual": 1.86,
+    "net_travel_px": 2.1
+   },
+   "mean_rgb": [
+    46,
+    30,
+    17
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.388,
+   "best_vertical_crop_x_px": 346,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 50,
+   "blockiness": 2.18,
+   "mean_luma": 34,
+   "hero": false,
+   "still": "stills/sf058.jpg",
+   "still_frame": 1617
+  },
+  {
+   "id": "sf059",
+   "in": 67.776,
+   "out": 68.36,
+   "in_frame": 1625,
+   "out_frame": 1638,
+   "frames": 14,
+   "duration": 0.584,
+   "characters": [
+    "unknown"
+   ],
+   "action": "close on a fighter's torso and towel mid-strike",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.21,
+    "parallax_residual": 0.2,
+    "net_travel_px": 0.2
+   },
+   "mean_rgb": [
+    36,
+    24,
+    13
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.717,
+   "best_vertical_crop_x_px": 767,
+   "crop_cx_source": "human_mask",
+   "quality": 1,
+   "sharpness_lapvar": 20,
+   "blockiness": 3.78,
+   "mean_luma": 28,
+   "hero": false,
+   "still": "stills/sf059.jpg",
+   "still_frame": 1632
+  },
+  {
+   "id": "sf060",
+   "in": 68.36,
+   "out": 69.111,
+   "in_frame": 1639,
+   "out_frame": 1656,
+   "frames": 18,
+   "duration": 0.751,
+   "characters": [
+    "unknown"
+   ],
+   "action": "close body grapple, bathhouse",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.55,
+    "parallax_residual": 0.43,
+    "net_travel_px": 0.9
+   },
+   "mean_rgb": [
+    41,
+    25,
+    13
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.384,
+   "best_vertical_crop_x_px": 341,
+   "crop_cx_source": "human_mask",
+   "quality": 1,
+   "sharpness_lapvar": 19,
+   "blockiness": 2.71,
+   "mean_luma": 29,
+   "hero": false,
+   "still": "stills/sf060.jpg",
+   "still_frame": 1652
+  },
+  {
+   "id": "sf061",
+   "in": 69.111,
+   "out": 70.487,
+   "in_frame": 1657,
+   "out_frame": 1689,
+   "frames": 33,
+   "duration": 1.376,
+   "characters": [
+    "unknown"
+   ],
+   "action": "shirtless fighter, face close, dark",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.01,
+    "parallax_residual": 0.14,
+    "net_travel_px": 2.1
+   },
+   "mean_rgb": [
+    28,
+    17,
+    11
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 15,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.555,
+   "best_vertical_crop_x_px": 560,
+   "crop_cx_source": "human_mask",
+   "quality": 1,
+   "sharpness_lapvar": 10,
+   "blockiness": 2.17,
+   "mean_luma": 21,
+   "hero": false,
+   "still": "stills/sf061.jpg",
+   "still_frame": 1684
+  },
+  {
+   "id": "sf062",
+   "in": 70.487,
+   "out": 72.155,
+   "in_frame": 1690,
+   "out_frame": 1729,
+   "frames": 40,
+   "duration": 1.668,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter thrown across the bathhouse floor",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.36,
+    "parallax_residual": 0.3,
+    "net_travel_px": 0.6
+   },
+   "mean_rgb": [
+    54,
+    34,
+    22
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.657,
+   "best_vertical_crop_x_px": 690,
+   "crop_cx_source": "human_mask",
+   "quality": 1,
+   "sharpness_lapvar": 39,
+   "blockiness": 2.89,
+   "mean_luma": 39,
+   "hero": false,
+   "still": "stills/sf062.jpg",
+   "still_frame": 1723
+  },
+  {
+   "id": "sf063",
+   "in": 72.155,
+   "out": 72.948,
+   "in_frame": 1730,
+   "out_frame": 1748,
+   "frames": 19,
+   "duration": 0.792,
+   "characters": [
+    "unknown"
+   ],
+   "action": "open hand thrusts through steam",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.01,
+    "parallax_residual": 0.04,
+    "net_travel_px": 0.2
+   },
+   "mean_rgb": [
+    98,
+    65,
+    40
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.441,
+   "best_vertical_crop_x_px": 414,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 60,
+   "blockiness": 3.38,
+   "mean_luma": 72,
+   "hero": false,
+   "still": "stills/sf063.jpg",
+   "still_frame": 1745
+  },
+  {
+   "id": "sf064",
+   "in": 72.948,
+   "out": 73.824,
+   "in_frame": 1749,
+   "out_frame": 1769,
+   "frames": 21,
+   "duration": 0.876,
+   "characters": [
+    "E. Honda"
+   ],
+   "action": "E. Honda's face through thick steam",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.02,
+    "parallax_residual": 0.04,
+    "net_travel_px": 0.2
+   },
+   "mean_rgb": [
+    57,
+    36,
+    24
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.468,
+   "best_vertical_crop_x_px": 448,
+   "crop_cx_source": "human_mask",
+   "quality": 1,
+   "sharpness_lapvar": 17,
+   "blockiness": 4.3,
+   "mean_luma": 42,
+   "hero": false,
+   "still": "stills/sf064.jpg",
+   "still_frame": 1764
+  },
+  {
+   "id": "sf065",
+   "in": 73.824,
+   "out": 75.075,
+   "in_frame": 1770,
+   "out_frame": 1799,
+   "frames": 30,
+   "duration": 1.251,
+   "characters": [
+    "unknown"
+   ],
+   "action": "figure barely visible in steam",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.04,
+    "parallax_residual": 0.1,
+    "net_travel_px": 1.9
+   },
+   "mean_rgb": [
+    64,
+    40,
+    23
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.552,
+   "best_vertical_crop_x_px": 556,
+   "crop_cx_source": "saliency",
+   "quality": 1,
+   "sharpness_lapvar": 20,
+   "blockiness": 5.31,
+   "mean_luma": 45,
+   "hero": false,
+   "still": "stills/sf065.jpg",
+   "still_frame": 1794
+  },
+  {
+   "id": "sf066",
+   "in": 75.075,
+   "out": 75.909,
+   "in_frame": 1800,
+   "out_frame": 1819,
+   "frames": 20,
+   "duration": 0.834,
+   "characters": [
+    "unknown"
+   ],
+   "action": "debris flies through steam, dark",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.03,
+    "parallax_residual": 0.06,
+    "net_travel_px": 0.7
+   },
+   "mean_rgb": [
+    41,
+    26,
+    17
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.431,
+   "best_vertical_crop_x_px": 401,
+   "crop_cx_source": "saliency",
+   "quality": 1,
+   "sharpness_lapvar": 9,
+   "blockiness": 5.7,
+   "mean_luma": 31,
+   "hero": false,
+   "still": "stills/sf066.jpg",
+   "still_frame": 1815
+  },
+  {
+   "id": "sf067",
+   "in": 75.909,
+   "out": 78.203,
+   "in_frame": 1820,
+   "out_frame": 1874,
+   "frames": 55,
+   "duration": 2.294,
+   "characters": [
+    "unknown"
+   ],
+   "action": "steam-filled bathhouse, almost no detail",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.0,
+    "parallax_residual": 0.02,
+    "net_travel_px": 0.6
+   },
+   "mean_rgb": [
+    54,
+    34,
+    15
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.551,
+   "best_vertical_crop_x_px": 555,
+   "crop_cx_source": "saliency",
+   "quality": 1,
+   "sharpness_lapvar": 16,
+   "blockiness": 7.05,
+   "mean_luma": 39,
+   "hero": false,
+   "still": "stills/sf067.jpg",
+   "still_frame": 1838
+  },
+  {
+   "id": "sf068",
+   "in": 78.203,
+   "out": 80.497,
+   "in_frame": 1875,
+   "out_frame": 1929,
+   "frames": 55,
+   "duration": 2.294,
+   "characters": [
+    "unknown"
+   ],
+   "action": "pale steam fills the frame, figure emerges",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.02,
+    "parallax_residual": 0.04,
+    "net_travel_px": 0.5
+   },
+   "mean_rgb": [
+    78,
+    47,
+    24
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.451,
+   "best_vertical_crop_x_px": 427,
+   "crop_cx_source": "saliency",
+   "quality": 1,
+   "sharpness_lapvar": 13,
+   "blockiness": 6.56,
+   "mean_luma": 54,
+   "hero": false,
+   "still": "stills/sf068.jpg",
+   "still_frame": 1883
+  },
+  {
+   "id": "sf069",
+   "in": 80.497,
+   "out": 81.79,
+   "in_frame": 1930,
+   "out_frame": 1960,
+   "frames": 31,
+   "duration": 1.293,
+   "characters": [
+    "E. Honda"
+   ],
+   "action": "shirtless fighter kicks at E. Honda (back of head) in steam",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.03,
+    "parallax_residual": 0.07,
+    "net_travel_px": 0.3
+   },
+   "mean_rgb": [
+    58,
+    35,
+    19
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.8,
+   "best_vertical_crop_x_px": 873,
+   "crop_cx_source": "human_mask",
+   "quality": 1,
+   "sharpness_lapvar": 14,
+   "blockiness": 4.84,
+   "mean_luma": 40,
+   "hero": false,
+   "still": "stills/sf069.jpg",
+   "still_frame": 1942
+  },
+  {
+   "id": "sf070",
+   "in": 81.79,
+   "out": 82.833,
+   "in_frame": 1961,
+   "out_frame": 1985,
+   "frames": 25,
+   "duration": 1.043,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter dives over another in steam",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.04,
+    "parallax_residual": 0.07,
+    "net_travel_px": 1.4
+   },
+   "mean_rgb": [
+    50,
+    30,
+    16
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.539,
+   "best_vertical_crop_x_px": 539,
+   "crop_cx_source": "human_mask",
+   "quality": 1,
+   "sharpness_lapvar": 22,
+   "blockiness": 3.33,
+   "mean_luma": 35,
+   "hero": false,
+   "still": "stills/sf070.jpg",
+   "still_frame": 1981
+  },
+  {
+   "id": "sf071",
+   "in": 82.833,
+   "out": 83.959,
+   "in_frame": 1986,
+   "out_frame": 2012,
+   "frames": 27,
+   "duration": 1.126,
+   "characters": [
+    "unknown"
+   ],
+   "action": "body flies over the bathhouse pool, silhouette",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.1,
+    "parallax_residual": 0.1,
+    "net_travel_px": 2.0
+   },
+   "mean_rgb": [
+    67,
+    41,
+    22
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.48,
+   "best_vertical_crop_x_px": 464,
+   "crop_cx_source": "saliency",
+   "quality": 2,
+   "sharpness_lapvar": 69,
+   "blockiness": 2.56,
+   "mean_luma": 47,
+   "hero": false,
+   "still": "stills/sf071.jpg",
+   "still_frame": 1989
+  },
+  {
+   "id": "sf072",
+   "in": 83.959,
+   "out": 84.71,
+   "in_frame": 2013,
+   "out_frame": 2030,
+   "frames": 18,
+   "duration": 0.751,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter lands sprawled on the bathhouse floor",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.14,
+    "parallax_residual": 0.14,
+    "net_travel_px": 0.7
+   },
+   "mean_rgb": [
+    70,
+    43,
+    24
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.441,
+   "best_vertical_crop_x_px": 414,
+   "crop_cx_source": "saliency",
+   "quality": 1,
+   "sharpness_lapvar": 23,
+   "blockiness": 3.27,
+   "mean_luma": 49,
+   "hero": false,
+   "still": "stills/sf072.jpg",
+   "still_frame": 2021
+  },
+  {
+   "id": "sf073",
+   "in": 84.71,
+   "out": 85.877,
+   "in_frame": 2031,
+   "out_frame": 2058,
+   "frames": 28,
+   "duration": 1.168,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter in a towel stands in the bathhouse, wide",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.01,
+    "parallax_residual": 0.03,
+    "net_travel_px": 0.7
+   },
+   "mean_rgb": [
+    58,
+    36,
+    24
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.293,
+   "best_vertical_crop_x_px": 224,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 27,
+   "blockiness": 2.16,
+   "mean_luma": 42,
+   "hero": false,
+   "still": "stills/sf073.jpg",
+   "still_frame": 2052
+  },
+  {
+   "id": "sf074",
+   "in": 85.877,
+   "out": 86.878,
+   "in_frame": 2059,
+   "out_frame": 2082,
+   "frames": 24,
+   "duration": 1.001,
+   "characters": [
+    "unknown"
+   ],
+   "action": "young man in a hoodie in a neon nightclub, wide-eyed",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 1.12,
+    "parallax_residual": 0.86,
+    "net_travel_px": 7.1
+   },
+   "mean_rgb": [
+    26,
+    49,
+    98
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.473,
+   "best_vertical_crop_x_px": 455,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 136,
+   "blockiness": 1.7,
+   "mean_luma": 49,
+   "hero": false,
+   "still": "stills/sf074.jpg",
+   "still_frame": 2077
+  },
+  {
+   "id": "sf075",
+   "in": 86.878,
+   "out": 88.714,
+   "in_frame": 2083,
+   "out_frame": 2126,
+   "frames": 44,
+   "duration": 1.835,
+   "characters": [
+    "unknown"
+   ],
+   "action": "man in a white suit poses on a neon club stage",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.35,
+    "parallax_residual": 0.31,
+    "net_travel_px": 8.1
+   },
+   "mean_rgb": [
+    48,
+    33,
+    85
+   ],
+   "dominant_hue": "purple",
+   "dominant_hue_deg": 285,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.391,
+   "best_vertical_crop_x_px": 350,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 87,
+   "blockiness": 1.56,
+   "mean_luma": 42,
+   "hero": false,
+   "still": "stills/sf075.jpg",
+   "still_frame": 2114
+  },
+  {
+   "id": "sf076",
+   "in": 88.714,
+   "out": 90.048,
+   "in_frame": 2127,
+   "out_frame": 2158,
+   "frames": 32,
+   "duration": 1.335,
+   "characters": [
+    "unknown"
+   ],
+   "action": "nightclub brawl, neon, blurred",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.13,
+    "parallax_residual": 0.15,
+    "net_travel_px": 0.3
+   },
+   "mean_rgb": [
+    25,
+    23,
+    67
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 245,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.52,
+   "best_vertical_crop_x_px": 515,
+   "crop_cx_source": "saliency",
+   "quality": 3,
+   "sharpness_lapvar": 84,
+   "blockiness": 2.05,
+   "mean_luma": 29,
+   "hero": false,
+   "still": "stills/sf076.jpg",
+   "still_frame": 2150
+  },
+  {
+   "id": "sf077",
+   "in": 90.048,
+   "out": 91.174,
+   "in_frame": 2159,
+   "out_frame": 2185,
+   "frames": 27,
+   "duration": 1.126,
+   "characters": [
+    "unknown"
+   ],
+   "action": "club brawl near a World Warrior banner, wide",
+   "camera": {
+    "move": "tilt",
+    "solvable": false,
+    "flow_px_per_frame": 0.94,
+    "parallax_residual": 0.43,
+    "net_travel_px": 20.7
+   },
+   "mean_rgb": [
+    29,
+    25,
+    77
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 225,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.506,
+   "best_vertical_crop_x_px": 497,
+   "crop_cx_source": "saliency",
+   "quality": 4,
+   "sharpness_lapvar": 267,
+   "blockiness": 1.45,
+   "mean_luma": 31,
+   "hero": false,
+   "still": "stills/sf077.jpg",
+   "still_frame": 2181
+  },
+  {
+   "id": "sf078",
+   "in": 91.174,
+   "out": 91.967,
+   "in_frame": 2186,
+   "out_frame": 2204,
+   "frames": 19,
+   "duration": 0.792,
+   "characters": [
+    "unknown"
+   ],
+   "action": "blurred fighter in pink and blue light",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 3.32,
+    "parallax_residual": 3.21,
+    "net_travel_px": 4.0
+   },
+   "mean_rgb": [
+    54,
+    49,
+    124
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 245,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.573,
+   "best_vertical_crop_x_px": 583,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 59,
+   "blockiness": 2.16,
+   "mean_luma": 57,
+   "hero": false,
+   "still": "stills/sf078.jpg",
+   "still_frame": 2188
+  },
+  {
+   "id": "sf079",
+   "in": 91.967,
+   "out": 92.592,
+   "in_frame": 2205,
+   "out_frame": 2219,
+   "frames": 15,
+   "duration": 0.626,
+   "characters": [
+    "unknown"
+   ],
+   "action": "white-suited man fights in the club, neon rings",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.57,
+    "parallax_residual": 0.46,
+    "net_travel_px": 2.4
+   },
+   "mean_rgb": [
+    44,
+    40,
+    111
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.497,
+   "best_vertical_crop_x_px": 485,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 117,
+   "blockiness": 1.6,
+   "mean_luma": 47,
+   "hero": false,
+   "still": "stills/sf079.jpg",
+   "still_frame": 2216
+  },
+  {
+   "id": "sf080",
+   "in": 92.592,
+   "out": 93.927,
+   "in_frame": 2220,
+   "out_frame": 2251,
+   "frames": 32,
+   "duration": 1.335,
+   "characters": [],
+   "action": "title: ON OCTOBER 16 over the tournament arena",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.19,
+    "parallax_residual": 0.24,
+    "net_travel_px": 6.7
+   },
+   "mean_rgb": [
+    60,
+    40,
+    34
+   ],
+   "dominant_hue": "red",
+   "dominant_hue_deg": 5,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.5,
+   "best_vertical_crop_x_px": 489,
+   "crop_cx_source": "by_eye",
+   "quality": 5,
+   "sharpness_lapvar": 406,
+   "blockiness": 1.48,
+   "mean_luma": 46,
+   "hero": false,
+   "still": "stills/sf080.jpg",
+   "still_frame": 2230
+  },
+  {
+   "id": "sf081",
+   "in": 93.927,
+   "out": 95.012,
+   "in_frame": 2252,
+   "out_frame": 2277,
+   "frames": 26,
+   "duration": 1.084,
+   "characters": [
+    "unknown"
+   ],
+   "action": "man in a white tracksuit with a mic in a neon corridor",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.22,
+    "parallax_residual": 0.1,
+    "net_travel_px": 5.9
+   },
+   "mean_rgb": [
+    48,
+    73,
+    188
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 225,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.498,
+   "best_vertical_crop_x_px": 487,
+   "crop_cx_source": "saliency",
+   "quality": 4,
+   "sharpness_lapvar": 209,
+   "blockiness": 1.24,
+   "mean_luma": 78,
+   "hero": false,
+   "still": "stills/sf081.jpg",
+   "still_frame": 2273
+  },
+  {
+   "id": "sf082",
+   "in": 95.012,
+   "out": 95.971,
+   "in_frame": 2278,
+   "out_frame": 2300,
+   "frames": 23,
+   "duration": 0.959,
+   "characters": [
+    "Guile"
+   ],
+   "action": "Guile, flat-top, stares into camera, warm light",
+   "camera": {
+    "move": "tilt",
+    "solvable": false,
+    "flow_px_per_frame": 0.37,
+    "parallax_residual": 0.43,
+    "net_travel_px": 16.7
+   },
+   "mean_rgb": [
+    95,
+    55,
+    24
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.375,
+   "best_vertical_crop_x_px": 329,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 72,
+   "blockiness": 1.58,
+   "mean_luma": 63,
+   "hero": true,
+   "still": "stills/sf082.jpg",
+   "still_frame": 2290
+  },
+  {
+   "id": "sf083",
+   "in": 95.971,
+   "out": 97.306,
+   "in_frame": 2301,
+   "out_frame": 2332,
+   "frames": 32,
+   "duration": 1.335,
+   "characters": [
+    "unknown"
+   ],
+   "action": "huge bearded shirtless man with a horse in a paddock",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.36,
+    "parallax_residual": 0.26,
+    "net_travel_px": 11.4
+   },
+   "mean_rgb": [
+    141,
+    141,
+    143
+   ],
+   "dominant_hue": "neutral",
+   "dominant_hue_deg": null,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.62,
+   "best_vertical_crop_x_px": 643,
+   "crop_cx_source": "by_eye",
+   "quality": 5,
+   "sharpness_lapvar": 466,
+   "blockiness": 1.14,
+   "mean_luma": 143,
+   "hero": false,
+   "still": "stills/sf083.jpg",
+   "still_frame": 2317
+  },
+  {
+   "id": "sf084",
+   "in": 97.306,
+   "out": 98.223,
+   "in_frame": 2333,
+   "out_frame": 2354,
+   "frames": 22,
+   "duration": 0.918,
+   "characters": [
+    "Cammy"
+   ],
+   "action": "Cammy in blue leotard and beret strides down a neon street",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.52,
+    "parallax_residual": 0.34,
+    "net_travel_px": 9.0
+   },
+   "mean_rgb": [
+    26,
+    21,
+    29
+   ],
+   "dominant_hue": "red",
+   "dominant_hue_deg": 5,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.453,
+   "best_vertical_crop_x_px": 429,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 79,
+   "blockiness": 1.53,
+   "mean_luma": 25,
+   "hero": true,
+   "still": "stills/sf084.jpg",
+   "still_frame": 2350
+  },
+  {
+   "id": "sf085",
+   "in": 98.223,
+   "out": 99.016,
+   "in_frame": 2355,
+   "out_frame": 2373,
+   "frames": 19,
+   "duration": 0.792,
+   "characters": [
+    "unknown"
+   ],
+   "action": "woman lying in slatted window light",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.23,
+    "parallax_residual": 0.15,
+    "net_travel_px": 5.0
+   },
+   "mean_rgb": [
+    126,
+    106,
+    87
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 35,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.666,
+   "best_vertical_crop_x_px": 702,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 265,
+   "blockiness": 1.38,
+   "mean_luma": 111,
+   "hero": false,
+   "still": "stills/sf085.jpg",
+   "still_frame": 2370
+  },
+  {
+   "id": "sf086",
+   "in": 99.016,
+   "out": 99.975,
+   "in_frame": 2374,
+   "out_frame": 2396,
+   "frames": 23,
+   "duration": 0.959,
+   "characters": [
+    "unknown"
+   ],
+   "action": "caped figure in a blinding light flare",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.74,
+    "parallax_residual": 0.56,
+    "net_travel_px": 8.7
+   },
+   "mean_rgb": [
+    55,
+    44,
+    46
+   ],
+   "dominant_hue": "red",
+   "dominant_hue_deg": 5,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.38,
+   "best_vertical_crop_x_px": 336,
+   "crop_cx_source": "by_eye",
+   "quality": 3,
+   "sharpness_lapvar": 80,
+   "blockiness": 2.21,
+   "mean_luma": 48,
+   "hero": false,
+   "still": "stills/sf086.jpg",
+   "still_frame": 2379
+  },
+  {
+   "id": "sf087",
+   "in": 99.975,
+   "out": 101.351,
+   "in_frame": 2397,
+   "out_frame": 2429,
+   "frames": 33,
+   "duration": 1.376,
+   "characters": [
+    "unknown"
+   ],
+   "action": "man in a pink suit yells into a megaphone, soldiers behind",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.07,
+    "parallax_residual": 0.1,
+    "net_travel_px": 0.5
+   },
+   "mean_rgb": [
+    59,
+    44,
+    35
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 35,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.601,
+   "best_vertical_crop_x_px": 619,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 199,
+   "blockiness": 1.6,
+   "mean_luma": 48,
+   "hero": true,
+   "still": "stills/sf087.jpg",
+   "still_frame": 2423
+  },
+  {
+   "id": "sf088",
+   "in": 101.351,
+   "out": 102.185,
+   "in_frame": 2430,
+   "out_frame": 2449,
+   "frames": 20,
+   "duration": 0.834,
+   "characters": [
+    "unknown"
+   ],
+   "action": "nightclub crowd with hands up, blue and pink lights",
+   "camera": {
+    "move": "pan",
+    "solvable": false,
+    "flow_px_per_frame": 2.68,
+    "parallax_residual": 1.81,
+    "net_travel_px": 20.4
+   },
+   "mean_rgb": [
+    48,
+    62,
+    155
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.436,
+   "best_vertical_crop_x_px": 407,
+   "crop_cx_source": "saliency",
+   "quality": 3,
+   "sharpness_lapvar": 149,
+   "blockiness": 2.79,
+   "mean_luma": 68,
+   "hero": false,
+   "still": "stills/sf088.jpg",
+   "still_frame": 2436
+  },
+  {
+   "id": "sf089",
+   "in": 102.185,
+   "out": 103.52,
+   "in_frame": 2450,
+   "out_frame": 2481,
+   "frames": 32,
+   "duration": 1.335,
+   "characters": [
+    "unknown"
+   ],
+   "action": "long-haired man in a vest, arms crossed, club crowd",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 1.0,
+    "parallax_residual": 0.87,
+    "net_travel_px": 4.9
+   },
+   "mean_rgb": [
+    32,
+    60,
+    140
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.471,
+   "best_vertical_crop_x_px": 452,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 132,
+   "blockiness": 1.78,
+   "mean_luma": 62,
+   "hero": false,
+   "still": "stills/sf089.jpg",
+   "still_frame": 2466
+  },
+  {
+   "id": "sf090",
+   "in": 103.52,
+   "out": 105.439,
+   "in_frame": 2482,
+   "out_frame": 2527,
+   "frames": 46,
+   "duration": 1.919,
+   "characters": [
+    "Guile"
+   ],
+   "action": "Guile, hands on head, next to a young man in a hoodie, club",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.13,
+    "parallax_residual": 0.16,
+    "net_travel_px": 4.8
+   },
+   "mean_rgb": [
+    30,
+    30,
+    75
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 245,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.35,
+   "best_vertical_crop_x_px": 297,
+   "crop_cx_source": "by_eye",
+   "quality": 3,
+   "sharpness_lapvar": 85,
+   "blockiness": 1.82,
+   "mean_luma": 35,
+   "hero": true,
+   "still": "stills/sf090.jpg",
+   "still_frame": 2518
+  },
+  {
+   "id": "sf091",
+   "in": 105.439,
+   "out": 106.398,
+   "in_frame": 2528,
+   "out_frame": 2550,
+   "frames": 23,
+   "duration": 0.959,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter glows purple on the arena floor, wide",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.25,
+    "parallax_residual": 0.2,
+    "net_travel_px": 3.0
+   },
+   "mean_rgb": [
+    20,
+    31,
+    67
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 225,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.425,
+   "best_vertical_crop_x_px": 393,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 107,
+   "blockiness": 1.8,
+   "mean_luma": 33,
+   "hero": false,
+   "still": "stills/sf091.jpg",
+   "still_frame": 2546
+  },
+  {
+   "id": "sf092",
+   "in": 106.398,
+   "out": 106.982,
+   "in_frame": 2551,
+   "out_frame": 2564,
+   "frames": 14,
+   "duration": 0.584,
+   "characters": [
+    "unknown"
+   ],
+   "action": "face in red light, pink energy streaks",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.43,
+    "parallax_residual": 0.41,
+    "net_travel_px": 0.4
+   },
+   "mean_rgb": [
+    74,
+    42,
+    111
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 245,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.3,
+   "best_vertical_crop_x_px": 233,
+   "crop_cx_source": "by_eye",
+   "quality": 2,
+   "sharpness_lapvar": 45,
+   "blockiness": 2.06,
+   "mean_luma": 56,
+   "hero": false,
+   "still": "stills/sf092.jpg",
+   "still_frame": 2562
+  },
+  {
+   "id": "sf093",
+   "in": 106.982,
+   "out": 107.691,
+   "in_frame": 2565,
+   "out_frame": 2581,
+   "frames": 17,
+   "duration": 0.709,
+   "characters": [
+    "unknown"
+   ],
+   "action": "white-haired fighter hit by a purple energy blast",
+   "camera": {
+    "move": "dolly",
+    "solvable": false,
+    "flow_px_per_frame": 1.37,
+    "parallax_residual": 0.87,
+    "net_travel_px": 8.7
+   },
+   "mean_rgb": [
+    32,
+    27,
+    77
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 235,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.409,
+   "best_vertical_crop_x_px": 373,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 57,
+   "blockiness": 1.96,
+   "mean_luma": 33,
+   "hero": false,
+   "still": "stills/sf093.jpg",
+   "still_frame": 2578
+  },
+  {
+   "id": "sf094",
+   "in": 107.691,
+   "out": 108.15,
+   "in_frame": 2582,
+   "out_frame": 2592,
+   "frames": 11,
+   "duration": 0.459,
+   "characters": [
+    "unknown"
+   ],
+   "action": "woman swings a staff in a dark hall",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.33,
+    "parallax_residual": 0.21,
+    "net_travel_px": 2.8
+   },
+   "mean_rgb": [
+    55,
+    36,
+    28
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.402,
+   "best_vertical_crop_x_px": 364,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 116,
+   "blockiness": 1.81,
+   "mean_luma": 41,
+   "hero": false,
+   "still": "stills/sf094.jpg",
+   "still_frame": 2590
+  },
+  {
+   "id": "sf095",
+   "in": 108.15,
+   "out": 108.692,
+   "in_frame": 2593,
+   "out_frame": 2605,
+   "frames": 13,
+   "duration": 0.542,
+   "characters": [
+    "Chun-Li"
+   ],
+   "action": "Chun-Li in red slashes, blade across frame",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.19,
+    "parallax_residual": 0.17,
+    "net_travel_px": 0.9
+   },
+   "mean_rgb": [
+    40,
+    20,
+    14
+   ],
+   "dominant_hue": "red",
+   "dominant_hue_deg": 5,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.47,
+   "best_vertical_crop_x_px": 451,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 36,
+   "blockiness": 2.67,
+   "mean_luma": 25,
+   "hero": true,
+   "still": "stills/sf095.jpg",
+   "still_frame": 2601
+  },
+  {
+   "id": "sf096",
+   "in": 108.692,
+   "out": 109.443,
+   "in_frame": 2606,
+   "out_frame": 2623,
+   "frames": 18,
+   "duration": 0.751,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighters silhouetted against a latticed window",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.01,
+    "parallax_residual": 0.05,
+    "net_travel_px": 0.4
+   },
+   "mean_rgb": [
+    98,
+    76,
+    62
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.506,
+   "best_vertical_crop_x_px": 497,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 161,
+   "blockiness": 1.91,
+   "mean_luma": 82,
+   "hero": false,
+   "still": "stills/sf096.jpg",
+   "still_frame": 2620
+  },
+  {
+   "id": "sf097",
+   "in": 109.443,
+   "out": 110.694,
+   "in_frame": 2624,
+   "out_frame": 2653,
+   "frames": 30,
+   "duration": 1.251,
+   "characters": [
+    "unknown"
+   ],
+   "action": "woman in uniform raises a baton, dark hall",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.01,
+    "parallax_residual": 0.08,
+    "net_travel_px": 0.3
+   },
+   "mean_rgb": [
+    54,
+    37,
+    27
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.411,
+   "best_vertical_crop_x_px": 375,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 125,
+   "blockiness": 1.92,
+   "mean_luma": 42,
+   "hero": false,
+   "still": "stills/sf097.jpg",
+   "still_frame": 2636
+  },
+  {
+   "id": "sf098",
+   "in": 110.694,
+   "out": 111.987,
+   "in_frame": 2654,
+   "out_frame": 2684,
+   "frames": 31,
+   "duration": 1.293,
+   "characters": [
+    "Chun-Li"
+   ],
+   "action": "Chun-Li in red, close, soldiers behind",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.09,
+    "parallax_residual": 0.08,
+    "net_travel_px": 2.6
+   },
+   "mean_rgb": [
+    43,
+    24,
+    17
+   ],
+   "dominant_hue": "red",
+   "dominant_hue_deg": 5,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.486,
+   "best_vertical_crop_x_px": 471,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 34,
+   "blockiness": 1.85,
+   "mean_luma": 29,
+   "hero": false,
+   "still": "stills/sf098.jpg",
+   "still_frame": 2678
+  },
+  {
+   "id": "sf099",
+   "in": 111.987,
+   "out": 112.571,
+   "in_frame": 2685,
+   "out_frame": 2698,
+   "frames": 14,
+   "duration": 0.584,
+   "characters": [
+    "unknown"
+   ],
+   "action": "figure leaps down through a caged industrial atrium, wide",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.04,
+    "parallax_residual": 0.06,
+    "net_travel_px": 0.8
+   },
+   "mean_rgb": [
+    32,
+    38,
+    46
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.735,
+   "best_vertical_crop_x_px": 790,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 234,
+   "blockiness": 1.67,
+   "mean_luma": 39,
+   "hero": false,
+   "still": "stills/sf099.jpg",
+   "still_frame": 2694
+  },
+  {
+   "id": "sf100",
+   "in": 112.571,
+   "out": 113.53,
+   "in_frame": 2699,
+   "out_frame": 2721,
+   "frames": 23,
+   "duration": 0.959,
+   "characters": [
+    "Blanka"
+   ],
+   "action": "Blanka, green skin and orange hair, roars arms raised",
+   "camera": {
+    "move": "pan",
+    "solvable": false,
+    "flow_px_per_frame": 1.65,
+    "parallax_residual": 0.25,
+    "net_travel_px": 58.9
+   },
+   "mean_rgb": [
+    44,
+    57,
+    72
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.382,
+   "best_vertical_crop_x_px": 338,
+   "crop_cx_source": "human_mask",
+   "quality": 5,
+   "sharpness_lapvar": 308,
+   "blockiness": 1.08,
+   "mean_luma": 57,
+   "hero": true,
+   "still": "stills/sf100.jpg",
+   "still_frame": 2715
+  },
+  {
+   "id": "sf101",
+   "in": 113.53,
+   "out": 115.032,
+   "in_frame": 2722,
+   "out_frame": 2757,
+   "frames": 36,
+   "duration": 1.501,
+   "characters": [
+    "unknown"
+   ],
+   "action": "spinning kick in a dark hall, red costume",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 1.05,
+    "parallax_residual": 0.93,
+    "net_travel_px": 6.3
+   },
+   "mean_rgb": [
+    37,
+    26,
+    27
+   ],
+   "dominant_hue": "red",
+   "dominant_hue_deg": 355,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.67,
+   "best_vertical_crop_x_px": 707,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 105,
+   "blockiness": 2.09,
+   "mean_luma": 30,
+   "hero": false,
+   "still": "stills/sf101.jpg",
+   "still_frame": 2749
+  },
+  {
+   "id": "sf102",
+   "in": 115.032,
+   "out": 116.116,
+   "in_frame": 2758,
+   "out_frame": 2783,
+   "frames": 26,
+   "duration": 1.084,
+   "characters": [
+    "unknown"
+   ],
+   "action": "masked figure blurred in the foreground, dark",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.04,
+    "parallax_residual": 0.07,
+    "net_travel_px": 0.2
+   },
+   "mean_rgb": [
+    30,
+    20,
+    19
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 15,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.24,
+   "best_vertical_crop_x_px": 156,
+   "crop_cx_source": "human_mask",
+   "quality": 1,
+   "sharpness_lapvar": 11,
+   "blockiness": 6.43,
+   "mean_luma": 24,
+   "hero": false,
+   "still": "stills/sf102.jpg",
+   "still_frame": 2771
+  },
+  {
+   "id": "sf103",
+   "in": 116.116,
+   "out": 116.95,
+   "in_frame": 2784,
+   "out_frame": 2803,
+   "frames": 20,
+   "duration": 0.834,
+   "characters": [
+    "unknown"
+   ],
+   "action": "woman kicks a man in a smoky, light-shafted hall",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.62,
+    "parallax_residual": 0.38,
+    "net_travel_px": 1.1
+   },
+   "mean_rgb": [
+    57,
+    53,
+    53
+   ],
+   "dominant_hue": "red",
+   "dominant_hue_deg": 5,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.689,
+   "best_vertical_crop_x_px": 731,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 120,
+   "blockiness": 1.95,
+   "mean_luma": 56,
+   "hero": false,
+   "still": "stills/sf103.jpg",
+   "still_frame": 2800
+  },
+  {
+   "id": "sf104",
+   "in": 116.95,
+   "out": 117.951,
+   "in_frame": 2804,
+   "out_frame": 2827,
+   "frames": 24,
+   "duration": 1.001,
+   "characters": [],
+   "action": "insert: glowing orb device on a wooden table",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.0,
+    "parallax_residual": 0.02,
+    "net_travel_px": 0.1
+   },
+   "mean_rgb": [
+    53,
+    30,
+    16
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.513,
+   "best_vertical_crop_x_px": 506,
+   "crop_cx_source": "human_mask",
+   "quality": 1,
+   "sharpness_lapvar": 42,
+   "blockiness": 2.97,
+   "mean_luma": 36,
+   "hero": false,
+   "still": "stills/sf104.jpg",
+   "still_frame": 2811
+  },
+  {
+   "id": "sf105",
+   "in": 117.951,
+   "out": 118.827,
+   "in_frame": 2828,
+   "out_frame": 2848,
+   "frames": 21,
+   "duration": 0.876,
+   "characters": [
+    "unknown"
+   ],
+   "action": "officer in a peaked cap leans over a desk, backlit",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.02,
+    "parallax_residual": 0.04,
+    "net_travel_px": 0.6
+   },
+   "mean_rgb": [
+    95,
+    74,
+    62
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.543,
+   "best_vertical_crop_x_px": 544,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 105,
+   "blockiness": 1.76,
+   "mean_luma": 80,
+   "hero": false,
+   "still": "stills/sf105.jpg",
+   "still_frame": 2831
+  },
+  {
+   "id": "sf106",
+   "in": 118.827,
+   "out": 119.578,
+   "in_frame": 2849,
+   "out_frame": 2866,
+   "frames": 18,
+   "duration": 0.751,
+   "characters": [
+    "Chun-Li"
+   ],
+   "action": "Chun-Li leans in, smirking, dark",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.11,
+    "parallax_residual": 0.15,
+    "net_travel_px": 2.2
+   },
+   "mean_rgb": [
+    38,
+    21,
+    16
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.591,
+   "best_vertical_crop_x_px": 606,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 32,
+   "blockiness": 1.83,
+   "mean_luma": 26,
+   "hero": false,
+   "still": "stills/sf106.jpg",
+   "still_frame": 2861
+  },
+  {
+   "id": "sf107",
+   "in": 119.578,
+   "out": 120.287,
+   "in_frame": 2867,
+   "out_frame": 2883,
+   "frames": 17,
+   "duration": 0.709,
+   "characters": [
+    "M. Bison"
+   ],
+   "action": "M. Bison in red uniform and peaked cap, close",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.03,
+    "parallax_residual": 0.08,
+    "net_travel_px": 0.8
+   },
+   "mean_rgb": [
+    45,
+    29,
+    21
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.408,
+   "best_vertical_crop_x_px": 371,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 28,
+   "blockiness": 2.01,
+   "mean_luma": 33,
+   "hero": true,
+   "still": "stills/sf107.jpg",
+   "still_frame": 2880
+  },
+  {
+   "id": "sf108",
+   "in": 120.287,
+   "out": 121.121,
+   "in_frame": 2884,
+   "out_frame": 2903,
+   "frames": 20,
+   "duration": 0.834,
+   "characters": [],
+   "action": "armoured truck convoy at night with headlights",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.79,
+    "parallax_residual": 0.65,
+    "net_travel_px": 7.3
+   },
+   "mean_rgb": [
+    27,
+    33,
+    36
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.495,
+   "best_vertical_crop_x_px": 483,
+   "crop_cx_source": "saliency",
+   "quality": 4,
+   "sharpness_lapvar": 185,
+   "blockiness": 1.74,
+   "mean_luma": 34,
+   "hero": false,
+   "still": "stills/sf108.jpg",
+   "still_frame": 2893
+  },
+  {
+   "id": "sf109",
+   "in": 121.121,
+   "out": 122.914,
+   "in_frame": 2904,
+   "out_frame": 2946,
+   "frames": 43,
+   "duration": 1.793,
+   "characters": [
+    "Cammy"
+   ],
+   "action": "Cammy fires a rotary weapon, muzzle flash, night",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.04,
+    "parallax_residual": 0.09,
+    "net_travel_px": 2.4
+   },
+   "mean_rgb": [
+    25,
+    32,
+    33
+   ],
+   "dominant_hue": "cyan",
+   "dominant_hue_deg": 195,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.57,
+   "best_vertical_crop_x_px": 579,
+   "crop_cx_source": "by_eye",
+   "quality": 3,
+   "sharpness_lapvar": 161,
+   "blockiness": 2.5,
+   "mean_luma": 32,
+   "hero": true,
+   "still": "stills/sf109.jpg",
+   "still_frame": 2938
+  },
+  {
+   "id": "sf110",
+   "in": 122.914,
+   "out": 123.665,
+   "in_frame": 2947,
+   "out_frame": 2964,
+   "frames": 18,
+   "duration": 0.751,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighters silhouetted against a huge explosion",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.55,
+    "parallax_residual": 0.36,
+    "net_travel_px": 2.7
+   },
+   "mean_rgb": [
+    228,
+    182,
+    143
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.579,
+   "best_vertical_crop_x_px": 590,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 152,
+   "blockiness": 1.82,
+   "mean_luma": 191,
+   "hero": false,
+   "still": "stills/sf110.jpg",
+   "still_frame": 2961
+  },
+  {
+   "id": "sf111",
+   "in": 123.665,
+   "out": 124.333,
+   "in_frame": 2965,
+   "out_frame": 2980,
+   "frames": 16,
+   "duration": 0.667,
+   "characters": [
+    "Chun-Li"
+   ],
+   "action": "Chun-Li screams in front of a fireball, close",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.05,
+    "parallax_residual": 0.12,
+    "net_travel_px": 1.1
+   },
+   "mean_rgb": [
+    234,
+    202,
+    172
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.5,
+   "best_vertical_crop_x_px": 489,
+   "crop_cx_source": "by_eye",
+   "quality": 4,
+   "sharpness_lapvar": 260,
+   "blockiness": 1.48,
+   "mean_luma": 209,
+   "hero": true,
+   "still": "stills/sf111.jpg",
+   "still_frame": 2975
+  },
+  {
+   "id": "sf112",
+   "in": 124.333,
+   "out": 127.961,
+   "in_frame": 2981,
+   "out_frame": 3067,
+   "frames": 87,
+   "duration": 3.629,
+   "characters": [
+    "unknown"
+   ],
+   "action": "beach oner: woman in red fights suited swordsmen, camera follows",
+   "camera": {
+    "move": "handheld",
+    "solvable": true,
+    "flow_px_per_frame": 3.0,
+    "parallax_residual": 1.99,
+    "net_travel_px": 51.3,
+    "note": "continuous oner; calm, COLMAP-solvable part is 124.37-126.54 (frames 2982-3034), whip-like follows after ~126.1"
+   },
+   "mean_rgb": [
+    146,
+    130,
+    113
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 35,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.476,
+   "best_vertical_crop_x_px": 459,
+   "crop_cx_source": "human_mask",
+   "quality": 5,
+   "sharpness_lapvar": 456,
+   "blockiness": 1.57,
+   "mean_luma": 134,
+   "hero": true,
+   "still": "stills/sf112.jpg",
+   "still_frame": 3020
+  },
+  {
+   "id": "sf113",
+   "in": 127.961,
+   "out": 128.879,
+   "in_frame": 3068,
+   "out_frame": 3089,
+   "frames": 22,
+   "duration": 0.918,
+   "characters": [],
+   "action": "night city: helicopter, mushroom cloud over the skyline",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.44,
+    "parallax_residual": 0.28,
+    "net_travel_px": 1.0
+   },
+   "mean_rgb": [
+    16,
+    40,
+    59
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.72,
+   "best_vertical_crop_x_px": 771,
+   "crop_cx_source": "by_eye",
+   "quality": 4,
+   "sharpness_lapvar": 232,
+   "blockiness": 1.51,
+   "mean_luma": 38,
+   "hero": false,
+   "still": "stills/sf113.jpg",
+   "still_frame": 3084
+  },
+  {
+   "id": "sf114",
+   "in": 128.879,
+   "out": 130.297,
+   "in_frame": 3090,
+   "out_frame": 3123,
+   "frames": 34,
+   "duration": 1.418,
+   "characters": [
+    "Blanka"
+   ],
+   "action": "Blanka's green face, very dark, close",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.01,
+    "parallax_residual": 0.06,
+    "net_travel_px": 0.1
+   },
+   "mean_rgb": [
+    5,
+    15,
+    24
+   ],
+   "dominant_hue": "cyan",
+   "dominant_hue_deg": 195,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.78,
+   "best_vertical_crop_x_px": 848,
+   "crop_cx_source": "by_eye",
+   "quality": 1,
+   "sharpness_lapvar": 20,
+   "blockiness": 2.08,
+   "mean_luma": 15,
+   "hero": false,
+   "still": "stills/sf114.jpg",
+   "still_frame": 3104
+  },
+  {
+   "id": "sf115",
+   "in": 130.297,
+   "out": 131.715,
+   "in_frame": 3124,
+   "out_frame": 3157,
+   "frames": 34,
+   "duration": 1.418,
+   "characters": [
+    "Blanka"
+   ],
+   "action": "Blanka grapples a fighter in a cage, purple spark",
+   "camera": {
+    "move": "pan",
+    "solvable": false,
+    "flow_px_per_frame": 2.59,
+    "parallax_residual": 1.07,
+    "net_travel_px": 24.3
+   },
+   "mean_rgb": [
+    30,
+    33,
+    37
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.527,
+   "best_vertical_crop_x_px": 524,
+   "crop_cx_source": "saliency",
+   "quality": 4,
+   "sharpness_lapvar": 165,
+   "blockiness": 1.62,
+   "mean_luma": 34,
+   "hero": false,
+   "still": "stills/sf115.jpg",
+   "still_frame": 3152
+  },
+  {
+   "id": "sf116",
+   "in": 131.715,
+   "out": 133.175,
+   "in_frame": 3158,
+   "out_frame": 3192,
+   "frames": 35,
+   "duration": 1.46,
+   "characters": [
+    "Ken",
+    "Dhalsim"
+   ],
+   "action": "Ken squares up to Dhalsim, crowd behind",
+   "camera": {
+    "move": "pan",
+    "solvable": true,
+    "flow_px_per_frame": 1.0,
+    "parallax_residual": 0.7,
+    "net_travel_px": 53.9
+   },
+   "mean_rgb": [
+    89,
+    69,
+    57
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.446,
+   "best_vertical_crop_x_px": 420,
+   "crop_cx_source": "human_mask",
+   "quality": 5,
+   "sharpness_lapvar": 364,
+   "blockiness": 1.45,
+   "mean_luma": 74,
+   "hero": true,
+   "still": "stills/sf116.jpg",
+   "still_frame": 3173
+  },
+  {
+   "id": "sf117",
+   "in": 133.175,
+   "out": 135.01,
+   "in_frame": 3193,
+   "out_frame": 3236,
+   "frames": 44,
+   "duration": 1.835,
+   "characters": [
+    "Ken"
+   ],
+   "action": "Ken yells as he charges, light shafts",
+   "camera": {
+    "move": "whip",
+    "solvable": false,
+    "flow_px_per_frame": 5.08,
+    "parallax_residual": 4.3,
+    "net_travel_px": 3.9
+   },
+   "mean_rgb": [
+    111,
+    91,
+    80
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.325,
+   "best_vertical_crop_x_px": 265,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 216,
+   "blockiness": 2.05,
+   "mean_luma": 96,
+   "hero": true,
+   "still": "stills/sf117.jpg",
+   "still_frame": 3221
+  },
+  {
+   "id": "sf118",
+   "in": 135.01,
+   "out": 135.677,
+   "in_frame": 3237,
+   "out_frame": 3252,
+   "frames": 16,
+   "duration": 0.667,
+   "characters": [
+    "Ken"
+   ],
+   "action": "Ken's gloved punch, extreme close",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.64,
+    "parallax_residual": 0.39,
+    "net_travel_px": 9.8
+   },
+   "mean_rgb": [
+    104,
+    78,
+    64
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.355,
+   "best_vertical_crop_x_px": 304,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 128,
+   "blockiness": 2.67,
+   "mean_luma": 84,
+   "hero": false,
+   "still": "stills/sf118.jpg",
+   "still_frame": 3241
+  },
+  {
+   "id": "sf119",
+   "in": 135.677,
+   "out": 137.262,
+   "in_frame": 3253,
+   "out_frame": 3290,
+   "frames": 38,
+   "duration": 1.585,
+   "characters": [
+    "Ken"
+   ],
+   "action": "Ken leaps for a jump kick in the arena, wide",
+   "camera": {
+    "move": "tilt",
+    "solvable": false,
+    "flow_px_per_frame": 1.53,
+    "parallax_residual": 0.16,
+    "net_travel_px": 62.2
+   },
+   "mean_rgb": [
+    115,
+    103,
+    93
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 35,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.439,
+   "best_vertical_crop_x_px": 411,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 258,
+   "blockiness": 1.4,
+   "mean_luma": 107,
+   "hero": false,
+   "still": "stills/sf119.jpg",
+   "still_frame": 3259
+  },
+  {
+   "id": "sf120",
+   "in": 137.262,
+   "out": 138.263,
+   "in_frame": 3291,
+   "out_frame": 3314,
+   "frames": 24,
+   "duration": 1.001,
+   "characters": [
+    "Ken",
+    "Ryu"
+   ],
+   "action": "Ken and Ryu fight back to back in a warehouse",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.11,
+    "parallax_residual": 0.1,
+    "net_travel_px": 2.1
+   },
+   "mean_rgb": [
+    62,
+    57,
+    53
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 35,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.491,
+   "best_vertical_crop_x_px": 478,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 218,
+   "blockiness": 1.51,
+   "mean_luma": 59,
+   "hero": false,
+   "still": "stills/sf120.jpg",
+   "still_frame": 3309
+  },
+  {
+   "id": "sf121",
+   "in": 138.263,
+   "out": 139.723,
+   "in_frame": 3315,
+   "out_frame": 3349,
+   "frames": 35,
+   "duration": 1.46,
+   "characters": [
+    "Ken",
+    "Ryu"
+   ],
+   "action": "Ken and Ryu in fighting stances side by side",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.72,
+    "parallax_residual": 0.43,
+    "net_travel_px": 0.3
+   },
+   "mean_rgb": [
+    54,
+    40,
+    29
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 35,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.62,
+   "best_vertical_crop_x_px": 643,
+   "crop_cx_source": "by_eye",
+   "quality": 3,
+   "sharpness_lapvar": 86,
+   "blockiness": 1.63,
+   "mean_luma": 44,
+   "hero": true,
+   "still": "stills/sf121.jpg",
+   "still_frame": 3333
+  },
+  {
+   "id": "sf122",
+   "in": 139.723,
+   "out": 140.724,
+   "in_frame": 3350,
+   "out_frame": 3373,
+   "frames": 24,
+   "duration": 1.001,
+   "characters": [
+    "Blanka"
+   ],
+   "action": "Blanka leaps across a ruined warehouse",
+   "camera": {
+    "move": "pan",
+    "solvable": true,
+    "flow_px_per_frame": 2.89,
+    "parallax_residual": 2.12,
+    "net_travel_px": 41.5
+   },
+   "mean_rgb": [
+    31,
+    36,
+    38
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.487,
+   "best_vertical_crop_x_px": 473,
+   "crop_cx_source": "saliency",
+   "quality": 4,
+   "sharpness_lapvar": 152,
+   "blockiness": 1.76,
+   "mean_luma": 37,
+   "hero": false,
+   "still": "stills/sf122.jpg",
+   "still_frame": 3354
+  },
+  {
+   "id": "sf123",
+   "in": 140.724,
+   "out": 141.892,
+   "in_frame": 3374,
+   "out_frame": 3401,
+   "frames": 28,
+   "duration": 1.168,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter on the arena floor after a hit",
+   "camera": {
+    "move": "whip",
+    "solvable": false,
+    "flow_px_per_frame": 6.18,
+    "parallax_residual": 5.76,
+    "net_travel_px": 144.1
+   },
+   "mean_rgb": [
+    105,
+    92,
+    79
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 35,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.486,
+   "best_vertical_crop_x_px": 471,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 271,
+   "blockiness": 2.17,
+   "mean_luma": 95,
+   "hero": false,
+   "still": "stills/sf123.jpg",
+   "still_frame": 3382
+  },
+  {
+   "id": "sf124",
+   "in": 141.892,
+   "out": 142.768,
+   "in_frame": 3402,
+   "out_frame": 3422,
+   "frames": 21,
+   "duration": 0.876,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter vaults over the arena rail, blurred",
+   "camera": {
+    "move": "whip",
+    "solvable": false,
+    "flow_px_per_frame": 4.93,
+    "parallax_residual": 3.92,
+    "net_travel_px": 82.1
+   },
+   "mean_rgb": [
+    88,
+    77,
+    67
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 35,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.513,
+   "best_vertical_crop_x_px": 506,
+   "crop_cx_source": "saliency",
+   "quality": 4,
+   "sharpness_lapvar": 230,
+   "blockiness": 1.82,
+   "mean_luma": 80,
+   "hero": false,
+   "still": "stills/sf124.jpg",
+   "still_frame": 3418
+  },
+  {
+   "id": "sf125",
+   "in": 142.768,
+   "out": 143.727,
+   "in_frame": 3423,
+   "out_frame": 3445,
+   "frames": 23,
+   "duration": 0.959,
+   "characters": [
+    "Ryu"
+   ],
+   "action": "Ryu in white gi, blue light, raises a fist",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.05,
+    "parallax_residual": 0.06,
+    "net_travel_px": 0.4
+   },
+   "mean_rgb": [
+    29,
+    47,
+    58
+   ],
+   "dominant_hue": "cyan",
+   "dominant_hue_deg": 195,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.33,
+   "best_vertical_crop_x_px": 272,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 145,
+   "blockiness": 1.65,
+   "mean_luma": 46,
+   "hero": true,
+   "still": "stills/sf125.jpg",
+   "still_frame": 3441
+  },
+  {
+   "id": "sf126",
+   "in": 143.727,
+   "out": 144.269,
+   "in_frame": 3446,
+   "out_frame": 3458,
+   "frames": 13,
+   "duration": 0.542,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fist bump, red glove against a bare fist, blue light",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.43,
+    "parallax_residual": 0.35,
+    "net_travel_px": 1.2
+   },
+   "mean_rgb": [
+    46,
+    69,
+    86
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.398,
+   "best_vertical_crop_x_px": 359,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 122,
+   "blockiness": 1.8,
+   "mean_luma": 67,
+   "hero": true,
+   "still": "stills/sf126.jpg",
+   "still_frame": 3455
+  },
+  {
+   "id": "sf127",
+   "in": 144.269,
+   "out": 144.853,
+   "in_frame": 3459,
+   "out_frame": 3472,
+   "frames": 14,
+   "duration": 0.584,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighters brawl with prisoners in orange jumpsuits, red light",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 2.01,
+    "parallax_residual": 1.36,
+    "net_travel_px": 3.6
+   },
+   "mean_rgb": [
+    48,
+    34,
+    27
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 15,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.512,
+   "best_vertical_crop_x_px": 505,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 95,
+   "blockiness": 2.51,
+   "mean_luma": 38,
+   "hero": false,
+   "still": "stills/sf127.jpg",
+   "still_frame": 3467
+  },
+  {
+   "id": "sf128",
+   "in": 144.853,
+   "out": 145.437,
+   "in_frame": 3473,
+   "out_frame": 3486,
+   "frames": 14,
+   "duration": 0.584,
+   "characters": [
+    "Blanka"
+   ],
+   "action": "Blanka swats a man in an orange jumpsuit",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 2.95,
+    "parallax_residual": 2.75,
+    "net_travel_px": 7.4
+   },
+   "mean_rgb": [
+    39,
+    44,
+    49
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.524,
+   "best_vertical_crop_x_px": 520,
+   "crop_cx_source": "saliency",
+   "quality": 3,
+   "sharpness_lapvar": 142,
+   "blockiness": 2.05,
+   "mean_luma": 45,
+   "hero": true,
+   "still": "stills/sf128.jpg",
+   "still_frame": 3481
+  },
+  {
+   "id": "sf129",
+   "in": 145.437,
+   "out": 146.104,
+   "in_frame": 3487,
+   "out_frame": 3502,
+   "frames": 16,
+   "duration": 0.667,
+   "characters": [
+    "unknown"
+   ],
+   "action": "dark blurred fight, red light",
+   "camera": {
+    "move": "pan",
+    "solvable": false,
+    "flow_px_per_frame": 3.68,
+    "parallax_residual": 2.94,
+    "net_travel_px": 35.4
+   },
+   "mean_rgb": [
+    47,
+    27,
+    24
+   ],
+   "dominant_hue": "red",
+   "dominant_hue_deg": 5,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.476,
+   "best_vertical_crop_x_px": 459,
+   "crop_cx_source": "saliency",
+   "quality": 1,
+   "sharpness_lapvar": 43,
+   "blockiness": 2.58,
+   "mean_luma": 33,
+   "hero": false,
+   "still": "stills/sf129.jpg",
+   "still_frame": 3493
+  },
+  {
+   "id": "sf130",
+   "in": 146.104,
+   "out": 146.897,
+   "in_frame": 3503,
+   "out_frame": 3521,
+   "frames": 19,
+   "duration": 0.792,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter in red does an upside-down spin kick, arena crowd",
+   "camera": {
+    "move": "tilt",
+    "solvable": false,
+    "flow_px_per_frame": 2.63,
+    "parallax_residual": 1.53,
+    "net_travel_px": 20.8
+   },
+   "mean_rgb": [
+    105,
+    90,
+    82
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.652,
+   "best_vertical_crop_x_px": 684,
+   "crop_cx_source": "human_mask",
+   "quality": 5,
+   "sharpness_lapvar": 298,
+   "blockiness": 1.68,
+   "mean_luma": 95,
+   "hero": false,
+   "still": "stills/sf130.jpg",
+   "still_frame": 3508
+  },
+  {
+   "id": "sf131",
+   "in": 146.897,
+   "out": 147.898,
+   "in_frame": 3522,
+   "out_frame": 3545,
+   "frames": 24,
+   "duration": 1.001,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fighter handstand on the arena floor, light shafts",
+   "camera": {
+    "move": "whip",
+    "solvable": false,
+    "flow_px_per_frame": 6.45,
+    "parallax_residual": 5.11,
+    "net_travel_px": 22.8
+   },
+   "mean_rgb": [
+    117,
+    100,
+    89
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 25,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.568,
+   "best_vertical_crop_x_px": 576,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 190,
+   "blockiness": 2.31,
+   "mean_luma": 105,
+   "hero": false,
+   "still": "stills/sf131.jpg",
+   "still_frame": 3540
+  },
+  {
+   "id": "sf132",
+   "in": 147.898,
+   "out": 148.69,
+   "in_frame": 3546,
+   "out_frame": 3564,
+   "frames": 19,
+   "duration": 0.792,
+   "characters": [
+    "unknown"
+   ],
+   "action": "handstand kick in a beam of light",
+   "camera": {
+    "move": "dolly",
+    "solvable": false,
+    "flow_px_per_frame": 1.02,
+    "parallax_residual": 0.61,
+    "net_travel_px": 1.3
+   },
+   "mean_rgb": [
+    86,
+    88,
+    96
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.651,
+   "best_vertical_crop_x_px": 683,
+   "crop_cx_source": "human_mask",
+   "quality": 3,
+   "sharpness_lapvar": 120,
+   "blockiness": 2.5,
+   "mean_luma": 90,
+   "hero": false,
+   "still": "stills/sf132.jpg",
+   "still_frame": 3561
+  },
+  {
+   "id": "sf133",
+   "in": 148.69,
+   "out": 149.524,
+   "in_frame": 3565,
+   "out_frame": 3584,
+   "frames": 20,
+   "duration": 0.834,
+   "characters": [
+    "unknown"
+   ],
+   "action": "dark close fight in a red room",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 1.97,
+    "parallax_residual": 1.39,
+    "net_travel_px": 8.3
+   },
+   "mean_rgb": [
+    52,
+    36,
+    35
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 15,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.573,
+   "best_vertical_crop_x_px": 583,
+   "crop_cx_source": "saliency",
+   "quality": 3,
+   "sharpness_lapvar": 120,
+   "blockiness": 1.95,
+   "mean_luma": 41,
+   "hero": false,
+   "still": "stills/sf133.jpg",
+   "still_frame": 3578
+  },
+  {
+   "id": "sf134",
+   "in": 149.524,
+   "out": 151.818,
+   "in_frame": 3585,
+   "out_frame": 3639,
+   "frames": 55,
+   "duration": 2.294,
+   "characters": [
+    "Chun-Li"
+   ],
+   "action": "Chun-Li low stance on blue misty ground",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.28,
+    "parallax_residual": 0.29,
+    "net_travel_px": 5.9
+   },
+   "mean_rgb": [
+    16,
+    79,
+    123
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 205,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.545,
+   "best_vertical_crop_x_px": 547,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 79,
+   "blockiness": 2.64,
+   "mean_luma": 71,
+   "hero": false,
+   "still": "stills/sf134.jpg",
+   "still_frame": 3593
+  },
+  {
+   "id": "sf135",
+   "in": 151.818,
+   "out": 153.945,
+   "in_frame": 3640,
+   "out_frame": 3690,
+   "frames": 51,
+   "duration": 2.127,
+   "characters": [
+    "Chun-Li"
+   ],
+   "action": "Chun-Li in a blue qipao, bloodied, glares",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.82,
+    "parallax_residual": 0.75,
+    "net_travel_px": 2.5
+   },
+   "mean_rgb": [
+    20,
+    42,
+    76
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.664,
+   "best_vertical_crop_x_px": 699,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 112,
+   "blockiness": 1.88,
+   "mean_luma": 41,
+   "hero": true,
+   "still": "stills/sf135.jpg",
+   "still_frame": 3654
+  },
+  {
+   "id": "sf136",
+   "in": 153.945,
+   "out": 157.115,
+   "in_frame": 3691,
+   "out_frame": 3766,
+   "frames": 76,
+   "duration": 3.17,
+   "characters": [],
+   "action": "STREET FIGHTER title card animates in",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.03,
+    "parallax_residual": 0.04,
+    "net_travel_px": 7.8
+   },
+   "mean_rgb": [
+    58,
+    17,
+    26
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 15,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.5,
+   "best_vertical_crop_x_px": 489,
+   "crop_cx_source": "by_eye",
+   "quality": 5,
+   "sharpness_lapvar": 822,
+   "blockiness": 1.2,
+   "mean_luma": 27,
+   "hero": true,
+   "still": "stills/sf136.jpg",
+   "still_frame": 3713
+  },
+  {
+   "id": "sf137",
+   "in": 157.115,
+   "out": 158.241,
+   "in_frame": 3767,
+   "out_frame": 3793,
+   "frames": 27,
+   "duration": 1.126,
+   "characters": [
+    "Guile",
+    "Dhalsim"
+   ],
+   "action": "Guile drives a car with Dhalsim in the back seat",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.02,
+    "parallax_residual": 0.04,
+    "net_travel_px": 0.4
+   },
+   "mean_rgb": [
+    109,
+    103,
+    96
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 15,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.67,
+   "best_vertical_crop_x_px": 707,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 181,
+   "blockiness": 1.57,
+   "mean_luma": 105,
+   "hero": true,
+   "still": "stills/sf137.jpg",
+   "still_frame": 3770
+  },
+  {
+   "id": "sf138",
+   "in": 158.241,
+   "out": 159.201,
+   "in_frame": 3794,
+   "out_frame": 3816,
+   "frames": 23,
+   "duration": 0.959,
+   "characters": [
+    "unknown",
+    "Ryu",
+    "Ken"
+   ],
+   "action": "man in a pink gi leans in the car window, Ryu and Ken behind",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.02,
+    "parallax_residual": 0.04,
+    "net_travel_px": 0.8
+   },
+   "mean_rgb": [
+    116,
+    111,
+    110
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 15,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.321,
+   "best_vertical_crop_x_px": 260,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 201,
+   "blockiness": 1.5,
+   "mean_luma": 114,
+   "hero": false,
+   "still": "stills/sf138.jpg",
+   "still_frame": 3809
+  },
+  {
+   "id": "sf139",
+   "in": 159.201,
+   "out": 160.66,
+   "in_frame": 3817,
+   "out_frame": 3851,
+   "frames": 35,
+   "duration": 1.46,
+   "characters": [
+    "unknown",
+    "Guile",
+    "Dhalsim"
+   ],
+   "action": "man in a pink gi at the car window, Guile and Dhalsim inside",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.09,
+    "parallax_residual": 0.15,
+    "net_travel_px": 2.2
+   },
+   "mean_rgb": [
+    115,
+    100,
+    106
+   ],
+   "dominant_hue": "red",
+   "dominant_hue_deg": 355,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.818,
+   "best_vertical_crop_x_px": 896,
+   "crop_cx_source": "human_mask",
+   "quality": 5,
+   "sharpness_lapvar": 332,
+   "blockiness": 1.3,
+   "mean_luma": 106,
+   "hero": false,
+   "still": "stills/sf139.jpg",
+   "still_frame": 3843
+  },
+  {
+   "id": "sf140",
+   "in": 160.66,
+   "out": 161.244,
+   "in_frame": 3852,
+   "out_frame": 3865,
+   "frames": 14,
+   "duration": 0.584,
+   "characters": [
+    "unknown",
+    "Ryu",
+    "Ken"
+   ],
+   "action": "man in a pink gi leans into the car, others behind",
+   "camera": {
+    "move": "dolly",
+    "solvable": false,
+    "flow_px_per_frame": 1.22,
+    "parallax_residual": 0.93,
+    "net_travel_px": 1.2
+   },
+   "mean_rgb": [
+    100,
+    93,
+    91
+   ],
+   "dominant_hue": "orange",
+   "dominant_hue_deg": 15,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.486,
+   "best_vertical_crop_x_px": 471,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 227,
+   "blockiness": 1.49,
+   "mean_luma": 96,
+   "hero": false,
+   "still": "stills/sf140.jpg",
+   "still_frame": 3858
+  },
+  {
+   "id": "sf141",
+   "in": 161.244,
+   "out": 163.663,
+   "in_frame": 3866,
+   "out_frame": 3923,
+   "frames": 58,
+   "duration": 2.419,
+   "characters": [
+    "Guile",
+    "unknown"
+   ],
+   "action": "Guile turns to the man in the pink gi in the car, comic beat",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.3,
+    "parallax_residual": 0.23,
+    "net_travel_px": 0.8
+   },
+   "mean_rgb": [
+    88,
+    75,
+    70
+   ],
+   "dominant_hue": "red",
+   "dominant_hue_deg": 5,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.481,
+   "best_vertical_crop_x_px": 465,
+   "crop_cx_source": "human_mask",
+   "quality": 4,
+   "sharpness_lapvar": 200,
+   "blockiness": 1.24,
+   "mean_luma": 80,
+   "hero": false,
+   "still": "stills/sf141.jpg",
+   "still_frame": 3909
+  },
+  {
+   "id": "sf142",
+   "in": 163.663,
+   "out": 165.957,
+   "in_frame": 3924,
+   "out_frame": 3978,
+   "frames": 55,
+   "duration": 2.294,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fight on a glowing club stage, blue light, wide",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 0.35,
+    "parallax_residual": 0.25,
+    "net_travel_px": 4.5
+   },
+   "mean_rgb": [
+    25,
+    74,
+    156
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 215,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.466,
+   "best_vertical_crop_x_px": 446,
+   "crop_cx_source": "human_mask",
+   "quality": 5,
+   "sharpness_lapvar": 299,
+   "blockiness": 1.68,
+   "mean_luma": 71,
+   "hero": false,
+   "still": "stills/sf142.jpg",
+   "still_frame": 3956
+  },
+  {
+   "id": "sf143",
+   "in": 165.957,
+   "out": 166.708,
+   "in_frame": 3979,
+   "out_frame": 3996,
+   "frames": 18,
+   "duration": 0.751,
+   "characters": [
+    "unknown"
+   ],
+   "action": "fisheye low-angle fighter falls, neon",
+   "camera": {
+    "move": "handheld",
+    "solvable": false,
+    "flow_px_per_frame": 1.27,
+    "parallax_residual": 1.03,
+    "net_travel_px": 8.6
+   },
+   "mean_rgb": [
+    22,
+    20,
+    75
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 225,
+   "blue_cast": true,
+   "best_vertical_crop_cx": 0.33,
+   "best_vertical_crop_x_px": 272,
+   "crop_cx_source": "human_mask",
+   "quality": 2,
+   "sharpness_lapvar": 85,
+   "blockiness": 2.53,
+   "mean_luma": 26,
+   "hero": false,
+   "still": "stills/sf143.jpg",
+   "still_frame": 3987
+  },
+  {
+   "id": "sf144",
+   "in": 166.708,
+   "out": 168.752,
+   "in_frame": 3997,
+   "out_frame": 4045,
+   "frames": 49,
+   "duration": 2.044,
+   "characters": [],
+   "action": "end card: Filmed for IMAX, Only in Theatres October 16",
+   "camera": {
+    "move": "locked",
+    "solvable": false,
+    "flow_px_per_frame": 0.01,
+    "parallax_residual": 0.03,
+    "net_travel_px": 2.3
+   },
+   "mean_rgb": [
+    33,
+    10,
+    26
+   ],
+   "dominant_hue": "blue",
+   "dominant_hue_deg": 245,
+   "blue_cast": false,
+   "best_vertical_crop_cx": 0.5,
+   "best_vertical_crop_x_px": 489,
+   "crop_cx_source": "by_eye",
+   "quality": 4,
+   "sharpness_lapvar": 768,
+   "blockiness": 1.2,
+   "mean_luma": 17,
+   "hero": false,
+   "still": "stills/sf144.jpg",
+   "still_frame": 4018
+  }
+ ]
+}
