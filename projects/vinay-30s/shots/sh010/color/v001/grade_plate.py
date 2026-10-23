@@ -44,8 +44,8 @@ def grade_duo(src, dst, fighter):
     vf = f"[0:v]{IN},{lv},noise=alls=6:allf=t,{LUT('duo_' + SLUG[fighter] + '.cube')},{OUT}[o]"
     encode(src, vf, dst); return f"duo:{fighter} levels {imin:.3f}-{imax:.3f} gamma {gm:.2f}"
 
-def grade_true(src, dst, drain=False):
-    for k in (0.0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.18, 0.21, 0.24, 0.27, 0.30):
+def grade_true(src, dst, drain=False, local=False):
+    for k in ((0.0,) if local else (0.0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.18, 0.21, 0.24, 0.27, 0.30)):
         wb = f"colorchannelmixer=rr={1 + k:.3f}:gg={1 - k / 4:.3f}:bb={1 - k:.3f}," if k else ""
         if drain:
             n = nframes(src) - 1
@@ -56,6 +56,7 @@ def grade_true(src, dst, drain=False):
             vf = f"[0:v]{IN},{wb}{LUT('true.cube')},{OUT}[o]"
         encode(src, vf, dst)
         a = qc_rgb.frames(dst).astype(np.float32); d = a[..., 0].mean((1, 2)) - a[..., 2].mean((1, 2))
+        if local: return "true (T5-T7 local exemption, no warm-pre)"
         if d.min() >= 0.5: return ("true>drain" if drain else "true") + (f" warm-pre rr+{k:.2f} gg-{k/4:.3f} bb-{k:.2f}" if k else "")
     return ("true>drain" if drain else "true") + f" warm-pre {k:.2f} STILL FAILS min(R-B)={d.min():.2f}"
 
@@ -73,7 +74,7 @@ def main():
             outs = [(dst, how)]
         elif i in tiles:
             d1 = os.path.join(a.dst, i + "_duo.mp4"); d2 = os.path.join(a.dst, i + "_true.mp4")
-            outs = [(d1, grade_duo(src, d1, tiles[i]["character"])), (d2, grade_true(src, d2))]
+            outs = [(d1, grade_duo(src, d1, tiles[i]["character"])), (d2, grade_true(src, d2, local=i in ("T5", "T6", "T7")))]
         else:
             print("unknown id", i); continue
         for dst, how in outs:

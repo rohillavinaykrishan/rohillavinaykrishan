@@ -10,7 +10,7 @@ import argparse, json, os, re, subprocess, sys, numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
 CUES = os.path.join(HERE, "../../director/v001/cues.json")
 EXCEPT = (121, 196)                     # master frames, inclusive
-LOCAL_ONLY = {"T5_duo", "T6_duo", "T7_duo"}
+LOCAL_ONLY = {"T5_duo", "T6_duo", "T7_duo", "T5_true", "T6_true", "T7_true"}   # tiles are local; the whole wall frame is QC'd in the master
 
 def probe(f):
     o = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height",
