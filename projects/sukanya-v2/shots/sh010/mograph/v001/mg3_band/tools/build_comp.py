@@ -89,7 +89,7 @@ for c in CUTS:
     js.append(f'tl.fromTo("#mg3-name-glow", {{opacity: 0.88}}, {{opacity: 0.80, duration: {6 / FPS}, ease: {E_OUT}{"" if c == CUTS[0] else ", immediateRender: false"}}}, {T(c)});')
 # echo bands: slash-wipe in f277-283 (expo-out), drift along the -12 deg axis at 0.35x (14 px/frame)
 for side, sign in (("u", -1), ("d", 1)):
-    js.append(f'tl.fromTo("#mg3-echo-{side}-wipe", {{clipPath: "inset(0px 100% 0px 0px)"}}, '
+    js.append(f'tl.fromTo("#mg3-echo-{side}-wipe, #mg3-echo-{side}-line", {{clipPath: "inset(0px 100% 0px 0px)"}}, '
               f'{{clipPath: "inset(0px 0% 0px 0px)", duration: {6 / FPS}, ease: {E_OUT}}}, {T(277)});')
 for k in range(1, len(B)):
     prev, cur = B[k - 1], B[k]
@@ -143,22 +143,23 @@ scene = f"""<template>
   <div id="root" data-composition-id="mg3_band" data-width="2160" data-height="3840" data-layout-allow-overflow data-layout-allow-overlap>
     <!-- ECHO BANDS (f277-349) -->
     <div id="mg3-echo-u-clip" class="layer" style="z-index:1">
-      <div id="mg3-echo-u-wipe" class="layer">
+      <div id="mg3-echo-u-wipe" class="layer" style="clip-path: inset(0px 100% 0px 0px)">
         <div class="echo-rot" style="top:{eu_cy - 450:.0f}px">
 {eu_imgs}
         </div>
       </div>
     </div>
     <div id="mg3-echo-d-clip" class="layer" style="z-index:1">
-      <div id="mg3-echo-d-wipe" class="layer">
+      <div id="mg3-echo-d-wipe" class="layer" style="clip-path: inset(0px 100% 0px 0px)">
         <div class="echo-rot" style="top:{ed_cy - 450:.0f}px">
 {ed_imgs}
         </div>
       </div>
     </div>
     <svg id="mg3-echo-lines" class="layer" style="z-index:1" viewBox="0 0 2160 3840" width="2160" height="3840">
-      <g id="mg3-echo-edges" fill="none" stroke="{P["saffron"]}" stroke-width="3" opacity="0.35">
-        <polygon points="{svg_pts(eu_pts)}"/><polygon points="{svg_pts(ed_pts)}"/>
+      <g fill="none" stroke="{P["saffron"]}" stroke-width="3" opacity="0.35">
+        <polygon id="mg3-echo-u-line" points="{svg_pts(eu_pts)}" style="clip-path: inset(0px 100% 0px 0px)"/>
+        <polygon id="mg3-echo-d-line" points="{svg_pts(ed_pts)}" style="clip-path: inset(0px 100% 0px 0px)"/>
       </g>
     </svg>
     <!-- BAND: plates B01-B08 (UNLOCK grade baked), border, roto pop-outs -->

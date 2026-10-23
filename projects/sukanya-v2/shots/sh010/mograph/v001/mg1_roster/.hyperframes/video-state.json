@@ -292,7 +292,7 @@
   "snapshots": {
     "latest": {
       "revision": null,
-      "id": "b1909c5d-816a-481e-b936-003c3e222949-9"
+      "id": "3f06bd72-2fd0-468a-be00-e7889f06dfae-2"
     },
     "revisions": {},
     "unversioned": [
@@ -493,6 +493,66 @@
         "contentHash": "3df89a8a4cc5b5deb338b546507f6b33bf560f6f0ea3be6c86a75276ee3f01ca",
         "revision": null,
         "inputFingerprint": "573198363687926c5505aea4d041f8dc13f44dde7892e95fb6df1436b1ea84d0",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "3f06bd72-2fd0-468a-be00-e7889f06dfae-0",
+        "image": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg1_roster/check/snap2/frame-00-at-9.96s.png",
+        "time": 9.96,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792771254683,
+        "contentHash": "7a95a478e40ff5cf076d5a101bb6b3379cecefbc3ba8a8c1741e5d1e4768108b",
+        "revision": null,
+        "inputFingerprint": "6d1b6a50f2eafb017e0ded17d5b7fb23af1bcdccffa6e835be4dddb20d839909",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "3f06bd72-2fd0-468a-be00-e7889f06dfae-1",
+        "image": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg1_roster/check/snap2/frame-01-at-10.12s.png",
+        "time": 10.12,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792771254684,
+        "contentHash": "feb425c3310378894f3feef12b24f4449a9a61b13acc56ff17e6ff5d20173e3e",
+        "revision": null,
+        "inputFingerprint": "6d1b6a50f2eafb017e0ded17d5b7fb23af1bcdccffa6e835be4dddb20d839909",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "3f06bd72-2fd0-468a-be00-e7889f06dfae-2",
+        "image": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg1_roster/check/snap2/frame-02-at-10.28s.png",
+        "time": 10.28,
+        "metadata": {
+          "width": 2160,
+          "height": 3840,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792771254684,
+        "contentHash": "22af126243c71b610244c1b434a2810cc55c598df2b69dd579b8700c5dabe566",
+        "revision": null,
+        "inputFingerprint": "6d1b6a50f2eafb017e0ded17d5b7fb23af1bcdccffa6e835be4dddb20d839909",
         "inputScope": "local-project-files",
         "attribution": "inputs-changed"
       }

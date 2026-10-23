@@ -141,7 +141,7 @@ index = f"""<!doctype html>
 """
 open(os.path.join(MG2, "index.html"), "w").write(index)
 proxy = index.replace("2160px;height:3840px", "540px;height:960px").replace("width=2160, height=3840", "width=540, height=960")
-proxy = proxy.replace('data-duration="11.08" data-fps="25" data-width="2160" data-height="3840"', 'data-duration="1.36" data-fps="25" data-width="540" data-height="960"')
+proxy = proxy.replace('data-duration="11.08"', 'data-duration="1.36"').replace('data-width="2160" data-height="3840"', 'data-width="540" data-height="960"')
 proxy = proxy.replace('data-start="9.72"', 'data-start="0"')
 proxy = proxy.replace("<!-- MG2 SUPER ART FX on MASTER time: this root runs f0..f276 (11.08 s); the scene shows f243..f276. Transparent. -->",
                       "<!-- 540x960 REVIEW mount: local t0 = master f243. The scene fits its 2160x3840 stage to the host. -->")

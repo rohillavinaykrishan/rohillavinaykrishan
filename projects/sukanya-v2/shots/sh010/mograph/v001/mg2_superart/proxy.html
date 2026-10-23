@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <meta name="viewport" content="width=540, height=960" />
+    <style>html,body{margin:0;width:540px;height:960px;overflow:hidden;background:transparent}#root{position:absolute;inset:0}</style>
+  </head>
+  <body>
+    <!-- 540x960 REVIEW mount: local t0 = master f243. The scene fits its 2160x3840 stage to the host. -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="1.36" data-fps="25" data-width="540" data-height="960">
+      <div id="mg2" data-composition-id="mg2" data-composition-src="compositions/mg2.html" data-start="0" data-duration="1.36"
+           data-track-index="1" data-track-kind="graphics" data-width="540" data-height="960"></div>
+    </div>
+    <script>window.__timelines = window.__timelines || {}; window.__timelines["main"] = gsap.timeline({ paused: true });</script>
+  </body>
+</html>

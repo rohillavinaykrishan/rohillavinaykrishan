@@ -14,3 +14,8 @@
 - Dimming: other rows go 100% to 60% and Ki White to Chalk over f200-232 (linear), then to 22% over f243-252 (expo-out). Her left cell dims from f243. Her name goes Ki White to Saffron over f243-249.
 - Fit: cells wider than the 90% action-safe box get scaleX toward the gutter (SAIPRASAD 0.84, SHRIVASTAV 0.97, SOHAN 0.94).
 - Verified: snapshots match roll_rows.json to within 1 px. roll_check.png: pitch, gutter and widths line up with the real roll at x4.05.
+
+## Update (coordinator-approved extension before 56 s)
+- Pass 1 read 53.00 s. Pass 2 read 52.60 s and 53.60 s. Both agree on RABINARAYAN MISHRA through RAKESH MADHUKAR DEVERE (15 rows). RAKESH is now fully readable on 53.60, so it is restored. "...PRASAD PAL" above RABINARAYAN is cut by the header, so it is dropped.
+- rows_verified.txt now has 32 names + 1 gap (33 slots). There are 79 rows in total, and her_row_index = 62 (it was 47).
+- Timing is unchanged: her row is at y 1621.5 at f243 and parks at 1536 at f252. The top row is at y 301.5 at f0, so the window (570-3060) is full from f0. The 70% start ramp is kept so the timing stays the same.

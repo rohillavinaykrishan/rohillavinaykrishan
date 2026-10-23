@@ -32,7 +32,7 @@
   <div id="root" data-composition-id="mg3_band" data-width="2160" data-height="3840" data-layout-allow-overflow data-layout-allow-overlap>
     <!-- ECHO BANDS (f277-349) -->
     <div id="mg3-echo-u-clip" class="layer" style="z-index:1">
-      <div id="mg3-echo-u-wipe" class="layer">
+      <div id="mg3-echo-u-wipe" class="layer" style="clip-path: inset(0px 100% 0px 0px)">
         <div class="echo-rot" style="top:550px">
         <img id="mg3-eu-B01" class="clip echo-img echo-u" src="assets/echo/B01.jpg" data-start="0.64" data-duration="0.4800" data-track-index="1" alt="">
         <img id="mg3-eu-B02" class="clip echo-img echo-u" src="assets/echo/B02.jpg" data-start="1.12" data-duration="0.4400" data-track-index="1" alt="">
@@ -45,7 +45,7 @@
       </div>
     </div>
     <div id="mg3-echo-d-clip" class="layer" style="z-index:1">
-      <div id="mg3-echo-d-wipe" class="layer">
+      <div id="mg3-echo-d-wipe" class="layer" style="clip-path: inset(0px 100% 0px 0px)">
         <div class="echo-rot" style="top:1950px">
         <img id="mg3-ed-B01" class="clip echo-img echo-d" src="assets/echo/B01_mid.jpg" data-start="0.64" data-duration="0.4800" data-track-index="1" alt="">
         <img id="mg3-ed-B02" class="clip echo-img echo-d" src="assets/echo/B02_mid.jpg" data-start="1.12" data-duration="0.4400" data-track-index="1" alt="">
@@ -58,8 +58,9 @@
       </div>
     </div>
     <svg id="mg3-echo-lines" class="layer" style="z-index:1" viewBox="0 0 2160 3840" width="2160" height="3840">
-      <g id="mg3-echo-edges" fill="none" stroke="#FFB12A" stroke-width="3" opacity="0.35">
-        <polygon points="-120.0,1125.1 2280.0,614.9 2280.0,874.9 -120.0,1385.1"/><polygon points="-120.0,2525.1 2280.0,2014.9 2280.0,2274.9 -120.0,2785.1"/>
+      <g fill="none" stroke="#FFB12A" stroke-width="3" opacity="0.35">
+        <polygon id="mg3-echo-u-line" points="-120.0,1125.1 2280.0,614.9 2280.0,874.9 -120.0,1385.1" style="clip-path: inset(0px 100% 0px 0px)"/>
+        <polygon id="mg3-echo-d-line" points="-120.0,2525.1 2280.0,2014.9 2280.0,2274.9 -120.0,2785.1" style="clip-path: inset(0px 100% 0px 0px)"/>
       </g>
     </svg>
     <!-- BAND: plates B01-B08 (UNLOCK grade baked), border, roto pop-outs -->
@@ -217,8 +218,8 @@
       tl.set("#mg3-name", {x: 0.97, y: -0.21}, 3.24);
       tl.set("#mg3-name", {x: 0.00, y: -0.00}, 3.28);
       tl.fromTo("#mg3-name-glow", {opacity: 0.88}, {opacity: 0.80, duration: 0.24, ease: expoOut, immediateRender: false}, 3.16);
-      tl.fromTo("#mg3-echo-u-wipe", {clipPath: "inset(0px 100% 0px 0px)"}, {clipPath: "inset(0px 0% 0px 0px)", duration: 0.24, ease: expoOut}, 0.64);
-      tl.fromTo("#mg3-echo-d-wipe", {clipPath: "inset(0px 100% 0px 0px)"}, {clipPath: "inset(0px 0% 0px 0px)", duration: 0.24, ease: expoOut}, 0.64);
+      tl.fromTo("#mg3-echo-u-wipe, #mg3-echo-u-line", {clipPath: "inset(0px 100% 0px 0px)"}, {clipPath: "inset(0px 0% 0px 0px)", duration: 0.24, ease: expoOut}, 0.64);
+      tl.fromTo("#mg3-echo-d-wipe, #mg3-echo-d-line", {clipPath: "inset(0px 100% 0px 0px)"}, {clipPath: "inset(0px 0% 0px 0px)", duration: 0.24, ease: expoOut}, 0.64);
       tl.fromTo("#mg3-eu-B01", {x: 84}, {x: -84, duration: 0.48, ease: "none"}, 0.64);
       tl.fromTo("#mg3-ed-B01", {x: -84}, {x: 84, duration: 0.48, ease: "none"}, 0.64);
       tl.fromTo("#mg3-eu-B02", {x: 77}, {x: -77, duration: 0.44, ease: "none"}, 1.12);
