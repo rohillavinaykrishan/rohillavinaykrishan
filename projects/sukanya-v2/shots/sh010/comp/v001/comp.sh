@@ -31,7 +31,7 @@ case "${1:-}" in
     rm -f "$R/_proxy1080.mp4" "$R/_proxy540_v.mp4"
     ;;
   4k)
-    if pgrep -fa "hyperframes render|chrom|ffmpeg|blender" | grep -v -e pgrep -e comp.sh >/dev/null; then
+    if pgrep -fa "hyperframes render|chrome-headless|ffmpeg|blender|sam_roto" | grep -v -e pgrep -e comp.sh -e ccr-ca-store >/dev/null; then
       echo "another heavy job is running:"; pgrep -fa "hyperframes render|chrom|ffmpeg|blender" | cut -c1-160; exit 3
     fi
     build

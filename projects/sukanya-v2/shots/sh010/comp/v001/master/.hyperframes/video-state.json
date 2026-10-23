@@ -129,13 +129,14 @@
   },
   "renders": {
     "latest": {
-      "id": "65f37989-365a-4fa8-954d-a104a3ef7b6f",
-      "completedAt": 1792771676351,
-      "output": "/tmp/claude-0/-home-user-rohillavinaykrishan/5fe3b9fd-8381-5a1b-b6a0-30ea036f781a/scratchpad/rtest.mp4",
+      "id": "d2fe94e7-2bff-487c-8d54-0c08eebc0689",
+      "completedAt": 1792772799010,
+      "output": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/comp/v001/render/_4k_hf.mp4",
       "status": "completed",
-      "revision": "e3140f2f-0879-4e97-a56a-4fe5e048c807"
+      "revision": "af158507-3fd9-4eed-ac43-9625c58d886c"
     },
     "retainedRevisions": [
+      "af158507-3fd9-4eed-ac43-9625c58d886c",
       "e3140f2f-0879-4e97-a56a-4fe5e048c807"
     ]
   },
