@@ -113,6 +113,11 @@ Say plainly that a usage-limit pause adds the time until the reset (it auto-resu
 
 ## Usage limits: always auto-resume (client rule)
 
+**Always-on watchdog (mandatory):** at the start of EVERY project, create an hourly scheduled task bound to this session
+(`create_trigger`, cron `0 * * * *`) that checks every in-progress project, resumes paused agents via SendMessage, dispatches
+the next wave and reports the IST ETA. It survives session restarts, so work resumes even if the usage-limit notice is missed.
+Delete it when all projects are delivered.
+
 When any agent stops with "You've hit your session limit · resets <time> (UTC)", the client wants the
 work to continue on its own; never wait for them to type "resume". Right away:
 1. Note every paused agent (its id and what it was doing) in `projects/<slug>/review/paused_agents.md`.
