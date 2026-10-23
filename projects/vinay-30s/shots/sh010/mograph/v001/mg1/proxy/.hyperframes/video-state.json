@@ -367,5 +367,16 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "89513cbc-3ed0-4762-8ec6-a53390213a8e",
+      "completedAt": 1792791356039,
+      "output": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg1/mg1_proxy_540.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
 }

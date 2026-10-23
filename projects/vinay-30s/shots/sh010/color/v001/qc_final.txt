@@ -1,0 +1,40 @@
+PASS  C1         frames= 26 master_f_in=237 min(R-B)= +71.31 mean(R-B)=+80.92 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  C2         frames= 17 master_f_in=263 min(R-B)= +24.85 mean(R-B)=+25.29 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  C3         frames= 18 master_f_in=280 min(R-B)= +34.84 mean(R-B)=+39.94 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  C4         frames= 18 master_f_in=298 min(R-B)= +21.64 mean(R-B)=+22.73 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  C5         frames= 20 master_f_in=316 min(R-B)= +30.10 mean(R-B)=+31.19 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  C6         frames= 21 master_f_in=336 min(R-B)=  +8.83 mean(R-B)=+21.25 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  F1         frames= 11 master_f_in=387 min(R-B)= +25.48 mean(R-B)=+27.78 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  F2         frames= 11 master_f_in=398 min(R-B)=  +0.71 mean(R-B)= +1.88 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  F3         frames= 11 master_f_in=409 min(R-B)=  +0.83 mean(R-B)= +1.57 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  F4         frames= 10 master_f_in=420 min(R-B)= +19.21 mean(R-B)=+21.62 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  F5         frames= 11 master_f_in=430 min(R-B)=  +0.70 mean(R-B)= +1.45 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  F6         frames= 10 master_f_in=441 min(R-B)=  +0.96 mean(R-B)= +1.27 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  F7         frames= 12 master_f_in=451 min(R-B)= +30.09 mean(R-B)=+34.65 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  F8         frames= 11 master_f_in=463 min(R-B)= +11.91 mean(R-B)=+12.43 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  F9         frames= 11 master_f_in=474 min(R-B)= +32.41 mean(R-B)=+33.26 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  H0         frames= 22 master_f_in=365 min(R-B)= +32.57 mean(R-B)=+35.84 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  R1         frames= 27 master_f_in=19 min(R-B)= +61.37 mean(R-B)=+65.42 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  R2         frames= 25 master_f_in=46 min(R-B)= +53.26 mean(R-B)=+70.12 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  R3         frames= 25 master_f_in=71 min(R-B)= +48.52 mean(R-B)=+56.68 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  R4         frames= 25 master_f_in=96 min(R-B)= +25.41 mean(R-B)=+28.76 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  R5         frames= 24 master_f_in=121 min(R-B)= -38.44 mean(R-B)=-37.21 exempt=24 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  R6         frames= 26 master_f_in=145 min(R-B)= -89.14 mean(R-B)=-84.63 exempt=26 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  R7         frames= 26 master_f_in=171 min(R-B)= -38.34 mean(R-B)=-37.90 exempt=26 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  R8         frames= 26 master_f_in=197 min(R-B)= +39.79 mean(R-B)=+40.29 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T1_duo     frames= 40 master_f_in=494 min(R-B)= +57.58 mean(R-B)=+59.17 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T1_true    frames= 40 master_f_in=686 min(R-B)=  +0.51 mean(R-B)= +2.97 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T2_duo     frames= 40 master_f_in=512 min(R-B)= +59.84 mean(R-B)=+68.88 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T2_true    frames= 40 master_f_in=686 min(R-B)= +32.06 mean(R-B)=+37.46 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T3_duo     frames= 40 master_f_in=529 min(R-B)= +46.84 mean(R-B)=+56.69 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T3_true    frames= 40 master_f_in=686 min(R-B)= +25.94 mean(R-B)=+27.68 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T4_duo     frames= 40 master_f_in=547 min(R-B)= +27.28 mean(R-B)=+27.71 exempt=0 ink=0 below_ink=0.001% white_clip=0.000%
+PASS  T4_true    frames= 40 master_f_in=686 min(R-B)=  +2.36 mean(R-B)= +3.86 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T5_duo     frames= 40 master_f_in=564 min(R-B)= -39.89 mean(R-B)=-33.36 exempt=40 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T5_true    frames= 40 master_f_in=686 min(R-B)= +81.64 mean(R-B)=+85.07 exempt=40 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T6_duo     frames= 40 master_f_in=582 min(R-B)= -89.28 mean(R-B)=-85.47 exempt=40 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T6_true    frames= 40 master_f_in=686 min(R-B)= -38.39 mean(R-B)=-33.66 exempt=40 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T7_duo     frames= 40 master_f_in=599 min(R-B)= -43.09 mean(R-B)=-42.74 exempt=40 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T7_true    frames= 40 master_f_in=686 min(R-B)= +30.29 mean(R-B)=+30.89 exempt=40 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T8_duo     frames= 40 master_f_in=616 min(R-B)= +37.56 mean(R-B)=+38.27 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T8_true    frames= 40 master_f_in=686 min(R-B)= +33.38 mean(R-B)=+34.00 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
