@@ -35,7 +35,7 @@ SHOTS = [
  ("C5","clash",316,336,"sf119",135.90,1.0,960,["Ken"],"true","jump kick, arena wide"),
  ("C6","clash",336,357,"sf033",39.65,0.60,960,["Dhalsim"],"true>drain","lunge; ramp 1.0 -> 0.2 (avg 0.6) under 'I'm a street fighter', drains to mono by f356"),
  # ACT 3 STRIKE - window 2160x904 (full), TRUE COLOUR
- ("H0","strike",365,387,"sf045",50.75,0.30,1280,["Balrog","Ken"],"true","GLOVE CONTACT FRAME = f365 (editor frame-steps 50.05-51.97 and sets src_in; proof PNG). 0.30x after contact"),
+ ("H0","strike",365,387,"sf045",50.9676,0.30,1280,["Balrog","Ken"],"true","GLOVE CONTACT = src frame 1222 (50.9676 s) = f365 (editor, edit/v001/H0_contact_proof.png). Plate: hold 1222 x4 f, 1223 x2 f, then 0.30x mci from 1224"),
  ("F1","strike",387,398,"sf130",146.15,1.0,1280,["unknown (red spin kick)"],"true","upside-down spin kick, crowd"),
  ("F2","strike",398,409,"sf128",144.86,1.0,1280,["Blanka"],"true","swats a man in an orange jumpsuit"),
  ("F3","strike",409,420,"sf109",121.40,1.0,1280,["Cammy"],"true","fires rotary weapon, muzzle flash"),
@@ -48,8 +48,8 @@ SHOTS = [
 ]
 # ACT 4 ROSTER WALL tiles: 482x430 at 4K from a 600x536 crop (downscale = crisp). Clip plays slow then holds its last frame.
 TILES = [  # id, char, lib id, src_in, arrive f, slot (row,col)
- ("T1","Ryu","sf125",142.95,494,(0,0)), ("T2","Ken","sf031",37.52,512,(0,1)), ("T3","Dhalsim","sf032",38.70,529,(0,2)),
- ("T4","Blanka","sf100",112.70,547,(0,3)), ("T5","Guile","sf082",95.20,564,(1,0)), ("T6","Chun-Li","sf135",152.40,582,(1,1)),
+ ("T1","Ryu","sf125",142.95,494,(0,0)), ("T2","Ken","sf117",134.302,512,(0,1)), ("T3","Dhalsim","sf032",38.70,529,(0,2)),
+ ("T4","Blanka","sf100",112.70,547,(0,3)), ("T5","Guile","sf082",95.20,564,(1,0)), ("T6","Chun-Li","sf135",151.95,582,(1,1)),
  ("T7","M. Bison","sf107",119.60,599,(1,2)), ("T8","E. Honda","sf053",62.30,616,(1,3))]
 TILE_CLIP_F, TILE_SPEED = 40, 0.4   # 40 master frames at 0.4x = 0.64 s of source, then freeze
 

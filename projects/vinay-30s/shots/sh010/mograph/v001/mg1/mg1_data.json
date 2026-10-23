@@ -6,7 +6,7 @@
  "duration": 14.28,
  "defaults": {
   "fxScale": 1,
-  "spirals": true,
+  "spirals": false,
   "push": true
  },
  "cardRect": [

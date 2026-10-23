@@ -367,8 +367,8 @@
     1200,
     1245
    ],
-   "cue_src_in": 50.75,
-   "cue_src_out": 51.014,
+   "cue_src_in": 50.9676,
+   "cue_src_out": 51.232,
    "src_in_used": 50.9676,
    "src_frames_used": [
     1222,
@@ -378,7 +378,7 @@
    "retime": "hold4(1222)+hold2(1223)+mci0.3x(from1224)",
    "crop": "1280:536:0:92",
    "size": "2160x904",
-   "note": "GLOVE CONTACT FRAME = f365 (editor frame-steps 50.05-51.97 and sets src_in; proof PNG). 0.30x after contact",
+   "note": "GLOVE CONTACT = src frame 1222 (50.9676 s) = f365 (editor, edit/v001/H0_contact_proof.png). Plate: hold 1222 x4 f, 1223 x2 f, then 0.30x mci from 1224",
    "contact": {
     "src_frame": 1222,
     "src_s": 50.9676,
@@ -644,21 +644,21 @@
    "master_f_in": 512,
    "master_f_out": 552,
    "frames": 40,
-   "lib": "sf031",
+   "lib": "sf117",
    "lib_src_frames": [
-    899,
-    917
+    3193,
+    3236
    ],
-   "cue_src_in": 37.52,
-   "cue_src_out": 38.16,
-   "src_in_used": 37.5375,
+   "cue_src_in": 134.302,
+   "cue_src_out": 134.942,
+   "src_in_used": 134.3008,
    "src_frames_used": [
-    900,
-    915
+    3220,
+    3235
    ],
    "speed": 0.4,
    "retime": "mci",
-   "crop": "600:536:310:92",
+   "crop": "600:536:116:92",
    "size": "482x430",
    "note": "freeze last frame from f552"
   },
@@ -749,12 +749,12 @@
     3640,
     3690
    ],
-   "cue_src_in": 152.4,
-   "cue_src_out": 153.04,
-   "src_in_used": 152.4023,
+   "cue_src_in": 151.95,
+   "cue_src_out": 152.59,
+   "src_in_used": 151.9435,
    "src_frames_used": [
-    3654,
-    3669
+    3643,
+    3658
    ],
    "speed": 0.4,
    "retime": "mci",

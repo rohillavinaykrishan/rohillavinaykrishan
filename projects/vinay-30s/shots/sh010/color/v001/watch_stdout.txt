@@ -97,3 +97,66 @@ PASS  T7_true    frames= 40 master_f_in=686 min(R-B)= +30.29 mean(R-B)=+30.89 ex
 T8_true.mp4: true; frames in 40 out 40 OK
 21:32:12 PASS  T8_duo     frames= 40 master_f_in=616 min(R-B)= +37.56 mean(R-B)=+38.27 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
 PASS  T8_true    frames= 40 master_f_in=686 min(R-B)= +33.38 mean(R-B)=+34.00 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:33:12 grading R1 (src mtime 21:23:49, expect 27 f)
+21:33:21 R1.mp4: duo:Ryu levels 0.010-0.813 gamma 0.68; frames in 27 out 27 OK
+21:33:22 PASS  R1         frames= 27 master_f_in=19 min(R-B)= +61.37 mean(R-B)=+65.42 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:33:22 grading C6 (src mtime 21:30:28, expect 21 f)
+21:33:41 C6.mp4: true>drain; frames in 21 out 21 OK
+21:33:42 PASS  C6         frames= 21 master_f_in=336 min(R-B)=  +8.83 mean(R-B)=+21.25 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:33:42 grading T2 (src mtime 21:30:37, expect 40 f)
+21:33:43 [mov,mp4,m4a,3gp,3g2,mj2 @ 0x56139de3f4c0] moov atom not found
+[in#0 @ 0x56139de3f3c0] Error opening input: Invalid data found when processing input
+Error opening input file /home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/T2.mp4.
+Error opening input files: Invalid data found when processing input
+Traceback (most recent call last):
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 86, in <module>
+    main()
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 77, in main
+    outs = [(d1, grade_duo(src, d1, tiles[i]["character"])), (d2, grade_true(src, d2, local=i in ("T5", "T6", "T7")))]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 45, in grade_duo
+    encode(src, vf, dst); return f"duo:{fighter} levels {imin:.3f}-{imax:.3f} gamma {gm:.2f}"
+    ^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 28, in encode
+    subprocess.run(cmd, check=True); os.replace(tmp, dst)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ffmpeg', '-v', 'error', '-y', '-i', '/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/T2.mp4', '-filter_complex', "[0:v]scale=in_color_matrix=bt709:in_range=tv:out_color_matrix=bt709:out_range=pc,format=gbrp,lutrgb=r='255*pow(clip((val/255-0.0437)/0.8328\\,0\\,1)\\,0.926)':g='255*pow(clip((val/255-0.0437)/0.8328\\,0\\,1)\\,0.926)':b='255*pow(clip((val/255-0.0437)/0.8328\\,0\\,1)\\,0.926)',noise=alls=6:allf=t,lut3d=file=/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/duo_ken.cube:interp=tetrahedral,scale=in_range=pc:out_color_matrix=bt709:out_range=tv,format=yuv420p[o]", '-map', '[o]', '-an', '-fps_mode', 'passthrough', '-c:v', 'libx264', '-preset', 'medium', '-crf', '10', '-pix_fmt', 'yuv420p', '-threads', '2', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-colorspace', 'bt709', '-color_range', 'tv', '-movflags', '+faststart', '/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/T2_duo.mp4.tmp.mp4']' returned non-zero exit status 183.
+21:33:43 T2 source changed during grading; will regrade
+21:33:43 grading T3 (src mtime 21:30:44, expect 40 f)
+21:33:48 T3_duo.mp4: duo:Dhalsim levels 0.070-0.859 gamma 0.76; frames in 40 out 40 OK
+T3_true.mp4: true; frames in 40 out 40 OK
+21:33:50 PASS  T3_duo     frames= 40 master_f_in=529 min(R-B)= +46.84 mean(R-B)=+56.69 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T3_true    frames= 40 master_f_in=686 min(R-B)= +25.94 mean(R-B)=+27.68 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:33:50 grading T6 (src mtime 21:21:03, expect 40 f)
+21:33:51 [mov,mp4,m4a,3gp,3g2,mj2 @ 0x55d7291fc540] moov atom not found
+[in#0 @ 0x55d7291fc440] Error opening input: Invalid data found when processing input
+Error opening input file /home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/T6.mp4.
+Error opening input files: Invalid data found when processing input
+Traceback (most recent call last):
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 86, in <module>
+    main()
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 77, in main
+    outs = [(d1, grade_duo(src, d1, tiles[i]["character"])), (d2, grade_true(src, d2, local=i in ("T5", "T6", "T7")))]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 45, in grade_duo
+    encode(src, vf, dst); return f"duo:{fighter} levels {imin:.3f}-{imax:.3f} gamma {gm:.2f}"
+    ^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 28, in encode
+    subprocess.run(cmd, check=True); os.replace(tmp, dst)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ffmpeg', '-v', 'error', '-y', '-i', '/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/T6.mp4', '-filter_complex', "[0:v]scale=in_color_matrix=bt709:in_range=tv:out_color_matrix=bt709:out_range=pc,format=gbrp,lutrgb=r='255*pow(clip((val/255-0.0309)/0.8290\\,0\\,1)\\,0.613)':g='255*pow(clip((val/255-0.0309)/0.8290\\,0\\,1)\\,0.613)':b='255*pow(clip((val/255-0.0309)/0.8290\\,0\\,1)\\,0.613)',noise=alls=6:allf=t,lut3d=file=/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/duo_chunli.cube:interp=tetrahedral,scale=in_range=pc:out_color_matrix=bt709:out_range=tv,format=yuv420p[o]", '-map', '[o]', '-an', '-fps_mode', 'passthrough', '-c:v', 'libx264', '-preset', 'medium', '-crf', '10', '-pix_fmt', 'yuv420p', '-threads', '2', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-colorspace', 'bt709', '-color_range', 'tv', '-movflags', '+faststart', '/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/T6_duo.mp4.tmp.mp4']' returned non-zero exit status 183.
+21:33:51 T6 source changed during grading; will regrade
+21:34:51 grading T2 (src mtime 21:33:44, expect 40 f)
+21:34:57 T2_duo.mp4: duo:Ken levels 0.080-0.912 gamma 1.00; frames in 40 out 40 OK
+T2_true.mp4: true; frames in 40 out 40 OK
+21:35:00 PASS  T2_duo     frames= 40 master_f_in=512 min(R-B)= +59.84 mean(R-B)=+68.88 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T2_true    frames= 40 master_f_in=686 min(R-B)= +32.06 mean(R-B)=+37.46 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:35:00 grading T6 (src mtime 21:33:53, expect 40 f)
+21:35:04 T6_duo.mp4: duo:Chun-Li levels 0.030-0.896 gamma 0.70; frames in 40 out 40 OK
+T6_true.mp4: true (T5-T7 local exemption, no warm-pre); frames in 40 out 40 OK
+21:35:08 PASS  T6_duo     frames= 40 master_f_in=582 min(R-B)= -89.28 mean(R-B)=-85.47 exempt=40 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T6_true    frames= 40 master_f_in=686 min(R-B)= -38.39 mean(R-B)=-33.66 exempt=40 ink=0 below_ink=0.000% white_clip=0.000%

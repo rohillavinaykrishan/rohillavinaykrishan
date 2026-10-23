@@ -151,9 +151,9 @@
  },
  "T2": {
   "mode": "mci",
-  "src_first_frame": 900,
-  "src_last_frame": 915,
-  "src_in_actual": 37.5375
+  "src_first_frame": 3220,
+  "src_last_frame": 3235,
+  "src_in_actual": 134.3008
  },
  "T3": {
   "mode": "mci",
@@ -175,9 +175,9 @@
  },
  "T6": {
   "mode": "mci",
-  "src_first_frame": 3654,
-  "src_last_frame": 3669,
-  "src_in_actual": 152.4023
+  "src_first_frame": 3643,
+  "src_last_frame": 3658,
+  "src_in_actual": 151.9435
  },
  "T7": {
   "mode": "mci",

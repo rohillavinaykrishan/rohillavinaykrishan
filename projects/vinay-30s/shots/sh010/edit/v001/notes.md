@@ -14,5 +14,6 @@
   so H0 holds 1222 for 4 f, holds 1223 for 2 f, then runs 0.3x mci from 1224 (the treatment allows a 4-frame freeze on contact). sf045 contains 2 camera cuts that the library
   does not list (1216/1217 and 1221/1222). H0 starts exactly on the second, so it crosses neither. The F8 fallback is not needed.
 - R7 range slid back 0.53 src frame (src_in 119.595) so the blend does not pick up 11% of the next trailer shot.
-- For the Director (cue choices, not changed by the editor): **T2** (sf031) ends on a whip blur of Ken's back, a poor freeze frame, and sf031 has no clean
-  0.64 s span. Consider T2 from sf117 (R2's Ken) or the first 6 frames of sf031 held. **T6** ends with Chun-Li turning away. An earlier src_in (~151.95) ends on her face.
+- Producer-approved changes, applied through the director's `make_cues.py` (table edits only; regenerated, and the cues.json diff contains just these):
+  H0 src_in 50.75 -> 50.9676 (contact at src 1222); T2 sf031 -> sf117 src_in 134.302 (src 3220-3235, Ken charging and yelling, ends on his face; crop 600:536:116:92);
+  T6 src_in 152.40 -> 151.95 (ends on Chun-Li's face). Only T2 and T6 were rebuilt; all 32 re-verified OK. T2 hard-steps k1-7 (fast arm swing, mci guard).

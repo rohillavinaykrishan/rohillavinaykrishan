@@ -28,7 +28,7 @@ def name_size(txt):
 
 data = {
     'W': W, 'H': H, 'fps': FPS, 'lastFrame': LAST, 'duration': NF / FPS,
-    'defaults': {'fxScale': 1, 'spirals': True, 'push': True},
+    'defaults': {'fxScale': 1, 'spirals': False, 'push': True},
     'cardRect': [0, 500, W, 1600], 'win1': L['act1_window'], 'win2': L['act2_window'],
     'wipeDur': 6,
     'coldOpen': {'end': cues['events']['cold_open']['f'][1], 'hairDur': 12, 'labelF': beats1[0]},
@@ -86,7 +86,7 @@ for i, s in enumerate(data['clashShots']):
 scene_js = open(os.path.join(HERE, 'mg1_scene.js')).read()
 variables = json.dumps([
     {"id": "fxScale", "type": "number", "label": "FX canvas scale (1 = 4K, 0.25 = proxy)", "default": 1, "min": 0.25, "max": 1, "step": 0.25},
-    {"id": "spirals", "type": "boolean", "label": "Draw the f336-356 charge spirals (off if MG2 draws them)", "default": True},
+    {"id": "spirals", "type": "boolean", "label": "Draw MG1's own f336-356 charge spirals (MG2 owns them; keep off)", "default": False},
     {"id": "push", "type": "boolean", "label": "Whole-frame push 1.00-1.04 f336-356", "default": True}])
 
 scene = f'''<template>

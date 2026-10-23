@@ -2,168 +2,168 @@
  "plates": {
   "R1": {
    "sig": [
-    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/R1.mp4",
-    1728799,
-    1792790253
+    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/R1.mp4",
+    8292466,
+    1792791200
    ],
-   "kind": "edit",
-   "src": "edit/v001/plates/R1.mp4",
+   "kind": "color",
+   "src": "color/v001/plates/R1.mp4",
    "frames": 27,
    "expected": 27,
    "size": "2160x904"
   },
   "R2": {
    "sig": [
-    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/R2.mp4",
-    3371426,
-    1792790260
+    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/R2.mp4",
+    10422432,
+    1792790678
    ],
-   "kind": "edit",
-   "src": "edit/v001/plates/R2.mp4",
+   "kind": "color",
+   "src": "color/v001/plates/R2.mp4",
    "frames": 25,
    "expected": 25,
    "size": "2160x904"
   },
   "R3": {
    "sig": [
-    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/R3.mp4",
-    3925857,
-    1792790270
+    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/R3.mp4",
+    11905459,
+    1792790717
    ],
-   "kind": "edit",
-   "src": "edit/v001/plates/R3.mp4",
+   "kind": "color",
+   "src": "color/v001/plates/R3.mp4",
    "frames": 25,
    "expected": 25,
    "size": "2160x904"
   },
   "R4": {
    "sig": [
-    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/R4.mp4",
-    4121355,
-    1792790279
+    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/R4.mp4",
+    12772442,
+    1792790758
    ],
-   "kind": "edit",
-   "src": "edit/v001/plates/R4.mp4",
+   "kind": "color",
+   "src": "color/v001/plates/R4.mp4",
    "frames": 25,
    "expected": 25,
    "size": "2160x904"
   },
   "R5": {
    "sig": [
-    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/R5.mp4",
-    1641632,
-    1792790284
+    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/R5.mp4",
+    10627886,
+    1792790781
    ],
-   "kind": "edit",
-   "src": "edit/v001/plates/R5.mp4",
+   "kind": "color",
+   "src": "color/v001/plates/R5.mp4",
    "frames": 24,
    "expected": 24,
    "size": "2160x904"
   },
   "R6": {
    "sig": [
-    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/R6.mp4",
-    3087461,
-    1792790290
+    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/R6.mp4",
+    10518679,
+    1792790819
    ],
-   "kind": "edit",
-   "src": "edit/v001/plates/R6.mp4",
+   "kind": "color",
+   "src": "color/v001/plates/R6.mp4",
    "frames": 26,
    "expected": 26,
    "size": "2160x904"
   },
   "R7": {
    "sig": [
-    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/R7.mp4",
-    1059988,
-    1792790293
+    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/R7.mp4",
+    7153645,
+    1792790853
    ],
-   "kind": "edit",
-   "src": "edit/v001/plates/R7.mp4",
+   "kind": "color",
+   "src": "color/v001/plates/R7.mp4",
    "frames": 26,
    "expected": 26,
    "size": "2160x904"
   },
   "R8": {
    "sig": [
-    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/R8.mp4",
-    1097626,
-    1792790297
+    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/R8.mp4",
+    8563042,
+    1792790877
    ],
-   "kind": "edit",
-   "src": "edit/v001/plates/R8.mp4",
+   "kind": "color",
+   "src": "color/v001/plates/R8.mp4",
    "frames": 26,
    "expected": 26,
    "size": "2160x904"
   },
   "C1": {
    "sig": [
-    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/C1.mp4",
-    3007913,
-    1792790318
+    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/C1.mp4",
+    3506074,
+    1792790895
    ],
-   "kind": "edit",
-   "src": "edit/v001/plates/C1.mp4",
+   "kind": "color",
+   "src": "color/v001/plates/C1.mp4",
    "frames": 26,
    "expected": 26,
    "size": "2160x1206"
   },
   "C2": {
    "sig": [
-    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/C2.mp4",
-    1894185,
-    1792790323
+    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/C2.mp4",
+    1992905,
+    1792790908
    ],
-   "kind": "edit",
-   "src": "edit/v001/plates/C2.mp4",
+   "kind": "color",
+   "src": "color/v001/plates/C2.mp4",
    "frames": 17,
    "expected": 17,
    "size": "2160x1206"
   },
   "C3": {
    "sig": [
-    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/C3.mp4",
-    4254913,
-    1792790331
+    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/C3.mp4",
+    4494704,
+    1792790923
    ],
-   "kind": "edit",
-   "src": "edit/v001/plates/C3.mp4",
+   "kind": "color",
+   "src": "color/v001/plates/C3.mp4",
    "frames": 18,
    "expected": 18,
    "size": "2160x1206"
   },
   "C4": {
    "sig": [
-    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/C4.mp4",
-    2332889,
-    1792790336
+    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/C4.mp4",
+    2434600,
+    1792790931
    ],
-   "kind": "edit",
-   "src": "edit/v001/plates/C4.mp4",
+   "kind": "color",
+   "src": "color/v001/plates/C4.mp4",
    "frames": 18,
    "expected": 18,
    "size": "2160x1206"
   },
   "C5": {
    "sig": [
-    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/C5.mp4",
-    2880582,
-    1792790343
+    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/C5.mp4",
+    3105431,
+    1792790941
    ],
-   "kind": "edit",
-   "src": "edit/v001/plates/C5.mp4",
+   "kind": "color",
+   "src": "color/v001/plates/C5.mp4",
    "frames": 20,
    "expected": 20,
    "size": "2160x1206"
   },
   "C6": {
    "sig": [
-    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/C6.mp4",
-    3699405,
-    1792790387
+    "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/C6.mp4",
+    3516071,
+    1792791219
    ],
-   "kind": "edit",
-   "src": "edit/v001/plates/C6.mp4",
+   "kind": "color",
+   "src": "color/v001/plates/C6.mp4",
    "frames": 21,
    "expected": 21,
    "size": "2160x1206"
