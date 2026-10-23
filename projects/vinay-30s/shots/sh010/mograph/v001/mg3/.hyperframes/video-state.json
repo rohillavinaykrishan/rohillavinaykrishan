@@ -349,8 +349,8 @@
   },
   "checks": {
     "latest": {
-      "revision": "c650e419-06f1-415a-a071-07f811ef4a25",
-      "id": "569f6e17-bc3a-4e2e-beb8-85241874528c"
+      "revision": "91f866f3-cf40-4ac4-82bd-0a0263c24b3f",
+      "id": "f296f8c1-38f9-4c80-be4c-1a1376a29c27"
     },
     "revisions": {
       "d34fc55c-db56-4c31-8cc1-c239e25f7d3a": [
@@ -463,6 +463,35 @@
           "contentHash": "56e3f7b816a0856b8724fc9efaf95ff187e19bcd140f83419e95d34cec957434",
           "revision": "c650e419-06f1-415a-a071-07f811ef4a25",
           "inputFingerprint": "042b3095a110b5cf9c3641f102fba3dd450ef9fb5bdfca821129daf814b3c6e3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "91f866f3-cf40-4ac4-82bd-0a0263c24b3f": [
+        {
+          "id": "f296f8c1-38f9-4c80-be4c-1a1376a29c27",
+          "scope": "project",
+          "report": "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/mograph/v001/mg3/.hyperframes/artifacts/checks/f296f8c1-38f9-4c80-be4c-1a1376a29c27.json",
+          "metadata": {
+            "ok": false,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792790970547,
+          "contentHash": "56e3f7b816a0856b8724fc9efaf95ff187e19bcd140f83419e95d34cec957434",
+          "revision": "91f866f3-cf40-4ac4-82bd-0a0263c24b3f",
+          "inputFingerprint": "f77b52170a0715ccdd8bed9c33fcfbfaeb4bdc0fda878ab42fd1d5e025f2a4b6",
           "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }

@@ -10,3 +10,7 @@ PASS  C2         frames= 17 master_f_in=263 min(R-B)= +24.85 mean(R-B)=+25.29 ex
 PASS  C3         frames= 18 master_f_in=280 min(R-B)= +34.84 mean(R-B)=+39.94 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
 PASS  C4         frames= 18 master_f_in=298 min(R-B)= +21.64 mean(R-B)=+22.73 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
 PASS  C5         frames= 20 master_f_in=316 min(R-B)= +30.10 mean(R-B)=+31.19 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  C6         frames= 21 master_f_in=336 min(R-B)=  +8.69 mean(R-B)=+21.25 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  H0         frames= 22 master_f_in=365 min(R-B)= +32.57 mean(R-B)=+35.84 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  F1         frames= 11 master_f_in=387 min(R-B)= +25.48 mean(R-B)=+27.78 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  F2         frames= 11 master_f_in=398 min(R-B)=  +0.71 mean(R-B)= +1.88 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%

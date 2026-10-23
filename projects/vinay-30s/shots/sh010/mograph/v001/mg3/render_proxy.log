@@ -1,0 +1,4 @@
+[INFO] [Compiler] Inlined CDN script: https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js
+[INFO] [Compiler] Embedded local font file: assets/fonts/Unbounded-900.ttf (387 KB → data URI)
+[INFO] [Compiler] Embedded local font file: assets/fonts/Unbounded-500.ttf (339 KB → data URI)
+[INFO] [Compiler] Embedded local font file: assets/fonts/SpaceMono-700.ttf (78 KB → data URI)

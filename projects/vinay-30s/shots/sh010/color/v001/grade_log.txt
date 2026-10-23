@@ -10,3 +10,7 @@ C2.mp4: true; frames in 17 out 17 OK
 C3.mp4: true; frames in 18 out 18 OK
 C4.mp4: true; frames in 18 out 18 OK
 C5.mp4: true; frames in 20 out 20 OK
+C6.mp4: true>drain; frames in 21 out 21 OK
+H0.mp4: true; frames in 22 out 22 OK
+F1.mp4: true; frames in 11 out 11 OK
+F2.mp4: true warm-pre rr+0.09 gg-0.022 bb-0.09; frames in 11 out 11 OK

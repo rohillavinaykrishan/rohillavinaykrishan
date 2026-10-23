@@ -35,3 +35,15 @@
 21:29:02 C5.mp4: true; frames in 20 out 20 OK
 21:29:03 PASS  C5         frames= 20 master_f_in=316 min(R-B)= +30.10 mean(R-B)=+31.19 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
 21:29:03 grading C6 (src mtime 21:19:47, expect 21 f)
+21:29:29 C6.mp4: true>drain; frames in 21 out 21 OK
+21:29:30 PASS  C6         frames= 21 master_f_in=336 min(R-B)=  +8.69 mean(R-B)=+21.25 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:29:30 grading H0 (src mtime 21:16:48, expect 22 f)
+21:29:35 H0.mp4: true; frames in 22 out 22 OK
+21:29:36 PASS  H0         frames= 22 master_f_in=365 min(R-B)= +32.57 mean(R-B)=+35.84 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:29:36 grading F1 (src mtime 21:19:53, expect 11 f)
+21:29:41 F1.mp4: true; frames in 11 out 11 OK
+21:29:42 PASS  F1         frames= 11 master_f_in=387 min(R-B)= +25.48 mean(R-B)=+27.78 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:29:42 grading F2 (src mtime 21:19:56, expect 11 f)
+21:29:53 F2.mp4: true warm-pre rr+0.09 gg-0.022 bb-0.09; frames in 11 out 11 OK
+21:29:53 PASS  F2         frames= 11 master_f_in=398 min(R-B)=  +0.71 mean(R-B)= +1.88 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:29:53 grading F3 (src mtime 21:19:58, expect 11 f)

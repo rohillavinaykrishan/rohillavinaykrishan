@@ -31,6 +31,7 @@ EPS = 1e-6
 
 # editor decisions (documented in notes.md / edl.json)
 H0_CONTACT_FRAME = 1222          # sf045: first frame the glove is on Ken's face (H0_contact_proof.png)
+STEP_THRESH = float(os.environ.get('STEP_THRESH', '22'))
 MODE_OVERRIDE = {'R7': 'blend', 'C6': 'ramp'}
 WIN = {'roster': (2160, 904), 'strike': (2160, 904), 'clash': (2160, 1206), 'tile': (482, 430)}
 FALLBACK_BLEND = set(os.environ.get('BLEND', '').split(',')) - {''}   # ids forced to frame-blend
@@ -163,6 +164,19 @@ def build(it):
         if max(idx) >= len(src):
             raise SystemExit('%s: interpolated stream too short (%d < %d)' % (it['id'], len(src), max(idx) + 1))
         frames = src[idx]
+        # big-motion guard: mci ghosts/doubles across large changes; there, hard-step to the nearest real frame
+        real, _ = decode(it, a, int(math.ceil(pos[-1] + EPS)) + 1)
+        yy = real[:, 0, ::4, ::4].astype(np.float32)
+        pair = [float(np.abs(yy[j + 1] - yy[j]).mean()) for j in range(len(yy) - 1)]
+        stepped = []
+        for k, p_ in enumerate(pos):
+            j = int(math.floor(p_ + EPS))
+            if p_ - j > 1e-3 and j < len(pair) and pair[j] > STEP_THRESH:
+                frames[k] = real[min(int(round(p_)), len(real) - 1)]
+                stepped.append(k)
+        if stepped:
+            print('  %s: hard-stepped k=%s (pair diffs %s)' % (it['id'], stepped,
+                  [round(v, 1) for v in pair if v > STEP_THRESH]), flush=True)
         used = (a, a + int(math.ceil(pos[-1] - 1e-3)))
     if it['id'] == 'H0':
         # hybrid: mci ghosts on the 1222->1224 impact (glove doubles); hold contact 4 f, step 1223 for 2 f,
