@@ -1,8 +1,8 @@
 {
- "mg1": [
-  ["\"defaults\":{\"fxScale\":1,\"spirals\":true,\"push\":true}", "\"defaults\":{\"fxScale\":1,\"spirals\":false,\"push\":true}"]
- ],
  "mg2": [
-  ["const push = 1 + 0.04 * prog(f, F0, CH1);", "const push = 1 + 0.04 * FX.ease.in(prog(f, F0, CH1)); /* comp lead: match MG1's whole-frame push (ease.in, origin 1080,1550) */"]
+  [
+   "const push = 1 + 0.04 * prog(f, F0, CH1);",
+   "const push = 1 + 0.04 * FX.ease.in(prog(f, F0, CH1)); /* comp lead: match MG1's whole-frame push (ease.in, origin 1080,1550) */"
+  ]
  ]
 }

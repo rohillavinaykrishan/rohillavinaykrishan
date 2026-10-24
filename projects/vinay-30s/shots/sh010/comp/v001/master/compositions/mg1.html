@@ -30,7 +30,7 @@
     #mg1-fgfx { z-index: 40; mix-blend-mode: screen; }
   </style>
   <div id="root" data-composition-id="mg1" data-width="2160" data-height="3840" data-duration="14.28"
-       data-composition-variables='[{"id": "fxScale", "type": "number", "label": "FX canvas scale (1 = 4K, 0.25 = proxy)", "default": 1, "min": 0.25, "max": 1, "step": 0.25}, {"id": "spirals", "type": "boolean", "label": "Draw the f336-356 charge spirals (off if MG2 draws them)", "default": true}, {"id": "push", "type": "boolean", "label": "Whole-frame push 1.00-1.04 f336-356", "default": true}]' data-layout-allow-overflow data-layout-allow-overlap>
+       data-composition-variables='[{"id": "fxScale", "type": "number", "label": "FX canvas scale (1 = 4K, 0.25 = proxy)", "default": 1, "min": 0.25, "max": 1, "step": 0.25}, {"id": "spirals", "type": "boolean", "label": "Draw MG1's own f336-356 charge spirals (MG2 owns them; keep off)", "default": false}, {"id": "push", "type": "boolean", "label": "Whole-frame push 1.00-1.04 f336-356", "default": true}]' data-layout-allow-overflow data-layout-allow-overlap>
     <div id="mg1-ink"></div>
     <div id="mg1-stage" data-layout-allow-overflow data-layout-allow-overlap>
       <canvas id="mg1-bgfx"></canvas>

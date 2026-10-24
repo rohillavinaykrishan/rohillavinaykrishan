@@ -86,7 +86,7 @@ def scene(cid, off, scale):
         return (f'<{tag} {attrs} class="{("clip " + cls).strip()}" data-start="{T(f_in, off)}" '
                 f'data-duration="{round((f_out - f_in) / FPS, 4)}" data-track-index="{z[0]}" '
                 f'style="{style}z-index:{z[0]}">{close}')
-    S = lambda f: T(f - 0.5, off)          # instant 'set' that lands on frame f
+    S = lambda f: max(0.0, T(f - 0.5, off))   # instant 'set' that lands on frame f
     A = lambda f: T(f, off)
 
     # back canvas: dust (ambient), lowest
@@ -97,7 +97,11 @@ def scene(cid, off, scale):
            for s in F_SHOTS]
     # untimed container (videos are timed); shown f387-484 by opacity
     els.append(f'<div id="{cid}-win" style="z-index:{z[0]}">' + "".join(win) + f'<div id="{cid}-winb" class="winb"></div></div>')
-    js.append(f'tl.set("#{cid}-win",{{opacity:1}},{S(F0)});tl.set("#{cid}-win",{{opacity:0}},{S(SPLIT)});')
+    if off >= F0:   # proxy starts on f387: window visible from its first frame
+        js.append(f'gsap.set("#{cid}-win",{{opacity:1}});')
+    else:
+        js.append(f'tl.set("#{cid}-win",{{opacity:1}},{S(F0)});')
+    js.append(f'tl.set("#{cid}-win",{{opacity:0}},{S(SPLIT)});')
     for k, s in enumerate(F_SHOTS):
         js.append(f'tl.set("#{cid}-winb",{{borderColor:"{WHEEL[k % 8]}"}},{S(s["f_in"])});'
                   f'tl.set("#{cid}-winb",{{borderColor:"{SMOKE}"}},{S(s["f_in"] + 2)});')
@@ -314,8 +318,9 @@ def scene(cid, off, scale):
 {chr(10).join('    ' + j for j in js)}
     const drv = {{ t: 0 }};
     tl.fromTo(drv, {{ t: 0 }}, {{ t: {dur}, duration: {dur}, ease: "none", onUpdate: () => draw(OFF + drv.t * {FPS}) }}, 0);
-    draw(OFF);
-    window.__timelines["{cid}"] = tl;
+    // canvas text needs Unbounded loaded first: register the timeline only after the fonts resolve
+    Promise.all([document.fonts.load(FONT), document.fonts.load("500 92px Unbounded"), document.fonts.load("700 28px SpaceMonoHF")])
+      .then(() => {{ cache.clear(); draw(OFF); window.__timelines["{cid}"] = tl; }});
   </script>
 </template>
 """

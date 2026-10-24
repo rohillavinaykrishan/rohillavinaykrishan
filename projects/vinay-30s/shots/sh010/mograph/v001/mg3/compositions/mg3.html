@@ -734,7 +734,8 @@
     }
     function draw(f) { f = Math.round(f * 1000) / 1000; drawBack(f); drawName(f); drawTiles(f); }
     
-    tl.set("#mg3-win",{opacity:1},15.46);tl.set("#mg3-win",{opacity:0},19.38);
+    tl.set("#mg3-win",{opacity:1},15.46);
+    tl.set("#mg3-win",{opacity:0},19.38);
     tl.set("#mg3-winb",{borderColor:"#E3203A"},15.46);tl.set("#mg3-winb",{borderColor:"#2B2632"},15.54);
     tl.set("#mg3-winb",{borderColor:"#FF5E1A"},15.9);tl.set("#mg3-winb",{borderColor:"#2B2632"},15.98);
     tl.set("#mg3-winb",{borderColor:"#FFA21C"},16.34);tl.set("#mg3-winb",{borderColor:"#2B2632"},16.42);
@@ -792,7 +793,8 @@
     tl.fromTo("#mg3-push",{scale:1},{scale:1.005,duration:2.52,ease:"none",immediateRender:false},27.48);
     const drv = { t: 0 };
     tl.fromTo(drv, { t: 0 }, { t: 30.0, duration: 30.0, ease: "none", onUpdate: () => draw(OFF + drv.t * 25) }, 0);
-    draw(OFF);
-    window.__timelines["mg3"] = tl;
+    // canvas text needs Unbounded loaded first: register the timeline only after the fonts resolve
+    Promise.all([document.fonts.load(FONT), document.fonts.load("500 92px Unbounded"), document.fonts.load("700 28px SpaceMonoHF")])
+      .then(() => { cache.clear(); draw(OFF); window.__timelines["mg3"] = tl; });
   </script>
 </template>
