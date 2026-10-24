@@ -21,3 +21,4 @@ projects/**/*.woff2
 projects/**/render/work-*/
 projects/**/._*.hf-transaction-*/
 projects/**/.hyperframes/video-state.json
+projects/**/.hyperframes/
