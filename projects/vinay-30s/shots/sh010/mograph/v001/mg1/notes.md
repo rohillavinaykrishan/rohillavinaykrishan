@@ -19,7 +19,7 @@ cd proxy && npx hyperframes render --fps 25 -o ../mg1_proxy_540.mp4
 ```
 ## Variables (on the host's data-variable-values)
 - `fxScale` (1 at 4K, 0.25 for proxy): canvas resolution of the dust, plume, fringe and streak layers.
-- `spirals` (default true): turn off if MG2 draws the f336-356 charge spirals, so they are not drawn twice.
+- `spirals` (default FALSE, coordinator decision: MG2 owns the spirals and the name). MG1's streaks orbit until f335 and stop at f336, where MG2 picks them up from `spiral_handoff.json` orbit_heads_f326_336.
 - `push` (default true): the whole-frame 1.00-1.04 push over f336-356 (ease.in). Turn off if the master comp pushes.
 
 ## Design decisions
@@ -29,3 +29,6 @@ cd proxy && npx hyperframes render --fps 25 -o ../mg1_proxy_540.mp4
 - Shutter: slivers show band k of R(k)'s last frame; hue flash cascades 1 f apart from f223; tightens f229-236 (ease.in) into eight 6 px hue lines at y 1500, which become the streaks on f237 while the Act-2 window slams open from that bundle in 3 f.
 - Streaks: orbit an inset rounded rect around the Act-2 window, at 40/55/72/92/115 px/f (one step up per cut), with 10-frame trails drawn with kit `glowStroke`. Spiral: the speed ramps linearly from 115 px/f to v_end (154-335 px/f), so the charge accelerates.
 - The fg canvas uses mix-blend-mode: screen over the plates.
+
+## Status
+Proxy rendered 2026-10-24 from graded colour plates (color/v001/plates R1-R8, C1-C6), kit v001. 540x960, 25 fps, 357 frames, H.264 yuv420p. The render took 53 s with 2 workers.

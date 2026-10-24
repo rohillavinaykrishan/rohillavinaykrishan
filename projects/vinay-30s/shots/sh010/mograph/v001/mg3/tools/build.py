@@ -189,7 +189,7 @@ def scene(cid, off, scale):
     .piece img {{ position:absolute; max-width:none; }}
     .tile {{ position:absolute; }}
     .tborder, .ttag {{ opacity:0; }}
-    .tmask {{ position:absolute; inset:0; overflow:hidden; }}
+    .tmask {{ position:absolute; inset:0; overflow:hidden; z-index:1; }}   /* own stacking context: border+tag stay on top */
     .tmask > .clip {{ position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover; }}
     .tborder {{ position:absolute; inset:0; border:3px solid; z-index:50; }}
     .ttag {{ position:absolute; left:3px; bottom:3px; z-index:51; font-family:"SpaceMonoHF"; font-weight:700; font-size:28px;
