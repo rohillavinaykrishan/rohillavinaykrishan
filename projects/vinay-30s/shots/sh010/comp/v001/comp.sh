@@ -29,7 +29,7 @@ case "${1:-}" in
   half)
     h=${2:?a|b}
     cd "$V/half_$h"
-    npx hyperframes render . -q delivery --crf 8 -f 25 -o "$R/half_$h.mp4" > "$R/render_4k_$h.log" 2>&1 ;;
+    npx hyperframes render . -q delivery --crf 8 -f 25 -w 2 -o "$R/half_$h.mp4" > "$R/render_4k_$h.log" 2>&1 ;;
   join)
     printf "file '%s'\nfile '%s'\n" "$R/half_a.mp4" "$R/half_b.mp4" > "$R/halves.txt"
     ffmpeg -v error -y -f concat -safe 0 -i "$R/halves.txt" -map 0:v:0 -c copy -an "$R/vinay30_4K_picture.mp4" ;;

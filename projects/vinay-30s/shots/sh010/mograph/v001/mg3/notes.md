@@ -23,6 +23,7 @@ Plate priority per item: color/v001/plates > edit/v001/plates > placeholders/ (m
   same frame, borders and tags blend to Champion Gold / Bone in 6 f. Kit dust from f634; 0.5 % push f687-749.
 
 ## Known issues
-- Tiles are still MY placeholders (approx. duotone) until color/ delivers `T#_duo.mp4` / `T#_true.mp4`.
-- F1-F9 are ungraded edit plates until color/ delivers.
-- `check` reports text_occluded under `#mg3-fr` (a transparent canvas): false positive, verified on frames.
+- All plates now come from color/v001/plates (graded F1-F9, T#_duo / T#_true); placeholders/ are no longer used.
+- check: text_occluded under #mg3-fr (a transparent full-frame canvas) = false positive, verified on frames.
+- Fixed in v001: canvas name waited for Unbounded before drawing (timeline registers after fonts load);
+  tile media got its own stacking context so the T7/T8 border and tag show.
