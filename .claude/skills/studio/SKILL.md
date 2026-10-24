@@ -35,6 +35,8 @@ All agents follow `.claude/skills/studio/conventions.md` - read it now.
 | Social Media Editor | `social-media-editor` | Reels, WhatsApp status, 15 s teaser, square version |
 | Subtitle Translator | `subtitle-translator` | lyric .srt files: original script, Roman, English/Hindi/... |
 | Motion Graphics | `motion-graphics-artist` | titles, lyric text, graphics (HyperFrames) |
+| Shot Librarian | `shot-librarian` | catalogues a source film once: shots, characters, crops, dialogue/music map (library/) |
+| Pipeline Engineer | `pipeline-engineer` | reusable templates + scripts (credit roll, title system, auto-QC, 4K delivery) |
 
 ## Flow
 
@@ -93,6 +95,38 @@ All agents follow `.claude/skills/studio/conventions.md` - read it now.
    short summary: what was made, by whom, how long, open notes. Don't commit media
    to git (`projects/` media is git-ignored); commit only scripts and notes the
    user would want to keep, and only if they ask.
+
+## Deliverables (client rule)
+
+Deliver ONLY the 4K master (`deliver/<name>_4K.mp4`). No phone/share/1080p copies, previews or extra versions unless the client asks.
+
+## Time estimates (client rule)
+
+Always tell the client how long the project will take, as a clock time in INDIA time (IST, UTC+5:30; never UTC) plus a duration, both at intake and
+whenever a step finishes or slips. Base it on these measured times on this 4-core machine:
+- treatment / pre-production ~30-50 min; storyboard ~15 min; editor plate ~15 min; colour grade ~20 min
+- roto: rembg ~1 min per 52 frames, SAM 2 ~3-4 s/frame; COLMAP solve ~10-15 min
+- Blender Cycles shot (52 frames) ~40 min; title stills ~35 min
+- HyperFrames 4K render ~7-12 min; build + review rounds ~40-60 min
+- encode + delivery ~10 min; QC ~15-25 min; each supervisor fix round ~45-60 min
+Say plainly that a usage-limit pause adds the time until the reset (it auto-resumes).
+
+## Usage limits: always auto-resume (client rule)
+
+**Always-on watchdog (mandatory):** at the start of EVERY project, create an hourly scheduled task bound to this session
+(`create_trigger`, cron `0 * * * *`) that checks every in-progress project, resumes paused agents via SendMessage, dispatches
+the next wave and reports the IST ETA. It survives session restarts, so work resumes even if the usage-limit notice is missed.
+Delete it when all projects are delivered.
+
+When any agent stops with "You've hit your session limit · resets <time> (UTC)", the client wants the
+work to continue on its own; never wait for them to type "resume". Right away:
+1. Note every paused agent (its id and what it was doing) in `projects/<slug>/review/paused_agents.md`.
+2. Schedule a wake-up for this session at the reset time + 3 min with `send_later` (claude-code-remote MCP;
+   `at` = that UTC time, message: "Usage limit reset: resume the paused studio agents listed in
+   projects/<slug>/review/paused_agents.md"). If `send_later` is unavailable, use `ScheduleWakeup` or `CronCreate`.
+3. When it fires: check what finished on disk, then SendMessage each paused agent to continue (do not start
+   fresh agents). If they fail again with a new reset time, repeat from step 1.
+Tell the client in one line that work will resume automatically at <time in IST>.
 
 ## Small jobs
 

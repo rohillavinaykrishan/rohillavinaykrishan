@@ -1,0 +1,249 @@
+{
+ "project": "vinay-v4",
+ "shot": "sh010",
+ "dept": "sound",
+ "version": "v003",
+ "supersedes": "v002 (kept); v003 is bit-identical to v002 outside src 117.30-118.70",
+ "fps": 25,
+ "frames": 375,
+ "duration": 15.0,
+ "sample_rate": 48000,
+ "channels": 2,
+ "samples": 720000,
+ "bed": {
+  "src": "source/trailer.mp4",
+  "in": 112.1,
+  "out": 127.1,
+  "sfx": "none",
+  "offset_vs_raw_bed_samples": 0,
+  "chain": "aresample=48000:resampler=soxr:precision=28, atrim 112.10-127.10, gain curve + own-reverb decay (scripts/bed_edit_v003.py, rt_low 2.6 s), +0.10 dB static, 4x-oversampled 10 ms lookahead peak limiter ceiling -1.5 dBTP (max GR 1.39 dB, 1.03% of samples), PCM 24-bit"
+ },
+ "edits": {
+  "fade_in": {
+   "t": [
+    0.0,
+    0.12
+   ],
+   "frames": [
+    0,
+    3
+   ],
+   "curve": "linear"
+  },
+  "silence_edit": {
+   "why": "removes 'You lose' (src ~117.37-118.46). v003 replaces v002's 1.3 s of digital zero (could read as a dropout on phones) with the real bed's own reverb decay; supervisor note 6",
+   "dry_fade_out_src": [
+    117.3,
+    117.38
+   ],
+   "dry_fade_out_t": [
+    5.2,
+    5.28
+   ],
+   "curve": "raised cosine",
+   "reverb_input_src": [
+    117.1,
+    117.38
+   ],
+   "reverb_input_note": "bed's own audio, 20 ms ramp-in at 117.10, same fade-out shape; ends before the earliest 'You lose' estimate (117.37-117.64; formants from ~117.65), and its gain at 117.37 is ~0.4%",
+   "reverb": "convolution, stereo decorrelated damped-noise IR, RT60 2.6 s at <=250 Hz falling to 1.2 s at 8 kHz, 10 ms build, level-matched to dry -2 dB, crossfaded in 117.30-117.38",
+   "decay_dbfs_10ms_master": {
+    "117.30": -22.5,
+    "117.40": -30.6,
+    "118.10": -45.5,
+    "118.40": -46.0,
+    "118.60": -52.6,
+    "min": -61.0
+   },
+   "digital_zero": "none (minimum 10 ms RMS -61 dBFS at 118.66)",
+   "join_src": [
+    118.68,
+    118.7
+   ],
+   "join_t": [
+    6.58,
+    6.6
+   ],
+   "join": "tail crossfaded out / untouched bed in, 20 ms raised cosine",
+   "untouched_from_src": 118.7,
+   "untouched_from_t": 6.6
+  },
+  "tail_fade": {
+   "why": "removes 'I'm a street fighter' (src 126.16->)",
+   "src": [
+    125.5,
+    126.1
+   ],
+   "t": [
+    13.4,
+    14.0
+   ],
+   "frames": [
+    335,
+    350
+   ],
+   "curve": "linear",
+   "silent_after_t": 14.0
+  }
+ },
+ "master": {
+  "file": "mix_master.wav",
+  "integrated_lufs": -14.0,
+  "lra_lu": 3.0,
+  "true_peak_dbtp": -1.5,
+  "sample_peak_dbfs": -1.57,
+  "aac320_cutoff20000": {
+   "lufs": -14.0,
+   "true_peak_dbtp": -1.52
+  },
+  "aac192_fast_cutoff20000": {
+   "lufs": -14.0,
+   "true_peak_dbtp": -1.71
+  }
+ },
+ "whisper_gate": {
+  "result": "PASS - no words",
+  "runs": 16,
+  "models": [
+   "small",
+   "medium"
+  ],
+  "windows_t": [
+   [
+    0,
+    15
+   ],
+   [
+    3.9,
+    6.9
+   ],
+   [
+    3.4,
+    6.4
+   ],
+   [
+    4.4,
+    7.4
+   ],
+   [
+    4.9,
+    6.8
+   ],
+   [
+    5.1,
+    6.7
+   ],
+   [
+    3.0,
+    6.5
+   ],
+   [
+    5.0,
+    8.5
+   ]
+  ],
+  "note": "the tail is bit-identical to v002, which passed 28/28 runs including [12.5-15] and [13-15]",
+  "log": "qc/whisper_gate.txt"
+ },
+ "hits_measured": {
+  "rise": {
+   "f": 6,
+   "t": 0.24,
+   "src": 112.34,
+   "off_frames": 0.0
+  },
+  "drive_hit_1": {
+   "f": 69,
+   "t": 2.75,
+   "src": 114.85,
+   "off_frames": -0.25
+  },
+  "drive_hit_2": {
+   "f": 81,
+   "t": 3.24,
+   "src": 115.34,
+   "off_frames": 0.0
+  },
+  "drive_hit_3": {
+   "f": 113,
+   "t": 4.5,
+   "src": 116.6,
+   "off_frames": -0.5
+  },
+  "drive_hit_4": {
+   "f": 121,
+   "t": 4.84,
+   "src": 116.94,
+   "off_frames": 0.0
+  },
+  "silence": {
+   "f": [
+    130,
+    165
+   ],
+   "t": [
+    5.2,
+    6.6
+   ],
+   "src": [
+    117.3,
+    118.7
+   ],
+   "note": "v003: the bed's own reverb decay, ~-46 dBFS at 118.40, ~-60 at 118.68; no digital zero"
+  },
+  "dip": {
+   "f": 137,
+   "status": "inside the silence edit (no longer a musical event)"
+  },
+  "pickup": {
+   "f": 141,
+   "status": "inside the silence edit (no longer a musical event)"
+  },
+  "bed_returns": {
+   "f": 165,
+   "t": 6.6,
+   "src": 118.7,
+   "level_db": -31,
+   "note": "untouched bed returns at its own -31 dB level, swells to -21 dB by 6.85"
+  },
+  "HERO_reentry": {
+   "f": 173,
+   "t": 6.92,
+   "src": 119.02,
+   "off_frames": 0.0,
+   "note": "flux and RMS rise both 6.92; librosa peaks 6.885 / 6.945; pre-attack 6.88. Identical to v001 (signal untouched)"
+  },
+  "hit_208": {
+   "f": 208,
+   "t": 8.31,
+   "src": 120.41,
+   "off_frames": -0.25
+  },
+  "hit_251": {
+   "f": 251,
+   "t": 10.04,
+   "src": 122.14,
+   "off_frames": 0.0
+  },
+  "TITLE_loudest": {
+   "f": 275,
+   "t": 11.0,
+   "src": 123.1,
+   "off_frames": -0.25,
+   "note": "flux 10.99, waveform attack 11.00, body peak 11.02; limiter ~0.95 dB here"
+  },
+  "hit_291": {
+   "f": 291,
+   "t": 11.66,
+   "src": 123.76,
+   "off_frames": 0.5
+  },
+  "hit_304": {
+   "f": 304,
+   "t": 12.16,
+   "src": 124.26,
+   "off_frames": 0.0
+  }
+ },
+ "cues_off_more_than_one_frame": []
+}

@@ -1,0 +1,280 @@
+{
+ "fps": 25,
+ "duration": 15.0,
+ "frames": 375,
+ "work_res": "1080x1920",
+ "source": "source/trailer.mp4",
+ "active_crop": "1280:536:0:92",
+ "vertical_crop": "crop=302:536:CX-151:0 of the active area, scale=1080:1920:flags=lanczos",
+ "music": {
+  "src": "source/trailer.mp4",
+  "in": 141.0,
+  "out": 156.0,
+  "note": "t = 0 is trailer 141.00; P7/P8 picture = 141 + t"
+ },
+ "transition_convention": "N-frame transitions are centred on the cut frame: blend frames cut-N/2 .. cut+N/2-1",
+ "cuts": [
+  {
+   "id": "P1",
+   "section": "intro",
+   "frames": [
+    0,
+    49
+   ],
+   "in": 0.0,
+   "out": 2.0,
+   "source": "source/trailer.mp4",
+   "src": [
+    30.62,
+    31.4
+   ],
+   "speed": 0.39,
+   "cx": 770,
+   "move": "push-in 1.00-1.06 (centre)",
+   "transition_in": {
+    "type": "none",
+    "frames": 0
+   },
+   "why": "Chun-Li alone in a shaft of window light; strong frame 0, calm before the drive",
+   "src_cues": [
+    30.7,
+    31.55
+   ],
+   "speed_cues": 0.425,
+   "edit_fix": "trailer cuts away at 31.49; cues' 30.70-31.55 @0.425 showed the next shot (bearded man) from frame ~46"
+  },
+  {
+   "id": "P2",
+   "section": "drive",
+   "frames": [
+    50,
+    84
+   ],
+   "in": 2.0,
+   "out": 3.4,
+   "source": "source/trailer.mp4",
+   "src": [
+    32.78,
+    33.58
+   ],
+   "speed": 0.57,
+   "cx": 740,
+   "move": "none (camera is the 3D name field)",
+   "transition_in": {
+    "type": "luma_wipe",
+    "frames": 6
+   },
+   "why": "drive begins; silhouette in hard window shafts, bright areas wipe in first",
+   "src_cues": [
+    32.75,
+    33.55
+   ],
+   "speed_cues": 0.57,
+   "edit_fix": "in moved +0.03 so the dissolve handle stays clear of the 32.64 cut"
+  },
+  {
+   "id": "P3",
+   "section": "drive",
+   "frames": [
+    85,
+    114
+   ],
+   "in": 3.4,
+   "out": 4.6,
+   "source": "source/trailer.mp4",
+   "src": [
+    108.74,
+    109.34
+   ],
+   "speed": 0.5,
+   "cx": 680,
+   "move": "none",
+   "transition_in": {
+    "type": "dissolve",
+    "frames": 4
+   },
+   "why": "slatted dojo, staff silhouette, on hit 3.44",
+   "src_cues": [
+    108.65,
+    109.3
+   ],
+   "speed_cues": 0.54,
+   "edit_fix": "shot starts at 108.69; cues' 108.65 opened on the previous shot (red-dress woman)"
+  },
+  {
+   "id": "P4",
+   "section": "drive",
+   "frames": [
+    115,
+    150
+   ],
+   "in": 4.6,
+   "out": 6.04,
+   "source": "shots/sh010/roto/v001/p4_parallax.mp4",
+   "src_still": 112.8,
+   "cx": 660,
+   "move": "depth.py parallax dolly-in, 36 frames, amount 0.8 (placeholder: the still 112.80 if the clip is missing)",
+   "transition_in": {
+    "type": "dissolve",
+    "frames": 4
+   },
+   "why": "the 2.5D moment, fighter leaping up a well of steel and light, echoes the 3D name camera"
+  },
+  {
+   "id": "P5",
+   "section": "drive",
+   "frames": [
+    151,
+    194
+   ],
+   "in": 6.04,
+   "out": 7.8,
+   "source": "source/trailer.mp4",
+   "src": [
+    147.95,
+    148.6
+   ],
+   "speed": 0.37,
+   "cx": 610,
+   "move": "none",
+   "transition_in": {
+    "type": "flash",
+    "frames": 2,
+    "color": "#F4EFE6",
+    "strength": [
+     0.4,
+     0.2
+    ]
+   },
+   "why": "the loudest drum is the cut; fighter thrown across the floor",
+   "src_cues": [
+    147.95,
+    148.8
+   ],
+   "speed_cues": 0.48,
+   "edit_fix": "shot ends at 148.67; cues' 0.48x ran into the next shot from ~frame 188"
+  },
+  {
+   "id": "P6",
+   "section": "drive",
+   "frames": [
+    195,
+    229
+   ],
+   "in": 7.8,
+   "out": 9.2,
+   "source": "source/trailer.mp4",
+   "src": [
+    118.02,
+    118.62
+   ],
+   "speed": 0.43,
+   "cx": 720,
+   "move": "none",
+   "transition_in": {
+    "type": "dissolve",
+    "frames": 6
+   },
+   "why": "backlit slats, two silhouettes; field tilts into fog",
+   "src_cues": [
+    117.85,
+    118.45
+   ],
+   "speed_cues": 0.43,
+   "edit_fix": "shot starts at 117.93; cues' 117.85 opened on the previous shot (glowing disc on a table)"
+  },
+  {
+   "id": "P7",
+   "section": "breath",
+   "frames": [
+    230,
+    270
+   ],
+   "in": 9.2,
+   "out": 10.84,
+   "source": "source/trailer.mp4",
+   "src": [
+    150.2,
+    151.84
+   ],
+   "speed": 1.0,
+   "cx": 720,
+   "sync": true,
+   "move": "none",
+   "transition_in": {
+    "type": "dissolve",
+    "frames": 8
+   },
+   "why": "the breath; picture runs at the music's own timecode (matchmove pun: in sync)"
+  },
+  {
+   "id": "P8",
+   "section": "solve",
+   "frames": [
+    271,
+    324
+   ],
+   "in": 10.84,
+   "out": 13.0,
+   "source": "source/trailer.mp4",
+   "src": [
+    151.84,
+    154.0
+   ],
+   "speed": 1.0,
+   "cx": 769,
+   "cx_pan": {
+    "src": [
+     152.6,
+     153.0
+    ],
+    "to": 820,
+    "ease": "smoothstep"
+   },
+   "sync": true,
+   "move": "ease pan CX 769->820 following her",
+   "transition_in": {
+    "type": "cut",
+    "frames": 0
+   },
+   "why": "HERO HIT 151.84: the trailer's own cut to Chun-Li lands on frame 271",
+   "cx_note": "769 = the crop x 618 that ffmpeg actually used for roto's hero_1080.png/points.json (yuv420p crop rounds x 619 to even); plate at 271 matches the point cloud exactly"
+  },
+  {
+   "id": "P9",
+   "section": "title",
+   "frames": [
+    325,
+    374
+   ],
+   "in": 13.0,
+   "out": 15.0,
+   "source": "source/trailer.mp4",
+   "src": [
+    33.75,
+    34.75
+   ],
+   "speed": 0.5,
+   "cx": 760,
+   "move": "none (mograph pushes the poster)",
+   "transition_in": {
+    "type": "flare",
+    "frames": 4,
+    "color": "#F4EFE6",
+    "strength": [
+     0.2,
+     0.5,
+     0.5,
+     0.2
+    ]
+   },
+   "why": "title stinger 154.01; Chun-Li by the arched window bookends P1"
+  }
+ ],
+ "hero_still": {
+  "src": 151.9,
+  "cx": 769,
+  "out": "shots/sh010/edit/v001/hero_1080.png",
+  "note": "nearest trailer frame to 151.90 (pts 151.902, frame 3642); crop x 618 = nominal CX 770 as ffmpeg rounds it; bit-matches shots/sh010/roto/v001/hero_1080.png"
+ }
+}

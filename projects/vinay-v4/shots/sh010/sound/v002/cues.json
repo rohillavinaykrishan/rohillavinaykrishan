@@ -1,0 +1,38 @@
+{
+  "project": "vinay-v4", "shot": "sh010", "dept": "sound", "version": "v002", "supersedes": "v001 (kept)",
+  "fps": 25, "frames": 375, "duration": 15.0, "sample_rate": 48000, "channels": 2, "samples": 720000,
+  "bed": {"src": "source/trailer.mp4", "in": 112.10, "out": 127.10, "sfx": "none", "offset_vs_raw_bed_samples": 0,
+          "chain": "aresample=48000:resampler=soxr:precision=28, atrim 112.10-127.10, gain curve (scripts/bed_edit.py), +0.10 dB static, 4x-oversampled 10 ms lookahead peak limiter ceiling -1.5 dBTP (max GR 1.39 dB, 1.03% of samples), PCM 24-bit"},
+  "edits": {
+    "fade_in":      {"t": [0.0, 0.12], "frames": [0, 3], "curve": "linear"},
+    "silence_edit": {"why": "removes the announcer line 'You lose' (src ~117.37-118.46) by extending the trailer's own near-silence; director decision, review/director_v4_quality_notes.md",
+                     "fade_out_src": [117.30, 117.38], "fade_out_t": [5.20, 5.28], "curve": "raised cosine",
+                     "digital_silence_src": [117.38, 118.68], "digital_silence_t": [5.28, 6.58], "frames_silent": [132, 164], "frames_affected": [130, 165],
+                     "declick_in_src": [118.68, 118.70], "declick_in_t": [6.58, 6.60], "curve_in": "raised cosine 20 ms (avoids a step from 0 into the -31 dB bed)",
+                     "untouched_from_src": 118.70, "untouched_from_t": 6.60},
+    "tail_fade":    {"why": "removes 'I'm a street fighter' (src 126.16->)", "src": [125.50, 126.10], "t": [13.40, 14.00], "frames": [335, 350], "curve": "linear", "silent_after_t": 14.00}
+  },
+  "master": {"file": "mix_master.wav", "integrated_lufs": -14.0, "lra_lu": 3.0, "true_peak_dbtp": -1.50, "sample_peak_dbfs": -1.57,
+             "aac320_cutoff20000": {"lufs": -14.0, "true_peak_dbtp": -1.40}, "aac192_fast_cutoff20000": {"lufs": -14.0, "true_peak_dbtp": -1.69}},
+  "whisper_gate": {"result": "PASS - no words", "runs": 28, "models": ["small", "medium"],
+                   "windows_t": [[0,15],[0,3.5],[1.5,5],[3,6.5],[3.9,6.9],[4.4,7.4],[4.9,6.8],[5.0,8.5],[6.5,10],[8,11.5],[9.5,13],[11,14.5],[12.5,15],[13,15]],
+                   "log": "qc/whisper_gate.txt"},
+  "hits_measured": {
+    "rise":          {"f": 6,   "t": 0.24,  "src": 112.34, "off_frames": 0.0},
+    "drive_hit_1":   {"f": 69,  "t": 2.75,  "src": 114.85, "off_frames": -0.25},
+    "drive_hit_2":   {"f": 81,  "t": 3.24,  "src": 115.34, "off_frames": 0.0},
+    "drive_hit_3":   {"f": 113, "t": 4.50,  "src": 116.60, "off_frames": -0.5},
+    "drive_hit_4":   {"f": 121, "t": 4.84,  "src": 116.94, "off_frames": 0.0},
+    "silence":       {"f": [130, 165], "t": [5.20, 6.60], "src": [117.30, 118.70], "note": "was f159-165 near-silence; now a 1.4 s held breath, digital zero f132-164"},
+    "dip":           {"f": 137, "status": "inside the silence edit (no longer a musical event)"},
+    "pickup":        {"f": 141, "status": "inside the silence edit (no longer a musical event)"},
+    "bed_returns":   {"f": 165, "t": 6.60, "src": 118.70, "level_db": -31, "note": "swells to -21 dB by 6.85"},
+    "HERO_reentry":  {"f": 173, "t": 6.92,  "src": 119.02, "off_frames": 0.0, "note": "flux and RMS rise both 6.92; librosa peaks 6.885 / 6.945; pre-attack 6.88. Identical to v001 (signal untouched)"},
+    "hit_208":       {"f": 208, "t": 8.31,  "src": 120.41, "off_frames": -0.25},
+    "hit_251":       {"f": 251, "t": 10.04, "src": 122.14, "off_frames": 0.0},
+    "TITLE_loudest": {"f": 275, "t": 11.00, "src": 123.10, "off_frames": -0.25, "note": "flux 10.99, waveform attack 11.00, body peak 11.02; limiter ~0.95 dB here"},
+    "hit_291":       {"f": 291, "t": 11.66, "src": 123.76, "off_frames": 0.5},
+    "hit_304":       {"f": 304, "t": 12.16, "src": 124.26, "off_frames": 0.0}
+  },
+  "cues_off_more_than_one_frame": []
+}

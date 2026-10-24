@@ -1,0 +1,24 @@
+{
+ "file": "master.wav",
+ "vad_filter": false,
+ "model": "small",
+ "language": "en",
+ "language_prob": 0.6206175684928894,
+ "segments": [
+  {
+   "start": 3.1,
+   "end": 4.5,
+   "text": " Music",
+   "no_speech_prob": 0.524281919002533,
+   "avg_logprob": -1.4870281219482422,
+   "words": [
+    [
+     3.1,
+     4.5,
+     " Music",
+     0.004117597825825214
+    ]
+   ]
+  }
+ ]
+}

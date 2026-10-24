@@ -1,0 +1,330 @@
+I20261021 17:43:53.714200  8897 misc.cc:198] 
+==============================================================================
+Feature extraction
+==============================================================================
+I20261021 17:43:57.533981  8903 feature_extraction.cc:254] Processed file [1/52]
+I20261021 17:43:57.534049  8903 feature_extraction.cc:257]   Name:            plate.0000.png
+I20261021 17:43:57.534056  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:43:57.534060  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:43:57.534066  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:43:57.534077  8903 feature_extraction.cc:302]   Features:        2302
+I20261021 17:43:57.535939  8903 feature_extraction.cc:254] Processed file [2/52]
+I20261021 17:43:57.541921  8903 feature_extraction.cc:257]   Name:            plate.0001.png
+I20261021 17:43:57.541999  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:43:57.542012  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:43:57.542022  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:43:57.542037  8903 feature_extraction.cc:302]   Features:        2399
+I20261021 17:43:58.593374  8903 feature_extraction.cc:254] Processed file [3/52]
+I20261021 17:43:58.593489  8903 feature_extraction.cc:257]   Name:            plate.0003.png
+I20261021 17:43:58.593501  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:43:58.593509  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:43:58.593521  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:43:58.593535  8903 feature_extraction.cc:302]   Features:        2777
+I20261021 17:43:58.617930  8903 feature_extraction.cc:254] Processed file [4/52]
+I20261021 17:43:58.618140  8903 feature_extraction.cc:257]   Name:            plate.0002.png
+I20261021 17:43:58.618151  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:43:58.618155  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:43:58.618161  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:43:58.618171  8903 feature_extraction.cc:302]   Features:        2484
+I20261021 17:43:59.638621  8903 feature_extraction.cc:254] Processed file [5/52]
+I20261021 17:43:59.641947  8903 feature_extraction.cc:257]   Name:            plate.0004.png
+I20261021 17:43:59.642061  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:43:59.642076  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:43:59.642091  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:43:59.642108  8903 feature_extraction.cc:302]   Features:        2864
+I20261021 17:43:59.709949  8903 feature_extraction.cc:254] Processed file [6/52]
+I20261021 17:43:59.710068  8903 feature_extraction.cc:257]   Name:            plate.0005.png
+I20261021 17:43:59.710085  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:43:59.710095  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:43:59.710107  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:43:59.710179  8903 feature_extraction.cc:302]   Features:        2911
+I20261021 17:44:00.886049  8903 feature_extraction.cc:254] Processed file [7/52]
+I20261021 17:44:00.886157  8903 feature_extraction.cc:257]   Name:            plate.0006.png
+I20261021 17:44:00.886171  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:00.886178  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:00.886186  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:00.886222  8903 feature_extraction.cc:302]   Features:        3017
+I20261021 17:44:01.039611  8903 feature_extraction.cc:254] Processed file [8/52]
+I20261021 17:44:01.041944  8903 feature_extraction.cc:257]   Name:            plate.0007.png
+I20261021 17:44:01.042042  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:01.042057  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:01.042068  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:01.042086  8903 feature_extraction.cc:302]   Features:        3128
+I20261021 17:44:01.901937  8903 feature_extraction.cc:254] Processed file [9/52]
+I20261021 17:44:01.902029  8903 feature_extraction.cc:257]   Name:            plate.0008.png
+I20261021 17:44:01.902037  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:01.902042  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:01.902048  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:01.902060  8903 feature_extraction.cc:302]   Features:        3118
+I20261021 17:44:02.170145  8903 feature_extraction.cc:254] Processed file [10/52]
+I20261021 17:44:02.170855  8903 feature_extraction.cc:257]   Name:            plate.0009.png
+I20261021 17:44:02.170900  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:02.170914  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:02.170929  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:02.170949  8903 feature_extraction.cc:302]   Features:        3122
+I20261021 17:44:03.009935  8903 feature_extraction.cc:254] Processed file [11/52]
+I20261021 17:44:03.010054  8903 feature_extraction.cc:257]   Name:            plate.0010.png
+I20261021 17:44:03.010071  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:03.010079  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:03.010090  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:03.010106  8903 feature_extraction.cc:302]   Features:        3066
+I20261021 17:44:03.279979  8903 feature_extraction.cc:254] Processed file [12/52]
+I20261021 17:44:03.280109  8903 feature_extraction.cc:257]   Name:            plate.0011.png
+I20261021 17:44:03.280124  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:03.280133  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:03.280144  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:03.280159  8903 feature_extraction.cc:302]   Features:        3002
+I20261021 17:44:04.081923  8903 feature_extraction.cc:254] Processed file [13/52]
+I20261021 17:44:04.081995  8903 feature_extraction.cc:257]   Name:            plate.0012.png
+I20261021 17:44:04.082003  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:04.082008  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:04.082015  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:04.082026  8903 feature_extraction.cc:302]   Features:        2989
+I20261021 17:44:04.293296  8903 feature_extraction.cc:254] Processed file [14/52]
+I20261021 17:44:04.293409  8903 feature_extraction.cc:257]   Name:            plate.0013.png
+I20261021 17:44:04.293421  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:04.293428  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:04.293439  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:04.293452  8903 feature_extraction.cc:302]   Features:        2982
+I20261021 17:44:05.184880  8903 feature_extraction.cc:254] Processed file [15/52]
+I20261021 17:44:05.184984  8903 feature_extraction.cc:257]   Name:            plate.0014.png
+I20261021 17:44:05.184996  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:05.185001  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:05.185009  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:05.185019  8903 feature_extraction.cc:302]   Features:        3070
+I20261021 17:44:05.480666  8903 feature_extraction.cc:254] Processed file [16/52]
+I20261021 17:44:05.480928  8903 feature_extraction.cc:257]   Name:            plate.0015.png
+I20261021 17:44:05.480959  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:05.480968  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:05.480975  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:05.480984  8903 feature_extraction.cc:302]   Features:        3200
+I20261021 17:44:06.366962  8903 feature_extraction.cc:254] Processed file [17/52]
+I20261021 17:44:06.367071  8903 feature_extraction.cc:257]   Name:            plate.0016.png
+I20261021 17:44:06.367084  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:06.367087  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:06.367094  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:06.367105  8903 feature_extraction.cc:302]   Features:        3290
+I20261021 17:44:06.546132  8903 feature_extraction.cc:254] Processed file [18/52]
+I20261021 17:44:06.546214  8903 feature_extraction.cc:257]   Name:            plate.0017.png
+I20261021 17:44:06.546226  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:06.546233  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:06.546243  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:06.546257  8903 feature_extraction.cc:302]   Features:        3416
+I20261021 17:44:07.491163  8903 feature_extraction.cc:254] Processed file [19/52]
+I20261021 17:44:07.491464  8903 feature_extraction.cc:257]   Name:            plate.0018.png
+I20261021 17:44:07.491487  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:07.491499  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:07.491513  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:07.491531  8903 feature_extraction.cc:302]   Features:        3488
+I20261021 17:44:07.722910  8903 feature_extraction.cc:254] Processed file [20/52]
+I20261021 17:44:07.723160  8903 feature_extraction.cc:257]   Name:            plate.0019.png
+I20261021 17:44:07.723176  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:07.723183  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:07.723191  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:07.723205  8903 feature_extraction.cc:302]   Features:        3684
+I20261021 17:44:08.732513  8903 feature_extraction.cc:254] Processed file [21/52]
+I20261021 17:44:08.732832  8903 feature_extraction.cc:257]   Name:            plate.0020.png
+I20261021 17:44:08.732867  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:08.732875  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:08.732885  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:08.732899  8903 feature_extraction.cc:302]   Features:        3689
+I20261021 17:44:08.943408  8903 feature_extraction.cc:254] Processed file [22/52]
+I20261021 17:44:08.943681  8903 feature_extraction.cc:257]   Name:            plate.0021.png
+I20261021 17:44:08.943710  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:08.943722  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:08.943737  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:08.943938  8903 feature_extraction.cc:302]   Features:        3785
+I20261021 17:44:09.811367  8903 feature_extraction.cc:254] Processed file [23/52]
+I20261021 17:44:09.811758  8903 feature_extraction.cc:257]   Name:            plate.0022.png
+I20261021 17:44:09.811821  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:09.811851  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:09.811900  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:09.811949  8903 feature_extraction.cc:302]   Features:        3401
+I20261021 17:44:10.037207  8903 feature_extraction.cc:254] Processed file [24/52]
+I20261021 17:44:10.037621  8903 feature_extraction.cc:257]   Name:            plate.0023.png
+I20261021 17:44:10.037724  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:10.037740  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:10.037755  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:10.037771  8903 feature_extraction.cc:302]   Features:        3436
+I20261021 17:44:10.977825  8903 feature_extraction.cc:254] Processed file [25/52]
+I20261021 17:44:10.978123  8903 feature_extraction.cc:257]   Name:            plate.0024.png
+I20261021 17:44:10.978144  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:10.978153  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:10.978163  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:10.978178  8903 feature_extraction.cc:302]   Features:        3704
+I20261021 17:44:11.322453  8903 feature_extraction.cc:254] Processed file [26/52]
+I20261021 17:44:11.323921  8903 feature_extraction.cc:257]   Name:            plate.0025.png
+I20261021 17:44:11.323958  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:11.323966  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:11.323971  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:11.323982  8903 feature_extraction.cc:302]   Features:        3871
+I20261021 17:44:12.187546  8903 feature_extraction.cc:254] Processed file [27/52]
+I20261021 17:44:12.189934  8903 feature_extraction.cc:257]   Name:            plate.0026.png
+I20261021 17:44:12.190001  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:12.190011  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:12.190021  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:12.190034  8903 feature_extraction.cc:302]   Features:        4338
+I20261021 17:44:12.587189  8903 feature_extraction.cc:254] Processed file [28/52]
+I20261021 17:44:12.587632  8903 feature_extraction.cc:257]   Name:            plate.0027.png
+I20261021 17:44:12.587683  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:12.587705  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:12.587734  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:12.587780  8903 feature_extraction.cc:302]   Features:        4482
+I20261021 17:44:13.550551  8903 feature_extraction.cc:254] Processed file [29/52]
+I20261021 17:44:13.553930  8903 feature_extraction.cc:257]   Name:            plate.0028.png
+I20261021 17:44:13.554052  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:13.554065  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:13.554075  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:13.554090  8903 feature_extraction.cc:302]   Features:        4426
+I20261021 17:44:13.870410  8903 feature_extraction.cc:254] Processed file [30/52]
+I20261021 17:44:13.870697  8903 feature_extraction.cc:257]   Name:            plate.0029.png
+I20261021 17:44:13.870723  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:13.870731  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:13.870741  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:13.870755  8903 feature_extraction.cc:302]   Features:        4483
+I20261021 17:44:15.032568  8903 feature_extraction.cc:254] Processed file [31/52]
+I20261021 17:44:15.033923  8903 feature_extraction.cc:257]   Name:            plate.0030.png
+I20261021 17:44:15.033962  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:15.033984  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:15.033991  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:15.034000  8903 feature_extraction.cc:302]   Features:        4291
+I20261021 17:44:15.692155  8903 feature_extraction.cc:254] Processed file [32/52]
+I20261021 17:44:15.692257  8903 feature_extraction.cc:257]   Name:            plate.0031.png
+I20261021 17:44:15.692273  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:15.692279  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:15.692288  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:15.692306  8903 feature_extraction.cc:302]   Features:        4266
+I20261021 17:44:16.449934  8903 feature_extraction.cc:254] Processed file [33/52]
+I20261021 17:44:16.450037  8903 feature_extraction.cc:257]   Name:            plate.0032.png
+I20261021 17:44:16.450049  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:16.450055  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:16.450062  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:16.450073  8903 feature_extraction.cc:302]   Features:        4309
+I20261021 17:44:17.043742  8903 feature_extraction.cc:254] Processed file [34/52]
+I20261021 17:44:17.043836  8903 feature_extraction.cc:257]   Name:            plate.0033.png
+I20261021 17:44:17.043849  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:17.043854  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:17.043860  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:17.043870  8903 feature_extraction.cc:302]   Features:        4293
+I20261021 17:44:17.804373  8903 feature_extraction.cc:254] Processed file [35/52]
+I20261021 17:44:17.804476  8903 feature_extraction.cc:257]   Name:            plate.0034.png
+I20261021 17:44:17.804486  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:17.804494  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:17.804504  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:17.804518  8903 feature_extraction.cc:302]   Features:        4280
+I20261021 17:44:18.336966  8903 feature_extraction.cc:254] Processed file [36/52]
+I20261021 17:44:18.337325  8903 feature_extraction.cc:257]   Name:            plate.0035.png
+I20261021 17:44:18.337338  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:18.337343  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:18.337349  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:18.337383  8903 feature_extraction.cc:302]   Features:        4254
+I20261021 17:44:19.144342  8903 feature_extraction.cc:254] Processed file [37/52]
+I20261021 17:44:19.144479  8903 feature_extraction.cc:257]   Name:            plate.0036.png
+I20261021 17:44:19.144495  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:19.144505  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:19.144515  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:19.144572  8903 feature_extraction.cc:302]   Features:        4376
+I20261021 17:44:19.601745  8903 feature_extraction.cc:254] Processed file [38/52]
+I20261021 17:44:19.601845  8903 feature_extraction.cc:257]   Name:            plate.0037.png
+I20261021 17:44:19.601856  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:19.601861  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:19.601867  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:19.601918  8903 feature_extraction.cc:302]   Features:        4479
+I20261021 17:44:20.378912  8903 feature_extraction.cc:254] Processed file [39/52]
+I20261021 17:44:20.379032  8903 feature_extraction.cc:257]   Name:            plate.0038.png
+I20261021 17:44:20.379048  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:20.379056  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:20.379065  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:20.379078  8903 feature_extraction.cc:302]   Features:        4460
+I20261021 17:44:20.897357  8903 feature_extraction.cc:254] Processed file [40/52]
+I20261021 17:44:20.897435  8903 feature_extraction.cc:257]   Name:            plate.0039.png
+I20261021 17:44:20.897442  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:20.897446  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:20.897452  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:20.897464  8903 feature_extraction.cc:302]   Features:        4384
+I20261021 17:44:21.559394  8903 feature_extraction.cc:254] Processed file [41/52]
+I20261021 17:44:21.559664  8903 feature_extraction.cc:257]   Name:            plate.0040.png
+I20261021 17:44:21.559688  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:21.559697  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:21.559708  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:21.559722  8903 feature_extraction.cc:302]   Features:        4261
+I20261021 17:44:22.237954  8903 feature_extraction.cc:254] Processed file [42/52]
+I20261021 17:44:22.238091  8903 feature_extraction.cc:257]   Name:            plate.0041.png
+I20261021 17:44:22.238108  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:22.238116  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:22.238127  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:22.238142  8903 feature_extraction.cc:302]   Features:        4092
+I20261021 17:44:22.749529  8903 feature_extraction.cc:254] Processed file [43/52]
+I20261021 17:44:22.749634  8903 feature_extraction.cc:257]   Name:            plate.0042.png
+I20261021 17:44:22.749646  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:22.749651  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:22.749657  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:22.749668  8903 feature_extraction.cc:302]   Features:        3684
+I20261021 17:44:23.245371  8903 feature_extraction.cc:254] Processed file [44/52]
+I20261021 17:44:23.246276  8903 feature_extraction.cc:257]   Name:            plate.0043.png
+I20261021 17:44:23.246394  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:23.246425  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:23.246438  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:23.246551  8903 feature_extraction.cc:302]   Features:        3184
+I20261021 17:44:23.784677  8903 feature_extraction.cc:254] Processed file [45/52]
+I20261021 17:44:23.784812  8903 feature_extraction.cc:257]   Name:            plate.0044.png
+I20261021 17:44:23.784832  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:23.784847  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:23.785037  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:23.785066  8903 feature_extraction.cc:302]   Features:        2619
+I20261021 17:44:24.237521  8903 feature_extraction.cc:254] Processed file [46/52]
+I20261021 17:44:24.237921  8903 feature_extraction.cc:257]   Name:            plate.0045.png
+I20261021 17:44:24.237950  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:24.237959  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:24.237969  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:24.237998  8903 feature_extraction.cc:302]   Features:        2387
+I20261021 17:44:24.722811  8903 feature_extraction.cc:254] Processed file [47/52]
+I20261021 17:44:24.722908  8903 feature_extraction.cc:257]   Name:            plate.0046.png
+I20261021 17:44:24.722919  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:24.722923  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:24.722930  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:24.722939  8903 feature_extraction.cc:302]   Features:        2296
+I20261021 17:44:25.216668  8903 feature_extraction.cc:254] Processed file [48/52]
+I20261021 17:44:25.216758  8903 feature_extraction.cc:257]   Name:            plate.0047.png
+I20261021 17:44:25.216770  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:25.216774  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:25.216780  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:25.216789  8903 feature_extraction.cc:302]   Features:        2060
+I20261021 17:44:25.622653  8903 feature_extraction.cc:254] Processed file [49/52]
+I20261021 17:44:25.622709  8903 feature_extraction.cc:257]   Name:            plate.0048.png
+I20261021 17:44:25.622715  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:25.622720  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:25.622725  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:25.622735  8903 feature_extraction.cc:302]   Features:        1879
+I20261021 17:44:26.125947  8903 feature_extraction.cc:254] Processed file [50/52]
+I20261021 17:44:26.126056  8903 feature_extraction.cc:257]   Name:            plate.0049.png
+I20261021 17:44:26.126070  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:26.126075  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:26.126081  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:26.126092  8903 feature_extraction.cc:302]   Features:        1690
+I20261021 17:44:26.633998  8903 feature_extraction.cc:254] Processed file [51/52]
+I20261021 17:44:26.634076  8903 feature_extraction.cc:257]   Name:            plate.0050.png
+I20261021 17:44:26.634083  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:26.634088  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:26.634094  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:26.634105  8903 feature_extraction.cc:302]   Features:        1695
+I20261021 17:44:27.328272  8903 feature_extraction.cc:254] Processed file [52/52]
+I20261021 17:44:27.328368  8903 feature_extraction.cc:257]   Name:            plate.0051.png
+I20261021 17:44:27.328379  8903 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:44:27.328383  8903 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:44:27.328390  8903 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:44:27.328404  8903 feature_extraction.cc:302]   Features:        1743
+I20261021 17:44:27.337809  8897 timer.cc:91] Elapsed time: 0.561 [minutes]
+I20261021 17:44:32.600919  9236 misc.cc:198] 
+==============================================================================
+Exhaustive feature matching
+==============================================================================
+I20261021 17:44:32.601744  9236 feature_matching.cc:231] Matching block [1/2, 1/2]
+I20261021 17:50:12.565801  9236 feature_matching.cc:46]  in 339.964s
+I20261021 17:50:12.609345  9236 feature_matching.cc:231] Matching block [1/2, 2/2]
+I20261021 17:50:12.803706  9236 feature_matching.cc:46]  in 0.194s
+I20261021 17:50:12.803835  9236 feature_matching.cc:231] Matching block [2/2, 1/2]
+I20261021 17:50:25.842816  9236 feature_matching.cc:46]  in 13.039s
+I20261021 17:50:25.845299  9236 feature_matching.cc:231] Matching block [2/2, 2/2]
+I20261021 17:50:26.070330  9236 feature_matching.cc:46]  in 0.225s
+I20261021 17:50:26.074193  9236 timer.cc:91] Elapsed time: 5.891 [minutes]

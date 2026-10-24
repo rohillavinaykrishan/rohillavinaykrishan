@@ -1,0 +1,7 @@
+# Editor A (roster) - plates A01-A13, v001 (IST 2026-10-23)
+- Rebuild: `python3 build_plates_A.py [IDs]` (full run also rewrites edl_A.json); verify: `./verify_plates_A.sh`.
+- Prep: active crop 1280x536@y92 -> pad=1280:540:0:4 (4 rows on TOP; the treatment's `:0:0` pads the bottom and would NOT realign the 8px grid, since active y=92 = 4 mod 8) -> deblock strong/8 -> crop back -> shot crop -> retime -> lanczos cover-scale to 2160x1180 -> unsharp 5:5:0.4 -> H.264 crf 10 yuv444p 25 fps. Ungraded.
+- Conform: frame mapping src_t = src_in + (f-f_in)/25*speed. Shots that would get duplicate frames from nearest-frame picking (A01 A02 A05 A07 A08 A11) are minterpolated (mci/aobmc/vsbmc, scd=none) at exactly 3x the needed rate, then every 3rd frame is picked. That gives an even cadence (a fixed 75 fps grid caused 1/2-frame judder). The trimmed input stays inside the librarian shot; 2 cloned tail frames (tpad) stop minterpolate from dropping the tail.
+- Speed clamps so no plate interpolates past a trailer cut: A01 0.792->0.787, A02 0.512->0.504, A08 0.940->0.937.
+- Cover crop: 960 crops scale x2.25 and centre (lose 13 px top/bottom); 1280 crops scale x2.2 and centre (981 of 1280 source px wide); 720 crops (A03, A12) scale x3, vertical bias 0.25 from the top (keeps eyes and most of the topknot/flat-top).
+- All 13: exact frame counts, 2160x1180, 25/1, yuv444p, every one inside a single librarian shot, and frame-diff shows no cut spike and no duplicate.

@@ -1,0 +1,23 @@
+{
+ "file": "clip_master_226_242.wav",
+ "vad_filter": false,
+ "no_speech_threshold": null,
+ "model": "medium",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 0.9,
+   "text": " What?",
+   "no_speech_prob": 0.8084970712661743,
+   "avg_logprob": -1.1574825286865233,
+   "words": [
+    [
+     0.0,
+     0.9,
+     " What?",
+     0.13345342874526978
+    ]
+   ]
+  }
+ ]
+}

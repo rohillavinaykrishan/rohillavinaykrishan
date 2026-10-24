@@ -39,6 +39,8 @@ no credits. The SessionStart hook installs it; check with
 | Stylized post looks | ffmpeg | `tools/vfx/bin/post_look.sh <glow\|dream\|pixel\|scanlines\|rgbsplit\|vhs\|film\|comic\|mirror\|kaleido> in out` |
 | Blender style looks | Blender | `tools/vfx/blender/looks.py`: realistic, toon, ink, sketch, neon, hologram, clay, xray, gold, glass, retro |
 | Final delivery (4K default) | ffmpeg | `tools/vfx/bin/grade.sh deliver in.mp4 out.mp4 uhd\|uhd-vertical\|youtube\|reels\|master` |
+| 4K master mux (client delivery encode) | ffmpeg libx264 + AAC | `THREADS=2 tools/vfx/bin/deliver_4k.sh picture.mp4 master.wav out_4K.mp4` → x264 slow crf 12 film High L5.2 yuv420p 25 fps g50 BT.709, AAC 320k 48 kHz, +faststart, -shortest; prints ffprobe + ebur128; refuses to overwrite (heavy: ~1.4 s/frame at 4K) |
+| Delivery QC (auto) | ffprobe, ebur128, numpy, faster-whisper | `vfx-python tools/vfx/bin/auto_qc.py master.mp4 --expect-frames 750 [--fps 25 --size 2160x3840] [--names "VINAY KRISHAN ROHILLA"] [--no-words] --out review/qc_auto.md` → specs/CFR/a-v start, -14 LUFS ±0.5 & ≤ -1 dBTP, black/frozen spans, R≥B per frame, Whisper VAD-off segments (hallucinations flagged), 12-frame `_sheet.png`; exit 0 pass / 1 fail; ~30-50 s for 15-18 s 4K. Names = manual spelling checklist (no OCR) |
 | Shorts / Reels reframe | rembg + ffmpeg | `vfx-python tools/vfx/bin/reframe.py in.mp4 short.mp4 --start S --duration D` → 2160x3840, crop follows the subject |
 | Song mood → grade | librosa | `vfx-python tools/vfx/bin/song_mood.py song.wav mood.json` (tempo, key/mode, energy, sections, grade suggestion) |
 | Restoration | Real-ESRGAN + GFPGAN + OpenCV | `vfx-python tools/vfx/bin/restore.py in.jpg out.png [--target 3840] [--denoise 6] [--face-strength 0.5]` (folders too) |

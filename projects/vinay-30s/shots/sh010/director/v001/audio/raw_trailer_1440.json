@@ -1,0 +1,53 @@
+{
+ "file": "/tmp/claude-0/-home-user-rohillavinaykrishan/5fe3b9fd-8381-5a1b-b6a0-30ea036f781a/scratchpad/raw_1440.wav",
+ "vad_filter": false,
+ "no_speech_threshold": null,
+ "model": "medium",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 3.74,
+   "text": " My, my business is a priority.",
+   "no_speech_prob": 0.6402519345283508,
+   "avg_logprob": -1.0571902448480779,
+   "words": [
+    [
+     0.0,
+     1.12,
+     " My,",
+     0.1992962658405304
+    ],
+    [
+     1.12,
+     2.18,
+     " my",
+     0.6147735118865967
+    ],
+    [
+     2.18,
+     2.64,
+     " business",
+     0.9136853218078613
+    ],
+    [
+     2.64,
+     2.96,
+     " is",
+     0.5035717487335205
+    ],
+    [
+     2.96,
+     3.18,
+     " a",
+     0.6699260473251343
+    ],
+    [
+     3.18,
+     3.74,
+     " priority.",
+     0.052175313234329224
+    ]
+   ]
+  }
+ ]
+}

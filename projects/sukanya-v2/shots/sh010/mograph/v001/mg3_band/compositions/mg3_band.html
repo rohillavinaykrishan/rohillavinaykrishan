@@ -1,0 +1,246 @@
+<template>
+  <style>
+    @font-face { font-family: "BCI"; src: url("assets/fonts/BarlowCondensed-900Italic.ttf"); }
+    @font-face { font-family: "CP"; src: url("assets/fonts/ChakraPetch-600.ttf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: transparent; }
+    #root .layer { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; }
+    /* echo bands: tritone afterimage of the outgoing shot */
+    #mg3-echo-u-clip { clip-path: polygon(-120.0px 1125.1px,2280.0px 614.9px,2280.0px 874.9px,-120.0px 1385.1px); }
+    #mg3-echo-d-clip { clip-path: polygon(-120.0px 2525.1px,2280.0px 2014.9px,2280.0px 2274.9px,-120.0px 2785.1px); }
+    #root .echo-rot { position: absolute; width: 2400px; height: 900px; left: -120px; }
+    #root .echo-img { position: absolute; left: 0; top: 0; width: 2400px; height: 900px; opacity: 0.62; }
+    /* band */
+    #mg3-band-clip { clip-path: polygon(-120.0px 1505.1px,2280.0px 994.9px,2280.0px 1894.9px,-120.0px 2405.1px); }
+    #mg3-band-rot { position: absolute; left: -120px; top: 1250px; width: 2400px; height: 900px;
+      transform-origin: 50% 50%; transform: scale(1.575); }
+    #root .plate { position: absolute; left: 0; top: 0; width: 2400px; height: 900px; object-fit: cover; }
+    #mg3-pop-clip { clip-path: polygon(-120.0px 1085.1px,2280.0px 574.9px,2280.0px 1894.9px,-120.0px 2405.1px); }
+    #mg3-pop-rot { position: absolute; left: -120px; top: 1250px; width: 2400px; height: 900px;
+      transform-origin: 50% 50%; transform: scale(1.575); }
+    #root .pop { position: absolute; inset: 0; transform-origin: 50% 100%;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); filter: drop-shadow(0 22px 0 #4A1838cc); }
+    #root .pop-img { position: absolute; left: 0; top: 0; width: 2400px; height: 900px; }
+    /* SUPER ART HUD chip */
+    #mg3-tag { opacity: 0; position: absolute; left: 150px; top: 2380px; padding: 12px 18px 10px 22px; background: #FFF3DC;
+      color: #14080F; font: 600 34px/1 "CP"; letter-spacing: 0.12em; white-space: nowrap; }
+    /* hero name (settled state of MG2's Super Art; MG3 carries it f277-349) */
+    #root .nm { position: absolute; left: 0; width: 2160px; text-align: center; font-family: "BCI"; line-height: 1;
+      letter-spacing: 0.01em; padding-left: 0.01em; white-space: nowrap; }
+    #root .l1 { top: 1320.9px; font-size: 429px; }
+    #root .l2 { top: 1710.4px; font-size: 314px; }
+    #mg3-name-glow .nm { color: #FFB12A; filter: blur(26px); }
+    #mg3-name-main .nm { color: #FFF3DC; text-shadow: 0 18px 0 #4A1838, 0 0 6px #FFB12A99; }
+  </style>
+  <div id="root" data-composition-id="mg3_band" data-width="2160" data-height="3840" data-layout-allow-overflow data-layout-allow-overlap>
+    <!-- ECHO BANDS (f277-349) -->
+    <div id="mg3-echo-u-clip" class="layer" style="z-index:1">
+      <div id="mg3-echo-u-wipe" class="layer" style="clip-path: inset(0px 100% 0px 0px)">
+        <div class="echo-rot" style="top:550px">
+        <img id="mg3-eu-B01" class="clip echo-img echo-u" src="assets/echo/B01.jpg" data-start="0.64" data-duration="0.4800" data-track-index="1" alt="">
+        <img id="mg3-eu-B02" class="clip echo-img echo-u" src="assets/echo/B02.jpg" data-start="1.12" data-duration="0.4400" data-track-index="1" alt="">
+        <img id="mg3-eu-B03" class="clip echo-img echo-u" src="assets/echo/B03.jpg" data-start="1.56" data-duration="0.4000" data-track-index="1" alt="">
+        <img id="mg3-eu-B04" class="clip echo-img echo-u" src="assets/echo/B04.jpg" data-start="1.96" data-duration="0.4000" data-track-index="1" alt="">
+        <img id="mg3-eu-B05" class="clip echo-img echo-u" src="assets/echo/B05.jpg" data-start="2.36" data-duration="0.4000" data-track-index="1" alt="">
+        <img id="mg3-eu-B06" class="clip echo-img echo-u" src="assets/echo/B06.jpg" data-start="2.76" data-duration="0.4000" data-track-index="1" alt="">
+        <img id="mg3-eu-B07" class="clip echo-img echo-u" src="assets/echo/B07.jpg" data-start="3.16" data-duration="0.4000" data-track-index="1" alt="">
+        </div>
+      </div>
+    </div>
+    <div id="mg3-echo-d-clip" class="layer" style="z-index:1">
+      <div id="mg3-echo-d-wipe" class="layer" style="clip-path: inset(0px 100% 0px 0px)">
+        <div class="echo-rot" style="top:1950px">
+        <img id="mg3-ed-B01" class="clip echo-img echo-d" src="assets/echo/B01_mid.jpg" data-start="0.64" data-duration="0.4800" data-track-index="1" alt="">
+        <img id="mg3-ed-B02" class="clip echo-img echo-d" src="assets/echo/B02_mid.jpg" data-start="1.12" data-duration="0.4400" data-track-index="1" alt="">
+        <img id="mg3-ed-B03" class="clip echo-img echo-d" src="assets/echo/B03_mid.jpg" data-start="1.56" data-duration="0.4000" data-track-index="1" alt="">
+        <img id="mg3-ed-B04" class="clip echo-img echo-d" src="assets/echo/B04_mid.jpg" data-start="1.96" data-duration="0.4000" data-track-index="1" alt="">
+        <img id="mg3-ed-B05" class="clip echo-img echo-d" src="assets/echo/B05_mid.jpg" data-start="2.36" data-duration="0.4000" data-track-index="1" alt="">
+        <img id="mg3-ed-B06" class="clip echo-img echo-d" src="assets/echo/B06_mid.jpg" data-start="2.76" data-duration="0.4000" data-track-index="1" alt="">
+        <img id="mg3-ed-B07" class="clip echo-img echo-d" src="assets/echo/B07_mid.jpg" data-start="3.16" data-duration="0.4000" data-track-index="1" alt="">
+        </div>
+      </div>
+    </div>
+    <svg id="mg3-echo-lines" class="layer" style="z-index:1" viewBox="0 0 2160 3840" width="2160" height="3840">
+      <g fill="none" stroke="#FFB12A" stroke-width="3" opacity="0.35">
+        <polygon id="mg3-echo-u-line" points="-120.0,1125.1 2280.0,614.9 2280.0,874.9 -120.0,1385.1" style="clip-path: inset(0px 100% 0px 0px)"/>
+        <polygon id="mg3-echo-d-line" points="-120.0,2525.1 2280.0,2014.9 2280.0,2274.9 -120.0,2785.1" style="clip-path: inset(0px 100% 0px 0px)"/>
+      </g>
+    </svg>
+    <!-- BAND: plates B01-B08 (UNLOCK grade baked), border, roto pop-outs -->
+    <div id="mg3-slam" class="layer" style="z-index:2">
+      <div id="mg3-band-clip" class="layer">
+        <div id="mg3-band-rot">
+        <video id="mg3-B02" class="clip plate" muted playsinline src="assets/plates/B02.mp4" data-start="0.64" data-duration="0.4800" data-track-index="2"></video>  <!-- master f277-288 -->
+        <video id="mg3-B03" class="clip plate" muted playsinline src="assets/plates/B03.mp4" data-start="1.12" data-duration="0.4400" data-track-index="2"></video>  <!-- master f289-299 -->
+        <video id="mg3-B04" class="clip plate" muted playsinline src="assets/plates/B04.mp4" data-start="1.56" data-duration="0.4000" data-track-index="2"></video>  <!-- master f300-309 -->
+        <video id="mg3-B05" class="clip plate" muted playsinline src="assets/plates/B05.mp4" data-start="1.96" data-duration="0.4000" data-track-index="2"></video>  <!-- master f310-319 -->
+        <video id="mg3-B06" class="clip plate" muted playsinline src="assets/plates/B06.mp4" data-start="2.36" data-duration="0.4000" data-track-index="2"></video>  <!-- master f320-329 -->
+        <video id="mg3-B07" class="clip plate" muted playsinline src="assets/plates/B07.mp4" data-start="2.76" data-duration="0.4000" data-track-index="2"></video>  <!-- master f330-339 -->
+        <video id="mg3-B08" class="clip plate" muted playsinline src="assets/plates/B08.mp4" data-start="3.16" data-duration="0.4000" data-track-index="2"></video>  <!-- master f340-349 -->
+        </div>
+      </div>
+      <svg class="layer" viewBox="0 0 2160 3840" width="2160" height="3840" style="overflow:visible">
+        <defs><filter id="mg3-blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="20"/></filter></defs>
+        <polygon id="mg3-glow" points="-120.0,1505.1 2280.0,994.9 2280.0,1894.9 -120.0,2405.1" fill="none" stroke="#FFB12A" stroke-width="40" opacity="0.5" filter="url(#mg3-blur)"/>
+        <polygon id="mg3-edge" points="-120.0,1505.1 2280.0,994.9 2280.0,1894.9 -120.0,2405.1" fill="none" stroke="#FFB12A" stroke-width="6"/>
+      </svg>
+      <div id="mg3-pop-clip" class="layer"><div id="mg3-pop-rot">
+        <div id="mg3-pop-B02" class="pop">
+          <img id="mg3-pop-B02-0" class="clip pop-img" src="assets/pop/B02_0.png" data-start="0.72" data-duration="0.0400" data-track-index="4" alt="">
+          <img id="mg3-pop-B02-1" class="clip pop-img" src="assets/pop/B02_1.png" data-start="0.76" data-duration="0.0400" data-track-index="4" alt="">
+          <img id="mg3-pop-B02-2" class="clip pop-img" src="assets/pop/B02_2.png" data-start="0.8" data-duration="0.0400" data-track-index="4" alt="">
+          <img id="mg3-pop-B02-3" class="clip pop-img" src="assets/pop/B02_3.png" data-start="0.84" data-duration="0.0400" data-track-index="4" alt="">
+          <img id="mg3-pop-B02-4" class="clip pop-img" src="assets/pop/B02_4.png" data-start="0.88" data-duration="0.0400" data-track-index="4" alt="">
+          <img id="mg3-pop-B02-5" class="clip pop-img" src="assets/pop/B02_5.png" data-start="0.92" data-duration="0.0400" data-track-index="4" alt="">
+          <img id="mg3-pop-B02-6" class="clip pop-img" src="assets/pop/B02_6.png" data-start="0.96" data-duration="0.0400" data-track-index="4" alt="">
+          <img id="mg3-pop-B02-7" class="clip pop-img" src="assets/pop/B02_7.png" data-start="1.0" data-duration="0.0400" data-track-index="4" alt="">
+        </div>
+        <div id="mg3-pop-B03" class="pop">
+          <img id="mg3-pop-B03-0" class="clip pop-img" src="assets/pop/B03_0.png" data-start="1.16" data-duration="0.0400" data-track-index="4" alt="">
+          <img id="mg3-pop-B03-1" class="clip pop-img" src="assets/pop/B03_1.png" data-start="1.2" data-duration="0.0400" data-track-index="4" alt="">
+          <img id="mg3-pop-B03-2" class="clip pop-img" src="assets/pop/B03_2.png" data-start="1.24" data-duration="0.0400" data-track-index="4" alt="">
+          <img id="mg3-pop-B03-3" class="clip pop-img" src="assets/pop/B03_3.png" data-start="1.28" data-duration="0.0400" data-track-index="4" alt="">
+          <img id="mg3-pop-B03-4" class="clip pop-img" src="assets/pop/B03_4.png" data-start="1.32" data-duration="0.0400" data-track-index="4" alt="">
+          <img id="mg3-pop-B03-5" class="clip pop-img" src="assets/pop/B03_5.png" data-start="1.36" data-duration="0.0400" data-track-index="4" alt="">
+          <img id="mg3-pop-B03-6" class="clip pop-img" src="assets/pop/B03_6.png" data-start="1.4" data-duration="0.0400" data-track-index="4" alt="">
+          <img id="mg3-pop-B03-7" class="clip pop-img" src="assets/pop/B03_7.png" data-start="1.44" data-duration="0.0400" data-track-index="4" alt="">
+        </div>
+      </div></div>
+    </div>
+    <!-- SUPER ART tag f266-299 -->
+    <div class="layer" style="z-index:5">
+      <div id="mg3-tag">SUPER ART</div>
+    </div>
+    <!-- HERO NAME f277-349 -->
+    <div id="mg3-name-clip" class="layer clip" data-start="0.64" data-duration="2.9200" data-track-index="6" style="z-index:6">
+      <div id="mg3-name" class="layer">
+        <div id="mg3-name-glow" class="layer" style="opacity:0.3"><div class="nm l1">SUKANYA</div><div class="nm l2">DILIP DHARIYA</div></div>
+        <div id="mg3-name-main" class="layer"><div class="nm l1">SUKANYA</div><div class="nm l2">DILIP DHARIYA</div></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      // the two eases of the treatment (section 3): entrance cubic-bezier(0.16,1,0.3,1), exit cubic-bezier(0.7,0,0.84,0)
+      function bez(x1, y1, x2, y2) {
+        return function (t) {
+          if (t <= 0) return 0; if (t >= 1) return 1;
+          let u = t;
+          for (let i = 0; i < 12; i++) {
+            const cx = 3 * x1, bx = 3 * (x2 - x1) - cx, ax = 1 - cx - bx;
+            const x = ((ax * u + bx) * u + cx) * u - t;
+            const dx = (3 * ax * u + 2 * bx) * u + cx;
+            if (Math.abs(x) < 1e-6 || dx === 0) break;
+            u = Math.min(1, Math.max(0, u - x / dx));
+          }
+          const cy = 3 * y1, by = 3 * (y2 - y1) - cy, ay = 1 - cy - by;
+          return ((ay * u + by) * u + cy) * u;
+        };
+      }
+      const expoOut = bez(0.16, 1, 0.3, 1), expoIn = bez(0.7, 0, 0.84, 0);
+      const tl = gsap.timeline({ paused: true });
+      gsap.set("#mg3-slam", { opacity: 0 });
+      tl.set("#mg3-slam", {opacity: 1}, 0.64);
+      tl.set("#mg3-edge", {attr: {stroke: "#FFF3DC", "stroke-width": 16}}, 0.64);
+      tl.set("#mg3-glow", {opacity: 1}, 0.64);
+      tl.set("#mg3-edge", {attr: {stroke: "#FFB12A", "stroke-width": 11}}, 0.68);
+      tl.set("#mg3-glow", {opacity: 0.75}, 0.68);
+      tl.set("#mg3-edge", {attr: {"stroke-width": 6}}, 0.72);
+      tl.set("#mg3-glow", {opacity: 0.5}, 0.72);
+      tl.set("#mg3-name", {x: 2.93, y: -0.62}, 0.64);
+      tl.set("#mg3-name", {x: 1.94, y: -0.41}, 0.68);
+      tl.set("#mg3-name", {x: 0.97, y: -0.21}, 0.72);
+      tl.set("#mg3-name", {x: 0.00, y: -0.00}, 0.76);
+      tl.fromTo("#mg3-name-glow", {opacity: 0.40}, {opacity: 0.30, duration: 0.24, ease: expoOut}, 0.64);
+      tl.set("#mg3-edge", {attr: {stroke: "#FFF3DC", "stroke-width": 16}}, 1.12);
+      tl.set("#mg3-glow", {opacity: 1}, 1.12);
+      tl.set("#mg3-edge", {attr: {stroke: "#FFB12A", "stroke-width": 11}}, 1.16);
+      tl.set("#mg3-glow", {opacity: 0.75}, 1.16);
+      tl.set("#mg3-edge", {attr: {"stroke-width": 6}}, 1.2);
+      tl.set("#mg3-glow", {opacity: 0.5}, 1.2);
+      tl.set("#mg3-name", {x: 2.93, y: -0.62}, 1.12);
+      tl.set("#mg3-name", {x: 1.94, y: -0.41}, 1.16);
+      tl.set("#mg3-name", {x: 0.97, y: -0.21}, 1.2);
+      tl.set("#mg3-name", {x: 0.00, y: -0.00}, 1.24);
+      tl.fromTo("#mg3-name-glow", {opacity: 0.40}, {opacity: 0.30, duration: 0.24, ease: expoOut, immediateRender: false}, 1.12);
+      tl.set("#mg3-edge", {attr: {stroke: "#FFF3DC", "stroke-width": 16}}, 1.56);
+      tl.set("#mg3-glow", {opacity: 1}, 1.56);
+      tl.set("#mg3-edge", {attr: {stroke: "#FFB12A", "stroke-width": 11}}, 1.6);
+      tl.set("#mg3-glow", {opacity: 0.75}, 1.6);
+      tl.set("#mg3-edge", {attr: {"stroke-width": 6}}, 1.64);
+      tl.set("#mg3-glow", {opacity: 0.5}, 1.64);
+      tl.set("#mg3-name", {x: 2.93, y: -0.62}, 1.56);
+      tl.set("#mg3-name", {x: 1.94, y: -0.41}, 1.6);
+      tl.set("#mg3-name", {x: 0.97, y: -0.21}, 1.64);
+      tl.set("#mg3-name", {x: 0.00, y: -0.00}, 1.68);
+      tl.fromTo("#mg3-name-glow", {opacity: 0.40}, {opacity: 0.30, duration: 0.24, ease: expoOut, immediateRender: false}, 1.56);
+      tl.set("#mg3-edge", {attr: {stroke: "#FFF3DC", "stroke-width": 16}}, 1.96);
+      tl.set("#mg3-glow", {opacity: 1}, 1.96);
+      tl.set("#mg3-edge", {attr: {stroke: "#FFB12A", "stroke-width": 11}}, 2.0);
+      tl.set("#mg3-glow", {opacity: 0.75}, 2.0);
+      tl.set("#mg3-edge", {attr: {"stroke-width": 6}}, 2.04);
+      tl.set("#mg3-glow", {opacity: 0.5}, 2.04);
+      tl.set("#mg3-name", {x: 2.93, y: -0.62}, 1.96);
+      tl.set("#mg3-name", {x: 1.94, y: -0.41}, 2.0);
+      tl.set("#mg3-name", {x: 0.97, y: -0.21}, 2.04);
+      tl.set("#mg3-name", {x: 0.00, y: -0.00}, 2.08);
+      tl.fromTo("#mg3-name-glow", {opacity: 0.40}, {opacity: 0.30, duration: 0.24, ease: expoOut, immediateRender: false}, 1.96);
+      tl.set("#mg3-edge", {attr: {stroke: "#FFF3DC", "stroke-width": 16}}, 2.36);
+      tl.set("#mg3-glow", {opacity: 1}, 2.36);
+      tl.set("#mg3-edge", {attr: {stroke: "#FFB12A", "stroke-width": 11}}, 2.4);
+      tl.set("#mg3-glow", {opacity: 0.75}, 2.4);
+      tl.set("#mg3-edge", {attr: {"stroke-width": 6}}, 2.44);
+      tl.set("#mg3-glow", {opacity: 0.5}, 2.44);
+      tl.set("#mg3-name", {x: 2.93, y: -0.62}, 2.36);
+      tl.set("#mg3-name", {x: 1.94, y: -0.41}, 2.4);
+      tl.set("#mg3-name", {x: 0.97, y: -0.21}, 2.44);
+      tl.set("#mg3-name", {x: 0.00, y: -0.00}, 2.48);
+      tl.fromTo("#mg3-name-glow", {opacity: 0.40}, {opacity: 0.30, duration: 0.24, ease: expoOut, immediateRender: false}, 2.36);
+      tl.set("#mg3-edge", {attr: {stroke: "#FFF3DC", "stroke-width": 16}}, 2.76);
+      tl.set("#mg3-glow", {opacity: 1}, 2.76);
+      tl.set("#mg3-edge", {attr: {stroke: "#FFB12A", "stroke-width": 11}}, 2.8);
+      tl.set("#mg3-glow", {opacity: 0.75}, 2.8);
+      tl.set("#mg3-edge", {attr: {"stroke-width": 6}}, 2.84);
+      tl.set("#mg3-glow", {opacity: 0.5}, 2.84);
+      tl.set("#mg3-name", {x: 2.93, y: -0.62}, 2.76);
+      tl.set("#mg3-name", {x: 1.94, y: -0.41}, 2.8);
+      tl.set("#mg3-name", {x: 0.97, y: -0.21}, 2.84);
+      tl.set("#mg3-name", {x: 0.00, y: -0.00}, 2.88);
+      tl.fromTo("#mg3-name-glow", {opacity: 0.40}, {opacity: 0.30, duration: 0.24, ease: expoOut, immediateRender: false}, 2.76);
+      tl.set("#mg3-edge", {attr: {stroke: "#FFF3DC", "stroke-width": 16}}, 3.16);
+      tl.set("#mg3-glow", {opacity: 1}, 3.16);
+      tl.set("#mg3-edge", {attr: {stroke: "#FFB12A", "stroke-width": 11}}, 3.2);
+      tl.set("#mg3-glow", {opacity: 0.75}, 3.2);
+      tl.set("#mg3-edge", {attr: {"stroke-width": 6}}, 3.24);
+      tl.set("#mg3-glow", {opacity: 0.5}, 3.24);
+      tl.set("#mg3-name", {x: 2.93, y: -0.62}, 3.16);
+      tl.set("#mg3-name", {x: 1.94, y: -0.41}, 3.2);
+      tl.set("#mg3-name", {x: 0.97, y: -0.21}, 3.24);
+      tl.set("#mg3-name", {x: 0.00, y: -0.00}, 3.28);
+      tl.fromTo("#mg3-name-glow", {opacity: 0.40}, {opacity: 0.30, duration: 0.24, ease: expoOut, immediateRender: false}, 3.16);
+      tl.fromTo("#mg3-echo-u-wipe, #mg3-echo-u-line", {clipPath: "inset(0px 100% 0px 0px)"}, {clipPath: "inset(0px 0% 0px 0px)", duration: 0.24, ease: expoOut}, 0.64);
+      tl.fromTo("#mg3-echo-d-wipe, #mg3-echo-d-line", {clipPath: "inset(0px 100% 0px 0px)"}, {clipPath: "inset(0px 0% 0px 0px)", duration: 0.24, ease: expoOut}, 0.64);
+      tl.fromTo("#mg3-eu-B01", {x: 84}, {x: -84, duration: 0.48, ease: "none"}, 0.64);
+      tl.fromTo("#mg3-ed-B01", {x: -84}, {x: 84, duration: 0.48, ease: "none"}, 0.64);
+      tl.fromTo("#mg3-eu-B02", {x: 77}, {x: -77, duration: 0.44, ease: "none"}, 1.12);
+      tl.fromTo("#mg3-ed-B02", {x: -77}, {x: 77, duration: 0.44, ease: "none"}, 1.12);
+      tl.fromTo("#mg3-eu-B03", {x: 70}, {x: -70, duration: 0.4, ease: "none"}, 1.56);
+      tl.fromTo("#mg3-ed-B03", {x: -70}, {x: 70, duration: 0.4, ease: "none"}, 1.56);
+      tl.fromTo("#mg3-eu-B04", {x: 70}, {x: -70, duration: 0.4, ease: "none"}, 1.96);
+      tl.fromTo("#mg3-ed-B04", {x: -70}, {x: 70, duration: 0.4, ease: "none"}, 1.96);
+      tl.fromTo("#mg3-eu-B05", {x: 70}, {x: -70, duration: 0.4, ease: "none"}, 2.36);
+      tl.fromTo("#mg3-ed-B05", {x: -70}, {x: 70, duration: 0.4, ease: "none"}, 2.36);
+      tl.fromTo("#mg3-eu-B06", {x: 70}, {x: -70, duration: 0.4, ease: "none"}, 2.76);
+      tl.fromTo("#mg3-ed-B06", {x: -70}, {x: 70, duration: 0.4, ease: "none"}, 2.76);
+      tl.fromTo("#mg3-eu-B07", {x: 70}, {x: -70, duration: 0.4, ease: "none"}, 3.16);
+      tl.fromTo("#mg3-ed-B07", {x: -70}, {x: 70, duration: 0.4, ease: "none"}, 3.16);
+      tl.fromTo("#mg3-tag", {x: -410.8, y: 87.3, opacity: 0}, {x: 0, y: 0, opacity: 1, duration: 0.24, ease: expoOut}, 0.2);
+      tl.to("#mg3-tag", {x: -410.8, y: 87.3, opacity: 0, duration: 0.16, ease: expoIn}, 1.4);
+      tl.fromTo("#mg3-pop-B02", {scale: 1, y: 0}, {scale: 1.06, y: -20, duration: 0.08, ease: expoOut}, 0.72);
+      tl.to("#mg3-pop-B02", {scale: 1, y: 0, duration: 0.08, ease: expoIn}, 0.96);
+      tl.fromTo("#mg3-pop-B03", {scale: 1, y: 0}, {scale: 1.25, y: -40, duration: 0.08, ease: expoOut}, 1.16);
+      tl.to("#mg3-pop-B03", {scale: 1, y: 0, duration: 0.08, ease: expoIn}, 1.4);
+      tl.set({}, {}, 3.56);
+      window.__timelines["mg3_band"] = tl;
+    })();
+  </script>
+</template>

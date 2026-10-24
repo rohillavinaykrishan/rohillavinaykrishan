@@ -1,0 +1,816 @@
+{
+ "project": "vinay-30s",
+ "fps": 25,
+ "source": "source/trailer.mp4 (23.976 fps, 1280x720)",
+ "timing_source": "shots/sh010/director/v001/cues.json",
+ "prep": "crop=1280:536:0:92,pad=1280:540:0:4,deblock=filter=strong:block=8,crop=1280:536:0:4,crop=<window>, retime, scale lanczos, unsharp 5:5:0.4 (tiles 0.25), H.264 crf10 yuv420p bt709",
+ "cuts": [
+  {
+   "id": "R1",
+   "layer": "roster",
+   "file": "shots/sh010/edit/v001/plates/R1.mp4",
+   "master_f_in": 19,
+   "master_f_out": 46,
+   "frames": 27,
+   "lib": "sf125",
+   "lib_src_frames": [
+    3423,
+    3445
+   ],
+   "cue_src_in": 142.8,
+   "cue_src_out": 143.7,
+   "src_in_used": 142.8093,
+   "src_frames_used": [
+    3424,
+    3445
+   ],
+   "speed": 0.833,
+   "retime": "mci",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "raises fist, blue light"
+  },
+  {
+   "id": "R2",
+   "layer": "roster",
+   "file": "shots/sh010/edit/v001/plates/R2.mp4",
+   "master_f_in": 46,
+   "master_f_out": 71,
+   "frames": 25,
+   "lib": "sf117",
+   "lib_src_frames": [
+    3193,
+    3236
+   ],
+   "cue_src_in": 133.25,
+   "cue_src_out": 134.25,
+   "src_in_used": 133.25,
+   "src_frames_used": [
+    3194,
+    3217
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "yells as he charges, light shafts"
+  },
+  {
+   "id": "R3",
+   "layer": "roster",
+   "file": "shots/sh010/edit/v001/plates/R3.mp4",
+   "master_f_in": 71,
+   "master_f_out": 96,
+   "frames": 25,
+   "lib": "sf032",
+   "lib_src_frames": [
+    918,
+    949
+   ],
+   "cue_src_in": 38.3,
+   "cue_src_out": 39.3,
+   "src_in_used": 38.3,
+   "src_frames_used": [
+    918,
+    941
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "fighting stance, arena (tilt)"
+  },
+  {
+   "id": "R4",
+   "layer": "roster",
+   "file": "shots/sh010/edit/v001/plates/R4.mp4",
+   "master_f_in": 96,
+   "master_f_out": 121,
+   "frames": 25,
+   "lib": "sf100",
+   "lib_src_frames": [
+    2699,
+    2721
+   ],
+   "cue_src_in": 112.58,
+   "cue_src_out": 113.48,
+   "src_in_used": 112.58,
+   "src_frames_used": [
+    2699,
+    2719
+   ],
+   "speed": 0.9,
+   "retime": "map",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "roars, arms raised (pan)"
+  },
+  {
+   "id": "R5",
+   "layer": "roster",
+   "file": "shots/sh010/edit/v001/plates/R5.mp4",
+   "master_f_in": 121,
+   "master_f_out": 145,
+   "frames": 24,
+   "lib": "sf082",
+   "lib_src_frames": [
+    2278,
+    2300
+   ],
+   "cue_src_in": 95.02,
+   "cue_src_out": 95.932,
+   "src_in_used": 95.02,
+   "src_frames_used": [
+    2278,
+    2299
+   ],
+   "speed": 0.95,
+   "retime": "map",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "flat-top stare into camera"
+  },
+  {
+   "id": "R6",
+   "layer": "roster",
+   "file": "shots/sh010/edit/v001/plates/R6.mp4",
+   "master_f_in": 145,
+   "master_f_out": 171,
+   "frames": 26,
+   "lib": "sf135",
+   "lib_src_frames": [
+    3640,
+    3690
+   ],
+   "cue_src_in": 151.9,
+   "cue_src_out": 152.94,
+   "src_in_used": 151.9,
+   "src_frames_used": [
+    3641,
+    3665
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "blue qipao, bloodied, glares"
+  },
+  {
+   "id": "R7",
+   "layer": "roster",
+   "file": "shots/sh010/edit/v001/plates/R7.mp4",
+   "master_f_in": 171,
+   "master_f_out": 197,
+   "frames": 26,
+   "lib": "sf107",
+   "lib_src_frames": [
+    2867,
+    2883
+   ],
+   "cue_src_in": 119.6,
+   "cue_src_out": 120.276,
+   "src_in_used": 119.5951,
+   "src_frames_used": [
+    2867,
+    2883
+   ],
+   "speed": 0.65,
+   "retime": "blend",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "red uniform, peaked cap; 0.65x = frame-blend, not mci"
+  },
+  {
+   "id": "R8",
+   "layer": "roster",
+   "file": "shots/sh010/edit/v001/plates/R8.mp4",
+   "master_f_in": 197,
+   "master_f_out": 223,
+   "frames": 26,
+   "lib": "sf053",
+   "lib_src_frames": [
+    1486,
+    1510
+   ],
+   "cue_src_in": 62.0,
+   "cue_src_out": 62.988,
+   "src_in_used": 62.0,
+   "src_frames_used": [
+    1486,
+    1509
+   ],
+   "speed": 0.95,
+   "retime": "map",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "sumo topknot glare (picture only)"
+  },
+  {
+   "id": "C1",
+   "layer": "clash",
+   "file": "shots/sh010/edit/v001/plates/C1.mp4",
+   "master_f_in": 237,
+   "master_f_out": 263,
+   "frames": 26,
+   "lib": "sf110",
+   "lib_src_frames": [
+    2947,
+    2964
+   ],
+   "cue_src_in": 122.93,
+   "cue_src_out": 123.658,
+   "src_in_used": 122.9145,
+   "src_frames_used": [
+    2947,
+    2964
+   ],
+   "speed": 0.7,
+   "retime": "mci",
+   "crop": "960:536:262:92",
+   "size": "2160x1206",
+   "note": "silhouettes vs explosion; lands on the S2 entry hit"
+  },
+  {
+   "id": "C2",
+   "layer": "clash",
+   "file": "shots/sh010/edit/v001/plates/C2.mp4",
+   "master_f_in": 263,
+   "master_f_out": 280,
+   "frames": 17,
+   "lib": "sf046",
+   "lib_src_frames": [
+    1246,
+    1264
+   ],
+   "cue_src_in": 52.0,
+   "cue_src_out": 52.68,
+   "src_in_used": 52.0,
+   "src_frames_used": [
+    1246,
+    1262
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "960:536:76:92",
+   "size": "2160x1206",
+   "note": "Balrog stands over a downed Ken"
+  },
+  {
+   "id": "C3",
+   "layer": "clash",
+   "file": "shots/sh010/edit/v001/plates/C3.mp4",
+   "master_f_in": 280,
+   "master_f_out": 298,
+   "frames": 18,
+   "lib": "sf116",
+   "lib_src_frames": [
+    3158,
+    3192
+   ],
+   "cue_src_in": 131.9,
+   "cue_src_out": 132.62,
+   "src_in_used": 131.9,
+   "src_frames_used": [
+    3162,
+    3178
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "960:536:90:92",
+   "size": "2160x1206",
+   "note": "Ken squares up to Dhalsim"
+  },
+  {
+   "id": "C4",
+   "layer": "clash",
+   "file": "shots/sh010/edit/v001/plates/C4.mp4",
+   "master_f_in": 298,
+   "master_f_out": 316,
+   "frames": 18,
+   "lib": "sf121",
+   "lib_src_frames": [
+    3315,
+    3349
+   ],
+   "cue_src_in": 138.4,
+   "cue_src_out": 139.12,
+   "src_in_used": 138.4,
+   "src_frames_used": [
+    3318,
+    3334
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "960:536:314:92",
+   "size": "2160x1206",
+   "note": "Ken and Ryu side by side, stances"
+  },
+  {
+   "id": "C5",
+   "layer": "clash",
+   "file": "shots/sh010/edit/v001/plates/C5.mp4",
+   "master_f_in": 316,
+   "master_f_out": 336,
+   "frames": 20,
+   "lib": "sf119",
+   "lib_src_frames": [
+    3253,
+    3290
+   ],
+   "cue_src_in": 135.9,
+   "cue_src_out": 136.7,
+   "src_in_used": 135.9,
+   "src_frames_used": [
+    3258,
+    3276
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "960:536:82:92",
+   "size": "2160x1206",
+   "note": "jump kick, arena wide"
+  },
+  {
+   "id": "C6",
+   "layer": "clash",
+   "file": "shots/sh010/edit/v001/plates/C6.mp4",
+   "master_f_in": 336,
+   "master_f_out": 357,
+   "frames": 21,
+   "lib": "sf033",
+   "lib_src_frames": [
+    950,
+    968
+   ],
+   "cue_src_in": 39.65,
+   "cue_src_out": 40.154,
+   "src_in_used": 39.6646,
+   "src_frames_used": [
+    951,
+    963
+   ],
+   "speed": 0.6,
+   "retime": "ramp",
+   "crop": "960:536:80:92",
+   "size": "2160x1206",
+   "note": "lunge; ramp 1.0 -> 0.2 (avg 0.6) under 'I'm a street fighter', drains to mono by f356"
+  },
+  {
+   "id": "H0",
+   "layer": "strike",
+   "file": "shots/sh010/edit/v001/plates/H0.mp4",
+   "master_f_in": 365,
+   "master_f_out": 387,
+   "frames": 22,
+   "lib": "sf045",
+   "lib_src_frames": [
+    1200,
+    1245
+   ],
+   "cue_src_in": 50.9676,
+   "cue_src_out": 51.232,
+   "src_in_used": 50.9676,
+   "src_frames_used": [
+    1222,
+    1229
+   ],
+   "speed": 0.3,
+   "retime": "hold4(1222)+hold2(1223)+mci0.3x(from1224)",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "GLOVE CONTACT = src frame 1222 (50.9676 s) = f365 (editor, edit/v001/H0_contact_proof.png). Plate: hold 1222 x4 f, 1223 x2 f, then 0.30x mci from 1224",
+   "contact": {
+    "src_frame": 1222,
+    "src_s": 50.9676,
+    "master_f": 365,
+    "proof": "shots/sh010/edit/v001/H0_contact_proof.png",
+    "note": "cue src_in 50.75 was a placeholder; contact = 50.9676. sf045 has 2 internal camera cuts the library missed (src 1216->1217 and 1221->1222); H0 starts exactly on the second one, so it crosses none"
+   }
+  },
+  {
+   "id": "F1",
+   "layer": "strike",
+   "file": "shots/sh010/edit/v001/plates/F1.mp4",
+   "master_f_in": 387,
+   "master_f_out": 398,
+   "frames": 11,
+   "lib": "sf130",
+   "lib_src_frames": [
+    3503,
+    3521
+   ],
+   "cue_src_in": 146.15,
+   "cue_src_out": 146.59,
+   "src_in_used": 146.15,
+   "src_frames_used": [
+    3504,
+    3513
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "upside-down spin kick, crowd"
+  },
+  {
+   "id": "F2",
+   "layer": "strike",
+   "file": "shots/sh010/edit/v001/plates/F2.mp4",
+   "master_f_in": 398,
+   "master_f_out": 409,
+   "frames": 11,
+   "lib": "sf128",
+   "lib_src_frames": [
+    3473,
+    3486
+   ],
+   "cue_src_in": 144.86,
+   "cue_src_out": 145.3,
+   "src_in_used": 144.86,
+   "src_frames_used": [
+    3473,
+    3482
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "swats a man in an orange jumpsuit"
+  },
+  {
+   "id": "F3",
+   "layer": "strike",
+   "file": "shots/sh010/edit/v001/plates/F3.mp4",
+   "master_f_in": 409,
+   "master_f_out": 420,
+   "frames": 11,
+   "lib": "sf109",
+   "lib_src_frames": [
+    2904,
+    2946
+   ],
+   "cue_src_in": 121.4,
+   "cue_src_out": 121.84,
+   "src_in_used": 121.4,
+   "src_frames_used": [
+    2910,
+    2920
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "fires rotary weapon, muzzle flash"
+  },
+  {
+   "id": "F4",
+   "layer": "strike",
+   "file": "shots/sh010/edit/v001/plates/F4.mp4",
+   "master_f_in": 420,
+   "master_f_out": 430,
+   "frames": 10,
+   "lib": "sf095",
+   "lib_src_frames": [
+    2593,
+    2605
+   ],
+   "cue_src_in": 108.16,
+   "cue_src_out": 108.56,
+   "src_in_used": 108.16,
+   "src_frames_used": [
+    2593,
+    2601
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "slash, blade across frame"
+  },
+  {
+   "id": "F5",
+   "layer": "strike",
+   "file": "shots/sh010/edit/v001/plates/F5.mp4",
+   "master_f_in": 430,
+   "master_f_out": 441,
+   "frames": 11,
+   "lib": "sf122",
+   "lib_src_frames": [
+    3350,
+    3373
+   ],
+   "cue_src_in": 139.76,
+   "cue_src_out": 140.2,
+   "src_in_used": 139.76,
+   "src_frames_used": [
+    3350,
+    3360
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "leaps across the warehouse"
+  },
+  {
+   "id": "F6",
+   "layer": "strike",
+   "file": "shots/sh010/edit/v001/plates/F6.mp4",
+   "master_f_in": 441,
+   "master_f_out": 451,
+   "frames": 10,
+   "lib": "sf084",
+   "lib_src_frames": [
+    2333,
+    2354
+   ],
+   "cue_src_in": 97.4,
+   "cue_src_out": 97.8,
+   "src_in_used": 97.4,
+   "src_frames_used": [
+    2335,
+    2343
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "strides down a neon street"
+  },
+  {
+   "id": "F7",
+   "layer": "strike",
+   "file": "shots/sh010/edit/v001/plates/F7.mp4",
+   "master_f_in": 451,
+   "master_f_out": 463,
+   "frames": 12,
+   "lib": "sf131",
+   "lib_src_frames": [
+    3522,
+    3545
+   ],
+   "cue_src_in": 147.0,
+   "cue_src_out": 147.48,
+   "src_in_used": 147.0,
+   "src_frames_used": [
+    3524,
+    3535
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "handstand in light shafts"
+  },
+  {
+   "id": "F8",
+   "layer": "strike",
+   "file": "shots/sh010/edit/v001/plates/F8.mp4",
+   "master_f_in": 463,
+   "master_f_out": 474,
+   "frames": 11,
+   "lib": "sf120",
+   "lib_src_frames": [
+    3291,
+    3314
+   ],
+   "cue_src_in": 137.3,
+   "cue_src_out": 137.74,
+   "src_in_used": 137.3,
+   "src_frames_used": [
+    3291,
+    3301
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "back to back, warehouse"
+  },
+  {
+   "id": "F9",
+   "layer": "strike",
+   "file": "shots/sh010/edit/v001/plates/F9.mp4",
+   "master_f_in": 474,
+   "master_f_out": 485,
+   "frames": 11,
+   "lib": "sf123",
+   "lib_src_frames": [
+    3374,
+    3401
+   ],
+   "cue_src_in": 140.8,
+   "cue_src_out": 141.24,
+   "src_in_used": 140.8,
+   "src_frames_used": [
+    3375,
+    3385
+   ],
+   "speed": 1.0,
+   "retime": "map",
+   "crop": "1280:536:0:92",
+   "size": "2160x904",
+   "note": "fighter on the arena floor after a hit"
+  },
+  {
+   "id": "T1",
+   "layer": "tile",
+   "file": "shots/sh010/edit/v001/plates/T1.mp4",
+   "master_f_in": 494,
+   "master_f_out": 534,
+   "frames": 40,
+   "lib": "sf125",
+   "lib_src_frames": [
+    3423,
+    3445
+   ],
+   "cue_src_in": 142.95,
+   "cue_src_out": 143.59,
+   "src_in_used": 142.9345,
+   "src_frames_used": [
+    3427,
+    3442
+   ],
+   "speed": 0.4,
+   "retime": "mci",
+   "crop": "600:536:122:92",
+   "size": "482x430",
+   "note": "freeze last frame from f534"
+  },
+  {
+   "id": "T2",
+   "layer": "tile",
+   "file": "shots/sh010/edit/v001/plates/T2.mp4",
+   "master_f_in": 512,
+   "master_f_out": 552,
+   "frames": 40,
+   "lib": "sf117",
+   "lib_src_frames": [
+    3193,
+    3236
+   ],
+   "cue_src_in": 134.302,
+   "cue_src_out": 134.942,
+   "src_in_used": 134.3008,
+   "src_frames_used": [
+    3220,
+    3235
+   ],
+   "speed": 0.4,
+   "retime": "mci",
+   "crop": "600:536:116:92",
+   "size": "482x430",
+   "note": "freeze last frame from f552"
+  },
+  {
+   "id": "T3",
+   "layer": "tile",
+   "file": "shots/sh010/edit/v001/plates/T3.mp4",
+   "master_f_in": 529,
+   "master_f_out": 569,
+   "frames": 40,
+   "lib": "sf032",
+   "lib_src_frames": [
+    918,
+    949
+   ],
+   "cue_src_in": 38.7,
+   "cue_src_out": 39.34,
+   "src_in_used": 38.7053,
+   "src_frames_used": [
+    928,
+    943
+   ],
+   "speed": 0.4,
+   "retime": "mci",
+   "crop": "600:536:280:92",
+   "size": "482x430",
+   "note": "freeze last frame from f569"
+  },
+  {
+   "id": "T4",
+   "layer": "tile",
+   "file": "shots/sh010/edit/v001/plates/T4.mp4",
+   "master_f_in": 547,
+   "master_f_out": 587,
+   "frames": 40,
+   "lib": "sf100",
+   "lib_src_frames": [
+    2699,
+    2721
+   ],
+   "cue_src_in": 112.7,
+   "cue_src_out": 113.34,
+   "src_in_used": 112.6959,
+   "src_frames_used": [
+    2702,
+    2717
+   ],
+   "speed": 0.4,
+   "retime": "mci",
+   "crop": "600:536:188:92",
+   "size": "482x430",
+   "note": "freeze last frame from f587"
+  },
+  {
+   "id": "T5",
+   "layer": "tile",
+   "file": "shots/sh010/edit/v001/plates/T5.mp4",
+   "master_f_in": 564,
+   "master_f_out": 604,
+   "frames": 40,
+   "lib": "sf082",
+   "lib_src_frames": [
+    2278,
+    2300
+   ],
+   "cue_src_in": 95.2,
+   "cue_src_out": 95.84,
+   "src_in_used": 95.2201,
+   "src_frames_used": [
+    2283,
+    2298
+   ],
+   "speed": 0.4,
+   "retime": "mci",
+   "crop": "600:536:180:92",
+   "size": "482x430",
+   "note": "freeze last frame from f604"
+  },
+  {
+   "id": "T6",
+   "layer": "tile",
+   "file": "shots/sh010/edit/v001/plates/T6.mp4",
+   "master_f_in": 582,
+   "master_f_out": 622,
+   "frames": 40,
+   "lib": "sf135",
+   "lib_src_frames": [
+    3640,
+    3690
+   ],
+   "cue_src_in": 151.95,
+   "cue_src_out": 152.59,
+   "src_in_used": 151.9435,
+   "src_frames_used": [
+    3643,
+    3658
+   ],
+   "speed": 0.4,
+   "retime": "mci",
+   "crop": "600:536:550:92",
+   "size": "482x430",
+   "note": "freeze last frame from f622"
+  },
+  {
+   "id": "T7",
+   "layer": "tile",
+   "file": "shots/sh010/edit/v001/plates/T7.mp4",
+   "master_f_in": 599,
+   "master_f_out": 639,
+   "frames": 40,
+   "lib": "sf107",
+   "lib_src_frames": [
+    2867,
+    2883
+   ],
+   "cue_src_in": 119.6,
+   "cue_src_out": 120.24,
+   "src_in_used": 119.6195,
+   "src_frames_used": [
+    2868,
+    2883
+   ],
+   "speed": 0.4,
+   "retime": "mci",
+   "crop": "600:536:222:92",
+   "size": "482x430",
+   "note": "freeze last frame from f639"
+  },
+  {
+   "id": "T8",
+   "layer": "tile",
+   "file": "shots/sh010/edit/v001/plates/T8.mp4",
+   "master_f_in": 616,
+   "master_f_out": 656,
+   "frames": 40,
+   "lib": "sf053",
+   "lib_src_frames": [
+    1486,
+    1510
+   ],
+   "cue_src_in": 62.3,
+   "cue_src_out": 62.94,
+   "src_in_used": 62.3122,
+   "src_frames_used": [
+    1494,
+    1509
+   ],
+   "speed": 0.4,
+   "retime": "mci",
+   "crop": "600:536:326:92",
+   "size": "482x430",
+   "note": "freeze last frame from f656"
+  }
+ ]
+}

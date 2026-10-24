@@ -1,0 +1,42 @@
+{
+ "language": "en",
+ "segments": [
+  {
+   "start": 18.55,
+   "end": 19.93,
+   "text": "This is about to get in.",
+   "words": [
+    {
+     "start": 18.55,
+     "end": 18.91,
+     "word": "This"
+    },
+    {
+     "start": 18.91,
+     "end": 19.27,
+     "word": "is"
+    },
+    {
+     "start": 19.27,
+     "end": 19.49,
+     "word": "about"
+    },
+    {
+     "start": 19.49,
+     "end": 19.67,
+     "word": "to"
+    },
+    {
+     "start": 19.67,
+     "end": 19.77,
+     "word": "get"
+    },
+    {
+     "start": 19.77,
+     "end": 19.93,
+     "word": "in."
+    }
+   ]
+  }
+ ]
+}

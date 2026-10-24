@@ -1,0 +1,359 @@
+{
+ "fps": 25,
+ "size": "2400x900",
+ "source": "source/trailer.mp4",
+ "source_fps": "24000/1001",
+ "timing_source": "shots/sh010/director/v001/cues.json",
+ "prep": "crop=1280:536:0:92,pad=1280:540:0:4,deblock=filter=strong:block=8,crop=1280:536:0:4 -> [minterpolate mci x24 for C00/B01] -> scale 2400:1005 lanczos -> crop 2400:900:0:Y -> unsharp=5:5:0.4",
+ "notes": [
+  "deblock pad is 4 rows at the TOP (pad=1280:540:0:4): the active picture starts at coded row 92 = 8*11+4, so a top pad puts the 8x8 grid back on block edges (the treatment text shows pad ...:0:0 which pads the bottom and does not realign)",
+  "C00/B01 minterpolate input = trailer frames 3446-3456 (all inside sf126 3446-3458; the cut is at 3459); src_pos are fractional source-frame positions, quantised to 1/24 frame",
+  "B01 honours cues src_out 144.06: only ~2 source frames after contact are available, so the 100%->20% ramp is a geometric decay (100% on f261, 20% by f263-264) settling into the freeze; true freeze f272-f276",
+  "contact: plate B01 frame 0 (= master f261) is source frame 3452 (t 143.977) exactly; see contact_proof.png"
+ ],
+ "plates": [
+  {
+   "id": "C00",
+   "f_in": 243,
+   "f_out": 261,
+   "frames": 18,
+   "src_in": 143.73,
+   "src_out": 143.977,
+   "lib_shot": "sf126",
+   "lib_frames": [
+    3446,
+    3458
+   ],
+   "crop_cue": "1280:536:0:92",
+   "mode": "minterpolate",
+   "speed": 0.3431,
+   "contact_src_frame": 3452,
+   "src_pos": [
+    3446.0833,
+    3446.4167,
+    3446.75,
+    3447.0833,
+    3447.375,
+    3447.7083,
+    3448.0417,
+    3448.375,
+    3448.7083,
+    3449.0417,
+    3449.375,
+    3449.7083,
+    3450.0417,
+    3450.375,
+    3450.6667,
+    3451.0,
+    3451.3333,
+    3451.6667
+   ],
+   "src_frames_used": [
+    3446,
+    3452
+   ],
+   "inside_one_trailer_shot": true,
+   "band_y": 52
+  },
+  {
+   "id": "B01",
+   "f_in": 261,
+   "f_out": 277,
+   "frames": 16,
+   "src_in": 143.977,
+   "src_out": 144.06,
+   "lib_shot": "sf126",
+   "lib_frames": [
+    3446,
+    3458
+   ],
+   "crop_cue": "1280:536:0:92",
+   "mode": "minterpolate",
+   "ramp": "speed 100% decaying x0.511 per frame f261-f271, freeze f272-f276",
+   "speeds_pct": [
+    100.0,
+    51.1,
+    26.1,
+    13.3,
+    6.8,
+    3.5,
+    1.8,
+    0.9,
+    0.5,
+    0.2,
+    0.1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "contact_src_frame": 3452,
+   "src_pos": [
+    3452.0,
+    3452.9583,
+    3453.4583,
+    3453.7083,
+    3453.8333,
+    3453.875,
+    3453.9167,
+    3453.9583,
+    3453.9583,
+    3453.9583,
+    3453.9583,
+    3453.9583,
+    3453.9583,
+    3453.9583,
+    3453.9583,
+    3453.9583
+   ],
+   "src_frames_used": [
+    3452,
+    3454
+   ],
+   "inside_one_trailer_shot": true,
+   "band_y": 52
+  },
+  {
+   "id": "B02",
+   "f_in": 277,
+   "f_out": 289,
+   "frames": 12,
+   "src_in": 50.1,
+   "src_out": 50.65,
+   "lib_shot": "sf045",
+   "lib_frames": [
+    1200,
+    1245
+   ],
+   "crop_cue": "1280:536:0:92",
+   "mode": "frame-pick (nearest source frame)",
+   "speed": 1.1458,
+   "src_pos": [
+    1201,
+    1202,
+    1203,
+    1204,
+    1206,
+    1207,
+    1208,
+    1209,
+    1210,
+    1211,
+    1212,
+    1213
+   ],
+   "src_frames_used": [
+    1201,
+    1213
+   ],
+   "inside_one_trailer_shot": true,
+   "band_y": 0
+  },
+  {
+   "id": "B03",
+   "f_in": 289,
+   "f_out": 300,
+   "frames": 11,
+   "src_in": 139.75,
+   "src_out": 140.25,
+   "lib_shot": "sf122",
+   "lib_frames": [
+    3350,
+    3373
+   ],
+   "crop_cue": "1280:536:0:92",
+   "mode": "frame-pick (nearest source frame)",
+   "speed": 1.1364,
+   "src_pos": [
+    3351,
+    3352,
+    3353,
+    3354,
+    3355,
+    3356,
+    3357,
+    3358,
+    3359,
+    3360,
+    3362
+   ],
+   "src_frames_used": [
+    3351,
+    3362
+   ],
+   "inside_one_trailer_shot": true,
+   "band_y": 0
+  },
+  {
+   "id": "B04",
+   "f_in": 300,
+   "f_out": 310,
+   "frames": 10,
+   "src_in": 113.55,
+   "src_out": 114.0,
+   "lib_shot": "sf101",
+   "lib_frames": [
+    2722,
+    2757
+   ],
+   "crop_cue": "1280:536:0:92",
+   "mode": "frame-pick (nearest source frame)",
+   "speed": 1.125,
+   "src_pos": [
+    2722,
+    2724,
+    2725,
+    2726,
+    2727,
+    2728,
+    2729,
+    2730,
+    2731,
+    2732
+   ],
+   "src_frames_used": [
+    2722,
+    2732
+   ],
+   "inside_one_trailer_shot": true,
+   "band_y": 52
+  },
+  {
+   "id": "B05",
+   "f_in": 310,
+   "f_out": 320,
+   "frames": 10,
+   "src_in": 123.0,
+   "src_out": 123.45,
+   "lib_shot": "sf110",
+   "lib_frames": [
+    2947,
+    2964
+   ],
+   "crop_cue": "1280:536:0:92",
+   "mode": "frame-pick (nearest source frame)",
+   "speed": 1.125,
+   "src_pos": [
+    2949,
+    2950,
+    2951,
+    2952,
+    2953,
+    2954,
+    2956,
+    2957,
+    2958,
+    2959
+   ],
+   "src_frames_used": [
+    2949,
+    2959
+   ],
+   "inside_one_trailer_shot": true,
+   "band_y": 52
+  },
+  {
+   "id": "B06",
+   "f_in": 320,
+   "f_out": 330,
+   "frames": 10,
+   "src_in": 132.35,
+   "src_out": 132.8,
+   "lib_shot": "sf116",
+   "lib_frames": [
+    3158,
+    3192
+   ],
+   "crop_cue": "1280:536:0:92",
+   "mode": "frame-pick (nearest source frame)",
+   "speed": 1.125,
+   "src_pos": [
+    3173,
+    3174,
+    3175,
+    3176,
+    3178,
+    3179,
+    3180,
+    3181,
+    3182,
+    3183
+   ],
+   "src_frames_used": [
+    3173,
+    3183
+   ],
+   "inside_one_trailer_shot": true,
+   "band_y": 52
+  },
+  {
+   "id": "B07",
+   "f_in": 330,
+   "f_out": 340,
+   "frames": 10,
+   "src_in": 101.36,
+   "src_out": 101.81,
+   "lib_shot": "sf088",
+   "lib_frames": [
+    2430,
+    2449
+   ],
+   "crop_cue": "1280:536:0:92",
+   "mode": "frame-pick (nearest source frame)",
+   "speed": 1.125,
+   "src_pos": [
+    2430,
+    2431,
+    2432,
+    2433,
+    2435,
+    2436,
+    2437,
+    2438,
+    2439,
+    2440
+   ],
+   "src_frames_used": [
+    2430,
+    2440
+   ],
+   "inside_one_trailer_shot": true,
+   "band_y": 52
+  },
+  {
+   "id": "B08",
+   "f_in": 340,
+   "f_out": 350,
+   "frames": 10,
+   "src_in": 152.0,
+   "src_out": 152.4,
+   "lib_shot": "sf135",
+   "lib_frames": [
+    3640,
+    3690
+   ],
+   "crop_cue": "1280:536:0:92",
+   "mode": "frame-pick (nearest source frame)",
+   "speed": 1.0,
+   "src_pos": [
+    3644,
+    3645,
+    3646,
+    3647,
+    3648,
+    3649,
+    3650,
+    3651,
+    3652,
+    3653
+   ],
+   "src_frames_used": [
+    3644,
+    3653
+   ],
+   "inside_one_trailer_shot": true,
+   "band_y": 10
+  }
+ ]
+}

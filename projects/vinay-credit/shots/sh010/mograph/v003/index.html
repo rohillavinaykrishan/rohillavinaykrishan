@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait-4k">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=2160, height=3840" />
+    <title>sh010 THE SOLVE - mograph v001</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Bebas Neue"; src: url("assets/fonts/BebasNeue-400.woff2") format("woff2"); font-weight: 400; font-display: block; }
+      @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-600.woff2") format("woff2"); font-weight: 600; font-display: block; }
+      @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-var.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+      @font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/JetBrainsMono-500.woff2") format("woff2"); font-weight: 500; font-display: block; }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 2160px; height: 3840px; overflow: hidden; background: #070303; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #070303;
+        font-family: "Inter", sans-serif; color: #F3E6D6; }
+
+      .layer { position: absolute; inset: 0; pointer-events: none; }
+      #stage { position: absolute; inset: 0; }
+      /* oversized so the camera shake never reveals an edge */
+      #base { position: absolute; left: -40px; top: -40px; width: 2240px; height: 3920px; object-fit: cover; filter: brightness(1.45) saturate(1.05); }
+      #plateWrap { position: absolute; left: -40px; top: -40px; width: 2240px; height: 3920px; opacity: 0.75; }
+      #plate { width: 100%; height: 100%; object-fit: cover; display: block; }
+      #scrim { position: absolute; inset: 0;
+        background:
+          linear-gradient(180deg, rgba(7,3,3,0.42) 0%, rgba(7,3,3,0) 24%, rgba(7,3,3,0) 88%, rgba(7,3,3,0.35) 100%);
+        opacity: 0; }
+      /* local legibility: a feathered dark band only behind the two roll columns (x ~180-1980) */
+      #scrimBand { position: absolute; left: 0; top: 1040px; width: 2160px; height: 2420px; opacity: 0;
+        background: linear-gradient(90deg, rgba(7,3,3,0) 0px, rgba(7,3,3,0.40) 300px, rgba(7,3,3,0.42) 980px, rgba(7,3,3,0.30) 1080px,
+          rgba(7,3,3,0.42) 1180px, rgba(7,3,3,0.40) 1860px, rgba(7,3,3,0) 2160px);
+        -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+        mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 86%, transparent 100%); }
+      #heroHalo { position: absolute; left: 0; top: 0; width: 100px; height: 100px; opacity: 0;
+        background: radial-gradient(closest-side, rgba(240,90,26,0.34) 0%, rgba(200,22,29,0.16) 55%, rgba(200,22,29,0) 100%); }
+      canvas.fx { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; }
+
+      /* ---- logo ---- */
+      #logoBox { position: absolute; left: 0; width: 2160px; top: 300px; height: 650px; display: flex; justify-content: center; }
+      #logo { position: absolute; top: 0; height: 650px; width: auto; }
+      #logoBloom { position: absolute; top: 0; left: 0; width: 2160px; height: 650px; background: url("assets/sf_logo_alpha.png") center / contain no-repeat; }
+      #logo { opacity: 0.45; }
+      #logoBloom { opacity: 0; filter: blur(34px) brightness(1.4) sepia(0.4); mix-blend-mode: screen; }
+
+      /* ---- header ---- */
+      #header { position: absolute; left: 0; width: 2160px; top: 1000px; height: 130px; line-height: 130px; text-align: center;
+        font-family: "Oswald", sans-serif; font-weight: 600; font-size: 112px; letter-spacing: 0.01em; color: #F3E6D6; opacity: 0;
+        text-shadow: 0 6px 30px rgba(7,3,3,0.7); }
+
+      /* ---- roll ---- */
+      #rollMask { position: absolute; left: 0; top: 1180px; width: 2160px; height: 2120px; overflow: hidden;
+        -webkit-mask-image: linear-gradient(180deg, transparent 0px, #000 220px, #000 1900px, transparent 2120px);
+        mask-image: linear-gradient(180deg, transparent 0px, #000 220px, #000 1900px, transparent 2120px); }
+      #rollWhip { position: absolute; left: 0; top: 0; width: 2160px; height: 2120px; }
+      #rollOthers { position: absolute; left: 0; top: -1180px; width: 2160px; height: 0; opacity: 0.85; }
+      .row { position: absolute; left: 0; width: 2160px; height: 112px; line-height: 112px; margin-top: -56px;
+        font-weight: 500; font-size: 52px; letter-spacing: 0.03em; white-space: nowrap; color: #F3E6D6;
+        text-shadow: 0 2px 10px rgba(7,3,3,0.55); }
+      .row .l { position: absolute; right: 1125px; top: 0; text-align: right; }
+      .row .r { position: absolute; left: 1125px; top: 0; text-align: left; }
+
+      #heroBox { position: absolute; left: 0; top: 0; width: 2160px; height: 0; }
+      #hero { position: absolute; left: 1125px; top: 0; height: 112px; line-height: 112px; margin-top: -56px; white-space: nowrap; transform-origin: 50% 50%;
+        font-weight: 500; font-size: 52px; letter-spacing: 0.03em; color: #F3E6D6; opacity: 0.85; }
+      #heroGold { position: absolute; left: 0; top: 0; white-space: nowrap; opacity: 0;
+        background: linear-gradient(180deg, #FFE7B0 22%, #F5B53C 78%);
+        -webkit-background-clip: text; background-clip: text; color: transparent; }
+      #heroGlow { position: absolute; left: 0; top: 0; white-space: nowrap; opacity: 0; color: #F05A1A; filter: blur(22px); }
+      #heroPlain { position: relative; white-space: nowrap; }
+
+      /* ---- trackers ---- */
+      #trkLayer { position: absolute; inset: 0; }
+      .trk { position: absolute; width: 0; height: 0; --c: #F5B53C; opacity: 0; }
+      .trk .pat { position: absolute; left: -75px; top: -45px; width: 150px; height: 90px; border: 6px solid var(--c); }
+      .trk .srch { position: absolute; left: -150px; top: -92px; width: 300px; height: 184px; border: 4px dashed var(--c); opacity: 0.85; }
+      .trk .ph, .trk .pv { position: absolute; background: var(--c); }
+      .trk .ph { left: -18px; top: -2.5px; width: 36px; height: 5px; }
+      .trk .pv { left: -2.5px; top: -18px; width: 5px; height: 36px; }
+      .trk .lbl { position: absolute; left: -142px; top: -88px; text-shadow: 0 0 4px rgba(7,3,3,1), 0 0 12px rgba(7,3,3,0.9); font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 38px;
+        line-height: 40px; color: var(--c); white-space: nowrap; letter-spacing: 0.04em; }
+      #searchPlus { position: absolute; width: 0; height: 0; opacity: 0; }
+      #searchPlus .ph, #searchPlus .pv { position: absolute; background: #F5B53C; }
+      #searchPlus .ph { left: -22px; top: -1.5px; width: 44px; height: 3px; }
+      #searchPlus .pv { left: -1.5px; top: -22px; width: 3px; height: 44px; }
+      #searchPlus .ring { position: absolute; left: -46px; top: -46px; width: 92px; height: 92px; border: 2px dashed rgba(245,181,60,0.7); border-radius: 50%; }
+
+      #brk { position: absolute; left: 0; top: 0; width: 0; height: 0; opacity: 0; }
+      .bc { position: absolute; width: 44px; height: 44px; border-color: #F5B53C; border-style: solid; border-width: 0; }
+      .bc.tl { border-top-width: 4px; border-left-width: 4px; }
+      .bc.tr { border-top-width: 4px; border-right-width: 4px; }
+      .bc.bl { border-bottom-width: 4px; border-left-width: 4px; }
+      .bc.br { border-bottom-width: 4px; border-right-width: 4px; }
+      #solvedLbl { position: absolute; left: 0; top: 0; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 30px;
+        line-height: 36px; color: #F5B53C; white-space: pre; letter-spacing: 0.06em; opacity: 0; }
+
+      /* ---- title card ---- */
+      #card { position: absolute; inset: 0; transform-origin: 50% 2100px; }
+      .tline { position: absolute; left: 0; width: 2160px; text-align: center; white-space: nowrap; opacity: 0; }
+      #tNames { position: absolute; inset: 0; transform-origin: 1080px 1845px; }
+      #tName1, #tName2 { font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: 300px; line-height: 300px; height: 300px; letter-spacing: 0.015em; }
+      #tName1 { top: 1550px; color: #F3E6D6; text-shadow: 0 10px 50px rgba(7,3,3,0.65); }
+      #tName2 { top: 1840px; }
+      #tName2 span { background: linear-gradient(180deg, #FFE7B0 18%, #F5B53C 70%, #E89A2E 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+        filter: drop-shadow(0 0 36px rgba(240,90,26,0.45)); padding: 0 20px; }
+      #tRule { position: absolute; left: 580px; top: 2198px; width: 1000px; height: 4px; transform: scaleX(0);
+        background: linear-gradient(90deg, rgba(245,181,60,0) 0%, #F5B53C 18%, #FFE7B0 50%, #F5B53C 82%, rgba(245,181,60,0) 100%); }
+      #tRole { top: 2274px; height: 112px; line-height: 112px; font-weight: 600; font-size: 92px; letter-spacing: 0.22em; color: #F3E6D6;
+        text-indent: 0.22em; text-shadow: 0 4px 24px rgba(7,3,3,0.7); }
+      #tShow { top: 2436px; height: 90px; line-height: 90px; font-weight: 500; font-size: 72px; letter-spacing: 0.35em; color: #F5B53C;
+        text-indent: 0.35em; text-shadow: 0 4px 24px rgba(7,3,3,0.7); }
+      #lineupBox { position: absolute; left: 0; top: 2690px; width: 2160px; height: 1150px; opacity: 0;
+        -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 26%);
+        mask-image: linear-gradient(180deg, transparent 0%, #000 26%); }
+      #lineup { width: 2160px; height: 1150px; object-fit: cover; object-position: 50% 100%; display: block; }
+
+      #flash { position: absolute; inset: 0; opacity: 0; mix-blend-mode: screen;
+        background: radial-gradient(ellipse 62% 40% at 50% 50%, rgba(255,214,130,1) 0%, rgba(245,181,60,0.85) 28%, rgba(240,110,30,0.5) 62%, rgba(240,90,26,0.3) 100%); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-fps="25" data-width="2160" data-height="3840">
+      <svg width="0" height="0" style="position:absolute">
+        <filter id="rollBlur" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+          <feGaussianBlur id="rollBlurFe" stdDeviation="0 0" />
+        </filter>
+      </svg>
+
+      <div id="stage">
+        <img id="base" src="assets/red_base_2160.png" alt="" />
+        <div id="plateWrap">
+          <video id="plate" src="assets/bg_plate_1080.mp4" muted playsinline data-start="0" data-duration="15" data-track-index="1"></video>
+        </div>
+        <div id="scrim"></div>
+        <div id="scrimBand"></div>
+        <canvas id="embers" class="fx" data-layout-ignore width="2160" height="3840"></canvas>
+
+        <div id="flash"></div>
+        <div id="logoBox">
+          <div id="logoBloom"></div>
+          <img id="logo" src="assets/sf_logo_alpha.png" alt="Street Fighter" />
+        </div>
+
+        <div id="header" data-layout-allow-occlusion>Thanks to our talented teams!</div>
+
+        <div id="rollMask" data-layout-allow-occlusion data-layout-allow-overflow data-layout-allow-overlap>
+          <div id="rollWhip">
+            <div id="rollOthers"></div>
+          </div>
+        </div>
+
+        <div id="heroBox" data-layout-allow-occlusion data-layout-allow-overlap>
+          <div id="heroHalo"></div>
+          <div id="hero"><span id="heroPlain">VINAY KRISHAN ROHILLA</span><span id="heroGlow">VINAY KRISHAN ROHILLA</span><span id="heroGold">VINAY KRISHAN ROHILLA</span></div>
+        </div>
+
+        <div id="trkLayer" data-layout-allow-occlusion data-layout-allow-overlap>
+          <div id="searchPlus"><div class="ring"></div><div class="ph"></div><div class="pv"></div></div>
+          <div id="brk"><div class="bc tl"></div><div class="bc tr"></div><div class="bc bl"></div><div class="bc br"></div></div>
+          <div id="solvedLbl" data-layout-allow-occlusion data-layout-allow-overlap>TRK_07  SOLVED</div>
+        </div>
+
+        <canvas id="sparks" class="fx" data-layout-ignore width="2160" height="3840"></canvas>
+
+        <div id="card" data-layout-allow-occlusion>
+          <div id="lineupBox"><img id="lineup" src="assets/lineup.png" alt="" /></div>
+          <div id="tNames">
+            <div id="tName1" class="tline"><span id="tName1s">VINAY KRISHAN</span></div>
+            <div id="tName2" class="tline"><span>ROHILLA</span></div>
+          </div>
+          <div id="tRule"></div>
+          <div id="tRole" class="tline">SR. MATCHMOVE ARTIST</div>
+          <div id="tShow" class="tline">STREET FIGHTER&nbsp;&nbsp;·&nbsp;&nbsp;DNEG</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ---------------- data (verbatim from source/credits.txt, '' = blank cell / letter gap) ----------------
+      const ROWS = [["SHEKHAR LAHASE","SURYAWANSHI GOPAL ASHOK"],["SHIVAM MISHRA","SWAPNIL SARANKAR"],["SHIVKUMAR SOLANKI","SYED ALEEM"],["SHIVKUMAR VISHWAKARMA","SYED MASTHAN"],["SHOBINS JOSE",""],["",""],["TAKUMA TSUBOI","THILIPKUMAR P"],["TANMAY DUTTA","THUMMETI RAVI VARMA"],["TANMAY JAYDEEP PAGAR","TONY BRADLEY"],["TAUFIK SHABBIR SHAIKH","TRIPURAMALLU KOTESWARARAO"],["TEJAL CHANDRAKANT KHOCHARE","TUSHAR MORE"],["TEJAS DAYANAND PATIL","TUSHAR SANJAY MANDWADE"],["",""],["UGGAR SAIN","URUKONDA CHAITANYA KIRAN"],["",""],["VAGHMASHI BIPIN CHANABHAI","VIKIRNIKA UNIYAL"],["VAIBHAV LAXMAN MAHAJAN","VIKRAM SIDDHARTH JADHAV"],["VAISHALI DNYANOBA GHOLAP","VIKRANT NAWALE"],["VALLABH CHAVAN","VINAY BANDATHE"],["VAMSI KRISHNA EADALA","VINAY KRISHAN ROHILLA"],["VARDHA ROHIT VARDA RAJ","VINAY KUMAR SINGH"],["VARUN CHOUDHARY","VIPIN KUMAR RAJORIYA"],["VARUNA NAIK","VIPUL BHONDE"],["VEERENDRA ANGADI","VIRENDRA KUMAR PATEL"],["VELASIRI PAVAN SAI","VIRENDRA VIJAY JADHAV"],["VICKEY KUMAR","VISHWAS V MARATHE"],["VICTORIA WHITE","VIVEK BHOYAR"],["VIJAY GANESH","VIVEK GAJANAN PAWAR"],["VIJAYPRATAP GUPTA","VIVEK MOHAN JAGTAP"],["VIJESH RAMMANI SHARMA","VIVEK R S"],["VIKAS KUMAR","VIVEK VIJAY GAIKWAD"],["VIKASH KUMAR","VUYYUR JAYANTH"],["",""],["YAMINI MALVIYA","YOGESH ASHOK PAGORE"],["YASH CHANDRAKANT GAIKWAD","YOGESH BHAVSAR"],["YATIN ASHOK SAINDANE","YOGESH PARAB"],["YAYATI DAWANE","YOGESH SARWA"],["YOGESH ANANT PATIL","YOGESH YASHWANT KUMBHAR"],["",""],["ZANG CHEN",""]];
+      // per-frame mean luma of the plate behind the roll (edit/v003 bg_plate_1080.mp4, measured with ffmpeg signalstats)
+      const PLATE_Y = [39,36,34,32,31,30,29,29,29,29,29,29,29,29,29,28,27,27,26,26,27,28,29,31,32,34,32,30,28,31,27,26,26,26,27,26,28,36,41,46,50,53,55,54,51,57,59,60,61,61,62,63,64,61,56,49,42,34,29,29,29,30,30,30,30,30,30,31,31,31,31,29,29,33,45,45,47,49,43,39,37,39,42,55,59,58,57,54,43,29,30,32,31,33,40,44,42,41,42,40,40,40,40,39,43,45,43,47,52,53,41,26,22,23,67,66,65,66,59,53,43,44,34,26,27,25,34,36,33,27,24,24,28,35,22,23,22,20,34,29,43,44,38,37,41,52,52,52,52,52,52,52,53,53,54,54,54,54,54,53,52,52,51,52,53,54,58,63,71,76,82,89,88,87,87,87,87,87,87,87,87,88,88,88,88,88,89,89,89,89,85,80,72,67,59,55,51,48,46,45,48,49,50,51,51,52,51,49,48,50,52,50,53,55,54,50,43,43,53,60,68,73,75,76,75,74,73,69,61,51,45,40,38,38,39,39,40,40,41,41,42,42,42,43,43,43,44,44,44,45,45,46,46,46,46,47,47,47,48,48,49,49,49,50,50,51,51,52,52,53,54,54,55,55,56,57,58,59,60,61,62,62,63,64,65,66,67,67,68,68,69,69,70,71,72,72,73,74,74,75,75,75,75,75,75,75,75,33,33,33,33,34,35,35,35,36,36,35,34,33,33,33,33,33,32,32,31,31,32,33,35,37,38,40,41,42,43,43,44,45,46,47,50,53,55,58,60,61,62,62,63,64,63,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62];
+      const HERO_ROW = 19;
+      const PITCH = 112;
+      const T_HIT = 1.0, T_LOCK = 10.2, T_FREEZE = 11.96, T_SLAM = 12.28, FPS = 25;
+      // trackers: [label, row, side, fraction-of-name-width, appear, lost]
+      const TRK = [
+        ["TRK_01", 16, "l", 0.30, 7.90, 9.00],
+        ["TRK_02", 22, "r", 0.55, 8.20, 9.50],
+        ["TRK_03", 25, "l", 0.62, 8.35, 9.20],
+        ["TRK_04", 17, "r", 0.40, 8.50, 9.90],
+        ["TRK_05", 27, "r", 0.70, 8.80, 9.35],
+        ["TRK_06", 21, "l", 0.45, 8.95, 9.70],
+        ["TRK_07", 19, "r", 0.43, 9.10, 99],
+      ];
+
+      // ---------------- helpers ----------------
+      const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+      const lerp = (a, b, k) => a + (b - a) * k;
+      const ramp = (t, a, b) => clamp((t - a) / (b - a));
+      const sstep = (k) => k * k * (3 - 2 * k);
+      const eOutCubic = (k) => 1 - Math.pow(1 - k, 3);
+      const eInOutCubic = (k) => (k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2);
+      const eOutExpo = (k) => (k >= 1 ? 1 : 1 - Math.pow(2, -10 * k));
+      const eOutBack = (k, s = 1.70158) => 1 + (s + 1) * Math.pow(k - 1, 3) + s * Math.pow(k - 1, 2);
+      const eInCubic = (k) => k * k * k;
+      function mulberry32(a) { return function () { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+
+      // roll origin (row 0 centre, frame px) - treatment 7: y0 = 2700 - 2908*easeOutCubic((t-1)/(T_LOCK-1))
+      const y0 = (t) => 2700 - 2908 * eOutCubic(ramp(t, T_HIT, T_LOCK));
+      const rowSpeed = (t) => (t <= T_HIT || t >= T_LOCK ? 0 : (2908 * 3 * Math.pow(1 - ramp(t, T_HIT, T_LOCK), 2)) / (T_LOCK - T_HIT) / FPS); // px/frame
+
+      // ---------------- build DOM ----------------
+      const $ = (id) => document.getElementById(id);
+      const rollOthers = $("rollOthers");
+      const cells = {};
+      ROWS.forEach((r, i) => {
+        const row = document.createElement("div");
+        row.className = "row";
+        row.style.top = PITCH * i + "px";
+        const l = document.createElement("span"); l.className = "l"; l.textContent = r[0];
+        const rr = document.createElement("span"); rr.className = "r"; rr.textContent = i === HERO_ROW ? "" : r[1];
+        row.appendChild(l); row.appendChild(rr);
+        rollOthers.appendChild(row);
+        cells[i + "l"] = l; cells[i + "r"] = rr;
+      });
+      const trkLayer = $("trkLayer");
+      const trkEls = TRK.map((d) => {
+        const el = document.createElement("div");
+        el.className = "trk";
+        el.innerHTML = '<div class="srch"></div><div class="pat"></div><div class="ph"></div><div class="pv"></div><div class="lbl"></div>';
+        el.querySelector(".lbl").textContent = d[0];
+        trkLayer.appendChild(el);
+        return el;
+      });
+
+      // ---------------- particles (seeded, pure functions of time) ----------------
+      function sprite(r, stops) {
+        const c = document.createElement("canvas"); c.width = c.height = r * 2;
+        const g = c.getContext("2d"); const gr = g.createRadialGradient(r, r, 0, r, r, r);
+        stops.forEach((s) => gr.addColorStop(s[0], s[1])); g.fillStyle = gr; g.fillRect(0, 0, r * 2, r * 2); return c;
+      }
+      const SPR_EMBER = sprite(64, [[0, "rgba(255,236,190,1)"], [0.12, "rgba(255,190,90,0.95)"], [0.35, "rgba(240,90,26,0.35)"], [1, "rgba(200,22,29,0)"]]);
+      const SPR_GOLD = sprite(48, [[0, "rgba(255,248,225,1)"], [0.18, "rgba(255,216,130,0.95)"], [0.5, "rgba(245,181,60,0.25)"], [1, "rgba(245,181,60,0)"]]);
+      const rnd = mulberry32(7031);
+      const EMB = Array.from({ length: 110 }, () => ({
+        x: rnd() * 2160, y: rnd() * 4200, v: 70 + rnd() * 190, sz: 6 + Math.pow(rnd(), 2.2) * 34, sw: 20 + rnd() * 70,
+        sf: 0.3 + rnd() * 0.9, ph: rnd() * 6.283, fl: 3 + rnd() * 7, a: 0.35 + rnd() * 0.6, depth: rnd(),
+      }));
+      const rs = mulberry32(255);
+      const SPK = Array.from({ length: 40 }, () => ({
+        u: rnd(), ang: -Math.PI / 2 + (rs() - 0.5) * Math.PI * 1.9, sp: 260 + rs() * 760, sz: 5 + rs() * 12,
+        life: 0.38 + rs() * 0.22, dl: rs() * 0.06, oy: (rs() - 0.5) * 50, glint: rs() < 0.22,
+      }));
+      SPK.forEach((p) => { p.u = rs(); });
+      const ctxE = $("embers").getContext("2d");
+      const ctxS = $("sparks").getContext("2d");
+
+      function drawEmbers(te, boost) {
+        ctxE.clearRect(0, 0, 2160, 3840);
+        ctxE.globalCompositeOperation = "lighter";
+        for (const p of EMB) {
+          const span = 4300;
+          let y = (((p.y - p.v * te) % span) + span) % span - 230;
+          const x = p.x + Math.sin(te * p.sf + p.ph) * p.sw + Math.sin(te * 0.37 + p.ph * 2) * 25;
+          const flick = 0.65 + 0.35 * Math.sin(te * p.fl + p.ph * 3);
+          const lowFade = 0.35 + 0.65 * clamp(y / 3840 + 0.25); // embers brighter toward the bottom heat
+          const a = p.a * flick * lowFade * boost;
+          if (a <= 0.01) continue;
+          ctxE.globalAlpha = Math.min(1, a);
+          const s = p.sz * (0.7 + 0.6 * p.depth);
+          ctxE.drawImage(SPR_EMBER, x - s, y - s, s * 2, s * 2);
+        }
+        ctxE.globalAlpha = 1;
+      }
+
+      function drawSparks(t, cx0, w, cy) {
+        ctxS.clearRect(0, 0, 2160, 3840);
+        const k0 = t - T_LOCK;
+        const on = !(k0 < 0 || k0 > 0.75);
+        S($("sparks"), "visibility", on ? "visible" : "hidden");
+        if (!on) return;
+        ctxS.globalCompositeOperation = "lighter";
+        for (const p of SPK) {
+          const k = k0 - p.dl;
+          if (k < 0 || k > p.life) continue;
+          const q = k / p.life;
+          const dist = p.sp * (1 - Math.exp(-4.2 * k)) / 4.2 * 4.2 * 0.24; // fast out, heavy drag
+          const x = cx0 + p.u * w + Math.cos(p.ang) * dist;
+          const y = cy + p.oy * 0.6 + Math.sin(p.ang) * dist * 0.75 + 60 * k * k;
+          const a = (q < 0.12 ? q / 0.12 : 1) * Math.pow(1 - q, 1.6);
+          const s = p.sz * (1 - 0.5 * q);
+          ctxS.globalAlpha = a;
+          ctxS.drawImage(SPR_GOLD, x - s * 2, y - s * 2, s * 4, s * 4);
+          if (p.glint) {
+            ctxS.globalAlpha = a * 0.8; ctxS.fillStyle = "#FFE7B0";
+            ctxS.fillRect(x - s * 3, y - 1, s * 6, 2); ctxS.fillRect(x - 1, y - s * 3, 2, s * 6);
+          }
+        }
+        ctxS.globalAlpha = 1;
+      }
+
+      // ---------------- layout measurement (after fonts) ----------------
+      let M = null;
+      function measure() {
+        M = { cell: {} };
+        TRK.forEach((d) => {
+          const el = d[1] === HERO_ROW && d[2] === "r" ? $("heroPlain") : cells[d[1] + d[2]];
+          M.cell[d[0]] = { x: el.getBoundingClientRect().left, w: el.getBoundingClientRect().width };
+        });
+        M.heroW52 = $("heroPlain").getBoundingClientRect().width;
+        $("hero").style.fontWeight = "700";
+        M.heroW700 = $("heroPlain").getBoundingClientRect().width;
+        $("hero").style.fontWeight = "";
+        M.t1w = $("tName1s").getBoundingClientRect().width;
+      }
+      const HERO_TARGET_W = 1780; // the solved name spans ~1780 px at 4K once centred
+
+      // ---------------- the single frame writer ----------------
+      const S = (el, k, v) => { if (el.__c === undefined) el.__c = {}; if (el.__c[k] !== v) { el.style[k] = v; el.__c[k] = v; } };
+      const E = { base: $("base"), plateWrap: $("plateWrap"), scrim: $("scrim"), logo: $("logo"), bloom: $("logoBloom"), header: $("header"),
+        rollOthers, rollWhip: $("rollWhip"), rollMask: $("rollMask"), blurFe: $("rollBlurFe"), heroBox: $("heroBox"), hero: $("hero"), heroPlain: $("heroPlain"),
+        heroGold: $("heroGold"), heroGlow: $("heroGlow"), halo: $("heroHalo"), band: $("scrimBand"), tNames: $("tNames"), brk: $("brk"), solved: $("solvedLbl"), plus: $("searchPlus"), stage: $("stage"),
+        card: $("card"), n1: $("tName1"), n2: $("tName2"), rule: $("tRule"), role: $("tRole"), show: $("tShow"), lineupBox: $("lineupBox"), flash: $("flash") };
+      const bcs = Array.from(document.querySelectorAll("#brk .bc"));
+
+      function plateOpacity(t) {
+        if (t < T_HIT) return 0.82;
+        if (t < 8.0) return lerp(0.82, 0.8, sstep(ramp(t, 1.0, 1.6)));
+        if (t < T_LOCK) return lerp(0.8, 0.74, sstep(ramp(t, 8.0, 8.8)));
+        if (t < T_SLAM) return lerp(0.74, 0.68, sstep(ramp(t, T_LOCK, T_LOCK + 0.4)));
+        return lerp(0.5, 0.62, sstep(ramp(t, T_SLAM + 0.12, 12.8)));
+      }
+
+      function render(t) {
+        if (!M) return;
+        const te = t >= T_FREEZE && t < T_SLAM - 1e-4 ? T_FREEZE : t; // the freeze: every motion holds
+        const slam = ramp(t, T_SLAM, T_SLAM + 6 / FPS);
+
+        // camera shake on the slam (6 frames, deterministic, decaying)
+        const sk = t - T_SLAM;
+        let sx = 0, sy = 0;
+        if (sk >= 0 && sk < 6 / FPS) {
+          const f = Math.floor(sk * FPS); const amp = 12 * (1 - f / 6);
+          const SX = [1, -0.8, 0.6, -0.9, 0.5, -0.3], SY = [-0.7, 1, -0.9, 0.4, -0.6, 0.3];
+          sx = SX[f] * amp; sy = SY[f] * amp;
+        }
+        S(E.stage, "transform", `translate(${sx.toFixed(2)}px, ${sy.toFixed(2)}px)`);
+
+        // plate
+        // legibility: dip the plate under the roll when the light leaks go pale gold
+        const fr = Math.min(374, Math.max(0, Math.floor(t * FPS + 1e-6)));
+        const bright = t < T_SLAM ? clamp((PLATE_Y[fr] - 60) / 100) : 0;
+        const rollZone = ramp(t, 0.85, 1.0);
+        S(E.plateWrap, "opacity", (plateOpacity(t) * (1 - 0.6 * bright * rollZone)).toFixed(3));
+        S(E.scrim, "opacity", lerp(0.5, 1, ramp(te, 0.9, 1.4)).toFixed(3));
+        S(E.band, "opacity", lerp(0, 1, ramp(te, 0.9, 1.4)).toFixed(3));
+
+        // embers: gentle always, a little hotter on the title card
+        drawEmbers(te, lerp(0.75, 1.0, ramp(t, T_SLAM, 13.0)) * lerp(0.7, 1, ramp(te, 0, 1.0)));
+
+        // logo: 45% -> slam to 100% on the hit, gold bloom pulse
+        const lk = ramp(t, T_HIT - 0.04, T_HIT + 0.08);
+        S(E.logo, "opacity", lerp(0.45, 1, lk).toFixed(3));
+        let bloom = 0;
+        if (t >= T_HIT - 0.04) bloom = Math.max(bloom, 0.75 * Math.exp(-(t - T_HIT) / 0.22) * ramp(t, T_HIT - 0.04, T_HIT));
+        if (t >= T_SLAM) bloom = Math.max(bloom, 0.45 * Math.exp(-(t - T_SLAM) / 0.25));
+        S(E.bloom, "opacity", bloom.toFixed(3));
+
+        // header
+        const hIn = eOutCubic(ramp(t, T_HIT, T_HIT + 0.3));
+        const hOut = ramp(t, T_FREEZE, T_SLAM);
+        S(E.header, "opacity", (hIn * (1 - hOut)).toFixed(3));
+        // "ROUND ONE!" announcer call in the bed (frames 43-66): a single tasteful kick on the header
+        const kk = te - 43 / FPS;
+        const kick = kk >= 0 ? Math.exp(-kk / 0.16) * (kk < 2 / FPS ? kk / (2 / FPS) : 1) : 0;
+        S(E.header, "transform", `translateY(${(30 * (1 - hIn)).toFixed(1)}px) scale(${(1 + 0.045 * kick).toFixed(4)})`);
+        S(E.header, "color", kick > 0.02 ? `rgb(${Math.round(lerp(243, 255, kick))},${Math.round(lerp(230, 214, kick))},${Math.round(lerp(214, 150, kick))})` : "#F3E6D6");
+
+        // roll
+        const Y0 = y0(te);
+        const rollOn = t >= T_HIT ? 1 : 0;
+        const sp = te < T_FREEZE ? rowSpeed(te) : 0;
+        const mb = Math.min(2, sp * 0.06);
+        const lockK = eOutCubic(ramp(te, T_LOCK, T_LOCK + 12 / FPS));
+        const big = eInOutCubic(ramp(te, 10.6, 11.4));
+        const rack = lockK * 3 + big * 2.5;
+        E.blurFe.setAttribute("stdDeviation", `${rack.toFixed(2)} ${(rack + mb).toFixed(2)}`);
+        S(E.rollOthers, "filter", rack + mb > 0.05 ? "url(#rollBlur)" : "none");
+        S(E.rollOthers, "transform", `translateY(${Y0.toFixed(2)}px)`);
+        S(E.rollOthers, "opacity", (rollOn * lerp(lerp(0.85, 0.22, lockK), 0.15, big)).toFixed(3));
+        // whip out on the slam
+        const wk = eOutCubic(slam); const wf = ramp(t, T_SLAM, T_SLAM + 2 / FPS);
+        S(E.rollWhip, "transform", `translateY(${(-600 * wk).toFixed(1)}px)`);
+        S(E.rollMask, "opacity", (t >= T_SLAM - 1e-4 ? 0 : 1).toFixed(3));
+        S(E.rollWhip, "filter", wk > 0 ? `blur(${(8 * wk).toFixed(2)}px)` : "none");
+
+        // hero (his name): rides the roll, then solves, then glides to centre
+        const heroY = Y0 + PITCH * HERO_ROW;
+        // before lock, it lives inside the roll window -> emulate the roll's soft mask
+        const my = heroY;
+        const maskA = my < 1180 || my > 3300 ? 0 : Math.min(1, (my - 1180) / 220, (3300 - my) / 220);
+        const wtK = ramp(te, T_LOCK, T_LOCK + 8 / FPS);
+        const w52 = lerp(M.heroW52, M.heroW700, wtK);              // name width at 52 px for the current weight
+        const sLock = te < T_LOCK ? 1 : lerp(1, 1.28, eOutBack(wtK, 2.2));
+        const sBig = HERO_TARGET_W / M.heroW700;
+        const solveScale = lerp(sLock, sBig, big);                  // 10.6-11.4: grows to ~1780 px wide
+        const wNow = w52 * solveScale;
+        const cStart = 1125 + w52 * 0.15 - w52 * sLock * 0.15 + (w52 * sLock) / 2; // centre while it sits in the list
+        const xLeft = lerp(cStart, 1080, big) - wNow / 2;          // glides to the exact frame centre
+        const fs = 52 * solveScale;
+        S(E.hero, "lineHeight", (fs * 1.25).toFixed(2) + "px");
+        S(E.hero, "height", (fs * 1.25).toFixed(2) + "px");
+        S(E.hero, "marginTop", (-fs * 0.625).toFixed(2) + "px");
+        const heroOn = rollOn * (te < T_LOCK ? maskA : 1);
+        S(E.hero, "left", xLeft.toFixed(2) + "px");
+        S(E.hero, "fontSize", fs.toFixed(2) + "px");
+        S(E.hero, "fontWeight", String(Math.round(lerp(500, 700, ramp(te, T_LOCK, T_LOCK + 8 / FPS)))));
+        S(E.heroBox, "transform", `translateY(${heroY.toFixed(2)}px)`);
+        const gk = ramp(te, T_LOCK, T_LOCK + 3 / FPS);
+        // morph geometry: hero cap-height box <-> title block (VINAY KRISHAN / ROHILLA, y 1590-2100)
+        const mk = eOutExpo(ramp(t, T_SLAM, T_SLAM + 7 / FPS));
+        const capH = fs * 0.73, blockH = 510, blockCY = 1845;
+        const msx = Math.max(0.2, wNow / M.t1w), msy = capH / blockH, mty = heroY - blockCY;
+        // the swap happens behind the bloom: frame 307 = bloom only, 308+ = title only (never both typefaces)
+        const slamF = (t - T_SLAM) * FPS;                 // frames since the drop
+        const postSlam = slamF > -1e-3;                   // frame 307 onwards
+        const titleOn = slamF > 1 - 1e-3;                 // frame 308 onwards
+        S(E.hero, "opacity", (postSlam ? 0 : heroOn * lerp(0.85, 1, gk)).toFixed(3));
+        S(E.halo, "opacity", (postSlam ? 0 : gk * lerp(0.35, 1, big)).toFixed(3));
+        const tk = eOutCubic(clamp((slamF - 1) / 4));     // 308 -> 312
+        S(E.tNames, "transform", titleOn ? `scale(${lerp(1.12, 1, tk).toFixed(4)})` : "none");
+        S(E.heroGold, "opacity", gk.toFixed(3));
+        S(E.heroPlain, "opacity", (1 - gk).toFixed(3));
+        const glowPulse = te >= T_LOCK ? 0.35 + 0.45 * Math.exp(-(te - T_LOCK) / 0.35) : 0;
+        S(E.heroGlow, "opacity", (gk * Math.max(glowPulse, 0.32 * big)).toFixed(3));
+        S(E.heroGlow, "filter", `blur(${(22 * Math.max(1, solveScale / 1.28) * 0.8).toFixed(1)}px)`);
+        const hw = wNow, hh = fs * 0.95;
+        // warm halo behind the solved name
+        const haloW = wNow * 1.35, haloH = fs * 3.4;
+        S(E.halo, "width", haloW.toFixed(1) + "px");
+        S(E.halo, "height", haloH.toFixed(1) + "px");
+        S(E.halo, "left", (xLeft + wNow / 2 - haloW / 2).toFixed(1) + "px");
+        S(E.halo, "top", (-haloH / 2).toFixed(1) + "px");
+
+        // pre-roll search "+" (0 - 1 s): drifts over the fighter, hunting
+        const pk = te < T_HIT ? 1 : 0;
+        const px = 1080 + Math.sin(te * 2.1) * 180 + Math.sin(te * 5.3) * 40, py = 2050 + Math.cos(te * 1.7) * 120 + Math.sin(te * 4.1) * 30;
+        S(E.plus, "transform", `translate(${px.toFixed(1)}px, ${py.toFixed(1)}px) rotate(${(te * 40).toFixed(1)}deg)`);
+        S(E.plus, "opacity", (pk * ramp(te, 0.05, 0.3) * 0.9).toFixed(3));
+
+        // trackers
+        const trkOut = postSlam ? 0 : 1;
+        TRK.forEach((d, n) => {
+          const el = trkEls[n];
+          const [lbl, row, side, frac, tin, tlost] = d;
+          const c = M.cell[lbl];
+          let cx = c.x + c.w * frac;
+          if (lbl === "TRK_07") cx = 1125 + M.heroW52 * frac; // measured at 52 px before the lock
+          const cy = Y0 + PITCH * row;
+          const ink = ramp(te, tin, tin + 4 / FPS);
+          let sc = lerp(1.3, 1.0, eOutCubic(ink));
+          let a = ink;
+          let dx = 0, dy = 0, col = "#F5B53C", text = lbl;
+          if (te >= tlost) {
+            const lk2 = te - tlost;
+            col = lk2 < 0.16 ? "#FF2A1F" : "#C8161D"; text = lbl + "  LOST";
+            // one full-strength red flash before the drop-out
+            if (lk2 < 0.16) { sc *= 1 + 0.14 * (1 - lk2 / 0.16); }
+            S(el, "filter", lk2 < 0.16 ? "drop-shadow(0 0 14px rgba(255,42,31,0.95))" : "none");
+            const slip = eInCubic(ramp(lk2, 0.04, 0.4));
+            dx = (n % 2 ? 1 : -1) * 46 * slip + Math.sin(lk2 * 90) * 4 * (lk2 < 0.2 ? 1 : 0);
+            dy = -26 * slip;
+            a *= 1 - ramp(lk2, 0.18, 0.48);
+          }
+          if (lbl === "TRK_07") {
+            // at the lock the pattern / search boxes collapse into the brackets
+            const ck = ramp(te, T_LOCK, T_LOCK + 3 / FPS);
+            a *= 1 - ck; sc *= lerp(1, 0.6, ck);
+          }
+          a *= trkOut;
+          S(el, "opacity", a.toFixed(3));
+          S(el, "transform", `translate(${(cx + dx).toFixed(2)}px, ${(cy + dy - 600 * wk).toFixed(2)}px) scale(${sc.toFixed(3)})`);
+          if (el.__col !== col) { el.style.setProperty("--c", col); el.__col = col; }
+          const lb = el.firstChild.parentNode.querySelector(".lbl");
+          if (lb.textContent !== text) lb.textContent = text;
+        });
+
+        // TRK_07 solve brackets + label
+        const bk = ramp(te, T_LOCK, T_LOCK + 3 / FPS);
+        const bOff = 60 * (1 - eOutBack(bk, 2.0));
+        const bs = Math.max(1, solveScale / 1.28);
+        const padX = 34 * Math.min(bs, 1.8), padY = 6 * bs, cs = 44 * Math.min(bs, 1.6), bwid = bs > 1.4 ? 5 : 4;
+        bcs.forEach((c) => { S(c, "width", cs.toFixed(1) + "px"); S(c, "height", cs.toFixed(1) + "px"); S(c, "borderWidth", "0"); });
+        S(bcs[0], "borderTopWidth", bwid + "px"); S(bcs[0], "borderLeftWidth", bwid + "px");
+        S(bcs[1], "borderTopWidth", bwid + "px"); S(bcs[1], "borderRightWidth", bwid + "px");
+        S(bcs[2], "borderBottomWidth", bwid + "px"); S(bcs[2], "borderLeftWidth", bwid + "px");
+        S(bcs[3], "borderBottomWidth", bwid + "px"); S(bcs[3], "borderRightWidth", bwid + "px");
+        const bx = xLeft - padX, by = heroY - hh / 2 - padY, bw = hw + padX * 2, bh = hh + padY * 2;
+        S(E.brk, "opacity", (te >= T_LOCK ? Math.min(1, bk * 2) * trkOut : 0).toFixed(3));
+        S(E.brk, "transform", `translate(${bx.toFixed(2)}px, ${by.toFixed(2)}px)`);
+        S(bcs[0], "transform", `translate(${(-bOff).toFixed(2)}px, ${(-bOff).toFixed(2)}px)`);
+        S(bcs[1], "transform", `translate(${(bw - cs + bOff).toFixed(2)}px, ${(-bOff).toFixed(2)}px)`);
+        S(bcs[2], "transform", `translate(${(-bOff).toFixed(2)}px, ${(bh - cs + bOff).toFixed(2)}px)`);
+        S(bcs[3], "transform", `translate(${(bw - cs + bOff).toFixed(2)}px, ${(bh - cs + bOff).toFixed(2)}px)`);
+        const lblK = ramp(te, T_LOCK + 2 / FPS, T_LOCK + 6 / FPS);
+        S(E.solved, "opacity", (lblK * trkOut).toFixed(3));
+        S(E.solved, "fontSize", lerp(30, 38, big).toFixed(1) + "px");
+        S(E.solved, "lineHeight", lerp(36, 46, big).toFixed(1) + "px");
+        S(E.solved, "transform", `translate(${(bx).toFixed(2)}px, ${(by + bh + lerp(18, 26, big)).toFixed(2)}px)`);
+
+        // gold point-cloud burst off the name at the lock
+        drawSparks(te >= T_FREEZE ? -1 : te, 1125 - M.heroW52 * 0.28 * 0.15, M.heroW52 * 1.28, 1920);
+
+        // ---------------- title card ----------------
+        const ck2 = t - T_SLAM;
+        const n1k = titleOn ? 1 : 0;
+        const nb = titleOn ? 1 - tk : 0;
+        S(E.n1, "opacity", n1k.toFixed(3));
+        S(E.n2, "opacity", n1k.toFixed(3));
+        S(E.n1, "filter", nb > 0.01 ? `blur(${(6 * nb).toFixed(2)}px)` : "none");
+        S(E.n2, "filter", nb > 0.01 ? `blur(${(6 * nb).toFixed(2)}px)` : "none");
+        S(E.rule, "transform", `scaleX(${eInOutCubic(ramp(t, 12.45, 12.85)).toFixed(4)})`);
+        const rk = eOutCubic(ramp(t, 12.55, 12.95));
+        S(E.role, "opacity", rk.toFixed(3));
+        S(E.role, "transform", `translateY(${(36 * (1 - rk)).toFixed(1)}px)`);
+        const shk = eOutCubic(ramp(t, 12.85, 13.25));
+        S(E.show, "opacity", shk.toFixed(3));
+        S(E.show, "transform", `translateY(${(30 * (1 - shk)).toFixed(1)}px)`);
+        const luk = eOutCubic(ramp(t, T_SLAM, 13.0));
+        S(E.lineupBox, "opacity", luk.toFixed(3));
+        S(E.lineupBox, "transform", `translateY(${(380 * (1 - luk)).toFixed(1)}px)`);
+        const push = lerp(1, 1.03, sstep(ramp(t, 13.0, 15.0)));
+        S(E.card, "transform", `scale(${push.toFixed(5)})`);
+
+        // gold flash on the slam (3 frames)
+        const fk = t - T_SLAM;
+        const ff = Math.floor(fk * FPS + 1e-3);
+        const fl = ff >= 0 && ff < 4 ? [0.65, 0.4, 0.2, 0.08][ff] : 0;
+        S(E.flash, "opacity", fl.toFixed(3));
+      }
+
+      // ---------------- timeline: one driver, every visual a pure function of t ----------------
+      function build() {
+        measure();
+        const tl = gsap.timeline({ paused: true });
+        const drv = { t: 0 };
+        tl.to(drv, { t: 15, duration: 15, ease: "none", onUpdate: () => render(drv.t) }, 0);
+        render(0);
+        window.__timelines["main"] = tl;
+        if (window.__hfForceTimelineRebind) window.__hfForceTimelineRebind();
+      }
+      document.fonts.ready.then(build);
+    </script>
+  </body>
+</html>

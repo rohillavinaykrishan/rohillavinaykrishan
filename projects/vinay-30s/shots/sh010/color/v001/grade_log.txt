@@ -1,0 +1,43 @@
+R2.mp4: duo:Ken levels 0.068-0.888 gamma 0.95; frames in 25 out 25 OK
+R3.mp4: duo:Dhalsim levels 0.064-0.860 gamma 0.78; frames in 25 out 25 OK
+R4.mp4: duo:Blanka levels 0.031-0.895 gamma 0.71; frames in 25 out 25 OK
+R5.mp4: duo:Guile levels 0.051-0.887 gamma 0.70; frames in 24 out 24 OK
+R6.mp4: duo:Chun-Li levels 0.038-0.874 gamma 0.55; frames in 26 out 26 OK
+R7.mp4: duo:M. Bison levels 0.008-0.869 gamma 0.55; frames in 26 out 26 OK
+R8.mp4: duo:E. Honda levels 0.022-0.620 gamma 0.74; frames in 26 out 26 OK
+C1.mp4: true; frames in 26 out 26 OK
+C2.mp4: true; frames in 17 out 17 OK
+C3.mp4: true; frames in 18 out 18 OK
+C4.mp4: true; frames in 18 out 18 OK
+C5.mp4: true; frames in 20 out 20 OK
+C6.mp4: true>drain; frames in 21 out 21 OK
+H0.mp4: true; frames in 22 out 22 OK
+F1.mp4: true; frames in 11 out 11 OK
+F2.mp4: true warm-pre rr+0.09 gg-0.022 bb-0.09; frames in 11 out 11 OK
+F3.mp4: true warm-pre rr+0.24 gg-0.060 bb-0.24; frames in 11 out 11 OK
+F4.mp4: true; frames in 10 out 10 OK
+F5.mp4: true warm-pre rr+0.15 gg-0.037 bb-0.15; frames in 11 out 11 OK
+F6.mp4: true warm-pre rr+0.06 gg-0.015 bb-0.06; frames in 10 out 10 OK
+F7.mp4: true; frames in 12 out 12 OK
+F8.mp4: true; frames in 11 out 11 OK
+F9.mp4: true; frames in 11 out 11 OK
+T1_duo.mp4: duo:Ryu levels 0.019-0.847 gamma 0.85; frames in 40 out 40 OK
+T1_true.mp4: true warm-pre rr+0.30 gg-0.075 bb-0.30; frames in 40 out 40 OK
+T4_duo.mp4: duo:Blanka levels 0.053-0.906 gamma 0.75; frames in 40 out 40 OK
+T4_true.mp4: true warm-pre rr+0.21 gg-0.052 bb-0.21; frames in 40 out 40 OK
+T5_duo.mp4: duo:Guile levels 0.048-0.892 gamma 0.88; frames in 40 out 40 OK
+T5_true.mp4: true; frames in 40 out 40 OK
+T6_duo.mp4: duo:Chun-Li levels 0.031-0.860 gamma 0.61; frames in 40 out 40 OK
+T6_true.mp4: true warm-pre 0.30 STILL FAILS min(R-B)=-24.13; frames in 40 out 40 OK
+T7_duo.mp4: duo:M. Bison levels 0.008-0.881 gamma 0.55; frames in 40 out 40 OK
+T7_true.mp4: true; frames in 40 out 40 OK
+T8_duo.mp4: duo:E. Honda levels 0.020-0.620 gamma 0.71; frames in 40 out 40 OK
+T8_true.mp4: true; frames in 40 out 40 OK
+R1.mp4: duo:Ryu levels 0.010-0.813 gamma 0.68; frames in 27 out 27 OK
+C6.mp4: true>drain; frames in 21 out 21 OK
+T3_duo.mp4: duo:Dhalsim levels 0.070-0.859 gamma 0.76; frames in 40 out 40 OK
+T3_true.mp4: true; frames in 40 out 40 OK
+T2_duo.mp4: duo:Ken levels 0.080-0.912 gamma 1.00; frames in 40 out 40 OK
+T2_true.mp4: true; frames in 40 out 40 OK
+T6_duo.mp4: duo:Chun-Li levels 0.030-0.896 gamma 0.70; frames in 40 out 40 OK
+T6_true.mp4: true (T5-T7 local exemption, no warm-pre); frames in 40 out 40 OK

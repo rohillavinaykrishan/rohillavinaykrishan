@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=2160, height=3840" />
+    <title>MG1 Roster + Clash (4K, master f0-356)</title>
+    <script src="assets/mg1/vendor/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 2160px; height: 3840px; overflow: hidden; background: #07060A; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="14.28" data-width="2160" data-height="3840" data-fps="25">
+      <div id="mg1" data-composition-id="mg1" data-composition-src="compositions/mg1.html" data-start="0" data-duration="14.28" data-track-index="1" data-track-kind="graphics" data-width="2160" data-height="3840" data-variable-values='{"fxScale": 1}'></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

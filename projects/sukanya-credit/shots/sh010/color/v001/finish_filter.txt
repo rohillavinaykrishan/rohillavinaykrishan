@@ -1,0 +1,1 @@
+gblur=sigma=1.2,vignette=angle=PI/5,lut3d=file=/home/user/rohillavinaykrishan/projects/sukanya-credit/shots/sh010/color/v001/silver.cube:interp=tetrahedral,format=yuv420p,noise=c0s=7:c0f=t+u,setparams=color_primaries=bt709:color_trc=bt709:colorspace=bt709:range=tv

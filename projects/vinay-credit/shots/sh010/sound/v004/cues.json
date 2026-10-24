@@ -1,0 +1,114 @@
+{
+ "version": "sh010 sound v003",
+ "bed": {
+  "source": "source/trailer.mp4",
+  "in": 61.0,
+  "out": 76.0,
+  "fade_in": 0.15,
+  "fade_out_start": 14.3,
+  "fade_out": 0.7,
+  "note": "one continuous take, uninterrupted 0-15.000 s, never ducked"
+ },
+ "measured": {
+  "hit1": {
+   "onset": 1.0,
+   "peak": 1.03,
+   "trailer": 62.0
+  },
+  "lock_hit": {
+   "onset": 10.18,
+   "loudest_rms": "10.24-10.27 (-7.9 dB)",
+   "trailer": 71.18,
+   "frame": 255
+  },
+  "silence": {
+   "start": 11.97,
+   "end": 12.27,
+   "below_dB_rms": -30,
+   "core": "11.98-12.24 at -34..-40 dB",
+   "frames": "299-306"
+  },
+  "drop": {
+   "rise": 12.28,
+   "onset": 12.3,
+   "transient": 12.35,
+   "trailer": 73.3,
+   "frame": 307
+  },
+  "announcer": {
+   "text": "ROUND ONE!",
+   "whisper": "1.52-2.52",
+   "producer_window": "1.70-2.66",
+   "decision": "kept (producer), not notched, no accent or ducking over it"
+  },
+  "cross_check_audio_artist": {
+   "opening_hit": 1.0,
+   "lock_onset": "10.18-10.19",
+   "lock_peak": "10.24-10.26",
+   "silence": "11.96-12.26",
+   "drop_onset": "12.26-12.28",
+   "drop_peak": 12.36,
+   "trailer_whooshes": "0.60-1.00, 9.40-10.19 (in the bed itself)"
+  }
+ },
+ "focus_pull": {
+  "start": 7.9,
+  "full_at": 10.15,
+  "snap_start": 10.15,
+  "snap_end": 10.17,
+  "curve": "exponential 20 kHz -> 1.8 kHz, 4-pole Butterworth, +2 dB low shelf @150 Hz ramps in with it",
+  "note": "dry->filtered ease 7.90-8.10; filter snaps fully open in 20 ms ending on the lock-hit onset"
+ },
+ "sub": {
+  "source": "boom.wav",
+  "chain": "lowpass 90 Hz (2-pole) x2, 0.8 s (hit 1: 0.5 s), 0.3 s fade-out",
+  "gain_db_under_bed": -14,
+  "hits": [
+   {
+    "t": 1.0,
+    "lead": 0.05,
+    "why": "bed hit onset 1.00 (sub peak lands 1.05, bed peak 1.03); shortened to 0.5 s (ends 1.45) so it clears the announcer call",
+    "len": 0.5
+   },
+   {
+    "t": 10.18,
+    "lead": 0.05,
+    "why": "lock hit onset 10.18 (sub peak lands 10.23, bed RMS peak 10.24)"
+   },
+   {
+    "t": 12.29,
+    "lead": 0.0,
+    "why": "drop, starts after measured silence end 12.27 (sub peak 12.39, bed transient 12.35)"
+   }
+  ]
+ },
+ "punch": {
+  "source": "source/trailer.mp4 142.78-143.10",
+  "chain": "highpass 120 Hz, 40 ms in, 120 ms out",
+  "t": 10.18,
+  "gain_db_under_bed": -8,
+  "align": "its transient on the lock-hit onset 10.18"
+ },
+ "silence_keep_clean": [
+  11.94,
+  12.28
+ ],
+ "banned_and_absent": [
+  "shimmer",
+  "riser",
+  "whoosh",
+  "glitch",
+  "swipe",
+  "reverse",
+  "tape-stop",
+  "downlifter",
+  "drone",
+  "chime",
+  "tracker ticks"
+ ],
+ "mix_trim_db": -3.0,
+ "announcer_keep_clear": [
+  1.45,
+  2.7
+ ]
+}

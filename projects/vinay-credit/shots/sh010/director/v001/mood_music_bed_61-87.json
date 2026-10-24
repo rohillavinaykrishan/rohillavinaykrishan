@@ -1,0 +1,103 @@
+{
+ "duration": 27.0,
+ "bpm": 117.5,
+ "beats": [
+  2.043,
+  2.531,
+  2.995,
+  3.46,
+  3.901,
+  4.365,
+  4.83,
+  5.317,
+  5.805,
+  6.269,
+  6.734,
+  7.221,
+  7.709,
+  8.22,
+  8.731,
+  9.218,
+  9.683,
+  10.24,
+  10.82,
+  11.401,
+  11.935,
+  12.446,
+  12.91,
+  13.375,
+  13.909,
+  14.42,
+  14.93,
+  15.464,
+  15.975,
+  16.533,
+  17.067,
+  17.601,
+  18.112,
+  18.622,
+  19.11,
+  19.598,
+  20.085,
+  20.596,
+  21.107,
+  21.618,
+  22.129,
+  22.639,
+  23.197,
+  23.8,
+  24.288,
+  24.752,
+  25.263,
+  25.751
+ ],
+ "key": "D minor",
+ "key_confidence": 0.43,
+ "energy_rms": 0.113,
+ "brightness_hz": 2081,
+ "sections": [
+  {
+   "start": 0.0,
+   "end": 1.9,
+   "energy": 0.3,
+   "label_hint": "low (intro/bridge/outro?)"
+  },
+  {
+   "start": 1.9,
+   "end": 9.1,
+   "energy": 0.68,
+   "label_hint": "mid (verse?)"
+  },
+  {
+   "start": 9.1,
+   "end": 10.47,
+   "energy": 0.34,
+   "label_hint": "low (intro/bridge/outro?)"
+  },
+  {
+   "start": 10.47,
+   "end": 13.33,
+   "energy": 0.53,
+   "label_hint": "mid (verse?)"
+  },
+  {
+   "start": 13.33,
+   "end": 16.39,
+   "energy": 1.0,
+   "label_hint": "high (chorus/drop?)"
+  },
+  {
+   "start": 16.39,
+   "end": 27.0,
+   "energy": 0.48,
+   "label_hint": "low (intro/bridge/outro?)"
+  }
+ ],
+ "suggested_grades": [
+  "moody",
+  "punjabi-dark",
+  "noir"
+ ],
+ "why": "sad or heavy: desaturated, cool shadows, low key",
+ "note": "Music-only suggestion. Read the lyrics' meaning before choosing the final look."
+}

@@ -1,0 +1,8 @@
+{
+ "file": "bed_vinay30_v001.wav",
+ "vad_filter": false,
+ "model": "small",
+ "language": "en",
+ "language_prob": 0.8406251668930054,
+ "segments": []
+}

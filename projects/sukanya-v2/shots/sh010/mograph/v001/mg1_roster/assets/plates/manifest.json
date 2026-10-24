@@ -1,0 +1,86 @@
+{
+ "A01": {
+  "key": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A01.mp4|30226467|1792771165|graded",
+  "mode": "graded",
+  "src": "shots/sh010/color/v001/plates/A01.mp4",
+  "frames": 42
+ },
+ "A02": {
+  "key": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A02.mp4|31902675|1792771198|graded",
+  "mode": "graded",
+  "src": "shots/sh010/color/v001/plates/A02.mp4",
+  "frames": 42
+ },
+ "A03": {
+  "key": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A03.mp4|9681490|1792771236|graded",
+  "mode": "graded",
+  "src": "shots/sh010/color/v001/plates/A03.mp4",
+  "frames": 21
+ },
+ "A04": {
+  "key": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A04.mp4|9869785|1792771259|graded",
+  "mode": "graded",
+  "src": "shots/sh010/color/v001/plates/A04.mp4",
+  "frames": 21
+ },
+ "A05": {
+  "key": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A05.mp4|12342515|1792771281|graded",
+  "mode": "graded",
+  "src": "shots/sh010/color/v001/plates/A05.mp4",
+  "frames": 21
+ },
+ "A06": {
+  "key": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A06.mp4|17541764|1792771311|graded",
+  "mode": "graded",
+  "src": "shots/sh010/color/v001/plates/A06.mp4",
+  "frames": 21
+ },
+ "A07": {
+  "key": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A07.mp4|16412193|1792771337|graded",
+  "mode": "graded",
+  "src": "shots/sh010/color/v001/plates/A07.mp4",
+  "frames": 20
+ },
+ "A08": {
+  "key": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A08.mp4|15748686|1792771358|graded",
+  "mode": "graded",
+  "src": "shots/sh010/color/v001/plates/A08.mp4",
+  "frames": 21
+ },
+ "A09": {
+  "key": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A09.mp4|4470448|1792771370|graded",
+  "mode": "graded",
+  "src": "shots/sh010/color/v001/plates/A09.mp4",
+  "frames": 10
+ },
+ "A10": {
+  "key": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A10.mp4|6697031|1792771378|graded",
+  "mode": "graded",
+  "src": "shots/sh010/color/v001/plates/A10.mp4",
+  "frames": 5
+ },
+ "A11": {
+  "key": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A11.mp4|3450085|1792771389|graded",
+  "mode": "graded",
+  "src": "shots/sh010/color/v001/plates/A11.mp4",
+  "frames": 8
+ },
+ "A12": {
+  "key": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A12.mp4|4347133|1792771401|graded",
+  "mode": "graded",
+  "src": "shots/sh010/color/v001/plates/A12.mp4",
+  "frames": 6
+ },
+ "A13": {
+  "key": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/A13.mp4|1632932|1792771407|graded",
+  "mode": "graded",
+  "src": "shots/sh010/color/v001/plates/A13.mp4",
+  "frames": 5
+ },
+ "C00": {
+  "key": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/color/v001/plates/C00.mp4|8127783|1792754267|graded",
+  "mode": "graded",
+  "src": "shots/sh010/color/v001/plates/C00.mp4",
+  "frames": 18
+ }
+}

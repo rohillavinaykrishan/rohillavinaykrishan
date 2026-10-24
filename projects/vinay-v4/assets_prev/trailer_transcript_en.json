@@ -1,0 +1,936 @@
+{
+ "language": "en",
+ "segments": [
+  {
+   "start": 2.06,
+   "end": 6.76,
+   "text": "Brother I failed you who's darkness growing within me",
+   "words": [
+    {
+     "start": 2.06,
+     "end": 2.6,
+     "word": "Brother"
+    },
+    {
+     "start": 2.6,
+     "end": 3.24,
+     "word": "I"
+    },
+    {
+     "start": 3.24,
+     "end": 3.58,
+     "word": "failed"
+    },
+    {
+     "start": 3.58,
+     "end": 3.84,
+     "word": "you"
+    },
+    {
+     "start": 3.84,
+     "end": 5.16,
+     "word": "who's"
+    },
+    {
+     "start": 5.16,
+     "end": 5.58,
+     "word": "darkness"
+    },
+    {
+     "start": 5.58,
+     "end": 6.18,
+     "word": "growing"
+    },
+    {
+     "start": 6.18,
+     "end": 6.46,
+     "word": "within"
+    },
+    {
+     "start": 6.46,
+     "end": 6.76,
+     "word": "me"
+    }
+   ]
+  },
+  {
+   "start": 9.18,
+   "end": 10.74,
+   "text": "You're not my brother",
+   "words": [
+    {
+     "start": 9.18,
+     "end": 9.78,
+     "word": "You're"
+    },
+    {
+     "start": 9.78,
+     "end": 9.88,
+     "word": "not"
+    },
+    {
+     "start": 9.88,
+     "end": 10.04,
+     "word": "my"
+    },
+    {
+     "start": 10.04,
+     "end": 10.74,
+     "word": "brother"
+    }
+   ]
+  },
+  {
+   "start": 13.76,
+   "end": 16.16,
+   "text": "You're something what are you waiting for?",
+   "words": [
+    {
+     "start": 13.76,
+     "end": 14.36,
+     "word": "You're"
+    },
+    {
+     "start": 14.36,
+     "end": 14.66,
+     "word": "something"
+    },
+    {
+     "start": 14.66,
+     "end": 15.36,
+     "word": "what"
+    },
+    {
+     "start": 15.36,
+     "end": 15.44,
+     "word": "are"
+    },
+    {
+     "start": 15.44,
+     "end": 15.48,
+     "word": "you"
+    },
+    {
+     "start": 15.48,
+     "end": 15.76,
+     "word": "waiting"
+    },
+    {
+     "start": 15.76,
+     "end": 16.16,
+     "word": "for?"
+    }
+   ]
+  },
+  {
+   "start": 22.94,
+   "end": 29.82,
+   "text": "You're the best fighter in the world and then you disappeared what happened the path. I'm on now. It's not one of combat",
+   "words": [
+    {
+     "start": 22.94,
+     "end": 23.54,
+     "word": "You're"
+    },
+    {
+     "start": 23.54,
+     "end": 23.62,
+     "word": "the"
+    },
+    {
+     "start": 23.62,
+     "end": 23.82,
+     "word": "best"
+    },
+    {
+     "start": 23.82,
+     "end": 24.1,
+     "word": "fighter"
+    },
+    {
+     "start": 24.1,
+     "end": 24.32,
+     "word": "in"
+    },
+    {
+     "start": 24.32,
+     "end": 24.42,
+     "word": "the"
+    },
+    {
+     "start": 24.42,
+     "end": 24.74,
+     "word": "world"
+    },
+    {
+     "start": 24.74,
+     "end": 25.22,
+     "word": "and"
+    },
+    {
+     "start": 25.22,
+     "end": 25.34,
+     "word": "then"
+    },
+    {
+     "start": 25.34,
+     "end": 25.42,
+     "word": "you"
+    },
+    {
+     "start": 25.42,
+     "end": 25.76,
+     "word": "disappeared"
+    },
+    {
+     "start": 25.76,
+     "end": 26.5,
+     "word": "what"
+    },
+    {
+     "start": 26.5,
+     "end": 26.9,
+     "word": "happened"
+    },
+    {
+     "start": 26.9,
+     "end": 27.58,
+     "word": "the"
+    },
+    {
+     "start": 27.58,
+     "end": 27.88,
+     "word": "path."
+    },
+    {
+     "start": 27.94,
+     "end": 28.18,
+     "word": "I'm"
+    },
+    {
+     "start": 28.18,
+     "end": 28.32,
+     "word": "on"
+    },
+    {
+     "start": 28.32,
+     "end": 28.7,
+     "word": "now."
+    },
+    {
+     "start": 28.72,
+     "end": 29.0,
+     "word": "It's"
+    },
+    {
+     "start": 29.0,
+     "end": 29.14,
+     "word": "not"
+    },
+    {
+     "start": 29.14,
+     "end": 29.32,
+     "word": "one"
+    },
+    {
+     "start": 29.32,
+     "end": 29.44,
+     "word": "of"
+    },
+    {
+     "start": 29.44,
+     "end": 29.82,
+     "word": "combat"
+    }
+   ]
+  },
+  {
+   "start": 29.82,
+   "end": 31.66,
+   "text": "I don't fight anymore",
+   "words": [
+    {
+     "start": 29.82,
+     "end": 30.4,
+     "word": "I"
+    },
+    {
+     "start": 30.4,
+     "end": 30.72,
+     "word": "don't"
+    },
+    {
+     "start": 30.72,
+     "end": 30.96,
+     "word": "fight"
+    },
+    {
+     "start": 30.96,
+     "end": 31.66,
+     "word": "anymore"
+    }
+   ]
+  },
+  {
+   "start": 33.12,
+   "end": 35.44,
+   "text": "It's honestly the stupidest thing I've ever heard",
+   "words": [
+    {
+     "start": 33.12,
+     "end": 33.72,
+     "word": "It's"
+    },
+    {
+     "start": 33.72,
+     "end": 33.98,
+     "word": "honestly"
+    },
+    {
+     "start": 33.98,
+     "end": 34.2,
+     "word": "the"
+    },
+    {
+     "start": 34.2,
+     "end": 34.64,
+     "word": "stupidest"
+    },
+    {
+     "start": 34.64,
+     "end": 34.76,
+     "word": "thing"
+    },
+    {
+     "start": 34.76,
+     "end": 34.94,
+     "word": "I've"
+    },
+    {
+     "start": 34.94,
+     "end": 35.08,
+     "word": "ever"
+    },
+    {
+     "start": 35.08,
+     "end": 35.44,
+     "word": "heard"
+    }
+   ]
+  },
+  {
+   "start": 36.32,
+   "end": 39.56,
+   "text": "Your brother Ken is in danger",
+   "words": [
+    {
+     "start": 36.32,
+     "end": 36.8,
+     "word": "Your"
+    },
+    {
+     "start": 36.8,
+     "end": 37.06,
+     "word": "brother"
+    },
+    {
+     "start": 37.06,
+     "end": 37.48,
+     "word": "Ken"
+    },
+    {
+     "start": 37.48,
+     "end": 38.96,
+     "word": "is"
+    },
+    {
+     "start": 38.96,
+     "end": 39.14,
+     "word": "in"
+    },
+    {
+     "start": 39.14,
+     "end": 39.56,
+     "word": "danger"
+    }
+   ]
+  },
+  {
+   "start": 42.6,
+   "end": 49.41,
+   "text": "It's been years living in real shadow now. I'm gonna win it all",
+   "words": [
+    {
+     "start": 42.6,
+     "end": 43.08,
+     "word": "It's"
+    },
+    {
+     "start": 43.08,
+     "end": 43.24,
+     "word": "been"
+    },
+    {
+     "start": 43.24,
+     "end": 43.78,
+     "word": "years"
+    },
+    {
+     "start": 43.78,
+     "end": 44.5,
+     "word": "living"
+    },
+    {
+     "start": 44.5,
+     "end": 44.74,
+     "word": "in"
+    },
+    {
+     "start": 44.74,
+     "end": 44.88,
+     "word": "real"
+    },
+    {
+     "start": 44.88,
+     "end": 45.3,
+     "word": "shadow"
+    },
+    {
+     "start": 45.3,
+     "end": 46.4,
+     "word": "now."
+    },
+    {
+     "start": 48.41,
+     "end": 48.89,
+     "word": "I'm"
+    },
+    {
+     "start": 48.89,
+     "end": 48.97,
+     "word": "gonna"
+    },
+    {
+     "start": 48.97,
+     "end": 49.15,
+     "word": "win"
+    },
+    {
+     "start": 49.15,
+     "end": 49.25,
+     "word": "it"
+    },
+    {
+     "start": 49.25,
+     "end": 49.41,
+     "word": "all"
+    }
+   ]
+  },
+  {
+   "start": 50.21,
+   "end": 54.66,
+   "text": "This tournament isn't what you think it is",
+   "words": [
+    {
+     "start": 50.21,
+     "end": 50.69,
+     "word": "This"
+    },
+    {
+     "start": 53.22,
+     "end": 53.56,
+     "word": "tournament"
+    },
+    {
+     "start": 53.56,
+     "end": 53.84,
+     "word": "isn't"
+    },
+    {
+     "start": 53.84,
+     "end": 54.0,
+     "word": "what"
+    },
+    {
+     "start": 54.0,
+     "end": 54.1,
+     "word": "you"
+    },
+    {
+     "start": 54.1,
+     "end": 54.28,
+     "word": "think"
+    },
+    {
+     "start": 54.28,
+     "end": 54.42,
+     "word": "it"
+    },
+    {
+     "start": 54.42,
+     "end": 54.66,
+     "word": "is"
+    }
+   ]
+  },
+  {
+   "start": 55.3,
+   "end": 58.52,
+   "text": "If you want to save your brother, then you must fight",
+   "words": [
+    {
+     "start": 55.3,
+     "end": 55.78,
+     "word": "If"
+    },
+    {
+     "start": 55.78,
+     "end": 55.9,
+     "word": "you"
+    },
+    {
+     "start": 55.9,
+     "end": 56.04,
+     "word": "want"
+    },
+    {
+     "start": 56.04,
+     "end": 56.12,
+     "word": "to"
+    },
+    {
+     "start": 56.12,
+     "end": 56.28,
+     "word": "save"
+    },
+    {
+     "start": 56.28,
+     "end": 56.42,
+     "word": "your"
+    },
+    {
+     "start": 56.42,
+     "end": 56.68,
+     "word": "brother,"
+    },
+    {
+     "start": 56.7,
+     "end": 57.66,
+     "word": "then"
+    },
+    {
+     "start": 57.66,
+     "end": 57.82,
+     "word": "you"
+    },
+    {
+     "start": 57.82,
+     "end": 58.02,
+     "word": "must"
+    },
+    {
+     "start": 58.02,
+     "end": 58.52,
+     "word": "fight"
+    }
+   ]
+  },
+  {
+   "start": 58.52,
+   "end": 80.42,
+   "text": "One tonight",
+   "words": [
+    {
+     "start": 58.52,
+     "end": 59.62,
+     "word": "One"
+    },
+    {
+     "start": 79.14,
+     "end": 80.42,
+     "word": "tonight"
+    }
+   ]
+  },
+  {
+   "start": 84.82,
+   "end": 90.34,
+   "text": "Ain't no stopping me. Oh, hell no, this is about to get interesting",
+   "words": [
+    {
+     "start": 84.82,
+     "end": 85.4,
+     "word": "Ain't"
+    },
+    {
+     "start": 85.4,
+     "end": 85.68,
+     "word": "no"
+    },
+    {
+     "start": 85.68,
+     "end": 86.24,
+     "word": "stopping"
+    },
+    {
+     "start": 86.24,
+     "end": 87.18,
+     "word": "me."
+    },
+    {
+     "start": 87.18,
+     "end": 88.1,
+     "word": "Oh,"
+    },
+    {
+     "start": 88.1,
+     "end": 88.6,
+     "word": "hell"
+    },
+    {
+     "start": 88.6,
+     "end": 88.9,
+     "word": "no,"
+    },
+    {
+     "start": 88.98,
+     "end": 89.14,
+     "word": "this"
+    },
+    {
+     "start": 89.14,
+     "end": 89.26,
+     "word": "is"
+    },
+    {
+     "start": 89.26,
+     "end": 89.5,
+     "word": "about"
+    },
+    {
+     "start": 89.5,
+     "end": 89.66,
+     "word": "to"
+    },
+    {
+     "start": 89.66,
+     "end": 89.78,
+     "word": "get"
+    },
+    {
+     "start": 89.78,
+     "end": 90.34,
+     "word": "interesting"
+    }
+   ]
+  },
+  {
+   "start": 90.34,
+   "end": 99.16,
+   "text": "The fiercest strongest deadliest fighters on earth",
+   "words": [
+    {
+     "start": 90.34,
+     "end": 92.04,
+     "word": "The"
+    },
+    {
+     "start": 92.04,
+     "end": 96.04,
+     "word": "fiercest"
+    },
+    {
+     "start": 96.04,
+     "end": 97.04,
+     "word": "strongest"
+    },
+    {
+     "start": 97.04,
+     "end": 98.12,
+     "word": "deadliest"
+    },
+    {
+     "start": 98.12,
+     "end": 98.58,
+     "word": "fighters"
+    },
+    {
+     "start": 98.58,
+     "end": 98.82,
+     "word": "on"
+    },
+    {
+     "start": 98.82,
+     "end": 99.16,
+     "word": "earth"
+    }
+   ]
+  },
+  {
+   "start": 102.91,
+   "end": 104.7,
+   "text": "Such a ridiculous look",
+   "words": [
+    {
+     "start": 102.91,
+     "end": 103.46,
+     "word": "Such"
+    },
+    {
+     "start": 103.46,
+     "end": 103.58,
+     "word": "a"
+    },
+    {
+     "start": 103.58,
+     "end": 104.12,
+     "word": "ridiculous"
+    },
+    {
+     "start": 104.12,
+     "end": 104.7,
+     "word": "look"
+    }
+   ]
+  },
+  {
+   "start": 110.27,
+   "end": 112.91,
+   "text": "Oops you dropped something lose",
+   "words": [
+    {
+     "start": 110.27,
+     "end": 110.83,
+     "word": "Oops"
+    },
+    {
+     "start": 110.83,
+     "end": 111.39,
+     "word": "you"
+    },
+    {
+     "start": 111.39,
+     "end": 111.59,
+     "word": "dropped"
+    },
+    {
+     "start": 111.59,
+     "end": 112.05,
+     "word": "something"
+    },
+    {
+     "start": 112.05,
+     "end": 112.91,
+     "word": "lose"
+    }
+   ]
+  },
+  {
+   "start": 128.19,
+   "end": 158.98,
+   "text": "I made a promise to protect you. This is a fight. You did that to your face, girl",
+   "words": [
+    {
+     "start": 128.19,
+     "end": 128.65,
+     "word": "I"
+    },
+    {
+     "start": 128.65,
+     "end": 129.11,
+     "word": "made"
+    },
+    {
+     "start": 129.11,
+     "end": 129.25,
+     "word": "a"
+    },
+    {
+     "start": 129.25,
+     "end": 129.51,
+     "word": "promise"
+    },
+    {
+     "start": 129.51,
+     "end": 129.77,
+     "word": "to"
+    },
+    {
+     "start": 129.77,
+     "end": 130.05,
+     "word": "protect"
+    },
+    {
+     "start": 130.05,
+     "end": 130.45,
+     "word": "you."
+    },
+    {
+     "start": 138.16,
+     "end": 138.18,
+     "word": "This"
+    },
+    {
+     "start": 138.18,
+     "end": 138.4,
+     "word": "is"
+    },
+    {
+     "start": 138.4,
+     "end": 138.6,
+     "word": "a"
+    },
+    {
+     "start": 138.6,
+     "end": 139.0,
+     "word": "fight."
+    },
+    {
+     "start": 147.5,
+     "end": 147.5,
+     "word": "You"
+    },
+    {
+     "start": 157.32,
+     "end": 157.76,
+     "word": "did"
+    },
+    {
+     "start": 157.76,
+     "end": 158.0,
+     "word": "that"
+    },
+    {
+     "start": 158.0,
+     "end": 158.18,
+     "word": "to"
+    },
+    {
+     "start": 158.18,
+     "end": 158.3,
+     "word": "your"
+    },
+    {
+     "start": 158.3,
+     "end": 158.64,
+     "word": "face,"
+    },
+    {
+     "start": 158.76,
+     "end": 158.98,
+     "word": "girl"
+    }
+   ]
+  },
+  {
+   "start": 158.98,
+   "end": 163.7,
+   "text": "Oh, I don't know Dan. Oh, you know anybody in this tournament who fights with a claw hand",
+   "words": [
+    {
+     "start": 158.98,
+     "end": 159.42,
+     "word": "Oh,"
+    },
+    {
+     "start": 159.48,
+     "end": 159.56,
+     "word": "I"
+    },
+    {
+     "start": 159.56,
+     "end": 159.74,
+     "word": "don't"
+    },
+    {
+     "start": 159.74,
+     "end": 159.84,
+     "word": "know"
+    },
+    {
+     "start": 159.84,
+     "end": 160.24,
+     "word": "Dan."
+    },
+    {
+     "start": 160.66,
+     "end": 161.12,
+     "word": "Oh,"
+    },
+    {
+     "start": 161.34,
+     "end": 161.4,
+     "word": "you"
+    },
+    {
+     "start": 161.4,
+     "end": 161.58,
+     "word": "know"
+    },
+    {
+     "start": 161.58,
+     "end": 161.76,
+     "word": "anybody"
+    },
+    {
+     "start": 161.76,
+     "end": 161.96,
+     "word": "in"
+    },
+    {
+     "start": 161.96,
+     "end": 162.08,
+     "word": "this"
+    },
+    {
+     "start": 162.08,
+     "end": 162.34,
+     "word": "tournament"
+    },
+    {
+     "start": 162.34,
+     "end": 162.52,
+     "word": "who"
+    },
+    {
+     "start": 162.52,
+     "end": 162.78,
+     "word": "fights"
+    },
+    {
+     "start": 162.78,
+     "end": 162.96,
+     "word": "with"
+    },
+    {
+     "start": 162.96,
+     "end": 163.06,
+     "word": "a"
+    },
+    {
+     "start": 163.06,
+     "end": 163.32,
+     "word": "claw"
+    },
+    {
+     "start": 163.32,
+     "end": 163.7,
+     "word": "hand"
+    }
+   ]
+  },
+  {
+   "start": 167.82,
+   "end": 168.08,
+   "text": "win",
+   "words": [
+    {
+     "start": 167.82,
+     "end": 168.08,
+     "word": "win"
+    }
+   ]
+  }
+ ]
+}

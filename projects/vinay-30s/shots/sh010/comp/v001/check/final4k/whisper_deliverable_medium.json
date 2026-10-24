@@ -1,0 +1,24 @@
+{
+ "model": "medium",
+ "language": "en",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 19.0,
+   "text": "I'm a street fighter, I'm a man of tomorrow, I'm a street fighter, I'm a man of tomorrow,",
+   "no_speech": 0.61
+  },
+  {
+   "start": 19.0,
+   "end": 28.0,
+   "text": "I'm a man of tomorrow, I'm a street fighter, I'm a man of tomorrow, I'm a man of tomorrow,",
+   "no_speech": 0.61
+  },
+  {
+   "start": 28.0,
+   "end": 30.0,
+   "text": "I'm a man of tomorrow, I'm a street fighter.",
+   "no_speech": 0.84
+  }
+ ]
+}

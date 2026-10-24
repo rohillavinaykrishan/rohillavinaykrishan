@@ -1,0 +1,350 @@
+{
+ "source": "source/trailer.mp4",
+ "source_windows": [
+  [
+   61.0,
+   76.0
+  ]
+ ],
+ "bed": "music_bed.wav (48 kHz stereo 24-bit, 720000 samples = 15.000 s, fade-in 0.15 s, fade-out 14.30-15.00, unmastered)",
+ "times_are": "seconds relative to window start (trailer 61.00 s); frame25 = round(t*25)",
+ "bpm": 115.4,
+ "bpm_alt_song_mood": 117.5,
+ "key": "D minor (conf 0.45)",
+ "beats": [
+  1.01,
+  1.46,
+  1.94,
+  2.42,
+  2.86,
+  3.34,
+  3.81,
+  4.29,
+  4.78,
+  5.27,
+  5.7,
+  6.21,
+  6.69,
+  7.2,
+  7.64,
+  8.15,
+  8.66,
+  9.27,
+  9.84,
+  10.38,
+  10.9,
+  11.42,
+  11.87,
+  12.36,
+  12.88,
+  13.39,
+  13.91,
+  14.43,
+  14.94
+ ],
+ "beats_alt_song_mood": [
+  1.045,
+  1.579,
+  2.113,
+  2.647,
+  3.181,
+  3.692,
+  4.18,
+  4.737,
+  5.248,
+  5.735,
+  6.223,
+  6.711,
+  7.221,
+  7.732,
+  8.22,
+  8.684,
+  9.242,
+  9.822,
+  10.403,
+  10.937,
+  11.447,
+  11.912,
+  12.376,
+  12.91,
+  13.421,
+  13.932,
+  14.466,
+  14.977
+ ],
+ "hits": [
+  {
+   "t": 1.0,
+   "frame25": 25,
+   "trailer_s": 62.0,
+   "peak_t": 1.04,
+   "kind": "impact (full-band, +14 dB jump) preceded by a native whoosh/swell 0.60-1.00",
+   "strength": "A",
+   "note": "opens the piece after the low intro"
+  },
+  {
+   "t": 4.77,
+   "frame25": 119,
+   "trailer_s": 65.77,
+   "peak_t": 4.9,
+   "kind": "metallic hit / accent (mid+high)",
+   "strength": "B"
+  },
+  {
+   "t": 5.62,
+   "frame25": 140,
+   "trailer_s": 66.62,
+   "peak_t": 5.66,
+   "kind": "low thump (sub/kick)",
+   "strength": "C"
+  },
+  {
+   "t": 6.0,
+   "frame25": 150,
+   "trailer_s": 67.0,
+   "peak_t": 6.02,
+   "kind": "hit (mid+high)",
+   "strength": "B"
+  },
+  {
+   "t": 6.21,
+   "frame25": 155,
+   "trailer_s": 67.21,
+   "peak_t": 6.24,
+   "kind": "strongest onset in the window (accent)",
+   "strength": "B"
+  },
+  {
+   "t": 6.84,
+   "frame25": 171,
+   "trailer_s": 67.84,
+   "peak_t": 6.88,
+   "kind": "snap / high-band crack",
+   "strength": "C"
+  },
+  {
+   "t": 7.63,
+   "frame25": 191,
+   "trailer_s": 68.63,
+   "peak_t": 7.66,
+   "kind": "accent, end of the loud stretch",
+   "strength": "C"
+  },
+  {
+   "t": 10.19,
+   "frame25": 255,
+   "trailer_s": 71.19,
+   "peak_t": 10.25,
+   "kind": "BIGGEST IMPACT: loudest point of the window (-7.9 dBFS RMS at 10.24-10.26), low+full band, preceded by a native high-band whoosh rise 9.40-10.17",
+   "strength": "A",
+   "note": "name lock: frame 255"
+  },
+  {
+   "t": 11.41,
+   "frame25": 285,
+   "trailer_s": 72.41,
+   "peak_t": 11.45,
+   "kind": "tonal stab (mid/high, low centroid)",
+   "strength": "C"
+  },
+  {
+   "t": 12.28,
+   "frame25": 307,
+   "trailer_s": 73.28,
+   "peak_t": 12.36,
+   "kind": "DROP: attack starts 12.26-12.28, transient peak 12.36 (-10 dB), +25 dB low-band jump",
+   "strength": "A",
+   "note": "title slam: frame 307 (peak = frame 309)"
+  },
+  {
+   "t": 14.44,
+   "frame25": 361,
+   "trailer_s": 75.44,
+   "peak_t": 14.47,
+   "kind": "accent",
+   "strength": "C"
+  },
+  {
+   "t": 14.77,
+   "frame25": 369,
+   "trailer_s": 75.77,
+   "peak_t": 14.8,
+   "kind": "hit (inside the 14.3-15.0 fade-out)",
+   "strength": "C"
+  }
+ ],
+ "whooshes_native": [
+  {
+   "start": 0.6,
+   "end": 1.0,
+   "into_hit": 1.0
+  },
+  {
+   "start": 9.4,
+   "end": 10.17,
+   "into_hit": 10.19
+  }
+ ],
+ "silence": {
+  "start": 11.96,
+  "end": 12.26,
+  "level_db": "-34 to -39 dBFS (< -30 for the whole span)",
+  "frames25": [
+   299,
+   306
+  ]
+ },
+ "sections": [
+  {
+   "start": 0.0,
+   "end": 1.0,
+   "label": "low intro"
+  },
+  {
+   "start": 1.0,
+   "end": 7.75,
+   "label": "build (loudest 6.0-7.75)"
+  },
+  {
+   "start": 8.0,
+   "end": 9.5,
+   "label": "dip/breath"
+  },
+  {
+   "start": 9.4,
+   "end": 10.19,
+   "label": "whoosh rise"
+  },
+  {
+   "start": 10.19,
+   "end": 11.96,
+   "label": "lock hit + decay"
+  },
+  {
+   "start": 11.96,
+   "end": 12.26,
+   "label": "silence"
+  },
+  {
+   "start": 12.28,
+   "end": 15.0,
+   "label": "drop, full energy"
+  }
+ ],
+ "voice_in_window": [
+  {
+   "start": 1.7,
+   "end": 2.66,
+   "trailer_s": [
+    62.7,
+    63.66
+   ],
+   "text": "'Round one!' (announcer-style shout, centre-panned)",
+   "evidence": "Whisper small+medium, with/without VAD, on full/mid/voice-band versions all return 'Round one!' (p~0.4-0.7); spectrogram shows gliding voiced harmonics 1.75-2.05 and 2.30-2.60; absent in the side channel",
+   "mitigation": "music_bed_novox.wav notches the centre 180-4000 Hz over 1.70-2.66 (Whisper then returns no words, but leaves an audible ~1 s, ~-8 dB dip)"
+  }
+ ],
+ "dialogue_spans": [
+  [
+   2.06,
+   6.76
+  ],
+  [
+   9.18,
+   10.74
+  ],
+  [
+   13.76,
+   16.16
+  ],
+  [
+   22.94,
+   31.66
+  ],
+  [
+   33.12,
+   35.44
+  ],
+  [
+   36.32,
+   39.56
+  ],
+  [
+   42.6,
+   49.41
+  ],
+  [
+   50.21,
+   54.66
+  ],
+  [
+   55.3,
+   59.62
+  ],
+  [
+   62.7,
+   63.66
+  ],
+  [
+   78.2,
+   80.98
+  ],
+  [
+   84.82,
+   99.16
+  ],
+  [
+   99.0,
+   101.12
+  ],
+  [
+   102.91,
+   104.72
+  ],
+  [
+   109.82,
+   113.6
+  ],
+  [
+   116.46,
+   119.2
+  ],
+  [
+   120.42,
+   122.28
+  ],
+  [
+   125.98,
+   127.71
+  ],
+  [
+   128.19,
+   130.45
+  ],
+  [
+   135.94,
+   141.0
+  ],
+  [
+   141.48,
+   144.0
+  ],
+  [
+   145.6,
+   147.5
+  ],
+  [
+   149.5,
+   150.2
+  ],
+  [
+   157.32,
+   163.7
+  ],
+  [
+   167.82,
+   168.08
+  ]
+ ],
+ "dialogue_spans_note": "trailer seconds. Whisper small with VAD on the whole trailer + small/medium without VAD on 58.5-81, 99-158. Spans 112-128 are low-confidence (p 0.0-0.4, possibly grunts/hallucinations); 62.70-63.66 is the 'Round one!' voice missed by the VAD pass."
+}

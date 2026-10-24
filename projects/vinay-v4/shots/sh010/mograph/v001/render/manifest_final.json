@@ -1,0 +1,15 @@
+{
+ "plate": "color/v002/plate_graded/ (real)",
+ "credits": "color/v002/credits_graded_v002.mp4 (real) -> blurred glow underlay",
+ "layout": "layout/v001 (real)",
+ "anchor": "layout/v001/anchor.json",
+ "monument_wire": "Unbounded 900 outlines, width 7.2 m, top z 3.989 m, line pitch 1.422 m",
+ "final_band_2808x1176": "comp/v001/final_2808/final.%04d.png (real, PNG sequence)",
+ "plate_band_2160x904": "comp/v001/plate_2160/plate.%04d.png (real, PNG sequence)",
+ "cg_band_2160x904": "comp/v001/cg_2160/cg.%04d.png (real, PNG sequence)",
+ "final_band_2160x904": "comp/v001/final_2160/final.%04d.png (real, PNG sequence)",
+ "title_bg": "lighting/v002/title_bg.png (real)",
+ "title_fg": "lighting/v002/title_fg.png (real)",
+ "logo": "color/v001/sf_logo_bone.png (real)",
+ "lineup": "restore/v001/lineup_restored_2160_r470.png (real)"
+}

@@ -1,0 +1,31 @@
+{
+ "inputs": [
+  "F1: color",
+  "F2: color",
+  "F3: color",
+  "F4: color",
+  "F5: color",
+  "F6: color",
+  "F7: color",
+  "F8: color",
+  "F9: color",
+  "T1_duo: color",
+  "T1_true: color",
+  "T2_duo: color",
+  "T2_true: color",
+  "T3_duo: color",
+  "T3_true: color",
+  "T4_duo: color",
+  "T4_true: color",
+  "T5_duo: color",
+  "T5_true: color",
+  "T6_duo: color",
+  "T6_true: color",
+  "T7_duo: color",
+  "T7_true: color",
+  "T8_duo: color",
+  "T8_true: color",
+  "kit: mograph/v001/kit/kit.js (inlined)",
+  "name_layout: MG2 v001"
+ ]
+}

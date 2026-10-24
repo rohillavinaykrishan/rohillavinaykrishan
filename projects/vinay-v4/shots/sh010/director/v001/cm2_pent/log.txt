@@ -1,0 +1,1062 @@
+I20261021 17:10:17.534993  4770 misc.cc:198] 
+==============================================================================
+Feature extraction
+==============================================================================
+I20261021 17:10:18.230033  4775 feature_extraction.cc:254] Processed file [1/46]
+I20261021 17:10:18.230298  4775 feature_extraction.cc:257]   Name:            0001.jpg
+I20261021 17:10:18.230315  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:18.230324  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:18.230334  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:18.230350  4775 feature_extraction.cc:302]   Features:        0
+I20261021 17:10:18.289569  4775 feature_extraction.cc:254] Processed file [2/46]
+I20261021 17:10:18.289666  4775 feature_extraction.cc:257]   Name:            0002.jpg
+I20261021 17:10:18.289678  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:18.289682  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:18.289690  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:18.289698  4775 feature_extraction.cc:302]   Features:        0
+I20261021 17:10:18.881990  4775 feature_extraction.cc:254] Processed file [3/46]
+I20261021 17:10:18.882089  4775 feature_extraction.cc:257]   Name:            0003.jpg
+I20261021 17:10:18.882102  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:18.882109  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:18.882117  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:18.882129  4775 feature_extraction.cc:302]   Features:        0
+I20261021 17:10:19.071431  4775 feature_extraction.cc:254] Processed file [4/46]
+I20261021 17:10:19.071534  4775 feature_extraction.cc:257]   Name:            0004.jpg
+I20261021 17:10:19.071547  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:19.071550  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:19.071557  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:19.071568  4775 feature_extraction.cc:302]   Features:        68
+I20261021 17:10:19.713944  4775 feature_extraction.cc:254] Processed file [5/46]
+I20261021 17:10:19.714212  4775 feature_extraction.cc:257]   Name:            0005.jpg
+I20261021 17:10:19.714231  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:19.714239  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:19.714248  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:19.714263  4775 feature_extraction.cc:302]   Features:        366
+I20261021 17:10:19.846710  4775 feature_extraction.cc:254] Processed file [6/46]
+I20261021 17:10:19.846989  4775 feature_extraction.cc:257]   Name:            0006.jpg
+I20261021 17:10:19.847012  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:19.847026  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:19.847039  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:19.847060  4775 feature_extraction.cc:302]   Features:        653
+I20261021 17:10:20.549592  4775 feature_extraction.cc:254] Processed file [7/46]
+I20261021 17:10:20.549847  4775 feature_extraction.cc:257]   Name:            0007.jpg
+I20261021 17:10:20.549862  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:20.549871  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:20.549921  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:20.549938  4775 feature_extraction.cc:302]   Features:        989
+I20261021 17:10:20.644829  4775 feature_extraction.cc:254] Processed file [8/46]
+I20261021 17:10:20.645079  4775 feature_extraction.cc:257]   Name:            0008.jpg
+I20261021 17:10:20.645089  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:20.645115  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:20.645121  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:20.645133  4775 feature_extraction.cc:302]   Features:        1342
+I20261021 17:10:21.415822  4775 feature_extraction.cc:254] Processed file [9/46]
+I20261021 17:10:21.421932  4775 feature_extraction.cc:257]   Name:            0009.jpg
+I20261021 17:10:21.422114  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:21.422128  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:21.422139  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:21.422152  4775 feature_extraction.cc:302]   Features:        1563
+I20261021 17:10:21.647770  4775 feature_extraction.cc:254] Processed file [10/46]
+I20261021 17:10:21.648039  4775 feature_extraction.cc:257]   Name:            0010.jpg
+I20261021 17:10:21.648052  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:21.648057  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:21.648063  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:21.648074  4775 feature_extraction.cc:302]   Features:        1882
+I20261021 17:10:22.394840  4775 feature_extraction.cc:254] Processed file [11/46]
+I20261021 17:10:22.395130  4775 feature_extraction.cc:257]   Name:            0011.jpg
+I20261021 17:10:22.395153  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:22.395166  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:22.395180  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:22.395200  4775 feature_extraction.cc:302]   Features:        2046
+I20261021 17:10:22.641805  4775 feature_extraction.cc:254] Processed file [12/46]
+I20261021 17:10:22.641963  4775 feature_extraction.cc:257]   Name:            0012.jpg
+I20261021 17:10:22.641979  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:22.641987  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:22.641997  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:22.642009  4775 feature_extraction.cc:302]   Features:        2159
+I20261021 17:10:23.454677  4775 feature_extraction.cc:254] Processed file [13/46]
+I20261021 17:10:23.454954  4775 feature_extraction.cc:257]   Name:            0013.jpg
+I20261021 17:10:23.454974  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:23.454985  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:23.454998  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:23.455016  4775 feature_extraction.cc:302]   Features:        2385
+I20261021 17:10:23.777696  4775 feature_extraction.cc:254] Processed file [14/46]
+I20261021 17:10:23.777813  4775 feature_extraction.cc:257]   Name:            0014.jpg
+I20261021 17:10:23.777827  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:23.777834  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:23.777842  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:23.777858  4775 feature_extraction.cc:302]   Features:        2493
+I20261021 17:10:24.554538  4775 feature_extraction.cc:254] Processed file [15/46]
+I20261021 17:10:24.554641  4775 feature_extraction.cc:257]   Name:            0015.jpg
+I20261021 17:10:24.554653  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:24.554657  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:24.554664  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:24.554675  4775 feature_extraction.cc:302]   Features:        2708
+I20261021 17:10:24.881940  4775 feature_extraction.cc:254] Processed file [16/46]
+I20261021 17:10:24.882063  4775 feature_extraction.cc:257]   Name:            0016.jpg
+I20261021 17:10:24.882098  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:24.882108  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:24.882119  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:24.882134  4775 feature_extraction.cc:302]   Features:        2955
+I20261021 17:10:25.763185  4775 feature_extraction.cc:254] Processed file [17/46]
+I20261021 17:10:25.763288  4775 feature_extraction.cc:257]   Name:            0017.jpg
+I20261021 17:10:25.763299  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:25.763303  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:25.763311  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:25.763320  4775 feature_extraction.cc:302]   Features:        3050
+I20261021 17:10:26.019963  4775 feature_extraction.cc:254] Processed file [18/46]
+I20261021 17:10:26.020083  4775 feature_extraction.cc:257]   Name:            0018.jpg
+I20261021 17:10:26.020097  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:26.020104  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:26.020113  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:26.020135  4775 feature_extraction.cc:302]   Features:        3120
+I20261021 17:10:26.973946  4775 feature_extraction.cc:254] Processed file [19/46]
+I20261021 17:10:26.974044  4775 feature_extraction.cc:257]   Name:            0019.jpg
+I20261021 17:10:26.974056  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:26.974062  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:26.974071  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:26.974102  4775 feature_extraction.cc:302]   Features:        3089
+I20261021 17:10:27.157930  4775 feature_extraction.cc:254] Processed file [20/46]
+I20261021 17:10:27.158022  4775 feature_extraction.cc:257]   Name:            0020.jpg
+I20261021 17:10:27.158033  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:27.158037  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:27.158044  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:27.158054  4775 feature_extraction.cc:302]   Features:        3126
+I20261021 17:10:28.194206  4775 feature_extraction.cc:254] Processed file [21/46]
+I20261021 17:10:28.194325  4775 feature_extraction.cc:257]   Name:            0021.jpg
+I20261021 17:10:28.194336  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:28.194341  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:28.194350  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:28.194362  4775 feature_extraction.cc:302]   Features:        3068
+I20261021 17:10:28.469939  4775 feature_extraction.cc:254] Processed file [22/46]
+I20261021 17:10:28.470036  4775 feature_extraction.cc:257]   Name:            0022.jpg
+I20261021 17:10:28.470046  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:28.470052  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:28.470057  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:28.470068  4775 feature_extraction.cc:302]   Features:        3146
+I20261021 17:10:29.243985  4775 feature_extraction.cc:254] Processed file [23/46]
+I20261021 17:10:29.244114  4775 feature_extraction.cc:257]   Name:            0023.jpg
+I20261021 17:10:29.244129  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:29.244135  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:29.244144  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:29.244159  4775 feature_extraction.cc:302]   Features:        3135
+I20261021 17:10:29.699672  4775 feature_extraction.cc:254] Processed file [24/46]
+I20261021 17:10:29.699777  4775 feature_extraction.cc:257]   Name:            0024.jpg
+I20261021 17:10:29.699788  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:29.699793  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:29.699800  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:29.699810  4775 feature_extraction.cc:302]   Features:        3108
+I20261021 17:10:30.465083  4775 feature_extraction.cc:254] Processed file [25/46]
+I20261021 17:10:30.465188  4775 feature_extraction.cc:257]   Name:            0025.jpg
+I20261021 17:10:30.465198  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:30.465202  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:30.465209  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:30.465219  4775 feature_extraction.cc:302]   Features:        3147
+I20261021 17:10:31.117805  4775 feature_extraction.cc:254] Processed file [26/46]
+I20261021 17:10:31.126020  4775 feature_extraction.cc:257]   Name:            0026.jpg
+I20261021 17:10:31.126031  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:31.126036  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:31.126044  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:31.126055  4775 feature_extraction.cc:302]   Features:        3118
+I20261021 17:10:31.685946  4775 feature_extraction.cc:254] Processed file [27/46]
+I20261021 17:10:31.686054  4775 feature_extraction.cc:257]   Name:            0027.jpg
+I20261021 17:10:31.686065  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:31.686074  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:31.686084  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:31.686096  4775 feature_extraction.cc:302]   Features:        3207
+I20261021 17:10:32.585741  4775 feature_extraction.cc:254] Processed file [28/46]
+I20261021 17:10:32.586540  4775 feature_extraction.cc:257]   Name:            0028.jpg
+I20261021 17:10:32.586561  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:32.586570  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:32.586580  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:32.586594  4775 feature_extraction.cc:302]   Features:        3101
+I20261021 17:10:32.902607  4775 feature_extraction.cc:254] Processed file [29/46]
+I20261021 17:10:32.902861  4775 feature_extraction.cc:257]   Name:            0029.jpg
+I20261021 17:10:32.902879  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:32.902887  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:32.902897  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:32.902911  4775 feature_extraction.cc:302]   Features:        3157
+I20261021 17:10:33.809037  4775 feature_extraction.cc:254] Processed file [30/46]
+I20261021 17:10:33.809144  4775 feature_extraction.cc:257]   Name:            0030.jpg
+I20261021 17:10:33.809154  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:33.809159  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:33.809166  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:33.809175  4775 feature_extraction.cc:302]   Features:        3180
+I20261021 17:10:34.064855  4775 feature_extraction.cc:254] Processed file [31/46]
+I20261021 17:10:34.064957  4775 feature_extraction.cc:257]   Name:            0031.jpg
+I20261021 17:10:34.064968  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:34.064972  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:34.064980  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:34.065003  4775 feature_extraction.cc:302]   Features:        3200
+I20261021 17:10:34.932101  4775 feature_extraction.cc:254] Processed file [32/46]
+I20261021 17:10:34.932199  4775 feature_extraction.cc:257]   Name:            0032.jpg
+I20261021 17:10:34.932211  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:34.932241  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:34.932255  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:34.932266  4775 feature_extraction.cc:302]   Features:        3185
+I20261021 17:10:35.256580  4775 feature_extraction.cc:254] Processed file [33/46]
+I20261021 17:10:35.256681  4775 feature_extraction.cc:257]   Name:            0033.jpg
+I20261021 17:10:35.256693  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:35.256699  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:35.256709  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:35.256719  4775 feature_extraction.cc:302]   Features:        3204
+I20261021 17:10:36.285964  4775 feature_extraction.cc:254] Processed file [34/46]
+I20261021 17:10:36.286059  4775 feature_extraction.cc:257]   Name:            0034.jpg
+I20261021 17:10:36.286069  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:36.286075  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:36.286082  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:36.286093  4775 feature_extraction.cc:302]   Features:        3192
+I20261021 17:10:36.468113  4775 feature_extraction.cc:254] Processed file [35/46]
+I20261021 17:10:36.468253  4775 feature_extraction.cc:257]   Name:            0035.jpg
+I20261021 17:10:36.468272  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:36.468279  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:36.468290  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:36.468338  4775 feature_extraction.cc:302]   Features:        3225
+I20261021 17:10:37.565336  4775 feature_extraction.cc:254] Processed file [36/46]
+I20261021 17:10:37.565480  4775 feature_extraction.cc:257]   Name:            0036.jpg
+I20261021 17:10:37.565496  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:37.565505  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:37.565514  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:37.565528  4775 feature_extraction.cc:302]   Features:        3207
+I20261021 17:10:37.889114  4775 feature_extraction.cc:254] Processed file [37/46]
+I20261021 17:10:37.889242  4775 feature_extraction.cc:257]   Name:            0037.jpg
+I20261021 17:10:37.889254  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:37.889261  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:37.889266  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:37.889276  4775 feature_extraction.cc:302]   Features:        3192
+I20261021 17:10:38.885942  4775 feature_extraction.cc:254] Processed file [38/46]
+I20261021 17:10:38.886039  4775 feature_extraction.cc:257]   Name:            0038.jpg
+I20261021 17:10:38.886049  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:38.886053  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:38.886059  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:38.886071  4775 feature_extraction.cc:302]   Features:        3149
+I20261021 17:10:39.261647  4775 feature_extraction.cc:254] Processed file [39/46]
+I20261021 17:10:39.261946  4775 feature_extraction.cc:257]   Name:            0039.jpg
+I20261021 17:10:39.261968  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:39.261977  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:39.262007  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:39.262022  4775 feature_extraction.cc:302]   Features:        3154
+I20261021 17:10:40.260972  4775 feature_extraction.cc:254] Processed file [40/46]
+I20261021 17:10:40.261075  4775 feature_extraction.cc:257]   Name:            0040.jpg
+I20261021 17:10:40.261087  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:40.261092  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:40.261098  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:40.261108  4775 feature_extraction.cc:302]   Features:        3146
+I20261021 17:10:40.541932  4775 feature_extraction.cc:254] Processed file [41/46]
+I20261021 17:10:40.542025  4775 feature_extraction.cc:257]   Name:            0041.jpg
+I20261021 17:10:40.542037  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:40.542040  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:40.542047  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:40.542057  4775 feature_extraction.cc:302]   Features:        3169
+I20261021 17:10:41.531633  4775 feature_extraction.cc:254] Processed file [42/46]
+I20261021 17:10:41.531771  4775 feature_extraction.cc:257]   Name:            0042.jpg
+I20261021 17:10:41.531787  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:41.531796  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:41.531806  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:41.531826  4775 feature_extraction.cc:302]   Features:        3168
+I20261021 17:10:41.785943  4775 feature_extraction.cc:254] Processed file [43/46]
+I20261021 17:10:41.786079  4775 feature_extraction.cc:257]   Name:            0043.jpg
+I20261021 17:10:41.786094  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:41.786103  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:41.786113  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:41.786127  4775 feature_extraction.cc:302]   Features:        3244
+I20261021 17:10:42.730551  4775 feature_extraction.cc:254] Processed file [44/46]
+I20261021 17:10:42.730716  4775 feature_extraction.cc:257]   Name:            0044.jpg
+I20261021 17:10:42.730741  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:42.730753  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:42.730770  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:42.730820  4775 feature_extraction.cc:302]   Features:        3233
+I20261021 17:10:43.083590  4775 feature_extraction.cc:254] Processed file [45/46]
+I20261021 17:10:43.083710  4775 feature_extraction.cc:257]   Name:            0045.jpg
+I20261021 17:10:43.083722  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:43.083730  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:43.083740  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:43.083755  4775 feature_extraction.cc:302]   Features:        3217
+I20261021 17:10:43.883605  4775 feature_extraction.cc:254] Processed file [46/46]
+I20261021 17:10:43.883738  4775 feature_extraction.cc:257]   Name:            0046.jpg
+I20261021 17:10:43.883754  4775 feature_extraction.cc:283]   Dimensions:      1280 x 536
+I20261021 17:10:43.883764  4775 feature_extraction.cc:286]   Camera:          #1 - SIMPLE_RADIAL
+I20261021 17:10:43.883774  4775 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20261021 17:10:43.883787  4775 feature_extraction.cc:302]   Features:        3149
+I20261021 17:10:43.897962  4770 timer.cc:91] Elapsed time: 0.439 [minutes]
+E20261021 17:10:43.955142  4795 option_manager.cc:869] Failed to parse options - unrecognised option '--FeatureMatching.use_gpu'.
+I20261021 17:10:44.002014  4797 misc.cc:198] 
+==============================================================================
+Exhaustive feature matching
+==============================================================================
+I20261021 17:10:44.006229  4797 feature_matching.cc:231] Matching block [1/1, 1/1]
+I20261021 17:12:27.654618  4797 feature_matching.cc:46]  in 103.648s
+I20261021 17:12:27.741873  4797 timer.cc:91] Elapsed time: 1.729 [minutes]
+I20261021 17:12:27.778498  4826 misc.cc:198] 
+==============================================================================
+Loading database
+==============================================================================
+I20261021 17:12:27.779712  4826 database_cache.cc:54] Loading cameras...
+I20261021 17:12:27.779781  4826 database_cache.cc:64]  1 in 0.000s
+I20261021 17:12:27.779807  4826 database_cache.cc:72] Loading matches...
+I20261021 17:12:27.791735  4826 database_cache.cc:78]  903 in 0.012s
+I20261021 17:12:27.791831  4826 database_cache.cc:94] Loading images...
+I20261021 17:12:27.796443  4826 database_cache.cc:143]  46 in 0.005s (connected 43)
+I20261021 17:12:27.796525  4826 database_cache.cc:154] Building correspondence graph...
+I20261021 17:12:27.932535  4826 database_cache.cc:190]  in 0.136s (ignored 0)
+I20261021 17:12:27.933007  4826 timer.cc:91] Elapsed time: 0.003 [minutes]
+I20261021 17:12:27.934828  4826 misc.cc:198] 
+==============================================================================
+Finding good initial image pair
+==============================================================================
+I20261021 17:12:28.113926  4826 misc.cc:198] 
+==============================================================================
+Initializing with image pair #34 and #38
+==============================================================================
+I20261021 17:12:28.135102  4826 misc.cc:198] 
+==============================================================================
+Global bundle adjustment
+==============================================================================
+iter      cost      cost_change  |gradient|   |step|    tr_ratio  tr_radius  ls_iter  iter_time  total_time
+   0  4.896071e+02    0.00e+00    8.28e+04   0.00e+00   0.00e+00  1.00e+04        0    3.31e-03    8.41e-03
+   1  3.319960e+02    1.58e+02    1.20e+05   0.00e+00   9.26e-01  2.62e+04        1    4.88e-03    1.34e-02
+   2  3.019321e+02    3.01e+01    7.04e+04   8.81e+00   9.62e-01  7.87e+04        1    4.63e-03    1.81e-02
+   3  4.023050e+02   -1.00e+02    7.04e+04   1.83e+01  -5.90e+00  3.93e+04        1    1.77e-03    1.99e-02
+   4  2.906841e+02    1.12e+01    2.87e+04   9.89e+00   7.10e-01  4.25e+04        1    4.63e-03    2.46e-02
+   5  2.867325e+02    3.95e+00    2.83e+04   8.83e+00   1.98e-01  3.48e+04        1    4.58e-03    2.93e-02
+   6  2.642824e+02    2.25e+01    2.39e+04   6.86e+00   6.43e-01  3.57e+04        1    4.63e-03    3.40e-02
+   7  2.507590e+02    1.35e+01    2.55e+04   6.50e+00   4.02e-01  3.54e+04        1    4.63e-03    3.87e-02
+   8  2.273179e+02    2.34e+01    2.04e+04   5.95e+00   5.63e-01  3.55e+04        1    4.67e-03    4.34e-02
+   9  2.005357e+02    2.68e+01    1.24e+04   5.27e+00   7.57e-01  4.10e+04        1    4.58e-03    4.80e-02
+  10  1.835662e+02    1.70e+01    7.93e+03   5.20e+00   7.79e-01  4.97e+04        1    5.06e-03    5.32e-02
+  11  1.711297e+02    1.24e+01    4.80e+03   5.28e+00   8.93e-01  9.64e+04        1    4.67e-03    5.79e-02
+  12  1.736171e+02   -2.49e+00    4.80e+03   8.12e+00  -3.12e-01  4.82e+04        1    1.79e-03    5.98e-02
+  13  1.629835e+02    8.15e+00    5.13e+03   4.55e+00   1.07e+00  1.45e+05        1    4.57e-03    6.44e-02
+  14  2.014227e+02   -3.84e+01    5.13e+03   1.08e+01  -1.04e+01  7.23e+04        1    1.82e-03    6.63e-02
+  15  1.622357e+02    7.48e-01    4.76e+03   5.90e+00   2.16e-01  6.11e+04        1    4.41e-03    7.07e-02
+  16  2.881130e+02   -1.26e+02    4.76e+03   4.79e+00  -2.36e+01  3.06e+04        1    1.82e-03    7.26e-02
+  17  1.761740e+02   -1.39e+01    4.76e+03   2.57e+00  -2.70e+00  7.64e+03        1    1.52e-03    7.42e-02
+  18  1.577055e+02    4.53e+00    1.71e+03   7.13e-01   9.50e-01  2.29e+04        1    4.62e-03    7.89e-02
+  19  8.337132e+02   -6.76e+02    1.71e+03   2.05e+00  -3.81e+02  1.15e+04        1    2.10e-03    8.10e-02
+  20  3.002988e+02   -1.43e+02    1.71e+03   1.11e+00  -9.40e+01  2.86e+03        1    1.70e-03    8.28e-02
+  21  1.604561e+02   -2.75e+00    1.71e+03   3.13e-01  -2.66e+00  3.58e+02        1    1.67e-03    8.45e-02
+  22  1.570679e+02    6.38e-01    6.17e+02   4.36e-02   9.19e-01  8.68e+02        1    4.64e-03    8.93e-02
+  23  1.848242e+02   -2.78e+01    6.17e+02   1.32e-01  -7.63e+01  4.34e+02        1    1.91e-03    9.13e-02
+  24  1.612371e+02   -4.17e+00    6.17e+02   7.23e-02  -1.65e+01  1.08e+02        1    1.63e-03    9.30e-02
+  25  1.571061e+02   -3.82e-02    6.17e+02   2.23e-02  -2.69e-01  1.36e+01        1    1.84e-03    9.48e-02
+  26  1.569877e+02    8.02e-02    5.19e+02   8.72e-03   8.11e-01  1.79e+01        1    4.68e-03    9.96e-02
+  27  1.941261e+02   -3.71e+01    5.19e+02   4.54e-02  -3.15e+02  8.94e+00        1    1.78e-03    1.01e-01
+  28  1.682161e+02   -1.12e+01    5.19e+02   3.38e-02  -1.43e+02  2.23e+00        1    1.81e-03    1.03e-01
+  29  1.583071e+02   -1.32e+00    5.19e+02   1.92e-02  -3.60e+01  2.79e-01        1    1.82e-03    1.05e-01
+  30  1.570047e+02   -1.70e-02    5.19e+02   5.29e-03  -1.58e+00  1.75e-02        1    1.84e-03    1.07e-01
+  31  1.569869e+02    7.77e-04    5.20e+02   4.08e-04   8.71e-01  2.95e-02        1    4.67e-03    1.12e-01
+  32  1.569865e+02    4.76e-04    5.18e+02   3.06e-04   8.79e-01  5.22e-02        1    5.20e-03    1.17e-01
+  33  1.569861e+02    3.85e-04    5.16e+02   2.68e-04   8.85e-01  9.58e-02        1    7.35e-03    1.24e-01
+  34  1.569857e+02    3.91e-04    5.14e+02   2.21e-04   9.23e-01  2.43e-01        1    5.45e-03    1.30e-01
+  35  1.569850e+02    7.20e-04    5.16e+02   1.92e-04   9.69e-01  7.28e-01        1    7.39e-03    1.37e-01
+  36  1.569831e+02    1.87e-03    5.21e+02   1.20e-04   9.96e-01  2.18e+00        1    5.20e-03    1.43e-01
+  37  1.569783e+02    4.81e-03    5.13e+02   6.27e-04   9.60e-01  6.55e+00        1    6.42e-03    1.49e-01
+  38  1.569673e+02    1.10e-02    4.92e+02   1.19e-03   9.73e-01  1.97e+01        1    8.78e-03    1.58e-01
+  39  1.569486e+02    1.87e-02    4.70e+02   3.72e-03   8.09e-01  2.57e+01        1    8.86e-03    1.67e-01
+  40  1.569297e+02    1.89e-02    4.37e+02   1.50e-03   1.00e+00  7.72e+01        1    9.30e-03    1.76e-01
+  41  1.568982e+02    3.14e-02    3.94e+02   6.66e-03   7.73e-01  9.21e+01        1    9.66e-03    1.86e-01
+  42  1.568584e+02    3.98e-02    3.33e+02   5.40e-03   1.01e+00  2.76e+02        1    9.24e-03    1.96e-01
+  43  1.567823e+02    7.62e-02    3.21e+02   1.72e-02   9.13e-01  6.32e+02        1    8.31e-03    2.04e-01
+  44  1.566303e+02    1.52e-01    4.03e+02   4.11e-02   9.78e-01  1.90e+03        1    4.85e-03    2.09e-01
+  45  1.563595e+02    2.71e-01    7.92e+02   1.29e-01   8.15e-01  2.53e+03        1    4.66e-03    2.14e-01
+  46  1.559385e+02    4.21e-01    8.36e+02   1.82e-01   1.04e+00  7.59e+03        1    4.81e-03    2.19e-01
+  47  1.554617e+02    4.77e-01    1.54e+03   5.58e-01   8.05e-01  9.83e+03        1    4.86e-03    2.23e-01
+  48  1.547407e+02    7.21e-01    1.39e+03   7.28e-01   1.11e+00  2.95e+04        1    4.61e-03    2.28e-01
+  49  1.540899e+02    6.51e-01    2.08e+03   2.11e+00   1.14e+00  8.85e+04        1    4.88e-03    2.33e-01
+  50  1.535069e+02    5.83e-01    2.58e+03   5.83e+00   1.22e+00  2.65e+05        1    4.74e-03    2.38e-01
+  51  1.531728e+02    3.34e-01    3.91e+03   1.61e+01   7.48e-01  3.02e+05        1    4.72e-03    2.43e-01
+  52  1.526867e+02    4.86e-01    2.95e+03   1.75e+01   9.09e-01  6.71e+05        1    4.80e-03    2.48e-01
+  53  1.529897e+02   -3.03e-01    2.95e+03   3.64e+01  -4.89e-01  3.35e+05        1    1.98e-03    2.50e-01
+  54  1.523387e+02    3.48e-01    2.04e+03   1.86e+01   8.81e-01  6.01e+05        1    5.70e-03    2.55e-01
+  55  1.521693e+02    1.69e-01    4.34e+03   3.16e+01   3.45e-01  5.84e+05        1    5.05e-03    2.60e-01
+  56  1.516566e+02    5.13e-01    2.00e+03   2.90e+01   7.57e-01  6.76e+05        1    4.74e-03    2.65e-01
+  57  1.538362e+02   -2.18e+00    2.00e+03   3.15e+01  -4.12e+00  3.38e+05        1    3.27e-03    2.69e-01
+  58  1.519981e+02   -3.42e-01    2.00e+03   1.59e+01  -9.21e-01  8.45e+04        1    1.78e-03    2.70e-01
+  59  1.514257e+02    2.31e-01    4.70e+02   3.97e+00   9.65e-01  2.53e+05        1    4.40e-03    2.75e-01
+  60  1.525978e+02   -1.17e+00    4.70e+02   1.18e+01  -6.46e+00  1.27e+05        1    1.91e-03    2.77e-01
+  61  1.514857e+02   -5.99e-02    4.70e+02   5.88e+00  -5.42e-01  3.17e+04        1    1.62e-03    2.79e-01
+  62  1.513737e+02    5.20e-02    2.34e+02   1.45e+00   1.05e+00  9.50e+04        1    4.70e-03    2.83e-01
+  63  1.514088e+02   -3.51e-02    2.34e+02   4.36e+00  -4.50e-01  4.75e+04        1    1.98e-03    2.85e-01
+  64  1.513355e+02    3.82e-02    3.76e+02   2.17e+00   8.54e-01  7.36e+04        1    4.70e-03    2.90e-01
+  65  1.513429e+02   -7.44e-03    3.76e+02   3.32e+00  -9.51e-02  3.68e+04        1    2.01e-03    2.92e-01
+  66  1.512912e+02    4.43e-02    3.22e+02   1.65e+00   9.15e-01  8.62e+04        1    6.00e-03    2.98e-01
+  67  1.514380e+02   -1.47e-01    3.22e+02   3.84e+00  -1.62e+00  4.31e+04        1    1.91e-03    3.00e-01
+  68  1.512541e+02    3.71e-02    5.16e+02   1.91e+00   7.02e-01  4.61e+04        1    4.95e-03    3.05e-01
+  69  1.512137e+02    4.04e-02    7.10e+02   2.02e+00   5.65e-01  4.62e+04        1    4.74e-03    3.10e-01
+  70  1.511643e+02    4.94e-02    8.43e+02   2.00e+00   5.39e-01  4.63e+04        1    5.05e-03    3.15e-01
+  71  1.511097e+02    5.46e-02    9.59e+02   1.97e+00   5.13e-01  4.63e+04        1    5.01e-03    3.20e-01
+  72  1.510493e+02    6.05e-02    1.05e+03   1.95e+00   5.09e-01  4.63e+04        1    6.55e-03    3.27e-01
+  73  1.509834e+02    6.59e-02    1.12e+03   1.94e+00   5.17e-01  4.63e+04        1    5.65e-03    3.32e-01
+  74  1.509131e+02    7.02e-02    1.15e+03   1.94e+00   5.35e-01  4.63e+04        1    8.05e-03    3.41e-01
+  75  1.508401e+02    7.30e-02    1.16e+03   1.93e+00   5.58e-01  4.63e+04        1    5.24e-03    3.46e-01
+  76  1.507662e+02    7.40e-02    1.15e+03   1.94e+00   5.83e-01  4.66e+04        1    4.94e-03    3.51e-01
+  77  1.506928e+02    7.34e-02    1.12e+03   1.96e+00   6.07e-01  4.70e+04        1    4.82e-03    3.56e-01
+  78  1.506210e+02    7.18e-02    1.09e+03   1.99e+00   6.29e-01  4.78e+04        1    5.00e-03    3.61e-01
+  79  1.505512e+02    6.98e-02    1.06e+03   2.04e+00   6.47e-01  4.91e+04        1    5.06e-03    3.66e-01
+  80  1.504832e+02    6.80e-02    1.04e+03   2.11e+00   6.62e-01  5.08e+04        1    5.71e-03    3.72e-01
+  81  1.504167e+02    6.66e-02    1.03e+03   2.20e+00   6.75e-01  5.31e+04        1    5.18e-03    3.77e-01
+  82  1.503510e+02    6.57e-02    1.02e+03   2.32e+00   6.85e-01  5.59e+04        1    5.74e-03    3.83e-01
+  83  1.502858e+02    6.53e-02    1.02e+03   2.46e+00   6.93e-01  5.93e+04        1    4.99e-03    3.88e-01
+  84  1.502205e+02    6.53e-02    1.03e+03   2.64e+00   7.00e-01  6.33e+04        1    4.74e-03    3.93e-01
+  85  1.501547e+02    6.57e-02    1.05e+03   2.84e+00   7.05e-01  6.80e+04        1    4.81e-03    3.98e-01
+  86  1.500882e+02    6.66e-02    1.07e+03   3.07e+00   7.10e-01  7.35e+04        1    5.44e-03    4.03e-01
+  87  1.500204e+02    6.77e-02    1.09e+03   3.33e+00   7.14e-01  7.97e+04        1    7.10e-03    4.10e-01
+  88  1.499513e+02    6.92e-02    1.12e+03   3.63e+00   7.17e-01  8.68e+04        1    4.85e-03    4.15e-01
+  89  1.498804e+02    7.09e-02    1.16e+03   3.96e+00   7.20e-01  9.49e+04        1    4.94e-03    4.20e-01
+  90  1.498075e+02    7.29e-02    1.20e+03   4.33e+00   7.22e-01  1.04e+05        1    5.23e-03    4.25e-01
+  91  1.497323e+02    7.51e-02    1.24e+03   4.75e+00   7.23e-01  1.14e+05        1    5.04e-03    4.31e-01
+  92  1.496548e+02    7.76e-02    1.29e+03   5.20e+00   7.23e-01  1.25e+05        1    4.85e-03    4.35e-01
+  93  1.495746e+02    8.01e-02    1.35e+03   5.69e+00   7.23e-01  1.37e+05        1    4.68e-03    4.40e-01
+  94  1.494919e+02    8.28e-02    1.41e+03   6.21e+00   7.23e-01  1.51e+05        1    4.83e-03    4.45e-01
+  95  1.494064e+02    8.55e-02    1.47e+03   6.77e+00   7.22e-01  1.65e+05        1    4.63e-03    4.50e-01
+  96  1.493182e+02    8.82e-02    1.54e+03   7.36e+00   7.20e-01  1.81e+05        1    4.61e-03    4.55e-01
+  97  1.492275e+02    9.07e-02    1.61e+03   7.98e+00   7.18e-01  1.97e+05        1    4.61e-03    4.59e-01
+  98  1.491343e+02    9.32e-02    1.68e+03   8.61e+00   7.16e-01  2.14e+05        1    4.62e-03    4.64e-01
+  99  1.490390e+02    9.53e-02    1.75e+03   9.26e+00   7.13e-01  2.33e+05        1    5.89e-03    4.70e-01
+ 100  1.489417e+02    9.72e-02    1.83e+03   9.90e+00   7.10e-01  2.51e+05        1    6.86e-03    4.77e-01
+I20261021 17:12:28.615366  4826 misc.cc:205] 
+Bundle adjustment report
+------------------------
+I20261021 17:12:28.615437  4826 bundle_adjustment.cc:942] 
+    Residuals : 6800
+   Parameters : 5107
+   Iterations : 101
+         Time : 0.477143 [s]
+ Initial cost : 0.26833 [px]
+   Final cost : 0.147997 [px]
+  Termination : No convergence
+
+I20261021 17:12:28.626075  4826 incremental_mapper.cc:160] => Filtered observations: 1700
+I20261021 17:12:28.626160  4826 incremental_mapper.cc:167] => Filtered images: 0
+I20261021 17:12:28.627597  4826 misc.cc:198] 
+==============================================================================
+Finding good initial image pair
+==============================================================================
+I20261021 17:12:31.206135  4826 misc.cc:198] 
+==============================================================================
+Initializing with image pair #32 and #17
+==============================================================================
+I20261021 17:12:31.214378  4826 misc.cc:198] 
+==============================================================================
+Global bundle adjustment
+==============================================================================
+iter      cost      cost_change  |gradient|   |step|    tr_ratio  tr_radius  ls_iter  iter_time  total_time
+   0  6.356507e+02    0.00e+00    1.62e+05   0.00e+00   0.00e+00  1.00e+04        0    1.76e-03    3.39e-03
+   1  4.801705e+02    1.55e+02    4.77e+04   0.00e+00   6.01e-01  1.01e+04        1    2.54e-03    6.00e-03
+   2  4.210112e+02    5.92e+01    2.37e+04   1.26e+01   1.04e+00  3.03e+04        1    2.48e-03    8.53e-03
+   3  4.352882e+02   -1.43e+01    2.37e+04   4.50e+01  -6.75e-01  1.51e+04        1    9.15e-04    9.49e-03
+   4  4.121395e+02    8.87e+00    1.08e+05   2.26e+01   6.16e-01  1.53e+04        1    2.33e-03    1.19e-02
+   5  4.013136e+02    1.08e+01    9.27e+03   2.42e+01   8.66e-01  2.52e+04        1    2.46e-03    1.44e-02
+   6  3.969166e+02    4.40e+00    3.50e+04   3.96e+01   3.31e-01  2.42e+04        1    2.32e-03    1.67e-02
+   7  3.842631e+02    1.27e+01    1.71e+04   3.76e+01   6.77e-01  2.54e+04        1    2.61e-03    1.94e-02
+   8  3.744412e+02    9.82e+00    1.62e+04   3.84e+01   6.35e-01  2.59e+04        1    2.48e-03    2.19e-02
+   9  3.648567e+02    9.58e+00    1.51e+04   3.84e+01   6.65e-01  2.68e+04        1    2.47e-03    2.44e-02
+  10  3.562047e+02    8.65e+00    1.45e+04   3.90e+01   6.57e-01  2.77e+04        1    2.70e-03    2.71e-02
+  11  3.479948e+02    8.21e+00    1.39e+04   3.94e+01   6.62e-01  2.86e+04        1    4.14e-03    3.13e-02
+  12  3.403016e+02    7.69e+00    1.35e+04   3.99e+01   6.57e-01  2.96e+04        1    4.33e-03    3.57e-02
+  13  3.330065e+02    7.30e+00    1.32e+04   4.03e+01   6.55e-01  3.05e+04        1    4.59e-03    4.03e-02
+  14  3.261050e+02    6.90e+00    1.28e+04   4.07e+01   6.51e-01  3.13e+04        1    4.44e-03    4.49e-02
+  15  3.195629e+02    6.54e+00    1.25e+04   4.10e+01   6.47e-01  3.21e+04        1    4.56e-03    4.95e-02
+  16  3.133668e+02    6.20e+00    1.22e+04   4.11e+01   6.42e-01  3.29e+04        1    4.58e-03    5.41e-02
+  17  3.074995e+02    5.87e+00    1.19e+04   4.12e+01   6.37e-01  3.36e+04        1    4.65e-03    5.89e-02
+  18  3.019468e+02    5.55e+00    1.16e+04   4.12e+01   6.32e-01  3.42e+04        1    4.22e-03    6.31e-02
+  19  2.966940e+02    5.25e+00    1.13e+04   4.10e+01   6.27e-01  3.48e+04        1    4.24e-03    6.75e-02
+  20  2.917263e+02    4.97e+00    1.09e+04   4.08e+01   6.23e-01  3.53e+04        1    4.03e-03    7.16e-02
+  21  2.870291e+02    4.70e+00    1.06e+04   4.05e+01   6.18e-01  3.58e+04        1    4.14e-03    7.58e-02
+  22  2.825874e+02    4.44e+00    1.03e+04   4.02e+01   6.14e-01  3.62e+04        1    3.40e-03    7.93e-02
+  23  2.783866e+02    4.20e+00    1.00e+04   3.98e+01   6.10e-01  3.66e+04        1    4.09e-03    8.34e-02
+  24  2.744126e+02    3.97e+00    9.73e+03   3.94e+01   6.06e-01  3.70e+04        1    2.67e-03    8.62e-02
+  25  2.706513e+02    3.76e+00    9.44e+03   3.89e+01   6.03e-01  3.73e+04        1    2.39e-03    8.87e-02
+  26  2.670896e+02    3.56e+00    9.16e+03   3.84e+01   6.00e-01  3.76e+04        1    2.44e-03    9.11e-02
+  27  2.637146e+02    3.37e+00    8.88e+03   3.79e+01   5.97e-01  3.79e+04        1    2.37e-03    9.36e-02
+  28  2.605145e+02    3.20e+00    8.61e+03   3.74e+01   5.95e-01  3.81e+04        1    2.40e-03    9.60e-02
+  29  2.574777e+02    3.04e+00    8.35e+03   3.68e+01   5.92e-01  3.84e+04        1    2.45e-03    9.85e-02
+  30  2.545938e+02    2.88e+00    8.10e+03   3.63e+01   5.90e-01  3.86e+04        1    2.36e-03    1.01e-01
+  31  2.518528e+02    2.74e+00    7.86e+03   3.57e+01   5.89e-01  3.88e+04        1    2.43e-03    1.03e-01
+  32  2.492452e+02    2.61e+00    7.63e+03   3.51e+01   5.87e-01  3.90e+04        1    2.36e-03    1.06e-01
+  33  2.467626e+02    2.48e+00    7.40e+03   3.46e+01   5.86e-01  3.92e+04        1    2.39e-03    1.08e-01
+  34  2.443969e+02    2.37e+00    7.18e+03   3.40e+01   5.85e-01  3.94e+04        1    2.39e-03    1.11e-01
+  35  2.421405e+02    2.26e+00    6.98e+03   3.35e+01   5.84e-01  3.96e+04        1    2.39e-03    1.13e-01
+  36  2.399865e+02    2.15e+00    6.77e+03   3.30e+01   5.83e-01  3.98e+04        1    2.42e-03    1.16e-01
+  37  2.379286e+02    2.06e+00    6.58e+03   3.24e+01   5.83e-01  4.00e+04        1    2.40e-03    1.18e-01
+  38  2.359607e+02    1.97e+00    6.40e+03   3.19e+01   5.83e-01  4.02e+04        1    2.41e-03    1.20e-01
+  39  2.340773e+02    1.88e+00    6.22e+03   3.14e+01   5.83e-01  4.03e+04        1    2.43e-03    1.23e-01
+  40  2.322732e+02    1.80e+00    6.05e+03   3.09e+01   5.82e-01  4.05e+04        1    2.38e-03    1.25e-01
+  41  2.305437e+02    1.73e+00    5.89e+03   3.04e+01   5.83e-01  4.07e+04        1    2.42e-03    1.28e-01
+  42  2.288844e+02    1.66e+00    5.73e+03   2.99e+01   5.83e-01  4.09e+04        1    2.42e-03    1.30e-01
+  43  2.272911e+02    1.59e+00    5.58e+03   2.94e+01   5.83e-01  4.11e+04        1    2.33e-03    1.33e-01
+  44  2.257600e+02    1.53e+00    5.43e+03   2.90e+01   5.83e-01  4.13e+04        1    2.36e-03    1.35e-01
+  45  2.242875e+02    1.47e+00    5.29e+03   2.85e+01   5.84e-01  4.15e+04        1    2.60e-03    1.38e-01
+  46  2.228704e+02    1.42e+00    5.16e+03   2.81e+01   5.84e-01  4.17e+04        1    2.41e-03    1.40e-01
+  47  2.215055e+02    1.36e+00    5.03e+03   2.77e+01   5.85e-01  4.19e+04        1    2.42e-03    1.43e-01
+  48  2.201900e+02    1.32e+00    4.91e+03   2.72e+01   5.85e-01  4.21e+04        1    2.35e-03    1.45e-01
+  49  2.189212e+02    1.27e+00    4.79e+03   2.68e+01   5.86e-01  4.23e+04        1    2.38e-03    1.48e-01
+  50  2.176966e+02    1.22e+00    4.68e+03   2.64e+01   5.87e-01  4.25e+04        1    2.36e-03    1.50e-01
+  51  2.165138e+02    1.18e+00    4.57e+03   2.61e+01   5.87e-01  4.27e+04        1    2.44e-03    1.52e-01
+  52  2.153707e+02    1.14e+00    4.47e+03   2.57e+01   5.88e-01  4.30e+04        1    2.40e-03    1.55e-01
+  53  2.142653e+02    1.11e+00    4.37e+03   2.53e+01   5.89e-01  4.32e+04        1    2.42e-03    1.57e-01
+  54  2.131957e+02    1.07e+00    4.28e+03   2.50e+01   5.89e-01  4.35e+04        1    2.40e-03    1.60e-01
+  55  2.121600e+02    1.04e+00    4.19e+03   2.46e+01   5.90e-01  4.37e+04        1    2.37e-03    1.62e-01
+  56  2.111566e+02    1.00e+00    4.10e+03   2.43e+01   5.91e-01  4.40e+04        1    2.35e-03    1.65e-01
+  57  2.101839e+02    9.73e-01    4.01e+03   2.40e+01   5.91e-01  4.42e+04        1    2.44e-03    1.67e-01
+  58  2.092406e+02    9.43e-01    3.93e+03   2.36e+01   5.92e-01  4.45e+04        1    2.35e-03    1.70e-01
+  59  2.083251e+02    9.15e-01    3.85e+03   2.33e+01   5.93e-01  4.48e+04        1    2.40e-03    1.72e-01
+  60  2.074363e+02    8.89e-01    3.78e+03   2.30e+01   5.93e-01  4.51e+04        1    2.44e-03    1.74e-01
+  61  2.065729e+02    8.63e-01    3.71e+03   2.28e+01   5.94e-01  4.54e+04        1    2.35e-03    1.77e-01
+  62  2.057338e+02    8.39e-01    3.64e+03   2.25e+01   5.94e-01  4.57e+04        1    2.47e-03    1.79e-01
+  63  2.049179e+02    8.16e-01    3.57e+03   2.22e+01   5.95e-01  4.60e+04        1    2.33e-03    1.82e-01
+  64  2.041242e+02    7.94e-01    3.51e+03   2.19e+01   5.95e-01  4.63e+04        1    2.35e-03    1.84e-01
+  65  2.033519e+02    7.72e-01    3.44e+03   2.17e+01   5.96e-01  4.67e+04        1    2.37e-03    1.87e-01
+  66  2.025999e+02    7.52e-01    3.38e+03   2.14e+01   5.97e-01  4.70e+04        1    2.31e-03    1.89e-01
+  67  2.018676e+02    7.32e-01    3.33e+03   2.12e+01   5.97e-01  4.74e+04        1    2.45e-03    1.91e-01
+  68  2.011540e+02    7.14e-01    3.27e+03   2.09e+01   5.98e-01  4.77e+04        1    2.36e-03    1.94e-01
+  69  2.004584e+02    6.96e-01    3.21e+03   2.07e+01   5.98e-01  4.81e+04        1    2.45e-03    1.96e-01
+  70  1.997803e+02    6.78e-01    3.16e+03   2.05e+01   5.98e-01  4.84e+04        1    2.43e-03    1.99e-01
+  71  1.991188e+02    6.61e-01    3.11e+03   2.02e+01   5.99e-01  4.88e+04        1    2.35e-03    2.01e-01
+  72  1.984733e+02    6.45e-01    3.06e+03   2.00e+01   5.99e-01  4.92e+04        1    2.40e-03    2.04e-01
+  73  1.978434e+02    6.30e-01    3.01e+03   1.98e+01   6.00e-01  4.96e+04        1    2.47e-03    2.06e-01
+  74  1.972283e+02    6.15e-01    2.97e+03   1.96e+01   6.00e-01  5.00e+04        1    2.38e-03    2.09e-01
+  75  1.966277e+02    6.01e-01    2.92e+03   1.94e+01   6.01e-01  5.04e+04        1    2.49e-03    2.11e-01
+  76  1.960409e+02    5.87e-01    2.88e+03   1.92e+01   6.01e-01  5.08e+04        1    2.35e-03    2.14e-01
+  77  1.954675e+02    5.73e-01    2.84e+03   1.90e+01   6.01e-01  5.13e+04        1    2.38e-03    2.16e-01
+  78  1.949071e+02    5.60e-01    2.79e+03   1.88e+01   6.02e-01  5.17e+04        1    2.53e-03    2.19e-01
+  79  1.943592e+02    5.48e-01    2.75e+03   1.86e+01   6.02e-01  5.21e+04        1    2.37e-03    2.21e-01
+  80  1.938235e+02    5.36e-01    2.71e+03   1.85e+01   6.02e-01  5.26e+04        1    2.50e-03    2.24e-01
+  81  1.932994e+02    5.24e-01    2.68e+03   1.83e+01   6.03e-01  5.30e+04        1    2.33e-03    2.26e-01
+  82  1.927867e+02    5.13e-01    2.64e+03   1.81e+01   6.03e-01  5.35e+04        1    2.43e-03    2.28e-01
+  83  1.922850e+02    5.02e-01    2.60e+03   1.80e+01   6.03e-01  5.40e+04        1    2.40e-03    2.31e-01
+  84  1.917940e+02    4.91e-01    2.57e+03   1.78e+01   6.04e-01  5.45e+04        1    2.40e-03    2.33e-01
+  85  1.913133e+02    4.81e-01    2.53e+03   1.77e+01   6.04e-01  5.50e+04        1    2.41e-03    2.36e-01
+  86  1.908426e+02    4.71e-01    2.50e+03   1.75e+01   6.04e-01  5.55e+04        1    2.42e-03    2.38e-01
+  87  1.903817e+02    4.61e-01    2.46e+03   1.74e+01   6.05e-01  5.60e+04        1    2.37e-03    2.41e-01
+  88  1.899302e+02    4.51e-01    2.43e+03   1.72e+01   6.05e-01  5.65e+04        1    2.39e-03    2.43e-01
+  89  1.894880e+02    4.42e-01    2.40e+03   1.71e+01   6.05e-01  5.71e+04        1    2.38e-03    2.46e-01
+  90  1.890546e+02    4.33e-01    2.37e+03   1.70e+01   6.06e-01  5.76e+04        1    2.40e-03    2.48e-01
+  91  1.886299e+02    4.25e-01    2.34e+03   1.68e+01   6.06e-01  5.82e+04        1    2.54e-03    2.51e-01
+  92  1.882137e+02    4.16e-01    2.31e+03   1.67e+01   6.06e-01  5.87e+04        1    2.34e-03    2.53e-01
+  93  1.878057e+02    4.08e-01    2.28e+03   1.66e+01   6.07e-01  5.93e+04        1    2.41e-03    2.55e-01
+  94  1.874057e+02    4.00e-01    2.25e+03   1.65e+01   6.07e-01  5.99e+04        1    2.36e-03    2.58e-01
+  95  1.870135e+02    3.92e-01    2.22e+03   1.64e+01   6.07e-01  6.05e+04        1    2.41e-03    2.60e-01
+  96  1.866288e+02    3.85e-01    2.19e+03   1.63e+01   6.08e-01  6.11e+04        1    2.39e-03    2.63e-01
+  97  1.862516e+02    3.77e-01    2.17e+03   1.62e+01   6.08e-01  6.17e+04        1    2.35e-03    2.65e-01
+  98  1.858815e+02    3.70e-01    2.14e+03   1.61e+01   6.08e-01  6.24e+04        1    2.51e-03    2.68e-01
+  99  1.855185e+02    3.63e-01    2.11e+03   1.60e+01   6.09e-01  6.30e+04        1    2.37e-03    2.70e-01
+ 100  1.851623e+02    3.56e-01    2.09e+03   1.59e+01   6.09e-01  6.37e+04        1    2.45e-03    2.73e-01
+I20261021 17:12:31.488550  4826 misc.cc:205] 
+Bundle adjustment report
+------------------------
+I20261021 17:12:31.488627  4826 bundle_adjustment.cc:942] 
+    Residuals : 3564
+   Parameters : 2680
+   Iterations : 101
+         Time : 0.272738 [s]
+ Initial cost : 0.422319 [px]
+   Final cost : 0.227933 [px]
+  Termination : No convergence
+
+I20261021 17:12:31.489528  4826 incremental_mapper.cc:160] => Filtered observations: 0
+I20261021 17:12:31.489578  4826 incremental_mapper.cc:167] => Filtered images: 0
+I20261021 17:12:31.493391  4826 misc.cc:198] 
+==============================================================================
+Registering image #31 (3)
+==============================================================================
+I20261021 17:12:31.493455  4826 incremental_mapper.cc:495] => Image sees 821 / 3123 points
+I20261021 17:12:31.493927  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.493959  4826 misc.cc:198] 
+==============================================================================
+Registering image #33 (3)
+==============================================================================
+I20261021 17:12:31.493968  4826 incremental_mapper.cc:495] => Image sees 820 / 3134 points
+I20261021 17:12:31.494314  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.494336  4826 misc.cc:198] 
+==============================================================================
+Registering image #34 (3)
+==============================================================================
+I20261021 17:12:31.494345  4826 incremental_mapper.cc:495] => Image sees 788 / 3143 points
+I20261021 17:12:31.494678  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.494702  4826 misc.cc:198] 
+==============================================================================
+Registering image #30 (3)
+==============================================================================
+I20261021 17:12:31.494711  4826 incremental_mapper.cc:495] => Image sees 778 / 3072 points
+I20261021 17:12:31.495056  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.495083  4826 misc.cc:198] 
+==============================================================================
+Registering image #35 (3)
+==============================================================================
+I20261021 17:12:31.495091  4826 incremental_mapper.cc:495] => Image sees 780 / 3164 points
+I20261021 17:12:31.495415  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.495437  4826 misc.cc:198] 
+==============================================================================
+Registering image #18 (3)
+==============================================================================
+I20261021 17:12:31.495448  4826 incremental_mapper.cc:495] => Image sees 771 / 2937 points
+I20261021 17:12:31.495761  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.495800  4826 misc.cc:198] 
+==============================================================================
+Registering image #28 (3)
+==============================================================================
+I20261021 17:12:31.495849  4826 incremental_mapper.cc:495] => Image sees 746 / 3006 points
+I20261021 17:12:31.496187  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.496217  4826 misc.cc:198] 
+==============================================================================
+Registering image #19 (3)
+==============================================================================
+I20261021 17:12:31.496225  4826 incremental_mapper.cc:495] => Image sees 757 / 2971 points
+I20261021 17:12:31.496510  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.496532  4826 misc.cc:198] 
+==============================================================================
+Registering image #27 (3)
+==============================================================================
+I20261021 17:12:31.496541  4826 incremental_mapper.cc:495] => Image sees 738 / 3099 points
+I20261021 17:12:31.496898  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.496928  4826 misc.cc:198] 
+==============================================================================
+Registering image #20 (3)
+==============================================================================
+I20261021 17:12:31.496937  4826 incremental_mapper.cc:495] => Image sees 746 / 2970 points
+I20261021 17:12:31.497221  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.497243  4826 misc.cc:198] 
+==============================================================================
+Registering image #25 (3)
+==============================================================================
+I20261021 17:12:31.497252  4826 incremental_mapper.cc:495] => Image sees 738 / 3085 points
+I20261021 17:12:31.497562  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.497587  4826 misc.cc:198] 
+==============================================================================
+Registering image #36 (3)
+==============================================================================
+I20261021 17:12:31.497596  4826 incremental_mapper.cc:495] => Image sees 748 / 3105 points
+I20261021 17:12:31.497995  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.498027  4826 misc.cc:198] 
+==============================================================================
+Registering image #23 (3)
+==============================================================================
+I20261021 17:12:31.498035  4826 incremental_mapper.cc:495] => Image sees 728 / 3034 points
+I20261021 17:12:31.498337  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.498358  4826 misc.cc:198] 
+==============================================================================
+Registering image #29 (3)
+==============================================================================
+I20261021 17:12:31.498366  4826 incremental_mapper.cc:495] => Image sees 745 / 2971 points
+I20261021 17:12:31.498683  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.498706  4826 misc.cc:198] 
+==============================================================================
+Registering image #26 (3)
+==============================================================================
+I20261021 17:12:31.498715  4826 incremental_mapper.cc:495] => Image sees 733 / 3071 points
+I20261021 17:12:31.499055  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.499083  4826 misc.cc:198] 
+==============================================================================
+Registering image #22 (3)
+==============================================================================
+I20261021 17:12:31.499092  4826 incremental_mapper.cc:495] => Image sees 728 / 3031 points
+I20261021 17:12:31.499387  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.499409  4826 misc.cc:198] 
+==============================================================================
+Registering image #21 (3)
+==============================================================================
+I20261021 17:12:31.499447  4826 incremental_mapper.cc:495] => Image sees 717 / 2949 points
+I20261021 17:12:31.499764  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.499825  4826 misc.cc:198] 
+==============================================================================
+Registering image #38 (3)
+==============================================================================
+I20261021 17:12:31.499835  4826 incremental_mapper.cc:495] => Image sees 720 / 3084 points
+I20261021 17:12:31.500139  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.500161  4826 misc.cc:198] 
+==============================================================================
+Registering image #37 (3)
+==============================================================================
+I20261021 17:12:31.500169  4826 incremental_mapper.cc:495] => Image sees 733 / 3098 points
+I20261021 17:12:31.500469  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.500492  4826 misc.cc:198] 
+==============================================================================
+Registering image #24 (3)
+==============================================================================
+I20261021 17:12:31.500500  4826 incremental_mapper.cc:495] => Image sees 724 / 3022 points
+I20261021 17:12:31.500846  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.500883  4826 misc.cc:198] 
+==============================================================================
+Registering image #16 (3)
+==============================================================================
+I20261021 17:12:31.500892  4826 incremental_mapper.cc:495] => Image sees 706 / 2466 points
+I20261021 17:12:31.501140  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.501163  4826 misc.cc:198] 
+==============================================================================
+Registering image #39 (3)
+==============================================================================
+I20261021 17:12:31.501170  4826 incremental_mapper.cc:495] => Image sees 692 / 3080 points
+I20261021 17:12:31.501464  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.501487  4826 misc.cc:198] 
+==============================================================================
+Registering image #41 (3)
+==============================================================================
+I20261021 17:12:31.501495  4826 incremental_mapper.cc:495] => Image sees 691 / 3100 points
+I20261021 17:12:31.501791  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.501839  4826 misc.cc:198] 
+==============================================================================
+Registering image #42 (3)
+==============================================================================
+I20261021 17:12:31.501848  4826 incremental_mapper.cc:495] => Image sees 685 / 3042 points
+I20261021 17:12:31.502175  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.502208  4826 misc.cc:198] 
+==============================================================================
+Registering image #40 (3)
+==============================================================================
+I20261021 17:12:31.502216  4826 incremental_mapper.cc:495] => Image sees 693 / 3102 points
+I20261021 17:12:31.502524  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.502556  4826 misc.cc:198] 
+==============================================================================
+Registering image #43 (3)
+==============================================================================
+I20261021 17:12:31.502565  4826 incremental_mapper.cc:495] => Image sees 662 / 3126 points
+I20261021 17:12:31.502888  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.502931  4826 misc.cc:198] 
+==============================================================================
+Registering image #46 (3)
+==============================================================================
+I20261021 17:12:31.502939  4826 incremental_mapper.cc:495] => Image sees 669 / 2965 points
+I20261021 17:12:31.503211  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.503237  4826 misc.cc:198] 
+==============================================================================
+Registering image #44 (3)
+==============================================================================
+I20261021 17:12:31.503245  4826 incremental_mapper.cc:495] => Image sees 670 / 3142 points
+I20261021 17:12:31.503523  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.503546  4826 misc.cc:198] 
+==============================================================================
+Registering image #45 (3)
+==============================================================================
+I20261021 17:12:31.503554  4826 incremental_mapper.cc:495] => Image sees 661 / 3118 points
+I20261021 17:12:31.503872  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.503898  4826 misc.cc:198] 
+==============================================================================
+Registering image #15 (3)
+==============================================================================
+I20261021 17:12:31.503906  4826 incremental_mapper.cc:495] => Image sees 603 / 2024 points
+I20261021 17:12:31.504118  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.504139  4826 misc.cc:198] 
+==============================================================================
+Registering image #14 (3)
+==============================================================================
+I20261021 17:12:31.504148  4826 incremental_mapper.cc:495] => Image sees 518 / 1872 points
+I20261021 17:12:31.504338  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.504359  4826 misc.cc:198] 
+==============================================================================
+Retriangulation
+==============================================================================
+I20261021 17:12:31.505013  4826 incremental_mapper.cc:175] => Completed observations: 0
+I20261021 17:12:31.505393  4826 incremental_mapper.cc:178] => Merged observations: 0
+I20261021 17:12:31.505422  4826 incremental_mapper.cc:105] => Retriangulated observations: 0
+I20261021 17:12:31.505517  4826 misc.cc:198] 
+==============================================================================
+Global bundle adjustment
+==============================================================================
+iter      cost      cost_change  |gradient|   |step|    tr_ratio  tr_radius  ls_iter  iter_time  total_time
+   0  1.851623e+02    0.00e+00    3.81e+01   0.00e+00   0.00e+00  1.00e+04        0    1.76e-03    3.51e-03
+   1  1.848786e+02    2.84e-01    2.00e+00   0.00e+00   1.00e+00  3.00e+04        1    2.60e-03    6.18e-03
+   2  1.847262e+02    1.52e-01    8.62e+00   2.26e+01   9.27e-01  7.95e+04        1    2.57e-03    8.80e-03
+   3  1.848021e+02   -7.59e-02    8.62e+00   5.91e+01  -1.75e-01  3.97e+04        1    9.46e-04    9.80e-03
+   4  1.845355e+02    1.91e-01    1.45e+01   2.97e+01   8.46e-01  5.95e+04        1    2.43e-03    1.23e-02
+   5  1.843495e+02    1.86e-01    3.08e+01   4.40e+01   5.38e-01  5.95e+04        1    2.36e-03    1.47e-02
+   6  1.840380e+02    3.12e-01    2.95e+01   4.34e+01   6.74e-01  6.21e+04        1    2.51e-03    1.73e-02
+   7  1.837481e+02    2.90e-01    3.07e+01   4.48e+01   6.33e-01  6.33e+04        1    2.43e-03    1.98e-02
+   8  1.834459e+02    3.02e-01    3.04e+01   4.51e+01   6.39e-01  6.47e+04        1    2.90e-03    2.27e-02
+   9  1.831476e+02    2.98e-01    3.04e+01   4.55e+01   6.30e-01  6.59e+04        1    2.73e-03    2.55e-02
+  10  1.828497e+02    2.98e-01    3.01e+01   4.58e+01   6.28e-01  6.70e+04        1    2.79e-03    2.83e-02
+  11  1.825546e+02    2.95e-01    2.97e+01   4.60e+01   6.25e-01  6.80e+04        1    2.52e-03    3.09e-02
+  12  1.822623e+02    2.92e-01    2.92e+01   4.61e+01   6.23e-01  6.91e+04        1    3.01e-03    3.40e-02
+  13  1.819735e+02    2.89e-01    2.87e+01   4.62e+01   6.21e-01  7.01e+04        1    2.60e-03    3.66e-02
+  14  1.816884e+02    2.85e-01    2.82e+01   4.63e+01   6.20e-01  7.10e+04        1    2.64e-03    3.93e-02
+  15  1.814072e+02    2.81e-01    2.76e+01   4.64e+01   6.19e-01  7.20e+04        1    2.46e-03    4.18e-02
+  16  1.811300e+02    2.77e-01    2.71e+01   4.64e+01   6.19e-01  7.30e+04        1    2.52e-03    4.44e-02
+  17  1.808570e+02    2.73e-01    2.65e+01   4.65e+01   6.18e-01  7.40e+04        1    2.41e-03    4.68e-02
+  18  1.805882e+02    2.69e-01    2.59e+01   4.65e+01   6.18e-01  7.50e+04        1    3.20e-03    5.01e-02
+  19  1.803236e+02    2.65e-01    2.54e+01   4.65e+01   6.18e-01  7.60e+04        1    2.75e-03    5.29e-02
+  20  1.800633e+02    2.60e-01    2.48e+01   4.66e+01   6.18e-01  7.70e+04        1    2.59e-03    5.56e-02
+  21  1.798071e+02    2.56e-01    2.43e+01   4.66e+01   6.18e-01  7.80e+04        1    2.57e-03    5.82e-02
+  22  1.795551e+02    2.52e-01    2.37e+01   4.66e+01   6.18e-01  7.90e+04        1    2.65e-03    6.09e-02
+  23  1.793072e+02    2.48e-01    2.32e+01   4.67e+01   6.18e-01  8.01e+04        1    2.68e-03    6.36e-02
+  24  1.790633e+02    2.44e-01    2.27e+01   4.67e+01   6.19e-01  8.12e+04        1    2.61e-03    6.63e-02
+  25  1.788235e+02    2.40e-01    2.21e+01   4.68e+01   6.19e-01  8.23e+04        1    2.69e-03    6.90e-02
+  26  1.785876e+02    2.36e-01    2.16e+01   4.68e+01   6.19e-01  8.34e+04        1    2.67e-03    7.18e-02
+  27  1.783556e+02    2.32e-01    2.11e+01   4.69e+01   6.20e-01  8.46e+04        1    2.58e-03    7.44e-02
+  28  1.781273e+02    2.28e-01    2.07e+01   4.69e+01   6.20e-01  8.58e+04        1    2.53e-03    7.70e-02
+  29  1.779029e+02    2.24e-01    2.02e+01   4.70e+01   6.21e-01  8.70e+04        1    2.69e-03    7.97e-02
+  30  1.776820e+02    2.21e-01    1.97e+01   4.71e+01   6.21e-01  8.82e+04        1    2.68e-03    8.25e-02
+  31  1.774648e+02    2.17e-01    1.93e+01   4.72e+01   6.21e-01  8.95e+04        1    2.68e-03    8.52e-02
+  32  1.772511e+02    2.14e-01    1.89e+01   4.73e+01   6.22e-01  9.08e+04        1    2.54e-03    8.78e-02
+  33  1.770408e+02    2.10e-01    1.84e+01   4.74e+01   6.22e-01  9.22e+04        1    2.44e-03    9.03e-02
+  34  1.768339e+02    2.07e-01    1.80e+01   4.75e+01   6.23e-01  9.36e+04        1    2.49e-03    9.28e-02
+  35  1.766303e+02    2.04e-01    1.76e+01   4.77e+01   6.24e-01  9.50e+04        1    2.56e-03    9.54e-02
+  36  1.764299e+02    2.00e-01    1.72e+01   4.78e+01   6.24e-01  9.65e+04        1    2.55e-03    9.80e-02
+  37  1.762327e+02    1.97e-01    1.68e+01   4.80e+01   6.25e-01  9.80e+04        1    2.79e-03    1.01e-01
+  38  1.760386e+02    1.94e-01    1.65e+01   4.81e+01   6.25e-01  9.96e+04        1    2.62e-03    1.04e-01
+  39  1.758475e+02    1.91e-01    1.61e+01   4.83e+01   6.26e-01  1.01e+05        1    2.51e-03    1.06e-01
+  40  1.756593e+02    1.88e-01    1.58e+01   4.85e+01   6.26e-01  1.03e+05        1    2.54e-03    1.09e-01
+  41  1.754740e+02    1.85e-01    1.54e+01   4.87e+01   6.27e-01  1.05e+05        1    2.73e-03    1.11e-01
+  42  1.752916e+02    1.82e-01    1.51e+01   4.89e+01   6.28e-01  1.06e+05        1    2.71e-03    1.14e-01
+  43  1.751118e+02    1.80e-01    1.48e+01   4.92e+01   6.28e-01  1.08e+05        1    2.53e-03    1.17e-01
+  44  1.749348e+02    1.77e-01    1.44e+01   4.94e+01   6.29e-01  1.10e+05        1    2.79e-03    1.20e-01
+  45  1.747603e+02    1.74e-01    1.41e+01   4.97e+01   6.30e-01  1.12e+05        1    2.46e-03    1.22e-01
+  46  1.745884e+02    1.72e-01    1.38e+01   5.00e+01   6.30e-01  1.14e+05        1    2.85e-03    1.25e-01
+  47  1.744190e+02    1.69e-01    1.35e+01   5.03e+01   6.31e-01  1.16e+05        1    2.59e-03    1.28e-01
+  48  1.742520e+02    1.67e-01    1.32e+01   5.06e+01   6.32e-01  1.18e+05        1    5.43e-03    1.33e-01
+  49  1.740874e+02    1.65e-01    1.31e+01   5.10e+01   6.32e-01  1.20e+05        1    3.21e-03    1.36e-01
+  50  1.739250e+02    1.62e-01    1.29e+01   5.13e+01   6.33e-01  1.23e+05        1    3.16e-03    1.40e-01
+  51  1.737649e+02    1.60e-01    1.28e+01   5.17e+01   6.34e-01  1.25e+05        1    2.64e-03    1.42e-01
+  52  1.736069e+02    1.58e-01    1.27e+01   5.21e+01   6.34e-01  1.28e+05        1    3.36e-03    1.46e-01
+  53  1.734510e+02    1.56e-01    1.25e+01   5.25e+01   6.35e-01  1.30e+05        1    4.59e-03    1.51e-01
+  54  1.732972e+02    1.54e-01    1.24e+01   5.29e+01   6.36e-01  1.33e+05        1    4.18e-03    1.55e-01
+  55  1.731454e+02    1.52e-01    1.23e+01   5.34e+01   6.36e-01  1.36e+05        1    4.17e-03    1.59e-01
+  56  1.729954e+02    1.50e-01    1.21e+01   5.39e+01   6.37e-01  1.38e+05        1    4.35e-03    1.63e-01
+  57  1.728473e+02    1.48e-01    1.20e+01   5.44e+01   6.38e-01  1.41e+05        1    4.35e-03    1.68e-01
+  58  1.727011e+02    1.46e-01    1.19e+01   5.49e+01   6.38e-01  1.44e+05        1    4.26e-03    1.72e-01
+  59  1.725565e+02    1.45e-01    1.18e+01   5.55e+01   6.39e-01  1.48e+05        1    4.75e-03    1.77e-01
+  60  1.724137e+02    1.43e-01    1.17e+01   5.61e+01   6.40e-01  1.51e+05        1    4.58e-03    1.82e-01
+  61  1.722724e+02    1.41e-01    1.15e+01   5.67e+01   6.40e-01  1.54e+05        1    4.83e-03    1.87e-01
+  62  1.721328e+02    1.40e-01    1.14e+01   5.73e+01   6.41e-01  1.58e+05        1    4.50e-03    1.91e-01
+  63  1.719946e+02    1.38e-01    1.13e+01   5.80e+01   6.42e-01  1.61e+05        1    4.09e-03    1.95e-01
+  64  1.718579e+02    1.37e-01    1.12e+01   5.87e+01   6.42e-01  1.65e+05        1    4.36e-03    2.00e-01
+  65  1.717226e+02    1.35e-01    1.11e+01   5.94e+01   6.43e-01  1.69e+05        1    4.11e-03    2.04e-01
+  66  1.715887e+02    1.34e-01    1.10e+01   6.02e+01   6.44e-01  1.73e+05        1    4.26e-03    2.08e-01
+  67  1.714560e+02    1.33e-01    1.09e+01   6.09e+01   6.44e-01  1.78e+05        1    4.39e-03    2.13e-01
+  68  1.713246e+02    1.31e-01    1.08e+01   6.18e+01   6.45e-01  1.82e+05        1    4.17e-03    2.17e-01
+  69  1.711944e+02    1.30e-01    1.07e+01   6.26e+01   6.45e-01  1.87e+05        1    4.10e-03    2.21e-01
+  70  1.710654e+02    1.29e-01    1.06e+01   6.35e+01   6.46e-01  1.91e+05        1    4.23e-03    2.26e-01
+  71  1.709374e+02    1.28e-01    1.05e+01   6.44e+01   6.46e-01  1.96e+05        1    4.20e-03    2.30e-01
+  72  1.708105e+02    1.27e-01    1.04e+01   6.54e+01   6.47e-01  2.01e+05        1    4.26e-03    2.34e-01
+  73  1.706846e+02    1.26e-01    1.03e+01   6.64e+01   6.47e-01  2.07e+05        1    4.27e-03    2.38e-01
+  74  1.705597e+02    1.25e-01    1.03e+01   6.74e+01   6.48e-01  2.12e+05        1    4.08e-03    2.43e-01
+  75  1.704358e+02    1.24e-01    1.02e+01   6.84e+01   6.48e-01  2.18e+05        1    3.32e-03    2.46e-01
+  76  1.703127e+02    1.23e-01    1.01e+01   6.95e+01   6.48e-01  2.24e+05        1    2.49e-03    2.49e-01
+  77  1.701905e+02    1.22e-01    1.00e+01   7.06e+01   6.49e-01  2.30e+05        1    2.52e-03    2.51e-01
+  78  1.700692e+02    1.21e-01    9.92e+00   7.18e+01   6.49e-01  2.36e+05        1    2.40e-03    2.54e-01
+  79  1.699486e+02    1.21e-01    9.84e+00   7.30e+01   6.49e-01  2.42e+05        1    2.42e-03    2.56e-01
+  80  1.698289e+02    1.20e-01    9.76e+00   7.42e+01   6.49e-01  2.49e+05        1    2.42e-03    2.59e-01
+  81  1.697099e+02    1.19e-01    9.68e+00   7.54e+01   6.49e-01  2.56e+05        1    2.41e-03    2.61e-01
+  82  1.695917e+02    1.18e-01    9.60e+00   7.67e+01   6.49e-01  2.63e+05        1    2.39e-03    2.63e-01
+  83  1.694742e+02    1.17e-01    9.53e+00   7.80e+01   6.49e-01  2.70e+05        1    2.39e-03    2.66e-01
+  84  1.693575e+02    1.17e-01    9.45e+00   7.93e+01   6.49e-01  2.77e+05        1    2.45e-03    2.68e-01
+  85  1.692415e+02    1.16e-01    9.37e+00   8.06e+01   6.49e-01  2.85e+05        1    2.35e-03    2.71e-01
+  86  1.691261e+02    1.15e-01    9.30e+00   8.20e+01   6.49e-01  2.93e+05        1    2.47e-03    2.73e-01
+  87  1.690116e+02    1.15e-01    9.22e+00   8.34e+01   6.49e-01  3.00e+05        1    2.38e-03    2.76e-01
+  88  1.688977e+02    1.14e-01    9.14e+00   8.47e+01   6.48e-01  3.09e+05        1    2.61e-03    2.78e-01
+  89  1.687846e+02    1.13e-01    9.06e+00   8.61e+01   6.48e-01  3.17e+05        1    2.46e-03    2.81e-01
+  90  1.686722e+02    1.12e-01    8.98e+00   8.75e+01   6.47e-01  3.25e+05        1    2.48e-03    2.83e-01
+  91  1.685606e+02    1.12e-01    9.34e+00   8.89e+01   6.47e-01  3.34e+05        1    2.37e-03    2.86e-01
+  92  1.684498e+02    1.11e-01    1.03e+01   9.03e+01   6.46e-01  3.42e+05        1    2.49e-03    2.88e-01
+  93  1.683397e+02    1.10e-01    1.12e+01   9.17e+01   6.46e-01  3.51e+05        1    2.39e-03    2.91e-01
+  94  1.682305e+02    1.09e-01    1.22e+01   9.31e+01   6.45e-01  3.60e+05        1    2.66e-03    2.94e-01
+  95  1.681221e+02    1.08e-01    1.33e+01   9.45e+01   6.45e-01  3.69e+05        1    2.49e-03    2.96e-01
+  96  1.680146e+02    1.08e-01    1.43e+01   9.59e+01   6.44e-01  3.78e+05        1    2.44e-03    2.99e-01
+  97  1.679080e+02    1.07e-01    1.55e+01   9.73e+01   6.43e-01  3.87e+05        1    2.46e-03    3.01e-01
+  98  1.678023e+02    1.06e-01    1.66e+01   9.86e+01   6.42e-01  3.96e+05        1    2.62e-03    3.04e-01
+  99  1.676975e+02    1.05e-01    1.78e+01   1.00e+02   6.41e-01  4.05e+05        1    2.47e-03    3.06e-01
+ 100  1.675937e+02    1.04e-01    1.90e+01   1.01e+02   6.41e-01  4.14e+05        1    2.48e-03    3.09e-01
+I20261021 17:12:31.815866  4826 misc.cc:205] 
+Bundle adjustment report
+------------------------
+I20261021 17:12:31.815933  4826 bundle_adjustment.cc:942] 
+    Residuals : 3564
+   Parameters : 2680
+   Iterations : 101
+         Time : 0.308956 [s]
+ Initial cost : 0.227933 [px]
+   Final cost : 0.21685 [px]
+  Termination : No convergence
+
+I20261021 17:12:31.817092  4826 incremental_mapper.cc:175] => Completed observations: 0
+I20261021 17:12:31.817512  4826 incremental_mapper.cc:178] => Merged observations: 0
+I20261021 17:12:31.817842  4826 incremental_mapper.cc:160] => Filtered observations: 0
+I20261021 17:12:31.817934  4826 incremental_mapper.cc:119] => Changed observations: 0.000000
+I20261021 17:12:31.817958  4826 incremental_mapper.cc:167] => Filtered images: 0
+I20261021 17:12:31.817984  4826 misc.cc:198] 
+==============================================================================
+Registering image #13 (3)
+==============================================================================
+I20261021 17:12:31.818009  4826 incremental_mapper.cc:495] => Image sees 496 / 1792 points
+I20261021 17:12:31.818260  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.818292  4826 misc.cc:198] 
+==============================================================================
+Registering image #12 (3)
+==============================================================================
+I20261021 17:12:31.818301  4826 incremental_mapper.cc:495] => Image sees 451 / 1635 points
+I20261021 17:12:31.818472  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.818493  4826 misc.cc:198] 
+==============================================================================
+Registering image #11 (3)
+==============================================================================
+I20261021 17:12:31.818501  4826 incremental_mapper.cc:495] => Image sees 433 / 1550 points
+I20261021 17:12:31.818676  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.818701  4826 misc.cc:198] 
+==============================================================================
+Registering image #10 (3)
+==============================================================================
+I20261021 17:12:31.818708  4826 incremental_mapper.cc:495] => Image sees 383 / 1359 points
+I20261021 17:12:31.818881  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.818908  4826 misc.cc:198] 
+==============================================================================
+Registering image #9 (3)
+==============================================================================
+I20261021 17:12:31.818935  4826 incremental_mapper.cc:495] => Image sees 317 / 1139 points
+I20261021 17:12:31.819058  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.819078  4826 misc.cc:198] 
+==============================================================================
+Registering image #8 (3)
+==============================================================================
+I20261021 17:12:31.819087  4826 incremental_mapper.cc:495] => Image sees 278 / 961 points
+I20261021 17:12:31.819190  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.819195  4826 misc.cc:198] 
+==============================================================================
+Registering image #7 (3)
+==============================================================================
+I20261021 17:12:31.819198  4826 incremental_mapper.cc:495] => Image sees 246 / 777 points
+I20261021 17:12:31.819280  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.819283  4826 misc.cc:198] 
+==============================================================================
+Registering image #6 (3)
+==============================================================================
+I20261021 17:12:31.819288  4826 incremental_mapper.cc:495] => Image sees 166 / 493 points
+I20261021 17:12:31.819343  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.819347  4826 misc.cc:198] 
+==============================================================================
+Registering image #5 (3)
+==============================================================================
+I20261021 17:12:31.819350  4826 incremental_mapper.cc:495] => Image sees 111 / 272 points
+I20261021 17:12:31.819388  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.819408  4826 misc.cc:198] 
+==============================================================================
+Registering image #4 (3)
+==============================================================================
+I20261021 17:12:31.819416  4826 incremental_mapper.cc:495] => Image sees 37 / 62 points
+I20261021 17:12:31.819444  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.819454  4826 misc.cc:198] 
+==============================================================================
+Registering image #31 (3)
+==============================================================================
+I20261021 17:12:31.819458  4826 incremental_mapper.cc:495] => Image sees 821 / 3123 points
+I20261021 17:12:31.819897  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.819947  4826 misc.cc:198] 
+==============================================================================
+Registering image #33 (3)
+==============================================================================
+I20261021 17:12:31.819963  4826 incremental_mapper.cc:495] => Image sees 820 / 3134 points
+I20261021 17:12:31.820310  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.820336  4826 misc.cc:198] 
+==============================================================================
+Registering image #34 (3)
+==============================================================================
+I20261021 17:12:31.820345  4826 incremental_mapper.cc:495] => Image sees 788 / 3143 points
+I20261021 17:12:31.820677  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.820701  4826 misc.cc:198] 
+==============================================================================
+Registering image #30 (3)
+==============================================================================
+I20261021 17:12:31.820709  4826 incremental_mapper.cc:495] => Image sees 778 / 3072 points
+I20261021 17:12:31.821070  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.821099  4826 misc.cc:198] 
+==============================================================================
+Registering image #35 (3)
+==============================================================================
+I20261021 17:12:31.821108  4826 incremental_mapper.cc:495] => Image sees 780 / 3164 points
+I20261021 17:12:31.821430  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.821453  4826 misc.cc:198] 
+==============================================================================
+Registering image #18 (3)
+==============================================================================
+I20261021 17:12:31.821462  4826 incremental_mapper.cc:495] => Image sees 771 / 2937 points
+I20261021 17:12:31.821759  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.821782  4826 misc.cc:198] 
+==============================================================================
+Registering image #28 (3)
+==============================================================================
+I20261021 17:12:31.821790  4826 incremental_mapper.cc:495] => Image sees 746 / 3006 points
+I20261021 17:12:31.822175  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.822207  4826 misc.cc:198] 
+==============================================================================
+Registering image #19 (3)
+==============================================================================
+I20261021 17:12:31.822216  4826 incremental_mapper.cc:495] => Image sees 757 / 2971 points
+I20261021 17:12:31.822518  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.822546  4826 misc.cc:198] 
+==============================================================================
+Registering image #27 (3)
+==============================================================================
+I20261021 17:12:31.822553  4826 incremental_mapper.cc:495] => Image sees 738 / 3099 points
+I20261021 17:12:31.822896  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.822923  4826 misc.cc:198] 
+==============================================================================
+Registering image #20 (3)
+==============================================================================
+I20261021 17:12:31.822932  4826 incremental_mapper.cc:495] => Image sees 746 / 2970 points
+I20261021 17:12:31.823215  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.823240  4826 misc.cc:198] 
+==============================================================================
+Registering image #25 (3)
+==============================================================================
+I20261021 17:12:31.823248  4826 incremental_mapper.cc:495] => Image sees 738 / 3085 points
+I20261021 17:12:31.823555  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.823580  4826 misc.cc:198] 
+==============================================================================
+Registering image #36 (3)
+==============================================================================
+I20261021 17:12:31.823588  4826 incremental_mapper.cc:495] => Image sees 748 / 3105 points
+I20261021 17:12:31.823935  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.823964  4826 misc.cc:198] 
+==============================================================================
+Registering image #23 (3)
+==============================================================================
+I20261021 17:12:31.823972  4826 incremental_mapper.cc:495] => Image sees 728 / 3034 points
+I20261021 17:12:31.824275  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.824299  4826 misc.cc:198] 
+==============================================================================
+Registering image #29 (3)
+==============================================================================
+I20261021 17:12:31.824335  4826 incremental_mapper.cc:495] => Image sees 745 / 2971 points
+I20261021 17:12:31.824656  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.824698  4826 misc.cc:198] 
+==============================================================================
+Registering image #26 (3)
+==============================================================================
+I20261021 17:12:31.824716  4826 incremental_mapper.cc:495] => Image sees 733 / 3071 points
+I20261021 17:12:31.825065  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.825094  4826 misc.cc:198] 
+==============================================================================
+Registering image #22 (3)
+==============================================================================
+I20261021 17:12:31.825103  4826 incremental_mapper.cc:495] => Image sees 728 / 3031 points
+I20261021 17:12:31.825398  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.825421  4826 misc.cc:198] 
+==============================================================================
+Registering image #21 (3)
+==============================================================================
+I20261021 17:12:31.825429  4826 incremental_mapper.cc:495] => Image sees 717 / 2949 points
+I20261021 17:12:31.825728  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.825752  4826 misc.cc:198] 
+==============================================================================
+Registering image #38 (3)
+==============================================================================
+I20261021 17:12:31.825760  4826 incremental_mapper.cc:495] => Image sees 720 / 3084 points
+I20261021 17:12:31.826140  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.826171  4826 misc.cc:198] 
+==============================================================================
+Registering image #37 (3)
+==============================================================================
+I20261021 17:12:31.826179  4826 incremental_mapper.cc:495] => Image sees 733 / 3098 points
+I20261021 17:12:31.826479  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.826501  4826 misc.cc:198] 
+==============================================================================
+Registering image #24 (3)
+==============================================================================
+I20261021 17:12:31.826509  4826 incremental_mapper.cc:495] => Image sees 724 / 3022 points
+I20261021 17:12:31.826844  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.826872  4826 misc.cc:198] 
+==============================================================================
+Registering image #16 (3)
+==============================================================================
+I20261021 17:12:31.826880  4826 incremental_mapper.cc:495] => Image sees 706 / 2466 points
+I20261021 17:12:31.827139  4826 incremental_mapper.cc:535] => Could not register, trying another image.
+I20261021 17:12:31.828997  4826 timer.cc:91] Elapsed time: 0.068 [minutes]
+elapsed 134 s

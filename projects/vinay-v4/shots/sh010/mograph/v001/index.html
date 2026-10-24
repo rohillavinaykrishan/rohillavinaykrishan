@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait-4k">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=2160, height=3840" />
+    <title>sh010 GROUND TRUTH - mograph v001</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script src="assets/data.js"></script>
+    <style>
+      @font-face { font-family: "Inter Tight"; src: url("assets/fonts/InterTight-500.ttf") format("truetype"); font-weight: 500; font-display: block; }
+      @font-face { font-family: "Inter Tight"; src: url("assets/fonts/InterTight-600.ttf") format("truetype"); font-weight: 600; font-display: block; }
+      @font-face { font-family: "Inter Tight"; src: url("assets/fonts/InterTight-700.ttf") format("truetype"); font-weight: 700; font-display: block; }
+      @font-face { font-family: "Inter Tight"; src: url("assets/fonts/InterTight-800.ttf") format("truetype"); font-weight: 800; font-display: block; }
+      @font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/JetBrainsMono-500.ttf") format("truetype"); font-weight: 500; font-display: block; }
+      @font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/JetBrainsMono-600.ttf") format("truetype"); font-weight: 600; font-display: block; }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 2160px; height: 3840px; overflow: hidden; background: #12100D; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #12100D; color: #F2EBDF; font-family: "Inter Tight", sans-serif; }
+
+      /* ---- ACT 0: credits (native type over a blurred roll underlay) ---- */
+      #credAct { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; overflow: hidden;
+        background: radial-gradient(ellipse 75% 55% at 50% 45%, #2A211A 0%, #1C1712 55%, #12100D 100%); }
+      #credUnder { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; transform-origin: 0 0; opacity: 0.3;
+        -webkit-mask-image: linear-gradient(180deg, transparent 0px, transparent 918px, #000 960px, #000 100%);
+        mask-image: linear-gradient(180deg, transparent 0px, transparent 918px, #000 960px, #000 100%); }
+      #cred { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; display: block; }
+      .cimg { position: absolute; left: 0; top: 0; display: block; }
+      .glowimg { }
+      #cHead { position: absolute; left: 0; top: 0; white-space: nowrap; font-family: "Inter Tight", sans-serif; font-weight: 700; letter-spacing: 0.12em;
+        color: #F2EBDF; text-align: center; text-shadow: 0 0 24px rgba(242,235,223,0.22); }
+      #cHair { position: absolute; left: 0; top: 0; height: 2px; background: #FF2E88; box-shadow: 0 0 24px rgba(255,46,136,0.6), 0 0 6px rgba(255,46,136,0.9); }
+      #cCol { position: absolute; left: 0; top: 0; width: 2px; background: rgba(242,235,223,0.18); }
+      .crow { position: absolute; left: 0; top: 0; white-space: nowrap; font-family: "Inter Tight", sans-serif; font-weight: 500; letter-spacing: 0.10em;
+        color: #F2EBDF; line-height: 1; }
+      .crow.l { text-align: right; }
+      #hisWrap { position: absolute; left: 0; top: 0; }
+      #brush { position: absolute; left: 0; top: 0; overflow: visible; filter: drop-shadow(0 0 40px rgba(255,46,136,0.55)); }
+      .his { position: absolute; left: 0; top: 0; white-space: nowrap; font-family: "Inter Tight", sans-serif; font-weight: 800; letter-spacing: 0.10em; line-height: 1; }
+      #hisB { color: #F2EBDF; text-shadow: 0 0 22px rgba(242,235,223,0.35); }
+      #hisI { color: #12100D; }
+      #lineup, #lineupGlow { position: absolute; left: 0; width: 2160px; display: block; }
+      #lineupGlow { opacity: 0.25; }
+      #credInk { position: absolute; left: 0; top: 0; width: 100px; height: 100px; background: #12100D; opacity: 0; }
+
+      /* ---- plate world ---- */
+      #bleedV { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; object-fit: cover; opacity: 0; display: block; }
+      #vig { position: absolute; inset: 0; pointer-events: none; opacity: 0;
+        background: radial-gradient(ellipse 72% 58% at 50% 50%, rgba(18,16,13,0) 0%, rgba(18,16,13,0.28) 55%, rgba(18,16,13,0.7) 100%); }
+      .spill { position: absolute; left: 0; top: 0; width: 100px; height: 100px; opacity: 0; box-shadow: 0 0 140px rgba(242,235,223,0.16); background: #12100D; }
+      .edge { position: absolute; left: 0; top: 0; width: 100px; height: 100px; opacity: 0; border: 2px solid rgba(242,235,223,0.25); pointer-events: none; }
+      #trackV { position: absolute; left: 0; top: 1468px; width: 2160px; height: 904px; display: block; }
+      .plane { position: absolute; left: 0; top: 0; width: 2160px; height: 904px; transform-origin: 0 0; opacity: 0; display: block; }
+      #finalBox { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; overflow: hidden; }
+      #finalV { position: absolute; left: 0; top: 0; width: 2808px; height: 1176px; display: block; }
+
+      /* ---- breakdown ---- */
+      .band { position: absolute; left: 0; width: 2160px; height: 904px; overflow: hidden; transform-origin: 50% 50%; background: #12100D;
+        box-shadow: 0 0 140px rgba(242,235,223,0.16); }
+      .band .bedge { position: absolute; inset: 0; border: 2px solid rgba(242,235,223,0.25); }
+      .band video { position: absolute; left: 0; top: 0; width: 2160px; height: 904px; display: block; }
+      #bdTrackV { filter: saturate(0.55) brightness(0.62); }
+      #b4edge { position: absolute; inset: 0; border: 6px solid #F2EBDF; opacity: 0; }
+      .blab { position: absolute; left: 0; top: 0; font-family: "JetBrains Mono", monospace; font-weight: 600; font-size: 34px; line-height: 34px; letter-spacing: 0.1em;
+        color: #F2EBDF; white-space: nowrap; padding: 15px 26px 13px 24px; border-radius: 40px; background: rgba(18,16,13,0.6); }
+      .blab .n { color: #FF2E88; margin-right: 18px; }
+
+      canvas.fx { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; }
+
+      /* ---- type ---- */
+      .hud { position: absolute; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 36px; line-height: 50px; letter-spacing: 0.06em;
+        color: rgba(242,235,223,0.85); white-space: pre; opacity: 0; }
+      .hud b { font-weight: 600; color: #F2EBDF; }
+      .hud .p { color: #FF2E88; }
+      .act { position: absolute; left: 110px; font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 76px; line-height: 76px; letter-spacing: 0.24em;
+        color: #F2EBDF; white-space: pre; opacity: 0; text-shadow: 0 0 26px rgba(18,16,13,0.6); }
+      .act .n { color: #FF2E88; text-shadow: 0 0 20px rgba(255,46,136,0.55); }
+      #lockTag { position: absolute; left: 0; top: 0; font-family: "JetBrains Mono", monospace; font-weight: 600; font-size: 40px; line-height: 40px; letter-spacing: 0.1em;
+        color: #12100D; background: #FF2E88; padding: 15px 24px 13px 22px; white-space: nowrap; opacity: 0; box-shadow: 0 0 30px rgba(255,46,136,0.55); }
+
+      /* ---- title ---- */
+      #title { position: absolute; inset: 0; opacity: 0; }
+      #tBg, #tFg { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; display: block; object-fit: cover; }
+      #tBg { transform-origin: 1080px 2150px; }
+      #tFg { transform-origin: 1080px 2170px; }
+      #tGrad { position: absolute; left: 0; top: 2300px; width: 2160px; height: 1540px;
+        background: linear-gradient(180deg, rgba(18,16,13,0) 0%, rgba(18,16,13,0.5) 30%, rgba(18,16,13,0.75) 100%); }
+      #tTop { position: absolute; left: 0; top: 0; width: 2160px; height: 1000px;
+        background: linear-gradient(180deg, rgba(18,16,13,0.5) 0%, rgba(18,16,13,0) 100%); }
+      #logoBox { position: absolute; left: 530px; top: 330px; width: 1100px; height: 587px; opacity: 0; transform-origin: 50% 50%;
+        -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 40%, transparent 60%, transparent 100%); mask-image: linear-gradient(90deg, #000 0%, #000 40%, transparent 60%, transparent 100%);
+        -webkit-mask-size: 300% 100%; mask-size: 300% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+      #logoBox img { position: absolute; left: 0; top: 0; width: 1100px; height: 587px; display: block; }
+      #logoGlowT { opacity: 0.3; }
+      #tRule { position: absolute; left: 870px; top: 2470px; width: 420px; height: 6px; background: #FF2E88; transform-origin: 0 50%; opacity: 0;
+        box-shadow: 0 0 24px rgba(255,46,136,0.6), 0 0 6px rgba(255,46,136,0.9); }
+      #tRole { position: absolute; left: 0; top: 2590px; width: 2160px; text-align: center; font-family: "Inter Tight", sans-serif; font-weight: 700;
+        font-size: 112px; line-height: 112px; letter-spacing: 0.2em; color: #F2EBDF; white-space: nowrap; opacity: 0; padding-left: 0.2em;
+        text-shadow: 0 0 28px rgba(242,235,223,0.35); }
+      #tStudio { position: absolute; left: 0; top: 2764px; width: 2160px; text-align: center; font-family: "Inter Tight", sans-serif; font-weight: 600;
+        font-size: 72px; line-height: 72px; letter-spacing: 0.4em; color: #CDB08A; white-space: nowrap; opacity: 0; padding-left: 0.4em;
+        text-shadow: 0 0 22px rgba(18,16,13,0.6); }
+
+      #flash { position: absolute; inset: 0; background: #F2EBDF; opacity: 0; pointer-events: none; }
+      #grain { position: absolute; left: -256px; top: -256px; width: 2672px; height: 4352px; opacity: 0.04; mix-blend-mode: overlay; pointer-events: none;
+        background-image: url("assets/grain.png"); background-repeat: repeat; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-fps="25" data-width="2160" data-height="3840">
+      <!-- ACT 0: credits -->
+      <div id="credAct">
+        <div id="credUnder"><video id="cred" src="assets/v/credits.mp4" muted playsinline data-start="0" data-duration="2.76" data-track-index="1"></video></div>
+        <img id="cLogoGlow" class="cimg glowimg" src="assets/sf_logo_glow.png" alt="" style="opacity:0.3" />
+        <img id="cLogo" class="cimg" src="assets/sf_logo_bone.png" alt="Street Fighter" />
+        <div id="cHead">Thanks to our talented teams!</div>
+        <div id="cHair"></div>
+        <div id="cCol"></div>
+        <div id="rows"></div>
+        <img id="lineupGlow" src="assets/lineup_glow.png" alt="" />
+        <img id="lineup" src="assets/lineup.png" alt="" />
+        <div id="credInk"></div>
+      </div>
+
+      <!-- plate world -->
+      <video id="bleedV" src="assets/v/bleed.mp4" muted playsinline data-start="0" data-duration="15" data-track-index="2"></video>
+      <div id="vig"></div>
+      <div id="spill" class="spill"></div>
+      <video id="trackV" src="assets/v/track_band.mp4" muted playsinline data-start="2.76" data-duration="2.08" data-track-index="3"></video>
+      <img id="planeA" class="plane" src="assets/plate_s51.png" alt="" />
+      <img id="planeB" class="plane" src="assets/plate_s00.png" alt="" />
+      <div id="finalBox">
+        <video id="finalV" src="assets/v/final_band_2808x1176.mp4" muted playsinline data-start="6.76" data-duration="2.08" data-track-index="4"></video>
+      </div>
+      <div id="edge" class="edge"></div>
+
+      <!-- breakdown stack -->
+      <div id="b1" class="band" style="top:64px"><video id="bdPlateV" src="assets/v/bd_plate.mp4" muted playsinline data-start="8.84" data-duration="2.16" data-track-index="5"></video><div class="bedge"></div></div>
+      <div id="b2" class="band" style="top:1000px"><video id="bdTrackV" src="assets/v/bd_track.mp4" muted playsinline data-start="8.84" data-duration="2.16" data-track-index="6"></video><div class="bedge"></div></div>
+      <div id="b3" class="band" style="top:1936px"><video id="bdCgV" src="assets/v/bd_cg.mp4" muted playsinline data-start="8.84" data-duration="2.16" data-track-index="7"></video><div class="bedge"></div></div>
+      <div id="b4" class="band" style="top:2872px"><video id="bdFinalV" src="assets/v/bd_final.mp4" muted playsinline data-start="8.84" data-duration="2.16" data-track-index="8"></video><div class="bedge"></div><div id="b4edge"></div></div>
+
+      <canvas id="fx" class="fx" width="2160" height="3840"></canvas>
+
+      <!-- his row sits above the canvas so the TRK bracket can frame it -->
+      <div id="hisWrap">
+        <svg id="brush" xmlns="http://www.w3.org/2000/svg"></svg>
+        <div id="hisB" class="his">VINAY KRISHAN ROHILLA</div>
+        <div id="hisI" class="his">VINAY KRISHAN ROHILLA</div>
+      </div>
+
+      <div id="bl1" class="blab"><span class="n">A</span>PLATE</div>
+      <div id="bl2" class="blab"><span class="n">B</span>TRACK + SOLVE</div>
+      <div id="bl3" class="blab"><span class="n">C</span>CG</div>
+      <div id="bl4" class="blab"><span class="n">D</span>FINAL</div>
+      <div id="bl0" class="blab"><span class="n">04</span>BREAKDOWN</div>
+
+      <!-- HUD + act labels -->
+      <div id="hudTL" class="hud" style="left:110px; top:300px"></div>
+      <div id="hudTR" class="hud" style="right:110px; top:300px; text-align:right"></div>
+      <div id="hudUnder" class="hud" style="left:110px; top:2420px"></div>
+      <div id="hudUnderR" class="hud" style="right:110px; top:2420px; text-align:right"></div>
+      <div id="hudSolve" class="hud" style="left:110px; top:2880px"></div>
+      <div id="trkLab" class="hud" style="font-weight:600; color:#FF2E88; left:0; top:0"></div>
+      <div id="act1" class="act" style="top:1350px"><span class="n">01</span>  TRACK</div>
+      <div id="act2" class="act" style="top:470px"><span class="n">02</span>  SOLVE</div>
+      <div id="act3" class="act" style="top:1200px"><span class="n">03</span>  FINAL</div>
+      <div id="lockTag">+ LOCKED</div>
+
+      <!-- TITLE -->
+      <div id="title">
+        <img id="tBg" src="assets/title_bg.png" alt="" />
+        <img id="tFg" src="assets/title_fg.png" alt="" />
+        <div id="tTop"></div>
+        <div id="tGrad"></div>
+        <div id="logoBox"><img id="logoGlowT" src="assets/sf_logo_glow.png" alt="" /><img id="logo" src="assets/sf_logo_bone.png" alt="Street Fighter" /></div>
+        <div id="tRule"></div>
+        <div id="tRole">SR. MATCHMOVE ARTIST</div>
+        <div id="tStudio">STREET FIGHTER&#160;&#160;&#183;&#160;&#160;DNEG</div>
+      </div>
+
+      <div id="flash"></div>
+      <div id="grain"></div>
+    </div>
+
+    <script>
+      // ============ GROUND TRUTH - every visual is a pure function of the frame (no rAF, no clocks, seeded noise only) ============
+      const FPS = 25, W = 2160, H = 3840;
+      const PINK = "#FF2E88", BONE = "242,235,223", SAGE = "125,135,92", INKc = "18,16,13";
+      const D = window.D;
+      const PW = D.W, PH = D.H, PF = D.f, PCX = D.cx, PCY = D.cy, K1 = D.k1;   // plate camera (1280x536 px)
+      const KB = 2160 / PW;                 // band scale 1.6875
+      const KF = 2808 / PW;                 // FINAL scale 2.19375
+      const BAND_TOP = 1920 - 904 / 2;      // 1468
+      const FIN_TOP = 1920 - 1176 / 2;      // 1332
+      const BD_TOP = [64, 1000, 1936, 2872];
+
+      const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+      const lerp = (a, b, k) => a + (b - a) * k;
+      const ramp = (x, a, b) => clamp((x - a) / (b - a), 0, 1);
+      const eIOC = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+      const eOC = (x) => 1 - Math.pow(1 - x, 3);
+      const eIC = (x) => x * x * x;
+      const eIOS = (x) => -(Math.cos(Math.PI * x) - 1) / 2;
+      const eOExpo = (x) => (x >= 1 ? 1 : 1 - Math.pow(2, -10 * x));
+      const eIOQ = (x) => (x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 4) / 2);
+      function mulberry32(a) { return function () { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+      const $ = (id) => document.getElementById(id);
+      const cache = new Map();
+      function S(el, prop, val) { let m = cache.get(el); if (!m) { m = {}; cache.set(el, m); } if (m[prop] !== val) { m[prop] = val; el.style[prop] = val; } }
+      function T(el, txt) { let m = cache.get(el); if (!m) { m = {}; cache.set(el, m); } if (m._t !== txt) { m._t = txt; el.innerHTML = txt; } }
+      const fmtInt = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      const minus = (s) => String(s).replace("-", "−");
+      const pad = (n, k) => String(n).padStart(k, "0");
+
+      // ---------------- data ----------------
+      const ST = D.stats;
+      const NPT = D.pid.length;
+      const PTS = D.pts;                                    // x,y,z,r,g,b,ground  (7 per point)
+      const CAMS = D.cams.map((c) => ({ R: c.R, t: c.t, C: c.C, src: c.src }));
+      const TR = D.tracks;                                  // per s: [u,v,id,...] plate px
+      const TRMAP = TR.map((a) => { const m = new Map(); for (let i = 0; i < a.length; i += 3) m.set(a[i + 2], i); return m; });
+      const ANC = D.anchor.frames;                          // per s: corners{}, centre, crop_cx (plate px)
+      const AX = D.anchor.loc[0], AY = D.anchor.loc[1], AR = D.anchor.rot * Math.PI / 180, TOPZ = D.anchor.top;
+      const ca = Math.cos(AR), sa = Math.sin(AR);
+      const a2w = (lx, ly, lz) => [AX + ca * lx - sa * ly, AY + sa * lx + ca * ly, lz];
+      const hash = (id) => ((Math.imul(id, 2654435761) >>> 0) % 1000) / 1000;
+
+      // monument wireframe: glyph contours (anchor-local x,z) -> front / back faces + sharp-corner connectors + plinth
+      const MONO = D.mono;
+      const WIRE = { front: [], back: [], conn: [], plinth: [] };
+      (function buildWire() {
+        for (const c of MONO) {
+          WIRE.front.push(c.map(([x, z]) => [x, -0.15, z]));
+          WIRE.back.push(c.map(([x, z]) => [x, 0.15, z]));
+          const n = c.length;
+          for (let i = 0; i < n; i++) {
+            const p0 = c[(i - 1 + n) % n], p1 = c[i], p2 = c[(i + 1) % n];
+            const ax = p1[0] - p0[0], az = p1[1] - p0[1], bx = p2[0] - p1[0], bz = p2[1] - p1[1];
+            const la = Math.hypot(ax, az), lb = Math.hypot(bx, bz); if (la < 1e-4 || lb < 1e-4) continue;
+            const cs = (ax * bx + az * bz) / (la * lb);
+            if (cs < 0.82) WIRE.conn.push([[p1[0], -0.15, p1[1]], [p1[0], 0.15, p1[1]]]);
+          }
+        }
+        const X = 3.9, Y = 0.5, Z = 0.24;
+        const b = [[-X, -Y, 0], [X, -Y, 0], [X, Y, 0], [-X, Y, 0]], t = b.map(([x, y]) => [x, y, Z]);
+        WIRE.plinth.push(b.concat([b[0]]), t.concat([t[0]]));
+        for (let i = 0; i < 4; i++) WIRE.plinth.push([b[i], t[i]]);
+      })();
+
+      // ---------------- math: 3x3 / quaternion ----------------
+      const mT = (R) => [R[0], R[3], R[6], R[1], R[4], R[7], R[2], R[5], R[8]];
+      const mv = (R, v) => [R[0] * v[0] + R[1] * v[1] + R[2] * v[2], R[3] * v[0] + R[4] * v[1] + R[5] * v[2], R[6] * v[0] + R[7] * v[1] + R[8] * v[2]];
+      const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
+      const add = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
+      const scl = (a, k) => [a[0] * k, a[1] * k, a[2] * k];
+      const crs = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+      const nrm = (a) => { const l = Math.hypot(a[0], a[1], a[2]); return [a[0] / l, a[1] / l, a[2] / l]; };
+      const lerp3 = (a, b, k) => [lerp(a[0], b[0], k), lerp(a[1], b[1], k), lerp(a[2], b[2], k)];
+      function m2q(R) { const [a, b, c, d, e, f, g, h, i] = R; const tr = a + e + i; let w, x, y, z;
+        if (tr > 0) { const s = Math.sqrt(tr + 1) * 2; w = 0.25 * s; x = (h - f) / s; y = (c - g) / s; z = (d - b) / s; }
+        else if (a > e && a > i) { const s = Math.sqrt(1 + a - e - i) * 2; w = (h - f) / s; x = 0.25 * s; y = (b + d) / s; z = (c + g) / s; }
+        else if (e > i) { const s = Math.sqrt(1 + e - a - i) * 2; w = (c - g) / s; x = (b + d) / s; y = 0.25 * s; z = (f + h) / s; }
+        else { const s = Math.sqrt(1 + i - a - e) * 2; w = (d - b) / s; x = (c + g) / s; y = (f + h) / s; z = 0.25 * s; }
+        return [w, x, y, z]; }
+      function q2m(q) { const [w, x, y, z] = q; return [1 - 2 * (y * y + z * z), 2 * (x * y - z * w), 2 * (x * z + y * w), 2 * (x * y + z * w), 1 - 2 * (x * x + z * z), 2 * (y * z - x * w), 2 * (x * z - y * w), 2 * (y * z + x * w), 1 - 2 * (x * x + y * y)]; }
+      function slerp(a, b, t) { let d = a[0] * b[0] + a[1] * b[1] + a[2] * b[2] + a[3] * b[3]; if (d < 0) { b = b.map((v) => -v); d = -d; }
+        if (d > 0.9995) { const r = a.map((v, i) => v + (b[i] - v) * t); const l = Math.hypot(...r); return r.map((v) => v / l); }
+        const th = Math.acos(d), s = Math.sin(th); return a.map((v, i) => (Math.sin((1 - t) * th) * v + Math.sin(t * th) * b[i]) / s); }
+      function lookAt(C, Tg) { const fw = nrm(sub(Tg, C)); const rt = nrm(crs(fw, [0, 0, 1])); const dn = crs(fw, rt);
+        return { C, R: [rt[0], rt[1], rt[2], dn[0], dn[1], dn[2], fw[0], fw[1], fw[2]] }; }
+      const poseOf = (s) => ({ C: CAMS[s].C, R: CAMS[s].R });
+      function poseLerp(A, B, k) { return { C: lerp3(A.C, B.C, k), R: q2m(slerp(m2q(A.R), m2q(B.R), k)) }; }
+
+      // ---------------- generic camera: world -> screen ----------------
+      // cam = {R (world->cam), C, fx, px, py, k1 (applied in normalised coords), near}
+      function camPlate(s, fx, px, py) { const c = CAMS[s]; return { R: c.R, C: c.C, fx, px, py, k1: K1, near: 0.2 }; }
+      function bandCam(s, ox, oy, k) { return camPlate(s, PF * k, ox + PCX * k, oy + PCY * k); }
+      function toCam(cam, X) { return mv(cam.R, sub(X, cam.C)); }
+      // SIMPLE_RADIAL is only valid for r2 < 1 (it folds back past r = 1.30): outside that, no projection
+      function projC(cam, Xc) { const x = Xc[0] / Xc[2], y = Xc[1] / Xc[2], r2 = x * x + y * y;
+        if (cam.k1 !== 0 && r2 >= 1) return null; const d = 1 + cam.k1 * r2; return [cam.px + cam.fx * x * d, cam.py + cam.fx * y * d]; }
+      function proj(cam, X) { const Xc = toCam(cam, X); if (Xc[2] <= cam.near) return null; return projC(cam, Xc); }
+      // polyline: near-plane clipping in camera space, then subdivision (lens curvature) with breaks where the lens model is invalid
+      function strokePoly(ctx, cam, P, closed, maxSeg) {
+        const pts = closed ? P.concat([P[0]]) : P; let pen = false;
+        ctx.beginPath();
+        for (let i = 0; i < pts.length - 1; i++) {
+          let a = toCam(cam, pts[i]), b = toCam(cam, pts[i + 1]);
+          if (a[2] <= cam.near && b[2] <= cam.near) { pen = false; continue; }
+          let cutB = false;
+          if (a[2] <= cam.near) { const k = (cam.near - a[2]) / (b[2] - a[2]); a = lerp3(a, b, k + 1e-4); pen = false; }
+          if (b[2] <= cam.near) { const k = (cam.near - a[2]) / (b[2] - a[2]); b = lerp3(a, b, k - 1e-4); cutB = true; }
+          const L = Math.hypot(b[0] - a[0], b[1] - a[1], b[2] - a[2]); const n = maxSeg ? Math.max(1, Math.ceil(L / maxSeg)) : 1;
+          for (let j = pen ? 1 : 0; j <= n; j++) {
+            const q = projC(cam, lerp3(a, b, j / n));
+            if (!q) { pen = false; continue; }
+            if (!pen) { ctx.moveTo(q[0], q[1]); pen = true; } else ctx.lineTo(q[0], q[1]);
+          }
+          if (cutB) pen = false;
+        }
+        ctx.stroke();
+      }
+
+      // ---------------- drawing primitives ----------------
+      const cv = $("fx"), ctx = cv.getContext("2d");
+      function plus(x, y, r, lw, col) { ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.beginPath(); ctx.moveTo(x - r, y); ctx.lineTo(x + r, y); ctx.moveTo(x, y - r); ctx.lineTo(x, y + r); ctx.stroke(); }
+      function corner(x, y, dx, dy, arm, lw) { ctx.beginPath(); ctx.moveTo(x + dx * arm, y); ctx.lineTo(x, y); ctx.lineTo(x, y + dy * arm); ctx.stroke(); }
+      function bracket(x0, y0, x1, y1, arm, lw, col) { ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.lineCap = "square";
+        corner(x0, y0, 1, 1, arm); corner(x1, y0, -1, 1, arm); corner(x0, y1, 1, -1, arm); corner(x1, y1, -1, -1, arm); ctx.lineCap = "butt"; }
+
+      // tracks of plate frame s, mapped by (ox, oy, k); returns the count drawn
+      function drawTracks(s, ox, oy, k, alpha, density, clip) {
+        const a = TR[s]; let n = 0; if (alpha <= 0.001) return 0;
+        ctx.save(); if (clip) { ctx.beginPath(); ctx.rect(clip[0], clip[1], clip[2], clip[3]); ctx.clip(); }
+        // trails (4 frames)
+        ctx.lineWidth = 2.5; ctx.strokeStyle = `rgba(255,46,136,${(alpha * 0.55).toFixed(3)})`; ctx.beginPath();
+        for (let i = 0; i < a.length; i += 3) {
+          const id = a[i + 2]; if (hash(id) > density) continue;
+          let px = ox + a[i] * k, py = oy + a[i + 1] * k; let started = false;
+          for (let b = 1; b <= 4 && s - b >= 0; b++) { const j = TRMAP[s - b].get(id); if (j === undefined) break;
+            const qx = ox + TR[s - b][j] * k, qy = oy + TR[s - b][j + 1] * k;
+            if (!started) { ctx.moveTo(px, py); started = true; } ctx.lineTo(qx, qy); px = qx; py = qy; }
+        }
+        ctx.stroke();
+        ctx.lineWidth = 3; ctx.strokeStyle = `rgba(255,46,136,${alpha.toFixed(3)})`; ctx.beginPath();
+        ctx.shadowColor = `rgba(255,46,136,${(0.7 * alpha).toFixed(3)})`; ctx.shadowBlur = 10;
+        const r = 8;
+        for (let i = 0; i < a.length; i += 3) {
+          if (hash(a[i + 2]) > density) continue; n++;
+          const x = ox + a[i] * k, y = oy + a[i + 1] * k;
+          ctx.moveTo(x - r, y); ctx.lineTo(x + r, y); ctx.moveTo(x, y - r); ctx.lineTo(x, y + r);
+        }
+        ctx.stroke(); ctx.restore(); return n;
+      }
+
+      // 1 m ground grid; reveal radius R (m) from the monument mark; alpha falls with distance from the camera
+      const GX = [-14, 14], GY = [-3, 42];
+      function drawGrid(cam, alpha, R, lw, clip, fc) {
+        if (alpha <= 0.001) return;
+        ctx.save(); if (clip) { ctx.beginPath(); ctx.rect(clip[0], clip[1], clip[2], clip[3]); ctx.clip(); }
+        ctx.lineWidth = lw; const o = [AX, AY - 4];
+        const segs = [];
+        for (let x = GX[0]; x <= GX[1]; x++) for (let y = GY[0]; y < GY[1]; y++) segs.push([[x, y, 0], [x, y + 1, 0]]);
+        for (let y = GY[0]; y <= GY[1]; y++) for (let x = GX[0]; x < GX[1]; x++) segs.push([[x, y, 0], [x + 1, y, 0]]);
+        // bucket by alpha for fewer strokes
+        const buckets = new Map();
+        for (const sg of segs) {
+          const m = [(sg[0][0] + sg[1][0]) / 2, (sg[0][1] + sg[1][1]) / 2, 0];
+          const dr = Math.hypot(m[0] - o[0], m[1] - o[1]); if (dr > R) continue;
+          const fp = fc || cam.C; const dc = Math.hypot(m[0] - fp[0], m[1] - fp[1]);
+          let a = alpha * (fc ? clamp(1 - (dc - 6) / 18, 0, 1) : clamp(1 - (dc - 4) / 34, 0, 1)) * clamp((R - dr) / 2.5, 0, 1);
+          if (a < 0.01) continue; a = Math.round(a * 20) / 20;
+          if (!buckets.has(a)) buckets.set(a, []); buckets.get(a).push(sg);
+        }
+        for (const [a, list] of buckets) {
+          ctx.strokeStyle = `rgba(${SAGE},${a})`;
+          for (const sg of list) strokePoly(ctx, cam, sg, false, 0.5);
+        }
+        ctx.restore();
+      }
+      // a brighter line set for readability over the bright sand
+      function drawGridOver(cam, alpha, R, clip) { drawGrid(cam, alpha, R, 3, clip); }
+
+      function drawWire(cam, alpha, zoff, prog, clip) {
+        if (alpha <= 0.001) return;
+        ctx.save(); if (clip) { ctx.beginPath(); ctx.rect(clip[0], clip[1], clip[2], clip[3]); ctx.clip(); }
+        const W3 = (p) => a2w(p[0], p[1], p[2] + zoff);
+        const nF = Math.ceil(WIRE.front.length * prog);
+        ctx.lineJoin = "round";
+        ctx.strokeStyle = `rgba(255,46,136,${(alpha * 0.35).toFixed(3)})`; ctx.lineWidth = 2;
+        for (let i = 0; i < nF; i++) strokePoly(ctx, cam, WIRE.back[i].map(W3), true, 0);
+        for (const c of WIRE.conn) if (prog >= 1) strokePoly(ctx, cam, c.map(W3), false, 0);
+        ctx.strokeStyle = `rgba(255,46,136,${alpha.toFixed(3)})`; ctx.lineWidth = 3;
+        for (let i = 0; i < nF; i++) strokePoly(ctx, cam, WIRE.front[i].map(W3), true, 0);
+        for (const p of WIRE.plinth) strokePoly(ctx, cam, p.map(W3), false, 0.5);
+        ctx.restore();
+      }
+
+      // ---------------- SOLVE viewport ----------------
+      const VF_BAND = PF * KB;                 // 1685.6: a plate camera seen through the band
+      const T0 = (function () {                 // orbit target: median of the solved ground points (within 40 m), pulled toward the camera path
+        const xs = [], ys = [];
+        for (let i = 0; i < NPT; i++) { const o = i * 7; if (PTS[o + 6] && Math.hypot(PTS[o], PTS[o + 1]) < 40) { xs.push(PTS[o]); ys.push(PTS[o + 1]); } }
+        xs.sort((a, b) => a - b); ys.sort((a, b) => a - b);
+        return [xs[xs.length >> 1] * 0.8, ys[ys.length >> 1] * 0.8, 0.3];
+      })();
+      const P51 = poseOf(51), P0 = poseOf(0);
+      const ORB = (function () {
+        const d = nrm([P51.C[0] - T0[0], P51.C[1] - T0[1], 0]);
+        const r = Math.hypot(P51.C[0] - T0[0], P51.C[1] - T0[1]) + 6.5;
+        const th0 = Math.atan2(d[1], d[0]);
+        const d0 = Math.atan2(P0.C[1] - T0[1], P0.C[0] - T0[0]);
+        let dd = d0 - th0; while (dd > Math.PI) dd -= 2 * Math.PI; while (dd < -Math.PI) dd += 2 * Math.PI;
+        const sgn = dd >= 0 ? 1 : -1;
+        return { r, th0, sgn, h: 8.5 };
+      })();
+      function orbitPose(u) {   // u 0..1 over the orbit
+        const th = ORB.th0 + ORB.sgn * (40 * Math.PI / 180) * u;
+        const r = ORB.r - 2.0 * u, h = ORB.h - 1.0 * u;
+        const C = [T0[0] + r * Math.cos(th), T0[1] + r * Math.sin(th), h];
+        return lookAt(C, [T0[0], T0[1] - 1.0, T0[2]]);
+      }
+      // the viewer camera as a function of the frame (continuous F)
+      function viewer(F) {
+        let pose, fx = VF_BAND, px = 1080, py = 1920, kw = 0;
+        if (F < 137) {                                  // TILT: from camera 52's exact pose back to the orbit start
+          const u = eIOC(ramp(F, 121, 137));
+          pose = poseLerp(P51, orbitPose(0), u); fx = lerp(VF_BAND, 1450, u); kw = 1 - ramp(F, 121, 125);
+          pose.C = add(pose.C, scl([0, 0, 1], 0.0));
+        } else if (F < 159) {                           // ORBIT ~40 deg
+          pose = orbitPose(eIOS(ramp(F, 137, 159))); fx = 1450;
+        } else {                                        // REGISTRATION: glide into camera s0, then the x1.30 push
+          const u = eIOQ(ramp(F, 159, 165));
+          pose = poseLerp(orbitPose(1), P0, u); fx = lerp(1450, VF_BAND, u); kw = u;
+          const v = eIC(ramp(F, 166, 169));
+          const k0 = finK(169), cx0 = finCX(0, k0);
+          fx = lerp(fx, PF * k0, v); px = lerp(1080, 1080 + (PCX - cx0) * k0, v);
+        }
+        return { R: pose.R, C: pose.C, fx, px, py, k1: K1 * kw, near: 0.12 };
+      }
+      // plate image plane of camera s at depth d -> CSS matrix3d on an <img> 2160x904
+      function planeCorners(s, d) {
+        const c = CAMS[s], Rt = mT(c.R);
+        return [[0, 0], [PW, 0], [PW, PH], [0, PH]].map(([u, v]) => add(c.C, mv(Rt, [(u - PCX) / PF * d, (v - PCY) / PF * d, d])));
+      }
+      function homography(src, dst) {
+        const A = [], b = [];
+        for (let i = 0; i < 4; i++) { const [x, y] = src[i], [X, Y] = dst[i];
+          A.push([x, y, 1, 0, 0, 0, -x * X, -y * X]); b.push(X); A.push([0, 0, 0, x, y, 1, -x * Y, -y * Y]); b.push(Y); }
+        for (let i = 0; i < 8; i++) { let p = i; for (let r = i + 1; r < 8; r++) if (Math.abs(A[r][i]) > Math.abs(A[p][i])) p = r;
+          [A[i], A[p]] = [A[p], A[i]]; [b[i], b[p]] = [b[p], b[i]];
+          for (let r = 0; r < 8; r++) if (r !== i) { const k = A[r][i] / A[i][i]; for (let c = i; c < 8; c++) A[r][c] -= k * A[i][c]; b[r] -= k * b[i]; } }
+        const h = b.map((v, i) => v / A[i][i]);
+        return [h[0], h[1], h[2], h[3], h[4], h[5], h[6], h[7], 1];
+      }
+      function placePlane(el, cam, s, d, op) {
+        if (op <= 0.001) { S(el, "opacity", "0"); return; }
+        const P = planeCorners(s, d).map((X) => { const Xc = toCam(cam, X); return Xc[2] > cam.near ? [cam.px + cam.fx * Xc[0] / Xc[2], cam.py + cam.fx * Xc[1] / Xc[2]] : null; });
+        if (P.some((p) => !p)) { S(el, "opacity", "0"); return; }
+        const h = homography([[0, 0], [2160, 0], [2160, 904], [0, 904]], P);
+        const m = [h[0], h[3], 0, h[6], h[1], h[4], 0, h[7], 0, 0, 1, 0, h[2], h[5], 0, h[8]];
+        S(el, "transform", "matrix3d(" + m.map((v) => v.toFixed(8)).join(",") + ")"); S(el, "opacity", op.toFixed(3));
+      }
+      function drawFrustum(cam, s, d, col, lw) {
+        const P = planeCorners(s, d), C = CAMS[s].C;
+        ctx.strokeStyle = col; ctx.lineWidth = lw;
+        strokePoly(ctx, cam, P, true, 0);
+        for (const X of P) strokePoly(ctx, cam, [C, X], false, 0);
+      }
+      const PCOL = [], PLUM = []; for (let i = 0; i < NPT; i++) { const o = i * 7; const b = (c) => Math.min(255, Math.round(c * 1.25));
+        PCOL.push(`rgb(${b(PTS[o + 3])},${b(PTS[o + 4])},${b(PTS[o + 5])})`); PLUM.push(0.3 * PTS[o + 3] + 0.59 * PTS[o + 4] + 0.11 * PTS[o + 5]); }
+      const bloomCv = document.createElement("canvas"); bloomCv.width = 540; bloomCv.height = 960; const bctx = bloomCv.getContext("2d");
+      function drawCloud(cam, alpha, sizeK) {
+        if (alpha <= 0.001) return;
+        const vis = [];
+        for (let i = 0; i < NPT; i++) {
+          if (PLUM[i] < 45) continue;                                   // near-black points read as holes, not light
+          const o = i * 7; const Xc = toCam(cam, [PTS[o], PTS[o + 1], PTS[o + 2]]); if (Xc[2] <= cam.near) continue;
+          const q = projC(cam, Xc); if (!q) continue; if (q[0] < -30 || q[0] > W + 30 || q[1] < -30 || q[1] > H + 30) continue;
+          vis.push(i, q[0], q[1], clamp(sizeK * cam.fx / Xc[2], 5, 12));
+        }
+        // bloom: quarter-res pass, blurred and added (round and soft, ~14 px)
+        bctx.clearRect(0, 0, 540, 960);
+        for (let j = 0; j < vis.length; j += 4) { bctx.fillStyle = PCOL[vis[j]]; const z = vis[j + 3] * 0.55; bctx.fillRect(vis[j + 1] / 4 - z / 2, vis[j + 2] / 4 - z / 2, z, z); }
+        ctx.save(); ctx.globalCompositeOperation = "lighter";
+        ctx.globalAlpha = 0.55 * alpha; ctx.filter = "blur(10px)"; ctx.drawImage(bloomCv, 0, 0, W, H); ctx.filter = "none";
+        ctx.globalAlpha = alpha;                                         // core pass, 5 px
+        for (let j = 0; j < vis.length; j += 4) { ctx.fillStyle = PCOL[vis[j]]; const z = vis[j + 3]; ctx.fillRect(vis[j + 1] - z / 2, vis[j + 2] - z / 2, z, z); }
+        ctx.restore();
+      }
+
+      // ---------------- FINAL window: x1.30 -> x1.55 (f169-220), centred on the monument, kept inside the plate ----------------
+      function finK(F) { return KB * lerp(1.30, 1.55, eIOS(ramp(F, 169, 220))); }
+      function finCX(s, k) { return clamp(D.fcx[s], 1080 / k, PW - 1080 / k); }
+
+      // ---------------- DOM refs ----------------
+      const E = {};
+      ["credAct", "credUnder", "cLogo", "cLogoGlow", "cHead", "cHair", "cCol", "rows", "lineup", "lineupGlow", "credInk", "hisWrap", "brush", "hisB", "hisI",
+       "bleedV", "vig", "spill", "edge", "trackV", "planeA", "planeB", "finalBox", "finalV", "b1", "b2", "b3", "b4", "b4edge",
+       "bl0", "bl1", "bl2", "bl3", "bl4", "hudTL", "hudTR", "hudUnder", "hudUnderR", "hudSolve", "trkLab", "act1", "act2", "act3", "lockTag",
+       "title", "tBg", "tFg", "logoBox", "tRule", "tRole", "tStudio", "flash", "grain"].forEach((k) => (E[k] = $(k)));
+      function movieTC(F) { const fr = 1685 + Math.min(F, 68); const s = Math.floor(fr / 25); return `00:${pad(Math.floor(s / 60), 2)}:${pad(s % 60, 2)}:${pad(fr % 25, 2)}`; }
+
+      // ---------------- credits: the verbatim list as native type ----------------
+      const CR = D.cred.rows, HIS = D.cred.his;
+      const GUT = 1084.5;                       // canvas x of the column gutter (src 361.5 x3) -> screen 1080
+      const XL = 346 * 3, XR = 377 * 3;
+      const VFIX = -0.125;                     // measured (row-only and underlay-only overlay diffs at f7/f37/f55): +5 px puts the type on the roll glyphs
+      const ROWS = [];
+      (function buildRows() {
+        for (let i = 0; i < CR.length; i++) {
+          const r = { i, l: null, r: null };
+          if (CR[i][0]) { const d = document.createElement("div"); d.className = "crow l"; d.textContent = CR[i][0]; E.rows.appendChild(d); r.l = d; }
+          if (CR[i][1] && i !== HIS) { const d = document.createElement("div"); d.className = "crow"; d.textContent = CR[i][1]; E.rows.appendChild(d); r.r = d; }
+          ROWS.push(r);
+        }
+      })();
+      let HIS_W0 = 0;                           // his name's visible width at 49 px (measured once, after fonts load)
+      const PL_H0 = 84, PL_M = 200, PL_MV = 70; // brush plate height and SVG margins (px at push 1.0)
+      let PL_W0 = 0;
+      function buildBrush() {
+        E.hisB.style.fontSize = "49px";
+        HIS_W0 = E.hisB.offsetWidth - 0.1 * 49;
+        PL_W0 = 1.15 * HIS_W0;
+        const w = PL_W0, h = PL_H0, vw = w + 2 * PL_M, vh = h + 2 * PL_MV;
+        // rough-edged pink plate + dry-brush streaks past each end; fixed seed, no per-frame noise
+        E.brush.setAttribute("viewBox", `${-PL_M} ${-PL_MV} ${vw} ${vh}`);
+        E.brush.setAttribute("preserveAspectRatio", "none");
+        E.brush.innerHTML = `
+          <defs>
+            <filter id="rough" x="-20%" y="-60%" width="140%" height="220%" color-interpolation-filters="sRGB">
+              <feTurbulence type="fractalNoise" baseFrequency="0.02 0.35" numOctaves="3" seed="7" result="n"/>
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="26" xChannelSelector="R" yChannelSelector="G" result="d"/>
+              <feTurbulence type="fractalNoise" baseFrequency="0.004 0.42" numOctaves="2" seed="11" result="dry"/>
+              <feColorMatrix in="dry" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 2.05" result="dryA"/>
+              <feComposite in="d" in2="dryA" operator="in"/>
+            </filter>
+            <clipPath id="wipe"><rect id="wipeR" x="${-PL_M}" y="${-PL_MV}" width="0" height="${vh}"/></clipPath>
+          </defs>
+          <g clip-path="url(#wipe)"><g filter="url(#rough)" fill="#FF2E88">
+            <rect x="0" y="0" width="${w}" height="${h}" rx="6"/>
+            <rect x="-120" y="9" width="170" height="13" opacity="0.9"/>
+            <rect x="-86" y="60" width="130" height="9" opacity="0.8"/>
+            <rect x="-48" y="34" width="70" height="6" opacity="0.7"/>
+            <rect x="${w - 50}" y="16" width="170" height="12" opacity="0.9"/>
+            <rect x="${w - 30}" y="58" width="132" height="10" opacity="0.8"/>
+            <rect x="${w - 20}" y="40" width="80" height="6" opacity="0.7"/>
+          </g></g>`;
+      }
+
+      // ================= RENDER =================
+      function render(t) {
+        const F = Math.min(374, Math.floor(t * FPS + 1e-4));
+        ctx.clearRect(0, 0, W, H);
+        const act = F <= 68 ? 0 : F <= 120 ? 1 : F <= 136 ? 2 : F <= 168 ? 3 : F <= 220 ? 4 : F <= 274 ? 5 : 6;
+        let spill = null, spillA = 0;
+
+        // ---------------------------------------------------------------- ACT 0: CREDITS (f0-68)
+        if (act === 0) {
+          S(E.credAct, "opacity", "1");
+          const r = D.row[F];
+          const P0y = r.y * 3;
+          const s = lerp(1.0, 1.22, eIOS(ramp(F, 0, 68)));
+          const ty = lerp(P0y, 1920, eIOS(ramp(F, 0, 56)));
+          const X = (xc) => 1080 + s * (xc - GUT), Y = (yc) => ty + s * (yc - P0y);
+          S(E.credUnder, "transform", `translate(${(1080 - s * GUT).toFixed(2)}px,${(ty - s * P0y).toFixed(2)}px) scale(${s.toFixed(5)})`);
+          // logo (bone) + rim glow on the source logo's box (162-551 x 35-235 src)
+          const lw = 1203 * s, lx = X(468), ly = Y(87);
+          for (const el of [E.cLogo, E.cLogoGlow]) { S(el, "width", lw.toFixed(1) + "px"); S(el, "transform", `translate(${lx.toFixed(1)}px,${ly.toFixed(1)}px)`); }
+          // header, pink hairline, column rule
+          const hf = 64 * s;
+          S(E.cHead, "fontSize", hf.toFixed(2) + "px"); S(E.cHead, "lineHeight", hf.toFixed(2) + "px");
+          S(E.cHead, "width", "2160px"); S(E.cHead, "paddingLeft", "0.12em");
+          S(E.cHead, "transform", `translate(0px,${(Y(798) - hf / 2).toFixed(1)}px)`);
+          S(E.cHair, "width", (1400 * s).toFixed(1) + "px"); S(E.cHair, "transform", `translate(${(1080 - 700 * s).toFixed(1)}px,${Y(912).toFixed(1)}px)`);
+          const cTop = Y(960); S(E.cCol, "transform", `translate(1079px,${cTop.toFixed(1)}px)`); S(E.cCol, "height", Math.max(0, 2790 - cTop).toFixed(1) + "px");
+          // rows
+          const fs = 40 * s, dim = lerp(1, 0.60 / 0.88, eOC(ramp(F, 45, 51)));
+          const fsS = fs.toFixed(2) + "px";
+          for (const row of ROWS) {
+            const sy = r.y + (row.i - HIS) * 23, yc = sy * 3, y = Y(yc);
+            const a = 0.88 * dim * ramp(sy, 305, 317) * (1 - ramp(y, 2600, 2790));
+            for (const [el, isL] of [[row.l, true], [row.r, false]]) {
+              if (!el) continue;
+              S(el, "opacity", a.toFixed(3)); if (a <= 0) continue;
+              S(el, "fontSize", fsS);
+              const x = isL ? X(XL) + 0.1 * fs : X(XR);
+              S(el, "transform", `translate(${x.toFixed(1)}px,${(y - fs * (0.5 + VFIX)).toFixed(1)}px)` + (isL ? " translateX(-100%)" : ""));
+            }
+          }
+          // HIS ROW: Inter Tight 800 at 1.22x, Bone; the pink brush plate paints in at the lock (f45), the name turns Ink on it
+          const hy = Y(3 * r.y), hfs = 49 * s, hx = X(XR);
+          const wv = HIS_W0 * s, pcx = hx + wv / 2;
+          const Wp = PL_W0 * s, Hp = PL_H0 * s;
+          for (const el of [E.hisB, E.hisI]) { S(el, "fontSize", hfs.toFixed(2) + "px"); S(el, "transform", `translate(${hx.toFixed(1)}px,${(hy - hfs * (0.5 + VFIX)).toFixed(1)}px)`); }
+          const svL = pcx - (PL_W0 / 2 + PL_M) * s, svT = hy - (PL_H0 / 2 + PL_MV) * s, svW = (PL_W0 + 2 * PL_M) * s, svH = (PL_H0 + 2 * PL_MV) * s;
+          S(E.brush, "width", svW.toFixed(1) + "px"); S(E.brush, "height", svH.toFixed(1) + "px");
+          S(E.brush, "transform", `translate(${svL.toFixed(1)}px,${svT.toFixed(1)}px)`);
+          const p = eOC(ramp(F, 45, 51));
+          $("wipeR").setAttribute("width", (p * (PL_W0 + 2 * PL_M)).toFixed(2));
+          const wipeX = svL + p * svW;
+          const ew = (HIS_W0 + 0.1 * 49) * s;
+          S(E.hisI, "clipPath", `inset(0px ${clamp(hx + ew - wipeX, 0, ew).toFixed(1)}px 0px 0px)`);
+          S(E.hisI, "opacity", F >= 45 ? "1" : "0");
+          S(E.hisWrap, "opacity", (1 - ramp(F, 62, 67)).toFixed(3));
+          // TRK 01 bracket frames the plate; tightens f6-14; corners fly out to the band f60-68
+          const tight = eOC(ramp(F, 6, 14));
+          const bp = lerp(70, 26, tight) * s;
+          let bx0 = pcx - Wp / 2 - bp, bx1 = pcx + Wp / 2 + bp, by0 = hy - Hp / 2 - bp * 0.8, by1 = hy + Hp / 2 + bp * 0.8;
+          const fly = eIOQ(ramp(F, 60, 68)), inset = 24;
+          bx0 = lerp(bx0, inset, fly); bx1 = lerp(bx1, W - inset, fly); by0 = lerp(by0, BAND_TOP + inset, fly); by1 = lerp(by1, BAND_TOP + 904 - inset, fly);
+          S(E.credInk, "transform", `translate(${bx0.toFixed(1)}px,${by0.toFixed(1)}px)`); S(E.credInk, "width", (bx1 - bx0).toFixed(1) + "px");
+          S(E.credInk, "height", (by1 - by0).toFixed(1) + "px"); S(E.credInk, "opacity", eIC(ramp(F, 60, 68)).toFixed(3));
+          ctx.save(); ctx.shadowColor = "rgba(255,46,136,0.6)"; ctx.shadowBlur = 14;
+          bracket(bx0, by0, bx1, by1, lerp(46, 120, fly), lerp(6, 7, fly), `rgba(255,46,136,${(0.1 + 0.9 * ramp(F, 0, 3)).toFixed(3)})`);
+          ctx.restore();
+          S(E.trkLab, "right", (W - bx1).toFixed(1) + "px"); S(E.trkLab, "left", "auto"); S(E.trkLab, "transform", `translateY(${(by0 - 62).toFixed(1)}px)`); S(E.trkLab, "opacity", (1 - ramp(F, 57, 61)).toFixed(3));
+          T(E.trkLab, F >= 45 ? "TRK 01 <span style='color:#F2EBDF'>LOCK</span>" : "TRK 01");
+          // line-up (restored), bottom-aligned, rim glow; leaves with the roll
+          const lo = (1 - ramp(F, 60, 68)).toFixed(3), lt = (3840 - D.lineupH) + "px";
+          S(E.lineup, "top", lt); S(E.lineupGlow, "top", lt); S(E.lineup, "opacity", lo); S(E.lineupGlow, "opacity", (0.25 * (1 - ramp(F, 60, 68))).toFixed(3));
+          // source slate (short: clears before the drifting logo reaches the margins)
+          T(E.hudTL, "SOURCE\n<b>CREW THANKS ROLL</b>"); T(E.hudTR, `MOVIE\n<b>${movieTC(F)}</b>`);
+          const ho = (ramp(F, 2, 6) * (1 - ramp(F, 18, 24))).toFixed(3); S(E.hudTL, "opacity", ho); S(E.hudTR, "opacity", ho);
+        } else {
+          S(E.credAct, "opacity", "0"); S(E.hisWrap, "opacity", "0"); S(E.trkLab, "opacity", "0");
+          S(E.hudTL, "opacity", "0"); S(E.hudTR, "opacity", "0");
+        }
+
+        // ---------------------------------------------------------------- ambient bleed (TRACK / TILT / FINAL)
+        let bleed = 0;
+        if (F >= 69 && F <= 120) bleed = 0.40;
+        else if (F >= 121 && F <= 136) bleed = 0.40 * (1 - ramp(F, 124, 136));
+        else if (F >= 169 && F <= 220) bleed = 0.40;
+        S(E.bleedV, "opacity", bleed.toFixed(3)); S(E.vig, "opacity", bleed > 0 ? "1" : "0");
+
+        // ---------------------------------------------------------------- ACT 1: TRACK (f69-120, s = F-69)
+        S(E.trackV, "opacity", act === 1 ? "1" : "0");
+        if (act === 1) {
+          const s = F - 69;
+          spill = [0, BAND_TOP, W, 904]; spillA = 1;
+          const cA = 1 - ramp(F, 70, 80);
+          if (cA > 0) bracket(24, BAND_TOP + 24, W - 24, BAND_TOP + 904 - 24, 120, 7, `rgba(255,46,136,${cA.toFixed(3)})`);
+          const cam = bandCam(s, 0, BAND_TOP, KB);
+          const clip = [0, BAND_TOP, W, 904];
+          if (F >= 113) drawGrid(cam, 0.85, lerp(0, 46, eOC(ramp(F, 113, 121))), 3, clip);
+          const alpha = 0.9 * eOC(ramp(F, 69, 95));
+          const dens = F < 82 ? 0.3 : 1.0;                         // density step on the f82 attack (editor cue fix)
+          const n = drawTracks(s, 0, BAND_TOP, KB, alpha, dens, clip);
+          S(E.act1, "opacity", eOC(ramp(F, 69, 73)).toFixed(3)); S(E.act1, "transform", `translateY(${lerp(14, 0, eOC(ramp(F, 69, 75))).toFixed(1)}px)`);
+          T(E.hudUnder, `TRACKS <b>${pad(n, 4)}</b>` + (F >= 113 ? `\nGROUND PLANE <b>1 m GRID</b>` : ""));
+          T(E.hudUnderR, `SRC <b>${CAMS[s].src}</b>\ns${pad(s, 2)} / 52`);
+          S(E.hudUnder, "top", "2420px"); S(E.hudUnderR, "top", "2420px");
+          S(E.hudUnder, "opacity", ramp(F, 71, 75).toFixed(3)); S(E.hudUnderR, "opacity", ramp(F, 72, 76).toFixed(3));
+        } else if (act === 2) {
+          spill = [0, BAND_TOP, W, 904]; spillA = 1 - ramp(F, 121, 124);
+          S(E.act1, "opacity", (1 - ramp(F, 121, 126)).toFixed(3));
+          S(E.hudUnder, "opacity", (1 - ramp(F, 121, 126)).toFixed(3)); S(E.hudUnderR, "opacity", (1 - ramp(F, 121, 126)).toFixed(3));
+        } else {
+          S(E.act1, "opacity", "0"); if (act !== 4) { S(E.hudUnder, "opacity", "0"); S(E.hudUnderR, "opacity", "0"); }
+        }
+
+        // ---------------------------------------------------------------- ACT 2+3: TILT + SOLVE viewport (f121-168)
+        if (act === 2 || act === 3) {
+          const V = viewer(F);
+          const dA = lerp(3.0, 1.2, eIOC(ramp(F, 126, 140)));
+          const opA = F < 137 ? 1 : 1 - ramp(F, 137, 146);
+          S(E.planeA, "filter", `saturate(${(1 - 0.3 * ramp(F, 121, 125)).toFixed(3)})`);
+          placePlane(E.planeA, V, 51, dA, opA * (F <= 152 ? 1 : 0));
+          placePlane(E.planeB, V, 0, 2.0, eIOC(ramp(F, 159, 165)));
+          const gA = F < 137 ? 0.85 * (1 - 0.45 * ramp(F, 121, 133)) : lerp(0.5, 0.75, ramp(F, 159, 165));
+          const gclip = F >= 161 ? (function () { const u = eIOQ(ramp(F, 161, 165)); const k = V.fx / PF; const bx = V.px - PCX * k, by = V.py - PCY * k;
+            return [lerp(0, bx, u), lerp(0, by, u), lerp(W, PW * k, u), lerp(H, PH * k, u)]; })() : null;
+          drawGrid(V, gA, 46, F < 137 ? 3 : 2, gclip, F < 137 ? null : lerp3(T0, V.C, eIOQ(ramp(F, 159, 165))));
+          if (F < 137) {
+            const tA = 0.9 * (1 - ramp(F, 129, 136)); const a = TR[51];
+            if (tA > 0) { ctx.save(); ctx.strokeStyle = `rgba(255,46,136,${tA.toFixed(3)})`; ctx.lineWidth = 3; ctx.shadowColor = "rgba(255,46,136,0.6)"; ctx.shadowBlur = 10; ctx.beginPath();
+              const Rt = mT(CAMS[51].R);
+              for (let i = 0; i < a.length; i += 3) { const X = add(CAMS[51].C, mv(Rt, [(a[i] - PCX) / PF * dA, (a[i + 1] - PCY) / PF * dA, dA]));
+                const q = proj(V, X); if (!q) continue; ctx.moveTo(q[0] - 8, q[1]); ctx.lineTo(q[0] + 8, q[1]); ctx.moveTo(q[0], q[1] - 8); ctx.lineTo(q[0], q[1] + 8); }
+              ctx.stroke(); ctx.restore(); }
+          }
+          if (gclip) { ctx.save(); ctx.beginPath(); ctx.rect(gclip[0], gclip[1], gclip[2], gclip[3]); ctx.clip(); }
+          if (F >= 137) {
+            const inA = ramp(F, 137, 140);
+            drawCloud(V, inA * (1 - 0.7 * ramp(F, 165, 168)), lerp(0.05, 0.034, ramp(F, 163, 166)));
+            const nReg = clamp(Math.ceil((F - 137 + 1) / 20 * 52), 1, 52);
+            const fA = inA * (1 - ramp(F, 160, 164));
+            if (fA > 0) {
+              ctx.strokeStyle = `rgba(${BONE},${(0.55 * fA).toFixed(3)})`; ctx.lineWidth = 3;
+              strokePoly(ctx, V, CAMS.slice(0, nReg).map((c) => c.C), false, 0);
+              for (let s = 0; s < nReg; s++) if (!(s === nReg - 1 && nReg < 52)) drawFrustum(V, s, 0.4, `rgba(${BONE},${(0.62 * fA).toFixed(3)})`, 3);
+              ctx.save(); ctx.globalAlpha = fA; ctx.shadowColor = "rgba(255,46,136,0.7)"; ctx.shadowBlur = 16;
+              if (nReg < 52) drawFrustum(V, nReg - 1, 0.4, PINK, 5); else if (F < 160) drawFrustum(V, 0, 0.4, PINK, 5);
+              ctx.restore();
+            }
+            if (F >= 163) { const k = V.fx / PF; drawTracks(0, V.px - PCX * k, V.py - PCY * k, k, 0.9 * ramp(F, 163, 165), 1.0, null); }
+            if (F >= 165) drawWire(V, 1, 0, eOC(ramp(F, 165, 168)), null);
+          }
+          if (gclip) ctx.restore();
+          if (F >= 165) { const k = V.fx / PF; spill = [V.px - PCX * k, V.py - PCY * k, PW * k, PH * k]; spillA = ramp(F, 165, 168); }
+          S(E.act2, "opacity", (eOC(ramp(F, 137, 140)) * (1 - ramp(F, 165, 168))).toFixed(3));
+          const nReg = F < 137 ? 0 : clamp(Math.ceil((F - 137 + 1) / 20 * 52), 1, 52);
+          const camN = Math.round(nReg / 52 * ST.cameras_registered);
+          T(E.hudSolve,
+            `<span class="p">—</span> COLMAP · ${ST.camera_model}\n` +
+            `CAMERAS <b>${pad(camN, 2)}/${ST.cameras_total}</b>   POINTS <b>${fmtInt(ST.points)}</b>\n` +
+            `MEAN REPROJ <b>${Number(ST.mean_reproj_px).toFixed(3)} px</b>   f <b>${ST.f_px} px</b>\n` +
+            `LENS <b>${ST.lens_mm_36} mm</b> (36 mm back)   k1 <b>${minus(ST.k1)}</b>` +
+            (F >= 159 ? `\n<span class="p">REGISTER s00 → PLATE</span>` : ""));
+          S(E.hudSolve, "opacity", (ramp(F, 138, 142) * (1 - ramp(F, 166, 169))).toFixed(3));
+        } else {
+          S(E.planeA, "opacity", "0"); S(E.planeB, "opacity", "0"); S(E.act2, "opacity", "0"); S(E.hudSolve, "opacity", "0");
+        }
+
+        // ---------------------------------------------------------------- ACT 4: FINAL (f169-220): window x1.30 -> x1.55 on the monument
+        let jolt = 0;
+        if (F === 173) jolt = 8; else if (F === 174) jolt = -4.5; else if (F === 175) jolt = 2;
+        if (act === 4) {
+          const s = F - 169; const A = ANC[s];
+          const k = finK(F), cxp = finCX(s, k);
+          const left = 1080 - cxp * k, top = 1920 - PCY * k + jolt, bh = PH * k;
+          S(E.finalBox, "opacity", "1");
+          S(E.finalV, "width", (PW * k).toFixed(1) + "px"); S(E.finalV, "height", bh.toFixed(1) + "px");
+          S(E.finalV, "transform", `translate(${left.toFixed(2)}px,${top.toFixed(2)}px)`);
+          spill = [0, top, W, bh]; spillA = 1;
+          const mx = (u) => left + u * k, my = (v) => top + v * k;
+          const fl = A.corners.front_left, fr = A.corners.front_right;
+          const bxp = mx((fl[0] + fr[0]) / 2), byp = my((fl[1] + fr[1]) / 2);
+          if (F === 173) { const g = ctx.createRadialGradient(bxp, byp, 0, bxp, byp, 140); g.addColorStop(0, "rgba(255,46,136,0.35)"); g.addColorStop(1, "rgba(255,46,136,0)");
+            ctx.fillStyle = g; ctx.fillRect(bxp - 140, byp - 140, 280, 280); }
+          const pA = 1 - ramp(F, 182, 190);
+          // the landing reads even when the fighters cross the name: a pinned CONTACT call-out on the base mark (f173-188)
+          const cA = F >= 173 ? 1 - ramp(F, 184, 189) : 0;
+          if (cA > 0) { ctx.save(); ctx.globalAlpha = cA; ctx.font = '600 36px "JetBrains Mono"'; ctx.fillStyle = PINK; ctx.shadowColor = "rgba(18,16,13,0.85)"; ctx.shadowBlur = 10;
+            ctx.fillText(`CONTACT  s${pad(s, 2)}`, bxp + 34, byp + 12); ctx.restore(); }
+          if (pA > 0) { ctx.save(); ctx.shadowColor = "rgba(255,46,136,0.7)"; ctx.shadowBlur = 12; plus(bxp, byp, F === 173 ? 26 : 18, F === 173 ? 6 : 4, `rgba(255,46,136,${pA.toFixed(3)})`); ctx.restore(); }
+          // + LOCKED tag pinned to the plinth's front-left corner (f208): leader draws, then the tag wipes on (follow-through, no text scaling)
+          if (F >= 208) {
+            const kq = eOExpo(ramp(F, 208, 213)), kt = eOC(ramp(F, 210, 215));
+            const qx = mx(fl[0]), qy = my(fl[1]);
+            ctx.save(); ctx.shadowColor = "rgba(255,46,136,0.7)"; ctx.shadowBlur = 12;
+            plus(qx, qy, 16, 4, PINK);
+            const lx = qx - 46, ly = qy - 130;
+            ctx.strokeStyle = PINK; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(qx, qy); ctx.lineTo(lerp(qx, lx, kq), lerp(qy, ly, kq)); ctx.stroke(); ctx.restore();
+            S(E.lockTag, "transform", `translate(${(lx - 10 + lerp(12, 0, kt)).toFixed(1)}px,${(ly - 70).toFixed(1)}px)`);
+            S(E.lockTag, "clipPath", `inset(0px ${(100 * (1 - kt)).toFixed(1)}% 0px 0px)`);
+            S(E.lockTag, "opacity", F >= 210 ? "1" : "0");
+          } else S(E.lockTag, "opacity", "0");
+          S(E.act3, "transform", `translateY(${(top - 76 - 1200 - 44).toFixed(1)}px)`);
+          S(E.act3, "opacity", eOC(ramp(F, 169, 173)).toFixed(3));
+          S(E.hudUnder, "top", (top - jolt + bh + 48).toFixed(1) + "px");
+          T(E.hudUnder, "CG · CYCLES · SHADOW CATCHER · ROTO HOLDOUT" + (F >= 173 ? `\n<span class="p">+</span> ANCHOR ON SOLVED GROUND · CAMERAS <b>${ST.cameras_registered}/${ST.cameras_total}</b>` : ""));
+          S(E.hudUnder, "opacity", ramp(F, 176, 182).toFixed(3)); S(E.hudUnderR, "opacity", "0");
+        } else {
+          S(E.finalBox, "opacity", "0"); S(E.lockTag, "opacity", "0"); S(E.act3, "opacity", "0");
+        }
+
+        // band light-spill + 2 px Bone edge (TRACK, TILT start, registration, FINAL)
+        if (spill && spillA > 0) {
+          for (const el of [E.spill, E.edge]) { S(el, "transform", `translate(${spill[0].toFixed(1)}px,${spill[1].toFixed(1)}px)`);
+            S(el, "width", spill[2].toFixed(1) + "px"); S(el, "height", spill[3].toFixed(1) + "px"); S(el, "opacity", spillA.toFixed(3)); }
+        } else { S(E.spill, "opacity", "0"); S(E.edge, "opacity", "0"); }
+
+        // ---------------------------------------------------------------- ACT 5: BREAKDOWN (f221-274)
+        const bands = [E.b1, E.b2, E.b3, E.b4], labs = [E.bl1, E.bl2, E.bl3, E.bl4];
+        if (act === 5) {
+          const s = Math.min(51, F - 221);
+          const fold = F >= 273 ? [0.42, 0.88][F - 273] : 0;
+          for (let i = 0; i < 4; i++) {
+            const st0 = 221 + 3 * i; const x = W * (1 - eOExpo(ramp(F, st0, st0 + 9)));
+            const cy0 = BD_TOP[i] + 452; const dy = (1920 - cy0) * eIC(fold);
+            S(bands[i], "opacity", F >= st0 ? "1" : "0");
+            S(bands[i], "transform", `translate(${x.toFixed(1)}px,${dy.toFixed(1)}px) scaleY(${(1 - 0.92 * fold).toFixed(3)})`);
+            const lx = 36 + x, ly = i === 0 ? BD_TOP[0] + 904 - 36 - 62 : BD_TOP[i] + 36;
+            S(labs[i], "transform", `translate(${lx.toFixed(1)}px,${(ly + dy).toFixed(1)}px)`);
+            S(labs[i], "opacity", (eOC(ramp(F, st0 + 5, st0 + 9)) * (1 - fold * 1.2)).toFixed(3));
+          }
+          const b0x = W * (1 - eOExpo(ramp(F, 221, 230)));
+          S(E.bl0, "transform", `translate(${(W - 36 - BL0W + b0x).toFixed(1)}px,${(BD_TOP[0] + 904 - 36 - 62).toFixed(1)}px)`);
+          S(E.bl0, "opacity", (eOC(ramp(F, 226, 230)) * (1 - fold * 1.2)).toFixed(3));
+          S(E.b4edge, "opacity", F === 251 ? "1" : "0");
+          const x2 = W * (1 - eOExpo(ramp(F, 224, 233)));
+          if (F >= 224 && fold === 0) {
+            const cam = bandCam(s, x2, BD_TOP[1], KB); const clip = [x2, BD_TOP[1], W, 904];
+            drawGrid(cam, 0.9, 46, 3, clip);
+            drawTracks(s, x2, BD_TOP[1], KB, 0.9, 1.0, clip);
+            const zf = s <= 4 ? 5 * (1 - (s / 4) * (s / 4)) : 0;
+            drawWire(cam, 1, zf, 1, clip);
+          }
+        } else {
+          for (let i = 0; i < 4; i++) { S(bands[i], "opacity", "0"); S(labs[i], "opacity", "0"); }
+          S(E.bl0, "opacity", "0"); S(E.b4edge, "opacity", "0");
+        }
+
+        // ---------------------------------------------------------------- ACT 6: TITLE (f275-374)
+        if (act === 6) {
+          S(E.title, "opacity", "1");
+          const sf = F <= 290 ? lerp(1.06, 1.0, eOC(ramp(F, 275, 290))) : lerp(1.0, 1.03, eIOS(ramp(F, 290, 374)));
+          const sb = lerp(1.0, 1.012, ramp(F, 275, 374));
+          S(E.tFg, "transform", `scale(${sf.toFixed(5)})`); S(E.tBg, "transform", `scale(${sb.toFixed(5)})`);
+          // logo: one technique - a soft left-to-right mask wipe, settling 0.985 -> 1 (never above 1)
+          const lg = eOC(ramp(F, 283, 293));
+          S(E.logoBox, "opacity", F >= 283 ? "1" : "0");
+          S(E.logoBox, "maskPosition", `${(100 * (1 - lg)).toFixed(2)}% 0%`); S(E.logoBox, "webkitMaskPosition", `${(100 * (1 - lg)).toFixed(2)}% 0%`);
+          S(E.logoBox, "transform", `scale(${lerp(0.985, 1, eOC(ramp(F, 283, 297))).toFixed(4)})`);
+          const rl = eOC(ramp(F, 291, 299));
+          S(E.tRule, "opacity", F >= 291 ? "1" : "0"); S(E.tRule, "transform", `scaleX(${rl.toFixed(4)})`);
+          const ro = eOC(ramp(F, 292, 302));
+          S(E.tRole, "opacity", ro.toFixed(3)); S(E.tRole, "transform", `translateY(${lerp(24, 0, ro).toFixed(2)}px)`);
+          const so = eOC(ramp(F, 302, 312));                     // STREET FIGHTER · DNEG on the f302 attack (editor cue fix)
+          S(E.tStudio, "opacity", so.toFixed(3)); S(E.tStudio, "transform", `translateY(${lerp(18, 0, so).toFixed(2)}px)`);
+        } else S(E.title, "opacity", "0");
+        S(E.flash, "opacity", F === 275 ? "0.5" : F === 276 ? "0.25" : "0");
+
+        const rnd = mulberry32(F * 7919 + 13);
+        S(E.grain, "transform", `translate(${Math.floor(rnd() * 256)}px,${Math.floor(rnd() * 256)}px)`);
+      }
+
+      // ---------------- timeline ----------------
+      let BL0W = 0;
+      function boot() {
+        buildBrush(); BL0W = E.bl0.offsetWidth;
+        const drv = { t: 0 };
+        const tl = gsap.timeline({ paused: true });
+        tl.to(drv, { t: 15, duration: 15, ease: "none", onUpdate: () => render(drv.t) }, 0);
+        render(0);
+        window.__timelines["main"] = tl;
+        if (window.__hfForceTimelineRebind) window.__hfForceTimelineRebind();
+      }
+      const imgs = Array.from(document.images).map((im) => (im.decode ? im.decode().catch(() => {}) : Promise.resolve()));
+      const faces = ['500 40px "Inter Tight"', '600 40px "Inter Tight"', '700 40px "Inter Tight"', '800 40px "Inter Tight"', '500 36px "JetBrains Mono"', '600 36px "JetBrains Mono"']
+        .map((f) => document.fonts.load(f));
+      Promise.all([...faces, ...imgs]).then(() => document.fonts.ready).then(boot);
+    </script>
+  </body>
+</html>

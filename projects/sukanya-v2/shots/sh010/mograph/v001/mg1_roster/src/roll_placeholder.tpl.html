@@ -1,0 +1,35 @@
+<!-- MG1 PLACEHOLDER ROLL (stand-in for shots/sh010/roll/v001/roll.html until it lands).
+     Rows from source/credits.txt, Montserrat 500 63 px (cap 44), pitch 93, gutter x 1083,
+     scroll model from MG1's her-row track (19 px/frame, ease-to-stop f243-252, her row at y 1536). -->
+<template>
+  <style>
+    @font-face { font-family: "SA Montserrat"; src: url("assets/fonts/Montserrat-500.ttf"); font-weight: 500; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #rollph-col { position: absolute; left: 0; top: 0; width: 2160px; height: 10px; }
+    .rollph-row { position: absolute; left: 0; width: 2160px; height: 93px; font-family: "SA Montserrat";
+      font-weight: 500; font-size: 63px; letter-spacing: 0.02em; color: #FFF3DC; line-height: 93px;
+      text-shadow: 0 0 10px #14080F, 0 0 4px #14080F; white-space: nowrap; }
+    .rollph-l { position: absolute; right: calc(2160px - 1083px + 59px); text-align: right; }
+    .rollph-r { position: absolute; left: calc(1083px + 59px); }
+  </style>
+  <div id="root" data-composition-id="roll" data-width="2160" data-height="3840">
+    <div id="rollph-col">/*@@ROWS@@*/</div>
+  </div>
+  <script>
+    (function () {
+      const TRACK = /*@@TRACK@@*/[];
+      const HER = /*@@HER@@*/0;
+      const col = document.getElementById("rollph-col");
+      const st = { f: 0 };
+      function render(f) {
+        const i = Math.max(0, Math.min(TRACK.length - 1, Math.round(f)));
+        const y0 = TRACK[i] - HER * 93 - 46.5; // row tops; TRACK = her row centre y
+        col.style.transform = "translateY(" + y0.toFixed(2) + "px)";
+      }
+      const tl = gsap.timeline({ paused: true });
+      tl.to(st, { f: TRACK.length, duration: TRACK.length / 25, ease: "none", onUpdate: () => render(st.f) }, 0);
+      render(0);
+      window.__timelines["roll"] = tl;
+    })();
+  </script>
+</template>

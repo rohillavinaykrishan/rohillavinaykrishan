@@ -1,0 +1,15 @@
+# VERDICT: FAIL
+
+| Gate | Result | Detail |
+|---|---|---|
+| black frames | **FAIL** | f0-19 (0.00-0.80 s, 20 fr), f237 (9.48 s), f357-364 (14.28-14.60 s, 8 fr) |
+| R >= B (no blue cast) | **FAIL** | 106 frames with B > R; worst f150 R-B -38.6 |
+| frozen frames | **WARN** | f2-19 (0.08-0.80 s, 18 fr), f357-364 (14.28-14.60 s, 8 fr), f402-403 (16.08-16.16 s, 2 fr), f426-427 (17.04-17.12 s, 2 fr), f447-448 (17.88-17.96 s, 2 fr) ... (+17 more) (check they are intended holds) |
+| names | MANUAL | 1 name(s) to read at 100% |
+| near-still spans | INFO | f0-19 (0.00-0.80 s, 20 fr), f389-390 (15.56-15.64 s, 2 fr), f496-520 (19.84-20.84 s, 25 fr), f523-528 (20.92-21.16 s, 6 fr) ... (+6 more) |
+| contact sheet | INFO | auto_qc_sheet.png |
+| specs | PASS | 2160x3840 25 fps CFR, 750 fr, 30.000 s, starts 0 |
+| loudness | PASS | I -14.0 LUFS, TP -1.9 dBTP, LRA 2.7 LU |
+
+report: /home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/comp/v001/check/final4k/auto_qc.md
+sheet:  /home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/comp/v001/check/final4k/auto_qc_sheet.png

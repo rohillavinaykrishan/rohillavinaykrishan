@@ -1,0 +1,32 @@
+{
+ "language": "en",
+ "segments": [
+  {
+   "start": 0.24,
+   "end": 0.84,
+   "text": "Let's go let's go",
+   "words": [
+    {
+     "start": 0.24,
+     "end": 0.36,
+     "word": "Let's"
+    },
+    {
+     "start": 0.36,
+     "end": 0.36,
+     "word": "go"
+    },
+    {
+     "start": 0.36,
+     "end": 0.72,
+     "word": "let's"
+    },
+    {
+     "start": 0.72,
+     "end": 0.84,
+     "word": "go"
+    }
+   ]
+  }
+ ]
+}

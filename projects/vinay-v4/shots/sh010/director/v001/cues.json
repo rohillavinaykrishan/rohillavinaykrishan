@@ -1,0 +1,37 @@
+{
+  "project": "vinay-v4", "title": "GROUND TRUTH", "fps": 25, "frames": 375, "duration": 15.0, "canvas": [2160, 3840],
+  "music": {"src": "source/trailer.mp4", "in": 112.10, "out": 127.10, "fade_in_frames": 3, "fade_out": [14.40, 15.00],
+            "note": "dialogue-free: Whisper clip pass 110-132 -> 'something' ends 112.03, next word 'I' 127.18"},
+  "music_hits": {
+    "rise": {"f": 6, "src": 112.34},
+    "drive_hit_1": {"f": 69, "src": 114.86, "use": "cut credits -> plate band (TRACK pass s0)"},
+    "drive_hit_2": {"f": 81, "src": 115.34, "use": "track density step"},
+    "drive_hit_3": {"f": 113, "src": 116.62, "use": "ground grid lays down"},
+    "drive_hit_4": {"f": 121, "src": 116.94, "use": "band freezes on s51, tilt into 3D"},
+    "dip": {"f": 137, "src": 117.58, "use": "SOLVE viewport"},
+    "pickup": {"f": 141, "src": 117.74},
+    "silence": {"f": [159, 165], "src": [118.46, 118.70], "use": "viewport camera snaps into shot camera s0; point cloud registers on plate"},
+    "HERO_reentry": {"f": 173, "src": 119.02, "rms_jump_db": 21, "use": "monument LANDS on sand (s4 of FINAL pass)"},
+    "hit_208": {"f": 208, "src": 120.42, "use": "LOCKED tag pins to monument"},
+    "hit_251": {"f": 251, "src": 122.14, "use": "breakdown: FINAL band flashes bone 1 frame"},
+    "TITLE_loudest": {"f": 275, "src": 123.10, "rms_db": -10.9, "use": "cut to CG title monument"},
+    "hit_291": {"f": 291, "src": 123.74, "use": "SR. MATCHMOVE ARTIST rises"},
+    "hit_304": {"f": 304, "src": 124.26, "use": "STREET FIGHTER  .  DNEG"}
+  },
+  "plate": {"src": "source/trailer.mp4", "active": "crop=1280:536:0:92", "src_frames": [2982, 3033], "src_time": [124.376, 126.502],
+            "count": 52, "conform": "1:1 (one source frame per output frame, 23.976 -> 25 = 1.043x, no interpolation)",
+            "solve_test": "COLMAP 37/37 registered, 0.60 px, f=749.4 px @960, k1=-0.197 (SIMPLE_RADIAL)"},
+  "credits": {"src": "source/movie.mp4", "in": 67.40, "out": 70.16, "row": "VAMSI KRISHNA EADALA | VINAY KRISHAN ROHILLA", "row_y_at_69.0": 630, "scale": "720x1280 -> 2160x3840"},
+  "acts": [
+    {"name": "CREDITS", "f": [0, 68], "src": "movie 67.40 + f/25"},
+    {"name": "TRACK", "f": [69, 120], "plate": "s0..s51", "layout": "band 2160x904, centre y 1920"},
+    {"name": "TILT", "f": [121, 136], "plate": "hold s51"},
+    {"name": "SOLVE", "f": [137, 168], "plate": "3D viewport (point cloud + 52 frustums); s0 image plane from f159"},
+    {"name": "FINAL", "f": [169, 220], "plate": "s0..s51", "layout": "band x1.30 = 2808x1176 window, cropped to 2160 wide, CX follows monument (src px, clamp 493-787)", "land": "monument falls s0-s4, contact f173"},
+    {"name": "BREAKDOWN", "f": [221, 272], "plate": "s0..s51", "layout": "4 stacked bands 2160x904 at y 64/1000/1936/2872: PLATE, TRACK, CG, FINAL"},
+    {"name": "HOLD", "f": [273, 274], "plate": "s51 stack"},
+    {"name": "TITLE", "f": [275, 374], "plate": "CG title monument stills (2.5D push)"}
+  ],
+  "palette": {"ink": "#12100D", "umber": "#3A2E24", "sand": "#CDB08A", "bone": "#F2EBDF", "sage": "#7D875C", "marker_pink": "#FF2E88"},
+  "fonts": {"display": "Unbounded 900", "secondary": "Inter Tight 600", "hud": "JetBrains Mono 400/600"}
+}

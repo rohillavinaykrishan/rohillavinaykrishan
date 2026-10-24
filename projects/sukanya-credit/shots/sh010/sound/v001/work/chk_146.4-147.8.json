@@ -1,0 +1,37 @@
+{
+ "language": "en",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 0.82,
+   "text": "This is at the point.",
+   "words": [
+    {
+     "start": 0.0,
+     "end": 0.12,
+     "word": "This"
+    },
+    {
+     "start": 0.12,
+     "end": 0.24,
+     "word": "is"
+    },
+    {
+     "start": 0.24,
+     "end": 0.4,
+     "word": "at"
+    },
+    {
+     "start": 0.4,
+     "end": 0.52,
+     "word": "the"
+    },
+    {
+     "start": 0.52,
+     "end": 0.82,
+     "word": "point."
+    }
+   ]
+  }
+ ]
+}

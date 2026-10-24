@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <meta name="viewport" content="width=2160, height=3840" />
+    <style>html,body{margin:0;width:2160px;height:3840px;overflow:hidden;background:transparent}#root{position:absolute;inset:0}</style>
+  </head>
+  <body>
+    <!-- MG2 SUPER ART FX on MASTER time: this root runs f0..f276 (11.08 s); the scene shows f243..f276. Transparent. -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="11.08" data-fps="25" data-width="2160" data-height="3840">
+      <div id="mg2" data-composition-id="mg2" data-composition-src="compositions/mg2.html" data-start="9.72" data-duration="1.36"
+           data-track-index="1" data-track-kind="graphics" data-width="2160" data-height="3840"></div>
+    </div>
+    <script>window.__timelines = window.__timelines || {}; window.__timelines["main"] = gsap.timeline({ paused: true });</script>
+  </body>
+</html>

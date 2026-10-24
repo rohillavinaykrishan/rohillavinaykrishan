@@ -1,0 +1,14 @@
+start bg 18:03:06
+20:59.701  render           | Saved: '/home/user/rohillavinaykrishan/projects/vinay-v4/shots/sh010/lighting/v001/title_bg.png'
+MONUMENT_DIMS {'width': 7.239999771118164, 'height': 3.754525661468506, 'depth': 0.3000001311302185}
+RENDER_SECONDS 1258.9 bg 2160 3840 64
+Info: Saved as "title_bg.blend"
+Info: Saved "title_bg.blend"
+end bg 18:24:07
+start fg 18:24:07
+37:49.788  render           | Saved: '/home/user/rohillavinaykrishan/projects/vinay-v4/shots/sh010/lighting/v001/title_fg.png'
+MONUMENT_DIMS {'width': 7.239999771118164, 'height': 3.754525661468506, 'depth': 0.3000001311302185}
+RENDER_SECONDS 2268.7 fg 2160 3840 64
+Info: Saved as "title_fg.blend"
+Info: Saved "title_fg.blend"
+end fg 19:01:58

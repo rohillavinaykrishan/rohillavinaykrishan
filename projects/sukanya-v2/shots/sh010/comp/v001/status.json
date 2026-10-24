@@ -1,0 +1,36 @@
+{
+ "roll": {
+  "src": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/roll/v001/roll.html",
+  "real": true,
+  "rows": 77,
+  "mounted": "nested in mg1"
+ },
+ "mg1": {
+  "src": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg1_roster/compositions/mg1.html",
+  "real": true,
+  "f_in": 0,
+  "f_out": 261,
+  "mtime": 1792771794.1369398
+ },
+ "mg3_band": {
+  "src": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg3_band/compositions/mg3_band.html",
+  "real": true,
+  "f_in": 261,
+  "f_out": 350,
+  "mtime": 1792771937.270102
+ },
+ "mg2": {
+  "src": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg2_superart/compositions/mg2.html",
+  "real": true,
+  "f_in": 243,
+  "f_out": 277,
+  "mtime": 1792771363.9923923
+ },
+ "mg4_title": {
+  "src": "/home/user/rohillavinaykrishan/projects/sukanya-v2/shots/sh010/mograph/v001/mg4_title/compositions/mg4_title.html",
+  "real": true,
+  "f_in": 350,
+  "f_out": 450,
+  "mtime": 1792771975.6963742
+ }
+}

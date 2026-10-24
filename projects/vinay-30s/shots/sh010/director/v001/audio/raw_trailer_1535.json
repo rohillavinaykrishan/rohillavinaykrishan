@@ -1,0 +1,41 @@
+{
+ "file": "/tmp/claude-0/-home-user-rohillavinaykrishan/5fe3b9fd-8381-5a1b-b6a0-30ea036f781a/scratchpad/raw_1535.wav",
+ "vad_filter": false,
+ "no_speech_threshold": null,
+ "model": "medium",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 2.26,
+   "text": " Thank you for watching!",
+   "no_speech_prob": 0.9077281355857849,
+   "avg_logprob": -0.9283832311630249,
+   "words": [
+    [
+     0.0,
+     0.02,
+     " Thank",
+     0.0025210108142346144
+    ],
+    [
+     0.02,
+     0.94,
+     " you",
+     0.8927675485610962
+    ],
+    [
+     0.94,
+     1.12,
+     " for",
+     0.5774141550064087
+    ],
+    [
+     1.12,
+     2.26,
+     " watching!",
+     0.9114285707473755
+    ]
+   ]
+  }
+ ]
+}

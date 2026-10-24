@@ -1,0 +1,240 @@
+{
+ "cameras_registered": 37,
+ "cameras_total": 52,
+ "points": 3524,
+ "ground_points": 1066,
+ "observations": 22402,
+ "mean_track_length": 6.36,
+ "mean_reproj_px": 0.601,
+ "mean_reproj_definition": "COLMAP model_analyzer: mean over 3D points of their mean track reprojection error",
+ "mean_reproj_per_observation_px": 0.654,
+ "median_reproj_px": 0.494,
+ "p95_reproj_px": 1.805,
+ "camera_model": "SIMPLE_RADIAL",
+ "width": 960,
+ "height": 402,
+ "f_px": 749.37,
+ "f_px_960": 749.37,
+ "lens_mm_36": 28.1,
+ "hfov_deg": 65.28,
+ "k1": -0.1966,
+ "cx": 480.0,
+ "cy": 201.0,
+ "cam_height_assumed_m": 1.0,
+ "scale_m_per_unit": 0.34998,
+ "cam_height_min_max_m": [
+  0.956,
+  1.087
+ ],
+ "camera_travel_m": 3.842,
+ "camera_path_m": 4.324,
+ "rotation_span_deg": 37.97,
+ "rotation_s0_s51_deg": 37.97,
+ "ground_plane_colmap": {
+  "normal": [
+   -0.05369066401522784,
+   -0.9911613055478133,
+   0.1213119078341345
+  ],
+  "d": 2.851604360953438
+ },
+ "world_origin_frame": 19,
+ "per_frame": [
+  {
+   "frame": 1,
+   "tracks": 215,
+   "reproj_px": 0.816
+  },
+  {
+   "frame": 2,
+   "tracks": 233,
+   "reproj_px": 0.772
+  },
+  {
+   "frame": 3,
+   "tracks": 389,
+   "reproj_px": 0.681
+  },
+  {
+   "frame": 4,
+   "tracks": 436,
+   "reproj_px": 0.568
+  },
+  {
+   "frame": 5,
+   "tracks": 443,
+   "reproj_px": 0.64
+  },
+  {
+   "frame": 6,
+   "tracks": 463,
+   "reproj_px": 0.565
+  },
+  {
+   "frame": 7,
+   "tracks": 441,
+   "reproj_px": 0.626
+  },
+  {
+   "frame": 8,
+   "tracks": 449,
+   "reproj_px": 0.602
+  },
+  {
+   "frame": 9,
+   "tracks": 443,
+   "reproj_px": 0.642
+  },
+  {
+   "frame": 10,
+   "tracks": 453,
+   "reproj_px": 0.639
+  },
+  {
+   "frame": 11,
+   "tracks": 464,
+   "reproj_px": 0.629
+  },
+  {
+   "frame": 12,
+   "tracks": 466,
+   "reproj_px": 0.646
+  },
+  {
+   "frame": 13,
+   "tracks": 926,
+   "reproj_px": 0.558
+  },
+  {
+   "frame": 14,
+   "tracks": 963,
+   "reproj_px": 0.581
+  },
+  {
+   "frame": 15,
+   "tracks": 959,
+   "reproj_px": 0.613
+  },
+  {
+   "frame": 16,
+   "tracks": 797,
+   "reproj_px": 0.726
+  },
+  {
+   "frame": 17,
+   "tracks": 739,
+   "reproj_px": 0.751
+  },
+  {
+   "frame": 18,
+   "tracks": 856,
+   "reproj_px": 0.713
+  },
+  {
+   "frame": 19,
+   "tracks": 900,
+   "reproj_px": 0.646
+  },
+  {
+   "frame": 20,
+   "tracks": 896,
+   "reproj_px": 0.619
+  },
+  {
+   "frame": 21,
+   "tracks": 877,
+   "reproj_px": 0.615
+  },
+  {
+   "frame": 22,
+   "tracks": 824,
+   "reproj_px": 0.619
+  },
+  {
+   "frame": 23,
+   "tracks": 877,
+   "reproj_px": 0.604
+  },
+  {
+   "frame": 24,
+   "tracks": 980,
+   "reproj_px": 0.595
+  },
+  {
+   "frame": 25,
+   "tracks": 1014,
+   "reproj_px": 0.645
+  },
+  {
+   "frame": 26,
+   "tracks": 949,
+   "reproj_px": 0.598
+  },
+  {
+   "frame": 27,
+   "tracks": 908,
+   "reproj_px": 0.556
+  },
+  {
+   "frame": 28,
+   "tracks": 864,
+   "reproj_px": 0.657
+  },
+  {
+   "frame": 29,
+   "tracks": 847,
+   "reproj_px": 0.573
+  },
+  {
+   "frame": 30,
+   "tracks": 749,
+   "reproj_px": 0.671
+  },
+  {
+   "frame": 31,
+   "tracks": 534,
+   "reproj_px": 0.746
+  },
+  {
+   "frame": 32,
+   "tracks": 353,
+   "reproj_px": 0.937
+  },
+  {
+   "frame": 33,
+   "tracks": 232,
+   "reproj_px": 1.012
+  },
+  {
+   "frame": 34,
+   "tracks": 192,
+   "reproj_px": 1.26
+  },
+  {
+   "frame": 35,
+   "tracks": 146,
+   "reproj_px": 1.252
+  },
+  {
+   "frame": 36,
+   "tracks": 78,
+   "reproj_px": 1.111
+  },
+  {
+   "frame": 37,
+   "tracks": 47,
+   "reproj_px": 1.29
+  }
+ ],
+ "init_pair": [
+  10,
+  25
+ ],
+ "solve_note": "relaxed mapper options (treatment 9.2) + lens prior f 999.16 px / k1 -0.1966 (director 960 px solve scaled) + forced init pair s10/s25; f and k1 refined freely by BA",
+ "tracks_per_frame_min_mean_max": [
+  47,
+  605.5,
+  1014
+ ],
+ "colmap_model_analyzer": []
+}

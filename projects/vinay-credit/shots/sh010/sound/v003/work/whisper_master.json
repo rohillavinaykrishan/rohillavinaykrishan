@@ -1,0 +1,22 @@
+{
+ "language": "en",
+ "segments": [
+  {
+   "start": 1.52,
+   "end": 2.52,
+   "text": "Round one!",
+   "words": [
+    {
+     "start": 1.52,
+     "end": 2.04,
+     "word": "Round"
+    },
+    {
+     "start": 2.04,
+     "end": 2.52,
+     "word": "one!"
+    }
+   ]
+  }
+ ]
+}

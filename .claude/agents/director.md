@@ -34,3 +34,5 @@ looking at it (Read the images/frames) before reporting.
 Watch the editor's assembly (frames around each section) and write `review/director_<v>.md`:
 does it tell the story, does the emotion rise, does the grade fit the lyrics, is the hook
 moment big enough? Numbered notes naming the department.
+
+Motion-design knowledge (read the relevant SKILL.md files in `.claude/skills/` before designing): motion-art-direction, shot-composition, color-motion, beat-sync-editing.

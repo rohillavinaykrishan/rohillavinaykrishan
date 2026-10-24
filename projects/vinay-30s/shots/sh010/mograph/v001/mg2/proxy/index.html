@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=540, height=960" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 540px; height: 960px; overflow: hidden; background: transparent; }
+    </style>
+  </head>
+  <body>
+    <!-- MG2 SPECTRUM STRIKE, 540x960 proxy (renders the same compositions/mg2.html). Root clock = master seconds; f0-f335 transparent, content f336-f386. -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15.48" data-fps="25" data-width="540" data-height="960">
+      <div id="mg2" data-composition-id="mg2" data-composition-src="compositions/mg2.html" data-start="0" data-duration="15.48" data-track-index="1" data-track-kind="graphics" data-width="540" data-height="960"></div>
+    </div>
+    <script>
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

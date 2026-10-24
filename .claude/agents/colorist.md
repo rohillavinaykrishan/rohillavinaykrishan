@@ -49,3 +49,5 @@ frames before reporting.
   `part_01.mp4`, ... (each about 45 s, under ~100 MB) plus `full_audio.wav` (the whole song in one
   piece, so the user can lay it under the joined parts with no clicks at the joins). Check each part's
   size and that the parts' frame counts add up to the full file's.
+
+Motion-design knowledge (read the relevant SKILL.md files in `.claude/skills/` before designing): color-motion.

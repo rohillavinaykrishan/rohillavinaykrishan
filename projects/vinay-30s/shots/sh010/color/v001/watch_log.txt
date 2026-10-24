@@ -1,0 +1,162 @@
+21:24:04 grading R2 (src mtime 21:17:40, expect 25 f)
+21:24:39 R2.mp4: duo:Ken levels 0.068-0.888 gamma 0.95; frames in 25 out 25 OK
+21:24:41 PASS  R2         frames= 25 master_f_in=46 min(R-B)= +53.26 mean(R-B)=+70.12 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:24:41 grading R3 (src mtime 21:17:50, expect 25 f)
+21:25:21 R3.mp4: duo:Dhalsim levels 0.064-0.860 gamma 0.78; frames in 25 out 25 OK
+21:25:26 PASS  R3         frames= 25 master_f_in=71 min(R-B)= +48.52 mean(R-B)=+56.68 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:25:26 grading R4 (src mtime 21:17:59, expect 25 f)
+21:26:00 R4.mp4: duo:Blanka levels 0.031-0.895 gamma 0.71; frames in 25 out 25 OK
+21:26:03 PASS  R4         frames= 25 master_f_in=96 min(R-B)= +25.41 mean(R-B)=+28.76 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:26:03 grading R5 (src mtime 21:18:04, expect 24 f)
+21:26:24 R5.mp4: duo:Guile levels 0.051-0.887 gamma 0.70; frames in 24 out 24 OK
+21:26:28 PASS  R5         frames= 24 master_f_in=121 min(R-B)= -38.44 mean(R-B)=-37.21 exempt=24 ink=0 below_ink=0.000% white_clip=0.000%
+21:26:28 grading R6 (src mtime 21:18:10, expect 26 f)
+21:27:01 R6.mp4: duo:Chun-Li levels 0.038-0.874 gamma 0.55; frames in 26 out 26 OK
+21:27:05 PASS  R6         frames= 26 master_f_in=145 min(R-B)= -89.14 mean(R-B)=-84.63 exempt=26 ink=0 below_ink=0.000% white_clip=0.000%
+21:27:05 grading R7 (src mtime 21:24:03, expect 26 f)
+21:27:34 R7.mp4: duo:M. Bison levels 0.008-0.869 gamma 0.55; frames in 26 out 26 OK
+21:27:39 PASS  R7         frames= 26 master_f_in=171 min(R-B)= -38.34 mean(R-B)=-37.90 exempt=26 ink=0 below_ink=0.000% white_clip=0.000%
+21:27:39 grading R8 (src mtime 21:18:17, expect 26 f)
+21:27:59 R8.mp4: duo:E. Honda levels 0.022-0.620 gamma 0.74; frames in 26 out 26 OK
+21:28:00 PASS  R8         frames= 26 master_f_in=197 min(R-B)= +39.79 mean(R-B)=+40.29 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:28:00 grading C1 (src mtime 21:24:42, expect 26 f)
+21:28:18 C1.mp4: true; frames in 26 out 26 OK
+21:28:21 PASS  C1         frames= 26 master_f_in=237 min(R-B)= +71.31 mean(R-B)=+80.92 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:28:21 grading C2 (src mtime 21:18:43, expect 17 f)
+21:28:30 C2.mp4: true; frames in 17 out 17 OK
+21:28:31 PASS  C2         frames= 17 master_f_in=263 min(R-B)= +24.85 mean(R-B)=+25.29 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:28:31 grading C3 (src mtime 21:18:51, expect 18 f)
+21:28:45 C3.mp4: true; frames in 18 out 18 OK
+21:28:46 PASS  C3         frames= 18 master_f_in=280 min(R-B)= +34.84 mean(R-B)=+39.94 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:28:46 grading C4 (src mtime 21:18:56, expect 18 f)
+21:28:52 C4.mp4: true; frames in 18 out 18 OK
+21:28:53 PASS  C4         frames= 18 master_f_in=298 min(R-B)= +21.64 mean(R-B)=+22.73 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:28:53 grading C5 (src mtime 21:19:03, expect 20 f)
+21:29:02 C5.mp4: true; frames in 20 out 20 OK
+21:29:03 PASS  C5         frames= 20 master_f_in=316 min(R-B)= +30.10 mean(R-B)=+31.19 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:29:03 grading C6 (src mtime 21:19:47, expect 21 f)
+21:29:29 C6.mp4: true>drain; frames in 21 out 21 OK
+21:29:30 PASS  C6         frames= 21 master_f_in=336 min(R-B)=  +8.69 mean(R-B)=+21.25 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:29:30 grading H0 (src mtime 21:16:48, expect 22 f)
+21:29:35 H0.mp4: true; frames in 22 out 22 OK
+21:29:36 PASS  H0         frames= 22 master_f_in=365 min(R-B)= +32.57 mean(R-B)=+35.84 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:29:36 grading F1 (src mtime 21:19:53, expect 11 f)
+21:29:41 F1.mp4: true; frames in 11 out 11 OK
+21:29:42 PASS  F1         frames= 11 master_f_in=387 min(R-B)= +25.48 mean(R-B)=+27.78 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:29:42 grading F2 (src mtime 21:19:56, expect 11 f)
+21:29:53 F2.mp4: true warm-pre rr+0.09 gg-0.022 bb-0.09; frames in 11 out 11 OK
+21:29:53 PASS  F2         frames= 11 master_f_in=398 min(R-B)=  +0.71 mean(R-B)= +1.88 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:29:53 grading F3 (src mtime 21:19:58, expect 11 f)
+21:30:17 F3.mp4: true warm-pre rr+0.24 gg-0.060 bb-0.24; frames in 11 out 11 OK
+21:30:18 PASS  F3         frames= 11 master_f_in=409 min(R-B)=  +0.83 mean(R-B)= +1.57 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:30:18 grading F4 (src mtime 21:20:00, expect 10 f)
+21:30:20 F4.mp4: true; frames in 10 out 10 OK
+21:30:20 PASS  F4         frames= 10 master_f_in=420 min(R-B)= +19.21 mean(R-B)=+21.62 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:30:20 grading F5 (src mtime 21:20:03, expect 11 f)
+21:30:34 F5.mp4: true warm-pre rr+0.15 gg-0.037 bb-0.15; frames in 11 out 11 OK
+21:30:34 PASS  F5         frames= 11 master_f_in=430 min(R-B)=  +0.70 mean(R-B)= +1.45 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:30:34 grading F6 (src mtime 21:20:05, expect 10 f)
+21:30:40 F6.mp4: true warm-pre rr+0.06 gg-0.015 bb-0.06; frames in 10 out 10 OK
+21:30:41 PASS  F6         frames= 10 master_f_in=441 min(R-B)=  +0.96 mean(R-B)= +1.27 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:30:41 grading F7 (src mtime 21:20:09, expect 12 f)
+21:30:44 F7.mp4: true; frames in 12 out 12 OK
+21:30:45 PASS  F7         frames= 12 master_f_in=451 min(R-B)= +30.09 mean(R-B)=+34.65 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:30:45 grading F8 (src mtime 21:20:11, expect 11 f)
+21:30:47 F8.mp4: true; frames in 11 out 11 OK
+21:30:48 PASS  F8         frames= 11 master_f_in=463 min(R-B)= +11.91 mean(R-B)=+12.43 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:30:48 grading F9 (src mtime 21:20:15, expect 11 f)
+21:30:51 F9.mp4: true; frames in 11 out 11 OK
+21:30:52 PASS  F9         frames= 11 master_f_in=474 min(R-B)= +32.41 mean(R-B)=+33.26 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:30:52 grading T1 (src mtime 21:20:22, expect 40 f)
+21:31:05 T1_duo.mp4: duo:Ryu levels 0.019-0.847 gamma 0.85; frames in 40 out 40 OK
+T1_true.mp4: true warm-pre rr+0.30 gg-0.075 bb-0.30; frames in 40 out 40 OK
+21:31:08 PASS  T1_duo     frames= 40 master_f_in=494 min(R-B)= +57.58 mean(R-B)=+59.17 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T1_true    frames= 40 master_f_in=686 min(R-B)=  +0.51 mean(R-B)= +2.97 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:31:08 grading T4 (src mtime 21:20:47, expect 40 f)
+21:31:23 T4_duo.mp4: duo:Blanka levels 0.053-0.906 gamma 0.75; frames in 40 out 40 OK
+T4_true.mp4: true warm-pre rr+0.21 gg-0.052 bb-0.21; frames in 40 out 40 OK
+21:31:26 PASS  T4_duo     frames= 40 master_f_in=547 min(R-B)= +27.28 mean(R-B)=+27.71 exempt=0 ink=0 below_ink=0.001% white_clip=0.000%
+PASS  T4_true    frames= 40 master_f_in=686 min(R-B)=  +2.36 mean(R-B)= +3.86 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:31:26 grading T5 (src mtime 21:20:55, expect 40 f)
+21:31:30 T5_duo.mp4: duo:Guile levels 0.048-0.892 gamma 0.88; frames in 40 out 40 OK
+T5_true.mp4: true; frames in 40 out 40 OK
+21:31:33 PASS  T5_duo     frames= 40 master_f_in=564 min(R-B)= -39.89 mean(R-B)=-33.36 exempt=40 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T5_true    frames= 40 master_f_in=686 min(R-B)= +81.64 mean(R-B)=+85.07 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:31:33 grading T6 (src mtime 21:21:03, expect 40 f)
+21:31:56 T6_duo.mp4: duo:Chun-Li levels 0.031-0.860 gamma 0.61; frames in 40 out 40 OK
+T6_true.mp4: true warm-pre 0.30 STILL FAILS min(R-B)=-24.13; frames in 40 out 40 OK
+21:31:59 PASS  T6_duo     frames= 40 master_f_in=582 min(R-B)=-102.94 mean(R-B)=-93.96 exempt=40 ink=0 below_ink=0.000% white_clip=0.000%
+FAIL  T6_true    frames= 40 master_f_in=686 min(R-B)= -24.13 mean(R-B)= -7.46 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%  failing(plate_i,master_f,R-B)=[(0, 686, -4.21), (1, 687, -3.7), (2, 688, -3.23), (3, 689, -2.53), (4, 690, -1.64), (5, 691, -0.9), (6, 692, -0.52), (7, 693, -0.44)]...
+21:31:59 grading T7 (src mtime 21:24:53, expect 40 f)
+21:32:03 T7_duo.mp4: duo:M. Bison levels 0.008-0.881 gamma 0.55; frames in 40 out 40 OK
+T7_true.mp4: true; frames in 40 out 40 OK
+21:32:06 PASS  T7_duo     frames= 40 master_f_in=599 min(R-B)= -43.09 mean(R-B)=-42.74 exempt=40 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T7_true    frames= 40 master_f_in=686 min(R-B)= +30.29 mean(R-B)=+30.89 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:32:06 grading T8 (src mtime 21:21:16, expect 40 f)
+21:32:09 T8_duo.mp4: duo:E. Honda levels 0.020-0.620 gamma 0.71; frames in 40 out 40 OK
+T8_true.mp4: true; frames in 40 out 40 OK
+21:32:12 PASS  T8_duo     frames= 40 master_f_in=616 min(R-B)= +37.56 mean(R-B)=+38.27 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T8_true    frames= 40 master_f_in=686 min(R-B)= +33.38 mean(R-B)=+34.00 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:33:12 grading R1 (src mtime 21:23:49, expect 27 f)
+21:33:21 R1.mp4: duo:Ryu levels 0.010-0.813 gamma 0.68; frames in 27 out 27 OK
+21:33:22 PASS  R1         frames= 27 master_f_in=19 min(R-B)= +61.37 mean(R-B)=+65.42 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:33:22 grading C6 (src mtime 21:30:28, expect 21 f)
+21:33:41 C6.mp4: true>drain; frames in 21 out 21 OK
+21:33:42 PASS  C6         frames= 21 master_f_in=336 min(R-B)=  +8.83 mean(R-B)=+21.25 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:33:42 grading T2 (src mtime 21:30:37, expect 40 f)
+21:33:43 [mov,mp4,m4a,3gp,3g2,mj2 @ 0x56139de3f4c0] moov atom not found
+[in#0 @ 0x56139de3f3c0] Error opening input: Invalid data found when processing input
+Error opening input file /home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/T2.mp4.
+Error opening input files: Invalid data found when processing input
+Traceback (most recent call last):
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 86, in <module>
+    main()
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 77, in main
+    outs = [(d1, grade_duo(src, d1, tiles[i]["character"])), (d2, grade_true(src, d2, local=i in ("T5", "T6", "T7")))]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 45, in grade_duo
+    encode(src, vf, dst); return f"duo:{fighter} levels {imin:.3f}-{imax:.3f} gamma {gm:.2f}"
+    ^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 28, in encode
+    subprocess.run(cmd, check=True); os.replace(tmp, dst)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ffmpeg', '-v', 'error', '-y', '-i', '/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/T2.mp4', '-filter_complex', "[0:v]scale=in_color_matrix=bt709:in_range=tv:out_color_matrix=bt709:out_range=pc,format=gbrp,lutrgb=r='255*pow(clip((val/255-0.0437)/0.8328\\,0\\,1)\\,0.926)':g='255*pow(clip((val/255-0.0437)/0.8328\\,0\\,1)\\,0.926)':b='255*pow(clip((val/255-0.0437)/0.8328\\,0\\,1)\\,0.926)',noise=alls=6:allf=t,lut3d=file=/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/duo_ken.cube:interp=tetrahedral,scale=in_range=pc:out_color_matrix=bt709:out_range=tv,format=yuv420p[o]", '-map', '[o]', '-an', '-fps_mode', 'passthrough', '-c:v', 'libx264', '-preset', 'medium', '-crf', '10', '-pix_fmt', 'yuv420p', '-threads', '2', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-colorspace', 'bt709', '-color_range', 'tv', '-movflags', '+faststart', '/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/T2_duo.mp4.tmp.mp4']' returned non-zero exit status 183.
+21:33:43 T2 source changed during grading; will regrade
+21:33:43 grading T3 (src mtime 21:30:44, expect 40 f)
+21:33:48 T3_duo.mp4: duo:Dhalsim levels 0.070-0.859 gamma 0.76; frames in 40 out 40 OK
+T3_true.mp4: true; frames in 40 out 40 OK
+21:33:50 PASS  T3_duo     frames= 40 master_f_in=529 min(R-B)= +46.84 mean(R-B)=+56.69 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T3_true    frames= 40 master_f_in=686 min(R-B)= +25.94 mean(R-B)=+27.68 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:33:50 grading T6 (src mtime 21:21:03, expect 40 f)
+21:33:51 [mov,mp4,m4a,3gp,3g2,mj2 @ 0x55d7291fc540] moov atom not found
+[in#0 @ 0x55d7291fc440] Error opening input: Invalid data found when processing input
+Error opening input file /home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/T6.mp4.
+Error opening input files: Invalid data found when processing input
+Traceback (most recent call last):
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 86, in <module>
+    main()
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 77, in main
+    outs = [(d1, grade_duo(src, d1, tiles[i]["character"])), (d2, grade_true(src, d2, local=i in ("T5", "T6", "T7")))]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 45, in grade_duo
+    encode(src, vf, dst); return f"duo:{fighter} levels {imin:.3f}-{imax:.3f} gamma {gm:.2f}"
+    ^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/grade_plate.py", line 28, in encode
+    subprocess.run(cmd, check=True); os.replace(tmp, dst)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ffmpeg', '-v', 'error', '-y', '-i', '/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/edit/v001/plates/T6.mp4', '-filter_complex', "[0:v]scale=in_color_matrix=bt709:in_range=tv:out_color_matrix=bt709:out_range=pc,format=gbrp,lutrgb=r='255*pow(clip((val/255-0.0309)/0.8290\\,0\\,1)\\,0.613)':g='255*pow(clip((val/255-0.0309)/0.8290\\,0\\,1)\\,0.613)':b='255*pow(clip((val/255-0.0309)/0.8290\\,0\\,1)\\,0.613)',noise=alls=6:allf=t,lut3d=file=/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/duo_chunli.cube:interp=tetrahedral,scale=in_range=pc:out_color_matrix=bt709:out_range=tv,format=yuv420p[o]", '-map', '[o]', '-an', '-fps_mode', 'passthrough', '-c:v', 'libx264', '-preset', 'medium', '-crf', '10', '-pix_fmt', 'yuv420p', '-threads', '2', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-colorspace', 'bt709', '-color_range', 'tv', '-movflags', '+faststart', '/home/user/rohillavinaykrishan/projects/vinay-30s/shots/sh010/color/v001/plates/T6_duo.mp4.tmp.mp4']' returned non-zero exit status 183.
+21:33:51 T6 source changed during grading; will regrade
+21:34:51 grading T2 (src mtime 21:33:44, expect 40 f)
+21:34:57 T2_duo.mp4: duo:Ken levels 0.080-0.912 gamma 1.00; frames in 40 out 40 OK
+T2_true.mp4: true; frames in 40 out 40 OK
+21:35:00 PASS  T2_duo     frames= 40 master_f_in=512 min(R-B)= +59.84 mean(R-B)=+68.88 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T2_true    frames= 40 master_f_in=686 min(R-B)= +32.06 mean(R-B)=+37.46 exempt=0 ink=0 below_ink=0.000% white_clip=0.000%
+21:35:00 grading T6 (src mtime 21:33:53, expect 40 f)
+21:35:04 T6_duo.mp4: duo:Chun-Li levels 0.030-0.896 gamma 0.70; frames in 40 out 40 OK
+T6_true.mp4: true (T5-T7 local exemption, no warm-pre); frames in 40 out 40 OK
+21:35:08 PASS  T6_duo     frames= 40 master_f_in=582 min(R-B)= -89.28 mean(R-B)=-85.47 exempt=40 ink=0 below_ink=0.000% white_clip=0.000%
+PASS  T6_true    frames= 40 master_f_in=686 min(R-B)= -38.39 mean(R-B)=-33.66 exempt=40 ink=0 below_ink=0.000% white_clip=0.000%

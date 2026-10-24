@@ -1,0 +1,1 @@
+volume=0.28dB,aresample=192000:resampler=soxr:precision=28,alimiter=limit=0.8413951416451951:attack=1:release=60:level=disabled:asc=1:latency=1,aresample=48000:resampler=soxr:precision=28
