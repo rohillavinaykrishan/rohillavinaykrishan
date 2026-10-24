@@ -1,0 +1,12 @@
+{
+ "model": "small",
+ "language": "en",
+ "segments": [
+  {
+   "start": 30.0,
+   "end": 32.0,
+   "text": "You",
+   "no_speech": 0.81
+  }
+ ]
+}

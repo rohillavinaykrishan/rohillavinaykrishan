@@ -3,8 +3,8 @@
 #   ./comp.sh build          sync MG1-3 into master/ (tools/build_master.py) + lint
 #   ./comp.sh proxy          2160 layout rendered at 1080 (--resolution portrait) -> 540x960 proxy + audio
 #   ./comp.sh half a|b       native 2160x3840 HyperFrames render of f0-364 (a) or f365-749 (b), crf 8
-#   ./comp.sh join           lossless concat of the halves -> render/vinay30_4K_picture.mp4 (750 f, no audio)
-#   ./comp.sh deliver        deliver_4k.sh (x264 crf 12 film yuv420p, AAC 320k) -> deliver/ + render/vinay30_4K.mp4
+#   ./comp.sh join           lossless concat of the halves -> render/vinay30_4K.mp4 (750 f, no audio)
+#   ./comp.sh deliver        deliver_4k.sh (x264 crf 12 film yuv420p, AAC 320k) -> deliver/ (picture: render/vinay30_4K.mp4)
 #   ./comp.sh posters        f374 + f749 4K PNGs from the joined picture
 set -euo pipefail
 PRJ=/home/user/rohillavinaykrishan/projects/vinay-30s
@@ -32,12 +32,12 @@ case "${1:-}" in
     npx hyperframes render . -q delivery --crf 8 -f 25 -w 2 -o "$R/half_$h.mp4" > "$R/render_4k_$h.log" 2>&1 ;;
   join)
     printf "file '%s'\nfile '%s'\n" "$R/half_a.mp4" "$R/half_b.mp4" > "$R/halves.txt"
-    ffmpeg -v error -y -f concat -safe 0 -i "$R/halves.txt" -map 0:v:0 -c copy -an "$R/vinay30_4K_picture.mp4" ;;
+    ffmpeg -v error -y -f concat -safe 0 -i "$R/halves.txt" -map 0:v:0 -c copy -an "$R/vinay30_4K.mp4" ;;
   deliver)
-    THREADS=${THREADS:-0} /home/user/rohillavinaykrishan/tools/vfx/bin/deliver_4k.sh "$R/vinay30_4K_picture.mp4" "$WAV" "$OUT" ;;
+    THREADS=${THREADS:-0} /home/user/rohillavinaykrishan/tools/vfx/bin/deliver_4k.sh "$R/vinay30_4K.mp4" "$WAV" "$OUT" ;;
   posters)
     for f in 374 749; do
-      ffmpeg -v error -y -i "$R/vinay30_4K_picture.mp4" -vf "select=eq(n\,$f)" -vsync 0 -frames:v 1 "$R/poster_f${f}_4K.png"
+      ffmpeg -v error -y -i "$R/vinay30_4K.mp4" -vf "select=eq(n\,$f)" -vsync 0 -frames:v 1 "$R/poster_f${f}_4K.png"
     done ;;
   *) echo "usage: $0 build|proxy|half a|b|join|deliver|posters"; exit 1 ;;
 esac
