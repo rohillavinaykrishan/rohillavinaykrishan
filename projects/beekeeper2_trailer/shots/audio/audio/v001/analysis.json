@@ -1,0 +1,725 @@
+{
+ "source": "source/trailer_audio.wav",
+ "duration_s": 87.24,
+ "sample_rate": 48000,
+ "channels": 2,
+ "audio_end_s": 75.38,
+ "note_end": "trailer audio ends with a hard cut at 75.38 s; 75.38-87.24 is digital silence (end card)",
+ "tempo": {
+  "bpm": 123.0,
+  "pulse": "yes - steady ~120 BPM pulse from ~7.6 s to 75.4 s (librosa beat track; median IBI ~0.49-0.51 s). Treat as ~120 BPM; downbeats not verified",
+  "beat_period_s": 0.488
+ },
+ "beats_s": [
+  7.57,
+  8.08,
+  8.57,
+  9.08,
+  9.54,
+  10.08,
+  10.57,
+  11.05,
+  11.56,
+  12.05,
+  12.56,
+  13.1,
+  13.61,
+  14.07,
+  14.51,
+  14.98,
+  15.44,
+  15.91,
+  16.37,
+  16.88,
+  17.39,
+  17.97,
+  18.44,
+  18.95,
+  19.46,
+  19.97,
+  20.46,
+  20.94,
+  21.5,
+  21.99,
+  22.5,
+  23.01,
+  23.52,
+  24.03,
+  24.54,
+  25.05,
+  25.57,
+  26.08,
+  26.56,
+  27.07,
+  27.59,
+  28.1,
+  28.61,
+  29.09,
+  29.61,
+  30.12,
+  30.63,
+  31.14,
+  31.67,
+  32.09,
+  32.55,
+  33.02,
+  33.48,
+  33.92,
+  34.37,
+  34.83,
+  35.27,
+  35.76,
+  36.25,
+  36.73,
+  37.24,
+  37.76,
+  38.27,
+  38.78,
+  39.29,
+  39.78,
+  40.26,
+  40.8,
+  41.31,
+  41.82,
+  42.33,
+  42.82,
+  43.35,
+  43.86,
+  44.37,
+  44.86,
+  45.35,
+  45.79,
+  46.21,
+  46.65,
+  47.18,
+  47.69,
+  48.2,
+  48.67,
+  49.13,
+  49.62,
+  50.11,
+  50.6,
+  51.08,
+  51.55,
+  52.01,
+  52.52,
+  52.99,
+  53.48,
+  53.94,
+  54.43,
+  54.89,
+  55.38,
+  55.87,
+  56.35,
+  56.82,
+  57.31,
+  57.77,
+  58.26,
+  58.75,
+  59.21,
+  59.7,
+  60.19,
+  60.74,
+  61.25,
+  61.72,
+  62.21,
+  62.69,
+  63.2,
+  63.69,
+  64.18,
+  64.64,
+  65.11,
+  65.57,
+  66.06,
+  66.55,
+  67.04,
+  67.52,
+  68.01,
+  68.5,
+  68.99,
+  69.5,
+  70.01,
+  70.5,
+  71.01,
+  71.42,
+  71.87,
+  72.33,
+  72.82,
+  73.31,
+  73.77,
+  74.26,
+  74.75
+ ],
+ "hits": [
+  {
+   "t": 12.05,
+   "type": "boom",
+   "size": "medium"
+  },
+  {
+   "t": 16.44,
+   "type": "hit",
+   "size": "medium"
+  },
+  {
+   "t": 19.53,
+   "type": "boom",
+   "size": "big"
+  },
+  {
+   "t": 21.94,
+   "type": "boom",
+   "size": "medium"
+  },
+  {
+   "t": 23.48,
+   "type": "boom",
+   "size": "medium"
+  },
+  {
+   "t": 25.52,
+   "type": "boom",
+   "size": "medium"
+  },
+  {
+   "t": 26.54,
+   "type": "boom",
+   "size": "medium"
+  },
+  {
+   "t": 27.52,
+   "type": "boom",
+   "size": "medium"
+  },
+  {
+   "t": 28.1,
+   "type": "boom",
+   "size": "big"
+  },
+  {
+   "t": 30.19,
+   "type": "boom (after suck-out)",
+   "size": "big"
+  },
+  {
+   "t": 33.02,
+   "type": "sting",
+   "size": "medium"
+  },
+  {
+   "t": 34.83,
+   "type": "sting",
+   "size": "medium"
+  },
+  {
+   "t": 36.8,
+   "type": "sting / swell-in",
+   "size": "medium"
+  },
+  {
+   "t": 37.43,
+   "type": "slam",
+   "size": "big"
+  },
+  {
+   "t": 40.77,
+   "type": "impact",
+   "size": "big"
+  },
+  {
+   "t": 43.33,
+   "type": "hit",
+   "size": "small"
+  },
+  {
+   "t": 44.84,
+   "type": "impact",
+   "size": "medium"
+  },
+  {
+   "t": 47.67,
+   "type": "impact",
+   "size": "big"
+  },
+  {
+   "t": 49.57,
+   "type": "hit",
+   "size": "small"
+  },
+  {
+   "t": 54.89,
+   "type": "impact",
+   "size": "medium"
+  },
+  {
+   "t": 57.28,
+   "type": "hit",
+   "size": "small"
+  },
+  {
+   "t": 58.31,
+   "type": "hit",
+   "size": "small"
+  },
+  {
+   "t": 60.74,
+   "type": "impact",
+   "size": "medium"
+  },
+  {
+   "t": 70.5,
+   "type": "hit",
+   "size": "small"
+  },
+  {
+   "t": 71.82,
+   "type": "title slam",
+   "size": "big"
+  },
+  {
+   "t": 73.26,
+   "type": "hit",
+   "size": "small"
+  },
+  {
+   "t": 74.77,
+   "type": "final hit",
+   "size": "medium"
+  }
+ ],
+ "risers": [
+  {
+   "start": 0.7,
+   "end": 7.38,
+   "desc": "ambient swell into first VO"
+  },
+  {
+   "start": 15.9,
+   "end": 20.0,
+   "desc": "build into boom 19.5-20"
+  },
+  {
+   "start": 26.5,
+   "end": 29.0,
+   "desc": "build into suck-out/boom 30.19"
+  },
+  {
+   "start": 36.65,
+   "end": 37.5,
+   "desc": "swell-in from silence into slam 37.43"
+  },
+  {
+   "start": 39.5,
+   "end": 41.0,
+   "desc": "rise into impact 40.77"
+  },
+  {
+   "start": 46.5,
+   "end": 47.67,
+   "desc": "rise into impact 47.67"
+  },
+  {
+   "start": 60.5,
+   "end": 61.5,
+   "desc": "lift back to full after 'Welcome back, Clay'"
+  }
+ ],
+ "silences_drops": [
+  {
+   "start": 0.0,
+   "end": 0.7,
+   "desc": "head"
+  },
+  {
+   "start": 32.4,
+   "end": 32.95,
+   "desc": "music drop (-46..-51 dB) between dialogue halves"
+  },
+  {
+   "start": 33.98,
+   "end": 34.81,
+   "desc": "silence (<-50 dB) before 'I would hope...'"
+  },
+  {
+   "start": 36.06,
+   "end": 36.65,
+   "desc": "silence (<-50 dB) before slam"
+  },
+  {
+   "start": 71.33,
+   "end": 71.52,
+   "desc": "short gap before title slam"
+  },
+  {
+   "start": 75.38,
+   "end": 87.24,
+   "desc": "digital silence to end"
+  }
+ ],
+ "sections": [
+  {
+   "start": 0.0,
+   "end": 0.7,
+   "name": "head silence",
+   "energy": 0.0,
+   "desc": "digital near-silence"
+  },
+  {
+   "start": 0.7,
+   "end": 7.38,
+   "name": "intro / cold open",
+   "energy": 0.43,
+   "desc": "ambient drone swell (+30 dB rise), first VO line starts 6.9"
+  },
+  {
+   "start": 7.38,
+   "end": 19.5,
+   "name": "setup",
+   "energy": 0.63,
+   "desc": "low pulse bed under VO lines 1-2; dip 10.1-11.9 under speech; hit 12.05"
+  },
+  {
+   "start": 19.5,
+   "end": 29.3,
+   "name": "build 1",
+   "energy": 0.82,
+   "desc": "boom at 19.5-20.0 then repeating booms ~1 s apart (21.9-28.1) under VO line 3"
+  },
+  {
+   "start": 29.3,
+   "end": 30.19,
+   "name": "suck-out",
+   "energy": 0.77,
+   "desc": "low end drops out (pre-hit vacuum)"
+  },
+  {
+   "start": 30.19,
+   "end": 37.2,
+   "name": "dialogue drop",
+   "energy": 0.41,
+   "desc": "boom 30.19 then music falls away; exchange 'go up against...' / 'hope for nothing less'; stings at 33.02, 34.83, 36.80 between lines; near-silence 33.98-34.81, 36.06-36.65"
+  },
+  {
+   "start": 37.2,
+   "end": 47.67,
+   "name": "act 2 - action",
+   "energy": 0.85,
+   "desc": "slam back in at 37.4; big hit 40.77; car lines 39.3-47.4 over driving bed"
+  },
+  {
+   "start": 47.67,
+   "end": 58.9,
+   "name": "action peak",
+   "energy": 0.92,
+   "desc": "loudest sustained section (~-15 dB), no dialogue; hit 54.89"
+  },
+  {
+   "start": 58.9,
+   "end": 61.0,
+   "name": "mini drop",
+   "energy": 0.78,
+   "desc": "music dips for 'Welcome back, Clay.'; hit 60.74"
+  },
+  {
+   "start": 61.0,
+   "end": 69.5,
+   "name": "climax montage",
+   "energy": 0.9,
+   "desc": "full energy, no dialogue"
+  },
+  {
+   "start": 69.5,
+   "end": 71.82,
+   "name": "pre-title drop",
+   "energy": 0.72,
+   "desc": "energy pulls back for 'Next time, don't be so hard-headed.'; gap 71.33-71.52"
+  },
+  {
+   "start": 71.82,
+   "end": 75.38,
+   "name": "title slam / button",
+   "energy": 0.86,
+   "desc": "big boom 71.82 into final sting, hard cut to silence at 75.38"
+  },
+  {
+   "start": 75.38,
+   "end": 87.24,
+   "name": "end card silence",
+   "energy": 0.0,
+   "desc": "digital silence (11.86 s)"
+  }
+ ],
+ "dialogue_spans": [
+  {
+   "start": 6.93,
+   "end": 14.07
+  },
+  {
+   "start": 15.87,
+   "end": 18.55
+  },
+  {
+   "start": 21.65,
+   "end": 27.59
+  },
+  {
+   "start": 30.72,
+   "end": 34.14
+  },
+  {
+   "start": 34.88,
+   "end": 35.98
+  },
+  {
+   "start": 39.26,
+   "end": 40.58
+  },
+  {
+   "start": 42.48,
+   "end": 44.52
+  },
+  {
+   "start": 45.42,
+   "end": 47.4
+  },
+  {
+   "start": 59.28,
+   "end": 61.1
+  },
+  {
+   "start": 69.86,
+   "end": 71.36
+  }
+ ],
+ "cuttable_no_speech": [
+  {
+   "start": 0.0,
+   "end": 6.78,
+   "len": 6.78
+  },
+  {
+   "start": 14.22,
+   "end": 15.72,
+   "len": 1.5
+  },
+  {
+   "start": 18.7,
+   "end": 21.5,
+   "len": 2.8
+  },
+  {
+   "start": 27.74,
+   "end": 30.57,
+   "len": 2.83
+  },
+  {
+   "start": 36.13,
+   "end": 39.11,
+   "len": 2.98
+  },
+  {
+   "start": 40.73,
+   "end": 42.33,
+   "len": 1.6
+  },
+  {
+   "start": 47.55,
+   "end": 59.13,
+   "len": 11.58
+  },
+  {
+   "start": 61.25,
+   "end": 69.71,
+   "len": 8.46
+  },
+  {
+   "start": 71.51,
+   "end": 75.38,
+   "len": 3.87
+  }
+ ],
+ "loudness": {
+  "integrated_lufs": -15.5,
+  "lra_lu": 14.5,
+  "true_peak_dbtp": -0.3,
+  "master_target": "-14 LUFS / -1 dBTP: needs ~+1.5 dB plus limiting (peak already -0.3)",
+  "curve_db_rms_per_0.5s": [
+   -81.2,
+   -60.3,
+   -53.6,
+   -48.2,
+   -46.7,
+   -42.5,
+   -39.3,
+   -39.1,
+   -39.5,
+   -32.9,
+   -33.9,
+   -30.1,
+   -32.1,
+   -32.0,
+   -29.5,
+   -23.7,
+   -25.4,
+   -31.5,
+   -29.2,
+   -29.8,
+   -38.6,
+   -39.0,
+   -38.6,
+   -42.8,
+   -24.1,
+   -30.8,
+   -30.0,
+   -24.6,
+   -31.8,
+   -36.1,
+   -29.5,
+   -31.0,
+   -31.9,
+   -22.2,
+   -21.3,
+   -27.1,
+   -25.8,
+   -26.0,
+   -23.8,
+   -17.2,
+   -15.1,
+   -18.5,
+   -18.7,
+   -21.0,
+   -22.3,
+   -23.5,
+   -26.3,
+   -26.1,
+   -20.0,
+   -20.9,
+   -21.7,
+   -23.1,
+   -24.3,
+   -19.4,
+   -20.3,
+   -23.1,
+   -17.3,
+   -15.7,
+   -20.2,
+   -24.8,
+   -18.8,
+   -29.1,
+   -26.8,
+   -33.0,
+   -35.7,
+   -48.9,
+   -28.1,
+   -42.9,
+   -62.5,
+   -48.2,
+   -30.8,
+   -35.9,
+   -64.4,
+   -49.7,
+   -30.8,
+   -15.7,
+   -15.9,
+   -16.3,
+   -17.3,
+   -22.6,
+   -21.7,
+   -17.0,
+   -14.7,
+   -14.1,
+   -17.5,
+   -20.6,
+   -20.2,
+   -21.0,
+   -21.5,
+   -21.0,
+   -18.7,
+   -19.8,
+   -18.0,
+   -23.1,
+   -21.7,
+   -15.2,
+   -15.4,
+   -15.4,
+   -16.0,
+   -14.3,
+   -15.8,
+   -16.5,
+   -18.2,
+   -15.4,
+   -15.6,
+   -14.9,
+   -14.9,
+   -15.9,
+   -16.5,
+   -15.5,
+   -15.6,
+   -16.0,
+   -17.4,
+   -17.3,
+   -17.8,
+   -17.7,
+   -16.8,
+   -16.1,
+   -20.3,
+   -22.4,
+   -24.2,
+   -25.0,
+   -18.0,
+   -15.4,
+   -17.8,
+   -17.1,
+   -16.1,
+   -15.9,
+   -17.7,
+   -18.4,
+   -15.1,
+   -16.3,
+   -17.3,
+   -16.1,
+   -16.2,
+   -16.5,
+   -16.3,
+   -19.9,
+   -16.0,
+   -21.4,
+   -22.3,
+   -24.9,
+   -30.8,
+   -24.4,
+   -17.8,
+   -18.7,
+   -18.8,
+   -19.0,
+   -18.7,
+   -16.6,
+   -46.3,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0,
+   -90.0
+  ],
+  "summary": "quiet swell 0-7 s (-60..-30 dB), VO bed -30..-25 dB to 19 s, build -20 dB 19-30 s, dialogue drop to -35..-60 dB 31-37 s, full action -15..-18 dB 37-75 s (peak 47.7-58 s), hard cut 75.38"
+ }
+}

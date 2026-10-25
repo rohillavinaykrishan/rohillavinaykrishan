@@ -1,0 +1,1886 @@
+{
+ "source": "source/trailer_original.mp4",
+ "width": 1280,
+ "height": 720,
+ "fps": "24000/1001",
+ "frames": 2092,
+ "duration": 87.254,
+ "active_picture": {
+  "crop": "1280:536:0:92",
+  "aspect": "2.39:1",
+  "note": "source already letterboxed 2.39:1 except s061 bumper (full frame)"
+ },
+ "detection": "ffmpeg scene score per frame (scale 320), candidates >0.08 verified by eye on before/after frame pairs; flashes, muzzle flashes and whip-pans rejected; fades found via YAVG",
+ "timebase": "start/end in seconds = frame/(24000/1001); end is exclusive",
+ "dialogue": [
+  {
+   "start": 6.93,
+   "end": 14.07,
+   "text": "You were the most dangerous operative they've ever created, but now the beekeepers have gone rogue,"
+  },
+  {
+   "start": 15.87,
+   "end": 18.55,
+   "text": "and you're the only one who can stop them."
+  },
+  {
+   "start": 21.65,
+   "end": 27.59,
+   "text": "The beekeepers want complete control of the government, and they're prepared to kill anyone who gets in the way."
+  },
+  {
+   "start": 30.54,
+   "end": 33.76,
+   "text": "If we're gonna cop against the beekeepers, we're gonna do it my way."
+  },
+  {
+   "start": 34.4,
+   "end": 35.92,
+   "text": "I would hope for nothing less."
+  },
+  {
+   "start": 36.96,
+   "end": 40.38,
+   "text": "I got you a car."
+  },
+  {
+   "start": 42.48,
+   "end": 44.52,
+   "text": "1969 Dodge Superbee."
+  },
+  {
+   "start": 45.42,
+   "end": 47.4,
+   "text": "Fully loaded with Stinger."
+  },
+  {
+   "start": 69.84,
+   "end": 71.22,
+   "text": "The stand don't be so hot-headed."
+  }
+ ],
+ "dialogue_words": "dialogue.json (faster-whisper, word timings)",
+ "shots": [
+  {
+   "id": "s001",
+   "start_frame": 0,
+   "end_frame": 86,
+   "frames": 86,
+   "start": 0.0,
+   "end": 3.587,
+   "duration": 3.587,
+   "thumb": "thumbs/s001.jpg",
+   "stats": {
+    "luma_mean": 85.3,
+    "luma_p5": 0.0,
+    "luma_p95": 215.6,
+    "clip_pct": 0.0,
+    "crush_pct": 11.04,
+    "rgb_mean": [
+     102.7,
+     81.9,
+     67.9
+    ]
+   },
+   "description": "Opening wide: Statham silhouetted from behind beside a classic muscle car on a hillside at dusk, smoke plume from a distant fire; fades up from black over first ~0.6 s",
+   "shot_size": "wide",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "dusky, warm orange/brown cast, low contrast, fade from black at head",
+   "usable": "yes - cold-open establishing",
+   "dialogue_over": []
+  },
+  {
+   "id": "s002",
+   "start_frame": 86,
+   "end_frame": 476,
+   "frames": 390,
+   "start": 3.587,
+   "end": 19.853,
+   "duration": 16.266,
+   "thumb": "thumbs/s002.jpg",
+   "stats": {
+    "luma_mean": 97.7,
+    "luma_p5": 12.4,
+    "luma_p95": 193.7,
+    "clip_pct": 0.0,
+    "crush_pct": 2.47,
+    "rgb_mean": [
+     118.5,
+     93.3,
+     80.2
+    ]
+   },
+   "description": "Long continuous tilt/crane: hand resting on car hood, rises to Statham medium close-up, pink-orange sunset sky, a drone hovers in background; VO 'most dangerous operative...'",
+   "shot_size": "close-up (tilts from insert to MCU)",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "warm magenta/peach sky, skin slightly flat, good exposure; long take - can be sub-clipped",
+   "usable": "yes - hero face, sub-clip 9-19 s",
+   "dialogue_over": [
+    "You were the most dangerous operative they've ever created, but now the beekeepers have gone rogue,",
+    "and you're the only one who can stop them."
+   ]
+  },
+  {
+   "id": "s003",
+   "start_frame": 476,
+   "end_frame": 500,
+   "frames": 24,
+   "start": 19.853,
+   "end": 20.854,
+   "duration": 1.001,
+   "thumb": "thumbs/s003.jpg",
+   "stats": {
+    "luma_mean": 20.1,
+    "luma_p5": 0.0,
+    "luma_p95": 149.3,
+    "clip_pct": 0.08,
+    "crush_pct": 76.53,
+    "rgb_mean": [
+     26.7,
+     19.0,
+     10.9
+    ]
+   },
+   "description": "MGM lion logo",
+   "shot_size": "logo",
+   "burned_in_text": true,
+   "text_content": "studio logo (MGM, An Amazon Company)",
+   "exposure_colour": "dark, gold on black",
+   "usable": "no - studio logo",
+   "dialogue_over": []
+  },
+  {
+   "id": "s004",
+   "start_frame": 500,
+   "end_frame": 524,
+   "frames": 24,
+   "start": 20.854,
+   "end": 21.855,
+   "duration": 1.001,
+   "thumb": "thumbs/s004.jpg",
+   "stats": {
+    "luma_mean": 52.4,
+    "luma_p5": 22.4,
+    "luma_p95": 164.1,
+    "clip_pct": 0.0,
+    "crush_pct": 0.0,
+    "rgb_mean": [
+     45.4,
+     54.2,
+     55.1
+    ]
+   },
+   "description": "Miramax logo",
+   "shot_size": "logo",
+   "burned_in_text": true,
+   "text_content": "studio logo (Miramax)",
+   "exposure_colour": "teal/blue-grey card, gold text",
+   "usable": "no - studio logo",
+   "dialogue_over": [
+    "The beekeepers want complete control of the government, and they're prepared to kill anyone who gets in the way."
+   ]
+  },
+  {
+   "id": "s005",
+   "start_frame": 524,
+   "end_frame": 549,
+   "frames": 25,
+   "start": 21.855,
+   "end": 22.898,
+   "duration": 1.043,
+   "thumb": "thumbs/s005.jpg",
+   "stats": {
+    "luma_mean": 39.1,
+    "luma_p5": 9.3,
+    "luma_p95": 65.0,
+    "clip_pct": 0.1,
+    "crush_pct": 3.91,
+    "rgb_mean": [
+     58.0,
+     36.3,
+     12.3
+    ]
+   },
+   "description": "Ornate bee-hive emblem / honeycomb ceiling or floor pattern lit with gold lights (beekeeper society insignia)",
+   "shot_size": "graphic insert",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "dark, strong amber/gold cast",
+   "usable": "yes - motif insert, 1 s",
+   "dialogue_over": [
+    "The beekeepers want complete control of the government, and they're prepared to kill anyone who gets in the way."
+   ]
+  },
+  {
+   "id": "s006",
+   "start_frame": 549,
+   "end_frame": 575,
+   "frames": 26,
+   "start": 22.898,
+   "end": 23.982,
+   "duration": 1.084,
+   "thumb": "thumbs/s006.jpg",
+   "stats": {
+    "luma_mean": 34.3,
+    "luma_p5": 0.5,
+    "luma_p95": 93.2,
+    "clip_pct": 0.02,
+    "crush_pct": 37.78,
+    "rgb_mean": [
+     55.6,
+     30.3,
+     11.5
+    ]
+   },
+   "description": "Symmetrical dark wood-panelled hall with wall sconces; figure in white suit standing centre (beekeeper villain)",
+   "shot_size": "wide",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "dark, amber/orange cast, crushed blacks",
+   "usable": "yes - villain intro",
+   "dialogue_over": [
+    "The beekeepers want complete control of the government, and they're prepared to kill anyone who gets in the way."
+   ]
+  },
+  {
+   "id": "s007",
+   "start_frame": 575,
+   "end_frame": 598,
+   "frames": 23,
+   "start": 23.982,
+   "end": 24.942,
+   "duration": 0.959,
+   "thumb": "thumbs/s007.jpg",
+   "stats": {
+    "luma_mean": 19.2,
+    "luma_p5": 3.7,
+    "luma_p95": 78.6,
+    "clip_pct": 0.04,
+    "crush_pct": 34.41,
+    "rgb_mean": [
+     20.8,
+     18.8,
+     17.4
+    ]
+   },
+   "description": "Night aerial of Washington DC: Washington Monument and Capitol lit",
+   "shot_size": "wide aerial",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "very dark, neutral/slightly warm, city lights",
+   "usable": "yes - location/stakes",
+   "dialogue_over": [
+    "The beekeepers want complete control of the government, and they're prepared to kill anyone who gets in the way."
+   ]
+  },
+  {
+   "id": "s008",
+   "start_frame": 598,
+   "end_frame": 622,
+   "frames": 24,
+   "start": 24.942,
+   "end": 25.943,
+   "duration": 1.001,
+   "thumb": "thumbs/s008.jpg",
+   "stats": {
+    "luma_mean": 74.8,
+    "luma_p5": 18.8,
+    "luma_p95": 174.1,
+    "clip_pct": 0.0,
+    "crush_pct": 0.22,
+    "rgb_mean": [
+     81.1,
+     74.0,
+     64.4
+    ]
+   },
+   "description": "Over-shoulder: Statham in red track jacket facing Jeremy Irons (back to camera) on a park/golf course path",
+   "shot_size": "medium OTS",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "overcast daylight, neutral-warm, greens muted",
+   "usable": "yes",
+   "dialogue_over": [
+    "The beekeepers want complete control of the government, and they're prepared to kill anyone who gets in the way."
+   ]
+  },
+  {
+   "id": "s009",
+   "start_frame": 622,
+   "end_frame": 647,
+   "frames": 25,
+   "start": 25.943,
+   "end": 26.985,
+   "duration": 1.043,
+   "thumb": "thumbs/s009.jpg",
+   "stats": {
+    "luma_mean": 64.7,
+    "luma_p5": 16.7,
+    "luma_p95": 129.3,
+    "clip_pct": 0.1,
+    "crush_pct": 0.15,
+    "rgb_mean": [
+     79.5,
+     61.4,
+     52.9
+    ]
+   },
+   "description": "Reverse OTS: Jeremy Irons speaking, Statham's red jacket in foreground",
+   "shot_size": "medium OTS",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "overcast, warm skin, muted greens",
+   "usable": "yes - dialogue",
+   "dialogue_over": [
+    "The beekeepers want complete control of the government, and they're prepared to kill anyone who gets in the way."
+   ]
+  },
+  {
+   "id": "s010",
+   "start_frame": 647,
+   "end_frame": 671,
+   "frames": 24,
+   "start": 26.985,
+   "end": 27.986,
+   "duration": 1.001,
+   "thumb": "thumbs/s010.jpg",
+   "stats": {
+    "luma_mean": 49.2,
+    "luma_p5": 8.4,
+    "luma_p95": 123.7,
+    "clip_pct": 0.0,
+    "crush_pct": 3.56,
+    "rgb_mean": [
+     50.0,
+     50.2,
+     37.8
+    ]
+   },
+   "description": "Blonde woman in black suit (Pom Klementieff-type character) touching earpiece, raises hand, green tiled wall",
+   "shot_size": "medium close-up",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "green/teal cast, moderate exposure",
+   "usable": "yes",
+   "dialogue_over": [
+    "The beekeepers want complete control of the government, and they're prepared to kill anyone who gets in the way."
+   ]
+  },
+  {
+   "id": "s011",
+   "start_frame": 671,
+   "end_frame": 731,
+   "frames": 60,
+   "start": 27.986,
+   "end": 30.489,
+   "duration": 2.502,
+   "thumb": "thumbs/s011.jpg",
+   "stats": {
+    "luma_mean": 40.8,
+    "luma_p5": 2.9,
+    "luma_p95": 116.4,
+    "clip_pct": 0.01,
+    "crush_pct": 31.91,
+    "rgb_mean": [
+     41.7,
+     41.3,
+     32.4
+    ]
+   },
+   "description": "Corridor fight: blonde woman fights/shoots bald henchmen in green corridor, handheld with whip-pans, muzzle flashes, ends in motion-blur",
+   "shot_size": "medium/wide handheld",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "green-teal cast, mid-dark, motion blur at tail",
+   "usable": "yes - action, cut out the blurry tail",
+   "dialogue_over": []
+  },
+  {
+   "id": "s012",
+   "start_frame": 731,
+   "end_frame": 746,
+   "frames": 15,
+   "start": 30.489,
+   "end": 31.114,
+   "duration": 0.626,
+   "thumb": "thumbs/s012.jpg",
+   "stats": {
+    "luma_mean": 0.0,
+    "luma_p5": 0.0,
+    "luma_p95": 0.0,
+    "clip_pct": 0.0,
+    "crush_pct": 100.0,
+    "rgb_mean": [
+     0.0,
+     0.0,
+     0.1
+    ]
+   },
+   "description": "BLACK (pure black frames)",
+   "shot_size": "black",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "black",
+   "usable": "no - gap/breath, use only as intentional pause",
+   "dialogue_over": [
+    "If we're gonna cop against the beekeepers, we're gonna do it my way."
+   ]
+  },
+  {
+   "id": "s013",
+   "start_frame": 746,
+   "end_frame": 781,
+   "frames": 35,
+   "start": 31.114,
+   "end": 32.574,
+   "duration": 1.46,
+   "thumb": "thumbs/s013.jpg",
+   "stats": {
+    "luma_mean": 85.4,
+    "luma_p5": 14.3,
+    "luma_p95": 223.1,
+    "clip_pct": 0.0,
+    "crush_pct": 0.75,
+    "rgb_mean": [
+     92.1,
+     84.3,
+     75.9
+    ]
+   },
+   "description": "Two-shot profile: Irons and Statham face each other in park, trees behind; fades up from black (first ~0.8 s)",
+   "shot_size": "medium two-shot",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "overcast, slightly warm, highlights in sky near clip; fade-in at head",
+   "usable": "yes - skip fade frames",
+   "dialogue_over": [
+    "If we're gonna cop against the beekeepers, we're gonna do it my way."
+   ]
+  },
+  {
+   "id": "s014",
+   "start_frame": 781,
+   "end_frame": 807,
+   "frames": 26,
+   "start": 32.574,
+   "end": 33.659,
+   "duration": 1.084,
+   "thumb": "thumbs/s014.jpg",
+   "stats": {
+    "luma_mean": 89.9,
+    "luma_p5": 17.7,
+    "luma_p95": 219.1,
+    "clip_pct": 0.0,
+    "crush_pct": 1.29,
+    "rgb_mean": [
+     96.6,
+     89.4,
+     74.2
+    ]
+   },
+   "description": "OTS onto Statham (red track jacket) speaking 'we do it my way', Irons foreground blurred",
+   "shot_size": "medium close-up",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "overcast, neutral, bright sky",
+   "usable": "yes - dialogue",
+   "dialogue_over": [
+    "If we're gonna cop against the beekeepers, we're gonna do it my way."
+   ]
+  },
+  {
+   "id": "s015",
+   "start_frame": 807,
+   "end_frame": 862,
+   "frames": 55,
+   "start": 33.659,
+   "end": 35.953,
+   "duration": 2.294,
+   "thumb": "thumbs/s015.jpg",
+   "stats": {
+    "luma_mean": 69.7,
+    "luma_p5": 21.5,
+    "luma_p95": 142.6,
+    "clip_pct": 0.15,
+    "crush_pct": 0.12,
+    "rgb_mean": [
+     83.8,
+     66.8,
+     57.4
+    ]
+   },
+   "description": "Irons close-up over Statham's shoulder: 'I would hope for nothing less'",
+   "shot_size": "medium close-up",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "overcast, warm skin",
+   "usable": "yes - dialogue",
+   "dialogue_over": [
+    "If we're gonna cop against the beekeepers, we're gonna do it my way.",
+    "I would hope for nothing less."
+   ]
+  },
+  {
+   "id": "s016",
+   "start_frame": 862,
+   "end_frame": 903,
+   "frames": 41,
+   "start": 35.953,
+   "end": 37.663,
+   "duration": 1.71,
+   "thumb": "thumbs/s016.jpg",
+   "stats": {
+    "luma_mean": 72.2,
+    "luma_p5": 21.9,
+    "luma_p95": 162.1,
+    "clip_pct": 0.0,
+    "crush_pct": 0.13,
+    "rgb_mean": [
+     78.1,
+     71.9,
+     58.2
+    ]
+   },
+   "description": "Statham close-up looking down, Irons foreground: 'I got you a car' begins",
+   "shot_size": "medium close-up",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "overcast, neutral-warm, greens",
+   "usable": "yes",
+   "dialogue_over": [
+    "I got you a car."
+   ]
+  },
+  {
+   "id": "s017",
+   "start_frame": 903,
+   "end_frame": 915,
+   "frames": 12,
+   "start": 37.663,
+   "end": 38.163,
+   "duration": 0.5,
+   "thumb": "thumbs/s017.jpg",
+   "stats": {
+    "luma_mean": 42.0,
+    "luma_p5": 0.0,
+    "luma_p95": 194.4,
+    "clip_pct": 0.0,
+    "crush_pct": 77.39,
+    "rgb_mean": [
+     53.0,
+     42.1,
+     9.2
+    ]
+   },
+   "description": "Title card 'JASON' yellow block letters on black",
+   "shot_size": "title card",
+   "burned_in_text": true,
+   "text_content": "cast title 'JASON'",
+   "exposure_colour": "black w/ yellow text",
+   "usable": "no - burned title (recreate if needed)",
+   "dialogue_over": [
+    "I got you a car."
+   ]
+  },
+  {
+   "id": "s018",
+   "start_frame": 915,
+   "end_frame": 927,
+   "frames": 12,
+   "start": 38.163,
+   "end": 38.664,
+   "duration": 0.5,
+   "thumb": "thumbs/s018.jpg",
+   "stats": {
+    "luma_mean": 60.6,
+    "luma_p5": 0.0,
+    "luma_p95": 195.1,
+    "clip_pct": 0.0,
+    "crush_pct": 66.58,
+    "rgb_mean": [
+     76.6,
+     60.6,
+     13.5
+    ]
+   },
+   "description": "Title card 'STATHAM' yellow distressed letters on black",
+   "shot_size": "title card",
+   "burned_in_text": true,
+   "text_content": "cast title 'STATHAM'",
+   "exposure_colour": "black w/ yellow text",
+   "usable": "no - burned title",
+   "dialogue_over": [
+    "I got you a car."
+   ]
+  },
+  {
+   "id": "s019",
+   "start_frame": 927,
+   "end_frame": 941,
+   "frames": 14,
+   "start": 38.664,
+   "end": 39.248,
+   "duration": 0.584,
+   "thumb": "thumbs/s019.jpg",
+   "stats": {
+    "luma_mean": 66.0,
+    "luma_p5": 4.6,
+    "luma_p95": 215.5,
+    "clip_pct": 0.01,
+    "crush_pct": 9.83,
+    "rgb_mean": [
+     61.9,
+     67.4,
+     65.2
+    ]
+   },
+   "description": "Statham in car, arm over seat, looking back (in garage/driveway)",
+   "shot_size": "medium",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "cool grey daylight, neutral",
+   "usable": "yes",
+   "dialogue_over": [
+    "I got you a car."
+   ]
+  },
+  {
+   "id": "s020",
+   "start_frame": 941,
+   "end_frame": 961,
+   "frames": 20,
+   "start": 39.248,
+   "end": 40.082,
+   "duration": 0.834,
+   "thumb": "thumbs/s020.jpg",
+   "stats": {
+    "luma_mean": 77.5,
+    "luma_p5": 10.0,
+    "luma_p95": 223.4,
+    "clip_pct": 0.07,
+    "crush_pct": 4.16,
+    "rgb_mean": [
+     75.2,
+     78.6,
+     73.5
+    ]
+   },
+   "description": "Wide: classic black muscle car driving towards camera on a curving tree-lined country road",
+   "shot_size": "wide",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "overcast daylight, neutral-green",
+   "usable": "yes - car reveal",
+   "dialogue_over": [
+    "I got you a car."
+   ]
+  },
+  {
+   "id": "s021",
+   "start_frame": 961,
+   "end_frame": 972,
+   "frames": 11,
+   "start": 40.082,
+   "end": 40.54,
+   "duration": 0.459,
+   "thumb": "thumbs/s021.jpg",
+   "stats": {
+    "luma_mean": 71.7,
+    "luma_p5": 15.7,
+    "luma_p95": 159.7,
+    "clip_pct": 0.0,
+    "crush_pct": 1.34,
+    "rgb_mean": [
+     85.1,
+     69.0,
+     58.0
+    ]
+   },
+   "description": "Irons close-up smiling, Statham foreground",
+   "shot_size": "medium close-up",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "overcast, warm skin",
+   "usable": "yes",
+   "dialogue_over": [
+    "I got you a car."
+   ]
+  },
+  {
+   "id": "s022",
+   "start_frame": 972,
+   "end_frame": 986,
+   "frames": 14,
+   "start": 40.54,
+   "end": 41.124,
+   "duration": 0.584,
+   "thumb": "thumbs/s022.jpg",
+   "stats": {
+    "luma_mean": 20.4,
+    "luma_p5": 2.0,
+    "luma_p95": 79.0,
+    "clip_pct": 0.05,
+    "crush_pct": 52.38,
+    "rgb_mean": [
+     17.5,
+     20.8,
+     24.2
+    ]
+   },
+   "description": "Dark car interior close detail: hand pulling a lever/gun mount hidden in dashboard",
+   "shot_size": "insert",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "very dark, cool blue cast",
+   "usable": "yes - gadget insert, needs lift",
+   "dialogue_over": []
+  },
+  {
+   "id": "s023",
+   "start_frame": 986,
+   "end_frame": 1000,
+   "frames": 14,
+   "start": 41.124,
+   "end": 41.708,
+   "duration": 0.584,
+   "thumb": "thumbs/s023.jpg",
+   "stats": {
+    "luma_mean": 22.0,
+    "luma_p5": 0.2,
+    "luma_p95": 47.0,
+    "clip_pct": 0.01,
+    "crush_pct": 27.85,
+    "rgb_mean": [
+     17.5,
+     22.7,
+     28.2
+    ]
+   },
+   "description": "Dark interior close: foot/hand on pedals or hidden compartment",
+   "shot_size": "insert",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "very dark, blue-teal cast, crushed",
+   "usable": "maybe - very dark",
+   "dialogue_over": []
+  },
+  {
+   "id": "s024",
+   "start_frame": 1000,
+   "end_frame": 1025,
+   "frames": 25,
+   "start": 41.708,
+   "end": 42.751,
+   "duration": 1.043,
+   "thumb": "thumbs/s024.jpg",
+   "stats": {
+    "luma_mean": 76.6,
+    "luma_p5": 9.4,
+    "luma_p95": 181.6,
+    "clip_pct": 0.0,
+    "crush_pct": 2.99,
+    "rgb_mean": [
+     72.0,
+     77.3,
+     83.5
+    ]
+   },
+   "description": "Low front: 1969 Dodge Super Bee with grille guard rolls toward camera (VO '1969 Dodge Superbee')",
+   "shot_size": "medium low-angle",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "overcast, cool, bluish",
+   "usable": "yes - hero car",
+   "dialogue_over": [
+    "1969 Dodge Superbee."
+   ]
+  },
+  {
+   "id": "s025",
+   "start_frame": 1025,
+   "end_frame": 1052,
+   "frames": 27,
+   "start": 42.751,
+   "end": 43.877,
+   "duration": 1.126,
+   "thumb": "thumbs/s025.jpg",
+   "stats": {
+    "luma_mean": 54.8,
+    "luma_p5": 0.4,
+    "luma_p95": 158.0,
+    "clip_pct": 0.0,
+    "crush_pct": 15.83,
+    "rgb_mean": [
+     52.3,
+     55.2,
+     57.3
+    ]
+   },
+   "description": "Extreme close-up: car headlights and Super Bee bee badge on grille, rack focus",
+   "shot_size": "extreme close-up",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "mid-dark, cool neutral, shallow DOF",
+   "usable": "yes - bee motif",
+   "dialogue_over": [
+    "1969 Dodge Superbee."
+   ]
+  },
+  {
+   "id": "s026",
+   "start_frame": 1052,
+   "end_frame": 1072,
+   "frames": 20,
+   "start": 43.877,
+   "end": 44.711,
+   "duration": 0.834,
+   "thumb": "thumbs/s026.jpg",
+   "stats": {
+    "luma_mean": 122.2,
+    "luma_p5": 23.4,
+    "luma_p95": 214.6,
+    "clip_pct": 0.02,
+    "crush_pct": 0.04,
+    "rgb_mean": [
+     116.3,
+     123.0,
+     132.1
+    ]
+   },
+   "description": "Wide: car parked on concrete apron by a bunker wall, armed tactical team approaching",
+   "shot_size": "wide",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "bright overcast sky, cool blue cast, flat",
+   "usable": "yes",
+   "dialogue_over": [
+    "1969 Dodge Superbee."
+   ]
+  },
+  {
+   "id": "s027",
+   "start_frame": 1072,
+   "end_frame": 1098,
+   "frames": 26,
+   "start": 44.711,
+   "end": 45.796,
+   "duration": 1.084,
+   "thumb": "thumbs/s027.jpg",
+   "stats": {
+    "luma_mean": 92.4,
+    "luma_p5": 7.0,
+    "luma_p95": 230.0,
+    "clip_pct": 0.01,
+    "crush_pct": 6.62,
+    "rgb_mean": [
+     87.3,
+     93.2,
+     100.2
+    ]
+   },
+   "description": "Over-shoulder from behind a soldier: car on tarmac surrounded by armed men",
+   "shot_size": "wide OTS",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "bright flat overcast, cool",
+   "usable": "yes",
+   "dialogue_over": [
+    "Fully loaded with Stinger."
+   ]
+  },
+  {
+   "id": "s028",
+   "start_frame": 1098,
+   "end_frame": 1141,
+   "frames": 43,
+   "start": 45.796,
+   "end": 47.589,
+   "duration": 1.793,
+   "thumb": "thumbs/s028.jpg",
+   "stats": {
+    "luma_mean": 90.5,
+    "luma_p5": 29.2,
+    "luma_p95": 207.9,
+    "clip_pct": 0.02,
+    "crush_pct": 0.0,
+    "rgb_mean": [
+     77.6,
+     92.6,
+     107.9
+    ]
+   },
+   "description": "Statham behind the wheel, grim, rain-streaked window, soldiers outside ('Fully loaded with Stinger')",
+   "shot_size": "medium close-up",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "cool blue/teal cast, good exposure",
+   "usable": "yes - hero",
+   "dialogue_over": [
+    "Fully loaded with Stinger."
+   ]
+  },
+  {
+   "id": "s029",
+   "start_frame": 1141,
+   "end_frame": 1150,
+   "frames": 9,
+   "start": 47.589,
+   "end": 47.965,
+   "duration": 0.375,
+   "thumb": "thumbs/s029.jpg",
+   "stats": {
+    "luma_mean": 34.3,
+    "luma_p5": 3.4,
+    "luma_p95": 100.7,
+    "clip_pct": 0.23,
+    "crush_pct": 13.71,
+    "rgb_mean": [
+     31.2,
+     34.7,
+     39.8
+    ]
+   },
+   "description": "Close: hand hits a hidden switch/console under the dash",
+   "shot_size": "insert",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "dark, cool",
+   "usable": "yes - trigger insert, very short",
+   "dialogue_over": []
+  },
+  {
+   "id": "s030",
+   "start_frame": 1150,
+   "end_frame": 1170,
+   "frames": 20,
+   "start": 47.965,
+   "end": 48.799,
+   "duration": 0.834,
+   "thumb": "thumbs/s030.jpg",
+   "stats": {
+    "luma_mean": 99.0,
+    "luma_p5": 8.6,
+    "luma_p95": 226.2,
+    "clip_pct": 0.0,
+    "crush_pct": 4.35,
+    "rgb_mean": [
+     91.1,
+     100.4,
+     108.1
+    ]
+   },
+   "description": "Side profile of black car, then interior through window",
+   "shot_size": "medium",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "bright overcast, cool",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s031",
+   "start_frame": 1170,
+   "end_frame": 1187,
+   "frames": 17,
+   "start": 48.799,
+   "end": 49.508,
+   "duration": 0.709,
+   "thumb": "thumbs/s031.jpg",
+   "stats": {
+    "luma_mean": 63.6,
+    "luma_p5": 3.6,
+    "luma_p95": 220.2,
+    "clip_pct": 0.0,
+    "crush_pct": 9.21,
+    "rgb_mean": [
+     57.8,
+     64.5,
+     70.9
+    ]
+   },
+   "description": "Through open car door / interior: Statham inside, door flies off",
+   "shot_size": "medium",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "cool, mixed",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s032",
+   "start_frame": 1187,
+   "end_frame": 1196,
+   "frames": 9,
+   "start": 49.508,
+   "end": 49.883,
+   "duration": 0.375,
+   "thumb": "thumbs/s032.jpg",
+   "stats": {
+    "luma_mean": 124.4,
+    "luma_p5": 16.3,
+    "luma_p95": 250.0,
+    "clip_pct": 4.89,
+    "crush_pct": 0.29,
+    "rgb_mean": [
+     144.2,
+     121.3,
+     97.4
+    ]
+   },
+   "description": "Statham firing from inside car, huge muzzle flash/explosion blooming at window",
+   "shot_size": "medium",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "very bright warm flash, highlights clipping (~5%)",
+   "usable": "yes - hit/flash",
+   "dialogue_over": []
+  },
+  {
+   "id": "s033",
+   "start_frame": 1196,
+   "end_frame": 1212,
+   "frames": 16,
+   "start": 49.883,
+   "end": 50.55,
+   "duration": 0.667,
+   "thumb": "thumbs/s033.jpg",
+   "stats": {
+    "luma_mean": 104.2,
+    "luma_p5": 2.2,
+    "luma_p95": 197.9,
+    "clip_pct": 0.24,
+    "crush_pct": 5.76,
+    "rgb_mean": [
+     133.8,
+     97.4,
+     84.3
+    ]
+   },
+   "description": "Wide: tactical soldiers silhouetted against car and multiple explosions on tarmac",
+   "shot_size": "wide",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "warm orange fire vs cool blue sky, strong contrast",
+   "usable": "yes - money shot",
+   "dialogue_over": []
+  },
+  {
+   "id": "s034",
+   "start_frame": 1212,
+   "end_frame": 1231,
+   "frames": 19,
+   "start": 50.55,
+   "end": 51.343,
+   "duration": 0.792,
+   "thumb": "thumbs/s034.jpg",
+   "stats": {
+    "luma_mean": 98.6,
+    "luma_p5": 22.2,
+    "luma_p95": 193.0,
+    "clip_pct": 1.17,
+    "crush_pct": 0.45,
+    "rgb_mean": [
+     109.4,
+     94.8,
+     105.4
+    ]
+   },
+   "description": "Close through cracked windscreen: Statham driving, fire behind, bullet-cracked glass",
+   "shot_size": "close-up",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "mixed warm fire / cool interior, magenta tinge",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s035",
+   "start_frame": 1231,
+   "end_frame": 1248,
+   "frames": 17,
+   "start": 51.343,
+   "end": 52.052,
+   "duration": 0.709,
+   "thumb": "thumbs/s035.jpg",
+   "stats": {
+    "luma_mean": 82.9,
+    "luma_p5": 36.6,
+    "luma_p95": 148.4,
+    "clip_pct": 0.0,
+    "crush_pct": 0.1,
+    "rgb_mean": [
+     71.5,
+     86.3,
+     83.3
+    ]
+   },
+   "description": "Top-down drone: soldiers scattered on grass/concrete, car spinning",
+   "shot_size": "wide aerial",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "flat, green-cyan, low contrast",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s036",
+   "start_frame": 1248,
+   "end_frame": 1258,
+   "frames": 10,
+   "start": 52.052,
+   "end": 52.469,
+   "duration": 0.417,
+   "thumb": "thumbs/s036.jpg",
+   "stats": {
+    "luma_mean": 85.7,
+    "luma_p5": 0.2,
+    "luma_p95": 191.5,
+    "clip_pct": 0.14,
+    "crush_pct": 11.54,
+    "rgb_mean": [
+     74.3,
+     88.2,
+     94.7
+    ]
+   },
+   "description": "Hidden gun barrel on car fires with long muzzle flame, soldiers in rain",
+   "shot_size": "medium",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "cool teal, warm muzzle flash",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s037",
+   "start_frame": 1258,
+   "end_frame": 1270,
+   "frames": 12,
+   "start": 52.469,
+   "end": 52.97,
+   "duration": 0.5,
+   "thumb": "thumbs/s037.jpg",
+   "stats": {
+    "luma_mean": 84.4,
+    "luma_p5": 10.5,
+    "luma_p95": 152.3,
+    "clip_pct": 0.01,
+    "crush_pct": 3.09,
+    "rgb_mean": [
+     72.4,
+     87.2,
+     91.8
+    ]
+   },
+   "description": "Soldiers on lawn, one with red-lit visor, car drives past; rain",
+   "shot_size": "medium",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "cool teal, desaturated",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s038",
+   "start_frame": 1270,
+   "end_frame": 1279,
+   "frames": 9,
+   "start": 52.97,
+   "end": 53.345,
+   "duration": 0.375,
+   "thumb": "thumbs/s038.jpg",
+   "stats": {
+    "luma_mean": 54.6,
+    "luma_p5": 14.8,
+    "luma_p95": 80.1,
+    "clip_pct": 0.01,
+    "crush_pct": 1.42,
+    "rgb_mean": [
+     46.5,
+     56.0,
+     64.8
+    ]
+   },
+   "description": "Soldier in helmet aiming rifle, tracer fire",
+   "shot_size": "medium close-up",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "dark teal/cool, low contrast",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s039",
+   "start_frame": 1279,
+   "end_frame": 1290,
+   "frames": 11,
+   "start": 53.345,
+   "end": 53.804,
+   "duration": 0.459,
+   "thumb": "thumbs/s039.jpg",
+   "stats": {
+    "luma_mean": 96.1,
+    "luma_p5": 28.7,
+    "luma_p95": 185.5,
+    "clip_pct": 0.04,
+    "crush_pct": 0.0,
+    "rgb_mean": [
+     97.1,
+     96.2,
+     92.3
+    ]
+   },
+   "description": "Wide: explosion on the grass embankment by bunker",
+   "shot_size": "wide",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "flat grey sky, warm blast",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s040",
+   "start_frame": 1290,
+   "end_frame": 1302,
+   "frames": 12,
+   "start": 53.804,
+   "end": 54.304,
+   "duration": 0.5,
+   "thumb": "thumbs/s040.jpg",
+   "stats": {
+    "luma_mean": 75.7,
+    "luma_p5": 16.4,
+    "luma_p95": 165.1,
+    "clip_pct": 0.0,
+    "crush_pct": 1.51,
+    "rgb_mean": [
+     104.3,
+     68.6,
+     61.7
+    ]
+   },
+   "description": "Car bursts through a fireball, large flames around",
+   "shot_size": "medium wide",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "strong orange/red, high contrast",
+   "usable": "yes - money shot",
+   "dialogue_over": []
+  },
+  {
+   "id": "s041",
+   "start_frame": 1302,
+   "end_frame": 1325,
+   "frames": 23,
+   "start": 54.304,
+   "end": 55.264,
+   "duration": 0.959,
+   "thumb": "thumbs/s041.jpg",
+   "stats": {
+    "luma_mean": 83.4,
+    "luma_p5": 2.0,
+    "luma_p95": 230.8,
+    "clip_pct": 0.92,
+    "crush_pct": 12.17,
+    "rgb_mean": [
+     92.7,
+     81.7,
+     73.4
+    ]
+   },
+   "description": "Strobe sequence: rapid flash frames intercut with Statham firing from car (single-frame white flashes alternate)",
+   "shot_size": "medium (strobe)",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "alternating near-white (Y~125) and dark cool frames - flicker by design",
+   "usable": "maybe - flash transition material, check photosensitivity",
+   "dialogue_over": []
+  },
+  {
+   "id": "s042",
+   "start_frame": 1325,
+   "end_frame": 1417,
+   "frames": 92,
+   "start": 55.264,
+   "end": 59.101,
+   "duration": 3.837,
+   "thumb": "thumbs/s042.jpg",
+   "stats": {
+    "luma_mean": 37.2,
+    "luma_p5": 0.0,
+    "luma_p95": 194.8,
+    "clip_pct": 0.0,
+    "crush_pct": 77.84,
+    "rgb_mean": [
+     46.6,
+     37.1,
+     9.7
+    ]
+   },
+   "description": "Main title 'THE BEEKEEPER 2' gold distressed letters on black",
+   "shot_size": "title card",
+   "burned_in_text": true,
+   "text_content": "main title 'THE BEEKEEPER 2'",
+   "exposure_colour": "black w/ gold text",
+   "usable": "title reference only - client wants clean title card",
+   "dialogue_over": []
+  },
+  {
+   "id": "s043",
+   "start_frame": 1417,
+   "end_frame": 1448,
+   "frames": 31,
+   "start": 59.101,
+   "end": 60.394,
+   "duration": 1.293,
+   "thumb": "thumbs/s043.jpg",
+   "stats": {
+    "luma_mean": 55.1,
+    "luma_p5": 15.6,
+    "luma_p95": 104.1,
+    "clip_pct": 0.05,
+    "crush_pct": 1.92,
+    "rgb_mean": [
+     44.6,
+     58.6,
+     51.4
+    ]
+   },
+   "description": "Statham standing in a dim industrial tunnel with pipes, looking up",
+   "shot_size": "medium",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "dark, green-teal cast",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s044",
+   "start_frame": 1448,
+   "end_frame": 1462,
+   "frames": 14,
+   "start": 60.394,
+   "end": 60.978,
+   "duration": 0.584,
+   "thumb": "thumbs/s044.jpg",
+   "stats": {
+    "luma_mean": 43.3,
+    "luma_p5": 10.4,
+    "luma_p95": 80.4,
+    "clip_pct": 0.0,
+    "crush_pct": 2.39,
+    "rgb_mean": [
+     48.7,
+     42.5,
+     35.2
+    ]
+   },
+   "description": "Masked/helmeted soldier in tunnel, armour",
+   "shot_size": "medium close-up",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "dark, warm-neutral",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s045",
+   "start_frame": 1462,
+   "end_frame": 1491,
+   "frames": 29,
+   "start": 60.978,
+   "end": 62.187,
+   "duration": 1.21,
+   "thumb": "thumbs/s045.jpg",
+   "stats": {
+    "luma_mean": 49.4,
+    "luma_p5": 1.0,
+    "luma_p95": 130.6,
+    "clip_pct": 0.0,
+    "crush_pct": 13.29,
+    "rgb_mean": [
+     63.1,
+     46.4,
+     38.1
+    ]
+   },
+   "description": "Soldier sweeping with flamethrower nozzle down tunnel, flame begins",
+   "shot_size": "medium",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "dark, warm flame accent",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s046",
+   "start_frame": 1491,
+   "end_frame": 1504,
+   "frames": 13,
+   "start": 62.187,
+   "end": 62.729,
+   "duration": 0.542,
+   "thumb": "thumbs/s046.jpg",
+   "stats": {
+    "luma_mean": 50.4,
+    "luma_p5": 8.1,
+    "luma_p95": 96.4,
+    "clip_pct": 0.0,
+    "crush_pct": 4.9,
+    "rgb_mean": [
+     55.4,
+     50.2,
+     37.9
+    ]
+   },
+   "description": "Statham turns in tunnel, motion blur",
+   "shot_size": "medium",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "dark, green-grey",
+   "usable": "yes - short",
+   "dialogue_over": []
+  },
+  {
+   "id": "s047",
+   "start_frame": 1504,
+   "end_frame": 1528,
+   "frames": 24,
+   "start": 62.729,
+   "end": 63.73,
+   "duration": 1.001,
+   "thumb": "thumbs/s047.jpg",
+   "stats": {
+    "luma_mean": 78.1,
+    "luma_p5": 1.5,
+    "luma_p95": 243.1,
+    "clip_pct": 0.06,
+    "crush_pct": 7.44,
+    "rgb_mean": [
+     109.9,
+     72.8,
+     36.7
+    ]
+   },
+   "description": "Flamethrower jet fills corridor, fire roll",
+   "shot_size": "medium wide",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "dark surround, bright orange flame (Y p95 243)",
+   "usable": "yes - hit",
+   "dialogue_over": []
+  },
+  {
+   "id": "s048",
+   "start_frame": 1528,
+   "end_frame": 1540,
+   "frames": 12,
+   "start": 63.73,
+   "end": 64.231,
+   "duration": 0.5,
+   "thumb": "thumbs/s048.jpg",
+   "stats": {
+    "luma_mean": 73.1,
+    "luma_p5": 15.9,
+    "luma_p95": 215.2,
+    "clip_pct": 0.83,
+    "crush_pct": 0.18,
+    "rgb_mean": [
+     106.1,
+     66.9,
+     38.1
+    ]
+   },
+   "description": "Full-frame fireball rolling at camera",
+   "shot_size": "full frame FX",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "bright orange/yellow, near clipping",
+   "usable": "yes - flash/transition",
+   "dialogue_over": []
+  },
+  {
+   "id": "s049",
+   "start_frame": 1540,
+   "end_frame": 1560,
+   "frames": 20,
+   "start": 64.231,
+   "end": 65.065,
+   "duration": 0.834,
+   "thumb": "thumbs/s049.jpg",
+   "stats": {
+    "luma_mean": 29.5,
+    "luma_p5": 0.0,
+    "luma_p95": 80.4,
+    "clip_pct": 0.41,
+    "crush_pct": 34.55,
+    "rgb_mean": [
+     36.8,
+     28.2,
+     20.9
+    ]
+   },
+   "description": "Statham dodging/grappling in dark tunnel, low angle, warm light",
+   "shot_size": "medium",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "very dark, warm, crushed (35%)",
+   "usable": "yes - needs lift",
+   "dialogue_over": []
+  },
+  {
+   "id": "s050",
+   "start_frame": 1560,
+   "end_frame": 1571,
+   "frames": 11,
+   "start": 65.065,
+   "end": 65.524,
+   "duration": 0.459,
+   "thumb": "thumbs/s050.jpg",
+   "stats": {
+    "luma_mean": 43.3,
+    "luma_p5": 7.6,
+    "luma_p95": 70.2,
+    "clip_pct": 0.03,
+    "crush_pct": 5.24,
+    "rgb_mean": [
+     48.8,
+     42.6,
+     34.4
+    ]
+   },
+   "description": "Low-angle helmeted soldier shouting/falling",
+   "shot_size": "close-up low angle",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "dark, warm-brown",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s051",
+   "start_frame": 1571,
+   "end_frame": 1583,
+   "frames": 12,
+   "start": 65.524,
+   "end": 66.024,
+   "duration": 0.5,
+   "thumb": "thumbs/s051.jpg",
+   "stats": {
+    "luma_mean": 21.2,
+    "luma_p5": 0.0,
+    "luma_p95": 75.6,
+    "clip_pct": 0.0,
+    "crush_pct": 47.04,
+    "rgb_mean": [
+     29.3,
+     19.2,
+     17.2
+    ]
+   },
+   "description": "Dark fight blur, silhouettes against light",
+   "shot_size": "medium",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "very dark, 47% crushed",
+   "usable": "maybe",
+   "dialogue_over": []
+  },
+  {
+   "id": "s052",
+   "start_frame": 1583,
+   "end_frame": 1597,
+   "frames": 14,
+   "start": 66.024,
+   "end": 66.608,
+   "duration": 0.584,
+   "thumb": "thumbs/s052.jpg",
+   "stats": {
+    "luma_mean": 41.7,
+    "luma_p5": 3.4,
+    "luma_p95": 100.2,
+    "clip_pct": 0.17,
+    "crush_pct": 8.25,
+    "rgb_mean": [
+     55.0,
+     39.0,
+     28.5
+    ]
+   },
+   "description": "Wide tunnel: soldiers fighting, fires on ground, body falls",
+   "shot_size": "wide",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "dark, warm amber",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s053",
+   "start_frame": 1597,
+   "end_frame": 1618,
+   "frames": 21,
+   "start": 66.608,
+   "end": 67.484,
+   "duration": 0.876,
+   "thumb": "thumbs/s053.jpg",
+   "stats": {
+    "luma_mean": 59.4,
+    "luma_p5": 0.2,
+    "luma_p95": 153.4,
+    "clip_pct": 0.67,
+    "crush_pct": 11.45,
+    "rgb_mean": [
+     71.1,
+     57.0,
+     48.9
+    ]
+   },
+   "description": "Statham swings weapon at soldier under fluorescent tubes, low angle",
+   "shot_size": "medium low-angle",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "warm amber + cool fluorescent",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s054",
+   "start_frame": 1618,
+   "end_frame": 1627,
+   "frames": 9,
+   "start": 67.484,
+   "end": 67.859,
+   "duration": 0.375,
+   "thumb": "thumbs/s054.jpg",
+   "stats": {
+    "luma_mean": 55.6,
+    "luma_p5": 0.0,
+    "luma_p95": 156.5,
+    "clip_pct": 0.67,
+    "crush_pct": 17.57,
+    "rgb_mean": [
+     66.0,
+     53.4,
+     46.5
+    ]
+   },
+   "description": "Statham reverse angle with weapon, fluorescent light",
+   "shot_size": "medium",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "warm-amber, mid-dark",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s055",
+   "start_frame": 1627,
+   "end_frame": 1641,
+   "frames": 14,
+   "start": 67.859,
+   "end": 68.443,
+   "duration": 0.584,
+   "thumb": "thumbs/s055.jpg",
+   "stats": {
+    "luma_mean": 58.5,
+    "luma_p5": 0.5,
+    "luma_p95": 179.3,
+    "clip_pct": 0.68,
+    "crush_pct": 9.61,
+    "rgb_mean": [
+     76.8,
+     55.1,
+     37.8
+    ]
+   },
+   "description": "Sparks/explosion burst in tunnel corner",
+   "shot_size": "medium",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "dark with hot orange sparks",
+   "usable": "yes - hit",
+   "dialogue_over": []
+  },
+  {
+   "id": "s056",
+   "start_frame": 1641,
+   "end_frame": 1657,
+   "frames": 16,
+   "start": 68.443,
+   "end": 69.111,
+   "duration": 0.667,
+   "thumb": "thumbs/s056.jpg",
+   "stats": {
+    "luma_mean": 64.1,
+    "luma_p5": 20.7,
+    "luma_p95": 122.3,
+    "clip_pct": 0.18,
+    "crush_pct": 0.9,
+    "rgb_mean": [
+     98.4,
+     57.0,
+     34.4
+    ]
+   },
+   "description": "Statham firing gun in dim tunnel, orange glow",
+   "shot_size": "medium",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "strong orange cast",
+   "usable": "yes",
+   "dialogue_over": []
+  },
+  {
+   "id": "s057",
+   "start_frame": 1657,
+   "end_frame": 1666,
+   "frames": 9,
+   "start": 69.111,
+   "end": 69.486,
+   "duration": 0.375,
+   "thumb": "thumbs/s057.jpg",
+   "stats": {
+    "luma_mean": 79.4,
+    "luma_p5": 0.5,
+    "luma_p95": 221.0,
+    "clip_pct": 0.07,
+    "crush_pct": 10.09,
+    "rgb_mean": [
+     106.7,
+     74.5,
+     48.2
+    ]
+   },
+   "description": "Fire/spark explosion erupts, debris",
+   "shot_size": "medium",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "dark with bright orange burst",
+   "usable": "yes - final hit before black",
+   "dialogue_over": []
+  },
+  {
+   "id": "s058",
+   "start_frame": 1666,
+   "end_frame": 1676,
+   "frames": 10,
+   "start": 69.486,
+   "end": 69.903,
+   "duration": 0.417,
+   "thumb": "thumbs/s058.jpg",
+   "stats": {
+    "luma_mean": 0.0,
+    "luma_p5": 0.0,
+    "luma_p95": 0.0,
+    "clip_pct": 0.0,
+    "crush_pct": 100.0,
+    "rgb_mean": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "description": "BLACK",
+   "shot_size": "black",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "black",
+   "usable": "no - gap",
+   "dialogue_over": [
+    "The stand don't be so hot-headed."
+   ]
+  },
+  {
+   "id": "s059",
+   "start_frame": 1676,
+   "end_frame": 1720,
+   "frames": 44,
+   "start": 69.903,
+   "end": 71.738,
+   "duration": 1.835,
+   "thumb": "thumbs/s059.jpg",
+   "stats": {
+    "luma_mean": 47.0,
+    "luma_p5": 14.3,
+    "luma_p95": 85.0,
+    "clip_pct": 0.0,
+    "crush_pct": 1.31,
+    "rgb_mean": [
+     61.8,
+     44.9,
+     23.7
+    ]
+   },
+   "description": "Statham close-up in smoky dim light, fades up from black; line 'just don't be so hot-headed' (Whisper heard 'The stand don't be so hot-headed')",
+   "shot_size": "close-up",
+   "burned_in_text": false,
+   "text_content": null,
+   "exposure_colour": "dark, amber/olive cast, slow fade-in at head",
+   "usable": "yes - button/coda",
+   "dialogue_over": [
+    "The stand don't be so hot-headed."
+   ]
+  },
+  {
+   "id": "s060",
+   "start_frame": 1720,
+   "end_frame": 1806,
+   "frames": 86,
+   "start": 71.738,
+   "end": 75.325,
+   "duration": 3.587,
+   "thumb": "thumbs/s060.jpg",
+   "stats": {
+    "luma_mean": 13.7,
+    "luma_p5": 0.0,
+    "luma_p95": 178.3,
+    "clip_pct": 0.0,
+    "crush_pct": 91.11,
+    "rgb_mean": [
+     17.0,
+     13.7,
+     3.8
+    ]
+   },
+   "description": "End card: 'ONLY IN THEATERS JANUARY 15', 'IN PREMIUM FORMATS', billing/socials/ratings at bottom; text animates on",
+   "shot_size": "title card",
+   "burned_in_text": true,
+   "text_content": "release date card + billing/socials",
+   "exposure_colour": "black w/ gold text",
+   "usable": "no - burned text (rebuild clean end card)",
+   "dialogue_over": []
+  },
+  {
+   "id": "s061",
+   "start_frame": 1806,
+   "end_frame": 2092,
+   "frames": 286,
+   "start": 75.325,
+   "end": 87.254,
+   "duration": 11.929,
+   "thumb": "thumbs/s061.jpg",
+   "stats": {
+    "luma_mean": 53.0,
+    "luma_p5": 40.0,
+    "luma_p95": 250.9,
+    "clip_pct": 5.32,
+    "crush_pct": 1.22,
+    "rgb_mean": [
+     187.7,
+     16.5,
+     17.5
+    ]
+   },
+   "description": "YouTube channel bumper: red screen 'NET WORK' logo, 'NEW TRAILERS EVERY DAY' (third-party, full frame, not letterboxed)",
+   "shot_size": "bumper",
+   "burned_in_text": true,
+   "text_content": "third-party channel logo/text",
+   "exposure_colour": "saturated red, full-frame",
+   "usable": "no - discard",
+   "dialogue_over": []
+  }
+ ]
+}

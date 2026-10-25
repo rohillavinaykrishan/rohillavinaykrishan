@@ -1,0 +1,528 @@
+{
+ "language": "en",
+ "model": "faster-whisper small (VAD) + medium re-check on 5 short clips",
+ "notes": [
+  "'I got you a car' re-timed to 39.26 (VAD pass put it at 36.96 - wrong, 36.0-36.7 is silence).",
+  "'Welcome back, Clay.' (59.3) was dropped by the VAD pass; recovered by no-VAD + medium.",
+  "Line 11 heard as 'hot-headed' (small) / 'hard-headed' (medium); medium kept.",
+  "'Fully loaded with Stinger' may be 'Stingers'. 'Superbee' = Dodge Super Bee.",
+  "Whisper hallucinated 'Thank you very much' at 85.8 s - removed; audio is digital silence from 75.38 s."
+ ],
+ "segments": [
+  {
+   "start": 6.93,
+   "end": 14.07,
+   "text": "You were the most dangerous operative they've ever created, but now the beekeepers have gone rogue,",
+   "words": [
+    {
+     "start": 6.93,
+     "end": 7.45,
+     "word": "You"
+    },
+    {
+     "start": 7.45,
+     "end": 7.59,
+     "word": "were"
+    },
+    {
+     "start": 7.59,
+     "end": 7.69,
+     "word": "the"
+    },
+    {
+     "start": 7.69,
+     "end": 7.93,
+     "word": "most"
+    },
+    {
+     "start": 7.93,
+     "end": 8.45,
+     "word": "dangerous"
+    },
+    {
+     "start": 8.45,
+     "end": 9.15,
+     "word": "operative"
+    },
+    {
+     "start": 9.15,
+     "end": 9.47,
+     "word": "they've"
+    },
+    {
+     "start": 9.47,
+     "end": 9.63,
+     "word": "ever"
+    },
+    {
+     "start": 9.63,
+     "end": 10.07,
+     "word": "created,"
+    },
+    {
+     "start": 10.21,
+     "end": 12.05,
+     "word": "but"
+    },
+    {
+     "start": 12.05,
+     "end": 12.41,
+     "word": "now"
+    },
+    {
+     "start": 12.41,
+     "end": 12.81,
+     "word": "the"
+    },
+    {
+     "start": 12.81,
+     "end": 13.27,
+     "word": "beekeepers"
+    },
+    {
+     "start": 13.27,
+     "end": 13.53,
+     "word": "have"
+    },
+    {
+     "start": 13.53,
+     "end": 13.71,
+     "word": "gone"
+    },
+    {
+     "start": 13.71,
+     "end": 14.07,
+     "word": "rogue,"
+    }
+   ],
+   "src": "whisper-small",
+   "id": 1
+  },
+  {
+   "start": 15.87,
+   "end": 18.55,
+   "text": "and you're the only one who can stop them.",
+   "words": [
+    {
+     "start": 15.87,
+     "end": 16.41,
+     "word": "and"
+    },
+    {
+     "start": 16.41,
+     "end": 16.63,
+     "word": "you're"
+    },
+    {
+     "start": 16.63,
+     "end": 16.71,
+     "word": "the"
+    },
+    {
+     "start": 16.71,
+     "end": 17.09,
+     "word": "only"
+    },
+    {
+     "start": 17.09,
+     "end": 17.47,
+     "word": "one"
+    },
+    {
+     "start": 17.47,
+     "end": 17.73,
+     "word": "who"
+    },
+    {
+     "start": 17.73,
+     "end": 17.93,
+     "word": "can"
+    },
+    {
+     "start": 17.93,
+     "end": 18.21,
+     "word": "stop"
+    },
+    {
+     "start": 18.21,
+     "end": 18.55,
+     "word": "them."
+    }
+   ],
+   "src": "whisper-small",
+   "id": 2
+  },
+  {
+   "start": 21.65,
+   "end": 27.59,
+   "text": "The beekeepers want complete control of the government, and they're prepared to kill anyone who gets in the way.",
+   "words": [
+    {
+     "start": 21.65,
+     "end": 22.17,
+     "word": "The"
+    },
+    {
+     "start": 22.17,
+     "end": 22.69,
+     "word": "beekeepers"
+    },
+    {
+     "start": 22.69,
+     "end": 23.01,
+     "word": "want"
+    },
+    {
+     "start": 23.01,
+     "end": 23.49,
+     "word": "complete"
+    },
+    {
+     "start": 23.49,
+     "end": 24.09,
+     "word": "control"
+    },
+    {
+     "start": 24.09,
+     "end": 24.31,
+     "word": "of"
+    },
+    {
+     "start": 24.31,
+     "end": 24.43,
+     "word": "the"
+    },
+    {
+     "start": 24.43,
+     "end": 24.67,
+     "word": "government,"
+    },
+    {
+     "start": 25.19,
+     "end": 25.55,
+     "word": "and"
+    },
+    {
+     "start": 25.55,
+     "end": 25.73,
+     "word": "they're"
+    },
+    {
+     "start": 25.73,
+     "end": 26.01,
+     "word": "prepared"
+    },
+    {
+     "start": 26.01,
+     "end": 26.23,
+     "word": "to"
+    },
+    {
+     "start": 26.23,
+     "end": 26.45,
+     "word": "kill"
+    },
+    {
+     "start": 26.45,
+     "end": 26.77,
+     "word": "anyone"
+    },
+    {
+     "start": 26.77,
+     "end": 26.91,
+     "word": "who"
+    },
+    {
+     "start": 26.91,
+     "end": 27.07,
+     "word": "gets"
+    },
+    {
+     "start": 27.07,
+     "end": 27.25,
+     "word": "in"
+    },
+    {
+     "start": 27.25,
+     "end": 27.35,
+     "word": "the"
+    },
+    {
+     "start": 27.35,
+     "end": 27.59,
+     "word": "way."
+    }
+   ],
+   "src": "whisper-small",
+   "id": 3
+  },
+  {
+   "start": 30.72,
+   "end": 34.14,
+   "text": "If we're gonna go up against the beekeepers, we're gonna do it my way.",
+   "words": [
+    {
+     "start": 30.72,
+     "end": 31.08,
+     "word": "If"
+    },
+    {
+     "start": 31.08,
+     "end": 31.44,
+     "word": "we're"
+    },
+    {
+     "start": 31.44,
+     "end": 31.44,
+     "word": "gonna"
+    },
+    {
+     "start": 31.44,
+     "end": 31.58,
+     "word": "go"
+    },
+    {
+     "start": 31.58,
+     "end": 31.72,
+     "word": "up"
+    },
+    {
+     "start": 31.72,
+     "end": 31.92,
+     "word": "against"
+    },
+    {
+     "start": 31.92,
+     "end": 32.16,
+     "word": "the"
+    },
+    {
+     "start": 32.16,
+     "end": 32.6,
+     "word": "beekeepers,"
+    },
+    {
+     "start": 33.04,
+     "end": 33.14,
+     "word": "we're"
+    },
+    {
+     "start": 33.14,
+     "end": 33.26,
+     "word": "gonna"
+    },
+    {
+     "start": 33.26,
+     "end": 33.36,
+     "word": "do"
+    },
+    {
+     "start": 33.36,
+     "end": 33.52,
+     "word": "it"
+    },
+    {
+     "start": 33.52,
+     "end": 33.66,
+     "word": "my"
+    },
+    {
+     "start": 33.66,
+     "end": 34.14,
+     "word": "way."
+    }
+   ],
+   "src": "whisper-medium clip re-check",
+   "id": 4
+  },
+  {
+   "start": 34.88,
+   "end": 35.98,
+   "text": "I would hope for nothing less.",
+   "words": [
+    {
+     "start": 34.88,
+     "end": 35.0,
+     "word": "I"
+    },
+    {
+     "start": 35.0,
+     "end": 35.14,
+     "word": "would"
+    },
+    {
+     "start": 35.14,
+     "end": 35.32,
+     "word": "hope"
+    },
+    {
+     "start": 35.32,
+     "end": 35.52,
+     "word": "for"
+    },
+    {
+     "start": 35.52,
+     "end": 35.68,
+     "word": "nothing"
+    },
+    {
+     "start": 35.68,
+     "end": 35.98,
+     "word": "less."
+    }
+   ],
+   "src": "whisper-medium clip re-check",
+   "id": 5
+  },
+  {
+   "start": 39.26,
+   "end": 40.58,
+   "text": "I got you a car.",
+   "words": [
+    {
+     "start": 39.26,
+     "end": 39.72,
+     "word": "I"
+    },
+    {
+     "start": 39.72,
+     "end": 39.92,
+     "word": "got"
+    },
+    {
+     "start": 39.92,
+     "end": 40.14,
+     "word": "you"
+    },
+    {
+     "start": 40.14,
+     "end": 40.34,
+     "word": "a"
+    },
+    {
+     "start": 40.34,
+     "end": 40.58,
+     "word": "car."
+    }
+   ],
+   "src": "whisper-medium clip re-check",
+   "id": 6
+  },
+  {
+   "start": 42.48,
+   "end": 44.52,
+   "text": "1969 Dodge Super Bee.",
+   "words": [
+    {
+     "start": 42.48,
+     "end": 43.28,
+     "word": "1969"
+    },
+    {
+     "start": 43.28,
+     "end": 43.74,
+     "word": "Dodge"
+    },
+    {
+     "start": 43.74,
+     "end": 44.52,
+     "word": "Superbee."
+    }
+   ],
+   "src": "whisper-small",
+   "id": 7
+  },
+  {
+   "start": 45.42,
+   "end": 47.4,
+   "text": "Fully loaded with Stinger.",
+   "words": [
+    {
+     "start": 45.42,
+     "end": 46.22,
+     "word": "Fully"
+    },
+    {
+     "start": 46.22,
+     "end": 46.62,
+     "word": "loaded"
+    },
+    {
+     "start": 46.62,
+     "end": 46.92,
+     "word": "with"
+    },
+    {
+     "start": 46.92,
+     "end": 47.4,
+     "word": "Stinger."
+    }
+   ],
+   "src": "whisper-small",
+   "id": 8
+  },
+  {
+   "start": 59.28,
+   "end": 61.1,
+   "text": "Welcome back, Clay.",
+   "words": [
+    {
+     "start": 59.28,
+     "end": 60.04,
+     "word": "Welcome"
+    },
+    {
+     "start": 60.04,
+     "end": 60.66,
+     "word": "back,"
+    },
+    {
+     "start": 60.96,
+     "end": 61.1,
+     "word": "Clay."
+    }
+   ],
+   "src": "whisper-medium clip re-check",
+   "id": 9
+  },
+  {
+   "start": 69.86,
+   "end": 71.36,
+   "text": "Next time, don't be so hard-headed.",
+   "words": [
+    {
+     "start": 69.86,
+     "end": 70.18,
+     "word": "Next"
+    },
+    {
+     "start": 70.18,
+     "end": 70.3,
+     "word": "time,"
+    },
+    {
+     "start": 70.44,
+     "end": 70.52,
+     "word": "don't"
+    },
+    {
+     "start": 70.52,
+     "end": 70.66,
+     "word": "be"
+    },
+    {
+     "start": 70.66,
+     "end": 70.88,
+     "word": "so"
+    },
+    {
+     "start": 70.88,
+     "end": 71.36,
+     "word": "hard-headed."
+    }
+   ],
+   "src": "whisper-medium clip re-check",
+   "id": 10
+  }
+ ]
+}
