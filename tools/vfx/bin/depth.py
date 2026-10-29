@@ -11,6 +11,8 @@ Combine moves with "+" (e.g. --move dolly-out+rise); --reverse plays the move ba
 (orbit the other way). --codec ffv1 (lossless .mkv) or prores (.mov, 422 HQ) for
 intermediates; default h264 (.mp4, CRF 16). --frames N sets an exact frame count.
 --t-list file.json: explicit move progress per frame (list of t in 0..1, e.g. speed ramps / keys).
+--center x,y: frame centre on the plate (0..1, default 0.5,0.5) - reframes inside the 12% overscan,
+e.g. 0.55,0.5 keeps a sun at x 0.94 in frame. The usable range is about 0.5 +- 0.06 at zoom 1.03.
 
 Direction note (measured with optical flow, 2026-10-29): the classic names describe how the NEAR
 layer slides around the --focus pivot, not where the camera goes:
@@ -107,7 +109,7 @@ ENCODERS = {
 
 
 def parallax(rgb, depth, out, move, dur, fps, size, amount, focus, codec="h264", reverse=False, frames=None,
-             t_list=None):
+             t_list=None, center=(0.5, 0.5)):
     """2.5D camera move: near pixels move more than far ones. A backward warp
     (each output pixel looks up where it came from) keeps it hole-free; a small
     overscan hides the edges."""
@@ -120,7 +122,11 @@ def parallax(rgb, depth, out, move, dur, fps, size, amount, focus, codec="h264",
     depth = cv2.GaussianBlur(depth, (0, 0), 3)  # soft depth edges = fewer tearing artifacts
     H, W = rgb.shape[:2]
     yy, xx = np.mgrid[0:oh, 0:ow].astype(np.float32)
-    cx, cy = W / 2, H / 2
+    cx, cy = W * center[0], H * center[1]
+    half = (ow / 2 / W, oh / 2 / H)                  # visible half-window at zoom 1 (plate fraction)
+    if not (half[0] <= center[0] <= 1 - half[0] and half[1] <= center[1] <= 1 - half[1]):
+        print(f"warning: --center {center} shows the plate edge (keep x in {half[0]:.3f}..{1 - half[0]:.3f}, "
+              f"y in {half[1]:.3f}..{1 - half[1]:.3f})", flush=True)
     rel = depth - focus  # parallax relative to the focus plane (0.5 = mid-ground stays put)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{ow}x{oh}",
            "-r", str(fps), "-i", "-", *ENCODERS[codec], str(out)]
@@ -165,6 +171,7 @@ def main():
     p.add_argument("--reverse", action="store_true", help="play the move backwards (e.g. orbit the other way)")
     p.add_argument("--frames", type=int, help="exact frame count (overrides --dur)")
     p.add_argument("--t-list", help="JSON list of move progress t (0..1) per frame; sets the frame count")
+    p.add_argument("--center", default="0.5,0.5", help="frame centre on the plate, x,y in 0..1 (reframe in the overscan)")
     args = ap.parse_args()
     if args.cmd == "parallax":
         bad = [m for m in args.move.split("+") if m not in MOVES]
@@ -192,7 +199,7 @@ def main():
     import json
     t_list = json.loads(Path(args.t_list).read_text()) if args.t_list else None
     parallax(rgb, depth, args.output, args.move, args.dur, args.fps, (w, h), args.amount, args.focus,
-             args.codec, args.reverse, args.frames, t_list)
+             args.codec, args.reverse, args.frames, t_list, tuple(map(float, args.center.split(","))))
     n = len(t_list) if t_list else (args.frames or int(round(args.dur * args.fps)))
     print(f"wrote {args.output} ({w}x{h}, {n} frames, {args.move}{' reversed' if args.reverse else ''}, {args.codec})")
 
