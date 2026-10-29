@@ -10,6 +10,15 @@ Moves: dolly-in, dolly-out, orbit, pan-left, pan-right, rise, drift (slow, for v
 Combine moves with "+" (e.g. --move dolly-out+rise); --reverse plays the move backwards
 (orbit the other way). --codec ffv1 (lossless .mkv) or prores (.mov, 422 HQ) for
 intermediates; default h264 (.mp4, CRF 16). --frames N sets an exact frame count.
+--t-list file.json: explicit move progress per frame (list of t in 0..1, e.g. speed ramps / keys).
+
+Direction note (measured with optical flow, 2026-10-29): the classic names describe how the NEAR
+layer slides around the --focus pivot, not where the camera goes:
+  pan-right = near slides right / far left = camera trucks LEFT;  pan-left = camera trucks RIGHT
+  rise      = near slides up / far down    = camera LOWERS (pedestal down) around the pivot
+  drift     = camera creeps left + down + in
+The names are kept unchanged (backwards compatible). Camera-true aliases were added:
+  truck-left (= pan-right), truck-right (= pan-left), crane-down (= rise), crane-up (= rise reversed).
 The near/far depth map is also what the compositor uses to put fog, light rays and
 particles BETWEEN the subject and the background.
 """
@@ -58,7 +67,9 @@ def save_map(depth, out):
     cv2.imwrite(str(out.with_name(out.stem + "_preview.jpg")), preview, [cv2.IMWRITE_JPEG_QUALITY, 90])
 
 
-MOVES = ["dolly-in", "dolly-out", "orbit", "pan-left", "pan-right", "rise", "drift"]
+MOVES = ["dolly-in", "dolly-out", "orbit", "pan-left", "pan-right", "rise", "drift",
+         "truck-left", "truck-right", "crane-up", "crane-down"]
+ALIASES = {"truck-left": "pan-right", "truck-right": "pan-left", "crane-down": "rise"}
 
 
 def camera(move, t, amount):
@@ -70,6 +81,10 @@ def camera(move, t, amount):
             a, b, c = camera(m, t, amount)
             sx, sy, z = sx + a, sy + b, z * c
         return sx, sy, z
+    if move == "crane-up":
+        sx, sy, z = camera("rise", t, amount)
+        return sx, -sy, z
+    move = ALIASES.get(move, move)
     e = t * t * (3 - 2 * t)  # ease in-out
     a = amount
     return {
@@ -91,7 +106,8 @@ ENCODERS = {
 }
 
 
-def parallax(rgb, depth, out, move, dur, fps, size, amount, focus, codec="h264", reverse=False, frames=None):
+def parallax(rgb, depth, out, move, dur, fps, size, amount, focus, codec="h264", reverse=False, frames=None,
+             t_list=None):
     """2.5D camera move: near pixels move more than far ones. A backward warp
     (each output pixel looks up where it came from) keeps it hole-free; a small
     overscan hides the edges."""
@@ -110,9 +126,9 @@ def parallax(rgb, depth, out, move, dur, fps, size, amount, focus, codec="h264",
            "-r", str(fps), "-i", "-", *ENCODERS[codec], str(out)]
     Path(out).parent.mkdir(parents=True, exist_ok=True)
     proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
-    n = frames if frames else int(round(dur * fps))
+    n = len(t_list) if t_list else (frames if frames else int(round(dur * fps)))
     for i in range(n):
-        t = i / max(n - 1, 1)
+        t = float(t_list[i]) if t_list else i / max(n - 1, 1)
         sx, sy, zoom = camera(move, 1 - t if reverse else t, amount)
         # base sampling grid: output pixel -> source pixel at the current zoom
         bx = cx + (xx - ow / 2) / zoom
@@ -148,6 +164,7 @@ def main():
                    help="h264 (.mp4 review), h264hq (CRF 10 4:4:4), ffv1 (lossless .mkv), prores (422 HQ .mov)")
     p.add_argument("--reverse", action="store_true", help="play the move backwards (e.g. orbit the other way)")
     p.add_argument("--frames", type=int, help="exact frame count (overrides --dur)")
+    p.add_argument("--t-list", help="JSON list of move progress t (0..1) per frame; sets the frame count")
     args = ap.parse_args()
     if args.cmd == "parallax":
         bad = [m for m in args.move.split("+") if m not in MOVES]
@@ -172,9 +189,11 @@ def main():
     else:
         depth = Depth()(rgb)
     w, h = map(int, args.size.split("x"))
+    import json
+    t_list = json.loads(Path(args.t_list).read_text()) if args.t_list else None
     parallax(rgb, depth, args.output, args.move, args.dur, args.fps, (w, h), args.amount, args.focus,
-             args.codec, args.reverse, args.frames)
-    n = args.frames or int(round(args.dur * args.fps))
+             args.codec, args.reverse, args.frames, t_list)
+    n = len(t_list) if t_list else (args.frames or int(round(args.dur * args.fps)))
     print(f"wrote {args.output} ({w}x{h}, {n} frames, {args.move}{' reversed' if args.reverse else ''}, {args.codec})")
 
 
