@@ -7,6 +7,9 @@ Apache-2.0 - free for commercial use) and 3D parallax camera moves on stills.
   vfx-python depth.py map source/images/ depth_maps/        # whole folder
 
 Moves: dolly-in, dolly-out, orbit, pan-left, pan-right, rise, drift (slow, for verses).
+Combine moves with "+" (e.g. --move dolly-out+rise); --reverse plays the move backwards
+(orbit the other way). --codec ffv1 (lossless .mkv) or prores (.mov, 422 HQ) for
+intermediates; default h264 (.mp4, CRF 16). --frames N sets an exact frame count.
 The near/far depth map is also what the compositor uses to put fog, light rays and
 particles BETWEEN the subject and the background.
 """
@@ -55,8 +58,18 @@ def save_map(depth, out):
     cv2.imwrite(str(out.with_name(out.stem + "_preview.jpg")), preview, [cv2.IMWRITE_JPEG_QUALITY, 90])
 
 
+MOVES = ["dolly-in", "dolly-out", "orbit", "pan-left", "pan-right", "rise", "drift"]
+
+
 def camera(move, t, amount):
-    """(shift_x, shift_y, zoom) of the virtual camera at progress t in [0, 1]."""
+    """(shift_x, shift_y, zoom) of the virtual camera at progress t in [0, 1].
+    "a+b" combines moves: shifts add, zooms multiply."""
+    if "+" in move:
+        sx, sy, z = 0.0, 0.0, 1.0
+        for m in move.split("+"):
+            a, b, c = camera(m, t, amount)
+            sx, sy, z = sx + a, sy + b, z * c
+        return sx, sy, z
     e = t * t * (3 - 2 * t)  # ease in-out
     a = amount
     return {
@@ -70,7 +83,15 @@ def camera(move, t, amount):
     }[move]
 
 
-def parallax(rgb, depth, out, move, dur, fps, size, amount, focus):
+ENCODERS = {
+    "h264": ["-c:v", "libx264", "-crf", "16", "-preset", "medium", "-pix_fmt", "yuv420p", "-movflags", "+faststart"],
+    "h264hq": ["-c:v", "libx264", "-crf", "10", "-preset", "medium", "-tune", "film", "-pix_fmt", "yuv444p"],
+    "ffv1": ["-c:v", "ffv1", "-level", "3", "-slices", "16", "-g", "1", "-pix_fmt", "yuv444p"],
+    "prores": ["-c:v", "prores_ks", "-profile:v", "3", "-pix_fmt", "yuv422p10le"],
+}
+
+
+def parallax(rgb, depth, out, move, dur, fps, size, amount, focus, codec="h264", reverse=False, frames=None):
     """2.5D camera move: near pixels move more than far ones. A backward warp
     (each output pixel looks up where it came from) keeps it hole-free; a small
     overscan hides the edges."""
@@ -86,13 +107,13 @@ def parallax(rgb, depth, out, move, dur, fps, size, amount, focus):
     cx, cy = W / 2, H / 2
     rel = depth - focus  # parallax relative to the focus plane (0.5 = mid-ground stays put)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{ow}x{oh}",
-           "-r", str(fps), "-i", "-", "-c:v", "libx264", "-crf", "16", "-preset", "medium",
-           "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(out)]
+           "-r", str(fps), "-i", "-", *ENCODERS[codec], str(out)]
     Path(out).parent.mkdir(parents=True, exist_ok=True)
     proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
-    n = int(round(dur * fps))
+    n = frames if frames else int(round(dur * fps))
     for i in range(n):
-        sx, sy, zoom = camera(move, i / max(n - 1, 1), amount)
+        t = i / max(n - 1, 1)
+        sx, sy, zoom = camera(move, 1 - t if reverse else t, amount)
         # base sampling grid: output pixel -> source pixel at the current zoom
         bx = cx + (xx - ow / 2) / zoom
         by = cy + (yy - oh / 2) / zoom
@@ -116,15 +137,22 @@ def main():
     p = sub.add_parser("parallax")
     p.add_argument("input")
     p.add_argument("output", help=".mp4")
-    p.add_argument("--move", default="dolly-in",
-                   choices=["dolly-in", "dolly-out", "orbit", "pan-left", "pan-right", "rise", "drift"])
+    p.add_argument("--move", default="dolly-in", help=" | ".join(MOVES) + '; combine with "+", e.g. dolly-out+rise')
     p.add_argument("--dur", type=float, default=5.0)
     p.add_argument("--fps", type=int, default=24)
     p.add_argument("--size", default="1920x1080", help="WxH; 3840x2160 for native 4K, 1080x1920 vertical")
     p.add_argument("--amount", type=float, default=1.0, help="strength of the move (0.5 subtle .. 2 strong)")
     p.add_argument("--focus", type=float, default=0.5, help="depth that stays still (0 far .. 1 near)")
     p.add_argument("--depth", help="reuse a saved depth .png instead of computing it")
+    p.add_argument("--codec", default="h264", choices=list(ENCODERS),
+                   help="h264 (.mp4 review), h264hq (CRF 10 4:4:4), ffv1 (lossless .mkv), prores (422 HQ .mov)")
+    p.add_argument("--reverse", action="store_true", help="play the move backwards (e.g. orbit the other way)")
+    p.add_argument("--frames", type=int, help="exact frame count (overrides --dur)")
     args = ap.parse_args()
+    if args.cmd == "parallax":
+        bad = [m for m in args.move.split("+") if m not in MOVES]
+        if bad:
+            ap.error(f"unknown move {bad}; use {MOVES}")
 
     torch.set_num_threads(max(torch.get_num_threads(), 1))
     if args.cmd == "map":
@@ -144,8 +172,10 @@ def main():
     else:
         depth = Depth()(rgb)
     w, h = map(int, args.size.split("x"))
-    parallax(rgb, depth, args.output, args.move, args.dur, args.fps, (w, h), args.amount, args.focus)
-    print(f"wrote {args.output} ({w}x{h}, {args.dur}s, {args.move})")
+    parallax(rgb, depth, args.output, args.move, args.dur, args.fps, (w, h), args.amount, args.focus,
+             args.codec, args.reverse, args.frames)
+    n = args.frames or int(round(args.dur * args.fps))
+    print(f"wrote {args.output} ({w}x{h}, {n} frames, {args.move}{' reversed' if args.reverse else ''}, {args.codec})")
 
 
 if __name__ == "__main__":
