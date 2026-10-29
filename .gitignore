@@ -10,3 +10,4 @@ projects/**/*.exr
 projects/**/*.blend
 projects/**/*.blend1
 __pycache__/
+projects/**/*.log
